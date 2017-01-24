@@ -3,12 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.quranreading.qibladirection"
     android:installLocation="auto">
-<!--test-->
-
-    <!--Noman test test test-->
-    <!--Noman test test test-->
-    <!--Noman test test test-->
-    <!--Noman test test test-->
 
     <uses-sdk tools:overrideLibrary="com.facebook,android.support.customtabs" />
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
