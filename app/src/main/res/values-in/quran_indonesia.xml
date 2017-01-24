@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="aya_of_day">Ayah Hari</string>
+    <string name="quran">Quran</string>
+    
+    <string name="search">Pencarian</string>
+    <string name="txt_sajdahs">Bersujud</string>
+    <string name="txt_bookmarks">Favorit</string>
+    <string name="no_bookmarks_added">Tidak ada Favorit Ditambahkan</string>
+    <string name="added_to_bookmarks">Ditambahkan ke Favorit</string>
+    <string name="removed_from_bookmark">Dihapus dari Favorit</string>
+    
+    <string name="download">Download</string>
+    <string name="download_msg">Apakah Anda ingin Ambil</string>
+    <string name="downloading_in_progress">Download Sedang berlangsung</string>        
+    <string name="already_downloaded">Sudah Diunduh</string>
+    <string name="alert">Waspada</string>
+ 
+    <string name="disclaimer_quran_1">Aplikasi ini adalah usaha manusia dan dikembangkan dengan niat yang terbaik. Setiap kesalahan dalam konten adalah undeliberate dan karena kemanusiaan belaka. Namun, jika Anda melihat ada kesalahan atau kesalahan harap memberitahu kami dan kami akan menyelesaikannya di awal.</string>
+    <string name="disclaimer_quran_2">Teks aplikasi ini diperoleh dari Tanzil.net sedangkan bacaan audio yang berasal dari Versebyversequran.com. Kami tidak mengklaim konten atau pengajian dan semua hak mereka milik pemilik aslinya.</string>
+   
+    <string name="warning">Peringatan</string>
+    <string name="warning_msg">kasus Metallic atau penutupan magnetik dapat menyebabkan gangguan</string>
+    
+    <string name="disclaimer">Penolakan</string>
+    <string name="time">Waktu</string>
+    
+    <string name="txt_stop_signs">Berhenti Tanda</string>
+    <string name="txt_stop_sign_detail_1">Wajib berhenti - Jika makna berubah</string>
+    <string name="txt_stop_sign_detail_2">Berhenti - Akhir seksi</string>
+    <string name="txt_stop_sign_detail_3">Harus berhenti - Akhir kalimat</string>
+    <string name="txt_stop_sign_detail_4">Lebih baik untuk berhenti</string>
+    <string name="txt_stop_sign_detail_5">Dapat menghentikan atau melanjutkan</string>
+    <string name="txt_stop_sign_detail_6">Harus terus, bisa mengambil napas</string>
+    <string name="txt_stop_sign_detail_7">Harus terus, bisa mengambil napas</string>
+    <string name="txt_stop_sign_detail_8">Harus terus, bisa mengambil napas</string>
+    <string name="txt_stop_sign_detail_9">Lebih baik tidak berhenti</string>
+    <string name="txt_stop_sign_detail_10">Berhenti di pertama atau yang kedua tetapi tidak pada kedua</string>
+    <string name="txt_stop_sign_detail_11">Lebih baik berhenti tetapi diperbolehkan untuk melanjutkan</string>
+    <string name="txt_stop_sign_detail_12">Lebih baik untuk terus tetapi diperbolehkan untuk berhenti</string>
+    <string name="txt_stop_sign_detail_13">Hal ini lebih baik untuk tidak berhenti</string>
+    </resources>

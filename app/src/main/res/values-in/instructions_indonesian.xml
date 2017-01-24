@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="txt_instrct1">Anda akan melihat tiga tab utama; Kiblat, Salat dan Surah.</string>
+    <string name="txt_instrct2">Anda akan menemukan ikon menu di sudut kiri atas th layar utama, tekan untuk membuka laci navigasi. Pilihan berikut tersedia.</string>
+    <string name="txt_instrct2_1">Pilih Dials tab memberikan enam memanggil yang berbeda yang dapat dipilih sesuai keinginan Anda.</string>
+    <string name="txt_instrct2_2">Tekan "Hilangkan iklan" pilihan jika Anda tidak ingin melihat iklan saat menggunakan aplikasi.</string>
+    <string name="txt_instrct2_3">Pilih "Pengaturan" lihat tab semua pengaturan yang terkait dengan setiap tab.</string>
+    <string name="txt_instrct2_4">Tekan "Bahasa" pilihan untuk mengubah bahasa aplikasi Anda.</string>
+    <string name="txt_instrct2_5">Anda dapat men-download banyak aplikasi Islam interaktif lainnya yang dikembangkan oleh Quran Reading dengan menggunakan "Aplikasi Lebih" pilihan.</string>
+    <string name="txt_instrct2_6">Berbagi pengalaman dengan teman dan kerabat di banyak situs media sosial dengan menggunakan "membagi" pilihan.</string>
+    <string name="txt_instrct2_7">Bantu kami untuk meningkatkan aplikasi dengan memberikan umpan balik Anda dari "Umpan Balik" pilihan.</string>
+    <string name="txt_instrct2_8">Tentang Kami tab memberikan informasi perusahaan dan versi aplikasi.</string>
+    <string name="txt_instrct3">Pergi ke "Sholat" tab untuk melihat waktu shalat sesuai dengan lokasi Anda. Selain itu, Anda dapat mengubah timing Sholat dan mengatur alarm sesuai dengan kemudahan Anda.</string>
+    <string name="txt_instrct4">Pergi ke "Kiblat" tab untuk melihat arah yang tepat kiblat sesuai dengan lokasi Anda.</string>
+
+    <string name="txt_instruct_surahs">Buka tab surah untuk membaca dan mendengarkan Surah.</string>
+    <string name="txt_note_instruct">Harap dicatat: Angle perangkat Anda untuk perubahan kiblat bersama gerakan perangkat. Kocok perangkat dan dari tempat itu pada permukaan horisontal datar. Jangan gerakkan perangkat ketika ditempatkan pada permukaan datar. Juga menyimpan barang-barang logam jauh dari perangkat Anda.</string>    
+    
+</resources>

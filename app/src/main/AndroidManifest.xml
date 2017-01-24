@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.quranreading.qibladirection"
+    android:installLocation="auto">
+
+    <uses-sdk tools:overrideLibrary="com.facebook,android.support.customtabs" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS"></uses-permission>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"></uses-permission>
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="com.android.vending.BILLING" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:name="noman.CommunityGlobalClass"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".SplashActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivityNew"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeNew"
+            android:windowSoftInputMode="adjustPan|adjustResize" />
+        <activity
+            android:name=".CompassActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeNew"
+            android:windowSoftInputMode="adjustPan|adjustResize" >
+
+            </activity>
+        <activity
+            android:name=".SurahListActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeNew"
+            android:windowSoftInputMode="adjustPan|adjustResize" />
+        <activity
+            android:name=".TimingsActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeNew"
+            android:windowSoftInputMode="adjustPan|adjustResize" />
+
+        <activity
+            android:name=".SettingsTimeAlarmActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeNew"
+            android:windowSoftInputMode="adjustPan|adjustResize" />
+
+        <activity
+            android:name=".DialsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SettingsActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|adjustResize" />
+        <activity
+            android:name=".AboutInstructionActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".LanguageSelectionActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".UpgradeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Transparent" />
+        <activity
+            android:name=".AdvanceInstrctAcivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Transparent" />
+        <activity
+            android:name=".JuristicDailogActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Transparent" />
+        <activity
+            android:name=".FirstOptionsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Transparent" />
+        <activity
+            android:name=".SettingSoundsActivityOld"
+            android:screenOrientation="portrait"
+            android:theme="@style/Transparent" />
+
+
+        <activity
+            android:name=".SettingsCalculationMethodActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".SettingsManualCorrectionsActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".SettingsPrayerListSoundActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- Surah Quran -->
+
+        <activity
+            android:name="quran.activities.StopSignsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="quran.activities.SurahActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|adjustResize" />
+        <activity
+            android:name="quran.activities.BookmarksActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="quran.activities.SajdasActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="quran.activities.DownloadDialog"
+            android:screenOrientation="portrait"
+            android:theme="@style/Transparent" />
+        <activity
+            android:name="com.quranreading.alarms.AyahNotificationActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Transparent" />
+
+        <!-- End Of Quran -->
+
+
+        <!-- Duas -->
+
+        <activity
+            android:name="duas.activities.DuasGridActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="duas.activities.DuasListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="duas.activities.DuaDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="duas.activities.DownloadDialogDuas"
+            android:screenOrientation="portrait"
+            android:theme="@style/Transparent" />
+
+        <service android:name="duas.download.service.ServiceDownloadDua" />
+        <!-- End Duas -->
+
+
+
+
+
+        <!-- Duas -->
+
+        <activity
+            android:name="names.activities.NamesListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="names.activities.DownloadDialogNames"
+            android:screenOrientation="portrait"
+            android:theme="@style/Transparent" />
+        <activity
+            android:name="names.activities.NamesDetailActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="names.activities.NamesListPlayingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="names.activities.NamesGridActivity"
+            android:screenOrientation="portrait" />
+
+        <service android:name="names.download.service.ServiceDownloadNames" />
+        <!-- End Duas -->
+
+
+
+
+
+
+
+        <!-- Halal Food Finder Data -->
+        <activity
+            android:name="places.activities.MapsViewActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="places.activities.PlacesListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="places.activities.MapWebViewActivity"
+            android:screenOrientation="portrait" />
+
+        <!-- End Halal Food Finder Data -->
+
+
+
+        <service android:name="com.quranreading.helper.MyService" />
+        <service android:name="quran.activities.ServiceClass" />
+
+        <receiver android:name="quran.helper.ServiceAlarmReceiver" />
+        <receiver android:name="com.quranreading.alarms.AlarmReceiverPrayers" />
+        <receiver android:name="com.quranreading.alarms.PrayerTimeUpdateReciever" />
+        <receiver android:name="com.quranreading.alarms.AlarmReceiverAyah" />
+        <receiver android:name="com.quranreading.alarms.BootCompleteBroadcastReciever">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name="com.google.android.gms.ads.AdActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <meta-data
+        android:name="com.facebook.sdk.ApplicationId"
+        android:value="@string/facebook_id" />
+
+        <activity android:name="com.facebook.FacebookActivity" />
+
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/. 
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+
+
+        <!--   Calander and community-->
+        <activity
+            android:name="noman.quran.activity.TextSettingScreen"
+            android:label="@string/settings"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <activity
+            android:name="noman.hijri.acitivity.CalenderActivity"
+            android:label="@string/activity_calender"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name="noman.hijri.acitivity.EventActivity"
+            android:label="@string/activity_event"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name="noman.community.activity.ComunityActivity"
+            android:label="@string/activity_community"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name="noman.community.activity.LoginActivity"
+            android:label="@string/activity_login"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name="noman.community.activity.PostActivity"
+            android:label="@string/activity_post"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+
+        <!--FacebookActivity Added-->
+        <!-- <meta-data
+             android:name="com.facebook.sdk.ApplicationId"
+             android:value="@string/facebook_app_id" />-->
+        <!--    <activity
+                android:name="com.facebook.FacebookActivity"
+                android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+                android:label="@string/app_name"
+                android:theme="@android:style/Theme.Translucent.NoTitleBar" />-->
+
+        <activity
+            android:name="noman.hijri.acitivity.ConverterDialog"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.CustomTranslucent">
+
+        </activity>
+
+        <!--  <receiver android:name=".notifications.EventNotificationReciever"/>-->
+
+        <!-- Set custom default icon. This is used when no icon is set for incoming notification messages.
+             See README(https://goo.gl/l4GJaQ) for more. -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/ic_action_filter_community" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/colorAccent" />
+
+        <!--  FCM integeration-->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <!--  <service android:name="noman.community.firebaseservice.FireBaseMsgService">
+              <intent-filter>
+                  <action android:name="com.google.firebase.MESSAGING_EVENT" />
+              </intent-filter>
+          </service>
+          <service android:name="noman.community.firebaseservice.FirebaseInstanceIDService">
+              <intent-filter>
+                  <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+              </intent-filter>
+          </service>
+  -->
+
+        <receiver
+            android:name="noman.hijri.alarm_notifications.AlarmReciever"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name="noman.quran.QuranModuleActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeNew"
+            android:windowSoftInputMode="adjustPan|adjustResize" />
+        <activity
+            android:name="noman.quran.activity.QuranReadActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeNew"
+            android:windowSoftInputMode="adjustPan|adjustResize" />
+    </application>
+
+</manifest>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_background"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:id="@+id/tabbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        android:background="@color/header"
+        android:elevation="@dimen/size_four">
+
+        <RelativeLayout
+            android:id="@+id/layout_drawer_menu_ic"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+
+            android:background="@drawable/bg_drawer_menu"
+            android:onClick="onBackButtonClick">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/img_desrcptn"
+                android:padding="@dimen/_17sdp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/back" />
+        </RelativeLayout>
+
+        <TextView
+
+            android:gravity="center_vertical"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+
+            android:text="@string/activity_event"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:textSize="@dimen/_18sdp"/>
+
+
+    </LinearLayout>
+    <!-- Framelayout to display Fragments -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:id="@+id/frame_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/linearAd" />
+
+        <LinearLayout
+            android:id="@+id/linearAd"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical"></LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	
+    <string name="free_live_quran_tutoring">Бесплатный Онлайн Коран Репетиторы</string>
+    <string name="register_now">ЗАРЕГИСТРИРУЙТЕСЬ СЕЙЧАС</string>
+    	
+    <string name="language">Russian</string>
+    <string name="qibla_connect">Кибла подключать</string>
+    <string name="find_qibla_direction">Найти Кибла направление</string>
+    <string name="advertisement">реклама</string>
+    <string name="distance_from_qibla">Расстояние от Киблы</string>
+    <string name="kilometer">километр</string>
+    <string name="qibla_direction">Кибла</string>
+    <string name="salat_timings">Молитва</string>
+    
+    <string name="txt_enter_ayah_number">Введите номер аята</string>    
+	<string name="txt_enter_between_0_83">Введите значение между 0-83</string>
+	<string name="set_time">Cохранять Время</string>
+	<string name="surahs">Суры</string>
+	<string name="makki">Макки</string>    
+	<string name="verses">Стихи</string>
+	<string name="downloading">загрузка</string>
+	<string name="exit">Выход</string>
+	<string name="tap_to_view_more">Нажмите , чтобы посмотреть в более</string>
+	<string name="apps">Приложения</string>
+	<string name="completed">Завершен</string>
+	<string name="edited">отредактированный</string>
+	<string name="cannot">не могу</string>
+	<string name="your_device_not_compatible">Ваш телефон не совместим.</string>
+	<string name="set">Выбрать</string>
+	<string name="location">Место нахождения</string>
+    
+    <string name="instructions">инструкции</string>
+        
+    <string name="select_dial">Выберите набор</string>
+    <string name="txt_dial_1">Ковер синий</string>
+    <string name="txt_dial_2">Зеленый и серый</string>
+    <string name="txt_dial_3">Элегантный розовый</string>
+    <string name="txt_dial_4">цитрусовые оранжевый</string>
+    <string name="txt_dial_5">черный как смоль</string>
+    <string name="txt_dial_6">королевский красный</string>
+
+    <string name="attention">внимание</string>
+    <string name="attention_msg">Если салат тайминги неверна, перейдите к "Дополнительные настройки" и выберите соответствующие настройки для вашего географического региона</string>
+    <string name="okay">хорошо</string>
+
+    <string name="txt_fajr">Fajar</string>
+    <string name="txt_sunrise">Sun Rise</string>
+    <string name="txt_zuhr">Zuhar</string>
+    <string name="txt_asar">Asar</string>
+    <string name="txt_maghrib">Maghrib</string>
+    <string name="txt_isha">Isha</string>
+        
+    <string name="settings">настройки</string>
+    <string name="current_Location">Текущее местоположение</string>
+    <string name="manual_location">Руководство Местонахождение</string>
+    <string name="unable_to_find_location">Невозможно найти место</string>
+    <string name="enter_location_manually">Введите местоположение вручную</string>
+    <string name="tone_settings">Параметры сигналов</string>
+    <string name="default_tone">По умолчанию тон</string>
+    <string name="silent">тихий</string>
+    <string name="on">на</string>
+    <string name="off">от</string>
+    <string name="adhan1">ушки 1</string>
+    <string name="adhan2">ушки 2</string>
+    <string name="adhan3">ушки 3</string>
+    <string name="reset">сброс</string>
+    <string name="reset_all">Сбросить все</string>
+    <string name="general">генеральный</string>
+    <string name="reset_settings">Сброс настроек</string>
+    <string name="reset_msg">Вы действительно хотите сбросить настройки на значения по умолчанию?</string>
+    <string name="about">около</string>
+    <string name="build_version">Версия сборки</string>
+    
+    <string name="enable_provider">Пожалуйста, включите расположение в настройках устройства</string>
+    
+    <string name="advance_settings">Предварительные настройки</string>
+    <string name="juristic">юридический</string>
+    <string-array name="arr_juristic">
+        <item >связанный/Малики/Hanbali</item>
+        <item >Ханафи</item>
+    </string-array>
+    
+    <string name="latitude_adjustment">Широта регулировка</string>
+    <string-array name="arr_latitude_adjustment">
+        <item >Ни один</item>
+        <item >Угол мудрый</item>
+        <item >Средний Ночь</item>
+        <item >Один Седьмой</item>
+    </string-array>
+     
+    <string name="calculation_method">Метод расчета</string>
+    <string-array name="arr_calculation_method">
+        <item >MWL</item>
+        <item >Мекка</item>
+        <item >Карачи</item>
+        <item >ISNA</item>
+        <item >Тегеран</item>
+        <item >Египет</item>
+        <item >Джафари</item>      
+    </string-array>
+    
+
+    <string name="languages">Языки</string>
+    <string-array name="language_array1">
+		<item >English</item>
+        <item >турецкий</item>
+		<item >испанский</item>
+		<item >русский</item>
+		<item >французский</item>
+		<item >немецкий</item>
+		<item >малайский</item>
+		<item >индонезийский</item>
+		<item >итальянский</item>
+		<item >тайский</item>
+    </string-array>
+        <string-array name="language_array">
+		<item >English</item>	
+		<item >Türk</item>
+		<item >Español</item>
+		<item >Pусский</item>
+		<item >Français</item>
+		<item >Deutsch</item>
+		<item >Melayu</item>
+		<item >Bahasa Indonesia</item>
+		<item >Italiano</item>
+		<item >ไทย</item>	
+    </string-array>
+    
+    
+    <string name="laguage_alert_msg">Это изменит язык всей вашего приложения. Вы уверены, что хотите, чтобы выбрать его?</string>
+    <string name="confirm">подтвердить</string>
+    <string name="cancel">отменить</string>
+    
+    <string name="feedback">обратная связь</string>
+    <string name="feedback_msg">Мы хотели бы знать, ваш опыт, пожалуйста, дайте нам ваши отзывы</string>
+    <string name="yes">Да</string>
+    <string name="later">позже</string>
+    
+    <string name="hijri_date">Hijri Date</string>
+    <string-array name="hijri_month_names">
+        <item >Мухаррам</item>
+        <item >Сафар</item>
+        <item >Раби аль-аввал</item>
+        <item >Раби ATH-Тани</item>
+        <item >Джумада АИ-аввал</item>
+        <item >Джумада ATH-Тани</item>
+        <item >Раджаб</item>
+        <item >Шабан</item>
+        <item >рамадан</item>
+        <item >Шавваль</item>
+        <item >зуль Qa\'dah</item>
+        <item >зуль хиджа</item>        
+    </string-array>
+    
+    <string name="solar_date">Solar Date</string>
+        <string-array name="solar_month_names">
+        <item >январь</item>
+        <item >февраль</item>
+        <item >марш</item>
+        <item >апреля</item>
+        <item >мая</item>
+        <item >июнь</item>
+        <item >июль</item>
+        <item >август</item>
+        <item >сентябрь</item>
+        <item >октября</item>
+        <item >ноябрь</item>
+        <item >декабрь</item>        
+    </string-array>
+    
+    <string name="am">am</string>
+    <string name="pm">pm</string>
+    <string name="hour_left">часов осталось</string>
+    
+    <string name="hours">часов</string>
+    <string name="minutes">минут</string>
+
+    <string name="about_us">около нас</string>
+    <string name="version">версия</string>
+    <string name="copyright">авторское право</string>
+    <string name="all_rights_reserved">Все права защищены</string>
+    
+    <string name="remove_ads">удалить объявления</string>
+    <string name="remove_ads_heading">Пожертвовать &amp; Убрать рекламу</string>
+    <string name="remove_ads_msg">Пожалуйста, поддержите и удаления объявлений, чтобы помочь нам разработать более ценные исламских приложений для Вас и Ваших детей</string>
+    <string name="remove">удалять</string>
+    
+    
+    <string name="advance_help">продвижение помогите</string>
+    
+    <string name="juristic_details"><b>связанный/Малики/Hanbali</b> Школа мысли\n\n<b>Ханафи</b> Школа мысли</string>
+    
+    <string name="muslim_world_league_details"><b>MWL:</b> Всемирная мусульманская лига</string>
+    <string name="muslim_world_league_region"><b>область:</b> Европа, Дальний восток, Часть U.S</string>
+    
+    <string name="makkah_details"><b>Мекка:</b> Умм аль-Кура университет, Мекка</string>
+    <string name="makkah_region"><b>область:</b> Аравийский полуостров</string>
+    
+    <string name="karachi_details"><b>Карачи:</b> Университет исламских наук, Карачи</string>
+    <string name="karachi_region"><b>область:</b> Пакистан, Афганистан, Бангладеш, Индия</string>
+    
+    <string name="isna_details"><b>ISNA:</b> Исламское общество Северной Америки</string>
+    <string name="isna_region"><b>область:</b> Северная Америка (США и Канада)</string>
+   
+    <string name="tehran_details"><b>Тегеран:</b> Институт геофизики, Тегеранского университета</string>
+    <string name="tehran_region"><b>область:</b> Иран, Некоторые общины шиитов</string>
+   
+    <string name="egyptian_details"><b>Египет:</b> Египетский Главное управление обследования</string>
+    <string name="egyptian_region"><b>область:</b> Африка, Сирия, Ливан, Малайзия</string>
+    
+    <string name="jafari_details"><b>Джафари:</b> Шиа Ithna Ашари, Научно-исследовательский институт Лева, Кум</string>
+    <string name="jafari_region"><b>область:</b> Некоторые общины шиитов по всему миру</string>
+    
+    <string name="angle_based_msg"><b>Угол мудрый:</b> Это промежуточное решение, используется в некоторых последних калькуляторы время молитвы. Пусть α будет угол сумерки для Иша, и пусть т = α / 60.Период времени между заходом и восходом солнца делится на т частей. Иша начинается после первой части. Например, если угол сумерках по Иша 15, то Иша начинается в конце первой четверти (15/60) ночи. Время Fajar рассчитывается аналогично.</string>
+    <string name="mid_night_msg"><b>Средний Ночь:</b> В этом методе, период от заката до восхода солнца делится на две половины.Первая половина считается ночь, и другая половина как дневного перерыва. Fajar и Иша в этом методе предполагается, что в полночь во время аномальной период.</string>
+    <string name="one_seventh_msg"><b>Один Седьмой:</b> В этом методе, период между заходом и восходом солнца разделена на семь частей. Иша начинается после первой-седьмой части, и Фаджр находится в начале седьмой части.</string>    
+    
+    <string name="share">доля</string>
+	<string name="share_msg">Я нашел замечательный исламский приложение, чтобы найти точное направление Qibla скачать здесь:\n\n https://play.google.com/store/apps/details?id=com.quranreading.qibladirection</string>
+	<string name="more_apps">больше приложений</string>
+	
+	<string name="toast_enter_city_name">Пожалуйста, введите название города</string>
+	<string name="toast_correct_city_name">Пожалуйста обеспечьте правильно Страна и город имя</string>
+	<string name="toast_enable_location">Пожалуйста, включите Расположение провайдеров, введите местоположение вручную из настроек</string>
+	<string name="toast_alarms_last_location">Сохраненные сигналы для последнего известного местоположения</string>
+	<string name="toast_already_purchased">уже купили</string>
+	<string name="toast_purchase_successful">Купить Успешная</string>
+	<string name="toast_network_error">Нет, подключенных к сети</string>
+	<string name="toast_location_error">не в состоянии найти место</string>
+	<string name="toast_get_city_error">Невозможно найти место адрес</string>
+	<string name="toast_no_sensor">Нет датчика - Данное устройство не совместимо</string>
+	<string name="toast_no_accelerometer">Нет акселерометр - Данное устройство не совместимо</string>  
+	<string name="toast_no_magnetometer">Нет датчика магнитометра - Данное устройство не совместимо</string>
+	
+	<string name="toast_unable_detect_location">Невозможно обнаружить место</string>
+	<string name="toast_connect_to_internet_or_set_location_manually">Выберите школу мысли</string>	
+	<string name="select_school_of_thought">Выберите школу мысли</string>	
+	<string name="set_alarm">Установить будильник</string>
+    <string name="txt_accurate_direction">Для точного направления</string>
+	<string name="calibration_txt_shake">Встряхните телефон и</string>
+	<string name="calibration_txt_place">Наведите прибор на горизонтальной плоской поверхности и не переместить его</string>
+	<string name="calibration_instruct_metalic">Держите металлические вещи от вашего телефона</string>
+	
+    <string name="standard">стандарт</string>
+    <string name="hanafi">Ханафи</string>
+    <string name="mwl">MWL</string>
+    <string name="mecca">Мекка</string>
+    <string name="karachi">Карачи</string>
+    <string name="isna">ISNA</string>
+    <string name="tehran">Тегеран</string>
+    <string name="egypt">Египет</string>
+    <string name="jafari">Джафари</string>
+    <string name="none">Ни один</string>
+    <string name="angle_based">Угол мудрый</string>
+    <string name="mid_night">Средний Ночь</string>
+    <string name="oneseventh">Один Седьмой</string>
+        
+    <string name="error_location_settings_manual_dialog">Применение не может найти вас автоматически. Пожалуйста, включите местоположения доступ из настроек устройства.</string>
+    <string name="time_left">Время Оставайтесь</string>
+    
+        <!-- Additional With Surahs -->
+    <string name="daylight_saving">дневной свет экономия</string>
+    <string name="txt_translation">Перевод</string>
+    <string name="txt_transliteration">транслитерация</string>
+    <string name="alarm_on">сигнала тревоги Включено</string>
+    <string name="alarm_off">сигнала тревоги отключен</string>
+    
+    <string-array name="more_apps_category">
+        <item >Взрослые</item>
+        <item >Дети</item>
+        <item >Генеральная</item>    
+    </string-array>
+
+    
+        <!-- Yasin -->
+    <string name="coming_soon">Больше Суры Скоро</string>
+    <string name="goto_txt">Идти к</string>
+    <string name="goto_ayah">Идти к стих</string>
+    <string name="repeat_on">Повторение</string>
+    <string name="repeat_off">Не повторяй</string>
+    <string name="surah_yasin">сура Ясин</string>
+    <string name="yasin">Ясин</string>
+    <string name="last_read_not_saved">Последнее читать не сохраняются</string>
+
+</resources>

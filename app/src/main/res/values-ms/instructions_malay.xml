@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="txt_instrct1">Anda akan melihat tiga tab utama; Kiblat, Salat dan surah.</string>
+    <string name="txt_instrct2">Anda akan menemui ikon pada menu ke penjuru atas sebelah kiri skrin utama, ketuk untuk membuka laci navigasi. Berikutan pilihan yang ada</string>
+    <string name="txt_instrct2_1">Pilih Dials tab memberi anda enam Dail berbeza yang boleh dipilih mengikut citarasa anda</string>
+    <string name="txt_instrct2_2">Ketik "Keluarkan Iklan" pilihan jika anda tidak suka melihat iklan semasa menggunakan aplikasi</string>
+    <string name="txt_instrct2_3">Pilih "Tetapan" paparan tab semua tetapan yang berkaitan dengan setiap tab.</string>
+    <string name="txt_instrct2_4">Ketik "Bahasa" pilihan untuk menukar bahasa permohonan anda</string>
+    <string name="txt_instrct2_5">Anda boleh memuat turun banyak aplikasi interaktif Islam lain yang dibangunkan oleh Membaca Al-Quran dengan menggunakan "Lebih Aplikasi" pilihan</string>
+    <string name="txt_instrct2_6">Kongsi pengalaman anda dengan rakan-rakan dan saudara-mara anda pada banyak laman web media sosial dengan menggunakan "berkongsi" pilihan</string>
+    <string name="txt_instrct2_7">Membantu kami memperbaiki app dengan memberikan maklum balas dari anda "Maklum Balas" pilihan</string>
+    <string name="txt_instrct2_8">Mengenai Kami tab memberikan anda maklumat syarikat dan versi aplikasi</string>
+    <string name="txt_instrct3">Pergi ke "Sholat" tab untuk melihat waktu solat mengikut lokasi anda. Selain itu, anda boleh menukar timing Sholat dan menetapkan penggera mengikut kemudahan anda.</string>
+    <string name="txt_instrct4">Pergi ke "Kiblat" tab untuk melihat arah sebenar kiblat mengikut lokasi anda</string>
+
+    
+    <string name="txt_instruct_surahs">Pergi ke tab surah membaca dan mendengar surah.</string>
+    <string name="txt_note_instruct">Sila ambil perhatian: Sudut peranti anda untuk perubahan kiblat bersama-sama pergerakan peranti. Goncang peranti dan daripada meletakkannya pada permukaan mendatar yang rata. Sila tidak bergerak peranti ini apabila diletakkan di atas permukaan yang rata. Juga perlu barangan logam dari peranti anda.</string>
+
+</resources>

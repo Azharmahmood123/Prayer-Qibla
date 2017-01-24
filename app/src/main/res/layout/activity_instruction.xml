@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/header_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/ic_actionbar_size"
+        android:layout_alignParentTop="true"
+        android:background="@color/header"
+        android:elevation="@dimen/size_four"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/layout_back_btn"
+            android:layout_width="@dimen/ic_actionbar_size"
+            android:layout_height="@dimen/ic_actionbar_size"
+            android:layout_centerVertical="true"
+            android:background="@drawable/bg_drawer_menu"
+            android:onClick="onBackButtonClick" >
+
+            <ImageView
+                android:id="@+id/imgbtn_drawer_menu"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/img_desrcptn"
+                android:padding="@dimen/back_actionbar_padding"
+                android:scaleType="fitCenter"
+                android:src="@drawable/back" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_instruction_head"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/layout_back_btn"
+            android:gravity="center|left"
+            android:paddingLeft="@dimen/size_five"
+            android:text="@string/instructions"
+            android:textColor="@color/white"
+            android:textSize="@dimen/actionbar_text_size" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/calibration_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/ads_layout"
+        android:layout_below="@+id/header_layout"
+        android:background="@color/white" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tvInstruct_heading"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.33"
+                android:gravity="center"
+                android:padding="@dimen/size_ten"
+                android:text="@string/txt_accurate_direction"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_twenty_two"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvShake"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="@dimen/size_ten"
+                android:text="@string/calibration_txt_shake"
+                android:textColor="@color/black_light"
+                android:textSize="@dimen/text_size_eighteen" />
+
+            <RelativeLayout
+                android:id="@+id/layout_calib_1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5" >
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:adjustViewBounds="true"
+                    android:padding="@dimen/size_three"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/instruct_1" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.05" />
+
+            <TextView
+                android:id="@+id/tvDevice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="@dimen/size_ten"
+                android:text="@string/calibration_txt_place"
+                android:textColor="@color/black_light"
+                android:textSize="@dimen/text_size_eighteen" />
+
+            <RelativeLayout
+                android:id="@+id/layout_calib_2"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.4" >
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:adjustViewBounds="true"
+                    android:padding="@dimen/size_ten"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/instruct_2" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.05" />
+
+            <TextView
+                android:id="@+id/tvMetalic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="@dimen/size_ten"
+                android:text="@string/calibration_instruct_metalic"
+                android:textColor="@color/black_light"
+                android:textSize="@dimen/text_size_eighteen" />
+
+            <RelativeLayout
+                android:id="@+id/layout_calib_4"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.4" >
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:adjustViewBounds="true"
+                    android:padding="@dimen/size_ten"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/instruct_3" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.05" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/ads_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" >
+
+        <com.google.android.gms.ads.AdView
+            xmlns:ads="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/adView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            ads:adSize="SMART_BANNER"
+            ads:adUnitId="@string/admob_id"
+            android:layerType="software" />
+
+        <ImageView
+            android:id="@+id/adimg"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/size_fourty_eight"
+            android:adjustViewBounds="true"
+            android:clickable="true"
+            android:contentDescription="@string/img_desrcptn"
+            android:onClick="onClickAdImage"
+            android:scaleType="fitXY"
+            android:src="@drawable/adbanner1" />
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,147 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:splitMotionEvents="false" >
+
+    <LinearLayout
+        android:id="@+id/layout_locationCompass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/size_fifteen"
+        android:layout_marginTop="@dimen/size_fifteen"
+        android:background="@drawable/bg_row_corners"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/tv_city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="@android:color/transparent"
+            android:gravity="center"
+            android:paddingBottom="@dimen/size_five"
+            android:paddingLeft="@dimen/size_ten"
+            android:paddingRight="@dimen/size_ten"
+            android:paddingTop="@dimen/size_five"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_eighteen" />
+
+        <View
+            android:id="@+id/view_navigation"
+            android:layout_width="@dimen/size_one_half"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/size_five"
+            android:layout_marginTop="@dimen/size_five"
+            android:background="@color/dark_gray" />
+
+        <ImageView
+            android:id="@+id/img_navigation"
+            android:layout_width="@dimen/size_twenty_eight"
+            android:layout_height="@dimen/size_twenty_eight"
+            android:layout_marginRight="@dimen/size_five"
+            android:adjustViewBounds="true"
+            android:padding="@dimen/size_five"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_navigation" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout_locationCompass"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/compass_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:clickable="true" >
+
+            <ImageView
+                android:id="@+id/imageViewCompassBorder"
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/outer_container" />
+
+            <RelativeLayout
+                android:id="@+id/image_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true" >
+
+                <ImageView
+                    android:id="@+id/imageViewCompass"
+                    android:layout_width="190dp"
+                    android:layout_height="190dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY" />
+
+                <ImageView
+                    android:id="@+id/imageViewPointer"
+                    android:layout_width="270dp"
+                    android:layout_height="270dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:adjustViewBounds="true" />
+            </RelativeLayout>
+
+
+
+
+
+            <TextView
+                android:id="@+id/tv_Degree"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/image_layout"
+                android:layout_above="@+id/tv_Warning"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="2dp"
+                android:gravity="left|bottom"
+                android:layout_marginTop="2dp"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/tv_Warning"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="3dp"
+                android:gravity="left|center_vertical"
+                android:textColor="@color/warning_text_color"
+                android:textSize="15dp" />
+
+
+
+        </RelativeLayout>
+    </RelativeLayout>
+    <ProgressBar
+        android:id="@+id/progressBarCompass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:visibility="gone" />
+
+</RelativeLayout>

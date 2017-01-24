@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="halal_places">Halal Places</string>
+    <string name="mosques">Nearby Mosques</string>
+    <string name="enable_location">Enable location from Settings</string>
+    <string name="toast_unable_find_places">Location Error</string>
+    <string name="location_error">Location Error</string>
+
+</resources>

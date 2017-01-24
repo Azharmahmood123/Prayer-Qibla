@@ -1,0 +1,77 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/map_frame"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <FrameLayout
+        android:id="@+id/frame_qibla"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+    </FrameLayout>
+
+
+    <TextView
+        android:id="@+id/tv_distance_qibla_map"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:padding="@dimen/size_five"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_fifteen"
+        android:textStyle="bold" />
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:orientation="horizontal">
+
+
+        <ImageView
+
+            android:id="@+id/iv_map_qibla_loc"
+            android:layout_width="@dimen/size_sixty"
+            android:layout_height="@dimen/size_sixty"
+            android:layout_marginTop="@dimen/size_ten"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/img_desrcptn"
+            android:padding="@dimen/size_five"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_qibla_map" />
+
+
+        <ImageView
+            android:id="@+id/iv_map_qibla_current_loc"
+            android:layout_width="@dimen/size_sixty"
+            android:layout_height="@dimen/size_sixty"
+            android:layout_marginTop="@dimen/size_ten"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/img_desrcptn"
+            android:padding="@dimen/size_five"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_current_loc" />
+
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/btn_change_view"
+        android:layout_width="@dimen/size_hundred"
+        android:layout_height="@dimen/size_fifty"
+        android:layout_above="@id/tv_distance_qibla_map"
+        android:layout_alignParentLeft="true"
+        android:src="@drawable/ic_map_img_1"
+        />
+
+</RelativeLayout>

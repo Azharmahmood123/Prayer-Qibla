@@ -1,0 +1,601 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/topLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        android:background="@color/actionbar_bg">
+
+        <LinearLayout
+            android:id="@+id/toolbar_btnBack"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+
+            android:background="@drawable/btn_hower"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="@dimen/_15sdp"
+                android:layout_height="@dimen/_15sdp"
+                android:src="@drawable/back" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txt_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:layout_toRightOf="@+id/toolbar_btnBack"
+            android:text="@string/settings"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_18sdp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/ads_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/adView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layerType="software"
+            ads:adSize="SMART_BANNER"
+            ads:adUnitId="@string/admob_id" />
+
+        <ImageView
+            android:id="@+id/adimg"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/size_fourty_eight"
+            android:adjustViewBounds="true"
+            android:clickable="true"
+            android:contentDescription="@string/img_desrcptn"
+            android:onClick="onClickAdImage"
+            android:scaleType="fitXY"
+            android:src="@drawable/adbanner1" />
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/btn_transparent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"
+        android:enabled="false"
+        android:visibility="gone" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/topLayout">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/size_five"
+            android:paddingLeft="@dimen/_1sdp"
+            android:paddingRight="@dimen/_1sdp"
+            android:paddingTop="@dimen/size_five"
+            android:splitMotionEvents="false">
+
+            <TextView
+                android:id="@+id/heading_salat_settings"
+                style="@style/setting_row_header"
+                android:text="@string/salat_timings" />
+
+
+            <RelativeLayout
+                android:id="@+id/row_auto_settings"
+                style="@style/setting_row_bg_s"
+                android:tag="0">
+
+                <TextView
+                    android:id="@+id/tv_auto_settings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center|left"
+                    android:text="@string/auto_settings"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_eighteen" />
+
+                <android.support.v7.widget.AppCompatCheckBox
+                    android:id="@+id/img_auto_settings"
+                    android:layout_width="@dimen/size_twenty_eight"
+                    android:layout_height="@dimen/size_twenty_eight"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/size_five"
+                    android:clickable="false"
+                    android:padding="@dimen/size_three"
+                    android:theme="@style/Color1SwitchStyle" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/_layout_salat_settings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <View style="@style/view_line_light_gray" />
+
+
+                <RelativeLayout
+                    android:id="@+id/row_daylight_saving"
+                    style="@style/setting_row_bg_s"
+                    android:tag="1">
+
+                    <TextView
+                        android:id="@+id/tv_daylight_saving"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="center|left"
+                        android:text="@string/daylight_saving"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_eighteen" />
+
+                    <android.support.v7.widget.AppCompatCheckBox
+                        android:id="@+id/img_daylight_saving"
+                        android:layout_width="@dimen/size_twenty_eight"
+                        android:layout_height="@dimen/size_twenty_eight"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/size_five"
+                        android:clickable="false"
+                        android:padding="@dimen/size_three"
+                        android:theme="@style/Color1SwitchStyle" />
+                </RelativeLayout>
+
+                <View style="@style/view_line_light_gray" />
+
+                <LinearLayout
+                    android:id="@+id/row_juristic"
+                    style="@style/setting_row_bg_l"
+                    android:orientation="vertical"
+                    android:tag="2">
+
+                    <TextView
+                        android:id="@+id/tv_juristic_head"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center|left"
+                        android:text="@string/juristic"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_eighteen" />
+
+                    <TextView
+                        android:id="@+id/tv_juristic_opt"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center|left"
+                        android:text="@string/standard"
+                        android:textColor="@color/gray_darkest"
+                        android:textSize="@dimen/text_size_fifteen" />
+                </LinearLayout>
+
+                <View style="@style/view_line_light_gray" />
+
+                <LinearLayout
+                    android:id="@+id/row_calculation"
+                    style="@style/setting_row_bg_l"
+                    android:orientation="vertical"
+                    android:tag="3">
+
+                    <TextView
+                        android:id="@+id/tv_calculatn_head"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center|left"
+                        android:text="@string/calculation_method"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_eighteen" />
+
+                    <TextView
+                        android:id="@+id/tv_calculatn_opt"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center|left"
+                        android:text="@string/mwl"
+                        android:textColor="@color/gray_darkest"
+                        android:textSize="@dimen/text_size_fifteen" />
+                </LinearLayout>
+
+                <View style="@style/view_line_light_gray" />
+
+
+                <LinearLayout
+                    android:id="@+id/row_corrections"
+                    style="@style/setting_row_bg_l"
+                    android:orientation="vertical"
+                    android:tag="13">
+
+                    <TextView
+                        android:id="@+id/tv_corrections"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center|left"
+                        android:text="@string/manual_corrections"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_eighteen" />
+
+                    <TextView
+                        android:id="@+id/tv_corrections_opt"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center|left"
+                        android:text="0, 0, 0, 0, 0, 0"
+                        android:textColor="@color/gray_darkest"
+                        android:textSize="@dimen/text_size_fifteen" />
+                </LinearLayout>
+
+                <View style="@style/view_line_light_gray" />
+
+
+                <LinearLayout
+                    android:id="@+id/row_latd_adjst"
+                    style="@style/setting_row_bg_l"
+                    android:orientation="vertical"
+                    android:tag="4">
+
+                    <TextView
+                        android:id="@+id/tv_latd_adjst_head"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center|left"
+                        android:text="@string/latitude_adjustment"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_eighteen" />
+
+                    <TextView
+                        android:id="@+id/tv_latd_adjst_opt"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center|left"
+                        android:text="@string/none"
+                        android:textColor="@color/gray_darkest"
+                        android:textSize="@dimen/text_size_fifteen" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <View style="@style/view_line_light_gray" />
+
+            <LinearLayout
+                android:id="@+id/row_adhan_sound"
+                style="@style/setting_row_bg_l"
+                android:orientation="vertical"
+                android:tag="5">
+
+                <TextView
+                    android:id="@+id/tv_tone_settings_head"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center|left"
+                    android:text="@string/tone_settings"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_fifteen" />
+
+                <TextView
+                    android:id="@+id/tv_tone_opt"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center|left"
+                    android:text="@string/default_tone"
+                    android:textColor="@color/gray_darkest"
+                    android:textSize="@dimen/text_size_fifteen" />
+            </LinearLayout>
+
+
+            <View
+                style="@style/view_line_light_gray"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/row_auto_selection"
+                style="@style/setting_row_bg_l"
+                android:orientation="vertical"
+                android:tag="14"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/tv_auto_selection_head"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center|left"
+                    android:text="@string/auto_edit_alarm"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_fifteen" />
+
+                <TextView
+                    android:id="@+id/tv_auto_selection_opt"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center|left"
+                    android:text="@string/auto_edit_alarm_option_1"
+                    android:textColor="@color/gray_darkest"
+                    android:textSize="@dimen/text_size_fifteen" />
+            </LinearLayout>
+
+
+            <View
+                style="@style/view_line_light_gray"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/row_advance_help"
+                style="@style/setting_row_bg_l"
+                android:orientation="vertical"
+                android:tag="6"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/tv_advance_help"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center|left"
+                    android:text="@string/advance_help"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_eighteen" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/heading_surahs_settings"
+                style="@style/setting_row_header"
+                android:text="@string/quran" />
+
+
+            <RelativeLayout
+                android:id="@+id/row_surah_translation"
+
+                style="@style/setting_row_bg_l"
+                android:tag="7">
+
+                <LinearLayout
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_translation_settings"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center|left"
+                        android:text="@string/text_translation_setting"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_fifteen" />
+
+                    <TextView
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:id="@+id/tv_translation"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center|left"
+                        android:text="None"
+                        android:textColor="@color/gray_darkest"
+                        android:textSize="@dimen/text_size_fifteen" />
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <View style="@style/view_line_light_gray" />
+
+            <RelativeLayout
+                android:id="@+id/row_surah_translitration"
+                style="@style/setting_row_bg_s"
+                android:tag="8"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/tv_transliteration_settings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center|left"
+                    android:text="@string/txt_transliteration"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_eighteen" />
+
+                <android.support.v7.widget.AppCompatCheckBox
+                    android:id="@+id/img_transliteration_settings"
+                    android:layout_width="@dimen/size_twenty_eight"
+                    android:layout_height="@dimen/size_twenty_eight"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/size_five"
+                    android:clickable="false"
+                    android:padding="@dimen/size_three"
+                    android:theme="@style/Color1SwitchStyle" />
+            </RelativeLayout>
+
+            <View
+                style="@style/view_line_light_gray"
+                android:visibility="gone" />
+
+            <RelativeLayout
+                android:id="@+id/row_ayah_of_day"
+                style="@style/setting_row_bg_l"
+                android:tag="10">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_ayah_of_day"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="center|left"
+                        android:text="@string/aya_of_day"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_eighteen" />
+
+                    <TextView
+                        android:id="@+id/tv_ayah_notify_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center|left"
+                        android:text="@string/standard"
+                        android:textColor="@color/gray_darkest"
+                        android:textSize="@dimen/text_size_fifteen"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <android.support.v7.widget.AppCompatCheckBox
+                    android:id="@+id/img_ayah_of_day"
+                    android:layout_width="@dimen/size_twenty_eight"
+                    android:layout_height="@dimen/size_twenty_eight"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/size_five"
+                    android:clickable="false"
+                    android:padding="@dimen/size_three"
+                    android:theme="@style/Color1SwitchStyle" />
+            </RelativeLayout>
+
+            <View style="@style/view_line_light_gray" />
+
+            <LinearLayout
+                android:id="@+id/surah_reset_setting"
+                style="@style/setting_row_bg_l"
+                android:layout_centerVertical="true"
+                android:background="@drawable/btn_hower"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center|left"
+                    android:text="@string/text_reset_quran_setting"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_eighteen" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/heading_duas_settings"
+                style="@style/setting_row_header"
+                android:text="@string/duas" />
+
+
+            <RelativeLayout
+                android:id="@+id/row_surah_translation_duas"
+                style="@style/setting_row_bg_s"
+                android:tag="11">
+
+                <TextView
+                    android:id="@+id/tv_translation_settings_dua"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center|left"
+                    android:text="@string/txt_translation"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_eighteen" />
+
+                <android.support.v7.widget.AppCompatCheckBox
+                    android:id="@+id/img_translation_settings_dua"
+                    android:layout_width="@dimen/size_twenty_eight"
+                    android:layout_height="@dimen/size_twenty_eight"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/size_five"
+                    android:clickable="false"
+                    android:padding="@dimen/size_three"
+                    android:theme="@style/Color1SwitchStyle" />
+            </RelativeLayout>
+
+            <View style="@style/view_line_light_gray" />
+
+            <RelativeLayout
+                android:id="@+id/row_surah_translitration_dua"
+                style="@style/setting_row_bg_s"
+                android:tag="12">
+
+                <TextView
+                    android:id="@+id/tv_transliteration_settings_dua"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center|left"
+                    android:text="@string/txt_transliteration"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_eighteen" />
+
+                <android.support.v7.widget.AppCompatCheckBox
+                    android:id="@+id/img_transliteration_settings_dua"
+                    android:layout_width="@dimen/size_twenty_eight"
+                    android:layout_height="@dimen/size_twenty_eight"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/size_five"
+                    android:clickable="false"
+                    android:padding="@dimen/size_three"
+                    android:theme="@style/Color1SwitchStyle" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/row_general_settings_head"
+                style="@style/setting_row_header"
+                android:text="@string/general" />
+
+            <View style="@style/view_line_light_gray" />
+
+            <Button
+                android:id="@+id/btn_reset_all"
+                style="@style/setting_row_bg_l"
+                android:gravity="center|left"
+                android:tag="9"
+                android:text="@string/reset_all"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_eighteen" />
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="halal_places">Tempat Halal Terdekat</string>
+    <string name="mosques">Masjid Terdekat</string>
+    <string name="enable_location">Aktifkan Lokasi dari Settings</string>
+    <string name="toast_unable_find_places">Lokasi Kesalahan</string>
+    <string name="location_error">Lokasi Kesalahan</string>
+    
+</resources>

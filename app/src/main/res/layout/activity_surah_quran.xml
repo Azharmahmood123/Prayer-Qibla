@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:splitMotionEvents="false" >
+
+    <RelativeLayout
+        android:id="@+id/tabbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/ic_actionbar_size"
+        android:background="@color/header"
+        android:elevation="@dimen/size_four" >
+
+        <RelativeLayout
+            android:id="@+id/layout_drawer_menu_ic"
+            android:layout_width="@dimen/ic_actionbar_size"
+            android:layout_height="@dimen/ic_actionbar_size"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/bg_drawer_menu"
+            android:onClick="onBackButtonClick" >
+
+            <ImageView
+                android:id="@+id/imgbtn_drawer_menu"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/img_desrcptn"
+                android:padding="@dimen/back_actionbar_padding"
+                android:scaleType="fitCenter"
+                android:src="@drawable/back" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tvHeadingSurah"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toLeftOf="@+id/layout_settings_surahs"
+            android:layout_toRightOf="@+id/layout_drawer_menu_ic"
+            android:gravity="center|left"
+            android:paddingLeft="@dimen/size_five"
+            android:text="@string/surah_yasin"
+            android:textColor="@color/white"
+            android:textSize="@dimen/actionbar_text_size" />
+
+        <RelativeLayout
+            android:id="@+id/layout_settings_surahs"
+            android:layout_width="@dimen/ic_actionbar_size"
+            android:layout_height="@dimen/ic_actionbar_size"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/bg_drawer_menu"
+            android:onClick="onSettingsSurahClick" >
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/img_desrcptn"
+                android:padding="@dimen/size_ten"
+                android:scaleType="fitCenter"
+                android:src="@drawable/settng_r" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btns_layout"
+        android:layout_below="@+id/tabbar"
+        android:cacheColorHint="@android:color/transparent"
+        android:splitMotionEvents="false" >
+    </ListView>
+
+    <LinearLayout
+        android:id="@+id/btns_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_fourty_five"
+        android:layout_above="@+id/ads_layout"
+        android:background="@color/header"
+        android:baselineAligned="false"
+        android:orientation="horizontal"
+        android:splitMotionEvents="false" >
+
+        <ImageView
+            android:id="@+id/btn_audio"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="onPlayClick"
+            android:src="@drawable/play_btn" />
+
+        <ImageView
+            android:id="@+id/btn_stop"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="onStopClick"
+            android:src="@drawable/stop_btn" />
+
+        <ImageView
+            android:id="@+id/btn_previous"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:enabled="false"
+            android:onClick="onPreviousClick"
+            android:src="@drawable/previous_bg" />
+
+        <ImageView
+            android:id="@+id/btn_next"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:enabled="false"
+            android:onClick="onNextClick"
+            android:src="@drawable/next_bg" />
+
+        <ImageView
+            android:id="@+id/btn_repeat"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:enabled="false"
+            android:onClick="onRepeatClick"
+            android:src="@drawable/bg_repeat_off"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/btn_lastread"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.5"
+            android:enabled="false"
+            android:onClick="onLastRead"
+            android:src="@drawable/btn_last_read"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/goToTxt"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:gravity="center_vertical|center_horizontal"
+            android:onClick="openGoTo"
+            android:text="@string/goto_txt"
+            android:textColor="@drawable/text_goto"
+            android:textSize="@dimen/text_size_seventeen"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/ads_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:splitMotionEvents="false" >
+
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/adView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            ads:adSize="SMART_BANNER"
+            ads:adUnitId="@string/admob_id_quran_banner"
+            android:layerType="software" />
+
+        <ImageView
+            android:id="@+id/adimg"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/size_fourty_eight"
+            android:adjustViewBounds="true"
+            android:clickable="true"
+            android:onClick="onClickAdImage"
+            android:scaleType="fitXY"
+            android:src="@drawable/adbanner1" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/ayah_options_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_thirty_five"
+        android:layout_below="@+id/tabbar"
+        android:background="#75000000"
+        android:splitMotionEvents="false"
+        android:visibility="gone" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:splitMotionEvents="false" >
+
+            <Button
+                android:id="@+id/btn_ayah_share"
+                android:layout_width="@dimen/size_twenty_eight"
+                android:layout_height="@dimen/size_twenty_eight"
+                android:background="@drawable/btn_ayah_share"
+                android:onClick="onClickAyahOptions" />
+
+            <Button
+                android:id="@+id/btn_bookmark"
+                android:layout_width="@dimen/size_twenty_eight"
+                android:layout_height="@dimen/size_twenty_eight"
+                android:layout_marginLeft="@dimen/size_fifty"
+                android:background="@drawable/btn_opt_bookmark"
+                android:onClick="onClickAyahOptions" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_close"
+            android:layout_width="@dimen/size_twenty_eight"
+            android:layout_height="@dimen/size_twenty_eight"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/size_ten"
+            android:background="@drawable/btn_cross"
+            android:onClick="onClickAyahOptions" />
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" />
+
+    <Button
+        android:id="@+id/btn_transparent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"
+        android:enabled="false" />
+
+    <!-- Start of Calibration Screen -->
+
+
+    <!--
+    <RelativeLayout
+        android:id="@+id/layout_main_calibration"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#D9000000"
+        android:splitMotionEvents="false"
+        android:visibility="visible" >
+
+        <RelativeLayout
+            android:id="@+id/tab_layout_calibration"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_fourty_five"
+            android:layout_alignParentTop="true"
+            android:background="@color/transperent"
+            android:splitMotionEvents="false" >
+
+            <ImageView
+                android:id="@+id/icon_settings"
+                android:layout_width="@dimen/size_fourty"
+                android:layout_height="@dimen/size_fourty"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/size_five"
+                android:background="@drawable/circle_bg"
+                android:src="@drawable/btn_setting" />
+
+            <ImageView
+                android:layout_width="@dimen/size_sixty"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/icon_settings"
+                android:src="@drawable/hath" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_below="@+id/tab_layout_calibration"
+            android:layout_marginTop="@dimen/size_twenty" >
+
+            <TextView
+                android:id="@+id/tv_calibration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingBottom="@dimen/size_twenty_eight"
+                android:paddingLeft="@dimen/size_fifteen"
+                android:paddingRight="@dimen/size_twelve"
+                android:paddingTop="@dimen/size_twelve"
+                android:text="@string/calibration_msg"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_twenty"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_Done_"
+                android:layout_width="@dimen/size_hundred"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_calibration"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/back_done_button"
+                android:clickable="true"
+                android:gravity="center"
+                android:onClick="onCalibrationClick"
+                android:paddingBottom="@dimen/size_ten"
+                android:paddingTop="@dimen/size_ten"
+                android:text="@string/got_it"
+                android:textColor="#FFFFFF"
+                android:textSize="@dimen/text_size_twenty" />
+        </RelativeLayout>
+    </RelativeLayout>
+    -->
+
+
+    <!-- End of Calibration Screen -->
+
+</RelativeLayout>

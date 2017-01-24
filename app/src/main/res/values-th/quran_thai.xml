@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="aya_of_day">กลอนของวัน</string>
+    <string name="quran">คัมภีร์กุรอาน</string>
+    
+    <string name="search">ค้นหา</string>
+    <string name="txt_sajdahs">กราบ</string>
+    <string name="txt_bookmarks">ที่ชื่นชอบ</string>
+    <string name="no_bookmarks_added">ไม่มีบุ๊คมาร์คเพิ่ม</string>
+    <string name="added_to_bookmarks">เพิ่มบุ๊คมาร์ก</string>
+    <string name="removed_from_bookmark">ลบออกจากบุ๊ก</string>
+    
+    <string name="download">ดาวน์โหลด</string>
+    <string name="download_msg">คุณต้องการที่จะดาวน์โหลด</string>
+    <string name="downloading_in_progress">ความคืบหน้าในการดาวน์โหลด</string>        
+    <string name="already_downloaded">ดาวน์โหลดแล้ว</string>
+    <string name="alert">เตือนภัย</string>
+ 
+    <string name="disclaimer_quran_1">app นี้เป็นความพยายามของมนุษย์และได้รับการพัฒนาด้วยความตั้งใจที่ดีที่สุด ความผิดพลาดใด ๆ ในเนื้อหาที่เป็น undeliberate และกำหนดให้เป็นมนุษย์ที่แท้จริง แต่ถ้าคุณสังเกตเห็นความผิดพลาดหรือข้อผิดพลาดใด ๆ โปรดแจ้งให้เราทราบและเราจะแก้ปัญหาได้อย่างเร็วที่สุด</string>
+    <string name="disclaimer_quran_2">ข้อความของ app นี้จะได้รับจาก Tanzil.net ขณะที่ก่อเสียงมาจาก Versebyversequran.com เราไม่ได้เรียกร้องเนื้อหาหรือการบรรยายและสิทธิทั้งหมดที่จะให้พวกเขาเป็นของเจ้าของเดิม</string>   
+   
+    <string name="warning">การเตือน</string>
+    <string name="warning_msg">กรณี เมทัลลิ หรือปิดแม่เหล็กอาจก่อให้เกิดการรบกวน</string>
+    
+    <string name="disclaimer">คำปฏิเสธ</string>
+    <string name="time">เวลา</string>
+    
+    <string name="txt_stop_signs">ป้ายหยุด</string>
+    <string name="txt_stop_sign_detail_1">ได้รับคำสั่งหยุด - มิฉะนั้นความหมายที่มีการเปลี่ยนแปลง</string>
+    <string name="txt_stop_sign_detail_2">หยุด - สิ้นสุดส่วน</string>
+    <string name="txt_stop_sign_detail_3">ควรหยุด - สิ้นสุดของประโยค</string>
+    <string name="txt_stop_sign_detail_4">ดีกว่าที่จะหยุด</string>
+    <string name="txt_stop_sign_detail_5">สามารถหยุดหรือยังคง</string>
+    <string name="txt_stop_sign_detail_6">จะต้องดำเนินการสามารถใช้ลมหายใจ</string>
+    <string name="txt_stop_sign_detail_7">จะต้องดำเนินการสามารถใช้ลมหายใจ</string>
+    <string name="txt_stop_sign_detail_8">จะต้องดำเนินการสามารถใช้ลมหายใจ</string>
+    <string name="txt_stop_sign_detail_9">ดีกว่าไม่ได้ที่จะหยุด</string>
+    <string name="txt_stop_sign_detail_10">หยุดที่ครั้งแรกหรือครั้งที่สอง แต่ไม่ได้ทั้ง</string>
+    <string name="txt_stop_sign_detail_11">ดีกว่าที่จะหยุด แต่ได้รับอนุญาตให้ดำเนินการต่อ</string>
+    <string name="txt_stop_sign_detail_12">ดีกว่าที่จะดำเนินการต่อไป แต่อนุญาตให้หยุด</string>
+    <string name="txt_stop_sign_detail_13">มันจะดีกว่าที่จะไม่หยุด</string>
+    
+   </resources>

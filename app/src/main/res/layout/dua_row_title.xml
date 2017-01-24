@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/size_five"
+    android:paddingRight="@dimen/size_five" >
+
+    <RelativeLayout
+        android:id="@+id/index_row"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_sixty_five"
+        android:background="@drawable/bg_row_corners" >
+
+        <TextView
+            android:id="@+id/tvDuaTitle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/layout_no"
+            android:gravity="center|left"
+            android:paddingLeft="@dimen/size_fifteen"
+            android:paddingRight="@dimen/size_fifteen"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_timings_row_1" />
+    </RelativeLayout>
+
+    <View style="@style/view_transparent_line" />
+
+</LinearLayout>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="aya_of_day">Günün ayet</string>
+    <string name="quran">Kuran</string>
+    
+    <string name="search">Arama</string>
+    <string name="txt_bookmarks">Yer imleri</string>
+    <string name="no_bookmarks_added">Hiçbir Favori Eklendi</string>
+    <string name="added_to_bookmarks">İlave Favori</string>
+    <string name="removed_from_bookmark">Dan silindi Favori</string>
+    
+    <string name="download">indir</string>
+    <string name="download_msg">Eğer indirin istiyorsun</string>
+    <string name="downloading_in_progress">Devam İndir</string>        
+    <string name="already_downloaded">zaten İndirildi</string>
+    <string name="alert">uyanık</string>
+ 
+    <string name="disclaimer_quran_1">Bu uygulama, bir insan çaba ve iyi niyetle geliştirilmiştir. içeriğinde herhangi bir hata undeliberate nedeniyle sırf insancıllığı etmektir. Eğer herhangi bir hata veya hatalar fark Ancak, bize bildirin ve biz erken çözecektir lütfen.</string>
+    <string name="disclaimer_quran_2">ses recitations Versebyversequran.com gelirken bu uygulamanın metin Tanzil.net elde edilir. Biz içerik veya okunması ve esas sahiplerine aittir onlara tüm hakları iddia etmiyorum.</string>
+   
+    <string name="warning">Uyarı</string>
+    <string name="warning_msg">Madeni durumlarda veya girişimlere sebep olabilir manyetik kapatma</string>
+    
+    <string name="disclaimer">Feragat</string>
+    <string name="time">Zaman</string>
+    
+    <string name="txt_stop_signs">Dur İşaretler</string>
+    <string name="txt_stop_sign_detail_1">Zorunlu durağı - Aksi anlam değiştirilir</string>
+    <string name="txt_stop_sign_detail_2">Dur - Bir bölümün sonu</string>
+    <string name="txt_stop_sign_detail_3">Durdurmak gerekir - bir cümlenin sonu</string>
+    <string name="txt_stop_sign_detail_4">Durdurmak için daha iyi</string>
+    <string name="txt_stop_sign_detail_5">Durdurmak veya devam edebilir miyim</string>
+    <string name="txt_stop_sign_detail_6">Bir nefes alabilir, devam etmelidir</string>
+    <string name="txt_stop_sign_detail_7">Bir nefes alabilir, devam etmelidir</string>
+    <string name="txt_stop_sign_detail_8">Bir nefes alabilir, devam etmelidir</string>
+    <string name="txt_stop_sign_detail_9">Durdurmak için değil daha iyi</string>
+    <string name="txt_stop_sign_detail_10">Birinci veya ikinci durdurmak değil hem</string>
+    <string name="txt_stop_sign_detail_11">Durdurmak için daha iyi ama devam etmek caiz</string>
+    <string name="txt_stop_sign_detail_12">Devam etmek için daha iyi ama durdurmak için izin</string>
+    <string name="txt_stop_sign_detail_13">Durdurmak için iyi değildir</string>
+    
+   </resources>

@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_background"
+    android:orientation="vertical"
+    android:splitMotionEvents="false">
+
+
+    <RelativeLayout
+        android:id="@+id/layout_surahlist_top"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_fifty"
+        android:paddingTop="@dimen/size_five"
+        android:splitMotionEvents="false"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:id="@+id/layout_surah_options"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:splitMotionEvents="false">
+
+            <ImageView
+                android:id="@+id/btn_option_sajda"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/size_five"
+                android:layout_weight="1"
+                android:background="@drawable/bg_row_corners"
+                android:src="@drawable/sajdah" />
+
+            <ImageView
+                android:id="@+id/btn_option_stopsigns"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/size_five"
+                android:layout_weight="1"
+                android:background="@drawable/bg_row_corners"
+                android:src="@drawable/stop" />
+
+            <ImageView
+                android:id="@+id/btn_option_bookmark"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/size_five"
+                android:layout_weight="1"
+                android:background="@drawable/bg_row_corners"
+                android:src="@drawable/favorite" />
+
+            <ImageView
+                android:id="@+id/btn_option_lastread"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/size_five"
+                android:layout_weight="1"
+                android:background="@drawable/bg_row_corners"
+                android:src="@drawable/bookmark" />
+
+            <ImageView
+                android:id="@+id/btn_option_search"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/size_five"
+                android:layout_weight="1"
+                android:background="@drawable/bg_row_corners"
+                android:src="@drawable/ic_search" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_surah_search"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_row_corners"
+            android:orientation="horizontal"
+            android:splitMotionEvents="false"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/btn_search_back"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_weight="1"
+                android:padding="@dimen/size_five"
+                android:src="@drawable/ic_search_back" />
+
+            <EditText
+                android:id="@+id/edit_search"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:background="@android:color/transparent"
+                android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-&apos;"
+                android:hint="@string/search"
+                android:maxLength="15"
+                android:paddingLeft="@dimen/size_ten"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textColorHint="@color/progress_primary_color"
+                android:textSize="@dimen/text_size_eighteen"></EditText>
+
+            <ImageView
+                android:id="@+id/btn_search_cross"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_weight="1"
+                android:padding="@dimen/size_five"
+                android:src="@drawable/ic_search_cross" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+
+        android:id="@+id/index_last_read"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:paddingLeft="@dimen/size_five"
+        android:paddingRight="@dimen/size_five">
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            android:background="@drawable/bg_row_corners">
+            <!-- android:background="@drawable/bg_row_corners"-->
+
+            <LinearLayout
+                android:id="@+id/layout_index_details"
+                android:layout_width="@dimen/size_hundred_eighty"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/bookmark"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/size_fifteen"
+                android:paddingRight="@dimen/size_five">
+
+                <TextView
+                    android:id="@+id/tvEnglishSurrah"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Surah Fatiha"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_16sdp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_three"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/verses_no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="V"
+                        android:textColor="@color/gray_darkest"
+                        android:textSize="@dimen/_10sdp" />
+
+                    <TextView
+                        android:id="@+id/makih_madni"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="Madni"
+                        android:textColor="@color/gray_darkest"
+                        android:textSize="@dimen/_10sdp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txt_arabic_surrah"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical"
+                android:paddingRight="@dimen/size_twelve"
+                android:text="الفاتحة"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_16sdp" />
+
+            <ImageView
+                android:id="@+id/bookmark"
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/lastread_icon"
+                android:padding="@dimen/size_five" />
+        </RelativeLayout>
+
+        <View style="@style/view_transparent_line" />
+
+    </LinearLayout>
+
+
+    <ListView
+        android:id="@+id/listViewSurahsList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/layout_surahlist_top"
+        android:layout_marginTop="@dimen/_6sdp"
+        android:divider="#00000000"
+        android:dividerHeight="0dp"
+        android:listSelector="#00000000"
+        android:scrollbars="none"></ListView>
+
+</LinearLayout>

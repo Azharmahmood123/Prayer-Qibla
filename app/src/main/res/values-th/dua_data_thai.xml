@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="duas_list">รายการสวดมนต์</string>
+    <string name="dua_detail">สวดมนต์รายละเอียด</string>
+    
+    <string name="duas">การอธิษฐาน</string>
+    <string name="halal_finder">ค้นหาฮาลาล</string>
+    <string name="mosque_finder">มัสยิดที่อยู่ใกล้เคียง</string>
+    
+    <string name="duas_sub">การอธิษฐาน สำหรับทุกโอกาส</string>
+    <string name="halal_finder_sub">พบกับร้านอาหารที่อยู่ใกล้เคียง\nกับอาหารฮาลาล</string>
+    <string name="mosque_finder_sub">ค้นหามัสยิดที่อยู่ใกล้เคียง\nรอบ ๆ คุณ</string>
+
+    <string name="more">มากกว่า</string>
+
+</resources>

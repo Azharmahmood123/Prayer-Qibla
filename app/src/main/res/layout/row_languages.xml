@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/size_fifty"
+    android:background="@drawable/bg_row_flat" >
+
+    <TextView
+        android:id="@+id/tv_language"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_fifty"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/size_fifteen"
+        android:layout_toLeftOf="@+id/img_selection"
+        android:gravity="center|left"
+        android:paddingLeft="@dimen/size_ten"
+        android:textColor="@drawable/menu_row_text_color"
+        android:textSize="@dimen/text_size_timings_row_1" />
+
+    <ImageView
+        android:id="@+id/img_selection"
+        android:layout_width="@dimen/size_twenty_two"
+        android:layout_height="@dimen/size_twenty_two"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/size_fifteen"
+        android:layout_marginRight="@dimen/size_fifteen"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/img_desrcptn"
+        android:scaleType="fitCenter"
+        android:src="@drawable/radio" />
+
+</RelativeLayout>

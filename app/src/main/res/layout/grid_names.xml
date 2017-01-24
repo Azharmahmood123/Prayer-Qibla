@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/gridviewNames"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/size_five"
+    android:gravity="center"
+    android:horizontalSpacing="@dimen/size_five"
+    android:listSelector="@android:color/transparent"
+    android:numColumns="3"
+    android:paddingTop="@dimen/size_five"
+    android:rotationY="180"
+    android:scrollbars="none"
+    android:stretchMode="columnWidth"
+    android:verticalSpacing="@dimen/size_five" >
+
+</GridView>

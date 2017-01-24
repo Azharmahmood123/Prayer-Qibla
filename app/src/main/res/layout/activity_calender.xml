@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_background"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:id="@+id/tabbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        android:background="@color/header"
+        android:elevation="@dimen/size_four">
+
+        <RelativeLayout
+            android:id="@+id/layout_drawer_menu_ic"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+
+            android:background="@drawable/bg_drawer_menu"
+            android:onClick="onBackButtonClick">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/img_desrcptn"
+                android:padding="@dimen/_17sdp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/back" />
+        </RelativeLayout>
+
+        <TextView
+
+            android:gravity="center_vertical"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+
+            android:text="@string/activity_calender"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:textSize="@dimen/_18sdp"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_3sdp"
+        android:weightSum="3">
+
+        <android.support.v7.widget.CardView xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_margin="@dimen/_3sdp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:splitMotionEvents="false"
+            app:cardCornerRadius="@dimen/_5sdp"
+            app:cardUseCompatPadding="false">
+
+            <Button
+                android:id="@+id/btn_Today"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/btn_hower"
+                android:text="Today"
+                android:textAllCaps="false"
+                android:textSize="@dimen/_14sdp" />
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_margin="@dimen/_3sdp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:splitMotionEvents="false"
+            app:cardCornerRadius="@dimen/_5sdp"
+            app:cardUseCompatPadding="false">
+
+            <Button
+                android:id="@+id/btn_Converter"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/btn_hower"
+                android:text="Converter"
+                android:textAllCaps="false"
+                android:textSize="@dimen/_14sdp" />
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_margin="@dimen/_3sdp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:splitMotionEvents="false"
+            app:cardCornerRadius="@dimen/_5sdp"
+            app:cardUseCompatPadding="false">
+
+            <Button
+                android:id="@+id/btn_Event"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/btn_hower"
+                android:text="Events"
+                android:textAllCaps="false"
+                android:textSize="@dimen/_14sdp" />
+        </android.support.v7.widget.CardView>
+
+
+    </LinearLayout>
+
+    <!-- Framelayout to display Fragments -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:id="@+id/frame_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/linearAd" />
+
+        <LinearLayout
+            android:id="@+id/linearAd"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical"></LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

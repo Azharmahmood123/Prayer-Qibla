@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="txt_instrct1">Vedrete tre schede principali; Qibla, Salat e sure.</string>
+    <string name="txt_instrct2">Troverete un icona del menu nell\'angolo in alto a sinistra della schermata principale, tocca per aprire il cassetto di navigazione. Sono disponibili le seguenti opzioni.</string>
+    <string name="txt_instrct2_1">Scheda "selezionare Chiamate" ti dà sei diversi quadranti che possono essere selezionate secondo il vostro gradimento.</string>
+    <string name="txt_instrct2_2">Toccare l\'opzione "annunciare Rimuovi" se non ti piace vedere gli annunci durante l\'uso dell\'applicazione.</string>
+    <string name="txt_instrct2_3">Selezionare "Impostazioni" visualizza scheda tutte le impostazioni relative a ciascuna scheda.</string>
+    <string name="txt_instrct2_4">Toccare "Lingue" opzione per modificare la lingua dell\'applicazione.</string>
+    <string name="txt_instrct2_5">È possibile scaricare un sacco di altre applicazioni islamici interattive sviluppate da Quran lettura utilizzando l\'opzione "Più applicazioni"</string>
+    <string name="txt_instrct2_6">Condividi la tua esperienza con i tuoi amici e parenti su molti siti di sociale media, utilizzando l\'opzione "Condividi"</string>
+    <string name="txt_instrct2_7">Aiutaci a migliorare l\'applicazione dando il vostro feedback da opzione "retroazione"</string>
+    <string name="txt_instrct2_8">Chi siamo scheda fornisce informazioni aziendali e la versione dell\'applicazione.</string>
+    <string name="txt_instrct3">Vai alla scheda "preghiera" per vedere i tempi di preghiera secondo la vostra posizione. Inoltre, è possibile modificare i tempi di preghiera e di impostare allarmi in base al vostro agio.</string>
+    <string name="txt_instrct4">Vai a "senso di Qibla" tab per vedere esatta direzione di Qibla secondo la vostra posizione.</string>
+
+    
+    <string name="txt_instruct_surahs">Vai alla scheda sure a recitare e ascoltare sure.</string>
+    <string name="txt_note_instruct">Prego notare: Angolo di dispositivo per modifiche Qibla lungo movimento dispositivo. Agitare dispositivo e di collocarlo sulla superficie piana orizzontale. Si prega di non spostare il dispositivo quando sono immessi su una superficie piana. Anche tenere roba metallica lontano dal tuo dispositivo..</string>
+</resources>

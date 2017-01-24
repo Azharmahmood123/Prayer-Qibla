@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="halal_places">สถานที่ใกล้เคียงฮาลาล</string>
+    <string name="mosques">มัสยิดที่อยู่ใกล้เคียง</string>
+    <string name="enable_location">เปิดใช้งานตำแหน่งจากการตั้งค่า</string>
+    <string name="toast_unable_find_places">ข้อผิดพลาดที่ตั้ง</string>
+    <string name="location_error">ข้อผิดพลาดที่ตั้ง</string>
+    
+</resources>

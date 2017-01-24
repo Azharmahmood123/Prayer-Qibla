@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="aya_of_day">Ayah of the Day</string>
+    
+    <string name="quran">Quran</string>
+
+    <string name="search">Search</string>
+    <string name="txt_bookmarks">Bookmarks</string>
+    <string name="no_bookmarks_added">No Bookmarks Added</string>
+    <string name="added_to_bookmarks">Added to Bookmarks</string>
+    <string name="removed_from_bookmark">Removed from Bookmarks</string>
+    
+    <string name="download">Download</string>
+    <string name="download_msg">Do you want to Download</string>
+    <string name="downloading_in_progress">Downloading In Progress</string>
+    <string name="already_downloaded">Please Wait...</string>
+    <string name="alert">Alert</string>
+    
+    <string name="disclaimer_quran_1">This app is a human effort and it was developed with the best intentions. Any mistake in the content is undeliberate and due to sheer humanness. However, if you notice any mistake or errors please notify us and we will resolve it at the earliest.</string>
+    <string name="disclaimer_quran_2">The text of this app is obtained from Tanzil.net while the audio recitations come from Versebyversequran.com. We do not claim the content or recitation and all the rights to them belong to the original owners.</string>
+
+    <string name="warning">Warning</string>
+    <string name="warning_msg">Metallic cases or magnetic closure may cause interferences</string>
+    
+    <string name="disclaimer">Disclaimer</string>
+    <string name="time">Time</string>
+    
+    <string name="txt_stop_signs">Stop Signs</string>
+    <string name="txt_stop_sign_detail_1">Compulsory stop – Otherwise meaning is changed</string>
+    <string name="txt_stop_sign_detail_2">Stop – End of a section</string>
+    <string name="txt_stop_sign_detail_3">Should stop – End of a sentence</string>
+    <string name="txt_stop_sign_detail_4">Better to stop</string>
+    <string name="txt_stop_sign_detail_5">Can stop or continue</string>
+    <string name="txt_stop_sign_detail_6">Must continue, can take a breath</string>
+    <string name="txt_stop_sign_detail_7">Must continue, can take a breath</string>
+    <string name="txt_stop_sign_detail_8">Must continue, can take a breath</string>
+    <string name="txt_stop_sign_detail_9">Better NOT to stop</string>
+    <string name="txt_stop_sign_detail_10">Stop at the first or the second but not at both</string>
+    <string name="txt_stop_sign_detail_11">Better to stop but permissible to continue</string>
+    <string name="txt_stop_sign_detail_12">Better to continue but permissible to stop</string>
+    <string name="txt_stop_sign_detail_13">It is better not to stop</string>
+</resources>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/nameLayout"
+                android:layout_width="@dimen/size_two_hundred_twenty"
+                android:layout_height="@dimen/size_two_hundred_twenty"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/bg_row_corners"
+                android:gravity="center"
+                android:orientation="vertical" >
+
+
+                <TextView
+                    android:id="@+id/tv_name_arabic"
+                    android:layout_width="@dimen/size_hundred_eighty"
+                    android:layout_height="@dimen/size_hundred_eighty"
+                    android:textSize="@dimen/size_fifty_five"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+
+                    />
+
+
+
+<!--                <ImageView
+                    android:id="@+id/nameImage"
+                    android:layout_width="@dimen/size_hundred_eighty"
+                    android:layout_height="@dimen/size_hundred_eighty"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_about" />-->
+
+                <TextView
+                    android:id="@+id/nameTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Ar-Rehman"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_twenty_two" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/meaingTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:text="The Most Merciful"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_fifteen" />
+
+            <TextView
+                android:id="@+id/detailTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:padding="@dimen/size_twenty"
+                android:text="Ithis is the meaning of life \n alsdfjl;asjkdf  \n kjalsdf "
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_fifteen" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

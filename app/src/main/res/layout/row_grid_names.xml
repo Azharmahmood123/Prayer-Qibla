@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="@dimen/size_hundred_twenty"
+    android:background="@drawable/bg_row_corners" >
+
+    <RelativeLayout
+        android:layout_width="@dimen/size_hundred_twenty"
+        android:layout_height="@dimen/size_hundred_twenty"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:rotationY="180" >
+
+        <ImageView
+            android:id="@+id/ivNames"
+            android:layout_width="@dimen/size_seventy"
+            android:layout_height="@dimen/size_seventy"
+            android:layout_centerHorizontal="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/g_item1" />
+
+        <TextView
+            android:id="@+id/tvNames"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ivNames"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_horizontal"
+            android:maxLines="2"
+            android:padding="@dimen/size_five"
+            android:text="99 Names"
+            android:textSize="@dimen/text_size_fifteen" />
+    </RelativeLayout>
+
+</RelativeLayout>

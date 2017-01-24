@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_50sdp"
+    android:background="?attr/colorPrimary"
+    android:orientation="vertical"
+    >
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/lldrawer"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+
+                android:id="@+id/toolbar_btnSearch"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:background="@drawable/ic_search"
+                android:visibility="visible" />
+
+            <ImageView
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:id="@+id/toolbar_btnMenu"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/btn_hower"
+                android:padding="@dimen/_10sdp"
+                android:src="@drawable/new_menu" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/toolbar_btnBack"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_drawer_menu"
+            android:layout_alignParentLeft="true"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:background="@android:color/transparent"
+                android:contentDescription="@string/img_desrcptn"
+                android:padding="@dimen/_17sdp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/back" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txt_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/toolbar_btnBack"
+            android:text="@string/quran"
+            android:textColor="@color/white"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:textSize="@dimen/_18sdp" />
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_centerInParent="true"
+
+        android:id="@+id/layout_surah_search"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_marginRight="@dimen/_15sdp"
+        android:background="@drawable/bg_row_corners"
+        android:orientation="horizontal"
+        android:splitMotionEvents="false"
+        android:visibility="gone">
+
+        <ImageView
+
+            android:id="@+id/btn_search_back"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_weight="1"
+            android:background="@drawable/btn_hower"
+            android:padding="@dimen/size_five"
+            android:src="@drawable/ic_search_back" />
+
+        <EditText
+            android:id="@+id/edit_search"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:background="@android:color/transparent"
+            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-&apos;"
+            android:hint="@string/search"
+            android:maxLength="15"
+            android:paddingLeft="@dimen/size_ten"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textColorHint="@color/progress_primary_color"
+            android:textSize="@dimen/text_size_eighteen"></EditText>
+
+        <ImageView
+            android:id="@+id/btn_search_cross"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_weight="1"
+            android:padding="@dimen/size_five"
+            android:src="@drawable/ic_search_cross" />
+    </LinearLayout>
+</RelativeLayout>

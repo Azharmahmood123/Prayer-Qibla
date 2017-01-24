@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="aya_of_day">Ayah del Día</string>
+    <string name="quran">Corán</string>
+    
+    <string name="search">Buscar</string>
+    <string name="txt_sajdahs">Postrado</string>
+    <string name="txt_bookmarks">Favorito</string>
+    <string name="no_bookmarks_added">No hay Favorito Añadido</string>
+    <string name="added_to_bookmarks">Añadido a Favorito</string>
+    <string name="removed_from_bookmark">Fuera del Favorito</string>
+    
+    <string name="download">Descargar</string>
+    <string name="download_msg">Quieres descargar</string>
+    <string name="downloading_in_progress">Descarga en curso</string>        
+    <string name="already_downloaded">ya descargados</string>
+    <string name="alert">Alerta</string>
+ 
+    <string name="disclaimer_quran_1">Esta aplicación es un esfuerzo humano y se desarrolló con las mejores intenciones. Cualquier error en el contenido es fortuito, y debido a la pura humanidad. Sin embargo, si se observa cualquier error o errores por favor avísenos y lo vamos a resolver a la mayor brevedad.</string>
+    <string name="disclaimer_quran_2">El texto de esta aplicación se obtiene a partir Tanzil.net mientras que las recitaciones de audio provienen de Versebyversequran.com. No pretendemos el contenido o la recitación y todos los derechos de ellos pertenecen a los propietarios originales.</string>
+      
+    <string name="warning">Advertencia</string>
+    <string name="warning_msg">Casos metálicas o cierre magnético puede causar interferencias</string>
+    
+    <string name="disclaimer">Renuncia</string>
+    <string name="time">Hora</string>
+    
+    <string name="txt_stop_signs">Las señales de alto</string>
+    <string name="txt_stop_sign_detail_1">Obligatoria parada - De lo contrario se cambia significado</string>
+    <string name="txt_stop_sign_detail_2">Stop - Fin de una sección</string>
+    <string name="txt_stop_sign_detail_3">Debe dejar de - Fin de una oración</string>
+    <string name="txt_stop_sign_detail_4">Mejor parar</string>
+    <string name="txt_stop_sign_detail_5">Puede parar o continuar</string>
+    <string name="txt_stop_sign_detail_6">Debe continuar, puede tomar una respiración</string>
+    <string name="txt_stop_sign_detail_7">Debe continuar, puede tomar una respiración</string>
+    <string name="txt_stop_sign_detail_8">Debe continuar, puede tomar una respiración</string>
+    <string name="txt_stop_sign_detail_9">Mejor no dejar</string>
+    <string name="txt_stop_sign_detail_10">Pare en el primer o el segundo, pero no de ambos</string>
+    <string name="txt_stop_sign_detail_11">Mejor parar, pero permitida para continuar</string>
+    <string name="txt_stop_sign_detail_12">Mejor seguir, pero admisible para detener</string>
+    <string name="txt_stop_sign_detail_13">Es mejor no parar</string>
+   </resources>

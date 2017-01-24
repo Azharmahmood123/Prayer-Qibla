@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="txt_instrct1">You will see three main tabs; Qibla, Salat and Surahs.</string>
+    <string name="txt_instrct2">You will find a menu icon on the top left corner of the main screen, tap it to open navigation drawer. Following options are available:</string>
+    <string name="txt_instrct2_1">Select Dials tab gives you six different dials which can be selected as per your liking.</string>
+    <string name="txt_instrct2_2">Tap "Remove Ads" option if you do not like to see ads while using the application.</string>
+    <string name="txt_instrct2_3">Select "Settings" tab view all settings related to each tab.</string>
+    <string name="txt_instrct2_4">Tap "Languages" option to change the language of your app.</string>
+    <string name="txt_instrct2_5">You can download a lot of other interactive Islamic applications developed by Quran Reading® by using "More Apps" option.</string>
+    <string name="txt_instrct2_6">Share your experience with your friends and relatives on many social media websites by using "Share" option.</string>
+    <string name="txt_instrct2_7">Help us to improve the app by giving your feedback from "Feedback" option.</string>
+    <string name="txt_instrct2_8">About Us tab gives you company information and app version.</string>
+    <string name="txt_instrct3">Go to ""SALAT"" tab to see prayer times according to your location. Moreover, you can change the prayer timings and set alarms according to your ease.</string>
+    <string name="txt_instrct4">Go to "QIBLA" tab to see exact direction of Qibla according to your location.</string>
+  
+    <string name="txt_instruct_surahs">Go to "SURAHS" tab to recite and listen Surahs.</string>
+    <string name="txt_note_instruct">Please note: Angle of your device to Qibla changes along device movement. Shake device and than place it on the flat horizontal surface. Please do not move the device when placed on flat surface. Also keep metallic stuff away from your device.</string>    
+
+</resources>

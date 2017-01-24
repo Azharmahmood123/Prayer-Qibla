@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/size_five"
+    android:paddingRight="@dimen/size_five" >
+
+    <RelativeLayout
+        android:id="@+id/index_row"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_fifty"
+        android:background="?android:attr/activatedBackgroundIndicator" >
+
+        <RelativeLayout
+            android:id="@+id/layout_no"
+            android:layout_width="@dimen/size_fourty_five"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/tv_index_no"
+                android:layout_width="@dimen/size_fourty"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:padding="@dimen/size_five"
+                android:text="1."
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_eighteen" />
+
+            <View
+                android:id="@+id/view_navigation"
+                android:layout_width="@dimen/size_one"
+                android:layout_height="@dimen/size_thirty_five"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/tv_index_no"
+                android:background="@color/dark_gray" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_index"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/layout_no"
+            android:gravity="center|left"
+            android:paddingLeft="@dimen/size_five"
+            android:paddingRight="@dimen/size_five"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_timings_row_1" />
+    </RelativeLayout>
+
+    <View style="@style/view_transparent_line" />
+
+</LinearLayout>

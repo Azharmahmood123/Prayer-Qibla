@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="halal_places">Nelle vicinanze Luoghi halal</string>
+    <string name="mosques">Moschee Nelle Vicinanze</string>
+    <string name="enable_location">Attiva Posizione da Impostazioni</string>
+    <string name="toast_unable_find_places">Posizione dell\'Errore</string>
+    <string name="location_error">Posizione dell\'Errore</string>
+    
+</resources>

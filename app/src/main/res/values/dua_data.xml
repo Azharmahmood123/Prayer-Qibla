@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="duas_list">Duas List</string>
+    <string name="dua_detail">Dua Details</string>
+    
+    <string name="duas">Duas</string>
+    <string name="halal_finder">Halal Places</string>
+    <string name="mosque_finder">Nearby Mosques</string>
+    
+    <string name="duas_sub">Duas for Every Occasion</string>
+    <string name="halal_finder_sub">Find Nearby Restaurants\nwith Halal Food</string>
+    <string name="mosque_finder_sub">Find Nearby Mosques\nAround You</string>
+
+    <string name="more">More</string>
+
+</resources>

@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="activity_calender">Hijri Calander</string>
+    <string name="activity_community">Community</string>
+    <string name="activity_post">New Request</string>
+    <string name="activity_login">SignUp or Login</string>
+    <string name="activity_event">Events</string>
+
+
+    <string name="tab_calander">Calander</string>
+    <string name="tab_event">Event</string>
+    <string name="tab_converter">Convert</string>
+
+
+    <string name="tab_Prayer">Prayer</string>
+    <string name="tab_mine">Mine</string>
+
+
+    <string name="txt_today">Today</string>
+    <string name="txt_special_events">Special Events</string>
+
+    <string name="txt_sun">Sun</string>
+    <string name="txt_mon">Mon</string>
+    <string name="txt_tue">Tue</string>
+    <string name="txt_wed">Wed</string>
+    <string name="txt_thu">Thu</string>
+    <string name="txt_fri">Fri</string>
+    <string name="txt_sat">Sat</string>
+
+    <string-array name="islamic_month_name">
+
+        <item>Muharram</item>
+        <item>Safar</item>
+        <item>Rabi-ul-Awwal</item>
+        <item>Rabi-ul-Sani</item>
+        <item>Jumad-ul-Awwal</item>
+        <item>Jumad-ul-Thani</item>
+        <item>Rajab</item>
+        <item>Sha\u0027ban</item>
+        <item>Ramadan</item>
+        <item>Shawwal</item>
+        <item>Dhul Qa\u0027ada</item>
+        <item>Dhul Hijja</item>
+    </string-array>
+
+    <string-array name="month_name">
+
+        <item>January</item>
+        <item>February</item>
+        <item>March</item>
+        <item>April</item>
+        <item>May</item>
+        <item>June</item>
+        <item>July</item>
+        <item>August</item>
+        <item>September</item>
+        <item>October</item>
+        <item>November</item>
+        <item>December</item>
+
+    </string-array>
+
+
+
+    <string-array name="days_name">
+        <item>Sun</item>
+        <item>Mon</item>
+        <item>Tue</item>
+        <item>Wed</item>
+        <item>Thu</item>
+        <item>Fri</item>
+        <item>Sat</item>
+
+    </string-array>
+
+
+
+
+    <!--Rest Api Response Status-->
+    <string name="api_response_success">SUCCESS</string>
+    <string name="api_response_failure">FAILURE</string>
+    <string name="api_response_exception">EXCEPTION</string>
+    <string name="text_read_mode">Reading Mode</string>
+    <string name="text_signup_page">One Last Step!</string>
+
+    <string name="text_signup_page2">Login to</string>
+    <string name="text_signup_page4">your Prayer request.</string>
+
+    <string name="text_policy">By signing up, I agree to Qibla Connect\u00AE Terms Use &amp; Privacy Policy.</string>
+    <string name="text_hint">Enter your request in English so that other Muslims can understand easily and join you in your prayer.</string>
+
+
+    <string-array name="keys_fcm">
+        <item>Events</item>
+        <item>Alerts</item>
+        <item>PlayStore</item>
+
+    </string-array>
+
+
+
+    <string-array name="event_name">
+        <item>Hijri New Year</item>
+        <item>Ashura Day</item>
+        <item>12 Rabi-ul-Awwal</item>
+        <item>Ramadan Start</item>
+        <item>Lailatul-Qadr</item>
+        <item>Eid-ul-Fitr</item>
+        <item>Hajj Day</item>
+        <item>Eid-ul-Adha</item>
+    </string-array>
+
+
+
+    <string-array name="islamic_month_detail_link">
+
+         <item><a href="https://en.wikipedia.org/wiki/Muharram">https://en.wikipedia.org/wiki/Muharram</a></item>
+         <item><a href="https://en.wikipedia.org/wiki/Muharram">https://en.wikipedia.org/wiki/Muharram</a></item>
+         <item><a href="https://en.wikipedia.org/wiki/Rabi\u0027_al-awwal">https://en.wikipedia.org/wiki/Rabi\u0027_al-awwal</a></item>
+         <item><a href="https://en.wikipedia.org/wiki/Ramadan_(calendar_month)">https://en.wikipedia.org/wiki/Ramadan_(calendar_month)</a></item>
+         <item><a href="https://en.wikipedia.org/wiki/Ramadan_(calendar_month)">https://en.wikipedia.org/wiki/Ramadan_(calendar_month)</a></item>
+         <item><a href="https://en.wikipedia.org/wiki/Shawwal">https://en.wikipedia.org/wiki/Shawwal</a></item>
+         <item><a href="https://en.wikipedia.org/wiki/Dhu_al-Hijjah">https://en.wikipedia.org/wiki/Dhu_al-Hijjah</a></item>
+         <item><a href="https://en.wikipedia.org/wiki/Dhu_al-Hijjah">https://en.wikipedia.org/wiki/Dhu_al-Hijjah</a></item>
+
+        <!--<item><a href="https://en.wikipedia.org/wiki/Muharram">For more information</a></item>
+        <item><a href="https://en.wikipedia.org/wiki/Muharram">For more information</a></item>
+        <item><a href="https://en.wikipedia.org/wiki/Rabi\u0027_al-awwal">For more information</a></item>
+        <item><a href="https://en.wikipedia.org/wiki/Ramadan_(calendar_month)">For more information</a></item>
+        <item><a href="https://en.wikipedia.org/wiki/Ramadan_(calendar_month)">For more information</a></item>
+        <item><a href="https://en.wikipedia.org/wiki/Shawwal">For more information</a></item>
+        <item><a href="https://en.wikipedia.org/wiki/Dhu_al-Hijjah">For more information</a></item>
+        <item><a href="https://en.wikipedia.org/wiki/Dhu_al-Hijjah">For more information</a></item>-->
+    </string-array>
+
+
+    <!-- NAvigation TEst Data-->
+
+    <string-array name="eng_chapters">
+        <item>Alif Laam Meem</item>
+        <item>Sayaqulu</item>
+        <item>Tilkal Rasoolo</item>
+        <item>Lan Tanalu</item>
+        <item>Wal Mohsinatu</item>
+        <item>La Yuhibbullahu</item>
+        <item>Waiza Samioo</item>
+        <item>Walau</item>
+        <item>Qalal Malaoo</item>
+        <item>Wa alamu Annamah</item>
+        <item>Ya Tazeroona</item>
+        <item>Wama Min Da\'abbatin</item>
+        <item>Wama Obarriyo</item>
+        <item>Rubama</item>
+        <item>Subhanal Lazi</item>
+        <item>Khala alam</item>
+        <item>Iqtaraba Linnaasi</item>
+        <item>Qadh Aflaha</item>
+        <item>Wa Khalal Lazina</item>
+        <item>Amman Khalakha</item>
+        <item>Otlo Ma Ohia</item>
+        <item>Wamai Yaqnut</item>
+        <item>Wamali</item>
+        <item>Faman Azlamu</item>
+        <item>Ilaihi Uraddu</item>
+        <item>Haam Meem</item>
+        <item>Khala Fama Khadbukum</item>
+        <item>Khad Samiallah</item>
+        <item>Tabarakallazi</item>
+        <item>Amma</item>
+    </string-array>
+
+    <string-array name="urdu_chapters">
+        <item> المٓ</item>
+        <item>سیقول</item>
+        <item>تلک الرسل</item>
+        <item>لن تنا لوا</item>
+        <item>والمحصنٰت</item>
+        <item>لا یحب اللہ</item>
+        <item>واذا سمعوا</item>
+        <item>ولو اننا</item>
+        <item>قال الملا</item>
+        <item>وا علموآ</item>
+        <item>یعتذرون</item>
+        <item>وما من دآبّۃ</item>
+        <item>ومآابرئ</item>
+        <item>ربما</item>
+        <item>سبحٰن الذیٓ</item>
+        <item>قال الم</item>
+        <item>اقترب للناس</item>
+        <item>قد افلح</item>
+        <item>وقال الذین</item>
+        <item>امن خلق</item>
+        <item>اتل مآاوحی</item>
+        <item>ومن یقنت</item>
+        <item>وما لی</item>
+        <item>فمن اظلم</item>
+        <item>الیہ یرد</item>
+        <item>حٰم</item>
+        <item>قا ل فما خطبکم</item>
+        <item>قد سمع اللہ</item>
+        <item>تبٰرک الذی</item>
+        <item>عمّ</item>
+    </string-array>
+
+    <string-array name="eng_sign_detail">
+        <item>Compulsory stop – Otherwise meaning is changed</item>
+        <item>Stop – End of a section</item>
+        <item>Should stop – End of a sentence</item>
+        <item>Better to stop</item>
+        <item>Can stop or continue</item>
+        <item>Must continue, can take a breath</item>
+        <item>Must continue, can take a breath</item>
+        <item>Must continue, can take a breath</item>
+        <item>Better NOT to stop</item>
+        <item>Stop at the first or the second but not at both</item>
+        <item>Better to stop but permissible to continue</item>
+        <item>Better to continue but permissible to stop</item>
+        <item>It is better not to stop</item>
+
+    </string-array>
+    <string-array name="urdu_sign_detail">
+        <item>م</item>
+        <item>ع</item>
+        <item>ط</item>
+        <item>قف</item>
+        <item>ج</item>
+        <item>ص</item>
+        <item>صل</item>
+        <item>ز</item>
+        <item>ﻻ</item>
+        <item>؞؞</item>
+        <item>قلے</item>
+        <item>صلے</item>
+        <item>ق</item>
+
+    </string-array>
+</resources>

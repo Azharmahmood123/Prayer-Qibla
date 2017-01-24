@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <string name="aya_of_day">Ayah des Tages</string>
+    
+    <string name="quran">Koran</string>
+    
+    <string name="search">Suche</string>
+    <string name="txt_sajdahs">Hingestreckt</string>
+    <string name="txt_bookmarks">Lesezeichen</string>
+    <string name="no_bookmarks_added">Keine Lesezeichen hinzugefügt</string>
+    <string name="added_to_bookmarks">Zu den Lesezeichen hinzugefügt</string>
+    <string name="removed_from_bookmark">Entfernt von Lesezeichen</string>
+    
+    <string name="download">Herunterladen</string>
+    <string name="download_msg">Wollen Sie zum Download</string>
+    <string name="downloading_in_progress">Herunterladen In Progress</string>        
+    <string name="already_downloaded">bereits heruntergeladen</string>
+    <string name="alert">Aufmerksam</string>
+ 
+    <string name="disclaimer_quran_1">Diese App ist ein menschlicher Anstrengung und es wurde mit den besten Absichten entwickelt. Jeder Fehler in den Inhalt ist undeliberate und durch schiere Menschsein. wenn Sie einen Fehler oder Fehler jedoch feststellen, benachrichtigen Sie uns bitte und wir werden es frühestens lösen.</string>
+    <string name="disclaimer_quran_2">Der Text dieser App wird von Tanzil.net erhalten, während die Audio-Rezitationen kommen aus Versebyversequran.com. Wir behaupten nicht, den Inhalt oder die Rezitation und alle Rechte an ihnen gehören zu den ursprünglichen Besitzer.</string>
+      
+    <string name="warning">Warnung</string>
+    <string name="warning_msg">Metallisch Fällen oder Magnetverschluss kann Störungen verursachen</string>
+    
+    <string name="disclaimer">Dementi</string>
+    <string name="time">Zeit</string>
+    
+    <string name="txt_stop_signs">Stop-Schilder</string>
+    <string name="txt_stop_sign_detail_1">Ein obligatorischer Zwischenstopp - Sonst Bedeutung geändert wird</string>
+    <string name="txt_stop_sign_detail_2">Stop - Ende eines Abschnitts</string>
+    <string name="txt_stop_sign_detail_3">Sollte stoppen - Ende eines Satzes</string>
+    <string name="txt_stop_sign_detail_4">Besser zu stoppen</string>
+    <string name="txt_stop_sign_detail_5">Kann stoppen oder fortzusetzen</string>
+    <string name="txt_stop_sign_detail_6">Muss fortsetzen kann aufatmen</string>
+    <string name="txt_stop_sign_detail_7">Muss fortsetzen kann aufatmen</string>
+    <string name="txt_stop_sign_detail_8">Muss fortsetzen kann aufatmen</string>
+    <string name="txt_stop_sign_detail_9">Besser nicht zu stoppen</string>
+    <string name="txt_stop_sign_detail_10">Halten Sie an der ersten oder der zweiten, aber nicht an den beiden</string>
+    <string name="txt_stop_sign_detail_11">Besser zu stoppen, aber zulässig fortzusetzen</string>
+    <string name="txt_stop_sign_detail_12">Besser fortsetzen, aber zulässig zu stoppen</string>
+    <string name="txt_stop_sign_detail_13">Es ist besser, nicht zu stoppen</string>
+   </resources>

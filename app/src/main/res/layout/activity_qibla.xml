@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar_qibla" />
+
+    <LinearLayout
+        android:layout_below="@id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:id="@+id/frame_compass"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/frame_map"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone">
+
+            </FrameLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/ads_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true">
+
+            <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/adView"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layerType="software"
+                ads:adSize="SMART_BANNER"
+                ads:adUnitId="@string/admob_id" />
+
+            <ImageView
+                android:id="@+id/adimg"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/size_fourty_eight"
+                android:adjustViewBounds="true"
+                android:clickable="true"
+                android:contentDescription="@string/img_desrcptn"
+                android:onClick="onClickAdImage"
+                android:scaleType="fitXY"
+                android:src="@drawable/adbanner1" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/calibration_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        android:background="@color/background_gray"
+        android:visibility="gone">
+
+        <Button
+            android:id="@+id/btn_transparent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:enabled="false" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.9"
+                android:gravity="center"
+                android:text="@string/txt_accurate_direction"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_twenty_two"
+                android:visibility="gone"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:id="@+id/layout_calib_1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:visibility="gone"
+                android:layout_weight="0.8">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:adjustViewBounds="true"
+                    android:padding="@dimen/size_three"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_calibration_shake" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="@dimen/size_ten"
+                android:visibility="gone"
+                android:text="@string/calibration_txt_shake"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_eighteen" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5" />
+
+            <RelativeLayout
+                android:id="@+id/layout_calib_2"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.9">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:adjustViewBounds="true"
+                    android:padding="@dimen/size_ten"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/calibration_compass" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="@dimen/size_ten"
+                android:text="@string/calibration_txt_place"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_eighteen" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5" />
+
+            <RelativeLayout
+                android:id="@+id/layout_calib_4"
+                android:layout_width="match_parent"
+                android:visibility="gone"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/back_done_button"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:onClick="onCalibrationClick"
+                    android:paddingBottom="@dimen/size_twelve"
+                    android:paddingLeft="@dimen/size_thirty_five"
+                    android:paddingRight="@dimen/size_thirty_five"
+                    android:paddingTop="@dimen/size_twelve"
+                    android:text="Got it"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_twenty"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:visibility="gone"
+                android:layout_weight="0.4" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

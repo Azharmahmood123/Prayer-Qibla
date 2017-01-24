@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="duas_list">Lista Duas</string>
+    <string name="dua_detail">Detalles Dua</string>
+    
+    <string name="duas">Duas</string>
+    <string name="halal_finder">Buscador de Halal</string>
+    <string name="mosque_finder">Las Mezquitas Cercanas</string>
+    
+    <string name="duas_sub">Duas para toda Ocasión</string>
+    <string name="halal_finder_sub">Encontrar Restaurantes Cercanos\ncon los Alimentos Halal</string>
+    <string name="mosque_finder_sub">Encuentra mezquitas cercanas\nAlrededor Tuyo</string>
+
+    <string name="more">Más</string>
+
+</resources>

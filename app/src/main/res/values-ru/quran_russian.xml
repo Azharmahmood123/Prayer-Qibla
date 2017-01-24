@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="aya_of_day">Стих дня</string>
+    <string name="quran">Коран</string>
+    
+    <string name="search">Поиск</string>
+    <string name="txt_sajdahs">Поверженный</string>
+    <string name="txt_bookmarks">Любимый</string>
+    <string name="no_bookmarks_added">Нет Любимый Добавлено</string>
+    <string name="added_to_bookmarks">Добавлено в Любимый</string>
+    <string name="removed_from_bookmark">Исключен из Любимый</string>
+    
+    <string name="download">Скачать</string>
+    <string name="download_msg">Вы хотите скачать</string>
+    <string name="downloading_in_progress">Скачать In Progress</string>        
+    <string name="already_downloaded">уже скачал</string>
+    <string name="alert">бдительный</string>
+ 
+    <string name="disclaimer_quran_1">Это приложение представляет собой человеческое усилие и она была разработана с самыми лучшими намерениями. Любая ошибка в содержании является непреднамеренный и из-за явного человечностью. Тем не менее, если вы заметили какие-либо ошибки или ошибки, пожалуйста, сообщите нам, и мы решим ее в ближайшее время.</string>
+    <string name="disclaimer_quran_2">Текст этого приложения получается из Tanzil.net в то время как аудио декламации происходят из Versebyversequran.com. Мы не утверждаем, содержание или декламацию и все права на них принадлежат первоначальным владельцам.</string>
+     
+    <string name="warning">Предупреждение</string>
+    <string name="warning_msg">Скобяные случаи или магнитная застежка может вызвать помехи</string>
+    
+    <string name="disclaimer">отказ</string>
+    <string name="time">Время</string>
+    
+    <string name="txt_stop_signs">Стоп Знаки</string>
+    <string name="txt_stop_sign_detail_1">Принудительное остановка - В противном случае значение изменяется</string>
+    <string name="txt_stop_sign_detail_2">Стоп - конец раздела</string>
+    <string name="txt_stop_sign_detail_3">Если остановить - конец предложения</string>
+    <string name="txt_stop_sign_detail_4">Лучше остановить</string>
+    <string name="txt_stop_sign_detail_5">Может остановить или продолжить</string>
+    <string name="txt_stop_sign_detail_6">Должен продолжаться, может сделать вдох</string>
+    <string name="txt_stop_sign_detail_7">Должен продолжаться, может сделать вдох</string>
+    <string name="txt_stop_sign_detail_8">Должен продолжаться, может сделать вдох</string>
+    <string name="txt_stop_sign_detail_9">Лучше не остановить</string>
+    <string name="txt_stop_sign_detail_10">Остановка на первой или второй, но не на обоих</string>
+    <string name="txt_stop_sign_detail_11">Лучше остановиться, но допустимо, чтобы продолжить</string>
+    <string name="txt_stop_sign_detail_12">Лучше продолжать, но допустимо, чтобы остановить</string>
+    <string name="txt_stop_sign_detail_13">Лучше не останавливаться на достигнутом</string>
+    </resources>

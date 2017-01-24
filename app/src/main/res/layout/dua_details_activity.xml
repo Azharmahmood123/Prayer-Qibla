@@ -1,0 +1,136 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:splitMotionEvents="false" >
+
+    <RelativeLayout
+        android:id="@+id/mainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:splitMotionEvents="false" >
+
+        <RelativeLayout
+            android:id="@+id/topLayout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            android:background="@color/actionbar_bg">
+
+            <LinearLayout
+                android:id="@+id/toolbar_btnBack"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+
+                android:background="@drawable/btn_hower"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:src="@drawable/back" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txt_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:textSize="@dimen/_18sdp"
+                android:layout_toRightOf="@+id/toolbar_btnBack"
+                android:text="@string/settings"
+                android:textColor="@color/white"
+                />
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/footerLayout"
+            android:layout_below="@+id/toolbar"
+            android:clickable="true"
+            android:focusable="false" >
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/viewpager_duas"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" >
+            </android.support.v4.view.ViewPager>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/footerLayout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_fifty"
+            android:layout_above="@+id/ads_layout"
+            android:background="@color/header"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:splitMotionEvents="false" >
+
+            <ImageView
+                android:id="@+id/btn_audio_duas"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:src="@drawable/play_btn" />
+
+            <ImageView
+                android:id="@+id/btn_stop_duas"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:src="@drawable/stop_btn" />
+
+            <ImageView
+                android:id="@+id/btn_share_duas"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="@dimen/size_ten"
+                android:scaleType="fitCenter"
+                android:src="@drawable/btn_ayah_share" />
+
+            <ImageView
+                android:id="@+id/btn_info_duas"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="@dimen/size_ten"
+                android:scaleType="fitCenter"
+                android:src="@drawable/info" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/ads_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true" >
+
+            <com.google.android.gms.ads.AdView
+                xmlns:ads="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/adView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                ads:adSize="SMART_BANNER"
+                ads:adUnitId="@string/admob_id"
+                android:layerType="software" />
+
+            <ImageView
+                android:id="@+id/adimg"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/size_fourty_eight"
+                android:adjustViewBounds="true"
+                android:clickable="true"
+                android:contentDescription="img"
+                android:onClick="onClickAdImage"
+                android:scaleType="fitXY" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

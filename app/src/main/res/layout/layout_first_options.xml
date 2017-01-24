@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/size_fifteen" >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/layout_back_btn"
+        android:gravity="center|left"
+        android:visibility="gone"
+        android:text="@string/juristic"
+        android:textColor="@color/ColorPrimaryDark"
+        android:textSize="@dimen/text_size_twenty_four" />
+
+    <RadioGroup
+        android:id="@+id/rg_juristic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:orientation="vertical" >
+
+        <android.support.v7.widget.AppCompatRadioButton
+            android:id="@+id/radioButtonHanafi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:tag="2"
+            android:text="Hanafi"
+            android:textSize="@dimen/text_size_timings_row_1"
+            android:theme="@style/Color1SwitchStyle" />
+
+        <android.support.v7.widget.AppCompatRadioButton
+            android:id="@+id/radioButtonShafi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:tag="1"
+            android:text="Shafi/Maliki/Humbli"
+            android:textSize="@dimen/text_size_timings_row_1"
+            android:theme="@style/Color1SwitchStyle" />
+    </RadioGroup>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/layout_back_btn"
+        android:gravity="center|left"
+        android:text="@string/set_alarm"
+        android:textColor="@color/ColorPrimaryDark"
+        android:textSize="@dimen/text_size_twenty_four" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="@dimen/size_five" >
+
+            <TextView
+                style="@style/timings_heading_text_demo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/txt_fajr" />
+
+            <android.support.v7.widget.SwitchCompat
+                android:id="@+id/switch_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:theme="@style/Color1SwitchStyle"
+                app:showText="false" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="@dimen/size_five" >
+
+            <TextView
+                style="@style/timings_heading_text_demo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/txt_sunrise" />
+
+            <android.support.v7.widget.SwitchCompat
+                android:id="@+id/switch_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:theme="@style/Color1SwitchStyle"
+                app:showText="false" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="@dimen/size_five" >
+
+            <TextView
+                style="@style/timings_heading_text_demo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/txt_zuhr" />
+
+            <android.support.v7.widget.SwitchCompat
+                android:id="@+id/switch_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:theme="@style/Color1SwitchStyle"
+                app:showText="false" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="@dimen/size_five" >
+
+            <TextView
+                style="@style/timings_heading_text_demo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/txt_asar" />
+
+            <android.support.v7.widget.SwitchCompat
+                android:id="@+id/switch_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:theme="@style/Color1SwitchStyle"
+                app:showText="false" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="@dimen/size_five" >
+
+            <TextView
+                style="@style/timings_heading_text_demo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/txt_maghrib" />
+
+            <android.support.v7.widget.SwitchCompat
+                android:id="@+id/switch_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:theme="@style/Color1SwitchStyle"
+                app:showText="false" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="@dimen/size_five" >
+
+            <TextView
+                style="@style/timings_heading_text_demo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/txt_isha" />
+
+            <android.support.v7.widget.SwitchCompat
+                android:id="@+id/switch_6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:theme="@style/Color1SwitchStyle"
+                app:showText="false" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

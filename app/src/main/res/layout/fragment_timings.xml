@@ -1,0 +1,418 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_gray"
+    android:splitMotionEvents="false">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar_timings" />
+
+    <LinearLayout
+        android:id="@+id/layout_timings_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
+        android:layout_marginTop="@dimen/size_ten"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.2"
+            android:paddingRight="@dimen/size_one">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/size_five"
+                android:background="@drawable/bg_row_corners"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvTimeLeft"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:paddingBottom="@dimen/size_five"
+                    android:paddingLeft="@dimen/size_ten"
+                    android:paddingRight="@dimen/size_five"
+                    android:paddingTop="@dimen/size_five"
+                    android:singleLine="true"
+                    android:text="@string/time_left"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_sixteen" />
+
+                <View
+                    android:id="@+id/view_navigation"
+                    android:layout_width="@dimen/size_one_half"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/size_five"
+                    android:layout_marginTop="@dimen/size_five"
+                    android:background="@color/dark_gray" />
+
+                <TextView
+                    android:id="@+id/tvTimer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:background="@android:color/transparent"
+                    android:gravity="center"
+                    android:paddingBottom="@dimen/size_five"
+                    android:paddingLeft="@dimen/size_ten"
+                    android:paddingRight="@dimen/size_ten"
+                    android:paddingTop="@dimen/size_five"
+                    android:scrollHorizontally="true"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_sixteen" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:paddingLeft="@dimen/size_three">
+
+            <LinearLayout
+                android:id="@+id/layout_locationTimings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/size_five"
+                android:background="@drawable/bg_row_corners"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_city"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="@android:color/transparent"
+                    android:gravity="center"
+                    android:paddingBottom="@dimen/size_five"
+                    android:paddingLeft="@dimen/size_ten"
+                    android:paddingRight="@dimen/size_ten"
+                    android:paddingTop="@dimen/size_five"
+                    android:scrollHorizontally="true"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_sixteen" />
+
+                <View
+
+                    android:layout_width="@dimen/size_one_half"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="@dimen/size_five"
+                    android:layout_marginTop="@dimen/size_five"
+                    android:background="@color/dark_gray" />
+
+                <ImageView
+                    android:id="@+id/img_navigation"
+                    android:layout_width="@dimen/size_twenty_eight"
+                    android:layout_height="@dimen/size_twenty_eight"
+                    android:layout_marginRight="@dimen/size_five"
+                    android:adjustViewBounds="true"
+                    android:padding="@dimen/size_five"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_navigation" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout_timings_top"
+        android:layout_marginTop="@dimen/size_two"
+        android:orientation="vertical"
+        android:padding="@dimen/size_five"
+        android:splitMotionEvents="false">
+
+        <RelativeLayout
+            android:id="@+id/fajr_layout"
+            style="@style/timings_row_layout">
+
+            <TextView
+                android:id="@+id/tvSalah1"
+                style="@style/timings_heading_text"
+                android:layout_toLeftOf="@+id/tv_fajar"
+                android:text="@string/txt_fajr" />
+
+            <TextView
+                android:id="@+id/tv_fajar"
+                style="@style/timings_time"
+                android:layout_toLeftOf="@+id/tv_fajar_time" />
+
+            <TextView
+                android:id="@+id/tv_fajar_time"
+                style="@style/timings_time_text"
+                android:layout_toLeftOf="@+id/btn_fajar"
+                android:tag="0" />
+
+            <TextView
+                android:id="@+id/tv_fajar_time_edited"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/tv_fajar_time"
+                android:layout_alignRight="@id/tv_fajar_time"
+                android:layout_below="@id/tv_fajar_time"
+                android:gravity="center"
+                android:text="Edited"
+                android:visibility="gone"
+                android:textSize="@dimen/text_size_twelve" />
+
+            <ImageButton
+                android:id="@+id/btn_fajar"
+                style="@style/timings_row_image"
+                android:src="@drawable/bell_off"
+                android:tag="0" />
+        </RelativeLayout>
+
+        <View style="@style/view_transparent_line" />
+
+        <RelativeLayout
+            android:id="@+id/sunrise_layout"
+            style="@style/timings_row_layout">
+
+            <TextView
+                android:id="@+id/tvSalah2"
+                style="@style/timings_heading_text"
+                android:layout_toLeftOf="@+id/tv_sunrise"
+                android:text="@string/txt_sunrise" />
+
+            <TextView
+                android:id="@+id/tv_sunrise"
+                style="@style/timings_time"
+                android:layout_toLeftOf="@+id/tv_sunrise_time" />
+
+            <TextView
+                android:id="@+id/tv_sunrise_time"
+                style="@style/timings_time_text"
+                android:layout_toLeftOf="@+id/btn_sunrise"
+                android:tag="1" />
+
+            <TextView
+                android:id="@+id/tv_sunrise_time_edited"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/tv_sunrise_time"
+                android:layout_alignRight="@id/tv_sunrise_time"
+                android:layout_below="@id/tv_sunrise_time"
+                android:gravity="center"
+                android:text="Edited"
+                android:visibility="gone"
+                android:textSize="@dimen/text_size_twelve" />
+
+            <ImageButton
+                android:id="@+id/btn_sunrise"
+                style="@style/timings_row_image"
+                android:src="@drawable/bell_off"
+                android:tag="1" />
+        </RelativeLayout>
+
+        <View style="@style/view_transparent_line" />
+
+        <RelativeLayout
+            android:id="@+id/zuhr_layout"
+            style="@style/timings_row_layout">
+
+            <TextView
+                android:id="@+id/tvSalah3"
+                style="@style/timings_heading_text"
+                android:layout_toLeftOf="@+id/tv_zuhar"
+                android:text="@string/txt_zuhr" />
+
+            <TextView
+                android:id="@+id/tv_zuhar"
+                style="@style/timings_time"
+                android:layout_toLeftOf="@+id/tv_zuhar_time" />
+
+            <TextView
+                android:id="@+id/tv_zuhar_time"
+                style="@style/timings_time_text"
+                android:layout_toLeftOf="@+id/btn_zuhar"
+                android:tag="2" />
+
+
+            <TextView
+                android:id="@+id/tv_zuhar_time_edited"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/tv_zuhar_time"
+                android:layout_alignRight="@id/tv_zuhar_time"
+                android:layout_below="@id/tv_zuhar_time"
+                android:gravity="center"
+                android:text="Edited"
+                android:visibility="gone"
+                android:textSize="@dimen/text_size_twelve" />
+
+
+            <ImageButton
+                android:id="@+id/btn_zuhar"
+                style="@style/timings_row_image"
+                android:src="@drawable/bell_off"
+                android:tag="2" />
+        </RelativeLayout>
+
+        <View style="@style/view_transparent_line" />
+
+        <RelativeLayout
+            android:id="@+id/asar_layout"
+            style="@style/timings_row_layout">
+
+            <TextView
+                android:id="@+id/tvSalah4"
+                style="@style/timings_heading_text"
+                android:layout_toLeftOf="@+id/tv_asar"
+                android:text="@string/txt_asar" />
+
+            <TextView
+                android:id="@+id/tv_asar"
+                style="@style/timings_time"
+                android:layout_toLeftOf="@+id/tv_asar_time" />
+
+            <TextView
+                android:id="@+id/tv_asar_time"
+                style="@style/timings_time_text"
+                android:layout_toLeftOf="@+id/btn_asar"
+                android:tag="3" />
+
+
+            <TextView
+                android:id="@+id/tv_asar_time_edited"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/tv_asar_time"
+                android:layout_alignRight="@id/tv_asar_time"
+                android:layout_below="@id/tv_asar_time"
+                android:gravity="center"
+                android:text="Edited"
+                android:visibility="gone"
+                android:textSize="@dimen/text_size_twelve" />
+
+
+            <ImageButton
+                android:id="@+id/btn_asar"
+                style="@style/timings_row_image"
+                android:src="@drawable/bell_off"
+                android:tag="3" />
+        </RelativeLayout>
+
+        <View style="@style/view_transparent_line" />
+
+        <RelativeLayout
+            android:id="@+id/maghrib_layout"
+            style="@style/timings_row_layout">
+
+            <TextView
+                android:id="@+id/tvSalah5"
+                style="@style/timings_heading_text"
+                android:layout_toLeftOf="@+id/tv_maghrib"
+                android:text="@string/txt_maghrib" />
+
+            <TextView
+                android:id="@+id/tv_maghrib"
+                style="@style/timings_time"
+                android:layout_toLeftOf="@+id/tv_maghrib_time" />
+
+
+            <TextView
+                android:id="@+id/tv_maghrib_time"
+                style="@style/timings_time_text"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/btn_maghrib"
+                android:layout_toStartOf="@+id/btn_maghrib"
+                android:tag="4" />
+
+
+            <TextView
+                android:id="@+id/tv_maghrib_time_edited"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/tv_maghrib_time"
+                android:layout_alignRight="@id/tv_maghrib_time"
+                android:layout_below="@id/tv_maghrib_time"
+                android:gravity="center"
+                android:text="Edited"
+                android:visibility="gone"
+                android:textSize="@dimen/text_size_twelve" />
+
+            <ImageButton
+                android:id="@+id/btn_maghrib"
+                style="@style/timings_row_image"
+                android:src="@drawable/bell_off"
+                android:tag="4" />
+
+
+        </RelativeLayout>
+
+        <View style="@style/view_transparent_line" />
+
+        <RelativeLayout
+            android:id="@+id/isha_layout"
+            style="@style/timings_row_layout">
+
+            <TextView
+                android:id="@+id/tvSalah6"
+                style="@style/timings_heading_text"
+                android:layout_toLeftOf="@+id/tv_isha"
+                android:text="@string/txt_isha" />
+
+            <TextView
+                android:id="@+id/tv_isha"
+                style="@style/timings_time"
+                android:layout_toLeftOf="@+id/tv_isha_time" />
+
+            <TextView
+                android:id="@+id/tv_isha_time"
+                style="@style/timings_time_text"
+                android:layout_toLeftOf="@+id/btn_isha"
+                android:tag="5" />
+
+            <TextView
+                android:id="@+id/tv_isha_time_edited"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/tv_isha_time"
+                android:layout_alignRight="@id/tv_isha_time"
+                android:layout_below="@id/tv_isha_time"
+                android:gravity="center"
+                android:text="Edited"
+                android:visibility="gone"
+                android:textSize="@dimen/text_size_twelve" />
+
+            <ImageButton
+                android:id="@+id/btn_isha"
+                style="@style/timings_row_image"
+                android:src="@drawable/bell_off"
+                android:tag="5" />
+        </RelativeLayout>
+
+        <View style="@style/view_transparent_line" />
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/btn_transparent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"
+        android:enabled="false"
+        android:visibility="gone" />
+
+</RelativeLayout>

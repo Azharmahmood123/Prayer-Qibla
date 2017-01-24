@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ColorPrimary"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/tvSplash"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="@dimen/size_fifteen"
+        android:text="@string/qibla_connect_splash"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_thirty_four" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_two_hundred_twenty"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="@dimen/about_img_margin_left"
+        android:layout_marginRight="@dimen/about_img_margin_right"
+        android:layout_marginTop="@dimen/about_img_margin_top"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/img_desrcptn"
+        android:scaleType="fitCenter"
+        android:src="@drawable/splash_icon" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_fifty" />
+
+    <ImageView
+        android:id="@+id/QRLogo_ImageView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_fifty_five"
+        android:layout_below="@+id/about_layout_center"
+        android:paddingBottom="@dimen/size_ten"
+        android:paddingTop="@dimen/size_ten"
+        android:src="@drawable/about_bottom_image" />
+
+</LinearLayout>

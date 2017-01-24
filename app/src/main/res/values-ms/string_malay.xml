@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="free_live_quran_tutoring">Percuma Live Tutoring Quran</string>
+    <string name="register_now">DAFTAR SEKARANG</string>	
+		
+    <string name="language">Malay</string>
+    <string name="qibla_connect">Kiblat Sambung</string>
+    <string name="find_qibla_direction">Cari Arah Kiblat</string>
+    <string name="advertisement">Iklan</string>
+    <string name="distance_from_qibla">Jarak dari kiblat</string>
+    <string name="kilometer">Kilometer</string>
+    <string name="qibla_direction">Kiblat</string>
+    <string name="salat_timings">Sholat</string>
+        
+	<string name="txt_enter_ayah_number">Masukkan Ayat Nombor</string>    
+	<string name="txt_enter_between_0_83">Masukkan Nilai antara 0-83</string>
+	<string name="set_time">Mnyelamatkan Masa</string>
+	<string name="surahs">Surahs</string>
+	<string name="makki">Makki</string>    
+	<string name="verses">Ayat</string>
+	<string name="downloading">Memuat turun</string>
+	<string name="exit">Keluar</string>
+	<string name="tap_to_view_more">Ketik untuk melihat lebih</string>
+	<string name="apps">Aplikasi</string>
+	<string name="completed">Bidang</string>
+	<string name="edited">Disunting</string>
+	<string name="cannot">tidak boleh</string>
+	<string name="your_device_not_compatible">Telefon anda tidak serasi.</string>
+	<string name="set">Pilih</string>
+	
+	
+    <string name="instructions">Arahan</string>
+       
+    <string name="select_dial">Pilih Dial</string>
+    <string name="txt_dial_1">Permaidani Biru</string>
+    <string name="txt_dial_2">Hijau dan Kelabu</string>
+    <string name="txt_dial_3">Merah Jambu Elegan</string>
+    <string name="txt_dial_4">Limau Oren</string>
+    <string name="txt_dial_5">Jet Hitam</string>
+    <string name="txt_dial_6">Merah Diraja</string>
+
+    <string name="attention">Perhatian</string>
+    <string name="attention_msg">Jika pengaturan masa Salat adalah tidak betul, pergi ke \'Tetapan Lanjutan\' dan pilih tetapan yang sesuai bagi rantau geografi anda.</string>
+    <string name="okay">Okey</string>
+    
+    <string name="txt_fajr">Fajar</string>
+    <string name="txt_sunrise">Matahari Terbit</string> 
+	<string name="txt_zuhr">Zuhar</string>
+    <string name="txt_asar">Asar</string>
+    <string name="txt_maghrib">Maghrib</string>
+    <string name="txt_isha">Isha</string>
+    
+    <string name="settings">Tetapan</string>
+    <string name="location">Lokasi</string>
+    <string name="current_Location">Lokasi Semasa</string>
+    <string name="manual_location">Manual Lokasi</string>
+    <string name="unable_to_find_location">Tidak dapat mencari lokasi</string>
+    <string name="enter_location_manually">Memasukkan lokasi secara manual</string>
+    <string name="cancel">Batal</string>
+    <string name="tone_settings">Tetapan Nada</string>
+    <string name="default_tone">Nada Lalai</string>
+    <string name="silent">Senyap</string>
+    <string name="on">Pada</string>
+    <string name="off">Off</string>
+    <string name="adhan1">Telinga 1</string>
+    <string name="adhan2">Telinga 2</string>
+    <string name="adhan3">Telinga 3</string>
+    <string name="reset">Set Semula</string>
+    <string name="reset_all">Set Semula Semua</string>
+    <string name="general">Umum</string>
+    <string name="reset_settings">Tetapan Set Semula</string>
+    <string name="reset_msg">Adakah anda benar-benar mahu untuk menetapkan semula tetapan untuk lalainya?</string>
+    <string name="about">Mengenai</string>
+    <string name="build_version">Mengenai Versi</string>
+	
+    <string name="enable_provider">Sila membolehkan lokasi daripada tetapan peranti anda</string>
+    
+	<string name="advance_settings">Tetapan Lanjutan</string>
+    <string name="juristic">Rerundangan</string>
+    <string-array name="arr_juristic">
+        <item >Shafi/Maliki/Hanbali</item>
+        <item >Hanafi</item>
+    </string-array>
+    
+    <string name="latitude_adjustment">Pelarasan Latitud</string>
+    <string-array name="arr_latitude_adjustment">
+        <item >Niada</item>
+        <item >Sudut Berasaskan</item>
+        <item >Tengah Malam</item>
+        <item >Satu Ketujuh</item>
+    </string-array>
+     
+    <string name="calculation_method">Pengiraan Kaedah</string>
+    <string-array name="arr_calculation_method">
+        <item >MWL</item>
+        <item >Mekah</item>
+        <item >Karachi</item>
+        <item >ISNA</item>
+        <item >Tehran</item>
+        <item >Mesir</item>
+        <item >Jafari</item>      
+    </string-array>
+	
+    <string name="languages">Bahasa-Bahasa</string>
+    <string-array name="language_array1">
+		<item >English</item>
+		<item >Turki</item>
+		<item >Sepanyol</item>
+		<item >Rusia</item>
+		<item >Perancis</item>
+		<item >Jerman</item>
+		<item >Melayu</item>
+		<item >Indonesia</item>
+		<item >Itali</item>
+		<item >Thai</item>
+    </string-array>
+        <string-array name="language_array">
+		<item >English</item>	
+		<item >Türk</item>
+		<item >Español</item>
+		<item >Pусский</item>
+		<item >Français</item>
+		<item >Deutsch</item>
+		<item >Melayu</item>
+		<item >Bahasa Indonesia</item>
+		<item >Italiano</item>
+		<item >ไทย</item>	
+    </string-array>
+    
+    <string name="laguage_alert_msg">Ia akan menukar bahasa seluruh apl anda. Adakah anda pasti anda mahu memilihnya?</string>
+    <string name="confirm">Mengesahkan</string>
+    
+    <string name="feedback">Maklumbalas</string>
+    <string name="feedback_msg">Kami ingin mengetahui pengalaman anda, sila memberi maklum balas anda</string>
+    <string name="yes">Ya</string>
+    <string name="later">Kemudian</string>
+    
+    <string name="hijri_date">Hijri Date</string>
+    <string-array name="hijri_month_names">
+        <item >Muharram</item>
+        <item >Safar</item>
+        <item >Rabi al-Awwal</item>
+        <item >Rabi ath-Thani</item>
+        <item >Jumad ai-Awwal</item>
+        <item >Jumad ath-Thani</item>
+        <item >Rejab</item>
+        <item >Syaaban</item>
+        <item >Ramadan</item>
+        <item >Syawal</item>
+        <item >Dzul Qa\'dah</item>
+        <item >Dzul Hijjah</item>        
+    </string-array>
+    
+    <string name="solar_date">Solar Date</string>
+        <string-array name="solar_month_names">
+        <item >Gennaio</item>
+        <item >Febbraio</item>
+        <item >Marzo</item>
+        <item >Aprile</item>
+        <item >Maggio</item>
+        <item >Giugno</item>
+        <item >Luglio</item>
+        <item >Agosto</item>
+        <item >Settembre</item>
+        <item >Ottobre</item>
+        <item >Novembre</item>
+        <item >Dicembre</item>        
+    </string-array>
+    
+    <string name="am">am</string>
+    <string name="pm">pm</string>
+    <string name="hour_left">Jam kiri</string>
+    
+    <string name="hours">Jam</string>
+    <string name="minutes">Minit</string>
+
+    <string name="about_us">Mengenai Kami</string>
+    <string name="version">Versi</string>
+    <string name="copyright">Hak Cipta</string>
+    <string name="all_rights_reserved">Semua hak terpelihara</string>
+    
+    <string name="remove_ads">Mengeluarkan iklan</string>
+    <string name="remove_ads_heading">Menderma dan Mengeluarkan iklan</string>
+    <string name="remove_ads_msg">Sila menderma dan mengeluarkan iklan untuk membantu kami membangunkan Aplikasi Islam lebih berharga untuk anda dan anak-anak anda.</string>
+    <string name="remove">Semua hak terpelihara</string>
+    
+    
+    <string name="advance_help">Erweiterte Hilfe</string>
+    
+    <string name="juristic_details"><b>Shafi/Maliki/Hanbali</b> Schule des Denkens\n\n<b>Hanafi</b> Schule des Denkens</string>
+    
+    <string name="muslim_world_league_details"><b>MWL:</b> Islamische Weltliga</string>
+    <string name="muslim_world_league_region"><b>Region:</b> Rantau, Timur Jauh, Sebahagian daripada U.S</string>
+    
+    <string name="makkah_details"><b>Mekah:</b> Umm al-Qura Universiti, Mekah</string>
+    <string name="makkah_region"><b>Region:</b> Semenanjung Arab</string>
+    
+    <string name="karachi_details"><b>Karachi:</b> Universiti Sains Islam, Karachi</string>
+    <string name="karachi_region"><b>Region:</b> Pakistan, Afghanistan, Bangladesh, India</string>
+    
+    <string name="isna_details"><b>ISNA:</b> Persatuan Islam Amerika Utara</string>
+    <string name="isna_region"><b>Region:</b> Amerika Utara (Amerika Syarikat dan Kanada)</string>
+   
+    <string name="tehran_details"><b>Tehran:</b> Institut Geofizik, Universiti Tehran</string>
+    <string name="tehran_region"><b>Region:</b> Iran, Sesetengah masyarakat Syiah</string>
+   
+    <string name="egyptian_details"><b>Mesir:</b> Mesir Lembaga Ketua Pengarah Ukur</string>
+    <string name="egyptian_region"><b>Region:</b> Afrika, Syria, Lebanon, Malaysia</string>
+    
+    <string name="jafari_details"><b>Jafari:</b> Shia Ithna Ashari, Leva Research Institute, Qum</string>
+    <string name="jafari_region"><b>Region:</b> Sesetengah masyarakat Syiah di seluruh dunia</string>
+    
+    <string name="angle_based_msg"><b>Sudut Berasaskan:</b> Ini adalah penyelesaian pengantara, yang digunakan oleh beberapa kalkulator waktu solat baru-baru ini. Mari α menjadi sudut senja untuk Isya, dan membiarkan t = α / 60. Tempoh di antara matahari terbenam dan matahari terbit dibahagikan kepada bahagian-bahagian t. Isyak bermula selepas bahagian pertama. Sebagai contoh, jika sudut senja untuk Isyak adalah 15, maka Isyak bermula pada akhir suku pertama (15/60) malam. Masa untuk Fajar dikira sama.</string>
+    <string name="mid_night_msg"><b>Tengah Malam:</b> Dalam kaedah ini, tempoh dari matahari terbenam hingga matahari terbit dibahagikan kepada dua bahagian. Separuh pertama dianggap malam dan setengah yang lain sebagai rehat hari. Fajar dan Isyak dalam kaedah ini diandaikan berada pada tengah malam dalam tempoh yang tidak normal.</string>
+    <string name="one_seventh_msg"><b>Satu Ketujuh:</b> Dalam kaedah ini, tempoh antara matahari terbenam dan matahari terbit dibahagikan kepada tujuh bahagian. Isyak bermula selepas sebahagian satu-ketujuh yang pertama, dan Fajr adalah pada awal bahagian ketujuh.</string>
+        
+	<string name="share">Berkongsi</string>
+	<string name="share_msg">Saya mendapati aplikasi Islam yang indah untuk mencari arah kiblat yang tepat Muat turun di sini:\n\n \n\n https://play.google.com/store/apps/details?id=com.quranreading.qibladirection</string>
+	<string name="more_apps">Lebih Aplikasi</string>
+	
+	<string name="toast_enter_city_name">Sila Masukkan Nama Kota</string>
+	<string name="toast_correct_city_name">Sila Berikan Negara Betul dan Nama Kota</string>
+	<string name="toast_enable_location">Sila membolehkan Pembekal Lokasi, lokasi Masukkan tetapan secara manual dari</string>
+	<string name="toast_alarms_last_location">Penggera disimpan untuk lokasi terakhir yang diketahui</string>
+	<string name="toast_already_purchased">Sudah Dibeli</string>
+	<string name="toast_purchase_successful">Pembelian Berjaya</string>
+	<string name="toast_network_error">Tiada Rangkaian Bersambung</string>
+	<string name="toast_location_error">Tidak dapat mencari lokasi</string>
+	<string name="toast_get_city_error">Manual lokasi Alamat</string>
+	<string name="toast_no_sensor">Tiada sensor - peranti anda tidak serasi</string>
+	<string name="toast_no_accelerometer">Tiada sensor pecutan - peranti anda tidak serasi</string>  
+	<string name="toast_no_magnetometer">Tiada sensor magnetometer - peranti anda tidak serasi</string>
+	
+	<string name="toast_unable_detect_location">Tidak dapat mengesan lokasi</string>
+	<string name="toast_connect_to_internet_or_set_location_manually">Menyambung ke internet atau Set lokasi secara manual</string>	
+	<string name="select_school_of_thought">Pilih Sekolah pemikiran</string>	
+	<string name="set_alarm">Penggera ditetapkan</string>
+    <string name="txt_accurate_direction">Untuk Arah Tepat</string>
+	<string name="calibration_txt_shake">Goncang Telefon anda dengan baik</string>
+	<string name="calibration_txt_place">Letakkan peranti anda pada permukaan rata mendatar dan tidak bergerak</string>
+	<string name="calibration_instruct_metalic">Pastikan bahan Metallic dari telefon anda</string>
+	
+    <string name="standard">Standard</string>
+    <string name="hanafi">Hanafi</string>
+    <string name="mwl">MWL</string>
+    <string name="mecca">Mekah</string>
+    <string name="karachi">Karachi</string>
+    <string name="isna">ISNA</string>
+    <string name="tehran">Tehran</string>
+    <string name="egypt">Mesir</string>
+    <string name="jafari">Jafari</string>
+    <string name="none">Tiada</string>
+    <string name="angle_based">Sudut Berasaskan</string>
+    <string name="mid_night">Tengah Malam</string>
+    <string name="oneseventh">Satu Ketujuh</string>
+    
+    <string name="error_location_settings_manual_dialog">Permohonan tidak dapat mencari anda secara automatik. Sila membolehkan akses lokasi daripada tetapan peranti anda.</string>
+    <string name="time_left">Masa Kekal</string>
+    
+        <!-- Additional With Surahs -->
+    <string name="daylight_saving">Siang Menyimpan</string>
+    <string name="txt_translation">Terjemahan</string>
+    <string name="txt_transliteration">Transliterasi</string>
+    <string name="alarm_on">Penggera Enabled</string>
+    <string name="alarm_off">Penggera Cacat</string>
+    
+    <string-array name="more_apps_category">
+        <item >Dewasa</item>
+        <item >Anak</item>
+        <item >Umum</item>
+    </string-array>
+    
+    
+	    <!-- Yasin -->
+    <string name="coming_soon">lebih Surahs Akan datang</string>
+    <string name="goto_txt">Pergi ke</string>
+    <string name="goto_ayah">Pergi ke Ayat</string>
+    <string name="repeat_on">Ulang</string>
+    <string name="repeat_off">Jangan Ulang</string>
+    <string name="surah_yasin">Surah Yasin</string>
+    <string name="yasin">Yasin</string>
+    <string name="last_read_not_saved">Lepas baca tidak disimpan</string>
+    
+	
+</resources>

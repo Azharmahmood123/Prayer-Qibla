@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:splitMotionEvents="false" >
+
+    <LinearLayout
+        android:id="@+id/dialog_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:orientation="horizontal"
+        android:splitMotionEvents="false"
+        android:weightSum="2" >
+
+        <TextView
+            android:id="@+id/dialog_location_manual"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/below_tab_selector"
+            android:gravity="center"
+            android:paddingBottom="@dimen/size_fifteen"
+            android:paddingTop="@dimen/size_fifteen"
+            android:text="@string/manual_location"
+            android:textColor="@color/color_selector"
+            android:textSize="@dimen/text_size_sixteen" />
+
+        <TextView
+            android:id="@+id/dialog_location_auto"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/below_tab_selector"
+            android:gravity="center"
+            android:paddingBottom="@dimen/size_fifteen"
+            android:paddingTop="@dimen/size_fifteen"
+            android:text="@string/current_Location"
+            android:textColor="@color/color_selector"
+            android:textSize="@dimen/text_size_sixteen" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/dialog_seprator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dialog_top"
+        android:orientation="horizontal"
+        android:splitMotionEvents="false"
+        android:visibility="gone"
+        android:weightSum="2" >
+
+        <View
+            android:id="@+id/auto_selected"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/size_one"
+            android:layout_weight="1"
+            android:background="@color/bg" />
+
+        <View
+            android:id="@+id/manual_selected"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/size_one"
+            android:layout_weight="1"
+            android:background="@color/actionbar_bg" />
+    </LinearLayout>
+
+    <!--
+        <View
+        android:id="@+id/dialog_seprator"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_one"
+        android:visibility="gone"
+        android:background="@color/actionbar_bg"
+        android:layout_below="@id/dialog_top"/>
+    -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dialog_seprator"
+        android:background="@color/bg"
+        android:paddingTop="@dimen/size_twenty"
+        android:splitMotionEvents="false" >
+
+        <RelativeLayout
+            android:id="@+id/dialog_main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:splitMotionEvents="false" >
+
+            <AutoCompleteTextView
+                android:id="@+id/dialog_manual_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_margin="@dimen/size_twenty"
+                android:background="@drawable/rect_blue_border"
+                android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ, "
+                android:hint="Mecca, Saudi Arabia"
+                android:inputType="text"
+                android:maxLength="65"
+                android:padding="@dimen/size_ten"
+                android:singleLine="true"
+                android:visibility="invisible" />
+
+            <RelativeLayout
+                android:id="@+id/location_layout"
+                android:layout_width="@dimen/size_seventy"
+                android:layout_height="@dimen/size_seventy"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/dialog_round_location"
+                android:clickable="true"
+                android:splitMotionEvents="false"
+                android:visibility="visible" >
+
+                <ImageView
+                    android:layout_width="@dimen/size_fourty"
+                    android:layout_height="@dimen/size_fourty"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/ic_navigation" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/location_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/location_layout"
+                android:gravity="center_horizontal"
+                android:padding="@dimen/size_five"
+                android:text="-"
+                android:textSize="@dimen/text_size_sixteen"
+                android:visibility="visible" />
+
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                style="@android:style/Widget.ProgressBar.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/location_layout"
+                android:layout_centerHorizontal="true"
+                android:padding="@dimen/size_five"
+                android:visibility="visible" />
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/dialog_seprator_below"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_one"
+            android:layout_below="@id/dialog_main"
+            android:layout_marginTop="@dimen/size_twenty"
+            android:background="@color/actionbar_bg"
+            android:visibility="invisible" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/dialog_seprator_below"
+            android:background="@android:color/transparent"
+            android:orientation="horizontal"
+            android:splitMotionEvents="false"
+            android:weightSum="2" >
+
+            <TextView
+                android:id="@+id/dialog_cancel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/round_bottom_left"
+                android:gravity="center"
+                android:padding="@dimen/size_fifteen"
+                android:text="@string/cancel"
+                android:textColor="@color/dialog_option_selector"
+                android:textSize="@dimen/text_size_sixteen" />
+
+            <TextView
+                android:id="@+id/dialog_okay"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/round_bottom_right"
+                android:gravity="center"
+                android:padding="@dimen/size_fifteen"
+                android:text="@string/okay"
+                android:textColor="@color/dialog_option_selector"
+                android:textSize="@dimen/text_size_sixteen" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>	
+	
+    <string name="free_live_quran_tutoring">ฟรีเวกวดวิชาคัมภีร์กุรอาน</string>
+    <string name="register_now">สมัครตอนนี้</string>
+    	
+    <string name="language">Thai</string>
+    <string name="qibla_connect">ก่อนที่ ต่อเนื่อง</string>
+    <string name="advertisement">การโฆษณา</string>
+    <string name="distance_from_qibla">ระยะทางจากก่อนที่</string>
+    <string name="kilometer">กิโลเมตร</string>
+    <string name="qibla_direction">กะอฺบะฮฺ</string>
+    <string name="salat_timings">เท็จ</string>
+    
+	<string name="txt_enter_ayah_number">ใส่จำนวนอายะห</string>    
+	<string name="txt_enter_between_0_83">ป้อนค่าระหว่าง 0-83</string>
+	<string name="set_time">ประหยัด เวลา</string>
+	<string name="surahs">ซูเราะห์ </string>
+	<string name="makki">เมกกะ</string>    
+	<string name="verses">กลอน</string>
+	<string name="downloading">ดาวน์โหลด</string>
+	<string name="exit">ออกจาก</string>
+	<string name="tap_to_view_more">แตะเพื่อ ดูเพิ่มเติม</string>
+	<string name="apps">การประยุกต์ใช้งาน</string>
+	<string name="completed">ที่เสร็จสมบูรณ์</string>
+	<string name="edited">แก้ไข</string>
+	<string name="cannot">ไม่สามารถ</string>
+	<string name="your_device_not_compatible">โทรศัพท์ของคุณเข้ากันไม่ได้</string>
+	<string name="set">เลือก</string>
+	    
+    <string name="instructions">คำแนะนำ</string>
+       
+    <string name="select_dial">เลือก หน้าปัด</string>
+    <string name="txt_dial_1">พรมสีฟ้า</string>
+    <string name="txt_dial_2">สีเขียวและสีเทา</string>
+    <string name="txt_dial_3">สง่างามสีชมพู</string>
+    <string name="txt_dial_4">ส้มสีส้ม</string>
+    <string name="txt_dial_5">สิ่งที่พุ่งออกมาเป็นลำสีดำ</string>
+    <string name="txt_dial_6">รอยัลแดง</string>
+
+    <string name="attention">ความสนใจ</string>
+    <string name="attention_msg">หากกำหนดเวลาสวดมนต์ไม่ถูกต้องจากนั้นไปที่ \'การตั้งค่าขั้นสูง\' และเลือกการตั้งค่าที่เหมาะสมสำหรับพื้นที่ทางภูมิศาสตร์ของคุณ</string>
+    <string name="okay">ถูก</string>
+    
+    <string name="txt_fajr">Fajar</string>
+    <string name="txt_sunrise">Sun Rise</string>
+    <string name="txt_zuhr">Zuhar</string>
+    <string name="txt_asar">Asar</string>
+    <string name="txt_maghrib">Maghrib</string>
+    <string name="txt_isha">Isha</string>
+    
+    <string name="settings">การตั้งค่า</string>
+    <string name="location">ที่อยู่ปัจจุบัน</string>
+    <string name="current_Location">ที่ตั้งคู่มือการใช้งาน</string>
+    <string name="manual_location">สถานที่</string>
+    <string name="unable_to_find_location">ไม่สามารถหาสถานที่ตั้ง</string>
+    <string name="enter_location_manually">ใส่สถานที่ด้วยตนเอง</string>
+    <string name="cancel">ยกเลิก</string>
+    <string name="tone_settings">การตั้งค่าเสียง</string>
+    <string name="default_tone">เริ่มต้นโทน</string>
+    <string name="silent">เงียบ</string>
+    <string name="on">บน</string>
+    <string name="off">ปิด</string>
+    <string name="adhan1">หู 1</string>
+    <string name="adhan2">หู 2</string>
+    <string name="adhan3">หู 3</string>
+    <string name="reset">ตั้งค่าใหม่</string>
+    <string name="reset_all">รีเซ็ตทั้งหมด</string>
+    <string name="general">ทั่วไป</string>
+    <string name="reset_settings">รีเซ็ตการตั้งค่า</string>
+    <string name="reset_msg">คุณอยากจะรีเซ็ตการตั้งค่าเริ่มต้นหรือไม่?</string>
+    <string name="about">เกี่ยวกับ</string>
+    <string name="build_version">สร้างรุ่น</string>
+	
+    <string name="enable_provider">กรุณาเปิดการใช้สถานที่จากการตั้งค่าอุปกรณ์ของคุณ</string>
+    
+	<string name="advance_settings">ตั้งค่าขั้นสูง</string>
+    <string name="juristic">นิติบุคคล</string>
+    <string-array name="arr_juristic">
+        <item >ที่เกี่ยวข้อง/มาลิกี/Hanbali</item>
+        <item >คอร์ส</item>
+    </string-array>
+    
+    <string name="latitude_adjustment">ปรับละติจูด</string>
+    <string-array name="arr_latitude_adjustment">
+        <item >ไม่</item>
+        <item >มุมตาม</item>
+        <item >มิดไนท์</item>
+        <item >หนึ่งในเจ็ด</item>
+    </string-array>
+     
+    <string name="calculation_method">วิธีการคำนวณ</string>
+    <string-array name="arr_calculation_method">
+        <item >MWL</item>
+        <item >เมกกะ</item>
+        <item >การาจี</item>
+        <item >ISNA</item>
+        <item >เตหะราน</item>
+        <item >อียิปต์</item>
+        <item >ผักชีฝรั่ง</item>      
+    </string-array>
+	
+    <string name="languages">ภาษา</string>
+    <string-array name="language_array1">
+		<item >English</item>
+		<item >ตุรกี</item>
+		<item >สเปน</item>
+		<item >รัสเซีย</item>
+		<item >ฝรั่งเศส</item>
+		<item >เยอรมัน</item>
+		<item >ภาษามลายู</item>
+		<item >ภาษาอินโดนีเซีย</item>
+		<item >อิตาลี</item>
+		<item >ไทย</item>
+    </string-array>
+        <string-array name="language_array">
+		<item >English</item>	
+		<item >Türk</item>
+		<item >Español</item>
+		<item >Pусский</item>
+		<item >Français</item>
+		<item >Deutsch</item>
+		<item >Melayu</item>
+		<item >Bahasa Indonesia</item>
+		<item >Italiano</item>
+		<item >ไทย</item>	
+    </string-array>
+    
+        
+    <string name="laguage_alert_msg">มันจะเปลี่ยนภาษาของ app ทั้งหมดของคุณ คุณแน่ใจว่าคุณต้องการที่จะเลือกมันได้หรือไม่</string>
+    <string name="confirm">ยืนยัน</string>
+    
+    <string name="feedback">ข้อเสนอแนะ</string>
+    <string name="feedback_msg">เราอยากจะรู้ว่าประสบการณ์ของคุณโปรดให้เราข้อเสนอแนะของคุณ</string>
+    <string name="yes">ใช่</string>
+    <string name="later">ต่อมา</string>
+    
+    <string name="hijri_date">Hijri Date</string>
+    <string-array name="hijri_month_names">
+        <item >ศักดิ์สิทธิ์</item>
+        <item >เดินทาง</item>
+        <item >รอบีอุลเอาวัล</item>
+        <item >ฤดูใบไม้ผลิที่สอง</item>
+        <item >พฤษภาคม</item>
+        <item >พฤษภาคม ครั้งที่สอง</item>
+        <item >จาบ</item>
+        <item >ชะอฺบาน</item>
+        <item >เดือนรอมฎอน</item>
+        <item >ลิฟท์</item>
+        <item >อั พฤศจิกายน</item>
+        <item >อั อาร์กิวเมนต์</item>        
+    </string-array>
+    
+    <string name="solar_date"></string>
+        <string-array name="solar_month_names">
+        <item >มกราคม</item>
+        <item >กุมภาพันธ์</item>
+        <item >มีนาคม</item>
+        <item >เมษายน</item>
+        <item >พฤษภาคม</item>
+        <item >มิถุนายน</item>
+        <item >กรกฎาคม</item>
+        <item >สิงหาคม</item>
+        <item >กันยายน</item>
+        <item >ตุลาคม</item>
+        <item >พฤศจิกายน</item>
+        <item >ธันวาคม</item>        
+    </string-array>
+    
+    <string name="am">am</string>
+    <string name="pm">pm</string>
+    <string name="hour_left">ชั่วโมงที่เหลือ</string>
+    
+    <string name="hours">ชั่วโมง</string>
+    <string name="minutes">นาที</string>
+
+    <string name="about_us">เกี่ยวกับเรา</string>
+    <string name="version">รุ่น</string>
+    <string name="copyright">ลิขสิทธิ์</string>
+    <string name="all_rights_reserved">สงวนลิขสิทธิ์</string>
+    
+    <string name="remove_ads">ลบโฆษณา</string>
+    <string name="remove_ads_heading">บริจาคและนำโฆษณา</string>
+    <string name="remove_ads_msg">กรุณาบริจาคและลบโฆษณาที่จะช่วยให้เราพัฒนาแอปพลิเคอิสลามมีคุณค่ามากขึ้นสำหรับคุณและบุตรหลานของคุณ</string>
+    <string name="remove">เอาออก</string>
+    
+    
+    <string name="advance_help">ช่วยเหลือขั้นสูง</string>
+    
+    <string name="juristic_details"><b>ที่เกี่ยวข้อง/มาลิกี/Hanbali</b> โรงเรียนแห่งความคิด\n\n<b>ที่เกี่ยวข้อง</b> โรงเรียนแห่งความคิด</string>
+    
+    <string name="muslim_world_league_details"><b>MWL:</b> มุสลิมลีกเวิลด์</string>
+    <string name="muslim_world_league_region"><b>ภูมิภาค:</b> ยุโรป, ฅะวันออกไกล, เป็นส่วนหนึ่งของสหรัฐฯ</string>
+    
+    <string name="makkah_details"><b>เมกกะ:</b> Umm al-Qura มหาวิทยาลัย, เมกกะ</string>
+    <string name="makkah_region"><b>ภูมิภาค:</b> คาบสมุทรอาหรับ</string>
+    
+    <string name="karachi_details"><b>การาจี:</b> มหาวิทยาลัยวิทยาศาสตร์อิสลาม, การาจี</string>
+    <string name="karachi_region"><b>ภูมิภาค:</b> ปากีสถาน, อัฟกานิสถาน, บังคลาเทศอินเดีย</string>
+    
+    <string name="isna_details"><b>ISNA:</b> อิสลามสังคมของทวีปอเมริกาเหนือ</string>
+    <string name="isna_region"><b>ภูมิภาค:</b> ทวีปอเมริกาเหนือ (สหรัฐฯและแคนาดา)</string>
+   
+    <string name="tehran_details"><b>เตหะราน:</b> สถาบันธรณีฟิสิกส์, มหาวิทยาลัยเตหะราน</string>
+    <string name="tehran_region"><b>ภูมิภาค:</b> อิหร่านบางชุมชนชิ</string>
+   
+    <string name="egyptian_details"><b>อียิปต์:</b> ผู้มีอำนาจทั่วไปของอียิปต์สำรวจ</string>
+    <string name="egyptian_region"><b>ภูมิภาค:</b> แอฟริกา, ซีเรีย, เลบานอน, มาเลเซีย</string>
+    
+    <string name="jafari_details"><b>ผักชีฝรั่ง:</b> ชิ Ithna Ashari, มันต้องใช้ สถาบันวิจัยกุม</string>
+    <string name="jafari_region"><b>ภูมิภาค:</b> บางชุมชนชิทั่วโลก</string>
+    
+    <string name="angle_based_msg"><b>มุมตาม:</b> นี้เป็นทางออกที่กลางโดยใช้เครื่องคิดเลขบางครั้งคำอธิษฐานที่ผ่านมา ให้αเป็นมุมสนธยาสำหรับนี้เป็นทางออกที่กลางโดยใช้เครื่องคิดเลขบางครั้งคำอธิษฐานที่ผ่านมา ให้αเป็นมุมสนธยาสำหรับนี้เป็นทางออกที่กลางโดยใช้เครื่องคิดเลขบางครั้งคำอธิษฐานที่ผ่านมา ให้αเป็นมุมสนธยาสำหรับعشاและให้ t = α / 60ช่วงเวลาระหว่างพระอาทิตย์ตกและพระอาทิตย์ขึ้นแบ่งออกเป็นชิ้นส่วนที อาชาเริ่มต้นหลังจากที่ส่วนแรก ตัวอย่างเช่นถ้ามุมสนธยา 15 แล้วอาชาเริ่มต้นที่สิ้นไตรมาสแรก (15/60) ของคืน เวลาสำหรับ รุ่งอรุณ มีการคำนวณในทำนองเดียวกันและให้ t = α / 60ช่วงเวลาระหว่างพระอาทิตย์ตกและพระอาทิตย์ขึ้นแบ่งออกเป็นชิ้นส่วนที อาชาเริ่มต้นหลังจากที่ส่วนแรก ตัวอย่างเช่นถ้ามุมสนธยา 15 แล้วอาชาเริ่มต้นที่สิ้นไตรมาสแรก (15/60) ของคืน เวลาสำหรับ Fajar มีการคำนวณในทำนองเดียวกันและให้ t = α / 60ช่วงเวลาระหว่างพระอาทิตย์ตกและพระอาทิตย์ขึ้นแบ่งออกเป็นชิ้นส่วนที อาชาเริ่มต้นหลังจากที่ส่วนแรก ตัวอย่างเช่นถ้ามุมสนธยา 15 แล้วอาชาเริ่มต้นที่สิ้นไตรมาสแรก (15/60) ของคืน เวลาสำหรับ Fajar มีการคำนวณใน.</string>
+    <string name="mid_night_msg"><b>มิดไนท์:</b> ในวิธีการนี้ระยะเวลาตั้งแต่พระอาทิตย์ตกพระอาทิตย์ขึ้นที่จะถูกแบ่งออกเป็นสองส่วนช่วงครึ่งปีแรกจะถือเป็นคืนและอีกครึ่งหนึ่งเป็นวันหยุดพัก รุ่งอรุณ และ อาหารค่ำ ในวิธีการนี้จะถือว่าเป็นเวลาเที่ยงคืนในช่วงเวลาที่ผิดปกติ.</string>
+    <string name="one_seventh_msg"><b>หนึ่งในเจ็ด:</b> ในวิธีการนี้ช่วงเวลาระหว่างพระอาทิตย์ตกและพระอาทิตย์ขึ้นแบ่งออกเป็นเจ็ดส่วน อาหารค่ำ เริ่มต้นหลังจากที่ส่วนหนึ่งในเจ็ดครั้งแรกและ รุ่งอรุณ เป็นจุดเริ่มต้นของส่วนที่เจ็ด.</string>
+
+	
+	<string name="share">แบ่ง</string>
+	<string name="share_msg">ผมพบว่าแอพพลิเคอิสลามที่ยอดเยี่ยมที่จะหาทิศทาง ก่อนที่ ที่แน่นอนดาวน์โหลดที่นี่ :\n\n \n\n https://play.google.com/store/apps/details?id=com.quranreading.qibladirection</string>
+	<string name="more_apps">การใช้งานมาก</string>
+	
+	<string name="toast_enter_city_name">กรุณาใส่ชื่อเมือง</string>
+	<string name="toast_correct_city_name">กรุณาให้ประเทศที่ถูกต้องและชื่อเมือง</string>
+	<string name="toast_enable_location">กรุณาเปิดใช้งานของผู้ให้บริการสถานที่ใส่สถานที่ด้วยตนเองจากการตั้งค่า</string>
+	<string name="toast_alarms_last_location">สัญญาณเตือนภัยที่บันทึกไว้สำหรับสถานที่ที่รู้จักล่าสุด</string>
+	<string name="toast_already_purchased">สั่งซื้อแล้ว</string>
+	<string name="toast_purchase_successful">ซื้อที่ประสบความสำเร็จ</string>
+	<string name="toast_network_error">ไม่มีเครือข่ายที่เชื่อมต่อ</string>
+	<string name="toast_location_error">ไม่สามารถหาสถานที่ตั้ง</string>
+	<string name="toast_get_city_error">ไม่สามารถหาสถานที่ตั้ง ที่อยู่</string>
+	<string name="toast_no_sensor">ไม่มีการเซ็นเซอร์ - อุปกรณ์ของคุณเข้ากันไม่ได้</string>
+	<string name="toast_no_accelerometer">ไม่มีการเซ็นเซอร์ - อุปกรณ์ของคุณเข้ากันไม่ได้</string>  
+	<string name="toast_no_magnetometer">ไม่มีการเซ็นเซอร์ magnetometer - อุปกรณ์ของคุณเข้ากันไม่ได้</string>
+	
+	<string name="toast_unable_detect_location">ไม่สามารถตรวจสอบสถานที่</string>
+	<string name="toast_connect_to_internet_or_set_location_manually">เชื่อมต่อกับอินเทอร์เน็ต หรือ สถานที่ตั้งด้วยตนเอง</string>	
+	<string name="select_school_of_thought">เลือกโรงเรียนของความคิด</string>	
+	<string name="set_alarm">ตั้งนาฬิกาปลุก</string>
+    <string name="txt_accurate_direction">สำหรับทิศทางที่ถูกต้อง</string>
+	<string name="calibration_txt_shake">เขย่าโทรศัพท์ของคุณได้ดี</string>
+	<string name="calibration_txt_place">วางอุปกรณ์ของคุณบนพื้นผิวแนวนอนแบนและไม่ย้าย</string>
+	<string name="calibration_instruct_metalic">ให้สิ่ง Metalic ออกไปจากโทรศัพท์ของคุณ</string>
+	
+    <string name="standard">มาตรฐาน</string>
+    <string name="hanafi">คอร์ส</string>
+    <string name="mwl">MWL</string>
+    <string name="mecca">เมกกะ</string>
+    <string name="karachi">การาจี</string>
+    <string name="isna">ISNA</string>
+    <string name="tehran">เตหะราน</string>
+    <string name="egypt"></string>
+    <string name="jafari">ผักชีฝรั่ง</string>
+    <string name="none">ไม่</string>
+    <string name="angle_based">มุมตาม</string>
+    <string name="mid_night">มิดไนท์</string>
+    <string name="oneseventh">หนึ่งในเจ็ด</string>
+        
+    <string name="error_location_settings_manual_dialog">แอพลิเคชันไม่สามารถหาคุณโดยอัตโนมัติ โปรดเปิดใช้งานการเข้าถึงสถานที่จากการตั้งค่าอุปกรณ์ของคุณ</string>
+    <string name="time_left">เวลาที่เหลือ</string>
+    
+        <!-- Additional With Surahs -->
+    <string name="daylight_saving">ปรับเวลาตามฤดูกาล</string>
+    <string name="txt_translation">แปล</string>
+    <string name="txt_transliteration">ทับศัพท์</string>
+    <string name="alarm_on">สัญญาณเตือนภัย ที่เปิดใช้งาน</string>
+    <string name="alarm_off">สัญญาณเตือนภัย ผู้พิการ</string>
+    
+    <string-array name="more_apps_category">
+        <item >ผู้ใหญ่</item>
+        <item >เด็ก</item>
+        <item >ทั่วไป</item>    
+    </string-array>
+    
+    
+        <!-- Yasin -->
+    <string name="coming_soon">มากกว่า หนังสือ มาเร็ว ๆ นี้</string>
+    <string name="goto_txt">ไปที่</string>
+    <string name="goto_ayah">ไปที่ บทกวี</string>
+    <string name="repeat_on">ทำซ้ำ</string>
+    <string name="repeat_off">ไม่ซ้ำ</string>
+    <string name="surah_yasin">หนังสือ สินธุ์</string>
+    <string name="yasin">สินธุ์</string>
+    <string name="last_read_not_saved">อ่านล่าสุดไม่ได้บันทึก</string>
+    
+	
+</resources>

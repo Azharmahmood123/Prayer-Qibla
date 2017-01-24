@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/ColorPrimary"
+    app:contentInsetLeft="0dp"
+    app:contentInsetStart="0dp"
+    app:contentInsetStartWithNavigation="0dp"
+    android:elevation="@dimen/size_four"
+    android:minHeight="?attr/actionBarSize"
+    android:theme="@style/DrawerToolBar" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/tv_main_heading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical|left"
+            android:layout_toLeftOf="@+id/tv_alarm_settings_save"
+            android:text="@string/app_name"
+            android:textColor="@color/white"
+            android:textSize="@dimen/actionbar_text_size" />
+
+        <TextView
+            android:id="@+id/tv_alarm_settings_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical|left"
+            android:padding="@dimen/size_ten"
+            android:elevation="4dp"
+            android:layout_alignParentRight="true"
+            android:text="@string/save"
+            android:textColor="@color/white"
+            android:textSize="@dimen/actionbar_text_size" />
+    </RelativeLayout>
+
+</android.support.v7.widget.Toolbar>

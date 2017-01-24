@@ -1,0 +1,80 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_background"
+    android:orientation="vertical"
+    android:splitMotionEvents="false">
+
+    <RelativeLayout
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_65sdp"
+        android:background="@color/colorPrimary"
+        android:splitMotionEvents="false"
+        android:visibility="gone">
+
+        <ImageButton
+            android:id="@+id/btn_prev"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_margin="@dimen/_5sdp"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:scaleType="fitCenter"
+            android:src="@android:drawable/btn_minus" />
+
+        <TextView
+            android:id="@+id/header_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:gravity="center"
+            android:text="Islamic Event"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/_20sdp" />
+
+        <TextView
+            android:id="@+id/tv_hijri_year"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/header_title"
+            android:layout_marginTop="@dimen/_3sdp"
+            android:gravity="center"
+            android:text="Hijri Year"
+            android:textColor="#FFFFFF"
+            android:textSize="@dimen/_16sdp" />
+
+        <ImageButton
+            android:id="@+id/btn_next"
+            android:layout_width="@dimen/_45sdp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_margin="@dimen/_5sdp"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:scaleType="fitCenter"
+            android:src="@android:drawable/btn_plus" />
+    </RelativeLayout>
+
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_marginTop="@dimen/_3sdp"
+        android:id="@+id/main_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+    <!--<ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:cacheColorHint="@android:color/transparent"
+        android:divider="@android:color/transparent"
+        android:scrollbars="none"
+        android:splitMotionEvents="false" >
+    </ListView>-->
+
+</LinearLayout>

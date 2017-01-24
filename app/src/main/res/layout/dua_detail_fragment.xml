@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/tv_dua_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="4dp"
+        android:gravity="center"
+        android:padding="@dimen/size_ten"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_twenty_two" />
+
+    <ImageView
+        android:id="@+id/img_shadow_patch"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_eight"
+        android:layout_below="@+id/tv_dua_title"
+        android:src="@drawable/bg_shadow" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/img_shadow_patch"
+        android:layout_gravity="center"
+        android:fillViewport="true"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/size_twelve" >
+
+            <TextView
+                android:id="@+id/tv_dua_arabic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|right"
+                android:paddingBottom="@dimen/size_ten"
+                android:paddingLeft="@dimen/size_twenty"
+                android:paddingRight="@dimen/size_twenty"
+                android:paddingTop="@dimen/size_twenty"
+                android:text="abc"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_thirty_four" />
+
+            <View
+                android:id="@+id/view_transliteration"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_one"
+                android:layout_marginBottom="@dimen/size_ten"
+                android:background="#D6D6D6"
+                android:paddingLeft="@dimen/size_twenty"
+                android:paddingRight="@dimen/size_twenty" />
+
+            <TextView
+                android:id="@+id/tv_dua_transliteration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|left"
+                android:layout_marginBottom="@dimen/size_ten"
+                android:paddingLeft="@dimen/size_twenty"
+                android:paddingRight="@dimen/size_twenty"
+                android:text="abc"
+                android:textSize="@dimen/text_size_twenty" />
+
+            <View
+                android:id="@+id/view_translation"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="@dimen/size_ten"
+                android:background="#D6D6D6"
+                android:paddingLeft="@dimen/size_twenty"
+                android:paddingRight="@dimen/size_twenty" />
+
+            <TextView
+                android:id="@+id/tv_dua_translation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|left"
+                android:paddingLeft="@dimen/size_twenty"
+                android:paddingRight="@dimen/size_twenty"
+                android:text="abc"
+                android:textSize="@dimen/text_size_twenty" />
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

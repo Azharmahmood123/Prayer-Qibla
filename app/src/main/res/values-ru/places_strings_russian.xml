@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="halal_places">Поблизости Халяльные мест</string>
+    <string name="mosques">поблизости Мечети</string>
+    <string name="enable_location">Включить местоположение от настройки</string>
+    <string name="toast_unable_find_places">Расположение Ошибка</string>
+    <string name="location_error">Расположение Ошибка</string>
+    
+</resources>

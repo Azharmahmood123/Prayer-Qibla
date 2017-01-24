@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="halal_places">Kawasan Berdekatan Halal</string>
+    <string name="mosques">Masjid yang Berdekatan</string>
+    <string name="enable_location">Dayakan Lokasi dari Tetapan</string>
+    <string name="toast_unable_find_places">Ralat Lokasi</string>
+    <string name="location_error">Ralat Lokasi</string>
+    
+</resources>

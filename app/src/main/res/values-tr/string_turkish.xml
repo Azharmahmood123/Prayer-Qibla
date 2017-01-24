@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <string name="free_live_quran_tutoring">Ücretsiz Canlı Kuran Ders</string>
+    <string name="register_now">ŞİMDİ ÜYE OL</string>
+		
+    <string name="language">Turkish</string>
+    <string name="qibla_connect">Kıble Bağlamak</string>
+    <string name="find_qibla_direction">Bulmak Kıble yön</string>
+    <string name="advertisement">Reklâm</string>
+    <string name="distance_from_qibla">Mesafe itibaren Kıble</string>
+    <string name="kilometer">kilometre</string>
+    <string name="qibla_direction">Kıble</string>
+    <string name="salat_timings">Dua</string>
+    
+	<string name="txt_enter_between_0_83">Arası Değer Girin 0-83</string>
+	<string name="txt_enter_ayah_number">Ayah Numarasını Girin</string>
+	<string name="set_time">Kaydet Zaman</string>
+	<string name="surahs">Sureler</string>
+	<string name="verses">Ayetler</string>
+	<string name="makki">Mekkî</string>
+	<string name="downloading">Downloading</string>	
+	<string name="exit">Exit</string>
+	<string name="tap_to_view_more">Daha fazla görüntülemek için dokunun</string>
+	<string name="apps">Uygulamalar</string>
+	<string name="completed">Tamamlanan</string>
+	<string name="edited">Düzenlendi</string>
+	<string name="cannot">Yapamam</string>
+	<string name="your_device_not_compatible">Telefonunuz uyumlu değil.</string>
+	<string name="set">Seçin</string>
+	<string name="location">Konum</string>
+    
+    <string name="instructions">Talimatlar</string>
+    
+    <string name="select_dial">Seçmek Kadran</string>
+    <string name="txt_dial_1">Halı Mavi</string>
+    <string name="txt_dial_2">Yeşil ve Gri</string>
+    <string name="txt_dial_3">Zarif Pembe</string>
+    <string name="txt_dial_4">Narenciye Turuncu</string>
+    <string name="txt_dial_5">Jet Siyah</string>
+    <string name="txt_dial_6">Kraliyet Kırmızı</string>
+
+    <string name="attention">Dikkat</string>
+    <string name="attention_msg">Dua zamanlamaları yanlışsa sonra \'Gelişmiş Ayarlar\' gidin ve coğrafi bölge için uygun ayarları seçin</string>
+    <string name="okay">Tamam</string>
+
+    <string name="txt_fajr">İmsak</string>
+    <string name="txt_sunrise">Güneş</string>
+    <string name="txt_zuhr">Öğle</string>
+    <string name="txt_asar">İkindi</string>
+    <string name="txt_maghrib">Akşam</string>
+    <string name="txt_isha">Yatsı</string>
+    
+    <string name="settings">Ayarlar</string>
+    <string name="current_Location">Mevcut Konumu</string>
+    <string name="manual_location">Elle Konumu</string>
+    <string name="unable_to_find_location">Yerini bulmak için açılamıyor</string>
+    <string name="enter_location_manually">El konumunu girin</string>
+    <string name="tone_settings">Ton Ayarları</string>
+    <string name="default_tone">Varsayılan Ses</string>
+    <string name="silent">Sessiz</string>
+    <string name="on">çalışma</string>
+    <string name="off">Kapalı</string>
+    <string name="adhan1">Ezan 1</string>
+    <string name="adhan2">Ezan 2</string>
+    <string name="adhan3">Ezan 3</string>
+    <string name="reset">Ayarlamak</string>
+    <string name="reset_all">Tümünü Sıfırla</string>
+    <string name="general">Genel</string>
+    <string name="reset_settings">Sıfırlama Ayarları</string>
+    <string name="reset_msg">Eğer gerçekten onun varsayılan ayarlarını sıfırlamak istiyor musunuz?</string>
+    <string name="about">Hakkında</string>
+    <string name="build_version">Sürüm Versiyon</string>
+    
+    <string name="enable_provider">Cihazınızın ayarlarından konum etkinleştirin Lütfen</string>
+    
+    <string name="advance_settings">Ilerlemek Ayarlar</string>
+    <string name="juristic">Hukuki</string>
+    <string-array name="arr_juristic">
+        <item >Şafi/Malki/Hanbelî</item>
+        <item >Hanefi</item>
+    </string-array>
+    
+    <string name="latitude_adjustment">Enlem ayarı</string>
+    <string-array name="arr_latitude_adjustment">
+        <item >Hiçbiri</item>
+        <item >Açı tabanlı</item>
+        <item >Orta Gecesi</item>
+        <item >Bir Yedinci</item>
+    </string-array>
+     
+    <string name="calculation_method">Hesaplama Yöntemi</string>
+    <string-array name="arr_calculation_method">
+        <item >MWL</item>
+        <item >Mekke</item>
+        <item >Karaçi</item>
+        <item >ISNA</item>
+        <item >Tehran</item>
+        <item >Mısır</item>
+        <item >Caferi</item>      
+    </string-array>
+	
+    <string name="languages">Diller</string>
+    <string-array name="language_array1">        
+		<item >English</item>	
+		<item >Türk</item>
+		<item >İspanyolca</item>
+		<item >Rus</item>
+		<item >Fransız</item>
+		<item >Alman</item>
+		<item >Malaya</item>
+		<item >Endonezya</item>
+		<item >İtalyan</item>
+		<item >Tayland</item>	
+    </string-array>
+        <string-array name="language_array">
+		<item >English</item>	
+		<item >Türk</item>
+		<item >Español</item>
+		<item >Pусский</item>
+		<item >Français</item>
+		<item >Deutsch</item>
+		<item >Melayu</item>
+		<item >Bahasa Indonesia</item>
+		<item >Italiano</item>
+		<item >ไทย</item>	
+    </string-array>
+    
+        
+    <string name="laguage_alert_msg">Bu sizin tüm app dilini değiştirmek olacaktır. Bunu seçmek istediğiniz emin misiniz?</string>
+    <string name="confirm">Onaylamak</string>
+    <string name="cancel">Iptal</string>
+    
+    <string name="feedback">Geribesleme</string>
+    <string name="feedback_msg">Biz deneyiminizi bilmek istiyorum, bize görüşlerinizi verin</string>
+    <string name="yes">Evet</string>
+    <string name="later">Daha Sonra</string>
+    
+    <string name="hijri_date">Hijri Date</string>
+    <string-array name="hijri_month_names">
+        <item >Muharrem</item>
+        <item >Safar</item>
+        <item >Rabi al-Evvel</item>
+        <item >Rabi sporcudan-Thani</item>
+        <item >Jumad ai-Evvel</item>
+        <item >Jumad sporcudan-Thani</item>
+        <item >Receb</item>
+        <item >Şaban</item>
+        <item >Ramazan</item>
+        <item >Şevval</item>
+        <item >Zilhicce Qa\'dah</item>
+        <item >Zilhicce</item>        
+    </string-array>
+    
+    <string name="solar_date">Solar Date</string>
+        <string-array name="solar_month_names">
+        <item >Ocak</item>
+        <item >Şubat</item>
+        <item >Mart</item>
+        <item >Nisan</item>
+        <item >Mayıs</item>
+        <item >Haziran</item>
+        <item >Temmuz</item>
+        <item >Ağustos</item>
+        <item >Eylül</item>
+        <item >Ekim</item>
+        <item >Kasım</item>
+        <item >Aralık</item>        
+    </string-array>
+    
+    <string name="am">a.m</string>
+    <string name="pm">p.m</string>
+    <string name="hour_left">Saat bıraktı</string>
+    
+    <string name="hours">Saat</string>
+    <string name="minutes">Dakika</string>
+
+    <string name="about_us">Hakkımızda</string>
+    <string name="version">Versiyon</string>
+    <string name="copyright">Telif hakkı</string>
+    <string name="all_rights_reserved">Her hakkı saklıdır</string>
+    
+    <string name="remove_ads">Reklamlar Kaldır</string>
+    <string name="remove_ads_heading">Bağış ve Kaldır Reklamlar</string>
+    <string name="remove_ads_msg">Bağış ve bize sizin ve çocuklar için daha değerli İslami Uygulamaları geliştirmeye yardımcı olmak için reklamları kaldırmak Lütfen</string>
+    <string name="remove">Kaldır</string>
+    
+    
+    <string name="advance_help">Peşin Yardım</string>
+    
+    <string name="juristic_details"><b>Şafi/Malki/Hanbelî</b> Düşünce tarzı\n\n<b>Hanefi</b> Düşünce tarzı</string>
+    
+    <string name="muslim_world_league_details"><b>MWL:</b> Müslüman Dünya Ligi</string>
+    <string name="muslim_world_league_region"><b>Bölge:</b> Avrupa, Uzak Doğu, U.S Bölüm</string>
+    
+    <string name="makkah_details"><b>Mekke:</b> Ümmü\'l-Kurra Üniversitesi, Mekke</string>
+    <string name="makkah_region"><b>Bölge:</b> Arap Yarımadası</string>
+    
+    <string name="karachi_details"><b>Karaçi:</b> İslami İlimler Üniversitesi, Karaçi</string>
+    <string name="karachi_region"><b>Bölge:</b> Pakistan, Afganistan, Bangladesh, India</string>
+    
+    <string name="isna_details"><b>ISNA:</b> Kuzey Amerika İslam Toplumu</string>
+    <string name="isna_region"><b>Bölge:</b> Kuzey Amerika (US ve Kanada)</string>
+   
+    <string name="tehran_details"><b>Tehran:</b> Jeofizik Enstitüsü, Tahran Üniversitesi</string>
+    <string name="tehran_region"><b>Bölge:</b> İran, Bazı Şii topluluklar</string>
+   
+    <string name="egyptian_details"><b>Mısır:</b> Anketi Mısır Genel Kurumu</string>
+    <string name="egyptian_region"><b>Bölge:</b> Afrika, Suriye, Lübnan, Malezya</string>
+    
+    <string name="jafari_details"><b>Caferi:</b> Şii Ithna Eş\'ari, Leva Araştırma Enstitüsü, Kum</string>
+    <string name="jafari_region"><b>Bölge:</b> Dünya çapında Bazı Şii toplulukları</string>
+    
+    <string name="angle_based_msg"><b>Açı Tabanlı:</b> Bu bazı yeni namaz vakti hesap tarafından kullanılan bir ara çözümdür. ∝  Yatsı için alacakaranlık açısı olsun, ve t = α / 60 bildirin. Günbatımı ve gündoğumu arasındaki süre t bölüme ayrılmıştır. Yatsı ilk bölümü sonra başlar. Yatsı için tan açısı 15 ise, örneğin, daha sonra Ishak, gecenin ilk çeyreği (15/60) sonunda başlar. Fecr zamanı da benzer şekilde hesaplanır.</string>
+    <string name="mid_night_msg"><b>Orta Gecesi:</b> Bu yöntemde, gündoğumu günbatımı dönem ikiye ayrılır. İlk yarım gün sonu olarak gece ve diğer yarısı olarak kabul edilir. Bu yöntemde Fajar ve Ishak anormal dönemde yarısı olduğu varsayılır.</string>
+    <string name="one_seventh_msg"><b>Bir Yedinci:</b> Bu yöntemde, günbatımı ve gündoğumu arasındaki süre yedi bölüme ayrılmıştır. Yatsı ilk yedide biri bölümünden sonra başlar ve fecr yedinci bölümün başında ise.</string>
+
+	<string name="share">Dağıtmak</string>
+	<string name="share_msg">Burada tam kıble yönü İndir bulmak için harika bir İslami bir uygulama bulunamadı:\n\n https://play.google.com/store/apps/details?id=com.quranreading.qibladirection</string>
+	<string name="more_apps">Daha Fazla Uygulama</string>
+	
+	<string name="toast_enter_city_name">Şehir Adını Giriniz</string>
+	<string name="toast_correct_city_name">Doğru Ülke ve Şehir Adını sağlayın lütfen</string>
+	<string name="toast_enable_location">Yer Sağlayıcı etkinleştirmek ayarlarından elle konumu giriniz</string>
+	<string name="toast_alarms_last_location">Son bilinen konum için kaydedilen Alarmlar</string>
+	<string name="toast_already_purchased">zaten Satın</string>
+	<string name="toast_purchase_successful">Başarılı Satınalma</string>
+	<string name="toast_network_error">Bağlı Hayır Ağ</string>
+	<string name="toast_location_error">Yerini bulmak için açılamıyor</string>
+	<string name="toast_get_city_error">Yerini bulmak için açılamıyor adres</string>
+	<string name="toast_no_sensor">No sensor - Your device is not compatible</string>
+	<string name="toast_no_accelerometer">Hiçbir ivme sensörü - Cihazınız uyumlu değil</string>  
+	<string name="toast_no_magnetometer">Hiçbir manyetometre sensörü - Cihazınız uyumlu değil</string>
+	
+	<string name="toast_unable_detect_location">Yerini tespit edilemiyor</string>
+	<string name="toast_connect_to_internet_or_set_location_manually">Internete bağlanın veya Set konumu manuel</string>	
+	<string name="select_school_of_thought">Düşünce Okulu seçin</string>	
+	<string name="set_alarm">Alarm kurmak</string>
+    <string name="txt_accurate_direction">Doğru Yön için</string>
+	<string name="calibration_txt_shake">Iyi Telefonunuzu sallayın</string>
+	<string name="calibration_txt_place">Yatay düz bir yüzeye cihazınızı yerleştirin ve hareket etmiyor</string>
+	<string name="calibration_instruct_metalic">Telefonunuzdan uzak Madeni şeyler tutun</string>
+	
+    <string name="standard">standart</string>
+    <string name="hanafi">Hanefi</string>
+    <string name="mwl">MWL</string>
+    <string name="mecca">Mekke</string>
+    <string name="karachi">Karaçi</string>
+    <string name="isna">ISNA</string>
+    <string name="tehran">Tehran</string>
+    <string name="egypt">Mısır</string>
+    <string name="jafari">Caferi</string>
+    <string name="none">hiçbiri</string>
+    <string name="angle_based">açı tabanlı</string>
+    <string name="mid_night">Orta Gecesi</string>
+    <string name="oneseventh">Bir Yedinci</string>
+        
+    <string name="error_location_settings_manual_dialog">Uygulama otomatik olarak bulamıyor. Cihazınızın ayarlarından konum erişimini etkinleştirin.</string>
+    <string name="time_left">Kalan Süre</string>
+    
+    <!-- Additional With Surahs -->
+    <string name="daylight_saving">Gün ışığından yararlanma</string>
+    <string name="txt_translation">Çeviri</string>
+    <string name="txt_transliteration">transliterasyon</string>
+    <string name="alarm_on">Alarm Etkin\'i</string>
+    <string name="alarm_off">Alarm özürlü</string>
+    
+    <string-array name="more_apps_category">
+        <item >Yetişkinler</item>
+        <item >Çocuklar</item>
+        <item >Genel</item>
+    </string-array>
+    
+        <!-- Yasin -->
+    <string name="coming_soon">Daha Sureler Yakında</string>
+    <string name="goto_txt">Git</string>
+    <string name="goto_ayah">Git Ayah</string>
+    <string name="repeat_on">Tekrarlama</string>
+    <string name="repeat_off">Tekrar Etmeyin</string>
+    <string name="surah_yasin">Surenin Yasin</string>
+    <string name="yasin">Yasin</string>
+    <string name="last_read_not_saved">Son kaydedilmedi okumak</string>
+    
+</resources>

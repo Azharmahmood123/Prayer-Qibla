@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="txt_instrct1">Sie werden drei Hauptregisterkarten zu sehen; Qibla, Salat und Suren.</string>
+    <string name="txt_instrct2">Sie erhalten ein Menü-Symbol auf th der linken oberen Ecke des Hauptfensters zu finden, tippen Sie darauf, um die Navigation Schublade zu öffnen. Folgende Optionen sind verfügbar</string>
+    <string name="txt_instrct2_1">Registerkarte "Select Wahl" gibt Ihnen sechs verschiedene Zifferblätter, die nach Ihren Wünschen ausgewählt werden können</string>
+    <string name="txt_instrct2_2">Tippen Sie auf die Option "Werbung ausblenden", wenn du es nicht magst, um Anzeigen zu sehen, wenn die Anwendung</string>
+    <string name="txt_instrct2_3">Wählen Sie "Einstellungen" Alle Einstellungen auf jeder Registerkarte stehen.</string>
+    <string name="txt_instrct2_4">Tippen Sie auf die Option "Sprachen" die Sprache der Anwendung ändern</string>
+    <string name="txt_instrct2_5">Sie können eine Menge von anderen interaktiven Anwendungen von islamischen Koran Lesen entwickelt downloaden, indem Sie die Option "Weitere Anwendungen"</string>
+    <string name="txt_instrct2_6">Teilen Sie Ihre Erlebnisse mit Ihren Freunden und Verwandten bei vielen Social-Media-Websites, indem Sie die Option "Teilen"</string>
+    <string name="txt_instrct2_7">Helfen Sie uns, die App, indem Sie Ihre Rückmeldungen von Option "Rückkopplung" zu verbessern</string>
+    <string name="txt_instrct2_8">Über uns Registerkarte haben Sie Unternehmensinformationen und die Version der Anwendung</string>
+    <string name="txt_instrct3">Wählen Sie die Registerkarte "Gebet" zu Gebetszeiten entsprechend Ihrer Position sehen. Darüber hinaus können Sie die Gebetszeiten zu ändern und Alarme entsprechend Ihrer Leichtigkeit.</string>
+    <string name="txt_instrct4">Gehen Sie zu "Qibla", um genaue Richtung der Qibla nach Ihrem Standort finden</string>
+
+    <string name="txt_instruct_surahs">Zum Suren Registerkarte zu rezitieren und zu hören Suren.</string>
+    <string name="txt_note_instruct">Bitte beachten Sie: Winkel des Geräts zu Qibla Veränderungen entlang Gerätebewegung. Schütteln Sie Gerät und als stelle sie auf den flachen horizontalen Fläche. Bitte nicht, das Gerät zu bewegen, wenn auf eine ebene Fläche gelegt. Halten Sie auch metallische Sachen weg von Ihrem Gerät.</string>    
+    
+    
+</resources>

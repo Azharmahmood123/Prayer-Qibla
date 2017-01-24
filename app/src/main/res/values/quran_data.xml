@@ -1,0 +1,1027 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="search">Search</string>
+    <string name="start_fatiha">اَلۡحَمۡدُ لِلّٰهِ رَبِّ الۡعٰلَمِيۡنَۙ‏ </string>
+    <string name="txt_sajdahs">Sajdahs</string>
+    <string name="txt_bookmarks">Bookmarks</string>
+    <string name="no_bookmarks_added">No Bookmarks Added</string>
+    <string name="added_to_bookmarks">Added to Bookmarks</string>
+    <string name="removed_from_bookmark">Removed from Bookmarks</string>
+    <string name="download">Download</string>
+    <string name="download_msg">Do you want to Download</string>
+    <string name="downloading_in_progress">Downloading In Progress</string>
+    <string name="already_downloaded">Please Wait...</string>
+    <string name="alert">Alert</string>
+    <string name="disclaimer_quran_1">This app is a human effort and it was developed with the best intentions. Any mistake in the content is undeliberate and due to sheer humanness. However, if you notice any mistake or errors please notify us and we will resolve it at the earliest.</string>
+    <string name="disclaimer_quran_2">The text of this app is obtained from Tanzil.net while the audio recitations come from Versebyversequran.com. We do not claim the content or recitation and all the rights to them belong to the original owners.</string>
+    
+    <string name="warning">Warning</string>
+    <string name="warning_msg">Metallic cases or magnetic closure may cause interferences</string>
+
+    <string name="disclaimer">Disclaimer</string>
+    <string name="time">Time</string>
+    
+    <string name="txt_stop_signs">Hentikan Daftar</string>
+    <string name="txt_stop_sign_detail_1">Compulsory stop – Otherwise meaning is changed</string>
+    <string name="txt_stop_sign_detail_2">Stop – End of a section</string>
+    <string name="txt_stop_sign_detail_3">Should stop – End of a sentence</string>
+    <string name="txt_stop_sign_detail_4">Better to stop</string>
+    <string name="txt_stop_sign_detail_5">Can stop or continue</string>
+    <string name="txt_stop_sign_detail_6">Must continue, can take a breath</string>
+    <string name="txt_stop_sign_detail_7">Must continue, can take a breath</string>
+    <string name="txt_stop_sign_detail_8">Must continue, can take a breath</string>
+    <string name="txt_stop_sign_detail_9">Better NOT to stop</string>
+    <string name="txt_stop_sign_detail_10">Stop at the first or the second but not at both</string>
+    <string name="txt_stop_sign_detail_11">Better to stop but permissible to continue</string>
+    <string name="txt_stop_sign_detail_12">Better to continue but permissible to stop</string>
+    <string name="txt_stop_sign_detail_13">It is better not to stop</string>
+
+    <string name="txt_stop_sign_1">م</string>
+    <string name="txt_stop_sign_2">ع</string>
+    <string name="txt_stop_sign_3">ط</string>
+    <string name="txt_stop_sign_4">قف</string>
+    <string name="txt_stop_sign_5">ج</string>
+    <string name="txt_stop_sign_6">ص</string>
+    <string name="txt_stop_sign_7">صل</string>
+    <string name="txt_stop_sign_8">ز</string>
+    <string name="txt_stop_sign_9">ﻻ</string>
+    <string name="txt_stop_sign_10">؞؞</string>
+    <string name="txt_stop_sign_11">قلے</string>
+    <string name="txt_stop_sign_12">صلے</string>
+    <string name="txt_stop_sign_13">ق</string>
+    
+    <string-array name="surah_names">
+         <item>Al-Fatihah</item>
+        <item>Al-Baqarah</item>
+        <item>Aal-e-Imran</item>
+        <item>An-Nisa</item>
+        <item>Al-Ma\'idah</item>
+        <item>Al-An\'am</item>
+        <item>Al-A\'raf</item>
+        <item>Al-Anfal</item>
+        <item>At-Taubah</item>
+        <item>Yunus</item>
+        <item>Hud</item>
+        <item>Yusuf</item>
+        <item>Ar-Ra\'d</item>
+        <item>Ibrahim</item>
+        <item>Al-Hijr</item>
+        <item>An-Nahl</item>
+        <item>Al-Israa</item>
+        <item>Al-Kahf</item>
+        <item>Maryam</item>
+        <item>Ta Ha</item>
+        <item>Al-Anbiya</item>
+        <item>Al-Hajj</item>
+        <item>Al-Mu\'minun</item>
+        <item>An-Nur</item>
+        <item>Al-Furqan</item>
+        <item>Ash-Shu\'ara</item>
+        <item>An-Naml</item>
+        <item>Al-Qasas</item>
+        <item>Al-\'Ankabut</item>
+        <item>Ar-Rum</item>
+        <item>Luqman</item>
+        <item>As-Sajdah</item>
+        <item>Al-Ahzab</item>
+        <item>Saba</item>
+        <item>Fatir</item>
+        <item>Ya Sin</item>
+        <item>As-Saffat</item>
+        <item>Sad</item>
+        <item>Az-Zumar</item>
+        <item>Ghafir</item>
+        <item>Fussilat</item>
+        <item>Ash-Shura</item>
+        <item>Az-Zukhruf</item>
+        <item>Ad-Dukhan</item>
+        <item>Al-Jathiyah</item>
+        <item>Al-Ahqaf</item>
+        <item>Muhammad</item>
+        <item>Al-Fath</item>
+        <item>Al-Hujurat</item>
+        <item>Qaf</item>
+        <item>Ad-Dhariyat</item>
+        <item>At-Tur</item>
+        <item>An-Najm</item>
+        <item>Al-Qamar</item>
+        <item>Ar-Rahman</item>
+        <item>Al-Waqi\'ah</item>
+        <item>Al-Hadid</item>
+        <item>Al-Mujadilah</item>
+        <item>Al-Hashr</item>
+        <item>Al-Mumtahanah</item>
+        <item>As-Saff</item>
+        <item>Al-Jumu\'ah</item>
+        <item>Al-Munafiqun</item>
+        <item>At-Taghabun</item>
+        <item>At-Talaq</item>
+        <item>At-Tahrim</item>
+        <item>Al-Mulk</item>
+        <item>Al-Qalam</item>
+        <item>Al-Haqqah</item>
+        <item>Al-Ma\'arij</item>
+        <item>Nuh</item>
+        <item>Al-Jinn</item>
+        <item>Al-Muzzammil</item>
+        <item>Al-Muddaththir</item>
+        <item>Al-Qiyamah</item>
+        <item>Al-Insan</item>
+        <item>Al-Mursalat</item>
+        <item>An-Naba</item>
+        <item>An-Nazi\'at</item>
+        <item>Abasa</item>
+        <item>At-Takwir</item>
+        <item>Al-Infitar</item>
+        <item>Al-Mutaffifin</item>
+        <item>Al-Inshiqaq</item>
+        <item>Al-Buruj</item>
+        <item>At-Tariq</item>
+        <item>Al-A\'la</item>
+        <item>Al-Ghashiyah</item>
+        <item>Al-Fajr</item>
+        <item>Al-Balad</item>
+        <item>Ash-Shams</item>
+        <item>Al-Lail</item>
+        <item>Ad-Duha</item>
+        <item>Ash-Sharhh</item>
+        <item>At-Tin</item>
+        <item>Al-\'Alaq</item>
+        <item>Al-Qadr</item>
+        <item>Al-Bayyinah</item>
+        <item>Al-Zilzala</item>
+        <item>Al-\'Adiyat</item>
+        <item>Al-Qari\'ah</item>
+        <item>At-Takathur</item>
+        <item>Al-\'Asr</item>
+        <item>Al-Humazah</item>
+        <item>Al-Fil</item>
+        <item>Quraish</item>
+        <item>Al-Ma\'un</item>
+        <item>Al-Kauthar</item>
+        <item>Al-Kafirun</item>
+        <item>An-Nasr</item>
+        <item>Al-Masad</item>
+        <item>Al-Ikhlas</item>
+        <item>Al-Falaq</item>
+        <item>An-Nas</item>
+    </string-array>
+    <string-array name="surah_temp_names_alfasay">
+        <item>temp_1_a.mp3</item>
+        <item>temp_2_a.mp3</item>
+        <item>temp_3_a.mp3</item>
+        <item>temp_4_a.mp3</item>
+        <item>temp_5_a.mp3</item>
+        <item>temp_6_a.mp3</item>
+        <item>temp_7_a.mp3</item>
+        <item>temp_8_a.mp3</item>
+        <item>temp_9_a.mp3</item>
+        <item>temp_10_a.mp3</item>
+        <item>temp_11_a.mp3</item>
+        <item>temp_12_a.mp3</item>
+        <item>temp_13_a.mp3</item>
+        <item>temp_14_a.mp3</item>
+        <item>temp_15_a.mp3</item>
+        <item>temp_16_a.mp3</item>
+        <item>temp_17_a.mp3</item>
+        <item>temp_18_a.mp3</item>
+        <item>temp_19_a.mp3</item>
+        <item>temp_20_a.mp3</item>
+        <item>temp_21_a.mp3</item>
+        <item>temp_22_a.mp3</item>
+        <item>temp_23_a.mp3</item>
+        <item>temp_24_a.mp3</item>
+        <item>temp_25_a.mp3</item>
+        <item>temp_26_a.mp3</item>
+        <item>temp_27_a.mp3</item>
+        <item>temp_28_a.mp3</item>
+        <item>temp_29_a.mp3</item>
+        <item>temp_30_a.mp3</item>
+        <item>temp_31_a.mp3</item>
+        <item>temp_32_a.mp3</item>
+        <item>temp_33_a.mp3</item>
+        <item>temp_34_a.mp3</item>
+        <item>temp_35_a.mp3</item>
+        <item>temp_36_a.mp3</item>
+        <item>temp_37_a.mp3</item>
+        <item>temp_38_a.mp3</item>
+        <item>temp_39_a.mp3</item>
+        <item>temp_40_a.mp3</item>
+        <item>temp_41_a.mp3</item>
+        <item>temp_42_a.mp3</item>
+        <item>temp_43_a.mp3</item>
+        <item>temp_44_a.mp3</item>
+        <item>temp_45_a.mp3</item>
+        <item>temp_46_a.mp3</item>
+        <item>temp_47_a.mp3</item>
+        <item>temp_48_a.mp3</item>
+        <item>temp_49_a.mp3</item>
+        <item>temp_50_a.mp3</item>
+        <item>temp_51_a.mp3</item>
+        <item>temp_52_a.mp3</item>
+        <item>temp_53_a.mp3</item>
+        <item>temp_54_a.mp3</item>
+        <item>temp_55_a.mp3</item>
+        <item>temp_56_a.mp3</item>
+        <item>temp_57_a.mp3</item>
+        <item>temp_58_a.mp3</item>
+        <item>temp_59_a.mp3</item>
+        <item>temp_60_a.mp3</item>
+        <item>temp_61_a.mp3</item>
+        <item>temp_62_a.mp3</item>
+        <item>temp_63_a.mp3</item>
+        <item>temp_64_a.mp3</item>
+        <item>temp_65_a.mp3</item>
+        <item>temp_66_a.mp3</item>
+        <item>temp_67_a.mp3</item>
+        <item>temp_68_a.mp3</item>
+        <item>temp_69_a.mp3</item>
+        <item>temp_70_a.mp3</item>
+        <item>temp_71_a.mp3</item>
+        <item>temp_72_a.mp3</item>
+        <item>temp_73_a.mp3</item>
+        <item>temp_74_a.mp3</item>
+        <item>temp_75_a.mp3</item>
+        <item>temp_76_a.mp3</item>
+        <item>temp_77_a.mp3</item>
+        <item>temp_78_a.mp3</item>
+        <item>temp_79_a.mp3</item>
+        <item>temp_80_a.mp3</item>
+        <item>temp_81_a.mp3</item>
+        <item>temp_82_a.mp3</item>
+        <item>temp_83_a.mp3</item>
+        <item>temp_84_a.mp3</item>
+        <item>temp_85_a.mp3</item>
+        <item>temp_86_a.mp3</item>
+        <item>temp_87_a.mp3</item>
+        <item>temp_88_a.mp3</item>
+        <item>temp_89_a.mp3</item>
+        <item>temp_90_a.mp3</item>
+        <item>temp_91_a.mp3</item>
+        <item>temp_92_a.mp3</item>
+        <item>temp_93_a.mp3</item>
+        <item>temp_94_a.mp3</item>
+        <item>temp_95_a.mp3</item>
+        <item>temp_96_a.mp3</item>
+        <item>temp_97_a.mp3</item>
+        <item>temp_98_a.mp3</item>
+        <item>temp_99_a.mp3</item>
+        <item>temp_100_a.mp3</item>
+        <item>temp_101_a.mp3</item>
+        <item>temp_102_a.mp3</item>
+        <item>temp_103_a.mp3</item>
+        <item>temp_104_a.mp3</item>
+        <item>temp_105_a.mp3</item>
+        <item>temp_106_a.mp3</item>
+        <item>temp_107_a.mp3</item>
+        <item>temp_108_a.mp3</item>
+        <item>temp_109_a.mp3</item>
+        <item>temp_110_a.mp3</item>
+        <item>temp_111_a.mp3</item>
+        <item>temp_112_a.mp3</item>
+        <item>temp_113_a.mp3</item>
+        <item>temp_114_a.mp3</item>
+    </string-array>
+    <string-array name="surah_temp_names_basit">
+        <item>temp_1_b.mp3</item>
+        <item>temp_2_b.mp3</item>
+        <item>temp_3_b.mp3</item>
+        <item>temp_4_b.mp3</item>
+        <item>temp_5_b.mp3</item>
+        <item>temp_6_b.mp3</item>
+        <item>temp_7_b.mp3</item>
+        <item>temp_8_b.mp3</item>
+        <item>temp_9_b.mp3</item>
+        <item>temp_10_b.mp3</item>
+        <item>temp_11_b.mp3</item>
+        <item>temp_12_b.mp3</item>
+        <item>temp_13_b.mp3</item>
+        <item>temp_14_b.mp3</item>
+        <item>temp_15_b.mp3</item>
+        <item>temp_16_b.mp3</item>
+        <item>temp_17_b.mp3</item>
+        <item>temp_18_b.mp3</item>
+        <item>temp_19_b.mp3</item>
+        <item>temp_20_b.mp3</item>
+        <item>temp_21_b.mp3</item>
+        <item>temp_22_b.mp3</item>
+        <item>temp_23_b.mp3</item>
+        <item>temp_24_b.mp3</item>
+        <item>temp_25_b.mp3</item>
+        <item>temp_26_b.mp3</item>
+        <item>temp_27_b.mp3</item>
+        <item>temp_28_b.mp3</item>
+        <item>temp_29_b.mp3</item>
+        <item>temp_30_b.mp3</item>
+        <item>temp_31_b.mp3</item>
+        <item>temp_32_b.mp3</item>
+        <item>temp_33_b.mp3</item>
+        <item>temp_34_b.mp3</item>
+        <item>temp_35_b.mp3</item>
+        <item>temp_36_b.mp3</item>
+        <item>temp_37_b.mp3</item>
+        <item>temp_38_b.mp3</item>
+        <item>temp_39_b.mp3</item>
+        <item>temp_40_b.mp3</item>
+        <item>temp_41_b.mp3</item>
+        <item>temp_42_b.mp3</item>
+        <item>temp_43_b.mp3</item>
+        <item>temp_44_b.mp3</item>
+        <item>temp_45_b.mp3</item>
+        <item>temp_46_b.mp3</item>
+        <item>temp_47_b.mp3</item>
+        <item>temp_48_b.mp3</item>
+        <item>temp_49_b.mp3</item>
+        <item>temp_50_b.mp3</item>
+        <item>temp_51_b.mp3</item>
+        <item>temp_52_b.mp3</item>
+        <item>temp_53_b.mp3</item>
+        <item>temp_54_b.mp3</item>
+        <item>temp_55_b.mp3</item>
+        <item>temp_56_b.mp3</item>
+        <item>temp_57_b.mp3</item>
+        <item>temp_58_b.mp3</item>
+        <item>temp_59_b.mp3</item>
+        <item>temp_60_b.mp3</item>
+        <item>temp_61_b.mp3</item>
+        <item>temp_62_b.mp3</item>
+        <item>temp_63_b.mp3</item>
+        <item>temp_64_b.mp3</item>
+        <item>temp_65_b.mp3</item>
+        <item>temp_66_b.mp3</item>
+        <item>temp_67_b.mp3</item>
+        <item>temp_68_b.mp3</item>
+        <item>temp_69_b.mp3</item>
+        <item>temp_70_b.mp3</item>
+        <item>temp_71_b.mp3</item>
+        <item>temp_72_b.mp3</item>
+        <item>temp_73_b.mp3</item>
+        <item>temp_74_b.mp3</item>
+        <item>temp_75_b.mp3</item>
+        <item>temp_76_b.mp3</item>
+        <item>temp_77_b.mp3</item>
+        <item>temp_78_b.mp3</item>
+        <item>temp_79_b.mp3</item>
+        <item>temp_80_b.mp3</item>
+        <item>temp_81_b.mp3</item>
+        <item>temp_82_b.mp3</item>
+        <item>temp_83_b.mp3</item>
+        <item>temp_84_b.mp3</item>
+        <item>temp_85_b.mp3</item>
+        <item>temp_86_b.mp3</item>
+        <item>temp_87_b.mp3</item>
+        <item>temp_88_b.mp3</item>
+        <item>temp_89_b.mp3</item>
+        <item>temp_90_b.mp3</item>
+        <item>temp_91_b.mp3</item>
+        <item>temp_92_b.mp3</item>
+        <item>temp_93_b.mp3</item>
+        <item>temp_94_b.mp3</item>
+        <item>temp_95_b.mp3</item>
+        <item>temp_96_b.mp3</item>
+        <item>temp_97_b.mp3</item>
+        <item>temp_98_b.mp3</item>
+        <item>temp_99_b.mp3</item>
+        <item>temp_100_b.mp3</item>
+        <item>temp_101_b.mp3</item>
+        <item>temp_102_b.mp3</item>
+        <item>temp_103_b.mp3</item>
+        <item>temp_104_b.mp3</item>
+        <item>temp_105_b.mp3</item>
+        <item>temp_106_b.mp3</item>
+        <item>temp_107_b.mp3</item>
+        <item>temp_108_b.mp3</item>
+        <item>temp_109_b.mp3</item>
+        <item>temp_110_b.mp3</item>
+        <item>temp_111_b.mp3</item>
+        <item>temp_112_b.mp3</item>
+        <item>temp_113_b.mp3</item>
+        <item>temp_114_b.mp3</item>
+    </string-array>
+    
+    <string-array name="surah_sizes_alfasay">
+        <item>420729.0</item>
+        <item>6.0324729E7</item>
+        <item>3.7700807E7</item>
+        <item>3.8292846E7</item>
+        <item>3.0148912E7</item>
+        <item>3.4692755E7</item>
+        <item>3.9788722E7</item>
+        <item>1.4596859E7</item>
+        <item>2.9004748E7</item>
+        <item>1.617147E7</item>
+
+        <item>2.2180938E7</item>
+        <item>2.0204827E7</item>
+        <item>9740801.0</item>
+        <item>9828781.0</item>
+        <item>7644735.0</item>
+        <item>2.023701E7</item>
+        <item>1.5988873E7</item>
+        <item>1.5972781E7</item>
+        <item>1.0268892E7</item>
+        <item>1.3028886E7</item>
+        
+        <item>1.2572892E7</item>
+        <item>1.4188931E7</item>
+        <item>1.1892873E7</item>
+        <item>1.4732696E7</item>
+        <item>8820873.0</item>
+        <item>1.4668957E7</item>
+        <item>1.2588775E7</item>
+        <item>1.5236755E7</item>
+        <item>1.017297E7</item>
+        <item>9376832.0</item>
+        
+        <item>5732781.0</item>
+        <item>4196990.0</item>
+        <item>1.3948814E7</item>
+        <item>9148970.0</item>
+        <item>8460801.0</item>
+        <item>8484833.0</item>
+        <item>1.1604899E7</item>
+        <item>8564873.0</item>
+        <item>1.3044768E7</item>
+        <item>1.2548859E7</item>
+        
+        <item>9292957.0</item>
+        <item>9364846.0</item>
+        <item>9836722.0</item>
+        <item>4620801.0</item>
+        <item>5204899.0</item>
+        <item>7668977.0</item>
+        <item>5908951.0</item>
+        <item>5780846.0</item>
+        <item>4020820.0</item>
+        <item>4484964.0</item>
+        
+        <item>4364801.0</item>
+        <item>3892925.0</item>
+        <item>3700873.0</item>
+        <item>3868892.0</item>
+        <item>5444807.0</item>
+        <item>5740931.0</item>
+        <item>6476748.0</item>
+        <item>4916925.0</item>
+        <item>5020788.0</item>
+        <item>3620833.0</item>
+        
+        <item>2348775.0</item>
+        <item>1716820.0</item>
+        <item>2076683.0</item>
+        <item>2604775.0</item>
+        <item>2900899.0</item>
+        <item>2868716.0</item>
+        <item>3652807.0</item>
+        <item>3660748.0</item>
+        <item>3252820.0</item>
+        <item>2548768.0</item>
+        <item>2252853.0</item>
+        <item>2684814.0</item>
+        <item>1964879.0</item>
+        <item>2604775.0</item>
+        <item>1700729.0</item>
+        <item>2524944.0</item>
+        <item>2292768.0</item>
+        <item>2348775.0</item>
+        <item>2060801.0</item>
+        <item>1772827.0</item>
+        <item>1276918.0</item>
+        <item>1100957.0</item>
+        <item>2492762.0</item>
+        <item>1292801.0</item>
+        <item>1596866.0</item>
+        <item>812984.0</item>
+        <item>868990.0</item>
+        <item>1084866.0</item>
+        <item>1708879.0</item>
+        <item>972853.0</item>
+        <item>684879.0</item>
+        <item>900964.0</item>
+        <item>532742.0</item>
+        <item>348840.0</item>
+        <item>524801.0</item>
+        <item>772859.0</item>
+        <item>372873.0</item>
+        <item>1020918.0</item>
+        <item>484886.0</item>
+        <item>572866.0</item>
+        <item>508918.0</item>
+        <item>508918.0</item>
+        <item>228886.0</item>
+        <item>476735.0</item>
+        <item>396905.0</item>
+        <item>348840.0</item>
+        <item>468794.0</item>
+        <item>204853.0</item>
+        <item>444762.0</item>
+        <item>284892.0</item>
+        <item>340899.0</item>
+        <item>180820.0</item>
+        <item>276742.0</item>
+        <item>412788.0</item>
+    </string-array>
+    
+    <string-array name="surah_sizes_basit">
+        <item>565378.0</item>
+        <!-- <item>739278.0</item> -->
+        <item>1.44589471E8</item>
+        <item>6.124515E7</item>
+        <item>6.2393074E7</item>
+        <item>4.7456885E7</item>
+        <item>5.6453039E7</item>
+        <item>6.5576124E7</item>
+        <item>2.1288751E7</item>
+        <item>4.2333204E7</item>
+        <item>3.027759E7</item>
+        <item>4.666368E7</item>
+        <item>4.3589425E7</item>
+        <item>2.0887554E7</item>
+        <item>2.0864566E7</item>
+        <item>1.7047345E7</item>
+        <item>4.6444878E7</item>
+        <item>3.6478268E7</item>
+        <item>3.7476354E7</item>
+        <item>2.2546434E7</item>
+        <item>3.1278646E7</item>
+        <item>2.9427923E7</item>
+        <item>3.0948668E7</item>
+        <item>2.660352E7</item>
+        <item>3.4882246E7</item>
+        <item>2.2032135E7</item>
+        <item>3.5203866E7</item>
+        <item>2.9849182E7</item>
+        <item>3.4888351E7</item>
+        <item>2.5173099E7</item>
+        <item>1.9083015E7</item>
+        <item>1.2212767E7</item>
+        <item>8695222.0</item>
+        <item>3.148173E7</item>
+        <item>2.1654465E7</item>
+        <item>1.8779324E7</item>
+        <item>1.135775E7</item>
+        <item>2.3594631E7</item>
+        <item>1.8748186E7</item>
+        <item>2.880909E7</item>
+        <item>2.9562044E7</item>
+        <item>1.9908231E7</item>
+        <item>2.0100075E7</item>
+        <item>2.1267644E7</item>
+        <item>9621838.0</item>
+        <item>1.1920822E7</item>
+        <item>1.7295568E7</item>
+        <item>1.3272711E7</item>
+        <item>1.3572179E7</item>
+        <item>9102524.0</item>
+        <item>8826044.0</item>
+        <item>8868466.0</item>
+        <item>7988453.0</item>
+        <item>8626050.0</item>
+        <item>8695222.0</item>
+        <item>1.0845413E7</item>
+        <item>1.0692231E7</item>
+        <item>1.4962102E7</item>
+        <item>1.2105142E7</item>
+        <item>1.1798151E7</item>
+        <item>9739493.0</item>
+        <item>5439111.0</item>
+        <item>4356179.0</item>
+        <item>4655647.0</item>
+        <item>6145253.0</item>
+        <item>7366321.0</item>
+        <item>6852022.0</item>
+        <item>7835271.0</item>
+        <item>8065567.0</item>
+        <item>6828408.0</item>
+        <item>5630955.0</item>
+        <item>5208607.0</item>
+        <item>6260401.0</item>
+        <item>4709355.0</item>
+        <item>6237413.0</item>
+        <item>3964551.0</item>
+        <item>6176391.0</item>
+        <item>4962638.0</item>
+        <item>4417201.0</item>
+        <item>4264019.0</item>
+        <item>3388604.0</item>
+        <item>2596989.0</item>
+        <item>2029191.0</item>
+        <item>4601521.0</item>
+        <item>2666161.0</item>
+        <item>2881619.0</item>
+        <item>1591379.0</item>
+        <item>1836721.0</item>
+        <item>2366693.0</item>
+        <item>3580238.0</item>
+        <item>2006204.0</item>
+        <item>1128698.0</item>
+        <item>2044029.0</item>
+        <item>1120258.0</item>
+        <item>769172.0</item>
+        <item>986929.0</item>
+        <item>1790746.0</item>
+        <item>719435.0</item>
+        <item>2221035.0</item>
+        <item>1037084.0</item>
+        <item>1153695.0</item>
+        <item>1003648.0</item>
+        <item>936983.0</item>
+        <item>468242.0</item>
+        <item>903128.0</item>
+        <item>736154.0</item>
+        <item>635843.0</item>
+        <item>852973.0</item>
+        <item>434805.0</item>
+        <item>752663.0</item>
+        <item>602616.0</item>
+        <item>652562.0</item>
+        <item>401786.0</item>
+        <item>585479.0</item>
+        <item>685999.0</item>
+    </string-array>
+    <string-array name="revealedPlaces">
+        <item>Makki</item>
+        <item>Madani</item>
+        <item>Madani</item>
+        <item>Madani</item>
+        <item>Madani</item>
+        <item>Makki</item>
+        <item>Makki</item>
+        <item>Madani</item>
+        <item>Madani</item>
+        <item>Makki</item>
+        <item>Makki</item>
+        <item>Makki</item>
+        <item>Madani</item>
+        <item>Makki</item>
+        <item>Makki</item>
+        <item>Makki</item>
+        <item>Makki</item>
+        <item>Makki</item>
+        <item>Makki</item>
+        <item>Makki</item>
+        <item>Makki</item>
+        <item>Madani</item>
+        <item>Makki</item>
+        <item>Madani</item>
+        <item>Makki</item>
+        <item>Makki</item>
+        <item>Makki</item>
+        <item>Makki</item>
+        <item>Makki</item>
+        <item>Makki</item>
+        <item>Makki</item>
+        <item>Makki</item>
+        <item>Madani</item>
+        <item>Makki</item>
+        <item>Makki</item>
+        <item>Makki</item>
+        <item>Makki</item>
+        <item>Makki</item>
+        <item>Makki</item>
+        <item>Makki</item>
+        <item>Makki</item>
+        <item>Makki</item>
+        <item>Makki</item>
+        <item>Makki</item>
+        <item>Makki</item>
+        <item>Makki</item>
+        <item>Madani</item>
+        <item>Madani</item>
+        <item>Madani</item>
+        <item>Makki</item>
+        <item>Makki</item>
+        <item>Makki</item>
+        <item>Makki</item>
+        <item>Makki</item>
+        <item>Madani</item>
+        <item>Makki</item>
+        <item>Madani</item>
+        <item>Madani</item>
+        <item>Madani</item>
+        <item>Madani</item>
+        <item>Madani</item>
+        <item>Madani</item>
+        <item>Madani</item>
+        <item>Madani</item>
+        <item>Madani</item>
+        <item>Madani</item>
+        <item>Makki</item>
+        <item>Makki</item>
+        <item>Makki</item>
+        <item>Makki</item>
+        <item>Makki</item>
+        <item>Makki</item>
+        <item>Makki</item>
+        <item>Makki</item>
+        <item>Makki</item>
+        <item>Madani</item>
+        <item>Makki</item>
+        <item>Makki</item>
+        <item>Makki</item>
+        <item>Makki</item>
+        <item>Makki</item>
+        <item>Makki</item>
+        <item>Makki</item>
+        <item>Makki</item>
+        <item>Makki</item>
+        <item>Makki</item>
+        <item>Makki</item>
+        <item>Makki</item>
+        <item>Makki</item>
+        <item>Makki</item>
+        <item>Makki</item>
+        <item>Makki</item>
+        <item>Makki</item>
+        <item>Makki</item>
+        <item>Makki</item>
+        <item>Makki</item>
+        <item>Makki</item>
+        <item>Madani</item>
+        <item>Madani</item>
+        <item>Makki</item>
+        <item>Makki</item>
+        <item>Makki</item>
+        <item>Makki</item>
+        <item>Makki</item>
+        <item>Makki</item>
+        <item>Makki</item>
+        <item>Makki</item>
+        <item>Makki</item>
+        <item>Makki</item>
+        <item>Madani</item>
+        <item>Makki</item>
+        <item>Makki</item>
+        <item>Makki</item>
+        <item>Makki</item>
+    </string-array>
+
+    <integer-array name="noOfVerses">
+        <item>7</item>
+        <item>286</item>
+        <item>200</item>
+        <item>176</item>
+        <item>120</item>
+        <item>165</item>
+        <item>206</item>
+        <item>75</item>
+        <item>129</item>
+        <item>109</item>
+        <item>123</item>
+        <item>111</item>
+        <item>43</item>
+        <item>52</item>
+        <item>99</item>
+        <item>128</item>
+        <item>111</item>
+        <item>110</item>
+        <item>98</item>
+        <item>135</item>
+        <item>112</item>
+        <item>78</item>
+        <item>118</item>
+        <item>64</item>
+        <item>77</item>
+        <item>227</item>
+        <item>93</item>
+        <item>88</item>
+        <item>69</item>
+        <item>60</item>
+        <item>34</item>
+        <item>30</item>
+        <item>73</item>
+        <item>54</item>
+        <item>45</item>
+        <item>83</item>
+        <item>182</item>
+        <item>88</item>
+        <item>75</item>
+        <item>85</item>
+        <item>54</item>
+        <item>53</item>
+        <item>89</item>
+        <item>59</item>
+        <item>37</item>
+        <item>35</item>
+        <item>38</item>
+        <item>29</item>
+        <item>18</item>
+        <item>45</item>
+        <item>60</item>
+        <item>49</item>
+        <item>62</item>
+        <item>55</item>
+        <item>78</item>
+        <item>96</item>
+        <item>29</item>
+        <item>22</item>
+        <item>24</item>
+        <item>13</item>
+        <item>14</item>
+        <item>11</item>
+        <item>11</item>
+        <item>18</item>
+        <item>12</item>
+        <item>12</item>
+        <item>30</item>
+        <item>52</item>
+        <item>52</item>
+        <item>44</item>
+        <item>28</item>
+        <item>28</item>
+        <item>20</item>
+        <item>56</item>
+        <item>40</item>
+        <item>31</item>
+        <item>50</item>
+        <item>40</item>
+        <item>46</item>
+        <item>42</item>
+        <item>29</item>
+        <item>19</item>
+        <item>36</item>
+        <item>25</item>
+        <item>22</item>
+        <item>17</item>
+        <item>19</item>
+        <item>26</item>
+        <item>30</item>
+        <item>20</item>
+        <item>15</item>
+        <item>21</item>
+        <item>11</item>
+        <item>8</item>
+        <item>8</item>
+        <item>19</item>
+        <item>5</item>
+        <item>8</item>
+        <item>8</item>
+        <item>11</item>
+        <item>11</item>
+        <item>8</item>
+        <item>3</item>
+        <item>9</item>
+        <item>5</item>
+        <item>4</item>
+        <item>7</item>
+        <item>3</item>
+        <item>6</item>
+        <item>3</item>
+        <item>5</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+    </integer-array>
+
+    <string-array name="surahNamesArabic">
+         <item>الفاتحة</item>
+        <item>البقرة</item>
+        <item>آل عمران</item>
+        <item>النساء</item>
+        <item>المائدة</item>
+        <item>الأنعام</item>
+        <item>الأعراف</item>
+        <item>الأنفال</item>
+        <item>التوبة</item>
+        <item>يونس</item>
+        <item>هود</item>
+        <item>يوسف</item>
+        <item>الرّعد</item>
+        <item>إبراهيم</item>
+        <item>الحجر</item>
+        <item>النحل</item>
+        <item>الإسراء</item>
+        <item>الكهف</item>
+        <item>مريم</item>
+        <item>طه</item>
+        <item>الأنبياء</item>
+        <item>الحج</item>
+        <item>المؤمنون</item>
+        <item>النّور</item>
+        <item>الفرقان</item>
+        <item>الشعراء</item>
+        <item>النمل</item>
+        <item>القصص</item>
+        <item>العنكبوت</item>
+        <item>الروم</item>
+        <item>لقمان</item>
+        <item>السجدة</item>
+        <item>الأحزاب</item>
+        <item>سبإ</item>
+        <item>فاطر</item>
+        <item>يس</item>
+        <item>الصّافّات</item>
+        <item>ص</item>
+        <item>الزمر</item>
+        <item>غافر</item>
+        <item>فصّلت</item>
+        <item>الشورى</item>
+        <item>الزخرف</item>
+        <item>الدخان</item>
+        <item>الجاثية</item>
+        <item>الأحقاف</item>
+        <item>محمّـد</item>
+        <item>الفتح</item>
+        <item>الحُـجُـرات</item>
+        <item>ق</item>
+        <item>الذاريات</item>
+        <item>الـطور</item>
+        <item>النجم</item>
+        <item>الـقمـر</item>
+        <item>الـرحـمـن</item>
+        <item>الواقِعَة‎</item>
+        <item>الحـديد</item>
+        <item>الـمجادلـة</item>
+        <item>الـحـشـر</item>
+        <item>الـمـمـتـحنة</item>
+        <item>الـصّـف</item>
+        <item>الـجـمـعـة</item>
+        <item>الـمنافقون</item>
+        <item>الـتغابن</item>
+        <item>الـطلاق</item>
+        <item>الـتحريم</item>
+        <item>الـملك</item>
+        <item>الـقـلـم</item>
+        <item>الـحاقّـة</item>
+        <item>الـمعارج</item>
+        <item>نوح</item>
+        <item>الجن</item>
+        <item>الـمـزّمّـل</item>
+        <item>الـمّـدّثّـر</item>
+        <item>الـقـيامـة</item>
+        <item>الإنسان</item>
+        <item>الـمرسلات</item>
+        <item>الـنبإ</item>
+        <item>الـنازعات</item>
+        <item>عبس</item>
+        <item>التكوير</item>
+        <item>الانفطار</item>
+        <item>المطـفـفين</item>
+        <item>الانشقاق</item>
+        <item>البروج</item>
+        <item>الـطارق</item>
+        <item>الأعـلى</item>
+        <item>الغاشـيـة</item>
+        <item>الفجر</item>
+        <item>الـبلد</item>
+        <item>الـشـمـس</item>
+        <item>اللـيـل</item>
+        <item>الضـحى</item>
+        <item>الـشرح</item>
+        <item>الـتين</item>
+        <item>الـعلق</item>
+        <item>الـقدر</item>
+        <item>الـبينة</item>
+        <item>الـزلزلة</item>
+        <item>الـعاديات</item>
+        <item>الـقارعـة</item>
+        <item>الـتكاثر</item>
+        <item>الـعصر</item>
+        <item>الـهمزة</item>
+        <item>الـفيل</item>
+        <item>قريش</item>
+        <item>المـاعون</item>
+        <item>الـكوثر</item>
+        <item>الـكافرون</item>
+        <item>الـنصر</item>
+        <item>الـمسد</item>
+        <item>الإخلاص</item>
+        <item>الـفلق</item>
+        <item>الـناس</item>
+    </string-array>
+
+    <string name="bismillahTextUrdu">اللہ کے نام سے شروع جو بہت مہربان رحمت والا</string>
+    <string name="bismillahTextEngSaheeh">In the name of Allah, the Entirely Merciful, the Especially Merciful.</string>
+    <string name="bismillahTextEngPickthal">In the name of Allah, the Beneficent, the Merciful.</string>
+    <string name="bismillahTextEngShakir">In the name of Allah, the Beneficent, the Merciful.</string>
+    <string name="bismillahTextEngMadudi">In the name of Allah, the Merciful, the Compassionate</string>
+    <string name="bismillahTextEngDarayabadi">In the name of Allah, the Compassionate, the Merciful.</string>
+    <string name="bismillahTextEngYusaf">In the name of Allah, Most Gracious, Most Merciful.</string>
+    <string name="bismillahTextSpanishCortes">¡En el nombre de Alá, el Compasivo, el Misericordioso!</string>
+    <string name="bismillahTextFrench">Au nom d\'Allah, le Tout Miséricordieux, le Tr\ès Miséricordieux.</string>
+    <string name="bismillahTextChinese">奉至仁至慈的真主之名</string>
+    <string name="bismillahTextPersianGhommshei">به نام خداوند بخشنده مهربان</string>
+    <string name="bismillahTextItalian">In nome di Allah, il Compassionevole, il Misericordioso</string>
+    <string name="bismillahTextDutchKeyzer">In naam van den lankmoedigen en albarmhartigen God.</string>
+    <string name="bismillahTextIndonesianBahasha">Dengan menyebut nama Allah Yang Maha Pemurah lagi Maha Penyayang.</string>
+    <string name="bismillahTextHindi">अल्लाह के नाम से जो बड़ा कृपालु और अत्यन्त दयावान हैं।</string>
+    <string name="bismillahTextBengali">শুরু করছি আল্লাহর নামে যিনি পরম করুণাময়, অতি দয়ালু।</string>
+    <string name="bismillahTextMalay">Dengan nama Allah, Yang Maha Pemurah, lagi Maha Mengasihani.</string>    
+    <string name="bismillahTextTurkish">Rahman ve rahim Allah adiyle</string>
+    <string name="bismillah">بِسْمِ اللَّـهِ الرَّحْمَـٰنِ الرَّحِيمِ</string>
+    
+    <string name="aya_of_day">Ayah of the Day</string>
+    <string name="aya_of_day_urdu">آج کی آیت</string>
+    <string name="aya_of_day_spanish">Ayah del Día</string>
+    <string name="aya_of_day_french">Ayah de la Journée</string>
+    <string name="aya_of_day_chinese">每日女仆</string>
+    <string name="aya_of_day_persian">آیه روز</string>
+    <string name="aya_of_day_italian">Ayah del giorno</string>
+    <string name="aya_of_day_dutch">Ayah van de Dag</string>
+    <string name="aya_of_day_indonesian">Ayah Hari</string>
+    <string name="aya_of_day_turkish">Günün ayet</string>
+    <string name="aya_of_day_bengali">দিনের আয়াত</string>
+    <string name="aya_of_day_malay">Ayat Hari</string>
+    <string name="aya_of_day_hindi">आज की कविता</string>    
+
+</resources>

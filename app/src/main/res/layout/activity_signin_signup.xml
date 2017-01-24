@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:facebook="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+    <include layout="@layout/header_layout" />
+
+    <LinearLayout
+        android:layout_margin="@dimen/_18sdp"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/_25sdp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="@dimen/_120sdp"
+            android:layout_height="@dimen/_120sdp"
+            android:src="@drawable/icon_qibla" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_25sdp"
+            android:text="@string/text_signup_page"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_16sdp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_signup_page2"
+
+                android:textColor="@color/black"
+                android:textSize="@dimen/_16sdp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" POST "
+                android:textColor="@color/black"
+                android:textSize="@dimen/_16sdp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_signup_page4"
+
+                android:textColor="@color/black"
+                android:textSize="@dimen/_16sdp" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/relFacebook"
+            android:layout_width="@dimen/_260sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_marginTop="@dimen/_50sdp"
+            android:paddingBottom="@dimen/_5sdp">
+
+            <com.facebook.login.widget.LoginButton
+                android:id="@+id/btn_facebook"
+                android:layout_width="@dimen/_250sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center_horizontal"
+
+
+                />
+
+            <Button
+                android:layout_width="@dimen/_260sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:background="@drawable/facebook"
+                android:clickable="false"
+
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relGmail"
+            android:layout_width="@dimen/_260sdp"
+            android:layout_height="@dimen/_50sdp"
+
+            android:paddingBottom="@dimen/_5sdp">
+
+            <com.google.android.gms.common.SignInButton
+                android:id="@+id/btn_gmail"
+                android:layout_width="@dimen/_250sdp"
+                android:layout_height="@dimen/_35sdp"
+
+                android:layout_gravity="center_horizontal" />
+
+            <Button
+                android:layout_width="@dimen/_260sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:background="@drawable/gmail"
+                android:clickable="false"
+
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:gravity="bottom|center_horizontal"
+            android:orientation="horizontal">
+
+            <TextView
+                android:gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:text="@string/text_policy"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_8sdp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+
+</LinearLayout>
+
+
+
+
+
+

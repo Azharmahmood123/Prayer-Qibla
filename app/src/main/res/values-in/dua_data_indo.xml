@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="duas_list">Senarai Duas</string>
+    <string name="dua_detail">Dua Butiran</string>
+    
+    <string name="duas">Duas</string>
+    <string name="halal_finder">Halal Finder</string>
+    <string name="mosque_finder">Masjid Yang Berdekatan</string>
+    
+    <string name="duas_sub">Duas Untuk Setiap Peristiwa</string>
+    <string name="halal_finder_sub">Cari Restaurants Berdekatan\nDengan Makanan Halal</string>
+    <string name="mosque_finder_sub">Cari Masjid Berdekatan\nSekeliling kamu</string>
+
+    <string name="more">Lebih</string>
+
+</resources>

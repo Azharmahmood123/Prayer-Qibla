@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="aya_of_day">Ayah de la Journée</string>
+    <string name="quran">Coran</string>
+    
+    <string name="search">Chercher</string>
+    <string name="txt_sajdahs">Prostré</string>
+    <string name="txt_bookmarks">Favoris</string>
+    <string name="no_bookmarks_added">Aucune Favoris Ajouté</string>
+    <string name="added_to_bookmarks">Ajouté aux Favoris</string>
+    <string name="removed_from_bookmark">Retiré de la Favoris</string>
+    
+    <string name="download">Télécharger</string>
+    <string name="download_msg">Voulez-vous télécharger</string>
+    <string name="downloading_in_progress">Téléchargement en cours</string>        
+    <string name="already_downloaded">Déjà Téléchargé</string>
+    <string name="alert">Alerte</string>
+ 
+    <string name="disclaimer_quran_1">Cette application est un effort humain et il a été développé avec les meilleures intentions. Toute erreur dans le contenu est undeliberate et en raison de pure humanité. Toutefois, si vous remarquez des erreurs ou des erreurs s\'il vous plaît nous informer et nous allons le résoudre au plus tôt.</string>
+    <string name="disclaimer_quran_2">Le texte de cette application est obtenue à partir Tanzil.net tandis que les récitations audio proviennent de Versebyversequran.com. Nous ne prétendons le contenu ou la récitation et tous les droits qui leur appartiennent à leurs propriétaires d\'origine.</string>
+      
+    <string name="warning">Attention</string>
+    <string name="warning_msg">cas Métalliques ou fermeture magnétique peut provoquer des interférences</string>
+    
+    <string name="disclaimer">Avertissement</string>
+    <string name="time">Temps</string>
+    
+    <string name="txt_stop_signs">Panneaux D\'Arrêt</string>
+    <string name="txt_stop_sign_detail_1">Arrêt Obligatoire - Sinon sens est changé</string>
+    <string name="txt_stop_sign_detail_2">Stop - Fin d\'une section</string>
+    <string name="txt_stop_sign_detail_3">Si l\'arrêt - Fin d\'une phrase</string>
+    <string name="txt_stop_sign_detail_4">Mieux vaut arrêter</string>
+    <string name="txt_stop_sign_detail_5">Peut arrêter ou continuer</string>
+    <string name="txt_stop_sign_detail_6">Doit continuer, peut prendre une grande respiration</string>
+    <string name="txt_stop_sign_detail_7">Doit continuer, peut prendre une grande respiration</string>
+    <string name="txt_stop_sign_detail_8">Doit continuer, peut prendre une grande respiration</string>
+    <string name="txt_stop_sign_detail_9">Mieux vaut ne pas arrêter</string>
+    <string name="txt_stop_sign_detail_10">Arrêtez-vous à la première ou la deuxième, mais pas à la fois</string>
+    <string name="txt_stop_sign_detail_11">Il vaut mieux arrêter, mais autorisé à poursuivre</string>
+    <string name="txt_stop_sign_detail_12">Mieux vaut continuer, mais permis d\'arrêter</string>
+    <string name="txt_stop_sign_detail_13">Il est préférable de ne pas arrêter</string>
+   </resources>

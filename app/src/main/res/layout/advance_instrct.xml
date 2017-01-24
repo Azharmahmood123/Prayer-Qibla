@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_dark_white"
+        android:paddingRight="@dimen/size_two" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_fourty_five"
+                android:layout_marginTop="@dimen/size_five"
+                android:gravity="left"
+                android:padding="@dimen/size_five"
+                android:text="@string/juristic"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_twenty" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/size_five"
+                android:gravity="center|left"
+                android:padding="@dimen/size_five"
+                android:text="@string/juristic_details"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_eighteen" />
+
+            <View
+                style="@style/view_gray_line"
+                android:layout_marginBottom="@dimen/size_five"
+                android:layout_marginTop="@dimen/size_five" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_fourty_five"
+                android:gravity="left"
+                android:padding="@dimen/size_ten"
+                android:text="@string/calculation_method"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_twenty" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/size_five"
+                android:gravity="center|left"
+                android:padding="@dimen/size_five"
+                android:text="@string/muslim_world_league_details"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_eighteen" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/size_five"
+                android:gravity="center|left"
+                android:padding="@dimen/size_five"
+                android:text="@string/muslim_world_league_region"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_eighteen" />
+
+            <View
+                style="@style/view_dotted_line"
+                android:layout_marginBottom="@dimen/size_five"
+                android:layout_marginTop="@dimen/size_five" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/size_five"
+                android:gravity="center|left"
+                android:padding="@dimen/size_five"
+                android:text="@string/makkah_details"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_eighteen" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/size_five"
+                android:gravity="center|left"
+                android:padding="@dimen/size_five"
+                android:text="@string/makkah_region"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_eighteen" />
+
+            <View
+                style="@style/view_dotted_line"
+                android:layout_marginBottom="@dimen/size_five"
+                android:layout_marginTop="@dimen/size_five" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/size_five"
+                android:gravity="center|left"
+                android:padding="@dimen/size_five"
+                android:text="@string/karachi_details"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_eighteen" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/size_five"
+                android:gravity="center|left"
+                android:padding="@dimen/size_five"
+                android:text="@string/karachi_region"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_eighteen" />
+
+            <View
+                style="@style/view_dotted_line"
+                android:layout_marginBottom="@dimen/size_five"
+                android:layout_marginTop="@dimen/size_five" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/size_five"
+                android:gravity="center|left"
+                android:padding="@dimen/size_five"
+                android:text="@string/isna_details"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_eighteen" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/size_five"
+                android:gravity="center|left"
+                android:padding="@dimen/size_five"
+                android:text="@string/isna_region"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_eighteen" />
+
+            <View
+                style="@style/view_dotted_line"
+                android:layout_marginBottom="@dimen/size_five"
+                android:layout_marginTop="@dimen/size_five" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/size_five"
+                android:gravity="center|left"
+                android:padding="@dimen/size_five"
+                android:text="@string/tehran_details"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_eighteen" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/size_five"
+                android:gravity="center|left"
+                android:padding="@dimen/size_five"
+                android:text="@string/tehran_region"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_eighteen" />
+
+            <View
+                style="@style/view_dotted_line"
+                android:layout_marginBottom="@dimen/size_five"
+                android:layout_marginTop="@dimen/size_five" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/size_five"
+                android:gravity="center|left"
+                android:padding="@dimen/size_five"
+                android:text="@string/egyptian_details"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_eighteen" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/size_five"
+                android:gravity="center|left"
+                android:padding="@dimen/size_five"
+                android:text="@string/egyptian_region"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_eighteen" />
+
+            <View
+                style="@style/view_dotted_line"
+                android:layout_marginBottom="@dimen/size_five"
+                android:layout_marginTop="@dimen/size_five" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/size_five"
+                android:gravity="center|left"
+                android:padding="@dimen/size_five"
+                android:text="@string/jafari_details"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_eighteen" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/size_five"
+                android:gravity="center|left"
+                android:padding="@dimen/size_five"
+                android:text="@string/jafari_region"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_eighteen" />
+
+            <View
+                style="@style/view_gray_line"
+                android:layout_marginBottom="@dimen/size_five"
+                android:layout_marginTop="@dimen/size_five" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_fourty_five"
+                android:gravity="left"
+                android:padding="@dimen/size_five"
+                android:text="@string/latitude_adjustment"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_twenty" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/size_five"
+                android:gravity="center|left"
+                android:padding="@dimen/size_five"
+                android:text="@string/angle_based_msg"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_eighteen" />
+
+            <View
+                style="@style/view_dotted_line"
+                android:layout_marginBottom="@dimen/size_five"
+                android:layout_marginTop="@dimen/size_five" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/size_five"
+                android:gravity="center|left"
+                android:padding="@dimen/size_five"
+                android:text="@string/mid_night_msg"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_eighteen" />
+
+            <View
+                style="@style/view_dotted_line"
+                android:layout_marginBottom="@dimen/size_five"
+                android:layout_marginTop="@dimen/size_five" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/size_five"
+                android:gravity="center|left"
+                android:padding="@dimen/size_five"
+                android:text="@string/one_seventh_msg"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_eighteen" />
+
+            <View
+                style="@style/view_gray_line"
+                android:layout_marginBottom="@dimen/size_one"
+                android:layout_marginTop="@dimen/size_five" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

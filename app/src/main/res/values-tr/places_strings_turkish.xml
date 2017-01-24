@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="halal_places">Yakın Helal Yerler</string>
+    <string name="mosques">Yakın Camiler</string>
+    <string name="enable_location">Ayarlar Yerini Etkinleştirme</string>
+    <string name="toast_unable_find_places">Yer Hatası</string>
+    <string name="location_error">Yer Hatası</string>
+    
+</resources>

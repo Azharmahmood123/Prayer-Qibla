@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	
+    <string name="app_name">Qibla Connect®</string>
+    <string name="copyright_year"> © 2016-2017</string>
+    <string name="img_desrcptn">Image</string>
+    
+    <string name="facebook_id">499376796887867</string>
+    
+<!--    <string name="admob_id">ca-app-pub-6471360733987211/9595526845</string>
+    <string name="admob_interstitial">ca-app-pub-6471360733987211/6408640043</string>
+    <string name="admob_id_inline">ca-app-pub-6471360733987211/2211860846</string>
+    <string name="admob_id_quran_banner">ca-app-pub-6471360733987211/3230714845</string>-->
+        
+    <string name="admob_id">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="admob_interstitial">ca-app-pub-3940256099942544/1033173712</string>
+    <string name="admob_id_inline">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="admob_id_quran_banner">ca-app-pub-3940256099942544/6300978111</string>
+    
+    <string name="web_url">www.QiblaConnect.com</string>
+    <string name="device">small</string>
+    
+    <string name="Install_now">Install Now</string>
+    
+    <string name="premium_1">Quran with 9 Translations</string>
+    <string name="premium_2">Transliteration of Quran</string>
+    <string name="premium_3">App in 9 Languages</string>
+    <string name="premium_4">More Azan Tones</string>
+    <string name="premium_5">Remove All Ads</string>
+    <string name="upgrade_for">Upgrade to Premium</string>
+    <string name="no_thanks">No Thanks</string>
+    
+    
+    <string name="free_live_quran_tutoring">Free Live Quran Tutoring</string>
+    <string name="register_now">REGISTER NOW</string>
+    
+    <string name="txt_bismillah_arabic">"الرَّحْمَٰنِ"</string>
+	<string name="yasin_arabic">يس</string>
+    <string name="action_settings">Settings</string>
+      
+	<string name="txt_enter_between_0_83">Enter Value between 0-83</string>
+	<string name="txt_enter_ayah_number">Enter Ayah Number</string>
+	<string name="verses">Verses</string>
+	<string name="makki">Makki</string>
+	<string name="downloading">Downloading</string>
+	<string name="exit">Exit</string>
+	<string name="tap_to_view_more">Tap to view more</string>
+	<string name="apps">Apps</string>
+	<string name="completed">Completed</string>
+	<string name="edited">Edited</string>
+	<string name="cannot">Can\'t</string>
+	<string name="your_device_not_compatible">Your Device is not compatible.</string>
+	<string name="set">Set</string>
+	<string name="location">Location</string>
+	<string name="qibla_connect_splash">QIBLA\nCONNECT®</string>
+	
+	
+    <string name="language">English</string>
+    <string name="qibla_connect">Qibla Connect</string>
+    <string name="find_qibla_direction">Find Qibla Direction</string>
+    <string name="advertisement">Advertisement (Ad)</string>
+    <string name="distance_from_qibla">Distance from Qibla</string>
+    <string name="near_qibla">You are within the range of Qibla</string>
+    <string name="kilometer">Kilometer</string>
+    <string name="qibla_direction">Qibla</string>
+    <string name="salat_timings">Salat</string>
+    <string name="quran">Quran</string>
+    <string name="surahs">Surahs</string>
+    <string name="set_time">Set Time</string>
+    
+    <string name="instructions">Instructions</string>
+    
+    <string name="select_dial">Select Dial</string>
+    <string name="txt_dial_1">Carpet blue</string>
+    <string name="txt_dial_2">Green &amp; Gray</string>
+    <string name="txt_dial_3">Elegant Pink</string>
+    <string name="txt_dial_4">Citrus Orange</string>
+    <string name="txt_dial_5">Jet Black</string>
+    <string name="txt_dial_6">Royal Red</string>
+
+    <string name="attention">Attention</string>
+    <string name="attention_msg">If Salat timings are incorrect then go to \'Advanced Settings\' and select appropriate settings for your geographical region OR edit timings according to your Salat chart.</string>
+    <string name="okay">Ok</string>
+
+    <string name="txt_fajr">Fajar</string>
+    <string name="txt_sunrise">Sun Rise</string>
+    <string name="txt_zuhr">Zuhar</string>
+    <string name="txt_asar">Asar</string>
+    <string name="txt_maghrib">Maghrib</string>
+    <string name="txt_isha">Isha</string>
+    
+    <string name="settings">Settings</string>
+    <string name="current_Location">Current Location</string>
+    <string name="manual_location">Manual Location</string>
+    <string name="unable_to_find_location">Unable to detect New location</string>
+    <string name="enter_location_manually">Enter Location Manually</string>
+    <string name="cancel">Cancel</string>
+    <string name="tone_settings">Tone Settings</string>
+    <string name="default_tone">Default Tone</string>
+    <string name="silent">Silent</string>
+    <string name="on">ON</string>
+    <string name="off">OFF</string>
+
+    <string name="adhan1">Adhan 1</string>
+    <string name="adhan2">Adhan 2</string>
+    <string name="adhan3">Adhan 3</string>
+
+    <string name="adhan4">Adhan 4</string>
+    <string name="adhan5">Adhan 5</string>
+    <string name="adhan6">Adhan 6</string>
+    <string name="adhan7">Adhan 7</string>
+    <string name="adhan8">Adhan 8</string>
+
+
+
+    <string name="reset">Reset</string>
+    <string name="reset_all">Reset All</string>
+    <string name="general">General</string>
+    <string name="reset_settings">Reset Settings</string>
+    <string name="reset_msg">Do you really want to reset settings to its default?</string>
+    <string name="about">ABOUT</string>
+    <string name="build_version">Build Version</string>
+    
+    <string name="enable_provider">Please enable location from your device settings</string>    
+
+    <string name="advance_settings">ADVANCE SETTINGS</string>
+    <string name="juristic">Juristic</string>
+    <string-array name="arr_juristic">
+        <item >Shafi/Maliki/Hanbali</item>
+        <item >Hanafi</item>
+    </string-array>
+    
+    <string name="latitude_adjustment">Latitude adjustment</string>
+    <string-array name="arr_latitude_adjustment">
+        <item >None</item>
+        <item >Angle Based</item>
+        <item >Mid Night</item>
+        <item >One Seventh</item>
+    </string-array>
+     
+    <string name="calculation_method">Calculation Method</string>
+    <string-array name="arr_calculation_method">
+        <item >MWL</item>
+        <item >Mecca</item>
+        <item >Karachi</item>
+        <item >ISNA</item>
+        <item >Tehran</item>
+        <item >Egypt</item>
+        <item >Jafari</item>      
+    </string-array>
+
+    <string name="languages">APP Languages</string>
+    <string-array name="language_array">
+		<item >English</item>	
+		<item >Turkish</item>
+		<item >Spanish</item>
+		<item >Russian</item>
+		<item >French</item>
+		<item >German</item>
+		<item >Malay</item>
+		<item >Indonesian</item>
+		<item >Italian</item>
+		<item >Thai</item>	
+    </string-array>
+    
+    <string name="laguage_alert_msg">It will change the language of your whole app. Are you sure you want to select it?</string>
+    <string name="confirm">Confirm</string>
+    
+    <string name="feedback">Feedback</string>
+    <string name="feedback_msg">We would like to know your experience, please give us your feedback.</string>
+    <string name="yes">Yes</string>
+    <string name="later">Later</string>
+    
+    <string name="hijri_date">Hijri Date</string>
+    <string-array name="hijri_month_names">
+        <item >Muharram</item>
+        <item >Safar</item>
+        <item >Rabi al-Awwal</item>
+        <item >Rabi ath-Thani</item>
+        <item >Jumad ai-Awwal</item>
+        <item >Jumad ath-Thani</item>
+        <item >Rajab</item>
+        <item >Sha\'ban</item>
+        <item >Ramadan</item>
+        <item >Shawwal</item>
+        <item >Dhul Qa\'dah</item>
+        <item >Dhul Hijjah</item>        
+    </string-array>
+    
+    <string name="solar_date">Solar Date</string>
+        <string-array name="solar_month_names">
+        <item >Jan</item>
+        <item >Feb</item>
+        <item >Mar</item>
+        <item >April</item>
+        <item >May</item>
+        <item >Jun</item>
+        <item >Jul</item>
+        <item >Aug</item>
+        <item >Sept</item>
+        <item >Oct</item>
+        <item >Nov</item>
+        <item >Dec</item>        
+    </string-array>
+    
+    <string name="am">am</string>
+    <string name="pm">pm</string>
+    <string name="hour_left">Hours left</string>
+    
+    <string name="hours">Hours</string>
+    <string name="minutes">Minutes</string>
+    
+    <string name="about_us">About Us</string>
+    <string name="version">Version</string>
+    <string name="copyright">Copyright</string>
+    <string name="all_rights_reserved">All Rights Reserved</string>
+    
+    <string name="remove_ads">Remove Ads</string>
+    <string name="remove_ads_heading">Donate &amp; Remove Ads</string>
+    <string name="remove_ads_msg">Please donate and remove ads to help us develop more valuable Islamic Applications for you and your kids.</string>
+    <string name="remove">Remove</string>
+   
+    <string name="advance_help">Advance Help</string>
+    
+    <string name="juristic_details"><b>Shafi/Maliki/Hanbali</b> School of thought\n\n<b>Hanafi</b> School of thought</string>
+    
+    <string name="muslim_world_league_details"><b>MWL:</b> Muslim World League</string>
+    <string name="muslim_world_league_region"><b>Region:</b> Europe, Far East, Parts of U.S</string>
+    
+    <string name="makkah_details"><b>Mecca:</b> Umm al-Qura University, Mecca</string>
+    <string name="makkah_region"><b>Region:</b> Arabian Peninsula</string>
+    
+    <string name="karachi_details"><b>Karachi:</b> University of Islamic Sciences, Karachi</string>
+    <string name="karachi_region"><b>Region:</b> Pakistan, Afganistan, Bangladesh, India</string>
+    
+    <string name="isna_details"><b>ISNA:</b> Islamic Society of North America</string>
+    <string name="isna_region"><b>Region:</b> North America (US and Canada)</string>
+   
+    <string name="tehran_details"><b>Tehran:</b> Institute of Geophysics, University of Tehran</string>
+    <string name="tehran_region"><b>Region:</b> Iran, Some Shia communities</string>
+   
+    <string name="egyptian_details"><b>Egypt:</b> Egyptian General Authority of Survey</string>
+    <string name="egyptian_region"><b>Region:</b> Africa, Syria, Lebanon, Malaysia</string>
+    
+    <string name="jafari_details"><b>Jafari:</b> Shia Ithna Ashari, Leva Research Institute, Qum</string>
+    <string name="jafari_region"><b>Region:</b> Some Shia communities worldwide</string>
+    
+    <string name="angle_based_msg"><b>Angle Based:</b> This is an intermediate solution, used by some recent prayer time calculators. Let ∝ be the twilight angle for Isha, and let t = ∝/60. The period between sunset and sunrise is divided into t parts. Isha begins after the first part. For example, if the twilight angle for Isha is 15, then Isha begins at the end of the first quarter (15/60) of the night. Time for Fajar is calculated similarly.</string>
+    <string name="mid_night_msg"><b>Mid Night:</b> In this method, the period from sunset to sunrise is divided into two halves. The first half is considered to be the night and other half as day break. Fajar and Isha in this method are assumed to be at midnight during the abnormal period.</string>
+    <string name="one_seventh_msg"><b>One Seventh:</b> In this method, the period between sunset and sunrise is divided into seven parts. Isha begins after the first one-seventh part, and fajr is at the beginning of the seventh part.</string>
+
+    <string name="share">Share</string>   
+    <string name="share_msg">I found a wonderful Islamic app to locate exact Qibla direction and correct Salat timings. Download here:\n\n https://play.google.com/store/apps/details?id=com.quranreading.qibladirection</string>
+	<string name="more_apps">More Apps</string>
+		
+	<string name="toast_enter_city_name">Please Enter City Name</string>
+	<string name="toast_correct_city_name">Please Provide Correct City and Country Name</string>
+	<string name="toast_enable_location">Please enable Location Provider, Enter location manually from settings</string>
+	<string name="toast_alarms_last_location">Alarms saved for last known location</string>
+	<string name="toast_already_purchased">Already Purchased</string>
+	<string name="toast_purchase_successful">Purchase Successful</string>
+	<string name="toast_network_error">No Internet Connected</string>
+	<string name="toast_location_error">Unable to Find Location</string>
+	<string name="toast_get_city_error">Unable to Find Location Name</string>
+	<string name="toast_no_sensor">No sensor - Your device is not compatible</string>
+	<string name="toast_no_accelerometer">No accelerometer sensor - Your device is not compatible</string>
+	<string name="toast_no_magnetometer">No magnetometer sensor - Your device is not compatible</string>
+	
+	<string name="toast_unable_detect_location">Unable to detect location</string>
+	<string name="toast_connect_to_internet_or_set_location_manually">Connect to internet or Set location manually</string>	
+	<string name="select_school_of_thought">School of thought</string>	
+	<string name="set_alarm">Set Alarm</string>
+    <string name="txt_accurate_direction">For Accurate Qibla Direction</string>
+	<string name="calibration_txt_shake">Shake your device well</string>
+	<string name="calibration_txt_place">Place your device on horizontal\nflat surface and do not move it</string>
+	<string name="calibration_instruct_metalic">Keep Metallic stuff away from\nyour device</string>
+	
+    <string name="standard">Standard</string>
+    <string name="hanafi">Hanafi</string>
+    <string name="mwl">MWL</string>
+    <string name="mecca">Mecca</string>
+    <string name="karachi">Karachi</string>
+    <string name="isna">ISNA</string>
+    <string name="tehran">Tehran</string>
+    <string name="egypt">Egypt</string>
+    <string name="jafari">Jafari</string>
+    <string name="none">None</string>
+    <string name="angle_based">Angle Based</string>
+    <string name="mid_night">Mid Night</string>
+    <string name="oneseventh">One Seventh</string>    
+    
+    <string name="error_location_settings_manual_dialog">Application cannot locate you automatically. Please enable location access from your device settings.</string>
+    <string name="time_left">Time Left</string>
+    
+    <!-- Additional With Surahs -->
+    <string name="daylight_saving">Daylight Saving</string>
+    <string name="txt_transliteration">Transliteration</string>
+    <string name="txt_translation">Translation</string>
+    <string name="txt_ayah_of_day">Ayah of the Day</string>
+    <string name="alarm_on">Alarm On</string>
+    <string name="alarm_off">Alarm Off</string>    
+    
+    <string-array name="more_apps_category">
+        <item >Adults</item>
+        <item >Kids</item>
+        <item >General</item>    
+    </string-array>
+        
+    <!-- Surahs -->
+    <string name="coming_soon">More Surahs Coming Soon</string>
+    <string name="goto_txt">Goto</string>
+    <string name="goto_ayah">Goto Ayah</string>
+    <string name="repeat_on">Repeat On</string>
+    <string name="repeat_off">Repeat Off</string>
+    <string name="surah_yasin">Surah Yasin</string>
+    <string name="yasin">Yasin</string>
+    <string name="last_read_not_saved">Last read not saved</string>
+    <string-array name="surah_sizes">
+        <item>416623.0</item>
+        <item>6.0320623E7</item>
+        <item>3.7696701E7</item>
+        <item>3.828874E7</item>
+        <item>3.0144806E7</item>
+        <item>3.4688649E7</item>
+        <item>3.9784616E7</item>
+        <item>1.4592753E7</item>
+        <item>2.9000642E7</item>
+        <item>1.617147E7</item>
+        <item>2.2176832E7</item>
+        <item>2.0200721E7</item>
+        <item>9736695.0</item>
+        <item>9824675.0</item>
+        <item>7640629.0</item>
+        <item>2.0232904E7</item>
+        <item>1.5984767E7</item>
+        <item>1.5968675E7</item>
+        <item>1.0264786E7</item>
+        <item>1.302478E7</item>
+        <item>1.2568786E7</item>
+        <item>1.4184825E7</item>
+        <item>1.1888767E7</item>
+        <item>1.472859E7</item>
+        <item>8816767.0</item>
+        <item>1.4664851E7</item>
+        <item>1.2584669E7</item>
+        <item>1.5232649E7</item>
+        <item>1.0168864E7</item>
+        <item>9376832.0</item>
+        <item>5728675.0</item>
+        <item>4192884.0</item>
+        <item>1.3944708E7</item>
+        <item>9144864.0</item>
+        <item>8456695.0</item>
+        <item>8480727.0</item>
+        <item>1.1600793E7</item>
+        <item>8560767.0</item>
+        <item>1.3040662E7</item>
+        <item>1.2544753E7</item>
+        <item>9288851.0</item>
+        <item>9360740.0</item>
+        <item>9832616.0</item>
+        <item>4616695.0</item>
+        <item>5200793.0</item>
+        <item>7664871.0</item>
+        <item>5904845.0</item>
+        <item>5776740.0</item>
+        <item>4016714.0</item>
+        <item>4480858.0</item>
+        <item>4360695.0</item>
+        <item>3888819.0</item>
+        <item>3696767.0</item>
+        <item>3864786.0</item>
+        <item>5440701.0</item>
+        <item>5736825.0</item>
+        <item>6472642.0</item>
+        <item>4912819.0</item>
+        <item>5016682.0</item>
+        <item>3616727.0</item>
+        <item>2344669.0</item>
+        <item>1712714.0</item>
+        <item>2072577.0</item>
+        <item>2600669.0</item>
+        <item>2896793.0</item>
+        <item>2864610.0</item>
+        <item>3648701.0</item>
+        <item>3656642.0</item>
+        <item>3248714.0</item>
+        <item>2544662.0</item>
+        <item>2248747.0</item>
+        <item>2680708.0</item>
+        <item>1960773.0</item>
+        <item>2600669.0</item>
+        <item>1696623.0</item>
+        <item>2520838.0</item>
+        <item>2288662.0</item>
+        <item>2344669.0</item>
+        <item>2056695.0</item>
+        <item>1768721.0</item>
+        <item>1272812.0</item>
+        <item>1096851.0</item>
+        <item>2488656.0</item>
+        <item>1288695.0</item>
+        <item>1592760.0</item>
+        <item>808878.0</item>
+        <item>864884.0</item>
+        <item>1080760.0</item>
+        <item>1704773.0</item>
+        <item>968747.0</item>
+        <item>680773.0</item>
+        <item>896858.0</item>
+        <item>528636.0</item>
+        <item>344734.0</item>
+        <item>520695.0</item>
+        <item>768753.0</item>
+        <item>368767.0</item>
+        <item>1016812.0</item>
+        <item>480780.0</item>
+        <item>568760.0</item>
+        <item>504812.0</item>
+        <item>504812.0</item>
+        <item>224780.0</item>
+        <item>472629.0</item>
+        <item>392799.0</item>
+        <item>344734.0</item>
+        <item>464688.0</item>
+        <item>200747.0</item>
+        <item>440656.0</item>
+        <item>280786.0</item>
+        <item>336793.0</item>
+        <item>176714.0</item>
+        <item>272636.0</item>
+        <item>408682.0</item>
+        <item>8.37309792E8</item>
+    </string-array>
+
+        
+</resources>

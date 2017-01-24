@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="aya_of_day">Ayat Hari</string>
+    <string name="quran">Quran</string>
+    
+    <string name="search">Carian</string>
+    <string name="txt_sajdahs">Sujud</string>
+    <string name="txt_bookmarks">Kegemaran</string>
+    <string name="no_bookmarks_added">Tiada Kegemaran Ditambah</string>
+    <string name="added_to_bookmarks">Ditambah ke Kegemaran</string>
+    <string name="removed_from_bookmark">Dikeluarkan dari Kegemaran</string>
+    
+    <string name="download">Muat Turun</string>
+    <string name="download_msg">Adakah anda mahu turun</string>
+    <string name="downloading_in_progress">Muat turun dalam Kemajuan</string>        
+    <string name="already_downloaded">Sudah Turun</string>
+    <string name="alert">Amaran</string>
+ 
+    <string name="disclaimer_quran_1">Aplikasi ini adalah usaha manusia dan ia telah dibangunkan dengan niat yang terbaik. Apa-apa kesilapan dalam kandungan adalah undeliberate dan kerana kemanusiaan semata-mata. Walau bagaimanapun, jika anda mendapati sebarang kesilapan atau kesilapan sila maklumkan kepada kami dan kami akan menyelesaikannya di awal.</string>
+    <string name="disclaimer_quran_2">Teks aplikasi ini diperolehi daripada Tanzil.net manakala bacaan audio datang dari Versebyversequran.com. Kami tidak mendakwa kandungan atau bacaan dan segala hak kepada mereka milik kepada pemilik asal.</string>  
+   
+    <string name="warning">Amaran</string>
+    <string name="warning_msg">kes Metallic atau penutupan magnet boleh menyebabkan gangguan</string>
+    
+    <string name="disclaimer">Penafian</string>
+    <string name="time">Masa</string>
+    
+    <string name="txt_stop_signs">Berhenti Tanda</string>
+    <string name="txt_stop_sign_detail_1">Hentikan Wajib - Jika tidak makna berubah</string>
+    <string name="txt_stop_sign_detail_2">Hentikan - Akhir bahagian</string>
+    <string name="txt_stop_sign_detail_3">Perlu berhenti - Akhir ayat</string>
+    <string name="txt_stop_sign_detail_4">Lebih baik untuk berhenti</string>
+    <string name="txt_stop_sign_detail_5">Boleh berhenti atau terus</string>
+    <string name="txt_stop_sign_detail_6">Mesti terus, boleh mengambil nafas</string>
+    <string name="txt_stop_sign_detail_7">Mesti terus, boleh mengambil nafas</string>
+    <string name="txt_stop_sign_detail_8">Mesti terus, boleh mengambil nafas</string>
+    <string name="txt_stop_sign_detail_9">Lebih baik tidak berhenti</string>
+    <string name="txt_stop_sign_detail_10">Berhenti di pertama atau kedua tetapi tidak di kedua-dua</string>
+    <string name="txt_stop_sign_detail_11">Lebih baik untuk berhenti tetapi dibenarkan untuk terus</string>
+    <string name="txt_stop_sign_detail_12">Lebih baik untuk diteruskan tetapi dibenarkan untuk berhenti</string>
+    <string name="txt_stop_sign_detail_13">Ia adalah lebih baik tidak berhenti</string>
+    
+    </resources>

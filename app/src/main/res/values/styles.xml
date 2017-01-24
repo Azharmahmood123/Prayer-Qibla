@@ -1,0 +1,526 @@
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+
+
+
+
+
+    -->
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/ColorPrimary</item>
+        <item name="colorPrimaryDark">@color/ColorPrimaryDark</item>
+        <item name="android:activatedBackgroundIndicator">@drawable/bg_row_bookmarks</item>
+        <item name="android:splitMotionEvents">false</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="alertDialogTheme">@style/MyAlertDialogStyle</item>
+       <!-- <item name="colorControlNormal">@color/colorPrimary</item>-->
+
+    </style>
+
+    <style name="DrawerArrowStyle" parent="@style/Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">true</item>
+        <item name="color">@color/white</item>
+    </style>
+
+    <style name="DrawerToolBar" parent="@style/ThemeOverlay.AppCompat.Dark">
+        <item name="spinBars">true</item>
+        <item name="color">@color/white</item>
+        <item name="android:textColorSecondary">@color/white</item>
+    </style>
+
+
+    <style name="TwoWayView">
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="Color1SwitchStyle">
+        <item name="colorControlActivated">@color/ColorPrimaryDark</item>
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+    <style name="AppThemeNew" parent="AppTheme">
+        <item name="drawerArrowStyle">@style/MyDrawerArrowToggle</item>
+
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="MyDrawerArrowToggle" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="color">@color/white</item>
+    </style>
+
+    <!--
+         <style name="MainActivityTheme" parent="AppBaseThemeNew">
+        <item name="vpiTabPageIndicatorStyle">@style/CustomTabPageIndicator</item>
+        Customize your theme here.
+    </style>
+
+    -->
+
+    <style name="AppTheme.Toolbar.Title" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">@dimen/text_size_twenty</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- ************************ Custom Theme for ActionBar ************************ -->
+
+
+    <!-- the theme applied to the application or activity -->
+    <!--
+         <style name="CustomActionBarTheme" parent="AppTheme">
+        <item name="android:actionBarStyle">@style/customActionBar</item>
+
+        Support library compatibility
+        <item name="actionBarStyle">@style/customActionBar</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="vpiTabPageIndicatorStyle">@style/CustomTabPageIndicator</item>
+    </style>
+
+    -->
+
+
+    <!-- ************************ ActionBar ************************ -->
+
+
+    <!-- ActionBar styles -->
+    <style name="customActionBar" parent="@style/Widget.AppCompat.Light.ActionBar">
+        <item name="android:titleTextStyle">@style/customActionBarTitleText</item>
+        <item name="android:background">@drawable/actionbar_background</item>
+
+        <!-- Support library compatibility -->
+        <item name="titleTextStyle">@style/customActionBarTitleText</item>
+        <item name="background">@drawable/actionbar_background</item>
+    </style>
+
+    <!-- ActionBar title text -->
+    <style name="customActionBarTitleText" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:paddingLeft">@dimen/size_twenty</item>
+        <!-- The textColor property is backward compatible with the Support Library -->
+    </style>
+
+    <!-- ************************ ViewpageIndicator Library Styles ************************ -->
+
+
+    <!--
+         <style name="CustomTabPageIndicator" parent="Widget.TabPageIndicator">
+        <item name="android:background">@drawable/tab_indicator</item>
+        <item name="android:textColor">@drawable/tab_text_color</item>
+        <item name="android:textSize">@dimen/text_size_vpi</item>
+        <item name="android:divider">@android:color/transparent</item>
+    </style>
+
+    <style name="CustomTabPageIndicator.Text" parent="android:TextAppearance.Medium">
+        <item name="android:typeface">sans</item>
+    </style>
+
+    -->
+
+
+    <!-- ************************ Other Styles ************************ -->
+
+    <style name="drawer_menu_separator">
+        <item name="android:layout_height">@dimen/size_one</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:background">@color/background</item>
+    </style>
+
+    <style name="dial_text">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:gravity">center|left</item>
+        <item name="android:visibility">gone</item>
+        <item name="android:paddingLeft">@dimen/size_twenty</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/text_size_twenty_two</item>
+    </style>
+
+    <style name="dial_image">
+        <item name="android:layout_width">@dimen/size_fifty</item>
+        <item name="android:layout_height">@dimen/size_fifty</item>
+        <item name="android:layout_margin">@dimen/size_two</item>
+        <item name="android:contentDescription">@string/img_desrcptn</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <style name="dial_row_layout">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:clickable">true</item>
+        <item name="android:background">@drawable/bg_row_corners</item>
+        <item name="android:layout_marginLeft">@dimen/size_eight</item>
+        <item name="android:layout_marginRight">@dimen/size_eight</item>
+        <item name="android:layout_marginTop">@dimen/size_four</item>
+        <item name="android:layout_marginBottom">@dimen/size_four</item>
+    </style>
+
+    <style name="view_line_dark_gray">
+        <item name="android:layout_height">@dimen/size_two</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:background">@color/dark_gray</item>
+        <item name="android:layout_marginLeft">@dimen/_1sdp</item>
+        <item name="android:layout_marginRight">@dimen/_1sdp</item>
+    </style>
+
+    <style name="view_line_light_gray">
+        <item name="android:layout_height">@dimen/size_one</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:background">@color/light_gray</item>
+        <item name="android:layout_marginLeft">@dimen/_1sdp</item>
+        <item name="android:layout_marginRight">@dimen/_1sdp</item>
+    </style>
+
+    <style name="view_line_dark_gray_full">
+        <item name="android:layout_height">@dimen/size_two</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:background">@color/dark_gray</item>
+    </style>
+
+    <style name="view_line_light_gray_full">
+        <item name="android:layout_height">@dimen/size_one</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:background">@color/light_gray</item>
+    </style>
+
+
+
+
+    <!-- App Color Lines-->
+    <style name="view_line_light_app_color">
+        <item name="android:layout_height">@dimen/size_one</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:background">@color/ColorPrimary</item>
+        <item name="android:layout_marginLeft">@dimen/size_five</item>
+        <item name="android:layout_marginRight">@dimen/size_five</item>
+    </style>
+
+    <style name="view_line_dark_app_color_full">
+        <item name="android:layout_height">@dimen/size_two</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:background">@color/ColorPrimaryDark</item>
+    </style>
+
+    <style name="view_line_light_app_color_full">
+        <item name="android:layout_height">@dimen/size_one</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:background">@color/ColorPrimary</item>
+    </style>
+    <!---->
+
+
+
+
+    <style name="setting_row_header">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center|left</item>
+        <item name="android:layout_marginBottom">@dimen/size_three</item>
+        <item name="android:layout_marginTop">@dimen/size_three</item>
+        <item name="android:layout_marginLeft">@dimen/size_ten</item>
+        <item name="android:textColor">@color/header</item>
+        <item name="android:textSize">@dimen/text_size_twenty</item>
+    </style>
+
+    <style name="setting_row_bg_s">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/size_fifty</item>
+        <item name="android:paddingTop">@dimen/size_three</item>
+        <item name="android:paddingBottom">@dimen/size_three</item>
+        <item name="android:layout_marginLeft">@dimen/_6sdp</item>
+        <item name="android:layout_marginRight">@dimen/_6sdp</item>
+        <item name="android:background">@drawable/bg_row_default_transperant</item>
+        <item name="android:onClick">onRowClick</item>
+    </style>
+
+    <style name="setting_row_bg_l">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/size_fifty_five</item>
+        <item name="android:paddingRight">@dimen/size_five</item>
+        <item name="android:paddingTop">@dimen/size_three</item>
+        <item name="android:paddingBottom">@dimen/size_three</item>
+        <item name="android:paddingLeft">@dimen/size_five</item>
+        <item name="android:layout_marginLeft">@dimen/size_five</item>
+        <item name="android:layout_marginRight">@dimen/size_five</item>
+        <item name="android:background">@drawable/bg_row_default_transperant</item>
+        <item name="android:onClick">onRowClick</item>
+    </style>
+
+    <style name="setting_row_adhan_sound">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/size_fourty_five</item>
+        <item name="android:background">@drawable/bg_row_default_transperant</item>
+        <item name="android:onClick">onAlarmOptionsClick</item>
+    </style>
+
+    <style name="view_transparent_line">
+        <item name="android:layout_height">@dimen/size_five</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <style name="timings_row_layout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@drawable/bg_row_resource</item>
+        <!-- <item name="android:background">@drawable/bg_row_resource</item> -->
+        <item name="android:clickable">true</item>
+        <item name="android:padding">@dimen/size_one</item>
+        <item name="android:splitMotionEvents">false</item>
+    </style>
+
+    <style name="timings_heading_text_demo">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:gravity">center|left</item>
+        <item name="android:textColor">@color/color_black</item>
+        <item name="android:textSize">@dimen/text_size_timings_row_1</item>
+    </style>
+
+    <style name="timings_heading_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:gravity">center|left</item>
+        <item name="android:paddingLeft">@dimen/size_fifteen</item>
+        <item name="android:textColor">@color/color_black</item>
+        <item name="android:textSize">@dimen/text_size_timings_row_1</item>
+    </style>
+
+    <style name="timings_time_text">
+        <item name="android:layout_width">@dimen/size_eighty</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:gravity">center</item>
+        <item name="android:clickable">true</item>
+        <item name="android:paddingRight">@dimen/size_two</item>
+        <item name="android:paddingLeft">@dimen/size_two</item>
+        <item name="android:textColor">@color/color_selector_time</item>
+        <item name="android:textSize">@dimen/text_size_timings_row_2</item>
+    </style>
+
+    <style name="timings_time">
+        <item name="android:layout_width">@dimen/size_eighty</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingRight">@dimen/size_two</item>
+        <item name="android:textColor">@color/color_black</item>
+        <item name="android:textSize">@dimen/text_size_timings_row_3</item>
+    </style>
+
+    <style name="timings_heading_text_s3">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:gravity">center|left</item>
+        <item name="android:paddingLeft">@dimen/size_fifteen</item>
+        <item name="android:textColor">@color/color_white</item>
+        <item name="android:textSize">23dp</item>
+    </style>
+
+    <style name="timings_time_text_s3">
+        <item name="android:layout_width">@dimen/size_eighty</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingRight">@dimen/size_ten</item>
+        <item name="android:textColor">@color/color_white</item>
+        <item name="android:textSize">19dp</item>
+    </style>
+
+    <style name="timings_row_image">
+        <item name="android:layout_width">@dimen/size_thirty_five</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_marginRight">@dimen/size_five</item>
+        <item name="android:contentDescription">@string/img_desrcptn</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <style name="view_line_1">
+        <item name="android:layout_height">@dimen/size_three</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:background">@color/view_color_1</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="view_line_2">
+        <item name="android:layout_height">@dimen/size_three</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:background">@color/view_color_2</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="view_line_3">
+        <item name="android:layout_height">@dimen/size_three</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:background">@color/view_color_3</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="view_line_4">
+        <item name="android:layout_height">@dimen/size_three</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:background">@color/view_color_4</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="view_white_line">
+        <item name="android:layout_height">@dimen/size_two</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:background">@color/color_white</item>
+    </style>
+
+    <string name="admob_id_testing">ca-app-pub-3940256099942544/6300978111</string>
+    <style name="Transparent" parent="AppBaseTheme">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+    <style name="view_gray_line">
+        <item name="android:layout_height">@dimen/size_one</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:background">@color/color_dark_gray</item>
+    </style>
+
+    <style name="view_blue_line">
+        <item name="android:layout_height">@dimen/size_one</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:background">@color/light_blue</item>
+    </style>
+
+    <style name="view_dotted_line">
+        <item name="android:layout_height">@dimen/size_one</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:background">@drawable/dotted_line</item>
+    </style>
+
+    <style name="help_row_header">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/size_thirty_five</item>
+        <item name="android:gravity">center|left</item>
+        <item name="android:layout_marginTop">@dimen/size_five</item>
+        <item name="android:layout_marginLeft">@dimen/size_ten</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/text_size_twenty</item>
+    </style>
+
+    <!-- Surah Yasin Styles -->
+    <style name="settings_spinner_line">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">@dimen/size_one</item>
+        <item name="android:background">#A4A9AE</item>
+    </style>
+
+    <style name="settings_stroke_line">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">@dimen/size_two</item>
+        <item name="android:background">#EBECF0</item>
+    </style>
+
+    <style name="settings_btn_stroke_line">
+        <item name="android:layout_width">@dimen/size_two</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:background">#FFFFFF</item>
+    </style>
+
+    <!-- End of Surah Yasin Styles -->
+
+
+    <!-- Quran Styles -->
+    <style name="grey_line">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">@dimen/size_four</item>
+        <item name="android:background">@color/gray_light</item>
+    </style>
+
+    <style name="shadow_bg">
+        <item name="android:layout_width">@dimen/size_one</item>
+        <item name="android:layout_height">@dimen/size_thirty_five</item>
+        <item name="android:background">@color/dark_gray</item>
+    </style>
+
+    <style name="bookmark_seprtr_h">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">@dimen/size_two</item>
+        <item name="android:background">#00000000</item>
+    </style>
+
+    <!-- End of Quran Styles -->
+    <style name="MyAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorPrimary">@color/ColorPrimary</item>
+        <item name="colorPrimaryDark">@color/ColorPrimaryDark</item>
+        <item name="android:textColorPrimary">@color/black</item>
+        <item name="android:background">@color/transperent</item>
+        <item name="android:colorAccent" tools:targetApi="lollipop">@color/ColorPrimaryDark</item>
+        <item name="android:windowTitleStyle">@style/MyTitleTextStyle</item>
+         <item name="colorControlNormal">@color/colorPrimary</item>
+        <item name="colorControlActivated">@color/colorPrimary</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="MyTitleTextStyle">
+        <item name="android:textColor">@color/ColorPrimary</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Title</item>
+    </style>
+
+
+    <style name="MyMaterialTheme" parent="MyMaterialTheme.Base">
+
+    </style>
+
+    <style name="MyMaterialTheme.Base" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="MyRadioButton" parent="Theme.AppCompat.Light">
+        <item name="colorControlNormal">@color/colorPrimary</item>
+        <item name="colorControlActivated">@color/colorPrimary</item>
+    </style>
+
+    <style name="Theme.CustomTranslucent" parent="@style/Theme.AppCompat.NoActionBar">
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0.5</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <style name="ToolbarColoredBackArrow" parent="AppTheme">
+        <item name="android:textColorSecondary">@color/white</item>
+    </style>
+</resources>

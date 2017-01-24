@@ -1,0 +1,200 @@
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/top_bar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentTop="true"
+    android:layout_gravity="center"
+    android:layout_margin="@dimen/_10sdp"
+    android:orientation="vertical"
+    android:splitMotionEvents="false"
+    app:cardBackgroundColor="@android:color/white"
+    app:cardCornerRadius="@dimen/_5sdp"
+    app:cardUseCompatPadding="true">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:splitMotionEvents="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+
+
+            android:orientation="vertical"
+            android:splitMotionEvents="false">
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_14sdp"
+                android:gravity="center"
+                android:text="Converter"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/_18sdp" />
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/_30sdp"
+                android:layout_marginRight="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_20sdp">
+
+                <TextView
+                    android:id="@+id/txt_hijri"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:text="Hijri"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txt_hijri"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:text="Gregorian"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12sdp" />
+
+                <RadioGroup
+                    android:id="@+id/myRadioGroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true">
+
+                    <android.support.v7.widget.AppCompatRadioButton
+                        android:id="@+id/hijri"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text=""
+                        android:theme="@style/MyRadioButton" />
+
+                    <android.support.v7.widget.AppCompatRadioButton
+                        android:id="@+id/gerogian"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:theme="@style/MyRadioButton" />
+
+                </RadioGroup>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_90sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp">
+                <!-- Gergorian Wheell Picker-->
+                <LinearLayout
+                    android:id="@+id/linearGerogerian"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/btn_background"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:splitMotionEvents="false"
+                    android:visibility="gone">
+
+                    <noman.hijri.wheelpicker.WheelView
+                        android:id="@+id/wheelView_day_g"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5" />
+
+                    <noman.hijri.wheelpicker.WheelView
+                        android:id="@+id/wheelView_month_g"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.2"
+                        android:paddingLeft="@dimen/_20sdp" />
+
+
+                    <noman.hijri.wheelpicker.WheelView
+                        android:id="@+id/wheelView_year_g"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingRight="@dimen/_20sdp" />
+                </LinearLayout>
+                <!--
+                            Hijri Wheel Picker-->
+                <LinearLayout
+                    android:id="@+id/linearHijri"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:layout_toEndOf="@+id/linearGerogerian"
+                    android:layout_toRightOf="@+id/linearGerogerian"
+                    android:background="@drawable/btn_background"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:splitMotionEvents="false">
+
+                    <noman.hijri.wheelpicker.WheelView
+                        android:id="@+id/wheelView_day_h"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5" />
+
+                    <noman.hijri.wheelpicker.WheelView
+                        android:id="@+id/wheelView_month_h"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.2"
+                        android:paddingLeft="@dimen/_20sdp" />
+
+
+                    <noman.hijri.wheelpicker.WheelView
+                        android:id="@+id/wheelView_year_h"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingRight="@dimen/_20sdp" />
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/_50sdp"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <Button
+                    android:id="@+id/btn_cancel"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/convert_btn_bg"
+                    android:text="Cancel"
+                    android:textAllCaps="false"
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="@drawable/converter_btn_text_color" />
+
+                <Button
+                    android:id="@+id/btn_convert"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/convert_btn_bg"
+                    android:text="Convert"
+                    android:textAllCaps="false"
+                    android:textSize="@dimen/_12sdp"
+                    android:textColor="@drawable/converter_btn_text_color" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</android.support.v7.widget.CardView>

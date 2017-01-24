@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/size_fifty"
+    android:background="@drawable/bg_row_flat">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/img_selection"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/size_eight"
+        android:paddingLeft="@dimen/size_fifteen"
+        android:paddingRight="@dimen/size_five"
+        android:paddingTop="@dimen/size_eight">
+
+        <TextView
+            android:id="@+id/tv_mehtod_names"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Surah Fatiha"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_timings_row_1" />
+
+        <TextView
+            android:id="@+id/tv_mehtod_names_degree"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Madni"
+            android:textColor="#393939"
+            android:textSize="@dimen/text_size_twelve" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/img_selection"
+        android:layout_width="@dimen/size_twenty_two"
+        android:layout_height="@dimen/size_twenty_two"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/size_fifteen"
+        android:layout_marginRight="@dimen/size_fifteen"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/img_desrcptn"
+        android:scaleType="fitCenter"
+        android:src="@drawable/radio" />
+
+    <View
+        style="@style/view_line_light_gray"
+        android:layout_alignParentBottom="true" />
+
+</RelativeLayout>

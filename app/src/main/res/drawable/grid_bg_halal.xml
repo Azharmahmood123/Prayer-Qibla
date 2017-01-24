@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/grid_ic_halal_hover" android:state_pressed="true"/>
+    <item android:drawable="@drawable/grid_ic_halal" android:state_pressed="false"/>
+
+</selector>

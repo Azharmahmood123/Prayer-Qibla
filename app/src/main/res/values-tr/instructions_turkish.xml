@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="txt_instrct1">Üç ana sekme göreceksiniz; Kıble, Salat ve Sureler</string>
+    <string name="txt_instrct2">Sen, ana ekranın inci sol üst köşesinde bir menü simgesini bulmak navigasyon çekmeceyi açmak için dokunun olacaktır. Aşağıdaki seçenekler mevcuttur</string>
+    <string name="txt_instrct2_1">Seç Aramalar sekmesi beğeninize göre seçilebilir altı farklı aramalar verir</string>
+    <string name="txt_instrct2_2">Uygulamayı kullanırken reklamları görmek için sevmiyorum dokunun seçeneğini "Reklamlar Kaldır"</string>
+    <string name="txt_instrct2_3">"Ayarlar" sekmesi görünümü her sekmede ilgili tüm ayarları seçin.</string>
+    <string name="txt_instrct2_4">Uygulamanızın dilini değiştirmek için "Diller" seçeneğini dokunun</string>
+    <string name="txt_instrct2_5">Daha fazla Uygulamaları seçeneğini kullanarak Kuran Okuma tarafından geliştirilen diğer interaktif İslami uygulamaların bir çok indirebilirsiniz</string>
+    <string name="txt_instrct2_6">Paylaş seçeneğini kullanarak birçok sosyal medya sitelerinde arkadaşlarınızla ve akrabalarınızla ile deneyim</string>
+    <string name="txt_instrct2_7">"geribesleme" seçeneğini görüşlerinizi vererek uygulamayı geliştirmek için bize yardımcı olun</string>
+    <string name="txt_instrct2_8">Hakkımızda sekmesi şirket bilgileri ve uygulama sürümünü verir</string>
+    <string name="txt_instrct3">Bulunduğunuz yere göre namaz vakitlerini görmek için "Namaz" sekmesine gidin. Ayrıca, dua zamanlamaları değiştirmek ve kolaylığı göre alarm ayarlayabilirsiniz.</string>
+    <string name="txt_instrct4">"Kıble" Yönü sekmesine git bulunduğunuz yere göre kıble yönünü tam görmek için</string>
+
+    <string name="txt_instruct_surahs">Sureler ezbere ve dinlemek Sureler sekmesine gidin</string>
+    <string name="txt_note_instruct">Lütfen dikkat: Cihazınızın Açı cihaz hareketi boyunca kıble değişikliklere. Sallamayın ve daha düz, yatay bir yüzeye yerleştirin. Düz bir yüzeye yerleştirildiğinde cihaz hareket etmeyiniz. Ayrıca uzak cihazınızdan metalik şeyler tutmak.</string>
+
+</resources>

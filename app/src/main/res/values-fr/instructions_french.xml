@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="txt_instrct1">Vous verrez trois onglets principaux; Qibla, Salat et sourates.</string>
+    <string name="txt_instrct2">Vous trouverez une icône de menu sur e coin supérieur gauche de l\'écran principal, appuyez sur pour ouvrir le tiroir de navigation. Options suivantes sont disponibles</string>
+    <string name="txt_instrct2_1">Onglet "Sélectionner Dials" vous donne six cadrans différents qui peuvent être sélectionnés selon votre goût</string>
+    <string name="txt_instrct2_2">Appuyez sur l\'option "annonces Supprimer" si vous ne aimez pas voir annonces tout en utilisant l\'application</string>
+    <string name="txt_instrct2_3">Sélectionnez "Paramètres" de vue de l\'onglet tous les paramètres liés à chaque onglet.</string>
+    <string name="txt_instrct2_4">Appuyez sur l\'option "Langues" pour changer la langue de votre demande</string>
+    <string name="txt_instrct2_5">Vous pouvez télécharger un grand nombre d\'autres applications interactives développées par islamiques Lecture du Coran en utilisant l\'option "Plus d\'applications"</string>
+    <string name="txt_instrct2_6">Partagez votre expérience avec vos amis et parents sur de nombreux sites de médias sociaux en utilisant l\'option "Partager"</string>
+    <string name="txt_instrct2_7">Aidez-nous à améliorer l\'application en donnant vos commentaires dans l\'option "Commentaires"</string>
+    <string name="txt_instrct2_8">à propos de nous onglet vous donne des informations de l\'entreprise et la version de l\'application</string>
+    <string name="txt_instrct3">Allez à l\'onglet "prière" pour voir les temps de prière en fonction de votre emplacement. En outre, vous pouvez modifier les horaires de prière et de définir des alarmes en fonction de votre facilité.</string>
+    <string name="txt_instrct4">Allez à "Qibla" onglet pour voir direction exacte de la Qibla en fonction de votre emplacement</string>
+
+    <string name="txt_instruct_surahs">Allez à l\'onglet sourates de réciter et écouter sourates.</string>
+    <string name="txt_note_instruct">S\'il vous plaît noter: Angle de votre appareil à des changements Qibla long mouvement de l\'appareil. Secouer appareil et de le placer sur la surface plane horizontale. S\'il vous plaît ne pas déplacer l\'appareil lorsqu\'il est placé sur une surface plane. Aussi garder des trucs métallique loin de votre appareil.</string>
+
+</resources>

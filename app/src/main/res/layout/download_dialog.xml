@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/size_hundred_eighty"
+    android:background="@color/white"
+    android:splitMotionEvents="false" >
+
+    <TextView
+        android:id="@+id/tv_header"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_fourty"
+        android:background="@color/header"
+        android:gravity="center"
+        android:text="@string/download"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_twenty_seven" />
+
+    <TextView
+        android:id="@+id/tv_body"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/size_ten"
+        android:text="@string/download_msg"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_twenty_two" />
+
+    <LinearLayout
+        android:id="@+id/btn_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" >
+
+        <Button
+            android:id="@+id/btn_okay"
+            android:layout_width="@dimen/size_hundred_twenty"
+            android:layout_height="@dimen/size_fourty"
+            android:layout_marginBottom="@dimen/size_ten"
+            android:layout_marginLeft="@dimen/size_ten"
+            android:layout_marginRight="@dimen/size_ten"
+            android:layout_marginTop="@dimen/size_twelve"
+            android:layout_weight="1"
+            android:background="@drawable/bg_row_corners"
+            android:onClick="onDownloadSurah"
+            android:text="@string/okay"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_twenty" />
+
+        <Button
+            android:id="@+id/btn_cancel"
+            android:layout_width="@dimen/size_hundred_twenty"
+            android:layout_height="@dimen/size_fourty"
+            android:layout_below="@+id/btn_full_audio"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/size_ten"
+            android:layout_marginLeft="@dimen/size_ten"
+            android:layout_marginRight="@dimen/size_ten"
+            android:layout_marginTop="@dimen/size_twelve"
+            android:layout_weight="1"
+            android:background="@drawable/bg_row_corners"
+            android:onClick="onCancel"
+            android:text="@string/cancel"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_twenty" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_back"
+        android:layout_width="@dimen/size_hundred_twenty"
+        android:layout_height="@dimen/size_fourty"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/btn_full_audio"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/size_ten"
+        android:layout_marginTop="@dimen/size_twelve"
+        android:background="@drawable/bg_row_resource"
+        android:onClick="onCancel"
+        android:text="@string/okay"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_twenty"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/btn_surah_audio"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_fourty_five"
+        android:layout_marginLeft="@dimen/size_ten"
+        android:layout_marginRight="@dimen/size_ten"
+        android:layout_marginTop="@dimen/size_fifteen"
+        android:background="@drawable/bg_row_resource"
+        android:onClick="onDownloadSurah"
+        android:text="@string/app_name"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_twenty"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/btn_full_audio"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_fourty_five"
+        android:layout_below="@+id/btn_surah_audio"
+        android:layout_marginLeft="@dimen/size_ten"
+        android:layout_marginRight="@dimen/size_ten"
+        android:layout_marginTop="@dimen/size_ten"
+        android:background="@drawable/bg_row_resource"
+        android:onClick="onDownloadFull"
+        android:text="@string/app_name"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_twenty"
+        android:visibility="gone" />
+
+</RelativeLayout>

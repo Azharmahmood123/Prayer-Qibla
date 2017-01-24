@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:id="@+id/ayah_row"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/size_five"
+            android:layout_marginTop="@dimen/size_five" >
+
+            <LinearLayout
+                android:id="@+id/layout_ayah_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:layout_width="@dimen/size_thirty_five"
+                    android:layout_height="@dimen/size_thirty_five"
+                    android:src="@drawable/bg_more_apps" />
+
+                <TextView
+                    android:id="@+id/tv_ayah_no"
+                    android:layout_width="@dimen/size_twenty_five"
+                    android:layout_height="@dimen/size_twenty_five"
+                    android:layout_marginLeft="@dimen/size_five"
+                    android:layout_marginRight="@dimen/size_one"
+                    android:layout_marginTop="@dimen/size_ten"
+                    android:background="@drawable/aya_no_bg"
+                    android:gravity="center"
+                    android:textColor="@color/black_light"
+                    android:textSize="@dimen/text_size_twelve" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/img_bookmark"
+                android:layout_width="@dimen/size_twenty"
+                android:layout_height="@dimen/size_twenty"
+                android:layout_alignLeft="@+id/layout_ayah_no"
+                android:layout_alignRight="@+id/layout_ayah_no"
+                android:layout_below="@+id/layout_ayah_no"
+                android:layout_marginTop="@dimen/size_three"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/app_name"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_bookmark" />
+
+            <LinearLayout
+                android:id="@+id/menu_options_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/size_fifty"
+                android:layout_toRightOf="@+id/layout_ayah_no"
+                android:orientation="horizontal"
+                android:visibility="gone" >
+
+                <ImageView
+                    android:layout_width="@dimen/size_twenty"
+                    android:layout_height="@dimen/size_twenty"
+                    android:layout_marginTop="@dimen/size_three"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@string/app_name"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_bookmark"
+                    android:visibility="invisible" />
+
+                <ImageView
+                    android:layout_width="@dimen/size_thirty_five"
+                    android:layout_height="@dimen/size_thirty_five"
+                    android:layout_marginTop="@dimen/size_three"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@string/app_name"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_bookmark" />
+
+                <ImageView
+                    android:layout_width="@dimen/size_twenty"
+                    android:layout_height="@dimen/size_twenty"
+                    android:layout_marginTop="@dimen/size_three"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@string/app_name"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_bookmark"
+                    android:visibility="invisible" />
+
+                <ImageView
+                    android:layout_width="@dimen/size_thirty_five"
+                    android:layout_height="@dimen/size_thirty_five"
+                    android:layout_marginTop="@dimen/size_three"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@string/app_name"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_bookmark" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_ayah"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/menu_options_layout"
+                android:layout_toRightOf="@+id/layout_ayah_no"
+                android:gravity="right"
+                android:lineSpacingExtra="@dimen/size_ten"
+                android:textSize="28sp" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/text_transliteration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:lineSpacingExtra="@dimen/size_two"
+            android:paddingBottom="@dimen/size_five"
+            android:paddingLeft="@dimen/size_ten"
+            android:paddingRight="@dimen/size_ten"
+            android:paddingTop="@dimen/size_five"
+            android:textSize="20sp"
+            android:textStyle="italic"
+            android:typeface="serif" />
+
+        <TextView
+            android:id="@+id/text_translation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:lineSpacingExtra="@dimen/size_two"
+            android:paddingBottom="@dimen/size_twelve"
+            android:paddingLeft="@dimen/size_ten"
+            android:paddingRight="@dimen/size_ten"
+            android:paddingTop="@dimen/size_five"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+</RelativeLayout>

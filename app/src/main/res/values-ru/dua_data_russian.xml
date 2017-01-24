@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="duas_list">Список Молитвы</string>
+    <string name="dua_detail">Дуа Подробнее</string>
+    
+    <string name="duas">Молитвы</string>
+    <string name="halal_finder">Халяль поблизости</string>
+    <string name="mosque_finder">поблизости Мечети</string>
+    
+    <string name="duas_sub">Молитвы на все случаи жизни</string>
+    <string name="halal_finder_sub">Найти близлежащих ресторанов\nс халяльной пищи</string>
+    <string name="mosque_finder_sub">Найти поблизости Мечети\nВокруг тебя</string>
+
+    <string name="more">Больше</string>
+
+</resources>

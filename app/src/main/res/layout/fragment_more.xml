@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/background"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/size_two"
+        android:orientation="vertical"
+        android:padding="@dimen/size_five" >
+
+        <LinearLayout
+            android:id="@+id/more_duas_index"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_hundred"
+            android:layout_centerInParent="true"
+            android:layout_weight="1"
+            android:background="@drawable/bg_row_corners"
+            android:clickable="true"
+            android:gravity="center" >
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5" />
+
+            <ImageView
+                android:id="@+id/ivDuas"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="@dimen/size_two"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_more_duas" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.25" />
+
+            <View
+                android:id="@+id/view_navigation1"
+                android:layout_width="@dimen/size_one"
+                android:layout_height="@dimen/size_fifty_five"
+                android:background="@color/dark_gray" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.25" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:gravity="center_vertical"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/tvDuas"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical|left"
+                    android:paddingRight="@dimen/size_three"
+                    android:text="@string/duas"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_timings_row_1" />
+
+                <TextView
+                    android:id="@+id/tvDuasSub"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:paddingRight="@dimen/size_three"
+                    android:text="@string/duas_sub"
+                    android:textColor="#393939"
+                    android:textSize="@dimen/text_size_twelve" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View style="@style/view_transparent_line" />
+
+        <LinearLayout
+            android:id="@+id/more_mosque_index"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_hundred"
+            android:layout_centerInParent="true"
+            android:background="@drawable/bg_row_corners"
+            android:clickable="true"
+            android:gravity="center"
+            android:onClick="onMosquesClick"
+            android:orientation="horizontal" >
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5" />
+
+            <ImageView
+                android:id="@+id/iv_mosque"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="@dimen/size_two"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_more_mosque_finder" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.25" />
+
+            <View
+                android:id="@+id/view_navigation2"
+                android:layout_width="@dimen/size_one"
+                android:layout_height="@dimen/size_fifty_five"
+                android:background="@color/dark_gray" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.25" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:gravity="center_vertical"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/tvMosqueFinder"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical|left"
+                    android:paddingRight="@dimen/size_three"
+                    android:text="@string/mosque_finder"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_timings_row_1" />
+
+                <TextView
+                    android:id="@+id/tvMosqueFinderSub"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:paddingRight="@dimen/size_three"
+                    android:text="@string/mosque_finder_sub"
+                    android:textColor="#393939"
+                    android:textSize="@dimen/text_size_twelve" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View style="@style/view_transparent_line" />
+
+        <LinearLayout
+            android:id="@+id/more_halal_index"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_hundred"
+            android:layout_centerInParent="true"
+            android:layout_weight="1"
+            android:background="@drawable/bg_row_corners"
+            android:clickable="true"
+            android:gravity="center"
+            android:onClick="onHalalPlacesClick" >
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5" />
+
+            <ImageView
+                android:id="@+id/ivNames"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="@dimen/size_two"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_more_halal_finder" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.25" />
+
+            <View
+                android:id="@+id/view_navigation3"
+                android:layout_width="@dimen/size_one"
+                android:layout_height="@dimen/size_fifty_five"
+                android:background="@color/dark_gray" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.25" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:gravity="center_vertical"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/tvHalalFinder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center"
+                    android:paddingRight="@dimen/size_three"
+                    android:text="@string/halal_finder"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_timings_row_1" />
+
+                <TextView
+                    android:id="@+id/tvHalalFinderSub"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center_vertical"
+                    android:paddingRight="@dimen/size_three"
+                    android:text="@string/halal_finder_sub"
+                    android:textColor="#393939"
+                    android:textSize="@dimen/text_size_twelve" />
+            </LinearLayout>
+        </LinearLayout>
+
+        
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>	
+	
+    <string name="free_live_quran_tutoring">Free Live Tutoring Corano</string>
+    <string name="register_now">REGISTRATI ORA</string>
+		
+    <string name="language">Italian</string>
+    <string name="qibla_connect">Prima Collegare</string>
+    <string name="find_qibla_direction">Trova Qibla direzione</string>
+    <string name="advertisement">Pubblicità</string>
+    <string name="distance_from_qibla">Distanza dalla Qibla</string>
+    <string name="kilometer">Chilometro</string>
+    <string name="qibla_direction">Qibla</string>
+    <string name="salat_timings">Preghiera</string>
+    
+	<string name="txt_enter_ayah_number">Inserisci Ayah Numero</string>    
+	<string name="txt_enter_between_0_83">Immettere valore tra 0-83</string>
+	<string name="set_time">Salvare Orario</string>
+	<string name="surahs">Sure</string>
+	<string name="makki">Makki</string>    
+	<string name="verses">Versi</string>
+	<string name="downloading">Scarica</string>
+	<string name="exit">Uscita</string>
+	<string name="tap_to_view_more">Toccare per visualizzare più</string>
+	<string name="apps">Applicazioni</string>
+	<string name="completed">Completato</string>
+	<string name="edited">Modificato</string>
+	<string name="cannot">non può</string>
+	<string name="your_device_not_compatible">Il telefono non è compatibile.</string>
+	<string name="set">Selezionare</string>
+	
+	    
+    <string name="instructions">Istruzioni</string>
+        
+    <string name="select_dial">Selezionare Quadrante</string>
+    <string name="txt_dial_1">Tappeto Blu</string>
+    <string name="txt_dial_2">Verde e Grigio</string>
+    <string name="txt_dial_3">Elegante Rosa</string>
+    <string name="txt_dial_4">Agrume Arancione</string>
+    <string name="txt_dial_5">Getto Nero</string>
+    <string name="txt_dial_6">Reale Rosso</string>
+
+    <string name="attention">Attenzione</string>
+    <string name="attention_msg">Se timing Salat sono corrette, allora vai a "Impostazioni avanzate" e selezionare le impostazioni appropriate per la propria regione geografica.</string>
+    <string name="okay">Bene</string>
+
+    <string name="txt_fajr">Fajar</string>
+    <string name="txt_sunrise">Alba</string>
+    <string name="txt_zuhr">Zuhar</string>
+    <string name="txt_asar">Asar</string>
+    <string name="txt_maghrib">Maghrib</string>
+    <string name="txt_isha">Isha</string>
+    
+    <string name="settings">Impostazioni</string>
+    <string name="location">Posizione Attuale</string>
+    <string name="current_Location">Manuale Posizione</string>
+    <string name="manual_location">Posizione</string>
+    <string name="unable_to_find_location">Impossibile trovare posizione</string>
+    <string name="enter_location_manually">Inserisci posizione manualmente</string>
+    <string name="tone_settings">Impostazioni tono</string>
+    <string name="default_tone">Tono Predefinito</string>
+    <string name="silent">Silenzioso</string>
+    <string name="on">Su</string>
+    <string name="off">Spento</string>
+    <string name="adhan1">Orecchie 1</string>
+    <string name="adhan2">Orecchie 2</string>
+    <string name="adhan3">Orecchie 3</string>
+    <string name="reset">Azzerare</string>
+    <string name="reset_all">Ripristina Tutto</string>
+    <string name="general">Generale</string>
+    <string name="reset_settings">Impostazioni Ripristina</string>
+    <string name="reset_msg">Sei sicuro di voler ripristinare le impostazioni al suo difetto?</string>
+    <string name="about">Circa</string>
+    <string name="build_version">Costruire Versione</string>
+	
+    <string name="enable_provider">Si prega di abilitare posizione dalle vostre impostazioni del dispositivo</string>
+    
+	<string name="advance_settings">Impostazioni Avanzate</string>
+    <string name="juristic">Giuridico</string>
+    <string-array name="arr_juristic">
+        <item >Shafi/Maliki/Hanbali</item>
+        <item >Hanafi</item>
+    </string-array>
+    
+    <string name="latitude_adjustment">Regolazione Latitudine</string>
+    <string-array name="arr_latitude_adjustment">
+        <item >Nessuno</item>
+        <item >Angolo Basato</item>
+        <item >Mezzanotte</item>
+        <item >Un Settimo</item>
+    </string-array>
+     
+    <string name="calculation_method">Metodo di Calcolo</string>
+    <string-array name="arr_calculation_method">
+        <item >MWL</item>
+        <item >La Mecca</item>
+        <item >Karachi</item>
+        <item >ISNA</item>
+        <item >Teheran</item>
+        <item >Egitto</item>
+        <item >Jafari</item>      
+    </string-array>
+	
+    <string name="languages">Lingue</string>
+    <string-array name="language_array1">
+		<item >English</item>
+		<item >Turco</item>
+		<item >Spagnolo</item>
+		<item >Russo</item>
+		<item >Francese</item>
+		<item >Tedesco</item>
+		<item >Malese</item>
+		<item >Indonesiano</item>
+		<item >Italiano</item>
+		<item >Thai</item>
+    </string-array>
+        <string-array name="language_array">
+		<item >English</item>	
+		<item >Türk</item>
+		<item >Español</item>
+		<item >Pусский</item>
+		<item >Français</item>
+		<item >Deutsch</item>
+		<item >Melayu</item>
+		<item >Bahasa Indonesia</item>
+		<item >Italiano</item>
+		<item >ไทย</item>	
+    </string-array>
+    
+    <string name="laguage_alert_msg">Cambierà la lingua di tutta la vostra app. Sei sicuro di voler selezionarlo?</string>
+    <string name="confirm">Confermare</string>
+    <string name="cancel">Cancellare</string>
+    
+    <string name="feedback">Retroazione</string>
+    <string name="feedback_msg">Vorremmo conoscere la vostra esperienza, vi preghiamo di darci il vostro feedback.</string>
+    <string name="yes">Sì</string>
+    <string name="later">Più Tardi</string>
+    
+    <string name="hijri_date">Hijri Date</string>
+    <string-array name="hijri_month_names">
+        <item >Muharram</item>
+        <item >Safar</item>
+        <item >Rabi al-Awwal</item>
+        <item >Rabi ath-Thani</item>
+        <item >Jumad ai-Awwal</item>
+        <item >Jumad ath-Thani</item>
+        <item >Rajab</item>
+        <item >Sha\'ban</item>
+        <item >Ramadan</item>
+        <item >Shawwal</item>
+        <item >Dhul Qa\'dah</item>
+        <item >Dhul Hijjah</item>        
+    </string-array>
+    
+    <string name="solar_date">Solar Date</string>
+        <string-array name="solar_month_names">
+        <item >Gennaio</item>
+        <item >Febbraio</item>
+        <item >Marzo</item>
+        <item >Aprile</item>
+        <item >Maggio</item>
+        <item >Giugno</item>
+        <item >Luglio</item>
+        <item >Agosto</item>
+        <item >Settembre</item>
+        <item >Ottobre</item>
+        <item >Novembre</item>
+        <item >Dicembre</item>        
+    </string-array>
+    
+    <string name="am">am</string>
+    <string name="pm">pm</string>
+    <string name="hour_left">Ore Sinistra</string>
+    
+    <string name="hours">Orario</string>
+    <string name="minutes">Verbale</string>
+
+    <string name="about_us">Chi Siamo</string>
+    <string name="version">Versione</string>
+    <string name="copyright">Diritto d\'autore</string>
+    <string name="all_rights_reserved">Tutti i diritti riservati</string>
+    
+    <string name="remove_ads">Rimuovere Pubblicità</string>
+    <string name="remove_ads_heading">Donazione e rimuovere gli annunci</string>
+    <string name="remove_ads_msg">Si prega di donare e rimuovere gli annunci per aiutarci a sviluppare più preziose applicazioni islamici per voi e per i vostri bambini.</string>
+    <string name="remove">Rimuovere</string>
+    
+    
+    <string name="advance_help">Guida Avanzato</string>
+    
+    <string name="juristic_details"><b>Shafi/Maliki/Hanbali</b> Scuola di pensiero\n\n<b>Hanafi</b> Scuola di pensiero</string>
+    
+    <string name="muslim_world_league_details"><b>MWL:</b> Musulmano Mondo Lega</string>
+    <string name="muslim_world_league_region"><b>Regione:</b> Europa, Estremo Oriente, Parts of U.S</string>
+    
+    <string name="makkah_details"><b>La Mecca:</b> Umm al-Qura Università, La Mecca</string>
+    <string name="makkah_region"><b>Regione:</b> Arabo Penisola</string>
+    
+    <string name="karachi_details"><b>Karachi:</b> Università degli Studi di Scienze Islamiche, Karachi</string>
+    <string name="karachi_region"><b>Regione:</b> Pakistan, Afganistan, Bangladesh, India</string>
+    
+    <string name="isna_details"><b>ISNA:</b> Islamico Società di America del Nord</string>
+    <string name="isna_region"><b>Regione:</b> America del Nord (Stati Uniti e Canada)</string>
+   
+    <string name="tehran_details"><b>Teheran:</b> Istituto di Geofisica dell\'Università di Teheran</string>
+    <string name="tehran_region"><b>Regione:</b> Iran, Alcune comunità Sciite</string>
+   
+    <string name="egyptian_details"><b>Egitto:</b> Egiziano Autorità generale della sondaggio</string>
+    <string name="egyptian_region"><b>Regione:</b> Africa, Syria, Lebanon, Malaysia</string>
+    
+    <string name="jafari_details"><b>Jafari:</b> Shia Ithna Ashari, prende Istituto di ricerca, Qum</string>
+    <string name="jafari_region"><b>Regione:</b> Alcune comunità sciite in tutto il mondo</string>
+    
+    <string name="angle_based_msg"><b>Angolo Basato:</b> Si tratta di una soluzione intermedia, utilizzato da alcuni recenti calcolatrici tempo di preghiera. Sia α essere l\'angolo di crepuscolo per Isha, e sia t = α / 60. Il periodo tra il tramonto e l\'alba si divide in t parti. Isha inizia dopo la Qibla parte. Ad esempio, se l\'angolo crepuscolare per Isha è 15, allora Isha inizia alla fine del primo trimestre (15/60) della notte. Tempo per Fajar è calcolato in modo simile.</string>
+    <string name="mid_night_msg"><b>Mezzanotte:</b> In questo metodo, il periodo dal tramonto all\'alba è divisa in due metà. La Qibla metà è considerata la notte e altra metà rottura di giorno. Fajar e Isha in questo modo si presume che siano a mezzanotte durante il periodo anormale.</string>
+    <string name="one_seventh_msg"><b>Un Settimo:</b> In questo metodo, il periodo compreso tra il tramonto e l\'alba è diviso in sette parti. Isha inizia dopo il primo Un Settimo parte, e fajr è all\'inizio della settima parte.</string>
+	
+	<string name="share">quota</string>
+	<string name="share_msg">Ho trovato una bellissima app islamico per individuare esattamente Qibla direzione Scaricalo qui: \n\n https://play.google.com/store/apps/details?id=com.quranreading.qibladirection</string>
+	<string name="more_apps">Più Applicazioni</string>
+	
+	<string name="toast_enter_city_name">Inserisci il tuo nome Città</string>
+	<string name="toast_correct_city_name">Si prega di fornire corretta paese e Nome città</string>
+	<string name="toast_enable_location">Si prega di abilitare Location Provider, Enter posizione manualmente dalle impostazioni</string>
+	<string name="toast_alarms_last_location">Allarmi salvate per ultima posizione nota</string>
+	<string name="toast_already_purchased">Avete già acquistato</string>
+	<string name="toast_purchase_successful">Acquisto di successo</string>
+	<string name="toast_network_error">Nessuna Rete Collegata</string>
+	<string name="toast_location_error">Incapace di Trovare la Posizione</string>
+	<string name="toast_get_city_error">Impossibile trovare posizione </string>
+	<string name="toast_no_sensor">Nessun sensore - Il tuo dispositivo non è compatibile</string>
+	<string name="toast_no_accelerometer">Nessun sensore accelerometro - Il tuo dispositivo non è compatibile</string>  
+	<string name="toast_no_magnetometer">Nessun sensore magnetometro - Il tuo dispositivo non è compatibile</string>
+	
+	<string name="toast_unable_detect_location">Impossibile rilevare posizione</string>
+	<string name="toast_connect_to_internet_or_set_location_manually">Connettersi a internet o Imposta posizione manualmente</string>	
+	<string name="select_school_of_thought">Selezionare Scuola di pensiero</string>	
+	<string name="set_alarm">Imposta sveglia</string>
+    <string name="txt_accurate_direction">Per Direzione accurata</string>
+	<string name="calibration_txt_shake">Agitare bene il vostro telefono</string>
+	<string name="calibration_txt_place">Posizionare il dispositivo su una superficie piana orizzontale e non muoverla</string>
+	<string name="calibration_instruct_metalic">Tenere Metallico roba dal telefono</string>
+	
+    <string name="standard">Standard</string>
+    <string name="hanafi">Hanafi</string>
+    <string name="mwl">MWL</string>
+    <string name="mecca">La Mecca</string>
+    <string name="karachi">Karachi</string>
+    <string name="isna">ISNA</string>
+    <string name="tehran">Teheran</string>
+    <string name="egypt">Egitto</string>
+    <string name="jafari">Jafari</string>
+    <string name="none">Nessuno</string>
+    <string name="angle_based">Angolo Basato</string>
+    <string name="mid_night">Mezzanotte</string>
+    <string name="oneseventh">Un Settimo</string>   
+        
+    <string name="error_location_settings_manual_dialog">L\'applicazione non può individuare automaticamente. Si prega di abilitare l\'accesso da posizione le impostazioni del dispositivo.</string>
+    <string name="time_left">Resti Tempo</string>
+    
+        <!-- Additional With Surahs -->
+    <string name="daylight_saving">L\'ora legale</string>
+    <string name="txt_translation">Traduzione</string>
+    <string name="txt_transliteration">Traslitterazione</string>
+    <string name="alarm_on">Allarme abilitato</string>
+    <string name="alarm_off">Allarme Disabilitato</string>
+    
+    <string-array name="more_apps_category">
+        <item >Adulti</item>
+        <item >Bambini</item>
+        <item >Generale</item>    
+    </string-array>
+    
+    
+        <!-- Yasin -->
+    <string name="coming_soon">Di più Sure In arrivo</string>
+    <string name="goto_txt">Andare a</string>
+    <string name="goto_ayah">Andare a Ayah</string>
+    <string name="repeat_on">Ripetere</string>
+    <string name="repeat_off">Non ripetere</string>
+    <string name="surah_yasin">Surah Yasin</string>
+    <string name="yasin">Yasin</string>
+    <string name="last_read_not_saved">Ultima lettura non è stato salvato</string>
+    
+</resources>

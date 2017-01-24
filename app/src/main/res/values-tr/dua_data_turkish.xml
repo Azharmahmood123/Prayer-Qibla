@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="duas_list">Duas listesi</string>
+    <string name="dua_detail">Dua Detayları</string>
+    
+    <string name="duas">Duas</string>
+    <string name="halal_finder">Helal Bulucu</string>
+    <string name="mosque_finder">Yakın Camiler</string>
+    
+    <string name="duas_sub">Her Durum için duas</string>
+    <string name="halal_finder_sub">Yakındaki Restoranları Bulun\nHelal Gıda ile</string>
+    <string name="mosque_finder_sub">Yakın Camiler bul\nSenin Etrafında</string>
+
+    <string name="more">Daha</string>
+
+</resources>

@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:splitMotionEvents="false">
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp">
+
+        <TextView
+            android:id="@+id/tv_tone_settings_header"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="@dimen/size_twelve"
+            android:gravity="center|left"
+            android:text="@string/tone_settings"
+            android:textColor="@color/black"
+            android:textSize="22sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+
+        style="@style/setting_row_adhan_sound"
+        android:tag="0">
+
+        <TextView
+            android:id="@+id/tv_default_tone"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="@dimen/size_twelve"
+            android:gravity="center|left"
+            android:text="@string/default_tone"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/img_default_tone"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:contentDescription="@string/img_desrcptn"
+            android:scaleType="fitCenter"
+            android:src="@drawable/radio_selected" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/row_silent"
+        style="@style/setting_row_adhan_sound"
+        android:tag="1">
+
+        <TextView
+            android:id="@+id/tv_silent"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="@dimen/size_twelve"
+            android:gravity="center|left"
+            android:text="@string/silent"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/img_silent"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:contentDescription="@string/img_desrcptn"
+            android:scaleType="fitCenter"
+            android:src="@drawable/radio" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/row_adhan_1"
+        style="@style/setting_row_adhan_sound"
+        android:tag="2">
+
+        <TextView
+            android:id="@+id/tv_adhan_1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="@dimen/size_twelve"
+            android:gravity="center|left"
+            android:text="@string/adhan1"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <ImageButton
+            android:id="@+id/img_adhan_1_play"
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/img_adhan_1_opt"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/img_desrcptn"
+            android:onClick="onPlayClick"
+            android:padding="10dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/btn_play"
+            android:tag="5" />
+
+        <ImageView
+            android:id="@+id/img_adhan_1_opt"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:contentDescription="@string/img_desrcptn"
+            android:scaleType="fitCenter"
+            android:src="@drawable/radio" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/row_adhan_2"
+        style="@style/setting_row_adhan_sound"
+        android:tag="3">
+
+        <TextView
+            android:id="@+id/tv_adhan_2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="@dimen/size_twelve"
+            android:gravity="center|left"
+            android:text="@string/adhan2"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <ImageButton
+            android:id="@+id/img_adhan_2_play"
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/img_adhan_2_opt"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/img_desrcptn"
+            android:onClick="onPlayClick"
+            android:padding="10dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/btn_play"
+            android:tag="6" />
+
+        <ImageView
+            android:id="@+id/img_adhan_2_opt"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:contentDescription="@string/img_desrcptn"
+            android:scaleType="fitCenter"
+            android:src="@drawable/radio" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/row_adhan_3"
+        style="@style/setting_row_adhan_sound"
+        android:tag="4">
+
+        <TextView
+            android:id="@+id/tv_adhan_3"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="@dimen/size_twelve"
+            android:gravity="center|left"
+            android:text="@string/adhan3"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <ImageButton
+            android:id="@+id/img_adhan_3_play"
+            android:layout_width="40dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/img_adhan_3_opt"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/img_desrcptn"
+            android:onClick="onPlayClick"
+            android:padding="10dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/btn_play"
+            android:tag="7" />
+
+        <ImageView
+            android:id="@+id/img_adhan_3_opt"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:contentDescription="@string/img_desrcptn"
+            android:scaleType="fitCenter"
+            android:src="@drawable/radio" />
+    </RelativeLayout>
+
+</LinearLayout>

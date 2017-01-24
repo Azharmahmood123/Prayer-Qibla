@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="txt_instrct1">Usted verá dos pestañas principales "Qibla" y "Oración" después de la pantalla de bienvenida</string>
+    <string name="txt_instrct2">Usted encontrará un icono de menú en la esquina superior izquierda ª de la pantalla principal, pulse en él para abrir el cajón de navegación. Las siguientes opciones están disponibles</string>
+    <string name="txt_instrct2_1">Pestaña "Seleccionar Marcados" le da seis diales diferentes que se pueden seleccionar según su gusto</string>
+    <string name="txt_instrct2_2">Pulse la opción "anuncios Eliminar" si no te gusta ver anuncios durante el uso de la aplicación</string>
+    <string name="txt_instrct2_3">Seleccione "Ajustes" en la ficha Vista todos los ajustes de cada ficha.</string>
+    <string name="txt_instrct2_4">Pulse la opción "Idiomas" para cambiar el idioma de su aplicación</string>
+    <string name="txt_instrct2_5">Puede descargar una gran cantidad de otras aplicaciones interactivas islámicos desarrollados por la lectura del Quran utilizando la opción "Más aplicaciones"</string>
+    <string name="txt_instrct2_6">Su experiencia con sus amigos y familiares en muchos sitios web de medios sociales utilizando la opción "Compartir"</string>
+    <string name="txt_instrct2_7">Ayúdanos a mejorar la aplicación, dando su opinión de opción "Comentarios"</string>
+    <string name="txt_instrct2_8">Quiénes somos pestaña te da información de la compañía y la versión de la aplicación</string>
+    <string name="txt_instrct3">Ir a la pestaña "Oración" para ver las horas de oración de acuerdo a su ubicación. Además, puede cambiar los tiempos de oración y establecer alarmas de acuerdo a su gusto.</string>
+    <string name="txt_instrct4">Ir a la "Qibla" ficha para ver la dirección exacta de Qibla de acuerdo a su ubicación</string>
+
+    <string name="txt_instruct_surahs">Ir a la pestaña suras recitar y escuchar suras</string>
+    <string name="txt_note_instruct">Por favor, tenga en cuenta: El ángulo de su dispositivo con los cambios a lo largo de Qibla movimiento del dispositivo. Agite dispositivo y que lo coloque sobre la superficie horizontal plana. Por favor, no mueva el dispositivo cuando se coloca sobre una superficie plana. También hay que tener material metálico de distancia de su dispositivo.</string>
+
+</resources>
