@@ -2,7 +2,7 @@
 <resources>
 	
     <string name="app_name">Qibla Connect®</string>
-    <string name="copyright_year"> © 2016-2017</string>
+    <string name="copyright_year"> © 2017-2018</string>
     <string name="img_desrcptn">Image</string>
     
     <string name="facebook_id">499376796887867</string>
@@ -209,6 +209,7 @@
     
     <string name="hours">Hours</string>
     <string name="minutes">Minutes</string>
+
     
     <string name="about_us">About Us</string>
     <string name="version">Version</string>

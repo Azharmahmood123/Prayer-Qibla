@@ -110,14 +110,15 @@ public class AboutInstructionActivity extends AppCompatActivity {
     private void setFontsForAbout() {
         // TODO Auto-generated methodIndex stub
 
-
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
+
         if (actionBar != null) {
             actionBar.setDisplayShowTitleEnabled(false);
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
+
         TextView tvHeading = (TextView) findViewById(R.id.tv_main_heading);
         tvHeading.setTypeface(((GlobalClass) getApplication()).faceRobotoR);
         tvHeading.setText(R.string.about_us);
@@ -135,10 +136,9 @@ public class AboutInstructionActivity extends AppCompatActivity {
         tvVersion.setTypeface(((GlobalClass) getApplication()).faceRobotoB);
         tvReservedRights.setTypeface(((GlobalClass) getApplication()).faceRobotoL);
 
-        tvCopyRight.setText(getResources().getString(R.string.copyright) + getString(R.string.app_name));
+        tvCopyRight.setText(getResources().getString(R.string.copyright) + getString(R.string.copyright_year) + "\n" + getString(R.string.app_name));
         tvVersion.setText(getResources().getString(R.string.version) + Constants.VERSION_NUMBER);
         tvReservedRights.setText(Constants.WEB_URL + " \n" + getResources().getString(R.string.all_rights_reserved));
-
     }
 
     private void sendAnalyticsData() {
