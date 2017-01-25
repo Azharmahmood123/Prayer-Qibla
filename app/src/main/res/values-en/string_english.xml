@@ -13,8 +13,7 @@
     <string name="qibla_direction">Qibla</string>
     <string name="salat_timings">Salat</string>
     <string name="surahs">Surahs</string>
-    
-    <string name="txt_enter_between_0_83">Enter Value between 0-83</string>
+
 	<string name="txt_enter_ayah_number">Enter Ayah Number</string>
 	<string name="set_time">Set Time</string>
 	<string name="verses">Verses </string>

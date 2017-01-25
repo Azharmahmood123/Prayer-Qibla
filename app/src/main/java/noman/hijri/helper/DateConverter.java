@@ -2,6 +2,7 @@ package noman.hijri.helper;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.util.Log;
 
 import com.github.msarhan.ummalqura.calendar.UmmalquraCalendar;
 
@@ -345,10 +346,9 @@ public class DateConverter {
         try {
             uCal.setTime(gCal.getTime());
         } catch (ArrayIndexOutOfBoundsException e) {
-            e.printStackTrace();
-        } finally {
-           gCal = new GregorianCalendar(1995, 8, 10);//Adding date auto by me adjust
-          uCal.setTime(gCal.getTime());
+            Log.e("Exception",e.toString());
+            gCal = new GregorianCalendar(1995, 8, 10);//Adding date auto by me adjust
+            uCal.setTime(gCal.getTime());
         }
         int d = uCal.get(Calendar.DAY_OF_MONTH);
         int y = uCal.get(Calendar.YEAR);

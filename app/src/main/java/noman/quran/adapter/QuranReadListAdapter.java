@@ -33,6 +33,7 @@ import java.util.List;
 import noman.CommunityGlobalClass;
 import noman.quran.JuzConstant;
 import noman.quran.activity.QuranReadActivity;
+import noman.quran.activity.TextSettingScreen;
 import noman.quran.dbmanager.JuzDataManager;
 import noman.quran.model.JuzModel;
 import quran.arabicutils.ArabicUtilities;
@@ -408,7 +409,12 @@ public class QuranReadListAdapter extends BaseAdapter {
             @Override
             public void onClick(View v) {
                 //Move to fav
+                //To pause the recite audio while is playing
 
+                if (!mContext.inProcess) {
+                    mContext.inProcess = true;
+                    mContext.isSettings = true;
+                }
                 shareAyah(position);
 
             }

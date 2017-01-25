@@ -90,5 +90,7 @@
     <string name="text_translation_setting">Text &amp; Translation</string>
     <string name="text_reset_quran_setting">Reset Quran Setting</string>
     <string name="dialog_reset_quran_setting">Are you sure to reset Quran Settings?</string>
+     <string name="txt_enter_between_0_83">Enter Number from 0-83</string>
+    <string name="no_surah_found">No Surrah Found</string>
 
 </resources>

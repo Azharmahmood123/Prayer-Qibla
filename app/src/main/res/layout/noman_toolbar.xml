@@ -107,6 +107,7 @@
             android:paddingLeft="@dimen/size_ten"
             android:singleLine="true"
             android:textColor="@color/black"
+            android:imeOptions="actionDone"
             android:textColorHint="@color/progress_primary_color"
             android:textSize="@dimen/text_size_eighteen"></EditText>
 

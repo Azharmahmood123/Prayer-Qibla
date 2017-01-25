@@ -158,12 +158,12 @@ public class QuranReadActivity extends AppCompatActivity implements OnCompletion
 
     List<SurahModel> surahList = new ArrayList<SurahModel>();
 
-    private boolean inProcess = false;
+    public boolean inProcess = false;
 
     private TelephonyManager telephonyManeger;
     private PhoneStateListener phoneStateListener;
 
-    boolean isSettings = false;
+    public boolean isSettings = false;
     ImageView imgTextSizeSelector, btnLangaugePack;
     RelativeLayout imgTextSizeIcon;
     boolean isContanerTextSettingOpen = true;
@@ -759,7 +759,7 @@ public class QuranReadActivity extends AppCompatActivity implements OnCompletion
                 mp.seekTo(timeAyahSurah.get(0));
                 mp.pause();
             }
-        }
+     // }
 
         hideGotoDialog();
         ((GlobalClass) getApplication()).ayahPos = 0;
@@ -768,6 +768,9 @@ public class QuranReadActivity extends AppCompatActivity implements OnCompletion
         delayIndex = 0;
         ayahListView.setSelection(0);
         play = 0;
+
+
+        }
     }
 
     private void hideGotoDialog() {

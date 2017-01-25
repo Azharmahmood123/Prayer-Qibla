@@ -38,31 +38,7 @@
             android:textSize="@dimen/_18sdp" />
     </RelativeLayout>
 
-    <RelativeLayout
-        android:id="@+id/ads_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true">
 
-        <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/adView"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layerType="software"
-            ads:adSize="SMART_BANNER"
-            ads:adUnitId="@string/admob_id" />
-
-        <ImageView
-            android:id="@+id/adimg"
-            android:layout_width="fill_parent"
-            android:layout_height="@dimen/size_fourty_eight"
-            android:adjustViewBounds="true"
-            android:clickable="true"
-            android:contentDescription="@string/img_desrcptn"
-            android:onClick="onClickAdImage"
-            android:scaleType="fitXY"
-            android:src="@drawable/adbanner1" />
-    </RelativeLayout>
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -85,7 +61,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/topLayout">
+        android:layout_below="@+id/topLayout"
+        android:layout_above="@+id/ads_layout">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -597,5 +574,29 @@
                 android:textSize="@dimen/text_size_eighteen" />
         </LinearLayout>
     </ScrollView>
+    <RelativeLayout
+        android:id="@+id/ads_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
 
+        <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/adView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layerType="software"
+            ads:adSize="SMART_BANNER"
+            ads:adUnitId="@string/admob_id" />
+
+        <ImageView
+            android:id="@+id/adimg"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/size_fourty_eight"
+            android:adjustViewBounds="true"
+            android:clickable="true"
+            android:contentDescription="@string/img_desrcptn"
+            android:onClick="onClickAdImage"
+            android:scaleType="fitXY"
+            android:src="@drawable/adbanner1" />
+    </RelativeLayout>
 </RelativeLayout>
