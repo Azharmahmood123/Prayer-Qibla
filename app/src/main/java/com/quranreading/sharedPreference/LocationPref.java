@@ -18,6 +18,11 @@ public class LocationPref {
     // public static final String COUNTRY_NAME = "Country_Name";
     public static final String LATITUDE = "Latitude";
     public static final String LONGITUDE = "Longitude";
+
+
+    public static final String LATITUDE_CURRENT = "Latitude_current";
+    public static final String LONGITUDE_CURRENT = "Longitude_current";
+
     // public static final String TIMEZONE = "TimeZoneValue";
     public static final String FIRST_TIME_LAUNCH = "FirstTimeLaunch";
     // public static final String FIRST_TIME_SALAT_TIME = "FirstSalatTime";
@@ -90,6 +95,32 @@ public class LocationPref {
         editor.putString(CURRENT_LOCATION, name);
         editor.commit();
     }
+
+    ////////////
+    //////////////
+    ///////////////
+
+    public String getLatitudeCurrent() {
+        return pref.getString(LATITUDE_CURRENT, "0");
+    }
+
+    public String getLongitudeCurrent() {
+        return pref.getString(LONGITUDE_CURRENT, "0");
+    }
+
+    public void setLatitudeCurrent(String lat) {
+        editor.putString(LATITUDE_CURRENT, lat);
+        editor.commit();
+    }
+
+    public void setLongitudeCurrent(String lng) {
+        editor.putString(LONGITUDE_CURRENT, lng);
+        editor.commit();
+    }
+
+    //////////////
+    //////////////
+    ////////////////
 
     public String getLatitude() {
         return pref.getString(LATITUDE, "0");

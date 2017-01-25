@@ -10,6 +10,8 @@
     <color name="index_no_bg">#FFFFFF</color>
     <color name="background_gray">#EEEEEE</color>
     <color name="disable_text_color">#AAAAAA</color>
+    <color name="gray_transperant">#67F5F5F5</color>
+
 
     <!-- End of Quran Data -->
 

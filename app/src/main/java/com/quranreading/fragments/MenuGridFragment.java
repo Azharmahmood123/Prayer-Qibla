@@ -68,8 +68,14 @@ public class MenuGridFragment extends Fragment {
     Context mContext;
     int type = 0;
 
+    LocationPref locationPref;
+    String lat, lng;
 
     boolean inProcess = false;
+
+    LocationManager locationManager;
+    boolean isGPSEnabled;
+    boolean isNetworkEnabled;
 
     public void getInstance(GridItems[] gridItems, MenuGridFragment fragment) {
 
@@ -83,6 +89,14 @@ public class MenuGridFragment extends Fragment {
         super.onCreate(savedInstanceState);
         gridItems = (GridItems[]) getArguments().getSerializable(GRID_ITEMS);
         mContext = getContext();
+
+        locationManager = (LocationManager) mContext.getSystemService(Context.LOCATION_SERVICE);
+
+        locationPref = new LocationPref(mContext);
+        lat = locationPref.getLatitudeCurrent();
+        lng = locationPref.getLongitudeCurrent();
+
+
     }
 
     @Override
@@ -135,9 +149,22 @@ public class MenuGridFragment extends Fragment {
 
                 case MENU_QIBLA_MAP_DIRECION:
                     if (isNetworkConnected()) {
-                        intent = new Intent(mContext, CompassActivity.class);
-                        intent.putExtra(CompassActivity.EXTRA_IS_SHOW_MAP, true);
-                        startActivity(intent);
+
+                        if (lat.isEmpty()) {
+                            isGPSEnabled = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
+                            isNetworkEnabled = locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
+                            if (isGPSEnabled || isNetworkEnabled) {
+                                inProcess = false;
+                                showShortToast(getString(R.string.toast_location_error), 800, 0);
+                            } else {
+                                providerAlertMessage();
+                            }
+
+                        } else {
+                            intent = new Intent(mContext, CompassActivity.class);
+                            intent.putExtra(CompassActivity.EXTRA_IS_SHOW_MAP, true);
+                            startActivity(intent);
+                        }
                     } else {
                         inProcess = false;
                         showShortToast(getString(R.string.toast_network_error), 800, 0);
@@ -321,9 +348,9 @@ public class MenuGridFragment extends Fragment {
     private void onHalalPlacesClick() {
         type = 1;
         if (isNetworkConnected()) {
-            LocationManager locationManager = (LocationManager) mContext.getSystemService(Context.LOCATION_SERVICE);
-            boolean isGPSEnabled = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
-            boolean isNetworkEnabled = locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
+
+            isGPSEnabled = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
+            isNetworkEnabled = locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
 
             if (isGPSEnabled || isNetworkEnabled) {
 
@@ -359,9 +386,9 @@ public class MenuGridFragment extends Fragment {
 
         type = 0;
         if (isNetworkConnected()) {
-            LocationManager locationManager = (LocationManager) mContext.getSystemService(Context.LOCATION_SERVICE);
-            boolean isGPSEnabled = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
-            boolean isNetworkEnabled = locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
+
+            isGPSEnabled = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
+            isNetworkEnabled = locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
 
             if (isGPSEnabled || isNetworkEnabled) {
                 Intent intent = new Intent(mContext, PlacesListActivity.class);

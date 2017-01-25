@@ -1,16 +1,26 @@
 package com.quranreading.fragments;
 
+import android.app.Dialog;
+import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.os.Handler;
+import android.provider.Settings;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -28,15 +38,19 @@ import com.quranreading.qibladirection.GlobalClass;
 import com.quranreading.qibladirection.R;
 import com.quranreading.sharedPreference.LocationPref;
 
+import static com.quranreading.helper.UserLocation.LOCATION_SETTINGS_DELAY;
+
 public class CompassMapsFragment extends Fragment implements OnMapReadyCallback, View.OnClickListener, RotationUpdateDelegate/*, GoogleMap.OnCameraChangeListener*/ {
 
     int MAX_ZOOM_MAP = 15;
     int MIN_ZOOM_MAP = 3;
-
+    int POLYLINE_WIDTH = 8;
+    double SENSOR_CALLBACK_DELAY = 1.5;
 
     double makkahLatitude = 21.422510;
     double makkahLongitude = 39.826160;
     LatLng currentLocation, qiblaLocation;
+    LocationReceiver mLocationReceiver;
 
     boolean isQiblaZoom = false;
     LocationPref locationPref;
@@ -55,6 +69,7 @@ public class CompassMapsFragment extends Fragment implements OnMapReadyCallback,
 
     ImageView ivQiblaLoc, ivCurrentLoc;
     boolean isAnimating = false;
+    LinearLayout layoutSettingEnable;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -66,6 +81,15 @@ public class CompassMapsFragment extends Fragment implements OnMapReadyCallback,
         mSensorManager = (SensorManager) mContext.getSystemService(Context.SENSOR_SERVICE);
         accelerometer = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         magnetometer = mSensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
+
+        mLocationReceiver = new LocationReceiver();
+        mContext.registerReceiver(mLocationReceiver, new IntentFilter(CompassFragmentIndex.LOCATION_INTENT_FILTER));
+    }
+
+    @Override
+    public void onDestroy() {
+        mContext.unregisterReceiver(mLocationReceiver);
+        super.onDestroy();
     }
 
     @Nullable
@@ -79,9 +103,26 @@ public class CompassMapsFragment extends Fragment implements OnMapReadyCallback,
         ivQiblaLoc = (ImageView) v.findViewById(R.id.iv_map_qibla_loc);
         ivCurrentLoc = (ImageView) v.findViewById(R.id.iv_map_qibla_current_loc);
 
+        layoutSettingEnable = (LinearLayout) v.findViewById(R.id.layout_location_error);
+        layoutSettingEnable.setVisibility(View.GONE);
+
+        layoutSettingEnable.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                providerAlertMessage();
+
+            }
+        });
+
         ivCurrentLoc.setOnClickListener(this);
         ivQiblaLoc.setOnClickListener(this);
 
+        if (isLocationEnabled()) {
+            layoutSettingEnable.setVisibility(View.GONE);
+        } else {
+            layoutSettingEnable.setVisibility(View.VISIBLE);
+        }
 
         btnMapView.setOnClickListener(mapChangeClickListner);
 
@@ -110,6 +151,20 @@ public class CompassMapsFragment extends Fragment implements OnMapReadyCallback,
                 break;
         }
     }
+
+
+    private boolean isLocationEnabled() {
+        LocationManager locationManager = (LocationManager) mContext.getSystemService(Context.LOCATION_SERVICE);
+        boolean isGPSEnabled = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
+        boolean isNetworkEnabled = locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
+
+        if (isGPSEnabled || isNetworkEnabled) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 
     private void onCurrentLocationClick() {
 
@@ -206,7 +261,7 @@ public class CompassMapsFragment extends Fragment implements OnMapReadyCallback,
 
 
         mMap.addPolyline(new PolylineOptions().geodesic(true)
-                .width(5)
+                .width(POLYLINE_WIDTH)
                 .add(new LatLng(currentLat, currentLng))
                 .add(new LatLng(makkahLatitude, makkahLongitude))  // Makkah Qibla Location
         );
@@ -279,7 +334,7 @@ public class CompassMapsFragment extends Fragment implements OnMapReadyCallback,
 
             float diff = pos.bearing - oldPos.bearing;
 
-            if (diff > 1.5 || diff < -1.5) {
+            if (diff > SENSOR_CALLBACK_DELAY || diff < -SENSOR_CALLBACK_DELAY) {
                 mMap.moveCamera(CameraUpdateFactory.newCameraPosition(pos));
             }
         }
@@ -304,5 +359,77 @@ public class CompassMapsFragment extends Fragment implements OnMapReadyCallback,
             }
         }
     };
+
+
+    private void providerAlertMessage() {
+
+        AlertDialog alertProvider = null;
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
+        builder.setTitle(getResources().getString(R.string.unable_to_find_location));
+        builder.setMessage(getResources().getString(R.string.enable_provider));
+        builder.setCancelable(false);
+
+        builder.setPositiveButton(getResources().getString(R.string.settings), new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+                Intent settingsIntent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+                startActivity(settingsIntent);
+                CompassFragmentIndex.LOCATION_REQUEST_DELAY = LOCATION_SETTINGS_DELAY;
+            }
+        });
+
+        builder.setNegativeButton(getResources().getString(R.string.cancel), new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+            }
+        });
+
+        builder.setOnCancelListener(new DialogInterface.OnCancelListener() {
+
+            @Override
+            public void onCancel(DialogInterface dialog) {
+            }
+        });
+
+        builder.setOnKeyListener(new Dialog.OnKeyListener() {
+            @Override
+            public boolean onKey(DialogInterface arg0, int keyCode, KeyEvent event) {
+                // TODO Auto-generated method stub
+                if (keyCode == KeyEvent.KEYCODE_BACK) {
+                    return true;
+                }
+                return false;
+            }
+        });
+
+        alertProvider = builder.create();
+        alertProvider.show();
+    }
+
+
+    private class LocationReceiver extends BroadcastReceiver {
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+
+            try {
+                String city = intent.getStringExtra(CompassFragmentIndex.CITY_NAME);
+                double lat = intent.getDoubleExtra(CompassFragmentIndex.LATITUDE, 0);
+                double lng = intent.getDoubleExtra(CompassFragmentIndex.LONGITUDE, 0);
+
+                if (lat != 0 && lat != -2 && lng != 0 && lng != -2) {
+
+                } else {
+                    SupportMapFragment mapFragment = new SupportMapFragment();
+                    getChildFragmentManager().beginTransaction().add(R.id.frame_qibla, mapFragment).commit();
+                    mapFragment.getMapAsync(CompassMapsFragment.this);
+                }
+
+            } catch (Exception e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }
+
+    }
 
 }

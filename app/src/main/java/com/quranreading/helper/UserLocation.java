@@ -103,9 +103,7 @@ public class UserLocation implements OnCurrentLocationFoundListner, OnLocationSe
                 if (!isShown && isShowLocationSettings) {
                     isLocationSettingsShown = true;
                     providerAlertMessage();
-                }
-                else
-                {
+                } else {
                     useLastSavedLocation();
                 }
             } else {
@@ -148,6 +146,9 @@ public class UserLocation implements OnCurrentLocationFoundListner, OnLocationSe
         if (mCurrentLocation != null && !isLocationSet) {
             latitude = mCurrentLocation.getLatitude();
             longitude = mCurrentLocation.getLongitude();
+
+            locationPref.setLatitudeCurrent(latitude + "");
+            locationPref.setLongitudeCurrent(longitude + "");
 
             if (isNetworkConnected()) {
                 GeoCoderVolley gh = new GeoCoderVolley(mContext);

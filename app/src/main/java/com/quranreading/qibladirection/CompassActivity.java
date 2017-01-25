@@ -9,6 +9,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -21,6 +22,8 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.quranreading.fragments.CompassInnerFragment;
 import com.quranreading.fragments.CompassMapsFragment;
+import com.quranreading.helper.ToastClass;
+import com.quranreading.sharedPreference.LocationPref;
 
 /**
  * Created by cyber on 12/5/2016.
@@ -45,14 +48,21 @@ public class CompassActivity extends AppCompatActivity {
     FrameLayout frameMap, frameCompass;
     ImageView btnViewNavigation;
 
+    LocationPref locationPref;
+    String lat, lng;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_qibla);
 
-        initializeAds();
+        locationPref = new LocationPref(this);
 
+        lat = locationPref.getLatitudeCurrent();
+        lng = locationPref.getLongitudeCurrent();
+
+        initializeAds();
 
         frameMap = (FrameLayout) findViewById(R.id.frame_map);
         frameCompass = (FrameLayout) findViewById(R.id.frame_compass);
@@ -80,7 +90,6 @@ public class CompassActivity extends AppCompatActivity {
             }
         });
 
-
 //        tvHeading.setText(R.string.languages);
 
         RelativeLayout layout_image_qibla = (RelativeLayout) findViewById(R.id.layout_image_qibla);
@@ -94,14 +103,18 @@ public class CompassActivity extends AppCompatActivity {
                     btnViewNavigation.setImageResource(R.drawable.ic_compass_mapview);
 
                 } else {
-                    //  if (isNetworkConnected()) {
-                    frameCompass.setVisibility(View.GONE);
-                    frameMap.setVisibility(View.VISIBLE);
-                    isMapView = true;
-                    btnViewNavigation.setImageResource(R.drawable.ic_compass_compassview);
-                    //      } else {
-                    //          ToastClass.showShortToast(CompassActivity.this, getString(R.string.toast_network_error), 500, Gravity.CENTER);
-                    //     }
+                    if (isNetworkConnected()) {
+                        if (lat.isEmpty()) {
+                            ToastClass.showShortToast(CompassActivity.this, getString(R.string.toast_location_error), 800, 0);
+                        } else {
+                            frameCompass.setVisibility(View.GONE);
+                            frameMap.setVisibility(View.VISIBLE);
+                            isMapView = true;
+                            btnViewNavigation.setImageResource(R.drawable.ic_compass_compassview);
+                        }
+                    } else {
+                        ToastClass.showShortToast(CompassActivity.this, getString(R.string.toast_network_error), 500, Gravity.CENTER);
+                    }
                 }
             }
         });
@@ -124,9 +137,7 @@ public class CompassActivity extends AppCompatActivity {
             frameCompass.setVisibility(View.GONE);
             frameMap.setVisibility(View.VISIBLE);
             btnViewNavigation.setImageResource(R.drawable.ic_compass_compassview);
-        }
-        else
-        {
+        } else {
             btnViewNavigation.setImageResource(R.drawable.ic_compass_mapview);
         }
     }

@@ -119,7 +119,7 @@ public class AlarmReceiverPrayers extends BroadcastReceiver {
                 uriAudio = "azan_" + (indexSoundOption - 1);
             }
 
-            uri = Uri.parse("android.resource://com.quranreading.qibladirection/raw/" + uriAudio);
+            uri = Uri.parse("android.resource://" + context.getPackageName() + "/raw/" + uriAudio);
         } else {
             uri = null;
         }

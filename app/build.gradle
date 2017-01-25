@@ -5,7 +5,7 @@ android {
     compileSdkVersion 23
     buildToolsVersion "23.0.2"
     defaultConfig {
-        applicationId "com.quranreading.qiblaconnect"
+        applicationId "com.quranreading.qibladirection"
         minSdkVersion 11
         targetSdkVersion 22
         versionCode 31
