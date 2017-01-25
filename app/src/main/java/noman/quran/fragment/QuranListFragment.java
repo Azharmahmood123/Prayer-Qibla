@@ -8,10 +8,13 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.Gravity;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -30,6 +33,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Locale;
 
+import noman.CommunityGlobalClass;
 import noman.quran.JuzConstant;
 import noman.quran.QuranModuleActivity;
 import noman.quran.activity.QuranReadActivity;
@@ -86,7 +90,7 @@ public class QuranListFragment extends Fragment implements OnClickListener, Text
     // Inflate the view for the fragment based on layout XML
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-         View  view = inflater.inflate(R.layout.noman_fragment_quran, container, false);
+        View view = inflater.inflate(R.layout.noman_fragment_quran, container, false);
         this.mView = view;
         btnSearch = (ImageView) view.findViewById(R.id.btn_option_search);
         btnLastRead = (ImageView) view.findViewById(R.id.btn_option_lastread);
@@ -109,6 +113,20 @@ public class QuranListFragment extends Fragment implements OnClickListener, Text
         layoutLastRead = (LinearLayout) mView.findViewById(R.id.index_last_read);
 
         etSearchName = (EditText) view.findViewById(R.id.edit_search);
+        // Handle Done Button of keyboard
+        etSearchName.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if ((event != null && (event.getKeyCode() == KeyEvent.KEYCODE_ENTER)) || (actionId == EditorInfo.IME_ACTION_DONE)) {
+                    if (dataList.size() <= 0) {
+                        CommunityGlobalClass.getInstance().showShortToast(getActivity().getResources().getString(R.string.no_surah_found), 500, Gravity.CENTER);
+                        hideSearchBar();
+                    }
+                }
+                return false;
+            }
+        });
         etSearchName.addTextChangedListener(this);
 
         ListView listViewApps = (ListView) view.findViewById(R.id.listViewSurahsList);
@@ -131,6 +149,7 @@ public class QuranListFragment extends Fragment implements OnClickListener, Text
                 }
             }
         });
+
 
 
         lastReadContainer();
@@ -158,18 +177,28 @@ public class QuranListFragment extends Fragment implements OnClickListener, Text
             SurahsSharedPref settngPref = new SurahsSharedPref(mActivity);
             if (settngPref.getLastRead() >= 0) {
                 layoutLastRead.setVisibility(View.VISIBLE);
-              //  if (!inProcess) {
+                //  if (!inProcess) {
                 //    inProcess = true;
-                    tvNameEnglish.setText(surahNames[settngPref.getLastReadSurah() - 1]);
-                    tvNameArabic.setText(surahNamesArabic[settngPref.getLastReadSurah() - 1]);
+                tvNameEnglish.setText(surahNames[settngPref.getLastReadSurah() - 1]);
+                tvNameArabic.setText(surahNamesArabic[settngPref.getLastReadSurah() - 1]);
 
                 JuzDataManager juzDataManager = new JuzDataManager(getActivity());
-                JuzModel juzModel = juzDataManager.getJuzNumber(settngPref.getLastReadSurah(),settngPref.getLastRead());
-                    tvVerses.setText("Verse: " + (settngPref.getLastRead()+1)+","+reveledPlacesSurrah[settngPref.getLastReadSurah() - 1]+" ,Juz: "+juzModel.getParaId());
-                    tvMakkiMadni.setText("");
-              //  }
+                JuzModel juzModel = juzDataManager.getJuzNumber(settngPref.getLastReadSurah(), settngPref.getLastRead() + 1);//Because zero is not added in the DBMS
+                if(juzModel == null)
+                {
+                    juzModel = juzDataManager.getJuzNumber(settngPref.getLastReadSurah(), settngPref.getLastRead() );
+                }
+                if (settngPref.getLastReadSurah() == 1) {
+                    tvVerses.setText("Verse: " + (settngPref.getLastRead() + 1) + "," + reveledPlacesSurrah[settngPref.getLastReadSurah() - 1] + " ,Juz: " + juzModel.getParaId());
+
+                } else {
+                    tvVerses.setText("Verse: " + (settngPref.getLastRead()) + "," + reveledPlacesSurrah[settngPref.getLastReadSurah() - 1] + " ,Juz: " + juzModel.getParaId());
+
+                }
+                tvMakkiMadni.setText("");
+                //  }
             } else {
-                showShortToast(getString(R.string.last_read_not_saved), 500);
+                //showShortToast(getString(R.string.last_read_not_saved), 500);
                 layoutLastRead.setVisibility(View.GONE);
             }
             layoutLastRead.setOnClickListener(new OnClickListener() {

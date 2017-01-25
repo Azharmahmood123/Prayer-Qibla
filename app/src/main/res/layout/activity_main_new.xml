@@ -17,6 +17,7 @@
             layout="@layout/toolbar_share" />
 
         <FrameLayout
+            android:background="@color/color_background"
             android:id="@+id/main_container_frame"
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -25,6 +26,7 @@
             android:layout_weight="1" />
 
         <RelativeLayout
+            android:background="@color/color_background"
             android:id="@+id/ads_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
