@@ -123,20 +123,18 @@ public class AboutInstructionActivity extends AppCompatActivity {
         tvHeading.setTypeface(((GlobalClass) getApplication()).faceRobotoR);
         tvHeading.setText(R.string.about_us);
 
-        TextView tvAppName, tvWebLink, tvCopyRight, tvVersion, tvReservedRights;
+        TextView tvAppName, tvCopyRight, tvVersion, tvReservedRights;
         tvAppName = (TextView) findViewById(R.id.tv_app_name);
-        tvWebLink = (TextView) findViewById(R.id.tv_link);
         tvCopyRight = (TextView) findViewById(R.id.tv_copy_right);
         tvVersion = (TextView) findViewById(R.id.tv_version);
         tvReservedRights = (TextView) findViewById(R.id.tv_rights);
 
         tvAppName.setTypeface(((GlobalClass) getApplication()).faceRobotoL);
-        tvWebLink.setTypeface(((GlobalClass) getApplication()).faceRobotoL);
         tvCopyRight.setTypeface(((GlobalClass) getApplication()).faceRobotoL);
         tvVersion.setTypeface(((GlobalClass) getApplication()).faceRobotoB);
         tvReservedRights.setTypeface(((GlobalClass) getApplication()).faceRobotoL);
 
-        tvCopyRight.setText(getResources().getString(R.string.copyright) + getString(R.string.copyright_year) + "\n" + getString(R.string.app_name));
+        tvCopyRight.setText(getResources().getString(R.string.copyright) + getString(R.string.copyright_year) + getString(R.string.app_name));
         tvVersion.setText(getResources().getString(R.string.version) + Constants.VERSION_NUMBER);
         tvReservedRights.setText(Constants.WEB_URL + " \n" + getResources().getString(R.string.all_rights_reserved));
     }

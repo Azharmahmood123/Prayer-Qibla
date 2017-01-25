@@ -36,7 +36,7 @@ public class SettingsTimeAlarmActivity extends AppCompatActivity implements Medi
 
     static int posPrayer;
     static String[] time;
-    MediaPlayer mp;
+    MediaPlayer mp = new MediaPlayer();
     int value = 0;
     int indexSoundOption = 0;
 

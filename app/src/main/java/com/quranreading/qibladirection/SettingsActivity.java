@@ -737,6 +737,8 @@ public class SettingsActivity extends AppCompatActivity implements OnDailogButto
 //        alarmObj.setAlarmOptionIndex(indexSoundOption);
         salatSharedPref.setDaylightSaving(false);
 
+        salatSharedPref.setAutoSettings(true);
+
         mSurahsSharedPref.setSeekbarPosition(2);
         mSurahsSharedPref.setEnglishFontSize(JuzConstant.fontSize_English[2]);
         mSurahsSharedPref.setArabicFontSize(JuzConstant.fontSize_Arabic[2]);

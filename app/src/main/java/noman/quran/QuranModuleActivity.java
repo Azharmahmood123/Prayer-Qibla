@@ -48,6 +48,7 @@ public class QuranModuleActivity extends AdIntegration implements View.OnClickLi
     NestedScrollView nestedScrollView;
     ImageView btnSearch, btnSearchCross, btnSearchBack;
     LinearLayout layoutSearch, imgBackBtn;
+
     EditText etSearchName;
     QuranListFragment mQuranListFragment;
     ParentContainerList adapter;

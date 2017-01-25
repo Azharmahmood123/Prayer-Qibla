@@ -598,6 +598,9 @@ public class SurahActivity extends AppCompatActivity implements OnCompletionList
             if (play == 1) {
                 mp.seekTo(timeAyahSurah.get(0));
                 mp.pause();
+            }else
+            {
+                mp.seekTo(timeAyahSurah.get(0));
             }
         }
 

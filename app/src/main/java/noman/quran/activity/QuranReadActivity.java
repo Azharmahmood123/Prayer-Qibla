@@ -758,6 +758,9 @@ public class QuranReadActivity extends AppCompatActivity implements OnCompletion
             if (play == 1) {
                 mp.seekTo(timeAyahSurah.get(0));
                 mp.pause();
+            }else
+            {
+                mp.seekTo(timeAyahSurah.get(0));
             }
      // }
 

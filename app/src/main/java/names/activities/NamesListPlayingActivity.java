@@ -185,6 +185,7 @@ public class NamesListPlayingActivity extends AppCompatActivity implements Adapt
             mp.seekTo(nameTiming[currentPosition]);
             mp.start();
             seekBarNames.setEnabled(true);
+            seekBarNames.setProgress(currentPosition);
 
             handler.removeCallbacks(runnableTimeUpdate);
             handler.post(runnableTimeUpdate);

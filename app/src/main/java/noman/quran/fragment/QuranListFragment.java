@@ -112,13 +112,13 @@ public class QuranListFragment extends Fragment implements OnClickListener, Text
         layoutOptions = (LinearLayout) view.findViewById(R.id.layout_surah_options);
         layoutLastRead = (LinearLayout) mView.findViewById(R.id.index_last_read);
 
-        etSearchName = (EditText) view.findViewById(R.id.edit_search);
+        etSearchName = (EditText) getActivity().findViewById(R.id.edit_search);
         // Handle Done Button of keyboard
-        etSearchName.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+        etSearchName.setOnEditorActionListener(new EditText.OnEditorActionListener() {
 
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                if ((event != null && (event.getKeyCode() == KeyEvent.KEYCODE_ENTER)) || (actionId == EditorInfo.IME_ACTION_DONE)) {
+                if (actionId == KeyEvent.KEYCODE_ENTER || actionId == EditorInfo.IME_ACTION_DONE) {
                     if (dataList.size() <= 0) {
                         CommunityGlobalClass.getInstance().showShortToast(getActivity().getResources().getString(R.string.no_surah_found), 500, Gravity.CENTER);
                         hideSearchBar();
@@ -127,6 +127,7 @@ public class QuranListFragment extends Fragment implements OnClickListener, Text
                 return false;
             }
         });
+
         etSearchName.addTextChangedListener(this);
 
         ListView listViewApps = (ListView) view.findViewById(R.id.listViewSurahsList);
@@ -149,7 +150,6 @@ public class QuranListFragment extends Fragment implements OnClickListener, Text
                 }
             }
         });
-
 
 
         lastReadContainer();
@@ -184,9 +184,8 @@ public class QuranListFragment extends Fragment implements OnClickListener, Text
 
                 JuzDataManager juzDataManager = new JuzDataManager(getActivity());
                 JuzModel juzModel = juzDataManager.getJuzNumber(settngPref.getLastReadSurah(), settngPref.getLastRead() + 1);//Because zero is not added in the DBMS
-                if(juzModel == null)
-                {
-                    juzModel = juzDataManager.getJuzNumber(settngPref.getLastReadSurah(), settngPref.getLastRead() );
+                if (juzModel == null) {
+                    juzModel = juzDataManager.getJuzNumber(settngPref.getLastReadSurah(), settngPref.getLastRead());
                 }
                 if (settngPref.getLastReadSurah() == 1) {
                     tvVerses.setText("Verse: " + (settngPref.getLastRead() + 1) + "," + reveledPlacesSurrah[settngPref.getLastReadSurah() - 1] + " ,Juz: " + juzModel.getParaId());
