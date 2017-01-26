@@ -28,17 +28,64 @@
     <string name="notificaion">Notification</string>
     <string name="set_tone">Set Tone</string>
 
+
+    <string-array name="array_calculation_methods_new">
+        <item >Algerian Minister of Religious Affairs and Wakfs</item>
+        <item >Egyptian General Authority</item>
+        <item >Egyptian General Authority (bis)</item>
+        <item >Fixed Isha Angle Interval</item>
+        <item >Islamic University, Karachi</item>
+        <item >ISNA(Islamic State of North America)</item>
+        <item >JAKIM(Jabatan Kemajuan Islam Malaysia)</item>
+        <item >KEMENAG(Kementerian Agama RI)</item>
+        <item >MUIS(Majlis Ugama Islam Singapura)</item>
+        <item >MWL(Muslim World League)</item>
+        <item >Shia Athna Ashari(Jafari)</item>
+        <item >UAE General Authority of Islamic Affairs</item>
+        <item >Umm Al-Qura, Makkah</item>
+        <item >University of Tehran</item>
+    </string-array>
+
+    <string-array name="array_calculation_methods_angles">
+        <item >Fajr 18.0° / Isha\'a 17.0°</item>
+        <item >Fajr 19.5° / Isha\'a 17.5°</item>
+        <item >Fajr 20.0° / Isha\'a 18.0°</item>
+        <item >Fajr 19.5° / Isha\'a 90 min</item>
+        <item >Fajr 18.0° / Isha\'a 18.0°</item>
+        <item >Fajr 15.0° / Isha\'a 15.0°</item>
+        <item >Fajr 20.0° / Isha\'a 18.0°</item>
+        <item >Fajr 20.0° / Isha\'a 18.0°</item>
+        <item >Fajr 20.0° / Isha\'a 18.0°</item>
+        <item >Fajr 18.0° / Isha\'a 17.0°</item>
+        <item >Fajr 16.0° / Isha\'a 14.0°</item>
+        <item >Fajr 19.5° / Isha\'a 90 min</item>
+        <item >Fajr 18.5° / Isha\'a 90 min</item>
+        <item >Fajr 17.7° / Isha\'a 15.0°</item>
+    </string-array>
+
+    <integer-array name="array_calculation_methods_index">
+        <item >12</item>
+        <item >5</item>
+        <item >7</item>
+        <item >10</item>
+        <item >1</item>
+        <item >2</item>
+        <item >11</item>
+        <item >8</item>
+        <item >9</item>
+        <item >3</item>
+        <item >0</item>
+        <item >10</item>
+        <item >4</item>
+        <item >6</item>
+    </integer-array>
+
     <string name="manual_corrections">Manual Corrections</string>
     <string name="auto_edit_alarm">Auto Edit Alarm</string>
     <string name="auto_edit_alarm_option_1">Auto edit with respect to new location</string>
     <string name="auto_edit_alarm_option_2">Reset edited alarms on every new location</string>
+
     <string name="share_timings_message">To know daily salat timings and accurate Qibla Direction, download Qibla Connect® for Free:\n\n https://play.google.com/store/apps/details?id=com.quranreading.qibladirection</string>
-
-
-
-
-
-
     <string name="ayah_of_day_dialog">Do you want to enable Ayah of the Day?</string>
     <string name="text_translation_setting">Text &amp; Translation</string>
     <string name="text_reset_quran_setting">Reset Quran Setting</string>
