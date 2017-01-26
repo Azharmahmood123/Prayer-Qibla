@@ -66,8 +66,10 @@ public class LanguageListAdapter extends RecyclerView.Adapter<LanguageHolder> {
            holder.radioButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 mSurahsSharedPref.setTranslationIndex(position);
-                setRadioButtonsCheckState(mSurahsSharedPref.getTranslationIndex());
+                notifyDataSetChanged();
+               // setRadioButtonsCheckState(mSurahsSharedPref.getTranslationIndex());
             }
         });
 

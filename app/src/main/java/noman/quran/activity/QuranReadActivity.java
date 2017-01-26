@@ -940,6 +940,17 @@ public class QuranReadActivity extends AppCompatActivity implements OnCompletion
                 }
             }
         }
+        else
+        {
+            if (mp != null && isAudioFound) {
+                if (play == 1) {
+                    handler.removeCallbacks(sendUpdatesToUI);
+                    mp.pause();
+                    play = 0;
+                    btnAudio.setImageResource(R.drawable.play_btn);
+                }
+            }
+        }
 
         ayahOptionsLayout.setVisibility(View.GONE);
         settngPref.setLastRead(((GlobalClass) getApplication()).ayahPos);
