@@ -310,7 +310,7 @@ public class QuranReadActivity extends AppCompatActivity implements OnCompletion
             mSurahsSharedPref.setTranslationIndex(mSurahsSharedPref.getLastSaveTransaltion());
             mSurahsSharedPref.setTransliteration(mSurahsSharedPref.getLastTranslirationState());
 
-            showShortToast(getResources().getString(R.string.text_read_mode) +" Off", 500, Gravity.CENTER);
+            showShortToast(getResources().getString(R.string.text_read_mode) + " Off", 500, Gravity.CENTER);
 
         } else {
             imgReadMode.setImageResource(R.drawable.open_read_mode);
@@ -321,7 +321,7 @@ public class QuranReadActivity extends AppCompatActivity implements OnCompletion
             mSurahsSharedPref.setLastTranslirationState(chkTransliteration);
             mSurahsSharedPref.setTransliteration(false);
             mSurahsSharedPref.setTranslationIndex(0);
-            showShortToast(getResources().getString(R.string.text_read_mode) +" On", 500, Gravity.CENTER);
+            showShortToast(getResources().getString(R.string.text_read_mode) + " On", 500, Gravity.CENTER);
         }
 
         initializeSettings();
@@ -758,19 +758,18 @@ public class QuranReadActivity extends AppCompatActivity implements OnCompletion
             if (play == 1) {
                 mp.seekTo(timeAyahSurah.get(0));
                 mp.pause();
-            }else
-            {
+            } else {
                 mp.seekTo(timeAyahSurah.get(0));
             }
-     // }
+            // }
 
-        hideGotoDialog();
-        ((GlobalClass) getApplication()).ayahPos = 0;
-        customAdapter.notifyDataSetChanged();
-        btnAudio.setImageResource(R.drawable.play_btn);
-        delayIndex = 0;
-        ayahListView.setSelection(0);
-        play = 0;
+            hideGotoDialog();
+            ((GlobalClass) getApplication()).ayahPos = 0;
+            customAdapter.notifyDataSetChanged();
+            btnAudio.setImageResource(R.drawable.play_btn);
+            delayIndex = 0;
+            ayahListView.setSelection(0);
+            play = 0;
 
 
         }
@@ -913,7 +912,18 @@ public class QuranReadActivity extends AppCompatActivity implements OnCompletion
             isSettings = false;
             initializeSettings();
             initializaSurahData();
+
             customAdapter.notifyDataSetChanged();
+
+            if(((GlobalClass) getApplication()).ayahPos>0)
+            {
+                ayahListView.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        ayahListView.setSelection(((GlobalClass) getApplication()).ayahPos);
+                    }
+                });
+            }
         }
 
         if (mp != null && isAudioFound) {
@@ -1050,6 +1060,7 @@ public class QuranReadActivity extends AppCompatActivity implements OnCompletion
                 ayahListView.setSelection(((GlobalClass) getApplication()).ayahPos);
                 chkSelection(delayIndex, true);
             }
+
 
             mainLayout.setBackgroundColor(Color.parseColor("#E1E8ED"));
             progressBar.setVisibility(View.GONE);

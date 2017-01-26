@@ -127,7 +127,6 @@ public class DuaDetailsActivity extends AppCompatActivity implements OnCompletio
         btnInfo = (ImageView) findViewById(R.id.btn_info_duas);
 
 
-
         btnAudio.setOnClickListener(this);
         btnStop.setOnClickListener(this);
         btnShare.setOnClickListener(this);
@@ -282,9 +281,13 @@ public class DuaDetailsActivity extends AppCompatActivity implements OnCompletio
 
     public void reset() {
 
-        if (mp != null && isAudioFound && play == 1) {
-            mp.seekTo(0);
-            mp.pause();
+        if (mp != null && isAudioFound) {
+            if (play == 1) {
+                mp.seekTo(0);
+                mp.pause();
+            } else {
+                mp.seekTo(0);
+            }
         }
 
         btnAudio.setImageResource(R.drawable.play_btn);

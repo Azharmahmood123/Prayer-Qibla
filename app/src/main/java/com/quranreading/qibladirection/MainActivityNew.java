@@ -62,8 +62,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import noman.CommunityGlobalClass;
+import noman.quran.activity.QuranReadActivity;
 import places.activities.PlacesListActivity;
-import quran.activities.SurahActivity;
 import quran.sharedpreference.SurahsSharedPref;
 
 import static com.quranreading.qibladirection.R.id.toolbar_btnMenu;
@@ -202,11 +202,11 @@ public class MainActivityNew extends AppCompatActivity implements AdapterView.On
 
             startActivity(new Intent(this, TimingsActivity.class));
 
-        } else if (getIntent().getIntExtra(SurahActivity.KEY_EXTRA_AYAH_NO, -1) > 0) {
-            Intent intent = new Intent(this, SurahActivity.class);
+        } else if (getIntent().getIntExtra(QuranReadActivity.KEY_EXTRA_AYAH_NO, -1) > 0) {
+            Intent intent = new Intent(this, QuranReadActivity.class);
 
-            intent.putExtra(SurahActivity.KEY_EXTRA_SURAH_NO, getIntent().getIntExtra(SurahActivity.KEY_EXTRA_SURAH_NO, -1));
-            intent.putExtra(SurahActivity.KEY_EXTRA_AYAH_NO, getIntent().getIntExtra(SurahActivity.KEY_EXTRA_AYAH_NO, -1));
+            intent.putExtra(QuranReadActivity.KEY_EXTRA_SURAH_NO, getIntent().getIntExtra(QuranReadActivity.KEY_EXTRA_SURAH_NO, -1));
+            intent.putExtra(QuranReadActivity.KEY_EXTRA_AYAH_NO, getIntent().getIntExtra(QuranReadActivity.KEY_EXTRA_AYAH_NO, -1));
 
             startActivity(intent);
         }
