@@ -22,7 +22,7 @@ public class NamesListAdapter extends BaseAdapter {
     private Context mContext;
 
     ArrayList<NamesModel> listSurahs;
-    int highlightPosition = 0;
+    int highlightPosition = -1;
 
     GlobalClass mGlobalClass;
 
@@ -74,7 +74,7 @@ public class NamesListAdapter extends BaseAdapter {
             holder.tvMakkiMadni = (TextView) convertView.findViewById(R.id.maki_madni);
             holder.tvNameArabic = (TextView) convertView.findViewById(R.id.arabic_name);
             holder.tvNameEnglish = (TextView) convertView.findViewById(R.id.tvEnglishName);
-            holder.ayahRow = (RelativeLayout)  convertView.findViewById(R.id.index_row);
+            holder.ayahRow = (RelativeLayout) convertView.findViewById(R.id.index_row);
 
             holder.tvSurahNo.setTypeface(((GlobalClass) mContext.getApplicationContext()).faceRobotoL);
             holder.tvMakkiMadni.setTypeface(((GlobalClass) mContext.getApplicationContext()).faceRobotoL);
@@ -93,8 +93,7 @@ public class NamesListAdapter extends BaseAdapter {
 
 
         holder.ayahRow.setBackgroundResource(R.drawable.bg_row_resource);
-        if(position == highlightPosition)
-        {
+        if (position == highlightPosition) {
             holder.ayahRow.setBackgroundResource(R.drawable.bg_row_hover);
         }
 
@@ -107,7 +106,7 @@ public class NamesListAdapter extends BaseAdapter {
     }
 
     public void removeHighlight() {
-        highlightPosition = 0;
+        highlightPosition = -1;
         notifyDataSetChanged();
     }
 }

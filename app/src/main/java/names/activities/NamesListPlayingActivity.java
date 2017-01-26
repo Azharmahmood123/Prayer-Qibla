@@ -56,7 +56,7 @@ public class NamesListPlayingActivity extends AppCompatActivity implements Adapt
 
     public static final int requestDownload = 3;
 
-    private int delayIndex = 0, currentPosition = 0;
+    private int delayIndex = 0, currentPosition = -1;
     private Handler handler = new Handler();
 
     private boolean inProcess = false;
@@ -365,8 +365,9 @@ public class NamesListPlayingActivity extends AppCompatActivity implements Adapt
                 mp.seekTo(0);
             }
 
-            currentPosition = 0;
+            currentPosition = -1;
             mGridViewAdapter.removeHighlight();
+            gridViewNames.setSelection(0);
         }
 
         tvTotalTime.setText(audioTotalTime);
