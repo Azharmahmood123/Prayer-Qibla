@@ -1,9 +1,7 @@
 package com.quranreading.fragments;
 
-import android.app.Dialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.hardware.Sensor;
@@ -14,8 +12,6 @@ import android.os.Handler;
 import android.provider.Settings;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.AlertDialog;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -365,46 +361,52 @@ public class CompassMapsFragment extends Fragment implements OnMapReadyCallback,
 
     private void providerAlertMessage() {
 
-        AlertDialog alertProvider = null;
+        Intent settingsIntent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+        startActivity(settingsIntent);
+        CompassFragmentIndex.LOCATION_REQUEST_DELAY = LOCATION_SETTINGS_DELAY;
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
-        builder.setTitle(getResources().getString(R.string.unable_to_find_location));
-        builder.setMessage(getResources().getString(R.string.enable_provider));
-        builder.setCancelable(false);
 
-        builder.setPositiveButton(getResources().getString(R.string.settings), new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int whichButton) {
-                Intent settingsIntent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
-                startActivity(settingsIntent);
-                CompassFragmentIndex.LOCATION_REQUEST_DELAY = LOCATION_SETTINGS_DELAY;
-            }
-        });
+//        AlertDialog alertProvider = null;
+//
+//        AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
+//        builder.setTitle(getResources().getString(R.string.unable_to_find_location));
+//        builder.setMessage(getResources().getString(R.string.enable_provider));
+//        builder.setCancelable(false);
+//
+//        builder.setPositiveButton(getResources().getString(R.string.settings), new DialogInterface.OnClickListener() {
+//            public void onClick(DialogInterface dialog, int whichButton) {
+//                Intent settingsIntent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+//                startActivity(settingsIntent);
+//                CompassFragmentIndex.LOCATION_REQUEST_DELAY = LOCATION_SETTINGS_DELAY;
+//            }
+//        });
+//
+//        builder.setNegativeButton(getResources().getString(R.string.cancel), new DialogInterface.OnClickListener() {
+//            public void onClick(DialogInterface dialog, int whichButton) {
+//            }
+//        });
+//
+//        builder.setOnCancelListener(new DialogInterface.OnCancelListener() {
+//
+//            @Override
+//            public void onCancel(DialogInterface dialog) {
+//            }
+//        });
+//
+//        builder.setOnKeyListener(new Dialog.OnKeyListener() {
+//            @Override
+//            public boolean onKey(DialogInterface arg0, int keyCode, KeyEvent event) {
+//                // TODO Auto-generated method stub
+//                if (keyCode == KeyEvent.KEYCODE_BACK) {
+//                    return true;
+//                }
+//                return false;
+//            }
+//        });
+//
+//        alertProvider = builder.create();
+//        alertProvider.show();
 
-        builder.setNegativeButton(getResources().getString(R.string.cancel), new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int whichButton) {
-            }
-        });
-
-        builder.setOnCancelListener(new DialogInterface.OnCancelListener() {
-
-            @Override
-            public void onCancel(DialogInterface dialog) {
-            }
-        });
-
-        builder.setOnKeyListener(new Dialog.OnKeyListener() {
-            @Override
-            public boolean onKey(DialogInterface arg0, int keyCode, KeyEvent event) {
-                // TODO Auto-generated method stub
-                if (keyCode == KeyEvent.KEYCODE_BACK) {
-                    return true;
-                }
-                return false;
-            }
-        });
-
-        alertProvider = builder.create();
-        alertProvider.show();
     }
 
 

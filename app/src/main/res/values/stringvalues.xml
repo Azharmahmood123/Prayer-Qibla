@@ -6,7 +6,7 @@
     <string name="img_desrcptn">Image</string>
     
     <string name="facebook_id">499376796887867</string>
-    <string name="google_maps_key">AIzaSyACMnpsQA5xwXpAMBJI3z6Y_GqUuHAbp_I</string>
+    <string name="maps_key">AIzaSyACMnpsQA5xwXpAMBJI3z6Y_GqUuHAbp_I</string>
 
     <!--    <string name="admob_id">ca-app-pub-6471360733987211/9595526845</string>
         <string name="admob_interstitial">ca-app-pub-6471360733987211/6408640043</string>

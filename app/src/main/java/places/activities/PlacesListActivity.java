@@ -1,10 +1,6 @@
 package places.activities;
 
-import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.Context;
-import android.content.DialogInterface;
-import android.content.DialogInterface.OnCancelListener;
 import android.content.Intent;
 import android.database.Cursor;
 import android.location.Location;
@@ -18,7 +14,6 @@ import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.telephony.TelephonyManager;
 import android.util.Log;
-import android.view.KeyEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -633,50 +628,56 @@ public class PlacesListActivity extends AppCompatActivity implements OnPlacesLoa
 
 	private void providerAlertMessage() {
 
-		AlertDialog alertProvider = null;
-
-		AlertDialog.Builder builder = new AlertDialog.Builder(this);
-		builder.setTitle(getResources().getString(R.string.unable_to_find_location));
-		builder.setMessage(getResources().getString(R.string.enable_provider));
-		builder.setCancelable(false);
-
-		builder.setPositiveButton(getResources().getString(R.string.settings), new DialogInterface.OnClickListener() {
-			public void onClick(DialogInterface dialog, int whichButton) {
-
-				mGoogleApiClient.disconnect();
-				isSettingsOpened = true;
-				Intent settingsIntent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
-				startActivity(settingsIntent);
-			}
-		});
-
-		builder.setNegativeButton(getResources().getString(R.string.cancel), new DialogInterface.OnClickListener() {
-			public void onClick(DialogInterface dialog, int whichButton) {
-
-			}
-		});
-
-		builder.setOnCancelListener(new OnCancelListener() {
-
-			@Override
-			public void onCancel(DialogInterface dialog) {
-			}
-		});
-
-		builder.setOnKeyListener(new Dialog.OnKeyListener() {
-			@Override
-			public boolean onKey(DialogInterface arg0, int keyCode, KeyEvent event) {
-				// TODO Auto-generated method stub
-				if(keyCode == KeyEvent.KEYCODE_BACK)
-				{
-
-					return true;
-				}
-				return false;
-			}
-		});
-
-		alertProvider = builder.create();
-		alertProvider.show();
+		mGoogleApiClient.disconnect();
+		isSettingsOpened = true;
+		Intent settingsIntent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+		startActivity(settingsIntent);
+//
+//
+//		AlertDialog alertProvider = null;
+//
+//		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+//		builder.setTitle(getResources().getString(R.string.unable_to_find_location));
+//		builder.setMessage(getResources().getString(R.string.enable_provider));
+//		builder.setCancelable(false);
+//
+//		builder.setPositiveButton(getResources().getString(R.string.settings), new DialogInterface.OnClickListener() {
+//			public void onClick(DialogInterface dialog, int whichButton) {
+//
+//				mGoogleApiClient.disconnect();
+//				isSettingsOpened = true;
+//				Intent settingsIntent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+//				startActivity(settingsIntent);
+//			}
+//		});
+//
+//		builder.setNegativeButton(getResources().getString(R.string.cancel), new DialogInterface.OnClickListener() {
+//			public void onClick(DialogInterface dialog, int whichButton) {
+//
+//			}
+//		});
+//
+//		builder.setOnCancelListener(new OnCancelListener() {
+//
+//			@Override
+//			public void onCancel(DialogInterface dialog) {
+//			}
+//		});
+//
+//		builder.setOnKeyListener(new Dialog.OnKeyListener() {
+//			@Override
+//			public boolean onKey(DialogInterface arg0, int keyCode, KeyEvent event) {
+//				// TODO Auto-generated method stub
+//				if(keyCode == KeyEvent.KEYCODE_BACK)
+//				{
+//
+//					return true;
+//				}
+//				return false;
+//			}
+//		});
+//
+//		alertProvider = builder.create();
+//		alertProvider.show();
 	}
 }
