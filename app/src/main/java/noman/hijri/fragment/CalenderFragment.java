@@ -324,6 +324,9 @@ public class CalenderFragment extends Fragment {
     private void printMonth(int mm, int yy) {
         setCurrentDayOfMonth(_calendar.get(Calendar.DAY_OF_MONTH));
         setCurrentWeekDay(_calendar.get(Calendar.DAY_OF_WEEK));
+
+
+
         _calendar.set(Calendar.YEAR, yy);
         _calendar.set(Calendar.MONTH, mm);
         _calendar.set(Calendar.DAY_OF_MONTH, 1);

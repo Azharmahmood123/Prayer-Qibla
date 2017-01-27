@@ -22,15 +22,15 @@
             android:layout_height="wrap_content"
             android:text="Surah Fatiha"
             android:textColor="@color/black"
-            android:textSize="@dimen/text_size_timings_row_1" />
+            android:textSize="@dimen/_14sdp" />
 
         <TextView
             android:id="@+id/tv_mehtod_names_degree"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Madni"
-            android:textColor="#393939"
-            android:textSize="@dimen/text_size_twelve" />
+            android:textColor="@color/gray_darkest"
+            android:textSize="@dimen/_12sdp" />
     </LinearLayout>
 
     <ImageView

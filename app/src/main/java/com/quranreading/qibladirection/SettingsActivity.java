@@ -228,8 +228,8 @@ public class SettingsActivity extends AppCompatActivity implements OnDailogButto
 
         showManualCorrectionData();
 
-        tvAyahNotifyTime.setTypeface(((GlobalClass) getApplication()).faceRobotoL);
-        tvTranslations.setTypeface(((GlobalClass) getApplication()).faceRobotoL);
+        tvAyahNotifyTime.setTypeface(((GlobalClass) getApplication()).faceRobotoR);
+        tvTranslations.setTypeface(((GlobalClass) getApplication()).faceRobotoR);
 
         // settingsRowtexts[0].setText(getResources().getString(R.string.salat_timings).toUpperCase());
 

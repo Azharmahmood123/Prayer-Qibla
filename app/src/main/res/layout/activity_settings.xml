@@ -39,7 +39,6 @@
     </RelativeLayout>
 
 
-
     <ProgressBar
         android:id="@+id/progressBar"
         android:layout_width="wrap_content"
@@ -56,13 +55,39 @@
         android:enabled="false"
         android:visibility="gone" />
 
-    <ScrollView
+    <RelativeLayout
+        android:id="@+id/ads_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true">
+
+        <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/adView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layerType="software"
+            ads:adSize="SMART_BANNER"
+            ads:adUnitId="@string/admob_id" />
+
+        <ImageView
+            android:id="@+id/adimg"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/size_fourty_eight"
+            android:adjustViewBounds="true"
+            android:clickable="true"
+            android:contentDescription="@string/img_desrcptn"
+            android:onClick="onClickAdImage"
+            android:scaleType="fitXY"
+            android:src="@drawable/adbanner1" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_above="@+id/ads_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/topLayout"
-        android:layout_above="@+id/ads_layout">
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -94,7 +119,7 @@
                     android:gravity="center|left"
                     android:text="@string/auto_settings"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/text_size_eighteen" />
+                    android:textSize="@dimen/_14sdp" />
 
                 <android.support.v7.widget.AppCompatCheckBox
                     android:id="@+id/img_auto_settings"
@@ -131,7 +156,7 @@
                         android:gravity="center|left"
                         android:text="@string/daylight_saving"
                         android:textColor="@color/black"
-                        android:textSize="@dimen/text_size_eighteen" />
+                        android:textSize="@dimen/_14sdp" />
 
                     <android.support.v7.widget.AppCompatCheckBox
                         android:id="@+id/img_daylight_saving"
@@ -161,7 +186,7 @@
                         android:gravity="center|left"
                         android:text="@string/juristic"
                         android:textColor="@color/black"
-                        android:textSize="@dimen/text_size_eighteen" />
+                        android:textSize="@dimen/_14sdp" />
 
                     <TextView
                         android:id="@+id/tv_juristic_opt"
@@ -171,7 +196,7 @@
                         android:gravity="center|left"
                         android:text="@string/standard"
                         android:textColor="@color/gray_darkest"
-                        android:textSize="@dimen/text_size_fifteen" />
+                        android:textSize="@dimen/_12sdp" />
                 </LinearLayout>
 
                 <View style="@style/view_line_light_gray" />
@@ -190,7 +215,7 @@
                         android:gravity="center|left"
                         android:text="@string/calculation_method"
                         android:textColor="@color/black"
-                        android:textSize="@dimen/text_size_eighteen" />
+                        android:textSize="@dimen/_14sdp" />
 
                     <TextView
                         android:id="@+id/tv_calculatn_opt"
@@ -200,7 +225,7 @@
                         android:gravity="center|left"
                         android:text="@string/mwl"
                         android:textColor="@color/gray_darkest"
-                        android:textSize="@dimen/text_size_fifteen" />
+                        android:textSize="@dimen/_12sdp" />
                 </LinearLayout>
 
                 <View style="@style/view_line_light_gray" />
@@ -220,7 +245,7 @@
                         android:gravity="center|left"
                         android:text="@string/manual_corrections"
                         android:textColor="@color/black"
-                        android:textSize="@dimen/text_size_eighteen" />
+                        android:textSize="@dimen/_14sdp" />
 
                     <TextView
                         android:id="@+id/tv_corrections_opt"
@@ -230,7 +255,7 @@
                         android:gravity="center|left"
                         android:text="0, 0, 0, 0, 0, 0"
                         android:textColor="@color/gray_darkest"
-                        android:textSize="@dimen/text_size_fifteen" />
+                        android:textSize="@dimen/_12sdp" />
                 </LinearLayout>
 
                 <View style="@style/view_line_light_gray" />
@@ -250,7 +275,7 @@
                         android:gravity="center|left"
                         android:text="@string/latitude_adjustment"
                         android:textColor="@color/black"
-                        android:textSize="@dimen/text_size_eighteen" />
+                        android:textSize="@dimen/_14sdp" />
 
                     <TextView
                         android:id="@+id/tv_latd_adjst_opt"
@@ -260,7 +285,7 @@
                         android:gravity="center|left"
                         android:text="@string/none"
                         android:textColor="@color/gray_darkest"
-                        android:textSize="@dimen/text_size_fifteen" />
+                        android:textSize="@dimen/_12sdp" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -282,7 +307,7 @@
                     android:gravity="center|left"
                     android:text="@string/tone_settings"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/text_size_fifteen" />
+                    android:textSize="@dimen/_14sdp" />
 
                 <TextView
                     android:id="@+id/tv_tone_opt"
@@ -292,7 +317,7 @@
                     android:gravity="center|left"
                     android:text="@string/default_tone"
                     android:textColor="@color/gray_darkest"
-                    android:textSize="@dimen/text_size_fifteen" />
+                    android:textSize="@dimen/_12sdp" />
             </LinearLayout>
 
 
@@ -315,7 +340,7 @@
                     android:gravity="center|left"
                     android:text="@string/auto_edit_alarm"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/text_size_fifteen" />
+                    android:textSize="@dimen/_14sdp" />
 
                 <TextView
                     android:id="@+id/tv_auto_selection_opt"
@@ -325,7 +350,7 @@
                     android:gravity="center|left"
                     android:text="@string/auto_edit_alarm_option_1"
                     android:textColor="@color/gray_darkest"
-                    android:textSize="@dimen/text_size_fifteen" />
+                    android:textSize="@dimen/_12sdp" />
             </LinearLayout>
 
 
@@ -348,7 +373,7 @@
                     android:gravity="center|left"
                     android:text="@string/advance_help"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/text_size_eighteen" />
+                    android:textSize="@dimen/_14sdp" />
             </LinearLayout>
 
             <TextView
@@ -357,16 +382,20 @@
                 android:text="@string/quran" />
 
 
-            <RelativeLayout
+        <!--    <RelativeLayout
                 android:id="@+id/row_surah_translation"
-
-                style="@style/setting_row_bg_l"
-                android:tag="7">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+    <item name="android:onClick">onRowClick</item>
+                android:tag="7">-->
 
                 <LinearLayout
-                    android:layout_marginTop="@dimen/_5sdp"
+                    android:tag="7"
+                    style="@style/setting_row_bg_l"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/_3sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
                     android:orientation="vertical">
 
                     <TextView
@@ -377,10 +406,9 @@
                         android:gravity="center|left"
                         android:text="@string/text_translation_setting"
                         android:textColor="@color/black"
-                        android:textSize="@dimen/text_size_fifteen" />
+                        android:textSize="@dimen/_14sdp" />
 
                     <TextView
-                        android:layout_marginTop="@dimen/_5sdp"
                         android:id="@+id/tv_translation"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
@@ -388,10 +416,10 @@
                         android:gravity="center|left"
                         android:text="None"
                         android:textColor="@color/gray_darkest"
-                        android:textSize="@dimen/text_size_fifteen" />
+                        android:textSize="@dimen/_12sdp" />
                 </LinearLayout>
 
-            </RelativeLayout>
+      <!--      </RelativeLayout>-->
 
             <View style="@style/view_line_light_gray" />
 
@@ -410,7 +438,7 @@
                     android:gravity="center|left"
                     android:text="@string/txt_transliteration"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/text_size_eighteen" />
+                    android:textSize="@dimen/_14sdp" />
 
                 <android.support.v7.widget.AppCompatCheckBox
                     android:id="@+id/img_transliteration_settings"
@@ -448,7 +476,7 @@
                         android:gravity="center|left"
                         android:text="@string/aya_of_day"
                         android:textColor="@color/black"
-                        android:textSize="@dimen/text_size_eighteen" />
+                        android:textSize="@dimen/_14sdp" />
 
                     <TextView
                         android:id="@+id/tv_ayah_notify_time"
@@ -458,7 +486,7 @@
                         android:gravity="center|left"
                         android:text="@string/standard"
                         android:textColor="@color/gray_darkest"
-                        android:textSize="@dimen/text_size_fifteen"
+                        android:textSize="@dimen/_12sdp"
                         android:visibility="gone" />
                 </LinearLayout>
 
@@ -490,7 +518,7 @@
                     android:gravity="center|left"
                     android:text="@string/text_reset_quran_setting"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/text_size_eighteen" />
+                    android:textSize="@dimen/_14sdp" />
             </LinearLayout>
 
             <TextView
@@ -513,7 +541,7 @@
                     android:gravity="center|left"
                     android:text="@string/txt_translation"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/text_size_eighteen" />
+                    android:textSize="@dimen/_14sdp" />
 
                 <android.support.v7.widget.AppCompatCheckBox
                     android:id="@+id/img_translation_settings_dua"
@@ -543,7 +571,7 @@
                     android:gravity="center|left"
                     android:text="@string/txt_transliteration"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/text_size_eighteen" />
+                    android:textSize="@dimen/_14sdp" />
 
                 <android.support.v7.widget.AppCompatCheckBox
                     android:id="@+id/img_transliteration_settings_dua"
@@ -571,32 +599,7 @@
                 android:tag="9"
                 android:text="@string/reset_all"
                 android:textColor="@color/black"
-                android:textSize="@dimen/text_size_eighteen" />
+                android:textSize="@dimen/_14sdp" />
         </LinearLayout>
     </ScrollView>
-    <RelativeLayout
-        android:id="@+id/ads_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true">
-
-        <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/adView"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layerType="software"
-            ads:adSize="SMART_BANNER"
-            ads:adUnitId="@string/admob_id" />
-
-        <ImageView
-            android:id="@+id/adimg"
-            android:layout_width="fill_parent"
-            android:layout_height="@dimen/size_fourty_eight"
-            android:adjustViewBounds="true"
-            android:clickable="true"
-            android:contentDescription="@string/img_desrcptn"
-            android:onClick="onClickAdImage"
-            android:scaleType="fitXY"
-            android:src="@drawable/adbanner1" />
-    </RelativeLayout>
 </RelativeLayout>

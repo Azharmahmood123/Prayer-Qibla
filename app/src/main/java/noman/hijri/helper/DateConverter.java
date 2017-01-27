@@ -343,13 +343,9 @@ public class DateConverter {
         GregorianCalendar gCal = new GregorianCalendar(year, month, (day - 1));
         Calendar uCal = new UmmalquraCalendar();
 
-        try {
-            uCal.setTime(gCal.getTime());
-        } catch (ArrayIndexOutOfBoundsException e) {
-            Log.e("Exception",e.toString());
-            gCal = new GregorianCalendar(1995, 8, 10);//Adding date auto by me adjust
-            uCal.setTime(gCal.getTime());
-        }
+
+        uCal.setTime(gCal.getTime());
+
         int d = uCal.get(Calendar.DAY_OF_MONTH);
         int y = uCal.get(Calendar.YEAR);
         int m = uCal.get(Calendar.MONTH);

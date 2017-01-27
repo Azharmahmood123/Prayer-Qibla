@@ -12,6 +12,7 @@ import android.text.Html;
 import android.text.Spannable;
 import android.text.SpannableStringBuilder;
 import android.text.style.ForegroundColorSpan;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -287,7 +288,7 @@ public class QuranReadListAdapter extends BaseAdapter {
             @Override
             public void onClick(View v) {
                 //open=true -> close = false
-               resetMenus(position);
+            //   resetMenus(position);
 
                 int pos = position;
                 int id = surahList.get(position).getBookMarkId();
@@ -304,15 +305,13 @@ public class QuranReadListAdapter extends BaseAdapter {
                     mViewHolder.mFrameAnimaitonLayout.setVisibility(View.VISIBLE);
                     if (id > -1) {
                         mViewHolder.imgMenuOption.setBackgroundResource(R.drawable.fav_mark);
+                      //  mImageMenuList.get(pos).setBackgroundResource(R.drawable.fav_mark);
                     } else {
                         mViewHolder.imgMenuOption.setBackgroundResource(R.drawable.side_arrow_open);
+                       // mImageMenuList.get(pos).setBackgroundResource(R.drawable.side_arrow_open);
                     }
                     rightToLeftAnimation(mViewHolder.innerMenuContainer, mViewHolder.mFrameAnimaitonLayout);
 
-
-                    // mViewHolder.tvTranslation.setTextColor(mContext.getResources().getColor(R.color.black));
-                    // mViewHolder.tvTransliteration.setTextColor(mContext.getResources().getColor(R.color.colorPrimary));
-                    // mViewHolder.tvArabic.setTextColor(mContext.getResources().getColor(R.color.black));
 
                     changeTextColor(mViewHolder.tvTransliteration,mContext.getResources().getColor(R.color.light_gray), mContext.getResources().getColor(R.color.transliration_color));
                     changeTextColor(mViewHolder.tvArabic, mContext.getResources().getColor(R.color.light_gray), mContext.getResources().getColor(R.color.black));
@@ -326,15 +325,14 @@ public class QuranReadListAdapter extends BaseAdapter {
                     mViewHolder.mFrameAnimaitonLayout.setVisibility(View.VISIBLE);
                     if (id > -1) {
                         mViewHolder.imgMenuOption.setBackgroundResource(R.drawable.fav_mark);
+                      //  mImageMenuList.get(pos).setBackgroundResource(R.drawable.fav_mark);
                     } else {
                         mViewHolder.imgMenuOption.setBackgroundResource(R.drawable.side_arrow_close);
+                    //    mImageMenuList.get(pos).setBackgroundResource(R.drawable.side_arrow_close);
                     }
                     leftToRightAnimation(mViewHolder.innerMenuContainer, mViewHolder.mFrameAnimaitonLayout);
 
 
-                    //  mViewHolder.tvTranslation.setTextColor(Color.parseColor("#CACACA"));
-                    //mViewHolder.tvTransliteration.setTextColor(Color.parseColor("#CACACA"));
-                    //  mViewHolder.tvArabic.setTextColor(Color.parseColor("#CACACA"));
                     changeTextColor(mViewHolder.tvTransliteration, mContext.getResources().getColor(R.color.transliration_color), mContext.getResources().getColor(R.color.light_gray));
                     changeTextColor(mViewHolder.tvArabic, mContext.getResources().getColor(R.color.black),mContext.getResources().getColor(R.color.light_gray));
                     changeTextColor(mViewHolder.tvTranslation, mContext.getResources().getColor(R.color.black), mContext.getResources().getColor(R.color.light_gray));
@@ -473,18 +471,24 @@ public class QuranReadListAdapter extends BaseAdapter {
         while (myVeryOwnIterator.hasNext()) {
             Integer key = (Integer) myVeryOwnIterator.next();
             // String value=(String)meMap.get(key);
-            mImageMenuList.get(key).setBackgroundResource(R.drawable.side_arrow_open);
+
             mFrameContainerList.get(key).setVisibility(View.INVISIBLE);
             if (pos != key) {
                 rightToLeftAnimation(mInnerMenuContainer.get(key), mFrameContainerList.get(key));
                 coloredAyahText(false, key, "#000000");
             }
-            if (key < surahList.size()) {
+          /*  if (key < surahList.size()) {
                 int id = surahList.get(key).getBookMarkId();
                 if (id > -1) {
+                    Log.e("BookMar","haio=="+key);
                     mImageMenuList.get(key).setBackgroundResource(R.drawable.fav_mark);
                 }
-            }
+                else
+                {
+                    Log.e("nae","jeee=="+key);
+                    mImageMenuList.get(key).setBackgroundResource(R.drawable.side_arrow_open);
+                }
+            }*/
         }
     }
 
@@ -500,10 +504,12 @@ public class QuranReadListAdapter extends BaseAdapter {
             id = (int) dbObj.addBookmark(surahName, surahNo, ayahNo);
             model.setBookMarkId(id);
             CommunityGlobalClass.getInstance().showShortToast("Added to Favourite", 500, Gravity.CENTER);
+            mImageMenuList.get(ayahNo).setBackgroundResource(R.drawable.fav_mark);
         } else {
             if (dbObj.deleteOneBookmark(id)) {
                 model.setBookMarkId(-1);
                 CommunityGlobalClass.getInstance().showShortToast("Removed from Favourite", 500, Gravity.CENTER);
+                mImageMenuList.get(ayahNo).setBackgroundResource(R.drawable.side_arrow_open);
             }
         }
         dbObj.close();

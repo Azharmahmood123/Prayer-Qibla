@@ -61,7 +61,6 @@ public class NamesListPlayingActivity extends AppCompatActivity implements Adapt
 
     private boolean inProcess = false;
 
-
     private MediaPlayer mp;
     private boolean isAudioFound = false;
     private File audioFilePath;
@@ -365,22 +364,16 @@ public class NamesListPlayingActivity extends AppCompatActivity implements Adapt
             } else {
                 mp.seekTo(0);
             }
+
+            currentPosition = -1;
+            mGridViewAdapter.removeHighlight();
+            gridViewNames.setSelection(0);
         }
 
         tvTotalTime.setText(audioTotalTime);
 
         btnAudio.setImageResource(R.drawable.play_btn);
         play = 0;
-        delayIndex = 0;
-        currentPosition = -1;
-        mGridViewAdapter.removeHighlight();
-        gridViewNames.post(new Runnable() {
-            @Override
-            public void run() {
-                gridViewNames.setSelection(0);
-            }
-        });
-
         seekBarNames.setProgress(0);
         seekBarNames.setEnabled(false);
         handler.removeCallbacks(runnableTimeUpdate);
@@ -472,6 +465,16 @@ public class NamesListPlayingActivity extends AppCompatActivity implements Adapt
     @Override
     protected void onPause() {
         super.onPause();
+
+
+        if (mp != null ) {
+            if (play == 1) {
+                mp.seekTo(0);
+                mp.pause();
+                seekBarNames.setEnabled(false);
+            }
+        }
+
 
         if (!((GlobalClass) getApplication()).isPurchase) {
             stopAdsCall();

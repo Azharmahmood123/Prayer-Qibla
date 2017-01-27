@@ -31,7 +31,7 @@ public class ConverterDialog extends AppCompatActivity {
     DateConverter dateConverter;
     WheelView gregorian_day, gregorian_month, gregorian_year,
             hijri_day, hijri_month, hijri_year;
-    private int NoOfYear = 100, prevMax = 0, newMax = 0;
+    private int NoOfYear = 50, prevMax = 0, newMax = 0;
     boolean g_scroll = false, h_scroll = false;
     int textSize;
     Button btnConvert, btnCancel;
@@ -287,7 +287,7 @@ int currentDate=0;
             //Changes
             // HashMap<String, Integer> dateConverted = dateConverter.hijriToGregorian(dayNow , monthNow, yearNow, maxDays, false);
             //My changes
-            HashMap<String, Integer> dateConverted = dateConverter.hijriToGregorian(dayNow, monthNow, yearNow, maxDays, true);
+            HashMap<String, Integer> dateConverted = dateConverter.hijriToGregorian(dayNow, monthNow, yearNow, maxDays, false);
             curGregorianDay = dateConverted.get("DAY");
             curGregorianMonth = dateConverted.get("MONTH");
             curGregorianYear = dateConverted.get("YEAR");
@@ -334,7 +334,7 @@ int currentDate=0;
 
         dayNow = Math.min(maxDays, j + 1);
 
-        if (maxDays == 28 && newMax != maxDays) {
+     /*   if (maxDays == 28 && newMax != maxDays) {
             dayNow = 3;
         } else if (maxDays == 29 && newMax != maxDays) {
             dayNow = 2;
@@ -342,10 +342,10 @@ int currentDate=0;
             dayNow = 1;
         } else if (newMax == 30 && maxDays == 31) {
             dayNow = Math.min(maxDays, day.getCurrentItem() + 1);
-        } else {
+        } else {*/
             dayNow = Math.min(maxDays, day.getCurrentItem() + 1);
 
-        }
+      //  }
 
         newMax = maxDays;
 
@@ -360,6 +360,8 @@ int currentDate=0;
             curHijriMonth = dateConverted.get("MONTH");
             curHijriYear = dateConverted.get("YEAR");
 
+
+
             setHijriWheelDateOnListener();
 
         }
@@ -369,13 +371,13 @@ int currentDate=0;
             /*HashMap<String, Integer> dateConverted = dateConverter.gregorianToHijri(dayNow +1, monthNow + 1, yearNow, false);
             HijriDay = dateConverted.get("DAY");
             HijriMonth = dateConverted.get("MONTH");
-            HijriYear = dateConverted.get("YEAR");
-        */
+            HijriYear = dateConverted.get("YEAR");*/
             int date[] = dateConverter.getHijrDateUmmalQura(yearNow, monthNow, dayNow);
             HijriDay = date[0];
             HijriMonth = date[1];
             HijriYear = date[2];
-            if((dayNow==1) && ( !g_scroll))
+
+            if((dayNow==1) && (!g_scroll))
             {
                 HijriDay = CalenderHijriDate;
             }

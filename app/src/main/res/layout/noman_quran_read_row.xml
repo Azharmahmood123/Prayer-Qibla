@@ -160,7 +160,7 @@
             android:typeface="serif" />
 
         <TextView
-            android:text="Transalt"
+            android:text="Transaltion"
             android:id="@+id/text_translation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -169,7 +169,8 @@
             android:paddingTop="@dimen/_2sdp"
             android:paddingLeft="@dimen/_5sdp"
             android:paddingRight="@dimen/_5sdp"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:layout_marginBottom="@dimen/_8sdp"/>
     </LinearLayout>
 
 

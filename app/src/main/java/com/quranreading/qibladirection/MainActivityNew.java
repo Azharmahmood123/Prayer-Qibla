@@ -710,8 +710,17 @@ public class MainActivityNew extends AppCompatActivity implements AdapterView.On
         if (mDrawerLayout.isDrawerOpen(GravityCompat.START)) {
             mDrawerLayout.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
+
+            int count = mQiblaDirectionPref.getExitCount();
+            if (count > 2) {
+                mQiblaDirectionPref.setExitCount(0);
+                feedBackDailog(true);
+            } else {
+                mQiblaDirectionPref.setExitCount(count + 1);
+                super.onBackPressed();
+            }
         }
+
 
 //        else {
 //            int count = mQiblaDirectionPref.getExitCount();
@@ -735,7 +744,7 @@ public class MainActivityNew extends AppCompatActivity implements AdapterView.On
     }
 
     private void feedBackDailog(final boolean isAppClosed) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        AlertDialog.Builder builder = new AlertDialog.Builder(this,R.style.MyAlertDialogStyle);
         builder.setTitle(getResources().getString(R.string.feedback));
         builder.setMessage(getResources().getString(R.string.feedback_msg));
 
@@ -765,6 +774,16 @@ public class MainActivityNew extends AppCompatActivity implements AdapterView.On
             public void onClick(DialogInterface dialog, int whichButton) {
                 if (isAppClosed)
                     MainActivityNew.this.finish();
+            }
+        });
+
+        builder.setOnKeyListener(new DialogInterface.OnKeyListener() {
+            @Override
+            public boolean onKey(DialogInterface dialog, int keyCode, KeyEvent event) {
+                if (keyCode == KeyEvent.KEYCODE_BACK) {
+                    finish();
+                }
+                return true;
             }
         });
 

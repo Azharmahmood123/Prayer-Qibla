@@ -402,7 +402,8 @@ public class SettingsPrayerListSoundActivity extends AppCompatActivity implement
                 holder.tvMehtodsDegree = (TextView) convertView.findViewById(R.id.tv_mehtod_names_degree);
                 holder.imgSelection = (ImageView) convertView.findViewById(R.id.img_selection);
 
-                holder.tvMehtods.setTypeface(((GlobalClass) mContext.getApplicationContext()).faceRobotoL);
+                holder.tvMehtods.setTypeface(((GlobalClass) mContext.getApplicationContext()).faceRobotoR);
+                holder.tvMehtodsDegree.setTypeface(((GlobalClass) mContext.getApplicationContext()).faceRobotoR);
                 holder.imgSelection.setVisibility(View.GONE);
                 convertView.setTag(holder);
             } else {

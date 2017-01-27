@@ -14,6 +14,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
@@ -79,16 +80,17 @@ public class SettingsTimeAlarmActivity extends AppCompatActivity implements Medi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timmings_alarm);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        ActionBar actionBar = getSupportActionBar();
 
-        if (actionBar != null) {
-            actionBar.setDisplayShowTitleEnabled(false);
-            actionBar.setDisplayHomeAsUpEnabled(true);
-        }
+        LinearLayout backBtn = (LinearLayout) findViewById(R.id.toolbar_btnBack);
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
 
-        TextView tvHeading = (TextView) findViewById(R.id.tv_main_heading);
+            }
+        });
+
+        TextView tvHeading = (TextView) findViewById(R.id.txt_toolbar);
         TextView tvSave = (TextView) findViewById(R.id.tv_alarm_settings_save);
 
 //        tvHeading.setTypeface(((GlobalClass) getApplication()).faceRobotoR);

@@ -14,26 +14,26 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="@dimen/size_ten">
+        >
 
         <RelativeLayout
-
+            android:paddingBottom="@dimen/size_five"
+            android:paddingLeft="@dimen/_1sdp"
+            android:paddingRight="@dimen/_1sdp"
+            android:paddingTop="@dimen/size_five"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/size_fourty_five">
+            android:layout_height="wrap_content">
 
 
             <TextView
                 android:id="@+id/tv_notification_time_header"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
                 android:layout_alignParentLeft="true"
-                android:gravity="center|left"
                 android:text="@string/set_time"
-                android:textColor="@color/black"
-                android:textSize="@dimen/text_size_twenty" />
+                style="@style/setting_row_header"
+               />
         </RelativeLayout>
 
-        <View style="@style/view_line_light_app_color_full" />
+
 
 
         <TextView
@@ -48,24 +48,23 @@
             android:textColor="@color/black"
             android:textSize="@dimen/text_size_thirty_four" />
 
-
         <RelativeLayout
-
+            android:paddingBottom="@dimen/size_five"
+            android:paddingLeft="@dimen/_1sdp"
+            android:paddingRight="@dimen/_1sdp"
+            android:paddingTop="@dimen/size_five"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/size_fourty_five">
+            android:layout_height="wrap_content">
+
 
             <TextView
                 android:id="@+id/tv_tone_settings_header"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
                 android:layout_alignParentLeft="true"
-                android:gravity="center|left"
                 android:text="@string/set_tone"
-                android:textColor="@color/black"
-                android:textSize="@dimen/text_size_twenty_two" />
+                style="@style/setting_row_header"
+                />
         </RelativeLayout>
 
-        <View style="@style/view_line_light_app_color_full" />
 
         <ScrollView
             android:layout_width="match_parent"
@@ -76,10 +75,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
-
+                <!-- style="@style/setting_row_bg_l"-->
                 <RelativeLayout
-
-                    style="@style/setting_row_adhan_sound"
+                    style="@style/setting_row_bg_l"
+                   
                     android:tag="0">
 
                     <TextView
@@ -90,7 +89,7 @@
                         android:gravity="center|left"
                         android:text="@string/default_tone"
                         android:textColor="@color/black"
-                        android:textSize="@dimen/text_size_twenty" />
+                        android:textSize="@dimen/_14sdp" />
 
                     <ImageView
                         android:id="@+id/img_default_tone"
@@ -104,9 +103,10 @@
                         android:src="@drawable/tick_btn" />
                 </RelativeLayout>
 
+                <View style="@style/view_line_light_gray" />
                 <RelativeLayout
                     android:id="@+id/row_silent"
-                    style="@style/setting_row_adhan_sound"
+                    style="@style/setting_row_bg_l"
                     android:tag="1">
 
                     <TextView
@@ -118,7 +118,7 @@
                         android:gravity="center|left"
                         android:text="@string/silent"
                         android:textColor="@color/black"
-                        android:textSize="@dimen/text_size_twenty" />
+                        android:textSize="@dimen/_14sdp" />
 
                     <ImageView
                         android:id="@+id/img_silent"
@@ -131,9 +131,10 @@
                         android:scaleType="fitCenter" />
                 </RelativeLayout>
 
+                <View style="@style/view_line_light_gray" />
                 <RelativeLayout
                     android:id="@+id/row_adhan_1"
-                    style="@style/setting_row_adhan_sound"
+                    style="@style/setting_row_bg_l"
                     android:tag="2">
 
                     <TextView
@@ -145,7 +146,7 @@
                         android:gravity="center|left"
                         android:text="@string/adhan1"
                         android:textColor="@color/black"
-                        android:textSize="@dimen/text_size_twenty" />
+                        android:textSize="@dimen/_14sdp" />
 
                     <ImageButton
                         android:id="@+id/img_adhan_1_play"
@@ -173,9 +174,10 @@
                         android:scaleType="fitCenter" />
                 </RelativeLayout>
 
+                <View style="@style/view_line_light_gray" />
                 <RelativeLayout
                     android:id="@+id/row_adhan_2"
-                    style="@style/setting_row_adhan_sound"
+                    style="@style/setting_row_bg_l"
                     android:tag="3">
 
                     <TextView
@@ -187,7 +189,7 @@
                         android:gravity="center|left"
                         android:text="@string/adhan2"
                         android:textColor="@color/black"
-                        android:textSize="@dimen/text_size_twenty" />
+                        android:textSize="@dimen/_14sdp" />
 
                     <ImageButton
                         android:id="@+id/img_adhan_2_play"
@@ -215,9 +217,10 @@
                         android:scaleType="fitCenter" />
                 </RelativeLayout>
 
+                <View style="@style/view_line_light_gray" />
                 <RelativeLayout
                     android:id="@+id/row_adhan_3"
-                    style="@style/setting_row_adhan_sound"
+                    style="@style/setting_row_bg_l"
                     android:tag="4">
 
                     <TextView
@@ -229,7 +232,7 @@
                         android:gravity="center|left"
                         android:text="@string/adhan3"
                         android:textColor="@color/black"
-                        android:textSize="@dimen/text_size_twenty" />
+                        android:textSize="@dimen/_14sdp" />
 
                     <ImageButton
                         android:id="@+id/img_adhan_3_play"
@@ -257,10 +260,11 @@
                         android:scaleType="fitCenter" />
                 </RelativeLayout>
 
+                <View style="@style/view_line_light_gray" />
 
                 <RelativeLayout
                     android:id="@+id/row_adhan_4"
-                    style="@style/setting_row_adhan_sound"
+                    style="@style/setting_row_bg_l"
                     android:tag="5">
 
                     <TextView
@@ -272,7 +276,7 @@
                         android:gravity="center|left"
                         android:text="@string/adhan4"
                         android:textColor="@color/black"
-                        android:textSize="@dimen/text_size_twenty" />
+                        android:textSize="@dimen/_14sdp" />
 
                     <ImageButton
                         android:id="@+id/img_adhan_4_play"
@@ -301,9 +305,10 @@
                 </RelativeLayout>
 
 
+                <View style="@style/view_line_light_gray" />
                 <RelativeLayout
                     android:id="@+id/row_adhan_5"
-                    style="@style/setting_row_adhan_sound"
+                    style="@style/setting_row_bg_l"
                     android:tag="6">
 
                     <TextView
@@ -315,7 +320,7 @@
                         android:gravity="center|left"
                         android:text="@string/adhan5"
                         android:textColor="@color/black"
-                        android:textSize="@dimen/text_size_twenty" />
+                        android:textSize="@dimen/_14sdp" />
 
                     <ImageButton
                         android:id="@+id/img_adhan_5_play"
@@ -343,10 +348,11 @@
                         android:scaleType="fitCenter" />
                 </RelativeLayout>
 
+                <View style="@style/view_line_light_gray" />
 
                 <RelativeLayout
                     android:id="@+id/row_adhan_6"
-                    style="@style/setting_row_adhan_sound"
+                    style="@style/setting_row_bg_l"
                     android:tag="7">
 
                     <TextView
@@ -358,7 +364,7 @@
                         android:gravity="center|left"
                         android:text="@string/adhan6"
                         android:textColor="@color/black"
-                        android:textSize="@dimen/text_size_twenty" />
+                        android:textSize="@dimen/_14sdp" />
 
                     <ImageButton
                         android:id="@+id/img_adhan_6_play"
@@ -387,9 +393,10 @@
                 </RelativeLayout>
 
 
+                <View style="@style/view_line_light_gray" />
                 <RelativeLayout
                     android:id="@+id/row_adhan_7"
-                    style="@style/setting_row_adhan_sound"
+                    style="@style/setting_row_bg_l"
                     android:tag="8">
 
                     <TextView
@@ -401,7 +408,7 @@
                         android:gravity="center|left"
                         android:text="@string/adhan7"
                         android:textColor="@color/black"
-                        android:textSize="@dimen/text_size_twenty" />
+                        android:textSize="@dimen/_14sdp" />
 
                     <ImageButton
                         android:id="@+id/img_adhan_7_play"
@@ -430,9 +437,10 @@
                 </RelativeLayout>
 
 
+                <View style="@style/view_line_light_gray" />
                 <RelativeLayout
                     android:id="@+id/row_adhan_8"
-                    style="@style/setting_row_adhan_sound"
+                    style="@style/setting_row_bg_l"
                     android:tag="9">
 
                     <TextView
@@ -444,7 +452,7 @@
                         android:gravity="center|left"
                         android:text="@string/adhan8"
                         android:textColor="@color/black"
-                        android:textSize="@dimen/text_size_twenty" />
+                        android:textSize="@dimen/_14sdp" />
 
                     <ImageButton
                         android:id="@+id/img_adhan_8_play"
@@ -472,6 +480,7 @@
                         android:scaleType="fitCenter" />
                 </RelativeLayout>
 
+                <View style="@style/view_line_light_gray" />
             </LinearLayout>
         </ScrollView>
 

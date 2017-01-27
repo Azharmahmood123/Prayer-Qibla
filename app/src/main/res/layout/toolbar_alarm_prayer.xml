@@ -1,43 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@color/ColorPrimary"
-    app:contentInsetLeft="0dp"
-    app:contentInsetStart="0dp"
-    app:contentInsetStartWithNavigation="0dp"
-    android:elevation="@dimen/size_four"
-    android:minHeight="?attr/actionBarSize"
-    android:theme="@style/DrawerToolBar" >
+    android:layout_height="@dimen/_50sdp"
+    android:background="@color/actionbar_bg">
 
-    <RelativeLayout
+
+    <LinearLayout
+        android:id="@+id/toolbar_btnBack"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/btn_hower"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="@dimen/_15sdp"
+            android:layout_height="@dimen/_15sdp"
+            android:src="@drawable/back" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txt_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/_5sdp"
+        android:layout_toRightOf="@+id/toolbar_btnBack"
+        android:text="@string/settings"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_18sdp" />
 
-        <TextView
-            android:id="@+id/tv_main_heading"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:gravity="center_vertical|left"
-            android:layout_toLeftOf="@+id/tv_alarm_settings_save"
-            android:text="@string/app_name"
-            android:textColor="@color/white"
-            android:textSize="@dimen/actionbar_text_size" />
+    <TextView
+        android:background="@drawable/btn_hower"
+        android:id="@+id/tv_alarm_settings_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:elevation="4dp"
+        android:padding="@dimen/_10sdp"
+        android:text="@string/save"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_18sdp" />
+</RelativeLayout>
 
-        <TextView
-            android:id="@+id/tv_alarm_settings_save"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:gravity="center_vertical|left"
-            android:padding="@dimen/size_ten"
-            android:elevation="4dp"
-            android:layout_alignParentRight="true"
-            android:text="@string/save"
-            android:textColor="@color/white"
-            android:textSize="@dimen/actionbar_text_size" />
-    </RelativeLayout>
-
-</android.support.v7.widget.Toolbar>

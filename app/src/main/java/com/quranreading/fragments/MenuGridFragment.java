@@ -142,6 +142,9 @@ public class MenuGridFragment extends Fragment {
 
             switch (pos) {
                 case MENU_TIMINGS:
+                    if (!((GlobalClass) mContext.getApplicationContext()).isPurchase) {
+                        mContext.sendBroadcast(new Intent(MainActivityNew.ACTION_INTERSTITIAL_ADS_SHOW));
+                    }
                     intent = new Intent(mContext, TimingsActivity.class);
                     startActivity(intent);
                     break;
@@ -161,6 +164,9 @@ public class MenuGridFragment extends Fragment {
                             }
 
                         } else {
+                            if (!((GlobalClass) mContext.getApplicationContext()).isPurchase) {
+                                mContext.sendBroadcast(new Intent(MainActivityNew.ACTION_INTERSTITIAL_ADS_SHOW));
+                            }
                             intent = new Intent(mContext, CompassActivity.class);
                             intent.putExtra(CompassActivity.EXTRA_IS_SHOW_MAP, true);
                             startActivity(intent);
@@ -180,6 +186,9 @@ public class MenuGridFragment extends Fragment {
 
                 case MENU_HIJRI:
                     //////////////
+                    if (!((GlobalClass) mContext.getApplicationContext()).isPurchase) {
+                        mContext.sendBroadcast(new Intent(MainActivityNew.ACTION_INTERSTITIAL_ADS_SHOW));
+                    }
                     intent = new Intent(mContext, CalenderActivity.class);
                     startActivity(intent);
                     ////////////
@@ -204,6 +213,9 @@ public class MenuGridFragment extends Fragment {
                     break;
 
                 case MENU_NAMES:
+                    if (!((GlobalClass) mContext.getApplicationContext()).isPurchase) {
+                        mContext.sendBroadcast(new Intent(MainActivityNew.ACTION_INTERSTITIAL_ADS_SHOW));
+                    }
 //////////////
                     intent = new Intent(mContext, NamesListPlayingActivity.class);
                     startActivity(intent);
@@ -215,6 +227,7 @@ public class MenuGridFragment extends Fragment {
                     break;
 
                 case MENU_HALAL:
+
                     onHalalPlacesClick();
                     break;
 

@@ -9,20 +9,46 @@ import noman.CommunityGlobalClass;
  * Created by Administrator on 12/23/2016.
  */
 
-public class JuzConstant  {
+public class JuzConstant {
 
     public static int[] flag_images = {R.drawable.off_translation, R.drawable.flag_english, R.drawable.flag_english, R.drawable.flag_english, R.drawable.flag_english, R.drawable.flag_english, R.drawable.flag_english, R.drawable.flag_urdu, R.drawable.flag_spanish, R.drawable.flag_france, R.drawable.flag_chinese, R.drawable.flag_persian, R.drawable.flag_italian, R.drawable.flag_dutch, R.drawable.flag_indonesia, R.drawable.flag_melayu, R.drawable.flag_hindi, R.drawable.flag_bangla, R.drawable.flag_turkish};
     public static CharSequence[] translationList = {"Off", "English (Saheeh)", "English (Pickthal)", "English (Shakir)", "English (Maududi)", "English (Daryabadi)", "English (Yusuf Ali)", "Urdu", "Spanish", "French", "Chinese", "Persian", "Italian", "Dutch", "Indonesian", "Melayu", "Hindi", "Bangla", "Turkish"};
-    public static int fontSize_English[] = {(int) CommunityGlobalClass.getInstance().getResources().getDimension(R.dimen._4sdp), (int) CommunityGlobalClass.getInstance().getResources().getDimension(R.dimen._6sdp), (int) CommunityGlobalClass.getInstance().getResources().getDimension(R.dimen._8sdp), (int) CommunityGlobalClass.getInstance().getResources().getDimension(R.dimen._18sdp), (int) CommunityGlobalClass.getInstance().getResources().getDimension(R.dimen._20sdp), (int) CommunityGlobalClass.getInstance().getResources().getDimension(R.dimen._24sdp)};
-    public static int fontSize_Arabic[] = {(int)CommunityGlobalClass.getInstance(). getResources().getDimension(R.dimen._6sdp), (int) CommunityGlobalClass.getInstance().getResources().getDimension(R.dimen._10sdp), (int) CommunityGlobalClass.getInstance().getResources().getDimension(R.dimen._14sdp), (int) CommunityGlobalClass.getInstance().getResources().getDimension(R.dimen._18sdp), (int) CommunityGlobalClass.getInstance().getResources().getDimension(R.dimen._24sdp), (int) CommunityGlobalClass.getInstance().getResources().getDimension(R.dimen._28sdp)};
+   /* public static int fontSize_English[] = {
+            (int) CommunityGlobalClass.getInstance().getResources().getDimension(R.dimen._4sdp),
+            (int) CommunityGlobalClass.getInstance().getResources().getDimension(R.dimen._5sdp),
+            (int) CommunityGlobalClass.getInstance().getResources().getDimension(R.dimen._6sdp),
+            (int) CommunityGlobalClass.getInstance().getResources().getDimension(R.dimen._7sdp),
+            (int) CommunityGlobalClass.getInstance().getResources().getDimension(R.dimen._8sdp),
+            (int) CommunityGlobalClass.getInstance().getResources().getDimension(R.dimen._9sdp)};
+    public static int fontSize_Arabic[] = {
+            (int)CommunityGlobalClass.getInstance(). getResources().getDimension(R.dimen._6sdp),
+            (int) CommunityGlobalClass.getInstance().getResources().getDimension(R.dimen._8sdp),
+            (int) CommunityGlobalClass.getInstance().getResources().getDimension(R.dimen._10sdp),
+            (int) CommunityGlobalClass.getInstance().getResources().getDimension(R.dimen._12sdp),
+            (int) CommunityGlobalClass.getInstance().getResources().getDimension(R.dimen._14sdp),
+            (int) CommunityGlobalClass.getInstance().getResources().getDimension(R.dimen._16sdp)};*/
 
-
+    public static int fontSize_English[] = {
+            9,
+            10,
+            11,
+            12,
+            13,
+            14};
+    public static int fontSize_Arabic[] = {
+            12,
+            13,
+            14,
+            16,
+            18,
+            20
+    };
 
 
     /* Android
      30 Juz Tags
      {Surah #, Ayah #, Juz #}*/
-    public static String[] arabicCounting = {"٥","١", "٢", "٣", "٤", "٥", "٦", "٧", "٨", "٩", "١٠", "١١", "١٢", "١٣", "١٤", "١٥", "١٦", "١٧", "١٨", "١٩", "٢٠", "٢١", "٢٢", "٢٣", "٢٤", "٢٥", "٢٦", "٢٧", "٢٨", "٢٩", "٣٠", "٣١", "٣٢", "٣٣", "٣٤", "٣٥", "٣٦", "٣٧", "٣٨", "٣٩", "٤٠", "٤١", "٤٢", "٤٣", "٤٤", "٤٥", "٤٦", "٤٧", "٤٨", "٤٩", "٥٠", "٥١", "٥٢", "٥٣", "٥٤", "٥٥", "٥٦", "٥٧", "٥٨", "٥٩", "٦٠", "٦١", "٦٢", "٦٣", "٦٤", "٦٥", "٦٦", "٦٧", "٦٨", "٦٩", "٧٠", "٧١", "٧٢", "٧٣", "٧٤", "٧٥", "٧٦", "٧٧", "٧٨", "٧٩", "٨٠", "٨١", "٨٢", "٨٣", "٨٤", "٨٥", "٨٦", "٨٧", "٨٨", "٨٩", "٩٠",
+    public static String[] arabicCounting = {"٥", "١", "٢", "٣", "٤", "٥", "٦", "٧", "٨", "٩", "١٠", "١١", "١٢", "١٣", "١٤", "١٥", "١٦", "١٧", "١٨", "١٩", "٢٠", "٢١", "٢٢", "٢٣", "٢٤", "٢٥", "٢٦", "٢٧", "٢٨", "٢٩", "٣٠", "٣١", "٣٢", "٣٣", "٣٤", "٣٥", "٣٦", "٣٧", "٣٨", "٣٩", "٤٠", "٤١", "٤٢", "٤٣", "٤٤", "٤٥", "٤٦", "٤٧", "٤٨", "٤٩", "٥٠", "٥١", "٥٢", "٥٣", "٥٤", "٥٥", "٥٦", "٥٧", "٥٨", "٥٩", "٦٠", "٦١", "٦٢", "٦٣", "٦٤", "٦٥", "٦٦", "٦٧", "٦٨", "٦٩", "٧٠", "٧١", "٧٢", "٧٣", "٧٤", "٧٥", "٧٦", "٧٧", "٧٨", "٧٩", "٨٠", "٨١", "٨٢", "٨٣", "٨٤", "٨٥", "٨٦", "٨٧", "٨٨", "٨٩", "٩٠",
             "٩١", "٩٢", "٩٣", "٩٤", "٩٥", "٩٦", "٩٧", "٩٨", "٩٩", "١٠٠", "١٠١", "١٠٢", "١٠٣", "١٠٤", "١٠٥", "١٠٦", "١٠٧", "١٠٨", "١٠٩", "١١٠", "١١١", "١١٢", "١١٣", "١١٤"
             , "١١٥", "١١٦", "١١٧", "١١٨", "١١٩", "١٢٠", "١٢١", "١٢٢", "١٢٣", "١٢٤", "١٢٥", "١٢٦", "١٢٧", "١٢٨", "١٢٩", "١٣٠", "١٣١", "١٣٢", "١٣٣", "١٣٤", "١٣٥",
             "١٣٦", "١٣٧", "١٣٨", "١٣٩", "١٤٠", "١٤١", "١٤٢", "١٤٣", "١٤٤", "١٤٥", "١٤٦", "١٤٧", "١٤٨", "١٤٩", "١٥٠", "١٥١", "١٥٢", "١٥٣", "١٥٤", "١٥٥", "١٥٦",
