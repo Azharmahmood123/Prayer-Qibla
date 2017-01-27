@@ -31,6 +31,7 @@ import com.google.android.gms.ads.AdView;
 import com.quranreading.helper.TimeFormateConverter;
 import com.quranreading.sharedPreference.AlarmSharedPref;
 import com.quranreading.sharedPreference.PrayerTimeSettingsPref;
+import com.quranreading.sharedPreference.TimeEditPref;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -55,8 +56,10 @@ public class SettingsPrayerListSoundActivity extends AppCompatActivity implement
     boolean inProccess = false;
     ArrayList<String> options = new ArrayList<>();
     String[] prayerTimes = new String[6];
+    String[] prayerTimesNotify = new String[6];
 
     PrayerTimeSettingsPref prayerTimeSettingsPref;
+    TimeEditPref timeEditPref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,6 +68,7 @@ public class SettingsPrayerListSoundActivity extends AppCompatActivity implement
         setContentView(R.layout.activity_languages);
 
         prayerTimeSettingsPref = new PrayerTimeSettingsPref(this);
+        timeEditPref = new TimeEditPref(this);
 
         LinearLayout backBtn = (LinearLayout) findViewById(R.id.toolbar_btnBack);
         backBtn.setOnClickListener(new View.OnClickListener() {
@@ -84,9 +88,11 @@ public class SettingsPrayerListSoundActivity extends AppCompatActivity implement
 
         listView = (ListView) findViewById(R.id.listview_language);
         listView.setOnItemClickListener(this);
+
+        populateData();
     }
 
-    public void populateData() {
+    private void populateData() {
 
         AlarmSharedPref mAlarmSharedPref = new AlarmSharedPref(context);
 
@@ -96,6 +102,7 @@ public class SettingsPrayerListSoundActivity extends AppCompatActivity implement
 
         for (int index = 0; index < prayerTimes.length; index++) {
             prayerTimes[index] = alarmTime.get(AlarmSharedPref.TIME_PRAYERS[index]);
+            prayerTimesNotify[index] = timeEditPref.getAlarmNotifyTime(TimeEditPref.ALARMS_TIME_PRAYERS[index]);
         }
 
         int fajr, sunrize, zuhar, asar, maghrib, isha;
@@ -129,13 +136,15 @@ public class SettingsPrayerListSoundActivity extends AppCompatActivity implement
         String[] timeArray = new String[2];
         String time = "";
 
-        if (prayerTimes[posPrayer].isEmpty()) {
+        if (!prayerTimesNotify[posPrayer].isEmpty()) {
+            timeArray = TimeFormateConverter.convertTime12To24(prayerTimesNotify[posPrayer]).split("\\s|:");
+        } else if (!prayerTimes[posPrayer].isEmpty()) {
+            timeArray = TimeFormateConverter.convertTime12To24(prayerTimes[posPrayer]).split("\\s|:");
+        } else {
             Time now = new Time();
             now.setToNow();
             timeArray[0] = String.valueOf(now.hour);
             timeArray[1] = String.valueOf(now.minute);
-        } else {
-            timeArray = TimeFormateConverter.convertTime12To24(prayerTimes[posPrayer]).split("\\s|:");
         }
         return timeArray;
     }
@@ -185,7 +194,6 @@ public class SettingsPrayerListSoundActivity extends AppCompatActivity implement
         // TODO Auto-generated methodIndex stub
         super.onResume();
         inProccess = false;
-        populateData();
         if (((GlobalClass) getApplication()).isPurchase) {
             adImage.setVisibility(View.GONE);
             adview.setVisibility(View.GONE);

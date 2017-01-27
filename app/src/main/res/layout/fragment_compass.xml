@@ -151,23 +151,38 @@
     </RelativeLayout>
 
 
+    <RelativeLayout
+        android:id="@+id/layout_more_apps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:padding="@dimen/size_ten">
 
+        <ImageView
+            android:layout_width="@dimen/size_fifty"
+            android:layout_height="@dimen/size_fifty"
+            android:layout_centerInParent="true"
+            android:src="@drawable/bg_more_apps" />
+    </RelativeLayout>
 
-
-
-
-
-
-
-
+    <ProgressBar
+        android:id="@+id/progressBarCompass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:visibility="gone" />
 
     <RelativeLayout
         android:id="@+id/layout_dials"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:background="@color/background"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
 
 
         <HorizontalScrollView
@@ -278,35 +293,5 @@
         </HorizontalScrollView>
 
     </RelativeLayout>
-
-
-
-
-
-
-
-
-    <RelativeLayout
-        android:id="@+id/layout_more_apps"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:padding="@dimen/size_ten">
-
-        <ImageView
-            android:layout_width="@dimen/size_fifty"
-            android:layout_height="@dimen/size_fifty"
-            android:layout_centerInParent="true"
-            android:src="@drawable/bg_more_apps" />
-    </RelativeLayout>
-
-    <ProgressBar
-        android:id="@+id/progressBarCompass"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:visibility="gone" />
 
 </RelativeLayout>

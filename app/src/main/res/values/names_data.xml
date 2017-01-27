@@ -73,6 +73,7 @@
         <item>الْوَاجِدُ</item>
         <item>الْمَاجِدُ</item>
         <item>الْوَاحِدُ</item>
+         <item>الْأَحَدُ</item>
         <item>الصَّمَدُ</item>
         <item>الْقَادِرُ</item>
         <item>الْمُقْتَدِرُ</item>
@@ -109,106 +110,419 @@
 
 
     <string-array name="allah_names_without_araab">
-        <item>الله</item>
-        <item>الرحمن</item>
-        <item>الرحيم</item>
-        <item>الملك</item>
-        <item>القدوس</item>
-        <item>السلام</item>
-        <item>المؤمن</item>
-        <item>المهيمن</item>
-        <item>العزيز</item>
-        <item>الجبار</item>
-        <item>المتكبر</item>
-        <item>الخالق</item>
-        <item>البارئ</item>
-        <item>المصور</item>
-        <item>الغفار</item>
-        <item>القهار</item>
-        <item>الوهاب</item>
-        <item>الرزاق</item>
-        <item>الفتاح</item>
-        <item>العليم</item>
-        <item>القابض</item>
-        <item>الباسط</item>
-        <item>الخافض</item>
-        <item>الرافع</item>
-        <item>المعز</item>
-        <item>المذل</item>
-        <item>السميع</item>
-        <item>البصير</item>
-        <item>الحكم</item>
-        <item>العدل</item>
-        <item>اللطيف</item>
-        <item>الخبير</item>
-        <item>الحليم</item>
-        <item>العظيم</item>
-        <item>الغفور</item>
-        <item>الشكور</item>
-        <item>العلي</item>
-        <item>الكبير</item>
-        <item>الحفيظ</item>
-        <item>المقيت</item>
-        <item>الحسيب</item>
-        <item>الجليل</item>
-        <item>الكريم</item>
-        <item>الرقيب</item>
-        <item>المجيب</item>
-        <item>الواسع</item>
-        <item>الحكيم</item>
-        <item>الودود</item>
-        <item>المجيد</item>
-        <item>الباعث</item>
-        <item>الشهيد</item>
-        <item>الحق</item>
-        <item>الوكيل</item>
-        <item>القوى</item>
-        <item>المتين</item>
-        <item>الولى</item>
-        <item>الحميد</item>
-        <item>المحصى</item>
-        <item>المبدئ</item>
-        <item>المعيد</item>
-        <item>المحيى</item>
-        <item>المميت</item>
-        <item>الحي</item>
-        <item>القيوم</item>
-        <item>الواجد</item>
-        <item>الماجد</item>
-        <item>الواحد</item>
-        <item>الاحد</item>
-        <item>الصمد</item>
-        <item>القادر</item>
-        <item>المقتدر</item>
-        <item>المقدم</item>
-        <item>المؤخر</item>
-        <item>الأول</item>
-        <item>الأخر</item>
-        <item>الظاهر</item>
-        <item>الباطن</item>
-        <item>الوالي</item>
-        <item>المتعالي</item>
-        <item>البر</item>
-        <item>التواب</item>
-        <item>المنتقم</item>
-        <item>العفو</item>
-        <item>الرؤوف</item>
-        <item>مالك الملك</item>
-        <item>ذو الجلال والإكرام</item>
-        <item>المقسط</item>
-        <item>الجامع</item>
-        <item>الغني</item>
-        <item>المغني</item>
-        <item>المانع</item>
-        <item>الضار</item>
-        <item>النافع</item>
-        <item>النور</item>
-        <item>الهادي</item>
-        <item>البديع</item>
-        <item>الباقي</item>
-        <item>الوارث</item>
-        <item>الرشيد</item>
-        <item>الصبور</item>
+            <item>الله</item>
+            <item>الرحمن</item>
+            <item>الرحيم</item>
+            <item>الملك</item>
+            <item>القدوس</item>
+            <item>السلام</item>
+            <item>المؤمن</item>
+            <item>المهيمن</item>
+            <item>العزيز</item>
+            <item>الجبار</item>
+            <item>المتكبر</item>
+            <item>الخالق</item>
+            <item>البارئ</item>
+            <item>المصور</item>
+            <item>الغفار</item>
+            <item>القهار</item>
+            <item>الوهاب</item>
+            <item>الرزاق</item>
+            <item>الفتاح</item>
+            <item>العليم</item>
+            <item>القابض</item>
+            <item>الباسط</item>
+            <item>الخافض</item>
+            <item>الرافع</item>
+            <item>المعز</item>
+            <item>المذل</item>
+            <item>السميع</item>
+            <item>البصير</item>
+            <item>الحكم</item>
+            <item>العدل</item>
+            <item>اللطيف</item>
+            <item>الخبير</item>
+            <item>الحليم</item>
+            <item>العظيم</item>
+            <item>الغفور</item>
+            <item>الشكور</item>
+            <item>العلي</item>
+            <item>الكبير</item>
+            <item>الحفيظ</item>
+            <item>المقيت</item>
+            <item>الحسيب</item>
+            <item>الجليل</item>
+            <item>الكريم</item>
+            <item>الرقيب</item>
+            <item>المجيب</item>
+            <item>الواسع</item>
+            <item>الحكيم</item>
+            <item>الودود</item>
+            <item>المجيد</item>
+            <item>الباعث</item>
+            <item>الشهيد</item>
+            <item>الحق</item>
+            <item>الوكيل</item>
+            <item>القوى</item>
+            <item>المتين</item>
+            <item>الولى</item>
+            <item>الحميد</item>
+            <item>المحصى</item>
+            <item>المبدئ</item>
+            <item>المعيد</item>
+            <item>المحيى</item>
+            <item>المميت</item>
+            <item>الحي</item>
+            <item>القيوم</item>
+            <item>الواجد</item>
+            <item>الماجد</item>
+            <item>الواحد</item>
+            <item>الاحد</item>
+            <item>الصمد</item>
+            <item>القادر</item>
+            <item>المقتدر</item>
+            <item>المقدم</item>
+            <item>المؤخر</item>
+            <item>الأول</item>
+            <item>الأخر</item>
+            <item>الظاهر</item>
+            <item>الباطن</item>
+            <item>الوالي</item>
+            <item>المتعالي</item>
+            <item>البر</item>
+            <item>التواب</item>
+            <item>المنتقم</item>
+            <item>العفو</item>
+            <item>الرؤوف</item>
+            <item>مالك الملك</item>
+            <item>ذو الجلال والإكرام</item>
+            <item>المقسط</item>
+            <item>الجامع</item>
+            <item>الغني</item>
+            <item>المغني</item>
+            <item>المانع</item>
+            <item>الضار</item>
+            <item>النافع</item>
+            <item>النور</item>
+            <item>الهادي</item>
+            <item>البديع</item>
+            <item>الباقي</item>
+            <item>الوارث</item>
+            <item>الرشيد</item>
+            <item>الصبور</item>
+
+    </string-array>
+
+
+
+    <string-array name="allah_names_transliteration">
+        <item>Allah</item>
+        <item>Ar-Rahman</item>
+        <item>Ar-Rahim</item>
+        <item>Al-Malik</item>
+        <item>Al-Qudoos</item>
+        <item>As-Salam</item>
+        <item>Al-Mumin</item>
+        <item>Al-Muhaymin</item>
+        <item>Al-Aziz</item>
+        <item>Al-Jabbar</item>
+        <item>Al-Mutakabbir</item>
+        <item>Al-Khaliq</item>
+        <item>Al-Bari</item>
+        <item>Al-Musawwir</item>
+        <item>Al-Ghaffar</item>
+        <item>Al-Qahhar</item>
+        <item>Al-Wahhab</item>
+        <item>Ar-Razzaq</item>
+        <item>Al-Fattah</item>
+        <item>Al-Aleem</item>
+        <item>Al-Qabid</item>
+        <item>Al-Basit</item>
+        <item>Al-Khafid</item>
+        <item>Ar-Rafi</item>
+        <item>Al-Muiz</item>
+        <item>Al-Muzil</item>
+        <item>As-Sami</item>
+        <item>Al-Basir</item>
+        <item>Al-Hakam</item>
+        <item>Al-Adl</item>
+        <item>Al-Latif</item>
+        <item>Al-Khabir</item>
+        <item>Al-Halim</item>
+        <item>Al-Azim</item>
+        <item>Al-Ghafoor</item>
+        <item>Ash-Shakur</item>
+        <item>Al-Ali</item>
+        <item>Al-Kabir</item>
+        <item>Al-Hafiz</item>
+        <item>Al-Muqit</item>
+        <item>Al-Hasib</item>
+        <item>Aj-Jalil</item>
+        <item>Al-Karim</item>
+        <item>Ar-Raqib</item>
+        <item>Al-Mujib</item>
+        <item>Al-Wasi</item>
+        <item>Al-Hakim</item>
+        <item>Al-Wadud</item>
+        <item>Al-Majid</item>
+        <item>Al-Baith</item>
+        <item>Ash-Shahid</item>
+        <item>Al-Haqq</item>
+        <item>Al-Wakil</item>
+        <item>Al-Qawee</item>
+        <item>Al-Matin</item>
+        <item>Al-Walee</item>
+        <item>Al-Hamid</item>
+        <item>Al-Muhsi</item>
+        <item>Al-Mubdi</item>
+        <item>Al-Mueed</item>
+        <item>Al-Muhyee</item>
+        <item>Al-Mumeet</item>
+        <item>Al-Hayy</item>
+        <item>Al-Qayyum</item>
+        <item>Al-Wajid</item>
+        <item>Al-Majid</item>
+        <item>Al-Wahid</item>
+        <item>Al-Ahad</item>
+        <item>As-Samad</item>
+        <item>Al-Qadir</item>
+        <item>Al-Muqtadir</item>
+        <item>Al-Muqaddim</item>
+        <item>Al-Muakhkhir</item>
+        <item>Al-Awwal</item>
+        <item>Al-Akhir</item>
+        <item>Az-Zahir</item>
+        <item>Al-Batin</item>
+        <item>Al-Wali</item>
+        <item>Al-Mutaali</item>
+        <item>Al-Barr</item>
+        <item>At-Tawwab</item>
+        <item>Al-Muntaqim</item>
+        <item>Al-Afuww</item>
+        <item>Ar-Rauf</item>
+        <item>Malik-Al-Mulk</item>
+        <item>Zul-l-Jalal wal-Ikram</item>
+        <item>Al-Muqsit</item>
+        <item>Aj-Jami</item>
+        <item>Al-Ghanee</item>
+        <item>Al-Mughnee</item>
+        <item>Al-Mani</item>
+        <item>Ad-Darr</item>
+        <item>An-Nafi</item>
+        <item>An-Nur</item>
+        <item>Al-Hadi</item>
+        <item>Al-Badi</item>
+        <item>Al-Baqi</item>
+        <item>Al-Warith</item>
+        <item>Ar-Rashid</item>
+        <item>As-Sabur</item>
+    </string-array>
+
+    <string-array name="allah_names_english">
+        <item>God</item>
+        <item>The Most Beneficent</item>
+        <item>The Most Merciful</item>
+        <item>The King</item>
+        <item>The Most Holy</item>
+        <item>The Peace</item>
+        <item>Bestower of Security</item>
+        <item>The Guardian</item>
+        <item>The Almighty</item>
+        <item>The Irresistible</item>
+        <item>The Tremendous</item>
+        <item>The Maker</item>
+        <item>The Creator</item>
+        <item>The Designer</item>
+        <item>The Forgiver</item>
+        <item>The Subduer</item>
+        <item>The Bestower</item>
+        <item>The Provider</item>
+        <item>The Opener</item>
+        <item>The All Knowing</item>
+        <item>The Restrainer</item>
+        <item>The Extender</item>
+        <item>The Humbler</item>
+        <item>The Raiser</item>
+        <item>The Giver of Honour</item>
+        <item>The Giver of dishonour</item>
+        <item>The Hearer</item>
+        <item>The All Seeing</item>
+        <item>The Judge</item>
+        <item>The Equitable</item>
+        <item>The Gracious</item>
+        <item>The Aware</item>
+        <item>The Forbearing</item>
+        <item>The Great</item>
+        <item>The Forgiving</item>
+        <item>The Thankful</item>
+        <item>The Most High</item>
+        <item>The Great</item>
+        <item>The Preserver</item>
+        <item>The Nourisher</item>
+        <item>The Reckoner</item>
+        <item>The Majestic</item>
+        <item>The Generous</item>
+        <item>The Guardian</item>
+        <item>The Responder</item>
+        <item>The Knowledgeable</item>
+        <item>The Wise</item>
+        <item>The Loving</item>
+        <item>The Glorious</item>
+        <item>The Resurrecter</item>
+        <item>The Witness</item>
+        <item>The Truth</item>
+        <item>The Trustee</item>
+        <item>The Strong</item>
+        <item>The Firm</item>
+        <item>The Friend</item>
+        <item>The Praiseworthy</item>
+        <item>The Counter</item>
+        <item>The Originator</item>
+        <item>The Restorer</item>
+        <item>The Bestower</item>
+        <item>The Destroyer</item>
+        <item>The Ever Living</item>
+        <item>The Eternal</item>
+        <item>The Finder</item>
+        <item>The Magnificent</item>
+        <item>The Unique</item>
+        <item>The One</item>
+        <item>The Self Sufficient</item>
+        <item>The Capable</item>
+        <item>The Dominant</item>
+        <item>The Presenter</item>
+        <item>The Keeper Behind</item>
+        <item>The First</item>
+        <item>The Last</item>
+        <item>The Evident</item>
+        <item>The Hidden</item>
+        <item>The Master</item>
+        <item>The Exalted and Most High</item>
+        <item>The Courteous</item>
+        <item>The Acceptor of Repentance</item>
+        <item>The Avenger</item>
+        <item>The Forgiver</item>
+        <item>The Merciful</item>
+        <item>The King of Universe</item>
+        <item>The Lord of Majesty and Generosity</item>
+        <item>The Equitable</item>
+        <item>The Gatherer</item>
+        <item>The Independent</item>
+        <item>The Enricher</item>
+        <item>The Withholder</item>
+        <item>The Afflicter</item>
+        <item>The Propitious</item>
+        <item>The Light to Guide</item>
+        <item>The Guide</item>
+        <item>The Originator</item>
+        <item>The Everlasting</item>
+        <item>The Inheritor</item>
+        <item>The Guide to the right path</item>
+        <item>The Patient</item>
+    </string-array>
+
+
+    <string-array name="allah_names_detail_english">
+        <item>He who repeats this name 100 times with quietude and purity of heart before the Ju\'mma (Friday Noon) prayer, will find all the things easy.</item>
+        <item>He who repeats this Name 100 times after each farz prayer will have good memory, a keen awareness, and be free of a heavy heart.</item>
+        <item>He who repeats this Name 100 times after each farz prayer will have good memory.</item>
+        <item>If you recite this name of Allah abundantly every day after Zawaal ( the time of mid-day immediately before Duhr prayer), Allah will give him abundant wealth. Insha-Allah.</item>
+        <item>The hearts of those who repeat this Name 100 times each day will be free from anxiety.</item>
+        <item>He who repeats this Name 160 times to a sick person, help them regain health.</item>
+        <item>If you recite this name 630 times in times of fear, Allah will protect you from all calamities.</item>
+        <item>Those who repeat this Name 100 times after offering 2 rakaat Salaah with sincerity, Allah purify them physically and spirtually.</item>
+        <item>He who repeats this Name 40 times after each Fajr prayer for 40 days will be independent of need from others.</item>
+        <item>He who repeats this name 226 times daily will not be compelled to do anything against his wishes, and will not be exposes to violence, severity, or hardness.</item>
+        <item>He who repeats this Name before having intercourse with his wife, Allah will bless him with the righteous child.</item>
+        <item>He who repeats this name at night, Allah will create an angel whose duty is to act righteously for this person until the day of judgement. The reward of this angel\'s actions will be given to that person.</item>
+        <item>He who repeats this Name 100 times for continuous 7 days after Maghrib prayer, Allah will give him male children. InshaAllah ! </item>
+        <item>If a women  who desires to give birth, but cannot, fasts 7 days, and each day at the breaking of the fast (ifta\'r) she repeats "Ya Baari\' Ul Musawwiru" 21 times, breathes into a glass of water, and then breaks the fast with this water, Allah will bless her with a child.</item>
+        <item>He who repeats this name 100 times after Jumma Prayer, will soon begin Allah\'s forgiveness.</item>
+        <item>He who repeats this Name continually, Allah will free him from the love of this world and, instead, Allah\'s love will become inborn in his heart. Insha-Allah. </item>
+        <item>The person who repeats this Name 7 times after (dua) appealing to Allah, his appeal will be answered. He who has a desire or a person who is captured by an enemy or someone who cannot earn enough to maintain himself, if he repeats this Name for 3 or 7 nights 100 times after 2 nafals at mid-night with ablution, Allah will bless him with all his needs.</item>
+        <item>He who repeats this Name will be provided with sustenance by Allah.</item>
+        <item>The heart of him who repeats this Name 70 times after Fajar Prayer will be open, and he will be given victory.</item>
+        <item>He who repeats this name, his heard will become luminous, revelling divine light (Nur).</item>
+        <item>He who writes this Name on 50 pieces of food (fruit, bread, etc.) for 40 days will be free from hunger.</item>
+        <item>He who repeats this Name 10 times during Fajr with open hands (palms up), then rubs his face with his hands, will be free of needs from others.</item>
+        <item>Those who fast three days, and on the forth day in the gathering read this name 70000 times, Allah will free them from harm by their enemy.</item>
+        <item>He who repeats this Name 100 times a day and night, Allah will make him higher as far as honor, richness and merit are concerned.</item>
+        <item>Repeat 140 times after Isha prayer duing Monday and Friday nights (according to lunar calendar, Sunday and Thursday), Allah makes him dignified in the eyes of others. That person will have fear of no one but Allah.</item>
+        <item>He who repeats this Name 75 times will be free frin garn by those who are jealous of him and wish to harm him. Allah will protect him.</item>
+        <item>He who repeats this Name 100 times withoug speaking to anyone on Thursday after the Duhr prayer (noon time), Allah will bestow on him any desire.</item>
+        <item>He who repeats this Name 100 times between Fard and the first Sunnah prayer at Jumma (Friday afternoon prayer), Allah will give this person esteem in the eyes of others.</item>
+        <item>He who repeats this Name many times at night, many secrets (sirr) will be revealed to him.</item>
+        <item>On Friday night, if you write this name on a piece of bread, people will obey you.</item>
+        <item>He who has become poor, and is lonely, if he repeats this Name 100 times after Fard prayer, say 2 Nafals, his earlier desired will be fulfilled.</item>
+        <item>He who has a bad habit which he doesn\'t like, and continuously repeats this Name, will be quickly freed from this habit.</item>
+        <item>If one writes this Name on a piece of paper, and puts it where his seed is shown, on harm disaster of calamity will befall his crop.</item>
+        <item>He who repeats this Name many times will be respected.</item>
+        <item>He who has a headache, fever, and is despondent, who continuously repeats this Name, will be relived of his ailment.</item>
+        <item>He who has a heavy heart, and repeats this name 41 times, breathes into a glass of water, then washed his face with water, his heard will lighten and will be able to maintain himself.</item>
+        <item>He whose faith is low and repeats this Name, will be raised, his density will be opened; the traveller will reach his homeland.</item>
+        <item>He who repeats this Name 100 times each day will have esteem.</item>
+        <item>He who repeats this Name 16 times dailyt will be protected against calamities.</item>
+        <item>If someone with the bad-mannered child repeats this Name into the glass of water, and gives this water to the child to drink, the child will have good manners.</item>
+        <item>If one is afraid of being robbed, afraid of jealously of another, of being harmed or wronged, he begins on a Thursday to repeat this Name 70 times a day and night, for 7 days and nights. After the 71st time, he says Allah is Reckoner (Hasbiyallah-ul-Haseeb), and he will be free from his fears.</item>
+        <item>He who writes this Name on a piece of paper with musk and saffron, washes it, and drinks the water from a ceramic container made of earth, will be revered among men.</item>
+        <item>He who repeats this Name many times will have esteem in this world and the hereafter.</item>
+        <item>He who repeats this Name 7 times on himself and family and property, will be under Allah\'s protection.</item>
+        <item>The appeal of him who repeats this Name will be answered.</item>
+        <item>He who has a difficulty earning, repeats this Name, he will have good earnings.</item>
+        <item>He who repeats this Name continuously (from time to time) will not have difficulty in his work.</item>
+        <item>If there is a quarrel between two people, and one of them repeats this Name 1000 times over some food and has the other person eat the food, there will be no disagreement between them.</item>
+        <item>He who repeats this Name will gain glory.</item>
+        <item>He who repeats this Name gains the fear of Allah.</item>
+        <item>He who has a rebellious hild and repeats this Name to the Child, the child will be obedient.</item>
+        <item>If one has lost something and repeats this Name, he will find what he lost.</item>
+        <item>He who is afraid of drowning, being burnt in a fire, or any similar danger, and repeats this Name continuously (from time to time) will be under the protection of Allah.</item>
+        <item>He who can\'t defeat his enemy, and repeats this Name with the intention of not being harmed, will be free from his enemy\'s harm.</item>
+        <item>If one has troubles and repeates this Name, his troubles will disappear.</item>
+        <item>He who repeats this Name and breathes into his house, his house will be free from danger.</item>
+        <item>He who repeats this Name will be loved and praised.</item>
+        <item>He who is afraid of being questioned on the judgement day and repeats this Name 1000 times will have easiness.</item>
+        <item>If this Name is repeated on a pregnant woman who is afraid of abortion, she will be free from danger.</item>
+        <item>If this Name is repeated 70 times for someone who is away from his family, thar person will return safely.</item>
+        <item>If a person has a heavy burden and repeats this Name 7 times daily, his burden will be taken away.</item>
+        <item>This Name is repeated to destroy one\'s enemy.</item>
+        <item>He who repeats this Name will have long life.</item>
+        <item>He who repeats this Name will not fall into inadvertency.</item>
+        <item>Those who repeat this Name many times, will be respected.</item>
+        <item>He who repeats this Name, his heart will be enlightened.</item>
+        <item>He who repeats this Name alone and in quiet place will be free from fear and delusion.</item>
+        <item>He who repeats this Name 1000 times, will have certain secrets open to him.</item>
+        <item>He who repeats this Name many times, Allah will provide his needs, and as a result he will not need others, but they will need them.</item>
+        <item>He who repeats this Name, all his desired will be fulfilled.</item>
+        <item>He who repeats this Name will be aware of the truth.</item>
+        <item>He who repeats this Name on the bettlefield, or who has fear of being alone in an awe - inspiring place, no harm will come to him.</item>
+        <item>He who repeats this Name in his heart 100 times each day, only Allah will remain. No other love can enter.</item>
+        <item>He who likes to have a child, or would like to come together with a person who is travelling, repeats this Name 1000 times for 40 Fridays.</item>
+        <item>He who repeats this Name many times will lead a good life and at the end of the life will have a good death.</item>
+        <item>He who repeats this Name 15 times after Friday (Jumma) prayer, divine light (Nur) will enter his heart.</item>
+        <item>He who repeats this Name 3 times daily will be able to see the truth in things.</item>
+        <item>He who repeats this Name is likely to walliullah, the friend of Allah.</item>
+        <item>He who repeats this Name many times will gain the benecolence of Allah.</item>
+        <item>He who repeats this Name to his child, this child will be free from misfortune.</item>
+        <item>He who repeats this Name many times, his repentance will be accepted.</item>
+        <item>He who repeats this Name many times, will be victorious against his enemies.</item>
+        <item>He who repeats this Name many times, all his sins will be forgiven.</item>
+        <item>He who repeats this Name many times will be blessed by Allah.</item>
+        <item>He who repeats this Name will have esteem among people.</item>
+        <item>He who repeats this Name many times will be rich.</item>
+        <item>He who repeats this Name will be free from the hard of the devil.</item>
+        <item>He who repeats this Name will find the things that he lost.</item>
+        <item>He who repeats this Name will be contented and not covetous.</item>
+        <item>He who repeats this Name 10 times for 10 Fridays will become self-sufficient.</item>
+        <item>Those who repeat this Name will have a good family life.</item>
+        <item>Those who are in low class, if they repeat this Name on Friday nights, their status will be raised.</item>
+        <item>He who repeats this Name for 4 days as many times as he can, no harm will come to him.</item>
+        <item>Those who repeat this NAme will have inner light.</item>
+        <item>He who repeats this Name will have spiritual knowledge.</item>
+        <item>He who repeats "Ya Badie-us-samawat-wal-ard", 70 times daily, all his troubles will disappear.</item>
+        <item>He who repeats this Name 100 times before sunrise will be free from all disasters throughout his life, and will be shown mercy in the hereafter.</item>
+        <item>He who repeats this Name will have long life.</item>
+        <item>He who repeats this Name 1000 times between early evening prayer (Maghrib) and night prayer (Isha), his troubles will be cleared up.</item>
+        <item>He who is any trouble, difficulty or sorrow and repeats this Name 3000 times, will be rescued from his difficulty.</item>
     </string-array>
     
 </resources>

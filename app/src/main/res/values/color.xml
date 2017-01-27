@@ -114,8 +114,8 @@
     <color name="color_background">#EEEEEE</color>
     <color name="color_prayer_counter">#9b9c9f</color>
     <color name="color_ayah_number">#805D01</color>
-
-    <color name="read_list_select">#B3E5FC</color>
+    EEEEEE
+    <color name="read_list_select">#EEEEEE</color><!--//B3E5FC-->
     <color name="transliration_color">#009BDA</color>
 
 

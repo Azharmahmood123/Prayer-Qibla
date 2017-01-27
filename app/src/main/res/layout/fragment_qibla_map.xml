@@ -27,7 +27,7 @@
         android:id="@+id/layout_location_error"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/calibration_bg_transparent"
+        android:background="@color/cardview_dark_background"
         android:clickable="true"
         android:elevation="@dimen/size_four"
         android:gravity="center_vertical"
@@ -62,12 +62,24 @@
     </LinearLayout>
 
 
+    <ImageView
+        android:id="@+id/btn_change_view"
+        android:layout_width="@dimen/size_fifty_five"
+        android:layout_height="@dimen/size_fifty_five"
+        android:layout_above="@id/tv_distance_qibla_map"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="@dimen/size_twenty_eight"
+        android:layout_marginLeft="@dimen/size_seven"
+        android:padding="@dimen/size_three"
+        android:src="@drawable/ic_map_img_1" />
+
     <RelativeLayout
         android:id="@+id/layout_maps_btns"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_below="@id/layout_location_error"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/layout_location_error"
+        android:layout_toRightOf="@+id/layout_location_error"
         android:orientation="horizontal"
         android:padding="@dimen/size_ten">
 
@@ -82,19 +94,19 @@
             android:src="@drawable/ic_map_img_1"
             android:visibility="gone" />
 
-
         <ImageView
             android:id="@+id/iv_map_qibla_current_loc"
             android:layout_width="@dimen/size_fourty_five"
             android:layout_height="@dimen/size_fourty_five"
+            android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
             android:adjustViewBounds="true"
-            android:background="@drawable/bg_row_corners"
+            android:background="@drawable/bg_row_round_white"
             android:contentDescription="@string/img_desrcptn"
-            android:padding="@dimen/size_ten"
+            android:padding="@dimen/size_seven"
             android:scaleType="fitCenter"
             android:src="@drawable/ic_current_loc" />
-
 
         <View
             android:id="@+id/view1"
@@ -108,25 +120,13 @@
             android:layout_height="@dimen/size_fourty_five"
             android:layout_toLeftOf="@id/view1"
             android:adjustViewBounds="true"
-            android:background="@drawable/bg_row_corners"
+            android:background="@drawable/bg_row_round_white"
             android:contentDescription="@string/img_desrcptn"
-            android:padding="@dimen/size_ten"
+            android:padding="@dimen/size_seven"
             android:scaleType="fitCenter"
             android:src="@drawable/ic_qibla_map" />
 
     </RelativeLayout>
-
-
-    <ImageView
-        android:id="@+id/btn_change_view"
-        android:layout_width="@dimen/size_fifty_five"
-        android:layout_height="@dimen/size_fifty_five"
-        android:layout_above="@id/tv_distance_qibla_map"
-        android:layout_alignParentLeft="true"
-        android:layout_marginBottom="@dimen/size_twenty_eight"
-        android:layout_marginLeft="@dimen/size_seven"
-        android:padding="@dimen/size_three"
-        android:src="@drawable/ic_map_img_1" />
 
 
 </RelativeLayout>

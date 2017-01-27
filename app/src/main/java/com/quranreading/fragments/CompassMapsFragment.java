@@ -44,11 +44,12 @@ public class CompassMapsFragment extends Fragment implements OnMapReadyCallback,
 
     int MAX_ZOOM_MAP = 15;
     int MIN_ZOOM_MAP = 3;
-    int POLYLINE_WIDTH = 8;
+    int POLYLINE_WIDTH = 9;
     double SENSOR_CALLBACK_DELAY = 1.5;
 
     double makkahLatitude = 21.422510;
     double makkahLongitude = 39.826160;
+    double currentLat,currentLng;
     LatLng currentLocation, qiblaLocation;
     LocationReceiver mLocationReceiver;
 
@@ -118,11 +119,6 @@ public class CompassMapsFragment extends Fragment implements OnMapReadyCallback,
         ivCurrentLoc.setOnClickListener(this);
         ivQiblaLoc.setOnClickListener(this);
 
-        if (isLocationEnabled()) {
-            layoutSettingEnable.setVisibility(View.GONE);
-        } else {
-            layoutSettingEnable.setVisibility(View.VISIBLE);
-        }
 
         btnMapView.setOnClickListener(mapChangeClickListner);
 
@@ -208,6 +204,12 @@ public class CompassMapsFragment extends Fragment implements OnMapReadyCallback,
             mSensorManager.unregisterListener(mMagAccel);
             mSensorManager.registerListener(mMagAccel, accelerometer, SensorManager.SENSOR_DELAY_GAME);
             mSensorManager.registerListener(mMagAccel, magnetometer, SensorManager.SENSOR_DELAY_GAME);
+
+            if (isLocationEnabled()) {
+                layoutSettingEnable.setVisibility(View.GONE);
+            } else {
+                layoutSettingEnable.setVisibility(View.VISIBLE);
+            }
         }
     }
 
@@ -242,14 +244,14 @@ public class CompassMapsFragment extends Fragment implements OnMapReadyCallback,
         //mMap.getUiSettings().setZoomGesturesEnabled(false);
 
         // Add a marker in Sydney and move the camera
-        double currentLat = Double.parseDouble(locationPref.getLatitude());
-        double currentLng = Double.parseDouble(locationPref.getLongitude());
+        currentLat = Double.parseDouble(locationPref.getLatitudeCurrent());
+        currentLng = Double.parseDouble(locationPref.getLatitudeCurrent());
+        currentLocation = new LatLng(currentLat, currentLng);
 
         String calcDistance = locationPref.getDistance();
         tvDistance.setText(getResources().getString(R.string.distance_from_qibla) + " " + calcDistance + " KM");
 
 
-        currentLocation = new LatLng(currentLat, currentLng);
         qiblaLocation = new LatLng(makkahLatitude, makkahLongitude);
         // mMap.setOnCameraChangeListener(this);
 
@@ -412,11 +414,12 @@ public class CompassMapsFragment extends Fragment implements OnMapReadyCallback,
         public void onReceive(Context context, Intent intent) {
 
             try {
-                String city = intent.getStringExtra(CompassFragmentIndex.CITY_NAME);
-                double lat = intent.getDoubleExtra(CompassFragmentIndex.LATITUDE, 0);
-                double lng = intent.getDoubleExtra(CompassFragmentIndex.LONGITUDE, 0);
 
-                if (lat != 0 && lat != -2 && lng != 0 && lng != -2) {
+                currentLat = Double.parseDouble(locationPref.getLatitudeCurrent());
+                currentLng = Double.parseDouble(locationPref.getLatitudeCurrent());
+                currentLocation = new LatLng(currentLat, currentLng);
+
+                if (currentLat != 0 && currentLat != -2 && currentLng != 0 && currentLng != -2) {
 
                 } else {
                     SupportMapFragment mapFragment = new SupportMapFragment();

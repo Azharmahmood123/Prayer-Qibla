@@ -84,10 +84,10 @@
 
     <string name="txt_fajr">Fajar</string>
     <string name="txt_sunrise">Sun Rise</string>
-    <string name="txt_zuhr">Zuhar</string>
+    <string name="txt_zuhr">Duhar</string>
     <string name="txt_asar">Asar</string>
     <string name="txt_maghrib">Maghrib</string>
-    <string name="txt_isha">Isha</string>
+    <string name="txt_isha">Esha</string>
     
     <string name="settings">Settings</string>
     <string name="current_Location">Current Location</string>
@@ -244,9 +244,9 @@
     <string name="jafari_details"><b>Jafari:</b> Shia Ithna Ashari, Leva Research Institute, Qum</string>
     <string name="jafari_region"><b>Region:</b> Some Shia communities worldwide</string>
     
-    <string name="angle_based_msg"><b>Angle Based:</b> This is an intermediate solution, used by some recent prayer time calculators. Let ∝ be the twilight angle for Isha, and let t = ∝/60. The period between sunset and sunrise is divided into t parts. Isha begins after the first part. For example, if the twilight angle for Isha is 15, then Isha begins at the end of the first quarter (15/60) of the night. Time for Fajar is calculated similarly.</string>
-    <string name="mid_night_msg"><b>Mid Night:</b> In this method, the period from sunset to sunrise is divided into two halves. The first half is considered to be the night and other half as day break. Fajar and Isha in this method are assumed to be at midnight during the abnormal period.</string>
-    <string name="one_seventh_msg"><b>One Seventh:</b> In this method, the period between sunset and sunrise is divided into seven parts. Isha begins after the first one-seventh part, and fajr is at the beginning of the seventh part.</string>
+    <string name="angle_based_msg"><b>Angle Based:</b> This is an intermediate solution, used by some recent prayer time calculators. Let ∝ be the twilight angle for Esha, and let t = ∝/60. The period between sunset and sunrise is divided into t parts. Esha begins after the first part. For example, if the twilight angle for Esha is 15, then Esha begins at the end of the first quarter (15/60) of the night. Time for Fajar is calculated similarly.</string>
+    <string name="mid_night_msg"><b>Mid Night:</b> In this method, the period from sunset to sunrise is divided into two halves. The first half is considered to be the night and other half as day break. Fajar and Esha in this method are assumed to be at midnight during the abnormal period.</string>
+    <string name="one_seventh_msg"><b>One Seventh:</b> In this method, the period between sunset and sunrise is divided into seven parts. Esha begins after the first one-seventh part, and fajr is at the beginning of the seventh part.</string>
 
     <string name="share">Share</string>   
     <string name="share_msg">I found a wonderful Islamic app to locate exact Qibla direction and correct Salat timings. Download here:\n\n https://play.google.com/store/apps/details?id=com.quranreading.qibladirection</string>

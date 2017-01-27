@@ -646,6 +646,12 @@ public class CompassFragmentIndex extends Fragment implements RotationUpdateDele
             public void onClick(DialogInterface dialog, int whichButton) {
 
                 progressBar.setVisibility(View.GONE);
+
+                String city = locationPref.getCityName();
+                double lat = Double.parseDouble(locationPref.getLatitude());
+                double lng = Double.parseDouble(locationPref.getLongitude());
+                onLocationSet(city, lat, lng);
+
                 dialog.dismiss();
             }
         });

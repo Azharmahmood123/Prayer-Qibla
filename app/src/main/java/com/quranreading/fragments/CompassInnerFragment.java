@@ -48,11 +48,6 @@ import static com.quranreading.fragments.CompassFragmentIndex.LOCATION_REQUEST_D
 
 public class CompassInnerFragment extends Fragment implements RotationUpdateDelegate, OnLocationSetListner {
 
-    public static final String LOCATION_INTENT_FILTER = "compass_location_receiver";
-    public static final String CITY_NAME = "city";
-    public static final String LATITUDE = "lat";
-    public static final String LONGITUDE = "lng";
-
     LocationReceiver mLocationReceiver;
     LocationPref locationPref;
     ManualDialogCustom manualDialog;
@@ -135,7 +130,6 @@ public class CompassInnerFragment extends Fragment implements RotationUpdateDele
 
 //        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 //        setSupportActionBar(toolbar);
-
 
 
         ActionBar actionBar = ((AppCompatActivity) getActivity()).getSupportActionBar();
@@ -699,7 +693,7 @@ public class CompassInnerFragment extends Fragment implements RotationUpdateDele
 
             // send Broadcast to Timings Fragment when user select location from Manual Dailog
             // When tap on City name TextView
-            Intent intnet = new Intent(TimingsFragment.LOCATION_INTENT_FILTER);
+            Intent intnet = new Intent(CompassFragmentIndex.LOCATION_INTENT_FILTER);
             intnet.putExtra(TimingsFragment.CITY_NAME, cityName);
             intnet.putExtra(TimingsFragment.LATITUDE, latitude);
             intnet.putExtra(TimingsFragment.LONGITUDE, longitude);
@@ -736,6 +730,12 @@ public class CompassInnerFragment extends Fragment implements RotationUpdateDele
             public void onClick(DialogInterface dialog, int whichButton) {
 
                 progressBar.setVisibility(View.GONE);
+
+                String city = locationPref.getCityName();
+                double lat = Double.parseDouble(locationPref.getLatitude());
+                double lng = Double.parseDouble(locationPref.getLongitude());
+                onLocationSet(city, lat, lng);
+
                 dialog.dismiss();
             }
         });
