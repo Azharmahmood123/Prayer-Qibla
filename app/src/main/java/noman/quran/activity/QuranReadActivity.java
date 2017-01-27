@@ -263,6 +263,13 @@ public class QuranReadActivity extends AppCompatActivity implements OnCompletion
         relContanerJuzIndex.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                handler.removeCallbacks(sendUpdatesToUI);
+                if (mp != null) {
+                    if (play == 1) {
+                        mp.pause();
+                    }
+                    btnAudio.setImageResource(R.drawable.play_btn);
+                }
                 handleTextSizeSetting(true);
                 handleJuzzIndex();
             }
@@ -762,7 +769,7 @@ public class QuranReadActivity extends AppCompatActivity implements OnCompletion
             {
                 mp.seekTo(timeAyahSurah.get(0));
             }
-     // }
+     }
 
         hideGotoDialog();
         ((GlobalClass) getApplication()).ayahPos = 0;
@@ -773,7 +780,7 @@ public class QuranReadActivity extends AppCompatActivity implements OnCompletion
         play = 0;
 
 
-        }
+       // }
     }
 
     private void hideGotoDialog() {
@@ -914,6 +921,15 @@ public class QuranReadActivity extends AppCompatActivity implements OnCompletion
             initializeSettings();
             initializaSurahData();
             customAdapter.notifyDataSetChanged();
+            if(((GlobalClass) getApplication()).ayahPos > 0)
+            {
+                ayahListView.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        ayahListView.setSelection(((GlobalClass) getApplication()).ayahPos);
+                    }
+                });
+            }
         }
 
         if (mp != null && isAudioFound) {

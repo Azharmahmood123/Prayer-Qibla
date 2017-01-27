@@ -466,6 +466,16 @@ public class NamesListPlayingActivity extends AppCompatActivity implements Adapt
     protected void onPause() {
         super.onPause();
 
+
+        if (mp != null ) {
+            if (play == 1) {
+                mp.seekTo(0);
+                mp.pause();
+                seekBarNames.setEnabled(false);
+            }
+        }
+
+
         if (!((GlobalClass) getApplication()).isPurchase) {
             stopAdsCall();
         }

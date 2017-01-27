@@ -9,11 +9,7 @@
     <RelativeLayout
         android:id="@+id/index_row"
         android:layout_width="match_parent"
-<<<<<<< HEAD
         android:layout_height="@dimen/_50sdp"
-=======
-        android:layout_height="@dimen/size_seventy"
->>>>>>> cf19611962de7497107e929fc7fd5006f02107bb
         android:background="@drawable/bg_row_corners" >
 
         <RelativeLayout

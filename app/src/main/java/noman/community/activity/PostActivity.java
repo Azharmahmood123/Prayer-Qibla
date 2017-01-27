@@ -86,7 +86,7 @@ public class PostActivity extends AdIntegration {
         btnPost.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String content = textPrayer.getText().toString();
+                String content = textPrayer.getText().toString().trim();
                 hideKeyBoard();
                 if (content.length() > 0 || !content.isEmpty()) {
                     if (content.length() < 10) {
