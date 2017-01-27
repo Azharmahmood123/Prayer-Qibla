@@ -177,8 +177,7 @@
         <item name="android:layout_height">@dimen/size_one</item>
         <item name="android:layout_width">fill_parent</item>
         <item name="android:background">@color/light_gray</item>
-        <item name="android:layout_marginLeft">@dimen/_1sdp</item>
-        <item name="android:layout_marginRight">@dimen/_1sdp</item>
+
     </style>
 
     <style name="view_line_dark_gray_full">
@@ -225,20 +224,20 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:gravity">center|left</item>
-        <item name="android:layout_marginBottom">@dimen/size_three</item>
-        <item name="android:layout_marginTop">@dimen/size_three</item>
-        <item name="android:layout_marginLeft">@dimen/size_ten</item>
+        <item name="android:layout_marginBottom">@dimen/_3sdp</item>
+        <item name="android:layout_marginTop">@dimen/_3sdp</item>
+        <item name="android:layout_marginLeft">@dimen/_10sdp</item>
         <item name="android:textColor">@color/header</item>
-        <item name="android:textSize">@dimen/text_size_twenty</item>
+        <item name="android:textSize">@dimen/_13sdp</item>
     </style>
 
     <style name="setting_row_bg_s">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">@dimen/size_fifty</item>
-        <item name="android:paddingTop">@dimen/size_three</item>
-        <item name="android:paddingBottom">@dimen/size_three</item>
-        <item name="android:layout_marginLeft">@dimen/_6sdp</item>
-        <item name="android:layout_marginRight">@dimen/_6sdp</item>
+        <item name="android:paddingTop">@dimen/_6sdp</item>
+        <item name="android:paddingBottom">@dimen/_6sdp</item>
+        <item name="android:layout_marginLeft">@dimen/_8sdp</item>
+        <item name="android:layout_marginRight">@dimen/_8sdp</item>
         <item name="android:background">@drawable/bg_row_default_transperant</item>
         <item name="android:onClick">onRowClick</item>
     </style>
@@ -247,8 +246,8 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">@dimen/size_fifty_five</item>
         <item name="android:paddingRight">@dimen/size_five</item>
-        <item name="android:paddingTop">@dimen/size_three</item>
-        <item name="android:paddingBottom">@dimen/size_three</item>
+        <item name="android:paddingTop">@dimen/_6sdp</item>
+        <item name="android:paddingBottom">@dimen/_6sdp</item>
         <item name="android:paddingLeft">@dimen/size_five</item>
         <item name="android:layout_marginLeft">@dimen/size_five</item>
         <item name="android:layout_marginRight">@dimen/size_five</item>

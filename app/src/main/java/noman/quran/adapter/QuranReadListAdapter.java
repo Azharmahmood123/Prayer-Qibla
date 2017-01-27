@@ -288,7 +288,7 @@ public class QuranReadListAdapter extends BaseAdapter {
             @Override
             public void onClick(View v) {
                 //open=true -> close = false
-               resetMenus(position);
+            //   resetMenus(position);
 
                 int pos = position;
                 int id = surahList.get(position).getBookMarkId();
@@ -304,11 +304,11 @@ public class QuranReadListAdapter extends BaseAdapter {
                 if (state == true) {
                     mViewHolder.mFrameAnimaitonLayout.setVisibility(View.VISIBLE);
                     if (id > -1) {
-
-                        mImageMenuList.get(pos).setBackgroundResource(R.drawable.fav_mark);
+                        mViewHolder.imgMenuOption.setBackgroundResource(R.drawable.fav_mark);
+                      //  mImageMenuList.get(pos).setBackgroundResource(R.drawable.fav_mark);
                     } else {
-
-                        mImageMenuList.get(pos).setBackgroundResource(R.drawable.side_arrow_open);
+                        mViewHolder.imgMenuOption.setBackgroundResource(R.drawable.side_arrow_open);
+                       // mImageMenuList.get(pos).setBackgroundResource(R.drawable.side_arrow_open);
                     }
                     rightToLeftAnimation(mViewHolder.innerMenuContainer, mViewHolder.mFrameAnimaitonLayout);
 
@@ -324,9 +324,11 @@ public class QuranReadListAdapter extends BaseAdapter {
                 } else if (state == false) {
                     mViewHolder.mFrameAnimaitonLayout.setVisibility(View.VISIBLE);
                     if (id > -1) {
-                        mImageMenuList.get(pos).setBackgroundResource(R.drawable.fav_mark);
+                        mViewHolder.imgMenuOption.setBackgroundResource(R.drawable.fav_mark);
+                      //  mImageMenuList.get(pos).setBackgroundResource(R.drawable.fav_mark);
                     } else {
-                        mImageMenuList.get(pos).setBackgroundResource(R.drawable.side_arrow_close);
+                        mViewHolder.imgMenuOption.setBackgroundResource(R.drawable.side_arrow_close);
+                    //    mImageMenuList.get(pos).setBackgroundResource(R.drawable.side_arrow_close);
                     }
                     leftToRightAnimation(mViewHolder.innerMenuContainer, mViewHolder.mFrameAnimaitonLayout);
 

@@ -67,4 +67,5 @@ dependencies {
     compile 'com.google.firebase:firebase-messaging:9.8.0'
     compile 'com.github.msarhan:ummalqura-calendar:1.1.7'
 
+
 }

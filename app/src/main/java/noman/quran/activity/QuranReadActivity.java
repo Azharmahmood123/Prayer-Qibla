@@ -56,6 +56,7 @@ import com.quranreading.alarms.AlarmReceiverPrayers;
 import com.quranreading.helper.Constants;
 import com.quranreading.listeners.OnSurahDownloadComplete;
 import com.quranreading.qibladirection.GlobalClass;
+import com.quranreading.qibladirection.MainActivityNew;
 import com.quranreading.qibladirection.R;
 import com.quranreading.qibladirection.SettingsActivity;
 
@@ -178,6 +179,10 @@ public class QuranReadActivity extends AppCompatActivity implements OnCompletion
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
         setContentView(R.layout.noman_quran_read);
+        //Call Ads on Launch
+        if (!((GlobalClass) getApplicationContext()).isPurchase) {
+            sendBroadcast(new Intent(MainActivityNew.ACTION_INTERSTITIAL_ADS_SHOW));
+        }
 
         IntentFilter surahDownloadComplete = new IntentFilter(Constants.BroadcastActionComplete);
         registerReceiver(downloadComplete, surahDownloadComplete);

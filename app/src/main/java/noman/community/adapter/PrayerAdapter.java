@@ -82,7 +82,7 @@ public class PrayerAdapter extends RecyclerView.Adapter<PrayerHolder> {
             @Override
             public void onClick(View view) {
                 // holder.imgMenu.setImageResource(R.drawable.side_arrow_open);
-                showPopupMenu(holder.imgMenu);
+                showPopupMenu(holder.imgMenu );
                 // imgMenuList.add(holder.imgMenu);
                 inappropirateCounter = Integer.parseInt(mPrayer.getInappropriate_counter());
                 mPrayerModel = mPrayer;
