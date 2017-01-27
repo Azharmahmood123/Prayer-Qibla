@@ -113,7 +113,7 @@ public class SurahsSharedPref {
 
     // ****** Adding Font Sizes here ****************
     public int getEnglishFontSize() {
-        return pref.getInt(FONT_SIZE_ENG, (int) _context.getResources().getDimension(R.dimen._8sdp));
+        return pref.getInt(FONT_SIZE_ENG,(int) _context. getResources().getDimension(R.dimen.text_size_twelve));
     }
 
     public void setEnglishFontSize(int size) {
@@ -122,11 +122,11 @@ public class SurahsSharedPref {
     }
 
     public int getArabicFontSize() {
-        return pref.getInt(FONT_SIZE_ARABIC, (int) _context.getResources().getDimension(R.dimen._14sdp));
+        return pref.getInt(FONT_SIZE_ARABIC, (int) _context.getResources().getDimension(R.dimen.text_size_fifteen));
     }
 
     public void setArabicFontSize(int size) {
-        editor.putInt(FONT_SIZE_ARABIC, size);
+        editor.putInt(FONT_SIZE_ARABIC,size);
         editor.commit();
     }
 

@@ -49,7 +49,7 @@ public class CompassMapsFragment extends Fragment implements OnMapReadyCallback,
 
     double makkahLatitude = 21.422510;
     double makkahLongitude = 39.826160;
-    double currentLat,currentLng;
+    double currentLat, currentLng;
     LatLng currentLocation, qiblaLocation;
     LocationReceiver mLocationReceiver;
 
@@ -245,8 +245,8 @@ public class CompassMapsFragment extends Fragment implements OnMapReadyCallback,
 
         // Add a marker in Sydney and move the camera
         currentLat = Double.parseDouble(locationPref.getLatitudeCurrent());
-        currentLng = Double.parseDouble(locationPref.getLatitudeCurrent());
-        currentLocation = new LatLng(currentLat, currentLng);
+        currentLng = Double.parseDouble(locationPref.getLongitudeCurrent());
+        currentLocation = new LatLng(currentLat - 0.00005, currentLng - 0.00005);
 
         String calcDistance = locationPref.getDistance();
         tvDistance.setText(getResources().getString(R.string.distance_from_qibla) + " " + calcDistance + " KM");
@@ -257,7 +257,7 @@ public class CompassMapsFragment extends Fragment implements OnMapReadyCallback,
 
         animateMapView(MAX_ZOOM_MAP, 2000, currentLocation);
 
-        mMap.addMarker(new MarkerOptions().position(currentLocation).title("Your Location").icon(BitmapDescriptorFactory.fromResource(R.drawable.marker_current)));
+        mMap.addMarker(new MarkerOptions().position(currentLocation).title("Your Location").icon(BitmapDescriptorFactory.fromResource(R.drawable.marker_blue)));
         mMap.addMarker(new MarkerOptions().position(qiblaLocation).title("Qibla").icon(BitmapDescriptorFactory.fromResource(R.drawable.marker_kaaba_map)));
         //  mMap.addMarker(new MarkerOptions().position(qiblaLocation).title("Qibla").icon(BitmapDescriptorFactory.fromResource(R.drawable.marker_kaaba_map)));
 
@@ -416,7 +416,7 @@ public class CompassMapsFragment extends Fragment implements OnMapReadyCallback,
             try {
 
                 currentLat = Double.parseDouble(locationPref.getLatitudeCurrent());
-                currentLng = Double.parseDouble(locationPref.getLatitudeCurrent());
+                currentLng = Double.parseDouble(locationPref.getLongitudeCurrent());
                 currentLocation = new LatLng(currentLat, currentLng);
 
                 if (currentLat != 0 && currentLat != -2 && currentLng != 0 && currentLng != -2) {

@@ -13,35 +13,22 @@ public class JuzConstant {
 
     public static int[] flag_images = {R.drawable.off_translation, R.drawable.flag_english, R.drawable.flag_english, R.drawable.flag_english, R.drawable.flag_english, R.drawable.flag_english, R.drawable.flag_english, R.drawable.flag_urdu, R.drawable.flag_spanish, R.drawable.flag_france, R.drawable.flag_chinese, R.drawable.flag_persian, R.drawable.flag_italian, R.drawable.flag_dutch, R.drawable.flag_indonesia, R.drawable.flag_melayu, R.drawable.flag_hindi, R.drawable.flag_bangla, R.drawable.flag_turkish};
     public static CharSequence[] translationList = {"Off", "English (Saheeh)", "English (Pickthal)", "English (Shakir)", "English (Maududi)", "English (Daryabadi)", "English (Yusuf Ali)", "Urdu", "Spanish", "French", "Chinese", "Persian", "Italian", "Dutch", "Indonesian", "Melayu", "Hindi", "Bangla", "Turkish"};
-   /* public static int fontSize_English[] = {
-            (int) CommunityGlobalClass.getInstance().getResources().getDimension(R.dimen._4sdp),
-            (int) CommunityGlobalClass.getInstance().getResources().getDimension(R.dimen._5sdp),
-            (int) CommunityGlobalClass.getInstance().getResources().getDimension(R.dimen._6sdp),
-            (int) CommunityGlobalClass.getInstance().getResources().getDimension(R.dimen._7sdp),
-            (int) CommunityGlobalClass.getInstance().getResources().getDimension(R.dimen._8sdp),
-            (int) CommunityGlobalClass.getInstance().getResources().getDimension(R.dimen._9sdp)};
-    public static int fontSize_Arabic[] = {
-            (int)CommunityGlobalClass.getInstance(). getResources().getDimension(R.dimen._6sdp),
-            (int) CommunityGlobalClass.getInstance().getResources().getDimension(R.dimen._8sdp),
-            (int) CommunityGlobalClass.getInstance().getResources().getDimension(R.dimen._10sdp),
-            (int) CommunityGlobalClass.getInstance().getResources().getDimension(R.dimen._12sdp),
-            (int) CommunityGlobalClass.getInstance().getResources().getDimension(R.dimen._14sdp),
-            (int) CommunityGlobalClass.getInstance().getResources().getDimension(R.dimen._16sdp)};*/
 
     public static int fontSize_English[] = {
-            9,
-            10,
-            11,
-            12,
-            13,
-            14};
+            (int)CommunityGlobalClass.getInstance(). getResources().getDimension(R.dimen._4sdp),
+            (int)CommunityGlobalClass.getInstance(). getResources().getDimension(R.dimen._5sdp),
+            (int)CommunityGlobalClass.getInstance(). getResources().getDimension(R.dimen._6sdp),
+            (int)CommunityGlobalClass.getInstance(). getResources().getDimension(R.dimen._7sdp),
+            (int)CommunityGlobalClass.getInstance(). getResources().getDimension(R.dimen._8sdp),
+            (int)CommunityGlobalClass.getInstance(). getResources().getDimension(R.dimen._9sdp)
+           };
     public static int fontSize_Arabic[] = {
-            12,
-            13,
-            14,
-            16,
-            18,
-            20
+            (int)CommunityGlobalClass.getInstance(). getResources().getDimension(R.dimen._6sdp),
+            (int)CommunityGlobalClass.getInstance(). getResources().getDimension(R.dimen._8sdp),
+            (int)CommunityGlobalClass.getInstance(). getResources().getDimension(R.dimen._9sdp),
+            (int)CommunityGlobalClass.getInstance(). getResources().getDimension(R.dimen._10sdp),
+            (int)CommunityGlobalClass.getInstance(). getResources().getDimension(R.dimen._11sdp),
+            (int)CommunityGlobalClass.getInstance(). getResources().getDimension(R.dimen._12sdp)
     };
 
 

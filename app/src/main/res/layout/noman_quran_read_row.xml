@@ -68,7 +68,7 @@
                 android:gravity="right"
                 android:lineSpacingExtra="@dimen/size_ten"
                 android:text="Arabimc here"
-                android:textSize="28sp" />
+                android:textSize="11dp" />
             <LinearLayout
                 android:id="@+id/menu_options_layout"
                 android:layout_width="wrap_content"
@@ -155,7 +155,7 @@
             android:paddingLeft="@dimen/_5sdp"
             android:paddingRight="@dimen/_5sdp"
             android:lineSpacingExtra="@dimen/size_two"
-            android:textSize="20sp"
+            android:textSize="14dp"
             android:textStyle="italic"
             android:typeface="serif" />
 
@@ -169,7 +169,7 @@
             android:paddingTop="@dimen/_2sdp"
             android:paddingLeft="@dimen/_5sdp"
             android:paddingRight="@dimen/_5sdp"
-            android:textSize="20sp"
+            android:textSize="14dp"
             android:layout_marginBottom="@dimen/_8sdp"/>
     </LinearLayout>
 
