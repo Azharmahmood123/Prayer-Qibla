@@ -52,13 +52,13 @@
 
         <ImageView
             android:id="@+id/btn_places_list_settings"
-            android:layout_width="@dimen/_50sdp"
-            android:layout_height="@dimen/_50sdp"
+            android:layout_width="@dimen/size_fourty_five"
+            android:layout_height="@dimen/size_fourty_five"
             android:adjustViewBounds="true"
             android:contentDescription="@string/img_desrcptn"
-            android:padding="@dimen/_16sdp"
+            android:padding="@dimen/size_ten"
             android:scaleType="fitCenter"
-            android:src="@drawable/ic_settings" />
+            android:src="@drawable/settng_r" />
     </LinearLayout>
 
 
@@ -77,9 +77,7 @@
         android:id="@+id/layout_maps_btns"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/layout_location_error"
-        android:layout_toRightOf="@+id/layout_location_error"
+        android:layout_below="@id/layout_location_error"
         android:orientation="horizontal"
         android:padding="@dimen/size_ten">
 

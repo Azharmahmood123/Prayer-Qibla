@@ -242,7 +242,7 @@ public class CompassMapsFragment extends Fragment implements OnMapReadyCallback,
         // Add a marker in Sydney and move the camera
         currentLat = Double.parseDouble(locationPref.getLatitudeCurrent());
         currentLng = Double.parseDouble(locationPref.getLongitudeCurrent());
-        currentLocation = new LatLng(currentLat - 0.00005, currentLng - 0.00005);
+        currentLocation = new LatLng(currentLat, currentLng);
 
         String calcDistance = locationPref.getDistance();
         tvDistance.setText(getResources().getString(R.string.distance_from_qibla) + " " + calcDistance + " KM");
