@@ -79,8 +79,8 @@ public class AlarmReciever extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         this.context = context;
         hijriEventsArray = context.getResources().getStringArray(R.array.event_name);
-        String date = intent.getExtras().getString("date");
-        String[] dateSplit = date.split("-");
+//        String date = intent.getExtras().getString("date");
+//        String[] dateSplit = date.split("-");
         getCurrentHijriDate();
         for (int i = 0; i < dateArray.length; i++) {
            // if (Hijri_date.equals("" + dateArray[i]) && Hijri_month.equals("" + monthArray[i])) {
