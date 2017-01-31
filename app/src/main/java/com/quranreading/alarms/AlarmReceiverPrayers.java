@@ -35,7 +35,7 @@ public class AlarmReceiverPrayers extends BroadcastReceiver {
         chkFajar = intent.getBooleanExtra("CHKFAJAR", false);
 
         alarmObj = new AlarmSharedPref(context);
-        indexSoundOption = alarmObj.getAlarmOptionIndex(AlarmSharedPref.ALARM_PRAYERS_SOUND[arrPrayers[entryId - 1]]);
+        indexSoundOption = alarmObj.getAlarmOptionIndex(AlarmSharedPref.ALARM_PRAYERS_SOUND[arrPrayers[entryId - 1]], entryId - 1);
 
         if (indexSoundOption == -1) {
             useOldAdhanSettings();
@@ -108,19 +108,23 @@ public class AlarmReceiverPrayers extends BroadcastReceiver {
 
         Uri uri = null;
 
-        if (indexSoundOption == 0) {
+        if (indexSoundOption == 0) {//Settings Default Device Notification Sound
             uri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-        } else if (indexSoundOption != 1) {
+        } else if (indexSoundOption != 1) {// If not Silent Mode
             sendBroadcastAlarm();
             String uriAudio = "";
-            if (chkFajar) {
-                uriAudio = "azan_4";
-            } else {
-                uriAudio = "azan_" + (indexSoundOption - 1);
-            }
+//            if (chkFajar) {
+//                uriAudio = "azan_4";
+//            } else {
+//                uriAudio = "azan_" + (indexSoundOption - 1);
+//            }
+
+            String[] adhanSounds = {"adhan_fajr_madina", "most_popular_adhan", "adhan_from_egypt", "adhan_madina", "azan_by_nasir_a_qatami", "azan_mansoural_zahrani", "mishary_rashid_al_afasy"};
+
+            uriAudio = adhanSounds[indexSoundOption - 2];
 
             uri = Uri.parse("android.resource://" + context.getPackageName() + "/raw/" + uriAudio);
-        } else {
+        } else {// If Silent Mode
             uri = null;
         }
 

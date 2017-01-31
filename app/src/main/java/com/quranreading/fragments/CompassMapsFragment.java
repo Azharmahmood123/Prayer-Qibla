@@ -242,7 +242,7 @@ public class CompassMapsFragment extends Fragment implements OnMapReadyCallback,
         // Add a marker in Sydney and move the camera
         currentLat = Double.parseDouble(locationPref.getLatitudeCurrent());
         currentLng = Double.parseDouble(locationPref.getLongitudeCurrent());
-        currentLocation = new LatLng(currentLat - 0.00005, currentLng - 0.00005);
+        currentLocation = new LatLng(currentLat, currentLng);
 
         String calcDistance = locationPref.getDistance();
         tvDistance.setText(getResources().getString(R.string.distance_from_qibla) + " " + calcDistance + " KM");
@@ -250,8 +250,6 @@ public class CompassMapsFragment extends Fragment implements OnMapReadyCallback,
 
         qiblaLocation = new LatLng(makkahLatitude, makkahLongitude);
         // mMap.setOnCameraChangeListener(this);
-
-        animateMapView(MAX_ZOOM_MAP, 2000, currentLocation);
 
         mMap.addMarker(new MarkerOptions().position(currentLocation).title("Your Location").icon(BitmapDescriptorFactory.fromResource(R.drawable.marker_blue)));
         mMap.addMarker(new MarkerOptions().position(qiblaLocation).title("Qibla").icon(BitmapDescriptorFactory.fromResource(R.drawable.marker_kaaba_map)));
@@ -263,6 +261,8 @@ public class CompassMapsFragment extends Fragment implements OnMapReadyCallback,
                 .add(new LatLng(currentLat, currentLng))
                 .add(new LatLng(makkahLatitude, makkahLongitude))  // Makkah Qibla Location
         );
+
+        animateMapView(MAX_ZOOM_MAP, 2000, currentLocation);
     }
 
     private void animateMapView(final float zoom, final int duration, final LatLng latLng) {
@@ -287,12 +287,29 @@ public class CompassMapsFragment extends Fragment implements OnMapReadyCallback,
                 });
             }
         });
+
         isAnimating = true;
         ivQiblaLoc.setVisibility(View.GONE);
         ivCurrentLoc.setVisibility(View.GONE);
-
-
     }
+
+
+//    private float getMaximumTilt(float zoom) {
+//        // for tilt values, see:
+//        // https://developers.google.com/maps/documentation/android/reference/com/google/android/gms/maps/model/CameraPosition.Builder?hl=fr
+//
+//        float tilt = 30.0f;
+//
+//        if (zoom > 15.5f) {
+//            tilt = 67.5f;
+//        } else if (zoom >= 14.0f) {
+//            tilt = (((zoom - 14.0f) / 1.5f) * (67.5f - 45.0f)) + 45.0f;
+//        } else if (zoom >= 10.0f) {
+//            tilt = (((zoom - 10.0f) / 4.0f) * (45.0f - 30.0f)) + 30.0f;
+//        }
+//
+//        return tilt;
+//    }
 
     @Override
     public void onRotationUpdate(float[] newMatrix) {

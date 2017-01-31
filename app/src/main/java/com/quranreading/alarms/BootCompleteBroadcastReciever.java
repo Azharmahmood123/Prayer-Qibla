@@ -88,11 +88,8 @@ public class BootCompleteBroadcastReciever extends BroadcastReceiver {
 			}
 		}
 
-
-
 		//Set Daily Alarm to Reset Prayer Time
 		mAlarmHelper.setAlarmResetTimeReciever(mAlarmHelper.setAlarmTime(PrayerTimeUpdateReciever.ALARM_RESET_PRAYER_HOUR,PrayerTimeUpdateReciever.ALARM_RESET_PRAYER_MINUTES,PrayerTimeUpdateReciever.ALARM_RESET_PRAYER_AM_PM),PrayerTimeUpdateReciever.ALARM_RESET_PRAYER_ID);
-
 	}
 
 	private void breakTimeSetAlarm(int index, String time, boolean chkFajar) {

@@ -115,18 +115,17 @@ public class SettingsPrayerListSoundActivity extends AppCompatActivity implement
 
         String[] methodNames = {getString(R.string.txt_fajr), getString(R.string.txt_sunrise), getString(R.string.txt_zuhr), getString(R.string.txt_asar), getString(R.string.txt_maghrib), getString(R.string.txt_isha)};
 
-        String[] soundOption = {getResources().getString(R.string.default_tone), getResources().getString(R.string.silent), getResources().getString(R.string.adhan1), getResources().getString(R.string.adhan2), getResources().getString(R.string.adhan3)};
-        String[] corrections = new String[6];
+        String[] soundOption = {getResources().getString(R.string.default_tone), getResources().getString(R.string.silent), getResources().getString(R.string.adhan1_new), getResources().getString(R.string.adhan2_new), getResources().getString(R.string.adhan3_new), getResources().getString(R.string.adhan4_new), getResources().getString(R.string.adhan5_new), getResources().getString(R.string.adhan6_new), getResources().getString(R.string.adhan7_new)};
+        String[] alarmTones = new String[6];
 
         AlarmSharedPref alarmObj = new AlarmSharedPref(this);
 
-        for (int i = 0; i < corrections.length; i++) {
-
-            corrections[i] = soundOption[alarmObj.getAlarmOptionIndex(AlarmSharedPref.ALARM_PRAYERS_SOUND[i])];
+        for (int i = 0; i < alarmTones.length; i++) {
+            alarmTones[i] = soundOption[alarmObj.getAlarmOptionIndex(AlarmSharedPref.ALARM_PRAYERS_SOUND[i], i)];
         }
 
 
-        adapter = new CalculationMethodAdapter(context, methodNames, corrections);
+        adapter = new CalculationMethodAdapter(context, methodNames, alarmTones);
         listView.setAdapter(adapter);
     }
 

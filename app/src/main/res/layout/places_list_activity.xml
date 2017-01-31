@@ -79,7 +79,7 @@
         android:gravity="center_vertical"
         android:onClick="onSettingsLocationClick"
         android:orientation="horizontal"
-        android:visibility="visible" >
+        android:visibility="gone" >
 
         <TextView
             android:id="@+id/tv_places_location_warning"
@@ -98,13 +98,13 @@
 
         <ImageView
             android:id="@+id/btn_places_list_settings"
-            android:layout_width="@dimen/_50sdp"
-            android:layout_height="@dimen/_50sdp"
+            android:layout_width="@dimen/size_fourty_five"
+            android:layout_height="@dimen/size_fourty_five"
             android:adjustViewBounds="true"
             android:contentDescription="@string/img_desrcptn"
-            android:padding="@dimen/_16sdp"
+            android:padding="@dimen/size_ten"
             android:scaleType="fitCenter"
-            android:src="@drawable/ic_settings" />
+            android:src="@drawable/settng_r" />
     </LinearLayout>
 
     <ListView

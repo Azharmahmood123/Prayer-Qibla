@@ -78,7 +78,7 @@ public class NamesListPlayingActivity extends AppCompatActivity implements Adapt
 
     private int nameTiming[] = {0, 1310, 3290, 4846, 6343, 8037, 9737, 10950, 12526, 14396, 15766, 17960, 19750, 21210, 23140, 24484, 26334, 28034, 29591, 31351, 32481, 35081, 36672, 38028, 39758, 41158, 42349, 43852, 45502, 46659, 47376, 48706, 50136, 51516, 52916, 54223, 55683, 57213, 58383,
             59563, 60973, 62393, 63503, 65047, 66640, 68273, 69833, 71024, 72324, 73934, 75834, 77074, 78277, 79717, 81217, 82517, 83771, 85201, 86418, 87418, 88718, 89928, 91328, 92208, 93948, 95442, 97198, 99015, 100322, 101729, 103309, 104879, 106489, 107602, 108849, 110509, 112119, 113559,
-            115079, 115763, 117303, 118873, 120063, 121393, 123786, 127294, 128620, 130320, 131617, 132487, 134707, 138707, 140367, 141425, 142618, 143735, 145555, 147535, 148535, 1590000};
+            115079, 115763, 117303, 118873, 120063, 121393, 123786, 127294, 128620, 130320, 131617, 132487, 134707, 138707, 140367, 141425, 142618, 143735, 145555, 147535, 148535, 1600000};
 
 
     ListView gridViewNames;
@@ -217,7 +217,7 @@ public class NamesListPlayingActivity extends AppCompatActivity implements Adapt
                 mGridViewAdapter.hilightListItem(currentPosition);
                 gridViewNames.setSelection(currentPosition);
                 seekBarNames.setProgress(currentPosition);
-                if (delayIndex < 99) {
+                if (delayIndex < nameTiming.length - 1) {
                     delayIndex++;
                 }
             }
@@ -467,7 +467,7 @@ public class NamesListPlayingActivity extends AppCompatActivity implements Adapt
         super.onPause();
 
 
-        if (mp != null ) {
+        if (mp != null) {
             if (play == 1) {
                 mp.seekTo(0);
                 mp.pause();
