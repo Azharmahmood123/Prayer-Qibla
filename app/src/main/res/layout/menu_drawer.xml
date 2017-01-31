@@ -91,6 +91,7 @@
             android:src="@drawable/ic_menu_1" />
 
         <TextView
+            android:text="Menu item"
             android:id="@+id/tv_row_1"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -100,7 +101,7 @@
             android:gravity="center|left"
             android:paddingLeft="@dimen/size_ten"
             android:textColor="@drawable/menu_row_text_color"
-            android:textSize="@dimen/drawer_menu_row_text_size" />
+            android:textSize="@dimen/_12sdp" />
     </RelativeLayout>
 
     <RelativeLayout

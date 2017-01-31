@@ -96,8 +96,8 @@ public class CalendarAdapter extends BaseAdapter {
 
         holder.dataCell.setBackgroundColor(Color.TRANSPARENT);
         holder.img_event.setVisibility(View.GONE);
-        holder.georgianDate.setTypeface(((GlobalClass) _context.getApplicationContext()).faceRobotoL);
-        holder.hijriDate.setTypeface(((GlobalClass) _context.getApplicationContext()).faceRobotoL);
+        holder.georgianDate.setTypeface(((GlobalClass) _context.getApplicationContext()).faceRobotoR);
+        holder.hijriDate.setTypeface(((GlobalClass) _context.getApplicationContext()).faceRobotoR);
 
         //Convert Hijri to Georgian
         int[] date = dateConverter.ummalQuraCalendar(Integer.parseInt(list.get(position).date),

@@ -28,6 +28,7 @@ import android.widget.Toast;
 
 import com.quranreading.model.GridItems;
 import com.quranreading.qibladirection.CompassActivity;
+import com.quranreading.qibladirection.FirstOptionsActivity;
 import com.quranreading.qibladirection.GlobalClass;
 import com.quranreading.qibladirection.MainActivityNew;
 import com.quranreading.qibladirection.R;
@@ -147,9 +148,12 @@ public class MenuGridFragment extends Fragment {
 
             switch (pos) {
                 case MENU_TIMINGS:
-                    if (!((GlobalClass) mContext.getApplicationContext()).isPurchase) {
-                        mContext.sendBroadcast(new Intent(MainActivityNew.ACTION_INTERSTITIAL_ADS_SHOW));
-                    }
+                    LocationPref  locationPref = new LocationPref(getActivity());
+                     if (!locationPref.isFirstSalatLaunch()) { //beacuse dialog apper on the intersitial  which is setAalarm
+                         if (!((GlobalClass) mContext.getApplicationContext()).isPurchase) {
+                             mContext.sendBroadcast(new Intent(MainActivityNew.ACTION_INTERSTITIAL_ADS_SHOW));
+                         }
+                     }
                     intent = new Intent(mContext, TimingsActivity.class);
                     startActivity(intent);
                     break;

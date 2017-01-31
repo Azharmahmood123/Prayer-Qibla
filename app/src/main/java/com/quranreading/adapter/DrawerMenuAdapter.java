@@ -91,9 +91,9 @@ public class DrawerMenuAdapter extends BaseAdapter {
 			holder.tv_user_email = (TextView) convertView.findViewById(R.id.tv_user_email);
 			holder.tv_user_name = (TextView) convertView.findViewById(R.id.tv_user_name);
 
-			holder.tvRow1.setTypeface(((GlobalClass) mContext.getApplicationContext()).faceRobotoL);
-			holder.tvRow2.setTypeface(((GlobalClass) mContext.getApplicationContext()).faceRobotoL);
-			holder.tvHeader1.setTypeface(((GlobalClass) mContext.getApplicationContext()).faceRobotoL);
+			holder.tvRow1.setTypeface(((GlobalClass) mContext.getApplicationContext()).faceRobotoR);
+			holder.tvRow2.setTypeface(((GlobalClass) mContext.getApplicationContext()).faceRobotoR);
+			holder.tvHeader1.setTypeface(((GlobalClass) mContext.getApplicationContext()).faceRobotoR);
 
 			holder.tv_user_name.setTypeface(((GlobalClass) mContext.getApplicationContext()).faceRobotoL);
 			holder.tv_user_email.setTypeface(((GlobalClass) mContext.getApplicationContext()).faceRobotoL);

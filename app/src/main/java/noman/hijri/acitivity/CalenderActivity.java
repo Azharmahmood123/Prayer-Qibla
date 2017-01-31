@@ -73,9 +73,9 @@ public class CalenderActivity extends AdIntegration {
         btnEvent = (Button) findViewById(R.id.btn_Event);
         btnConvert = (Button) findViewById(R.id.btn_Converter);
 
-        btnToday.setTypeface(((GlobalClass) CalenderActivity.this.getApplicationContext()).faceRobotoL);
-        btnEvent.setTypeface(((GlobalClass) CalenderActivity.this.getApplicationContext()).faceRobotoL);
-        btnConvert.setTypeface(((GlobalClass) CalenderActivity.this.getApplicationContext()).faceRobotoL);
+        btnToday.setTypeface(((GlobalClass) CalenderActivity.this.getApplicationContext()).faceRobotoR);
+        btnEvent.setTypeface(((GlobalClass) CalenderActivity.this.getApplicationContext()).faceRobotoR);
+        btnConvert.setTypeface(((GlobalClass) CalenderActivity.this.getApplicationContext()).faceRobotoR);
 
 
         btnToday.setOnClickListener(new View.OnClickListener() {

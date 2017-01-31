@@ -132,9 +132,9 @@ public class CalenderFragment extends Fragment {
         onToday = (LinearLayout) rootView.findViewById(R.id.layoutToday);
         onEvents = (LinearLayout) rootView.findViewById(R.id.layoutEvents);
 
-        tvMonthHeader.setTypeface(((GlobalClass) getActivity().getApplicationContext()).faceRobotoL);
-        tvGeorgianDate.setTypeface(((GlobalClass) getActivity().getApplicationContext()).faceRobotoL);
-        tvHijriDDate.setTypeface(((GlobalClass) getActivity().getApplicationContext()).faceRobotoL);
+        tvMonthHeader.setTypeface(((GlobalClass) getActivity().getApplicationContext()).faceRobotoR);
+        tvGeorgianDate.setTypeface(((GlobalClass) getActivity().getApplicationContext()).faceRobotoR);
+        tvHijriDDate.setTypeface(((GlobalClass) getActivity().getApplicationContext()).faceRobotoR);
 
 
         currentMonth = month;

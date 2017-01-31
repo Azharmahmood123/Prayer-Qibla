@@ -87,8 +87,8 @@ public class EventAdapter extends ExpandableRecyclerAdapter<EventAdapter.PeopleL
 
         public void bind(final int position) {
             super.bind(position);
-            date.setTypeface(((GlobalClass) mContext.getApplicationContext()).faceRobotoL);
-            name.setTypeface(((GlobalClass) mContext.getApplicationContext()).faceRobotoL);
+            date.setTypeface(((GlobalClass) mContext.getApplicationContext()).faceRobotoR);
+            name.setTypeface(((GlobalClass) mContext.getApplicationContext()).faceRobotoR);
             date.setText(visibleItems.get(position).date);
             name.setText(visibleItems.get(position).title);
 
@@ -172,12 +172,12 @@ public class EventAdapter extends ExpandableRecyclerAdapter<EventAdapter.PeopleL
         }
 
         public void bind(final int position) {
-            name.setTypeface(((GlobalClass) mContext.getApplicationContext()).faceRobotoL);
+            name.setTypeface(((GlobalClass) mContext.getApplicationContext()).faceRobotoR);
             name.setText(getGregorianDate((position - 1)) + "\n\n" + visibleItems.get(position).description);
             linkText.setClickable(true);
             linkText.setMovementMethod(LinkMovementMethod.getInstance());
             linkText.setText("For more information:\n" + link[position - 1]);
-            linkText.setTypeface(((GlobalClass) mContext.getApplicationContext()).faceRobotoL);
+            linkText.setTypeface(((GlobalClass) mContext.getApplicationContext()).faceRobotoR);
             //linkText.setText(""+link[position - 1]);
 
             if (linkText.getLinksClickable() == true) {
