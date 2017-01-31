@@ -39,13 +39,15 @@ public class SettingsTimeAlarmActivity extends AppCompatActivity implements Medi
     int value = 0;
     int indexSoundOption = 0;
 
-    private boolean[] chkPlay = new boolean[8];
-    private ImageView[] btnPlay = new ImageView[8];
+    int[] adhanSounds = {R.raw.adhan_fajr_madina, R.raw.most_popular_adhan, R.raw.adhan_from_egypt, R.raw.adhan_madina, R.raw.azan_by_nasir_a_qatami, R.raw.azan_mansoural_zahrani, R.raw.mishary_rashid_al_afasy};
+
+    private boolean[] chkPlay = new boolean[7];
+    private ImageView[] btnPlay = new ImageView[7];
     ;
-    private ImageView[] btnsAdhanSound = new ImageView[10];
+    private ImageView[] btnsAdhanSound = new ImageView[9];
     public TextView tvNotificationTimeHead, tvNotificationSoundHead;
     public static TextView tvNotificationTime;
-    public TextView[] tvSounds = new TextView[10];
+    public TextView[] tvSounds = new TextView[9];
 
 
     private static final int btn_Default_tone = 0;
@@ -57,7 +59,6 @@ public class SettingsTimeAlarmActivity extends AppCompatActivity implements Medi
     private static final int btn_Adhan_5 = 6;
     private static final int btn_Adhan_6 = 7;
     private static final int btn_Adhan_7 = 8;
-    private static final int btn_Adhan_8 = 9;
 
     private static final int btn_play_1 = 0;
     private static final int btn_play_2 = 1;
@@ -66,7 +67,6 @@ public class SettingsTimeAlarmActivity extends AppCompatActivity implements Medi
     private static final int btn_play_5 = 4;
     private static final int btn_play_6 = 5;
     private static final int btn_play_7 = 6;
-    private static final int btn_play_8 = 7;
 
     private AlarmSharedPref alarmObj;
 
@@ -89,11 +89,10 @@ public class SettingsTimeAlarmActivity extends AppCompatActivity implements Medi
         });
 
         TextView tvHeading = (TextView) findViewById(R.id.txt_toolbar);
-        TextView tvSave = (TextView) findViewById(R.id.tv_alarm_settings_save);
+        ImageView ivSave = (ImageView) findViewById(R.id.iv_alarm_settings_save);
 
 //        tvHeading.setTypeface(((GlobalClass) getApplication()).faceRobotoR);
-        tvSave.setTypeface(((GlobalClass) getApplication()).faceRobotoB);
-        tvSave.setOnClickListener(new View.OnClickListener() {
+        ivSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onSaveNotification(v);
@@ -122,7 +121,7 @@ public class SettingsTimeAlarmActivity extends AppCompatActivity implements Medi
 
     private void initializeSettings() {
 
-        indexSoundOption = alarmObj.getAlarmOptionIndex(AlarmSharedPref.ALARM_PRAYERS_SOUND[posPrayer]);
+        indexSoundOption = alarmObj.getAlarmOptionIndex(AlarmSharedPref.ALARM_PRAYERS_SOUND[posPrayer], posPrayer);
         if (indexSoundOption == -1) {
             useOldAdhanSettings();
         }
@@ -158,14 +157,14 @@ public class SettingsTimeAlarmActivity extends AppCompatActivity implements Medi
         tvSounds[6] = (TextView) findViewById(R.id.tv_adhan_5);
         tvSounds[7] = (TextView) findViewById(R.id.tv_adhan_6);
         tvSounds[8] = (TextView) findViewById(R.id.tv_adhan_7);
-        tvSounds[9] = (TextView) findViewById(R.id.tv_adhan_8);
+//        tvSounds[9] = (TextView) findViewById(R.id.tv_adhan_8);
 
         tvNotificationTimeHead = (TextView) findViewById(R.id.tv_notification_time_header);
         tvNotificationSoundHead = (TextView) findViewById(R.id.tv_tone_settings_header);
         tvNotificationTime = (TextView) findViewById(R.id.tv_notification_time);
 
-        tvNotificationTimeHead.setTypeface(((GlobalClass) getApplication()).faceRobotoR);
-        tvNotificationSoundHead.setTypeface(((GlobalClass) getApplication()).faceRobotoR);
+        tvNotificationTimeHead.setTypeface(((GlobalClass) getApplication()).faceRobotoB);
+        tvNotificationSoundHead.setTypeface(((GlobalClass) getApplication()).faceRobotoB);
         tvNotificationTime.setTypeface(((GlobalClass) getApplication()).faceRobotoR);
 
         for (int index = 0; index < tvSounds.length; index++) {
@@ -194,7 +193,7 @@ public class SettingsTimeAlarmActivity extends AppCompatActivity implements Medi
         btnsAdhanSound[btn_Adhan_5] = (ImageView) findViewById(R.id.img_adhan_5_opt);
         btnsAdhanSound[btn_Adhan_6] = (ImageView) findViewById(R.id.img_adhan_6_opt);
         btnsAdhanSound[btn_Adhan_7] = (ImageView) findViewById(R.id.img_adhan_7_opt);
-        btnsAdhanSound[btn_Adhan_8] = (ImageView) findViewById(R.id.img_adhan_8_opt);
+//        btnsAdhanSound[btn_Adhan_8] = (ImageView) findViewById(R.id.img_adhan_8_opt);
 
         btnPlay[0] = (ImageView) findViewById(R.id.img_adhan_1_play);
         btnPlay[1] = (ImageView) findViewById(R.id.img_adhan_2_play);
@@ -203,14 +202,14 @@ public class SettingsTimeAlarmActivity extends AppCompatActivity implements Medi
         btnPlay[4] = (ImageView) findViewById(R.id.img_adhan_5_play);
         btnPlay[5] = (ImageView) findViewById(R.id.img_adhan_6_play);
         btnPlay[6] = (ImageView) findViewById(R.id.img_adhan_7_play);
-        btnPlay[7] = (ImageView) findViewById(R.id.img_adhan_8_play);
+//        btnPlay[7] = (ImageView) findViewById(R.id.img_adhan_8_play);
     }
 
     private void adjustSoundViews() {
         for (int i = 0; i < btnsAdhanSound.length; i++) {
             btnsAdhanSound[i].setImageResource(0);
         }
-        btnsAdhanSound[indexSoundOption].setImageResource(R.drawable.tick_btn);
+        btnsAdhanSound[indexSoundOption].setImageResource(R.drawable.tick_gray);
     }
 
     public void onAlarmTimeClickListner(View view) {
@@ -221,7 +220,7 @@ public class SettingsTimeAlarmActivity extends AppCompatActivity implements Medi
     public void onAlarmOptionsClick(View view) {
         int index = Integer.parseInt(view.getTag().toString());
         if (!((GlobalClass) getApplication()).isPurchase) {
-            if (index < 3) {
+            if (index < 4) {
                 indexSoundOption = index;
                 adjustSoundViews();
             } else {
@@ -275,18 +274,18 @@ public class SettingsTimeAlarmActivity extends AppCompatActivity implements Medi
 
     public void initializeAudios(int pos) {
 
-        String uriAudio = "azan_" + (pos);
-
-        int resrcAudio = getResources().getIdentifier(uriAudio, "raw", getPackageName());
+//        String uriAudio = "azan_" + (pos);
+//
+//        int resrcAudio = getResources().getIdentifier(uriAudio, "raw", getPackageName());
         if (mp != null) {
             mp.release();
         }
 
-        if (resrcAudio > 0) {
-            mp = MediaPlayer.create(this, resrcAudio);
-            mp.setOnCompletionListener(this);
-            mp.setOnErrorListener(this);
-        }
+//        if (resrcAudio > 0) {
+        mp = MediaPlayer.create(this, adhanSounds[pos]);
+        mp.setOnCompletionListener(this);
+        mp.setOnErrorListener(this);
+//        }
     }
 
     private void resetAudios() {
@@ -302,7 +301,7 @@ public class SettingsTimeAlarmActivity extends AppCompatActivity implements Medi
             }
 
             if (value != -1) {
-                initializeAudios(value + 1);
+                initializeAudios(value);
                 mp.start();
             } else {
 
@@ -319,7 +318,6 @@ public class SettingsTimeAlarmActivity extends AppCompatActivity implements Medi
     @Override
     public void onCompletion(MediaPlayer mp) {
         // TODO Auto-generated methodIndex stub
-
         value = -1;
         resetAudios();
     }

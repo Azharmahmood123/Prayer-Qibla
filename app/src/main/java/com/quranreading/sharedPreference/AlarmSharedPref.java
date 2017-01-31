@@ -152,8 +152,11 @@ public class AlarmSharedPref {
 		return pref.getString(key, "");
 	}
 
-	public int getAlarmOptionIndex(String key) {
-		return pref.getInt(key,0);
+	public int getAlarmOptionIndex(String key, int index) {
+
+		int[] defaultValues = {2,1,3,3,3,3};
+		return pref.getInt(key,defaultValues[index]);
+
 	}
 
 	public void setAlarmOptionIndex(String key, int indexSoundOption) {

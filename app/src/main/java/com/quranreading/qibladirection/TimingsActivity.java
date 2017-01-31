@@ -200,6 +200,11 @@ public class TimingsActivity extends AppCompatActivity implements OnLocationSetL
         tvEdited[Maghrib] = (TextView) findViewById(R.id.tv_maghrib_time_edited);
         tvEdited[Isha] = (TextView) findViewById(R.id.tv_isha_time_edited);
 
+        for (int i = 0; i<tvEdited.length;i++)
+        {
+            tvEdited[i].setTypeface(((GlobalClass) mActivity.getApplicationContext()).faceRobotoR);
+        }
+
 
         for (int i = 0; i < tvPrayerAlarmTimes.length; i++) {
             tvPrayerAlarmTimes[i].setOnClickListener(onAlarmTimeClickListner);

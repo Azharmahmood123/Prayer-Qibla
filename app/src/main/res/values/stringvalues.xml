@@ -101,15 +101,23 @@
     <string name="on">ON</string>
     <string name="off">OFF</string>
 
+<!--
     <string name="adhan1">Adhan 1</string>
     <string name="adhan2">Adhan 2</string>
     <string name="adhan3">Adhan 3</string>
-
     <string name="adhan4">Adhan 4</string>
     <string name="adhan5">Adhan 5</string>
     <string name="adhan6">Adhan 6</string>
     <string name="adhan7">Adhan 7</string>
-    <string name="adhan8">Adhan 8</string>
+    -->
+
+    <string name="adhan1_new">Adhan Fajr Madina</string>
+    <string name="adhan2_new">Most Popular Adhan</string>
+    <string name="adhan3_new">Adhan Madina</string>
+    <string name="adhan4_new">Adhan Nasir Al-Qatami</string>
+    <string name="adhan5_new">Adhan Mansur Al-Zahrani</string>
+    <string name="adhan6_new">Mishary Rashid Al-Afsay</string>
+    <string name="adhan7_new">Adhan from Egypt</string>
 
     <string name="reset">Reset</string>
     <string name="reset_all">Reset All</string>

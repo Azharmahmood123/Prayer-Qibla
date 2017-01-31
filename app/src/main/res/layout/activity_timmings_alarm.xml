@@ -100,7 +100,7 @@
                         android:contentDescription="@string/img_desrcptn"
                         android:padding="@dimen/size_seven"
                         android:scaleType="fitCenter"
-                        android:src="@drawable/tick_btn" />
+                        android:src="@drawable/tick_gray" />
                 </RelativeLayout>
 
                 <View style="@style/view_line_light_gray" />
@@ -144,7 +144,7 @@
                         android:layout_alignParentLeft="true"
 
                         android:gravity="center|left"
-                        android:text="@string/adhan1"
+                        android:text="@string/adhan1_new"
                         android:textColor="@color/black"
                         android:textSize="@dimen/_14sdp" />
 
@@ -187,7 +187,7 @@
                         android:layout_alignParentLeft="true"
 
                         android:gravity="center|left"
-                        android:text="@string/adhan2"
+                        android:text="@string/adhan2_new"
                         android:textColor="@color/black"
                         android:textSize="@dimen/_14sdp" />
 
@@ -230,7 +230,7 @@
                         android:layout_alignParentLeft="true"
 
                         android:gravity="center|left"
-                        android:text="@string/adhan3"
+                        android:text="@string/adhan3_new"
                         android:textColor="@color/black"
                         android:textSize="@dimen/_14sdp" />
 
@@ -274,7 +274,7 @@
                         android:layout_alignParentLeft="true"
 
                         android:gravity="center|left"
-                        android:text="@string/adhan4"
+                        android:text="@string/adhan4_new"
                         android:textColor="@color/black"
                         android:textSize="@dimen/_14sdp" />
 
@@ -318,7 +318,7 @@
                         android:layout_alignParentLeft="true"
 
                         android:gravity="center|left"
-                        android:text="@string/adhan5"
+                        android:text="@string/adhan5_new"
                         android:textColor="@color/black"
                         android:textSize="@dimen/_14sdp" />
 
@@ -362,7 +362,7 @@
                         android:layout_alignParentLeft="true"
 
                         android:gravity="center|left"
-                        android:text="@string/adhan6"
+                        android:text="@string/adhan6_new"
                         android:textColor="@color/black"
                         android:textSize="@dimen/_14sdp" />
 
@@ -406,7 +406,7 @@
                         android:layout_alignParentLeft="true"
 
                         android:gravity="center|left"
-                        android:text="@string/adhan7"
+                        android:text="@string/adhan7_new"
                         android:textColor="@color/black"
                         android:textSize="@dimen/_14sdp" />
 
@@ -437,7 +437,7 @@
                 </RelativeLayout>
 
 
-                <View style="@style/view_line_light_gray" />
+                <!--<View style="@style/view_line_light_gray" />
                 <RelativeLayout
                     android:id="@+id/row_adhan_8"
                     style="@style/setting_row_bg_l"
@@ -450,7 +450,7 @@
                         android:layout_alignParentLeft="true"
 
                         android:gravity="center|left"
-                        android:text="@string/adhan8"
+                        android:text="@string/adhan8_new"
                         android:textColor="@color/black"
                         android:textSize="@dimen/_14sdp" />
 
@@ -478,7 +478,7 @@
 
                         android:padding="@dimen/size_seven"
                         android:scaleType="fitCenter" />
-                </RelativeLayout>
+                </RelativeLayout>-->
 
                 <View style="@style/view_line_light_gray" />
             </LinearLayout>

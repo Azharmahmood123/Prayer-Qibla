@@ -167,7 +167,7 @@ public class NamesDetailActivity extends AppCompatActivity implements MediaPlaye
 
     private void setNamesData() {
         tvHeading.setText(namesData.getNameEnglish(namePosition));
-        audioFile = "name_" + (namePosition + 1) + MP3;
+        audioFile = "a_" + (namePosition + 1) + MP3;
         initializeAudios();
     }
 
@@ -329,9 +329,7 @@ public class NamesDetailActivity extends AppCompatActivity implements MediaPlaye
             if (play == 1) {
                 mp.seekTo(0);
                 mp.pause();
-            }
-            else
-            {
+            } else {
                 mp.seekTo(0);
             }
         }
