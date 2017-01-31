@@ -195,8 +195,9 @@ public class QuranReadListAdapter extends BaseAdapter {
 
         holder.tvArabic.setTextColor(Color.parseColor("#000000"));
         holder.tvArabic.setTypeface(((GlobalClass) mContext.getApplicationContext()).faceArabic);
-        holder.tvTranslation.setTypeface(((GlobalClass) mContext.getApplicationContext()).faceRobotoL);
-        holder.tvTransliteration.setTypeface(((GlobalClass) mContext.getApplicationContext()).faceRobotoL);
+        holder.tvTranslation.setTypeface(((GlobalClass) mContext.getApplicationContext()).faceRobotoR);
+
+        holder.tvTransliteration.setTypeface(((GlobalClass) mContext.getApplicationContext()).faceRobotoR,Typeface.ITALIC);
         holder.tvTranslation.setTextColor(Color.parseColor("#000000"));
         holder.tvTransliteration.setTextColor(mContext.getResources().getColor(R.color.transliration_color));
 
@@ -236,9 +237,9 @@ public class QuranReadListAdapter extends BaseAdapter {
                 //holder.tvAyahNo.setText(String.valueOf(position + 1));
                 holder.ayahNo.setVisibility(View.VISIBLE);
                 holder.tvAyahNo.setText(JuzConstant.arabicCounting[position + 1]);
-                String ayaNumber = "﴿" + JuzConstant.arabicCounting[position + 1] + "﴾";
+                String ayaNumber = "\uFD3F" + JuzConstant.arabicCounting[position + 1] + "\uFD3E";
                 arabicAyat = ArabicUtilities.reshapeSentence(arabic);
-                String styledText = arabicAyat + "<font color='#805D01'>" + ayaNumber + "</font>";
+                String styledText = arabicAyat + "<font color='#805D01' size='1'>" + ayaNumber + "</font>";
                 holder.tvArabic.setText(Html.fromHtml(styledText), TextView.BufferType.SPANNABLE);
             } else {
                 if (position == 0) {
@@ -523,26 +524,39 @@ public class QuranReadListAdapter extends BaseAdapter {
 
 
     void doAyahNumberColor(TextView tvArabic, String arabicAyat, int position, int color) {
+int length=0;
         ForegroundColorSpan fcs = new ForegroundColorSpan(color);
         SpannableStringBuilder sb = new SpannableStringBuilder(arabicAyat.trim());
         if (position > 100) {
             sb.setSpan(fcs, arabicAyat.trim().length() - 5, arabicAyat.trim().length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+            length=5;
         } else if (position > 10) {
             sb.setSpan(fcs, arabicAyat.trim().length() - 4, arabicAyat.trim().length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+            length=10;
         } else {
             if (position != 0) {
                 sb.setSpan(fcs, arabicAyat.trim().length() - 3, arabicAyat.trim().length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+                length = 3;
             } else {
                 if (surahPosition == 9 || surahPosition == 1) {
                     sb.setSpan(fcs, arabicAyat.trim().length() - 3, arabicAyat.trim().length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+                    length = 3;
                 }
             }
         }
+
+            // String  path = arabicAyat.substring(Math.max(0, arabicAyat.length() - length));//Remove aya index
+
         tvArabic.setText(sb);
+
+
+
     }
 
 
     public void coloredAyahText(boolean isLightGreyText, int key, String colorBlack) {
+
+
         mTransaltionText.get(key).setTextColor(Color.parseColor(colorBlack));
         if (isLightGreyText) {
             mTransliraltionText.get(key).setTextColor(Color.parseColor(colorBlack));

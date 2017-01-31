@@ -27,7 +27,7 @@ import quran.sharedpreference.SurahsSharedPref;
 public class AlarmReceiverAyah extends BroadcastReceiver {
 
 	public static final int NOTIFY_AYAH_ALARM_ID = 10;
-	public static final int HOUR = 18;//24 hours format is used here as Ayah Notification is set by user through Time Picker in Settings Screen
+	public static final int HOUR = 6;//24 hours format is used here as Ayah Notification is set by user through Time Picker in Settings Screen
 	public static final int MINT = 0;
 	// public static final String AM = "am";
 	// public static final String PM = "pm";

@@ -26,8 +26,9 @@ import quran.sharedpreference.SurahsSharedPref;
 
 public class TextSettingScreen extends Activity {
     SurahsSharedPref mSurahsSharedPref;
+    TextView tv1, tv2, tv3;
+    boolean chkTransliteration = false;
 
-    boolean chkTransliteration=false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,15 +54,25 @@ public class TextSettingScreen extends Activity {
 
 
         translirationSetting();
+
+        tv1 = (TextView) findViewById(R.id.title_1);
+        tv2 = (TextView) findViewById(R.id.title_2);
+        tv3 = (TextView) findViewById(R.id.title_3);
+        tv1.setTypeface(((GlobalClass) getApplication()).faceRobotoB);
+        tv3.setTypeface(((GlobalClass) getApplication()).faceRobotoB);
+        tv2.setTypeface(((GlobalClass) getApplication()).faceRobotoB);
     }
 
     public void handleSeekBar() {
+
+        JuzConstant.doSome();
+
         final TextView text = (TextView) findViewById(R.id.txt_example);
         text.setTypeface(((GlobalClass) getApplicationContext()).faceArabic);
         text.setText(ArabicUtilities.reshapeSentence("الفاتحة"));
 
-        final int fontSize_English[] = JuzConstant.fontSize_English;
-        final int fontSize_Arabic[] = JuzConstant.fontSize_Arabic;
+        final int fontSize_English[] = JuzConstant.fontSize_E;
+        final int fontSize_Arabic[] = JuzConstant.fontSize_A;
 
         final SeekBar seekBar = (SeekBar) findViewById(R.id.seekbar_text_size);
         seekBar.setProgress(mSurahsSharedPref.getSeekbarPosition());
@@ -122,39 +133,38 @@ public class TextSettingScreen extends Activity {
             }
         });
     }
-public void translirationSetting()
-{
 
-    CheckBox btnTransliteration =(CheckBox)findViewById(R.id.check_transliteration_settings);
-    chkTransliteration = mSurahsSharedPref.isTransliteration();
-    if (chkTransliteration) {
-        btnTransliteration.setChecked(true);
-    } else {
-        btnTransliteration.setChecked(false);
-    }
-    btnTransliteration.setOnCheckedChangeListener(null);
+    public void translirationSetting() {
 
-    btnTransliteration.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-        @Override
-        public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-
-            if (chkTransliteration) {
-                chkTransliteration = false;
-                mSurahsSharedPref.setTransliteration(chkTransliteration);
-                mSurahsSharedPref.setLastTranslirationState(chkTransliteration);
-               // btnTransliteration.setChecked(false);
-            } else {
-
-                chkTransliteration = true;
-                mSurahsSharedPref.setTransliteration(chkTransliteration);
-                mSurahsSharedPref.setLastTranslirationState(chkTransliteration);
-              //  btnTransliteration.setChecked(true);
-            }
+        CheckBox btnTransliteration = (CheckBox) findViewById(R.id.check_transliteration_settings);
+        chkTransliteration = mSurahsSharedPref.isTransliteration();
+        if (chkTransliteration) {
+            btnTransliteration.setChecked(true);
+        } else {
+            btnTransliteration.setChecked(false);
         }
-    });
+        btnTransliteration.setOnCheckedChangeListener(null);
+
+        btnTransliteration.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+                if (chkTransliteration) {
+                    chkTransliteration = false;
+                    mSurahsSharedPref.setTransliteration(chkTransliteration);
+                    mSurahsSharedPref.setLastTranslirationState(chkTransliteration);
+                    // btnTransliteration.setChecked(false);
+                } else {
+
+                    chkTransliteration = true;
+                    mSurahsSharedPref.setTransliteration(chkTransliteration);
+                    mSurahsSharedPref.setLastTranslirationState(chkTransliteration);
+                    //  btnTransliteration.setChecked(true);
+                }
+            }
+        });
 
 
-
-}
+    }
 
 }

@@ -93,4 +93,8 @@
     <string name="txt_enter_between_0_83">Enter Number from 0-83</string>
     <string name="no_surah_found">No Surrah Found</string>
 
+    <string name="ayah_message_dialog">Do you want to turn on Ayah of the Day?</string>
+    <string name="phonetic_title">Phonetic Translitration</string>
+    <string name="english_pronounce">English Pronounciation</string>
+
 </resources>

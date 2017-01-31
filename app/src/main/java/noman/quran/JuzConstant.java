@@ -1,6 +1,11 @@
 package noman.quran;
 
 
+import android.util.DisplayMetrics;
+
+import com.quranreading.fragments.MenuMainFragment;
+import com.quranreading.helper.Constants;
+import com.quranreading.qibladirection.GlobalClass;
 import com.quranreading.qibladirection.R;
 
 import noman.CommunityGlobalClass;
@@ -13,24 +18,87 @@ public class JuzConstant {
 
     public static int[] flag_images = {R.drawable.off_translation, R.drawable.flag_english, R.drawable.flag_english, R.drawable.flag_english, R.drawable.flag_english, R.drawable.flag_english, R.drawable.flag_english, R.drawable.flag_urdu, R.drawable.flag_spanish, R.drawable.flag_france, R.drawable.flag_chinese, R.drawable.flag_persian, R.drawable.flag_italian, R.drawable.flag_dutch, R.drawable.flag_indonesia, R.drawable.flag_melayu, R.drawable.flag_hindi, R.drawable.flag_bangla, R.drawable.flag_turkish};
     public static CharSequence[] translationList = {"Off", "English (Saheeh)", "English (Pickthal)", "English (Shakir)", "English (Maududi)", "English (Daryabadi)", "English (Yusuf Ali)", "Urdu", "Spanish", "French", "Chinese", "Persian", "Italian", "Dutch", "Indonesian", "Melayu", "Hindi", "Bangla", "Turkish"};
+    public static int defaultSeekFont = 3, defaultEng = 14 , defaultArabic = 23; //For reset or shared prefence setting qibla
 
-    public static int fontSize_English[] = {
-            (int)CommunityGlobalClass.getInstance(). getResources().getDimension(R.dimen._4sdp),
-            (int)CommunityGlobalClass.getInstance(). getResources().getDimension(R.dimen._5sdp),
-            (int)CommunityGlobalClass.getInstance(). getResources().getDimension(R.dimen._6sdp),
-            (int)CommunityGlobalClass.getInstance(). getResources().getDimension(R.dimen._7sdp),
-            (int)CommunityGlobalClass.getInstance(). getResources().getDimension(R.dimen._8sdp),
-            (int)CommunityGlobalClass.getInstance(). getResources().getDimension(R.dimen._9sdp)
-           };
-    public static int fontSize_Arabic[] = {
-            (int)CommunityGlobalClass.getInstance(). getResources().getDimension(R.dimen._6sdp),
-            (int)CommunityGlobalClass.getInstance(). getResources().getDimension(R.dimen._8sdp),
-            (int)CommunityGlobalClass.getInstance(). getResources().getDimension(R.dimen._9sdp),
-            (int)CommunityGlobalClass.getInstance(). getResources().getDimension(R.dimen._10sdp),
-            (int)CommunityGlobalClass.getInstance(). getResources().getDimension(R.dimen._11sdp),
-            (int)CommunityGlobalClass.getInstance(). getResources().getDimension(R.dimen._12sdp)
+   /* public static int fontSize_English[] = {
+            (int) CommunityGlobalClass.getInstance().getResources().getDimension(R.dimen._4sdp),
+            (int) CommunityGlobalClass.getInstance().getResources().getDimension(R.dimen._5sdp),
+            (int) CommunityGlobalClass.getInstance().getResources().getDimension(R.dimen._6sdp),
+            (int) CommunityGlobalClass.getInstance().getResources().getDimension(R.dimen._7sdp),
+            (int) CommunityGlobalClass.getInstance().getResources().getDimension(R.dimen._8sdp),
+            (int) CommunityGlobalClass.getInstance().getResources().getDimension(R.dimen._9sdp)
     };
+    public static int fontSize_Arabic[] = {
+            (int) CommunityGlobalClass.getInstance().getResources().getDimension(R.dimen._6sdp),
+            (int) CommunityGlobalClass.getInstance().getResources().getDimension(R.dimen._8sdp),
+            (int) CommunityGlobalClass.getInstance().getResources().getDimension(R.dimen._9sdp),
+            (int) CommunityGlobalClass.getInstance().getResources().getDimension(R.dimen._10sdp),
+            (int) CommunityGlobalClass.getInstance().getResources().getDimension(R.dimen._11sdp),
+            (int) CommunityGlobalClass.getInstance().getResources().getDimension(R.dimen._12sdp)
+    };*/
 
+
+    public static int fontSize_E[];
+    public static int fontSize_A[];
+
+    public static void doSome() {
+        String device = CommunityGlobalClass.getInstance().getResources().getString(R.string.device);
+
+        DisplayMetrics dm = new DisplayMetrics();
+        CommunityGlobalClass.mainActivityNew.getWindowManager().getDefaultDisplay().getMetrics(dm);
+        int height = dm.heightPixels;
+        int width = dm.widthPixels;
+
+        if ((width > 1080 && height <= 2560)) {
+            device = "large";
+        } else if (width >= 1080 && height <= 2560) {
+            device = "medium";
+        } else  {
+            //(width == 720 && height == 1280) || (width == 540 && height == 960)
+            device = "small";
+        }
+
+
+        if (device.equals("small")) {
+
+
+            int fontSize_English[] = {
+                    10, 12,14, 16, 18,20
+            };
+            fontSize_E = fontSize_English;
+            int fontSize_Arabic[] = {
+                    15,19, 23, 27, 31,38
+            };
+            fontSize_A = fontSize_Arabic;
+        } else if (device.equals("medium")) {
+
+            int fontSize_English[] = {
+                    10, 12,14, 16, 18,20
+            };
+            fontSize_E = fontSize_English;
+            int fontSize_Arabic[] = {
+                   // 14,18, 22, 26, 30,34
+                    15,19, 23, 27, 31,38
+            };
+            fontSize_A = fontSize_Arabic;
+
+
+        } else if (device.equals("large")) {
+
+
+            int fontSize_English[] = {
+                    10, 12,14, 16, 18,20
+            };
+            fontSize_E = fontSize_English;
+            int fontSize_Arabic[] = {
+                    15,19, 23, 27, 31,38
+            };
+            fontSize_A = fontSize_Arabic;
+
+
+        }
+
+    }
 
     /* Android
      30 Juz Tags

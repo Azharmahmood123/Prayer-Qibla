@@ -4,7 +4,7 @@
     package="com.quranreading.qibladirection"
     android:installLocation="auto">
 
-    <uses-sdk tools:overrideLibrary="com.facebook,android.support.customtabs" />
+    <uses-sdk tools:overrideLibrary="com.facebook,android.support.customtabs,com.hanks.htextview" />
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.USE_CREDENTIALS" />
 

@@ -2,6 +2,7 @@ package noman.quran;
 
 import android.app.Fragment;
 import android.app.FragmentTransaction;
+import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.res.Configuration;
@@ -24,7 +25,11 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.TimePicker;
 
+import com.quranreading.alarms.AlarmHelper;
+import com.quranreading.alarms.AlarmReceiverAyah;
+import com.quranreading.helper.TimeFormateConverter;
 import com.quranreading.qibladirection.GlobalClass;
 import com.quranreading.qibladirection.R;
 
@@ -98,13 +103,25 @@ public class QuranModuleActivity extends AdIntegration implements View.OnClickLi
             mSurahsSharedPref.setIsSecondTimeQuranOpen(false);
             new AlertDialog.Builder(this, R.style.MyAlertDialogStyle)
                     .setTitle(getResources().getString(R.string.aya_of_day))
-                    .setMessage("Do you want to turn on Ayah of the Day?")
+                    .setMessage(R.string.ayah_message_dialog)
                     .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int whichButton) {
                             dialog.dismiss();
-                            mSurahsSharedPref.setAyahNotification(true);
 
-
+                            //Show Ayah Time dialog
+                            TimePickerDialog mTimePicker = new TimePickerDialog(QuranModuleActivity.this, new TimePickerDialog.OnTimeSetListener() {
+                                @Override
+                                public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
+                                    AlarmHelper mAlarmHelper = new AlarmHelper(QuranModuleActivity.this);
+                                    mSurahsSharedPref.setAyahNotification(true);
+                                    mSurahsSharedPref.setAlarmHours(selectedHour);
+                                    mSurahsSharedPref.setAlarmMints(selectedMinute);
+                                    mAlarmHelper.setAlarmAyahNotification(mAlarmHelper.setAlarmTime(selectedHour, selectedMinute, ""), AlarmReceiverAyah.NOTIFY_AYAH_ALARM_ID);
+                                }
+                            }, mSurahsSharedPref.getAlarmHours(), mSurahsSharedPref.getAlarmMints(), false);// Yes 24 hour time
+                            mTimePicker.setTitle("Select Time");
+                            mTimePicker.show();
+                            // *********************
                         }
                     }).setNegativeButton("No",
                     new DialogInterface.OnClickListener() {

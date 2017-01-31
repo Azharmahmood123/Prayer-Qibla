@@ -7,12 +7,14 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.quranreading.model.GridItem;
 import com.quranreading.model.GridItems;
+import com.quranreading.qibladirection.GlobalClass;
 import com.quranreading.qibladirection.R;
 import com.viewpagerindicator.CirclePageIndicator;
 
@@ -33,7 +35,7 @@ public class MenuMainFragment extends Fragment {
     private PagerAdapter pm;
 
     ArrayList<GridItem> codeCategory;
-
+    public static boolean isSmallDevice = false;
     int type = 0;
 
 
@@ -43,17 +45,33 @@ public class MenuMainFragment extends Fragment {
 
         mContext = getContext();
 
+
+        DisplayMetrics dm = new DisplayMetrics();
+        getActivity().getWindowManager().getDefaultDisplay().getMetrics(dm);
+        int height = dm.heightPixels;
+        int width = dm.widthPixels;
+
+        if ((width > 1080 && height <= 2560)) {
+            isSmallDevice = false;
+        } else {
+            //(width == 720 && height == 1280) || (width == 540 && height == 960)
+            isSmallDevice = true;
+        }
+
         ArrayList<String> menuItems = new ArrayList<>();
         menuItems.clear();
         menuItems.add(mContext.getString(R.string.grid_salat));
         menuItems.add(mContext.getString(R.string.grid_direction));
+
         menuItems.add(mContext.getString(R.string.grid_quran));
+        menuItems.add(mContext.getString(R.string.grid_community));
+        menuItems.add(mContext.getString(R.string.grid_names));
         menuItems.add(mContext.getString(R.string.grid_hijri));
         menuItems.add(mContext.getString(R.string.grid_mosque));
-        menuItems.add(mContext.getString(R.string.grid_premium));
-        menuItems.add(mContext.getString(R.string.grid_community));
+      /*  menuItems.add(mContext.getString(R.string.grid_premium));*/
+
         menuItems.add(mContext.getString(R.string.grid_halal));
-        menuItems.add(mContext.getString(R.string.grid_names));
+
         menuItems.add(mContext.getString(R.string.grid_duas));
         menuItems.add(mContext.getString(R.string.grid_settings));
 
@@ -109,7 +127,28 @@ public class MenuMainFragment extends Fragment {
                 itmLst.add(itm5);
                 i = i + 1;
             }
-
+            if (!isSmallDevice) {
+                if (it.hasNext()) {
+                    GridItems itm6 = new GridItems(i, it.next());
+                    itmLst.add(itm6);
+                    i = i + 1;
+                }
+                if (it.hasNext()) {
+                    GridItems itm7 = new GridItems(i, it.next());
+                    itmLst.add(itm7);
+                    i = i + 1;
+                }
+                if (it.hasNext()) {
+                    GridItems itm8 = new GridItems(i, it.next());
+                    itmLst.add(itm8);
+                    i = i + 1;
+                }
+              /*  if (it.hasNext()) {//Settings icon move next screen
+                    GridItems itm9 = new GridItems(i, it.next());
+                    itmLst.add(itm9);
+                    i = i + 1;
+                }*/
+            }
             GridItems[] gp = {};
             GridItems[] gridPage = itmLst.toArray(gp);
             MenuGridFragment fragment = new MenuGridFragment();
@@ -153,4 +192,6 @@ public class MenuMainFragment extends Fragment {
             return this.fragments.size();
         }
     }
+
+
 }

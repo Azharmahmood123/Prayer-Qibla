@@ -156,9 +156,9 @@ public class SettingsActivity extends AppCompatActivity implements OnDailogButto
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();
-                        mSurahsSharedPref.setSeekbarPosition(1);
-                        mSurahsSharedPref.setEnglishFontSize(JuzConstant.fontSize_English[1]);
-                        mSurahsSharedPref.setArabicFontSize(JuzConstant.fontSize_Arabic[1]);
+                        mSurahsSharedPref.setSeekbarPosition(JuzConstant.defaultSeekFont);
+                        mSurahsSharedPref.setEnglishFontSize(JuzConstant.defaultEng);
+                        mSurahsSharedPref.setArabicFontSize(JuzConstant.defaultArabic);
                         mSurahsSharedPref.setTranslationIndex(1);
                         mSurahsSharedPref.setTransliteration(true);
                         mSurahsSharedPref.setLastTranslirationState(true);
@@ -739,9 +739,9 @@ public class SettingsActivity extends AppCompatActivity implements OnDailogButto
 
         salatSharedPref.setAutoSettings(true);
 
-        mSurahsSharedPref.setSeekbarPosition(2);
-        mSurahsSharedPref.setEnglishFontSize(JuzConstant.fontSize_English[2]);
-        mSurahsSharedPref.setArabicFontSize(JuzConstant.fontSize_Arabic[2]);
+        mSurahsSharedPref.setSeekbarPosition(JuzConstant.defaultSeekFont);
+        mSurahsSharedPref.setEnglishFontSize(JuzConstant.defaultEng);
+        mSurahsSharedPref.setArabicFontSize(JuzConstant.defaultArabic);
         mSurahsSharedPref.setTranslationIndex(1);
         mSurahsSharedPref.setTransliteration(true);
         mSurahsSharedPref.setLastTranslirationState(true);

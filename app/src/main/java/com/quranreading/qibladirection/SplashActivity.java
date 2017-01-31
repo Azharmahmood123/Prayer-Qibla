@@ -10,12 +10,18 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
+import android.util.Log;
+import android.view.animation.Animation;
+import android.view.animation.RotateAnimation;
+import android.widget.ImageView;
 
 import com.facebook.FacebookSdk;
 import com.facebook.appevents.AppEventsLogger;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
+import com.hanks.htextview.HTextView;
+import com.hanks.htextview.HTextViewType;
 import com.quranreading.helper.DBManager;
 import com.quranreading.helper.MyService;
 import com.quranreading.sharedPreference.QiblaDirectionPref;
@@ -45,9 +51,10 @@ public class SplashActivity extends AppCompatActivity {
 	};
 
 	private int SPLASH_TIME;
-	private final int SPLASH_TIME_LONG = 5000;
-	private final int SPLASH_TIME_SHORT = 500;
-
+	/*private final int SPLASH_TIME_LONG = 5000;
+	private final int SPLASH_TIME_SHORT = 500;*/
+private final int SPLASH_TIME_LONG = 5000;
+	private final int SPLASH_TIME_SHORT = 2000;
 	QiblaDirectionPref mQiblaDirectionPref;
 
 	private Handler myHandler = new Handler();
@@ -73,7 +80,7 @@ public class SplashActivity extends AppCompatActivity {
 		int height = dm.heightPixels;
 		int width = dm.widthPixels;
 
-		if((width == 720 && height == 1280) || (width >= 1080 && height <= 2560) || (width == 540 && height == 960))
+	/*	if((width == 720 && height == 1280) || (width >= 1080 && height <= 2560) || (width == 540 && height == 960))
 		{
 			// Samsung S3 && s4
 			((GlobalClass) getApplication()).deviceS3 = true;
@@ -83,7 +90,10 @@ public class SplashActivity extends AppCompatActivity {
 		{
 			((GlobalClass) getApplication()).deviceS3 = false;
 			setContentView(R.layout.activity_splash);
-		}
+		}*/
+		setContentView(R.layout.splash_animation);
+	needleAnimation();
+
 
 		index = 0;
 		mQiblaDirectionPref = new QiblaDirectionPref(this);
@@ -100,7 +110,7 @@ public class SplashActivity extends AppCompatActivity {
 
 		if(mQiblaDirectionPref.getInterstitialCount() == 0)
 		{
-			mQiblaDirectionPref.setInterstitialCount(1);
+		//	mQiblaDirectionPref.setInterstitialCount(1);
 			myHandler.postDelayed(mRunnable, SPLASH_TIME);
 		}
 		else
@@ -112,16 +122,59 @@ public class SplashActivity extends AppCompatActivity {
 			}
 			else
 			{
-				showInterstitial();
+		//		showInterstitial();
 				myHandler.postDelayed(mRunnable, SPLASH_TIME_LONG);
 			}
 		}
 
-		chkDownloadStatus();
+	/*	chkDownloadStatus();
 
-		startAsyncTask();
+		startAsyncTask();*/
 	}
 
+	public void showTextAnimation() {
+		HTextView hTextView = (HTextView) findViewById(R.id.text);
+		hTextView.setTypeface(((GlobalClass) getApplicationContext()).faceRobotoR);
+		hTextView.setAnimateType(HTextViewType.TYPER);
+		hTextView.animateText(getString(R.string.app_name)); // animate
+
+		chkDownloadStatus();
+		startAsyncTask();
+
+	}
+
+	public void needleAnimation() {
+		final ImageView view = (ImageView) findViewById(R.id.img_rotate_needle);
+		RotateAnimation aRotate = new RotateAnimation(0, 360,
+				Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+
+		aRotate.setStartOffset(0);
+		aRotate.setDuration(1500);
+		aRotate.setFillAfter(true);
+		aRotate.setInterpolator(this, android.R.anim.decelerate_interpolator);
+
+		view.startAnimation(aRotate);
+		aRotate.setAnimationListener(new Animation.AnimationListener() {
+
+			@Override
+			public void onAnimationStart(Animation animation) {
+				showTextAnimation();
+			}
+
+			@Override
+			public void onAnimationRepeat(Animation animation) {
+			}
+
+			@Override
+			public void onAnimationEnd(Animation animation) {
+
+
+				view.setImageResource(R.drawable.ic_kaba_neddle);
+
+			}
+		});
+
+	}
 	@Override
 	public void onBackPressed() {
 		// TODO Auto-generated methodIndex stub
@@ -132,7 +185,7 @@ public class SplashActivity extends AppCompatActivity {
 		// TODO Auto-generated methodIndex stub
 		super.onResume();
 
-		if(index > 0)
+		/*if(index > 0)
 		{
 			startNextActivity();
 		}
@@ -141,7 +194,7 @@ public class SplashActivity extends AppCompatActivity {
 			index++;
 		}
 
-		isShowInterstitial = true;
+		isShowInterstitial = true;*/
 
 	}
 
@@ -201,7 +254,7 @@ public class SplashActivity extends AppCompatActivity {
 		return (netInfo != null && netInfo.isConnected() && netInfo.isAvailable());
 	}
 
-	private void showInterstitial() {
+	/*private void showInterstitial() {
 		mInterstitialAd = new InterstitialAd(this);
 		mInterstitialAd.setAdUnitId(getString(R.string.admob_interstitial));
 
@@ -229,7 +282,7 @@ public class SplashActivity extends AppCompatActivity {
 
 		requestNewInterstitial();
 	}
-
+*/
 	private void startNextActivity() {
 		isShowInterstitial = false;
 		myHandler.removeCallbacks(mRunnable);

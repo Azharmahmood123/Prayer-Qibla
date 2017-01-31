@@ -247,8 +247,15 @@
 
     <style name="setting_row_adhan_sound">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">@dimen/size_fourty_five</item>
+        <item name="android:layout_height">@dimen/size_fifty_five</item>
+        <item name="android:paddingRight">@dimen/size_five</item>
+        <item name="android:paddingTop">@dimen/_6sdp</item>
+        <item name="android:paddingBottom">@dimen/_6sdp</item>
+        <item name="android:paddingLeft">@dimen/size_five</item>
+        <item name="android:layout_marginLeft">@dimen/size_five</item>
+        <item name="android:layout_marginRight">@dimen/size_five</item>
         <item name="android:background">@drawable/bg_row_default_transperant</item>
+
         <item name="android:onClick">onAlarmOptionsClick</item>
     </style>
 

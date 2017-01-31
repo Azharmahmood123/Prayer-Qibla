@@ -187,7 +187,7 @@ public class QuranListFragment extends Fragment implements OnClickListener, Text
                 if (juzModel == null) {
                     juzModel = juzDataManager.getJuzNumber(settngPref.getLastReadSurah(), settngPref.getLastRead());
                 }
-                if (settngPref.getLastReadSurah() == 1) {
+                if (settngPref.getLastReadSurah() == 1 || settngPref.getLastReadSurah() == 9) {
                     tvVerses.setText("Verse: " + (settngPref.getLastRead() + 1) + "," + reveledPlacesSurrah[settngPref.getLastReadSurah() - 1] + " ,Juz: " + juzModel.getParaId());
 
                 } else {

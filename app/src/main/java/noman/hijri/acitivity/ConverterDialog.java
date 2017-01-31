@@ -38,9 +38,10 @@ public class ConverterDialog extends AppCompatActivity {
     RadioGroup groupRadio;
     LinearLayout linearGeogrian, linearHijri;
     int HijriDay, HijriMonth, HijriYear;
-public static int CalenderHijriDate=0;
-int currentDate=0;
+    public static int CalenderHijriDate = 0;
+    int currentDate = 0;
     boolean isGregorianUpdate = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -138,11 +139,11 @@ int currentDate=0;
         updateGregorianDays(gregorian_year, gregorian_month, gregorian_day, false);
         int day = calendar.get(Calendar.DAY_OF_MONTH) - 1;
         gregorian_day.setCurrentItem(day);
-        currentDate = day+1;
+        currentDate = day + 1;
 
 //changes here
         //HashMap<String, Integer> dateConverted = dateConverter.gregorianToHijri(day + 1, curMonth + 1, curYear, false);
-        HashMap<String, Integer> dateConverted = dateConverter.gregorianToHijri(day + 1, curMonth + 1, curYear, true);
+        HashMap<String, Integer> dateConverted = dateConverter.gregorianToHijri(day, curMonth + 1, curYear, false);
 
         curHijriDay = dateConverted.get("DAY");
         curHijriMonth = dateConverted.get("MONTH");
@@ -244,7 +245,7 @@ int currentDate=0;
         @Override
         public void onScrollingStarted(WheelView wheel) {
             // TODO Auto-generated method stub
-           g_scroll = true;
+            g_scroll = true;
         }
 
         @Override
@@ -253,7 +254,7 @@ int currentDate=0;
 
             updateGregorianDays(gregorian_year, gregorian_month, gregorian_day, true);
             g_scroll = false;
-          }
+        }
 
     };
 
@@ -302,8 +303,7 @@ int currentDate=0;
             HijriMonth = monthNow;
             HijriYear = yearNow;
 
-            if((dayNow==1) && (!h_scroll))
-            {
+            if ((dayNow == 1) && (!h_scroll)) {
                 HijriDay = CalenderHijriDate;
             }
         }
@@ -313,7 +313,7 @@ int currentDate=0;
         int yearNow, monthNow, dayNow;
 
         Calendar calendar = Calendar.getInstance();
-        calendar.set(Calendar.MONTH, month.getCurrentItem());
+        calendar.set(Calendar.MONTH, month.getCurrentItem());//My Changes adding +1
 
         if (!h_scroll) {
             yearNow = calendar.get(Calendar.YEAR) + (year.getCurrentItem() - NoOfYear);
@@ -328,24 +328,33 @@ int currentDate=0;
         int maxDays = calendar.getActualMaximum(Calendar.DAY_OF_MONTH);
 
         int i = calendar.get(Calendar.DAY_OF_MONTH);
+        if (monthNow + 1 == 4 || monthNow + 1 == 6 || monthNow + 1 == 9 || monthNow + 1 == 11) {
+            maxDays = 30;
+        } else {
+            if (monthNow + 1 == 2) {
+                maxDays = (isLeapYear(yearNow)) ? 29 : 28;
+
+            } else {
+                maxDays = 31;
+            }
+        }
         day.setViewAdapter(new DateNumericAdapter(this, 1, maxDays, i - 1));
 
         int j = day.getCurrentItem();
-
         dayNow = Math.min(maxDays, j + 1);
 
-     /*   if (maxDays == 28 && newMax != maxDays) {
-            dayNow = 3;
+      /*  if (maxDays == 28 && newMax != maxDays) {
+            dayNow = 1;
         } else if (maxDays == 29 && newMax != maxDays) {
-            dayNow = 2;
+            dayNow = 1;
         } else if (newMax == 31 && maxDays == 30) {
             dayNow = 1;
         } else if (newMax == 30 && maxDays == 31) {
             dayNow = Math.min(maxDays, day.getCurrentItem() + 1);
         } else {*/
-            dayNow = Math.min(maxDays, day.getCurrentItem() + 1);
+        dayNow = Math.min(maxDays, day.getCurrentItem() + 1);
+       //  }
 
-      //  }
 
         newMax = maxDays;
 
@@ -359,7 +368,6 @@ int currentDate=0;
             curHijriDay = dateConverted.get("DAY");
             curHijriMonth = dateConverted.get("MONTH");
             curHijriYear = dateConverted.get("YEAR");
-
 
 
             setHijriWheelDateOnListener();
@@ -377,11 +385,16 @@ int currentDate=0;
             HijriMonth = date[1];
             HijriYear = date[2];
 
-            if((dayNow==1) && (!g_scroll))
-            {
+            if ((dayNow == 1) && (!g_scroll)) {
                 HijriDay = CalenderHijriDate;
             }
         }
+    }
+
+    public static boolean isLeapYear(int year) {
+        Calendar cal = Calendar.getInstance();
+        cal.set(Calendar.YEAR, year);
+        return cal.getActualMaximum(Calendar.DAY_OF_YEAR) > 365;
     }
 
     private class DateNumericAdapter extends NumericWheelAdapter {

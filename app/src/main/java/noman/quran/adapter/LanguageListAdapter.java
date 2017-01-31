@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RadioButton;
 
+import com.quranreading.qibladirection.GlobalClass;
 import com.quranreading.qibladirection.R;
 
 import java.util.ArrayList;
@@ -44,9 +45,9 @@ public class LanguageListAdapter extends RecyclerView.Adapter<LanguageHolder> {
 
     @Override
     public void onBindViewHolder(final LanguageHolder holder, final int position) {
+        holder.languageText.setTypeface(((GlobalClass) context.getApplicationContext()).faceRobotoR);
         holder.languageText.setText(translationList[position]);
         holder.imgIcon.setImageResource(flag_images[position]);
-
 
         int checkState = mSurahsSharedPref.getTranslationIndex();
         if (position == checkState) {

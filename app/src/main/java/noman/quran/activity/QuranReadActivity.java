@@ -33,6 +33,8 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.view.animation.TranslateAnimation;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
@@ -60,6 +62,7 @@ import com.quranreading.qibladirection.MainActivityNew;
 import com.quranreading.qibladirection.R;
 import com.quranreading.qibladirection.SettingsActivity;
 
+import org.w3c.dom.Text;
 import org.xmlpull.v1.XmlPullParser;
 
 import java.io.File;
@@ -80,8 +83,6 @@ import quran.helper.FileUtils;
 import quran.model.SurahModel;
 import quran.sharedpreference.SurahsSharedPref;
 
-import static noman.quran.JuzConstant.fontSize_Arabic;
-import static noman.quran.JuzConstant.fontSize_English;
 import static noman.quran.JuzConstant.juzzIndex;
 
 public class QuranReadActivity extends AppCompatActivity implements OnCompletionListener, OnSurahDownloadComplete {
@@ -173,6 +174,7 @@ public class QuranReadActivity extends AppCompatActivity implements OnCompletion
     ImageView imgReadMode;
     boolean readModeState = false;
     int[] flag_images = JuzConstant.flag_images;
+    RelativeLayout relCalibraiton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -218,10 +220,41 @@ public class QuranReadActivity extends AppCompatActivity implements OnCompletion
         relReadMode = (RelativeLayout) findViewById(R.id.layout_reading_mode_surahs);
         imgReadMode = (ImageView) findViewById(R.id.img_read_mode);
 
+        relCalibraiton = (RelativeLayout) findViewById(R.id.rel_Calibration_readMode);
+        TextView txtCaliber1 = (TextView) findViewById(R.id.txt_caliber);
+        TextView txtCaliber2 = (TextView) findViewById(R.id.txt_caliber_2);
+
+        txtCaliber1.setTypeface(((GlobalClass) getApplication()).faceRobotoR);
+        txtCaliber2.setTypeface(((GlobalClass) getApplication()).faceRobotoR);
+
+
+        if (settngPref.getIsFirstTimeQuranReadOpen()) {
+            settngPref.setIsFirstTimeQuranReadOpen(false);
+            relCalibraiton.setVisibility(View.VISIBLE);
+        } else {
+            relCalibraiton.setVisibility(View.GONE);
+        }
+        relCalibraiton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                relCalibraiton.setVisibility(View.GONE);
+
+            }
+        });
+
 
         relReadMode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                if (relCalibraiton != null) {
+                    if (settngPref.getIsFirstTimeQuranReadOpen()) {
+                        relCalibraiton.setVisibility(View.VISIBLE);
+                    } else {
+                        relCalibraiton.setVisibility(View.GONE);
+                    }
+                }
+
                 readModeHandle();
             }
         });
@@ -322,7 +355,7 @@ public class QuranReadActivity extends AppCompatActivity implements OnCompletion
             mSurahsSharedPref.setTranslationIndex(mSurahsSharedPref.getLastSaveTransaltion());
             mSurahsSharedPref.setTransliteration(mSurahsSharedPref.getLastTranslirationState());
 
-            showShortToast(getResources().getString(R.string.text_read_mode) +" Off", 500, Gravity.CENTER);
+            showShortToast(getResources().getString(R.string.text_read_mode) + " Off", 500, Gravity.CENTER);
 
         } else {
             imgReadMode.setImageResource(R.drawable.open_read_mode);
@@ -333,7 +366,7 @@ public class QuranReadActivity extends AppCompatActivity implements OnCompletion
             mSurahsSharedPref.setLastTranslirationState(chkTransliteration);
             mSurahsSharedPref.setTransliteration(false);
             mSurahsSharedPref.setTranslationIndex(0);
-            showShortToast(getResources().getString(R.string.text_read_mode) +" On", 500, Gravity.CENTER);
+            showShortToast(getResources().getString(R.string.text_read_mode) + " On", 500, Gravity.CENTER);
         }
 
         initializeSettings();
@@ -344,6 +377,17 @@ public class QuranReadActivity extends AppCompatActivity implements OnCompletion
     }
 
     public void onSettingsSurahClick(View veiw) {
+
+        if (relCalibraiton != null) {
+            if (settngPref.getIsFirstTimeQuranReadOpen()) {
+                settngPref.setIsFirstTimeQuranReadOpen(false);
+                relCalibraiton.setVisibility(View.VISIBLE);
+            } else {
+                relCalibraiton.setVisibility(View.GONE);
+            }
+        }
+
+
         if (!inProcess) {
             AnalyticSingaltonClass.getInstance(this).sendEventAnalytics("Settings", "Settings_Surah");
             inProcess = true;
@@ -521,6 +565,7 @@ public class QuranReadActivity extends AppCompatActivity implements OnCompletion
     public void onBackPressed() {
         // TODO Auto-generated method stub
 
+
         if (!inProcess) {
             inProcess = true;
             handler.removeCallbacks(sendUpdatesToUI);
@@ -534,7 +579,13 @@ public class QuranReadActivity extends AppCompatActivity implements OnCompletion
             mSurahsSharedPref.setTranslationIndex(mSurahsSharedPref.getLastSaveTransaltion());
             mSurahsSharedPref.setTransliteration(mSurahsSharedPref.getLastTranslirationState());
 
-            super.onBackPressed();
+//To Check if calibration is open or not
+            if (relCalibraiton.getVisibility() == View.VISIBLE) {
+                relCalibraiton.setVisibility(View.GONE);
+                settngPref.setIsFirstTimeQuranReadOpen(false);
+            } else {
+                super.onBackPressed();
+            }
         }
     }
 
@@ -770,11 +821,10 @@ public class QuranReadActivity extends AppCompatActivity implements OnCompletion
             if (play == 1) {
                 mp.seekTo(timeAyahSurah.get(0));
                 mp.pause();
-            }else
-            {
+            } else {
                 mp.seekTo(timeAyahSurah.get(0));
             }
-     }
+        }
 
         hideGotoDialog();
         ((GlobalClass) getApplication()).ayahPos = 0;
@@ -785,7 +835,7 @@ public class QuranReadActivity extends AppCompatActivity implements OnCompletion
         play = 0;
 
 
-       // }
+        // }
     }
 
     private void hideGotoDialog() {
@@ -905,6 +955,14 @@ public class QuranReadActivity extends AppCompatActivity implements OnCompletion
     protected void onResume() {
         // TODO Auto-generated method stub
         super.onResume();
+       /* if (relCalibraiton != null) {
+            if (settngPref.getIsFirstTimeQuranReadOpen()) {
+                relCalibraiton.setVisibility(View.VISIBLE);
+            } else {
+                relCalibraiton.setVisibility(View.GONE);
+            }
+        }*/
+
 
         inProcess = false;
         if (((GlobalClass) getApplication()).isPurchase) {
@@ -926,8 +984,7 @@ public class QuranReadActivity extends AppCompatActivity implements OnCompletion
             initializeSettings();
             initializaSurahData();
             customAdapter.notifyDataSetChanged();
-            if(((GlobalClass) getApplication()).ayahPos > 0)
-            {
+            if (((GlobalClass) getApplication()).ayahPos > 0) {
                 ayahListView.post(new Runnable() {
                     @Override
                     public void run() {
@@ -960,9 +1017,7 @@ public class QuranReadActivity extends AppCompatActivity implements OnCompletion
                     btnAudio.setImageResource(R.drawable.play_btn);
                 }
             }
-        }
-        else
-        {
+        } else {
             if (mp != null && isAudioFound) {
                 if (play == 1) {
                     handler.removeCallbacks(sendUpdatesToUI);
@@ -1707,7 +1762,7 @@ public class QuranReadActivity extends AppCompatActivity implements OnCompletion
 
 
     public void handleTextSizeSetting(boolean isAnotherButton) {
-
+        JuzConstant.doSome();
         contianerTextSizeSetting.setVisibility(View.VISIBLE);
         final SurahsSharedPref mSurahsSharedPref = new SurahsSharedPref(QuranReadActivity.this);
 
@@ -1737,8 +1792,8 @@ public class QuranReadActivity extends AppCompatActivity implements OnCompletion
                     @Override
                     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                         mSurahsSharedPref.setSeekbarPosition(progress);
-                        mSurahsSharedPref.setEnglishFontSize(JuzConstant.fontSize_English[progress]);
-                        mSurahsSharedPref.setArabicFontSize(JuzConstant.fontSize_Arabic[progress]);
+                        mSurahsSharedPref.setEnglishFontSize(JuzConstant.fontSize_E[progress]);
+                        mSurahsSharedPref.setArabicFontSize(JuzConstant.fontSize_A[progress]);
                         customAdapter.notifyDataSetChanged();
                     }
 
@@ -1763,8 +1818,8 @@ public class QuranReadActivity extends AppCompatActivity implements OnCompletion
                         if (progress < 5) {
                             progress++;
                             mSurahsSharedPref.setSeekbarPosition(progress);
-                            mSurahsSharedPref.setEnglishFontSize(fontSize_English[progress]);
-                            mSurahsSharedPref.setArabicFontSize(fontSize_Arabic[progress]);
+                            mSurahsSharedPref.setEnglishFontSize(JuzConstant.fontSize_E[progress]);
+                            mSurahsSharedPref.setArabicFontSize(JuzConstant.fontSize_A[progress]);
                             seekBar.setProgress(mSurahsSharedPref.getSeekbarPosition());
                             customAdapter.notifyDataSetChanged();
                         }
@@ -1777,8 +1832,8 @@ public class QuranReadActivity extends AppCompatActivity implements OnCompletion
                         if (progress > 0) {
                             progress--;
                             mSurahsSharedPref.setSeekbarPosition(progress);
-                            mSurahsSharedPref.setEnglishFontSize(JuzConstant.fontSize_English[progress]);
-                            mSurahsSharedPref.setArabicFontSize(JuzConstant.fontSize_Arabic[progress]);
+                            mSurahsSharedPref.setEnglishFontSize(JuzConstant.fontSize_E[progress]);
+                            mSurahsSharedPref.setArabicFontSize(JuzConstant.fontSize_A[progress]);
                             seekBar.setProgress(mSurahsSharedPref.getSeekbarPosition());
                             customAdapter.notifyDataSetChanged();
                         }

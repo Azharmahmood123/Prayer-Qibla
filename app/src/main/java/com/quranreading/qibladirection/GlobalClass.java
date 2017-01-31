@@ -96,6 +96,7 @@ public class GlobalClass extends Application {
 	public static final String ARABIC_FONT1 = "PDMS_Saleem_ACQuranFont_shipped.ttf";
 	public static final String ARABIC_FONT2 = "trado.ttf";
 	public static final String ARABIC_FONT3 = "XBZarIndoPak.ttf";
+	// public static final String ARABIC_FONT3 = "me_quran.ttf";
 	public static final String ARABIC_FONT4 = "noorehira.ttf";
 
 	public boolean isTransliteration = false;

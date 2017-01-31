@@ -22,6 +22,7 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -41,6 +42,7 @@ import noman.community.activity.ComunityActivity;
 import noman.hijri.acitivity.CalenderActivity;
 import noman.quran.QuranModuleActivity;
 import places.activities.PlacesListActivity;
+import quran.sharedpreference.SurahsSharedPref;
 
 /**
  * Created by cyber on 11/30/2016.
@@ -51,14 +53,17 @@ public class MenuGridFragment extends Fragment {
     public static final int MENU_TIMINGS = 0;
     public static final int MENU_QIBLA_MAP_DIRECION = 1;
     public static final int MENU_QURAN = 2;
-    public static final int MENU_HIJRI = 3;
-    public static final int MENU_MOSQUES = 4;
-    public static final int MENU_REMOVE_ADS = 5;
-    public static final int MENU_COMMUNITY = 6;
+    public static final int MENU_COMMUNITY = 3;
+
+    public static final int MENU_NAMES = 4;
+    public static final int MENU_HIJRI = 5;
+    public static final int MENU_MOSQUES = 6;
+ /*   public static final int MENU_REMOVE_ADS = 5;*/
+
     public static final int MENU_HALAL = 7;
-    public static final int MENU_NAMES = 8;
-    public static final int MENU_DUAS = 9;
-    public static final int MENU_SETTINGS = 10;
+
+    public static final int MENU_DUAS = 8;
+    public static final int MENU_SETTINGS = 9;
 
 
     public static final String GRID_ITEMS = "grid_items";
@@ -133,7 +138,7 @@ public class MenuGridFragment extends Fragment {
     }
 
     public void onGridItemClick(GridView g, View v, int position, long id) {
-
+        final SurahsSharedPref mSurahsSharedPref = new SurahsSharedPref(getActivity());
         if (!inProcess) {
             inProcess = true;
 
@@ -186,8 +191,14 @@ public class MenuGridFragment extends Fragment {
 
                 case MENU_HIJRI:
                     //////////////
+
+                    mGridAdapter.notifyDataSetChanged();
                     if (!((GlobalClass) mContext.getApplicationContext()).isPurchase) {
                         mContext.sendBroadcast(new Intent(MainActivityNew.ACTION_INTERSTITIAL_ADS_SHOW));
+                    }
+
+                    if (mSurahsSharedPref.getIsFirstTimeHijriOpen()) {
+                        mSurahsSharedPref.setIsFirstTimeHijriOpen(false);
                     }
                     intent = new Intent(mContext, CalenderActivity.class);
                     startActivity(intent);
@@ -200,8 +211,14 @@ public class MenuGridFragment extends Fragment {
                     //////////////
 
                     if (isNetworkConnected()) {
+
+                        if (mSurahsSharedPref.getIsFirstTimeCommunityOpen()) {
+                            mSurahsSharedPref.setIsFirstTimeCommunityOpen(false);
+                        }
+                        mGridAdapter.notifyDataSetChanged();
                         intent = new Intent(mContext, ComunityActivity.class);
                         startActivity(intent);
+
                     } else {
                         inProcess = false;
                         showShortToast(getString(R.string.toast_network_error), 800, 0);
@@ -213,10 +230,15 @@ public class MenuGridFragment extends Fragment {
                     break;
 
                 case MENU_NAMES:
+                    mGridAdapter.notifyDataSetChanged();
+                    if (mSurahsSharedPref.getIsFirstTimeNamesOpen()) {
+                        mSurahsSharedPref.setIsFirstTimeNamesOpen(false);
+                    }
+
                     if (!((GlobalClass) mContext.getApplicationContext()).isPurchase) {
                         mContext.sendBroadcast(new Intent(MainActivityNew.ACTION_INTERSTITIAL_ADS_SHOW));
                     }
-//////////////
+
                     intent = new Intent(mContext, NamesListPlayingActivity.class);
                     startActivity(intent);
                     break;
@@ -240,10 +262,10 @@ public class MenuGridFragment extends Fragment {
                     startActivity(intent);
                     break;
 
-                case MENU_REMOVE_ADS:
+             /*   case MENU_REMOVE_ADS:
                     intent = new Intent(mContext, UpgradeActivity.class);
                     startActivity(intent);
-                    break;
+                    break;*/
 
 //            case MENU_ABOUT_US:
 //                intent = new Intent(mContext, AboutInstructionActivity.class);
@@ -260,10 +282,12 @@ public class MenuGridFragment extends Fragment {
     class GridAdapter extends BaseAdapter {
 
         Context context;
-        int images[] = {R.drawable.grid_bg_timings, R.drawable.grid_bg_direction, R.drawable.grid_bg_quran,
-                R.drawable.grid_bg_calendar, R.drawable.grid_bg_mosque, R.drawable.grid_bg_premium,
-                R.drawable.grid_bg_community, R.drawable.grid_bg_halal, R.drawable.grid_bg_names,
-                R.drawable.grid_bg_duas, R.drawable.grid_bg_settings};
+        int images[] = {
+                R.drawable.grid_bg_timings, R.drawable.grid_bg_direction, R.drawable.grid_bg_quran,
+                R.drawable.grid_bg_old_community, R.drawable.grid_bg_names, R.drawable.grid_bg_calendar,
+                R.drawable.grid_bg_mosque, R.drawable.grid_bg_halal, R.drawable.grid_bg_duas,
+                R.drawable.grid_bg_settings};
+
 
         public class ViewHolder {
             public ImageView imageView;
@@ -337,7 +361,7 @@ public class MenuGridFragment extends Fragment {
                         .findViewById(R.id.grid_item_image);
                 viewHolder.textTitle = (TextView) view
                         .findViewById(R.id.grid_item_label);
-                viewHolder.textTitle.setTypeface(((GlobalClass) mContext.getApplicationContext()).faceRobotoL);
+                viewHolder.textTitle.setTypeface(((GlobalClass) mContext.getApplicationContext()).faceRobotoR);
                 view.setTag(viewHolder);
             } else {
                 viewHolder = (ViewHolder) view.getTag();
@@ -349,7 +373,37 @@ public class MenuGridFragment extends Fragment {
         }
 
         private void setCatImage(int pos, ViewHolder viewHolder, String catTitle) {
+
+            final SurahsSharedPref mSurahsSharedPref = new SurahsSharedPref(getActivity());
+
+            //for check which device is runing
+
+            if (!MenuMainFragment.isSmallDevice) {
+                LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams((int) context.getResources().getDimension(R.dimen._50sdp), (int) context.getResources().getDimension(R.dimen._50sdp));
+                viewHolder.imageView.setLayoutParams(layoutParams);
+                viewHolder.textTitle.setTextSize(12);
+            }
             viewHolder.imageView.setImageResource(images[pos]);
+            if (pos == 3) {//Compuntiy
+                if (mSurahsSharedPref.getIsFirstTimeCommunityOpen()) {
+                    viewHolder.imageView.setImageResource(R.drawable.grid_bg_community);
+                }
+            }
+            if (pos == 4) {//Names
+                if (mSurahsSharedPref.getIsFirstTimeNamesOpen()) {
+                    viewHolder.imageView.setImageResource(R.drawable.grid_names_new);
+                }
+
+            }
+            if (pos == 5) {//Hijri
+                if (mSurahsSharedPref.getIsFirstTimeHijriOpen()) {
+                    viewHolder.imageView.setImageResource(R.drawable.grid_hijri_new);
+                }
+
+            }
+
+
+            //    viewHolder.imageView.setImageResource(images[pos]);
             viewHolder.textTitle.setText(catTitle);
         }
     }

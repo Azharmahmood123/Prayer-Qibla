@@ -146,9 +146,9 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.5"
+                android:background="@drawable/btn_hower"
                 android:enabled="false"
                 android:padding="@dimen/_8sdp"
-                android:background="@drawable/btn_hower"
                 android:src="@drawable/aa_minus_icon" />
 
             <SeekBar
@@ -170,9 +170,9 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.5"
+                android:background="@drawable/btn_hower"
                 android:enabled="false"
                 android:padding="@dimen/_8sdp"
-                android:background="@drawable/btn_hower"
                 android:src="@drawable/aa_plus_icon" />
 
             <ImageView
@@ -296,12 +296,12 @@
     </LinearLayout>
 
     <RelativeLayout
-        android:visibility="gone"
         android:id="@+id/ads_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:splitMotionEvents="false">
+        android:splitMotionEvents="false"
+        android:visibility="gone">
 
         <com.google.android.gms.ads.AdView
             android:id="@+id/adView"
@@ -394,5 +394,63 @@
         android:cacheColorHint="@android:color/transparent"
         android:splitMotionEvents="false"></ListView>
 
+    <!--//Calibration Screen-->
+    <RelativeLayout
+        android:id="@+id/rel_Calibration_readMode"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/tabbar"
+        android:clickable="true">
 
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+
+            android:alpha="0.2"
+            android:background="@color/black" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_marginLeft="@dimen/_8sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_80sdp"
+            android:background="@color/ColorPrimary"
+
+            android:gravity="center"
+            android:paddingRight="@dimen/_7sdp">
+
+            <TextView
+                android:id="@+id/txt_caliber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/_20sdp"
+                android:text="Tap "
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12sdp" />
+
+            <ImageView
+                android:id="@+id/ic_read"
+                android:layout_width="@dimen/_18sdp"
+                android:layout_height="@dimen/_18sdp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/_1sdp"
+                android:layout_toRightOf="@+id/txt_caliber"
+
+                android:src="@drawable/close_read_mode" />
+
+            <TextView
+                android:id="@+id/txt_caliber_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/_4sdp"
+                android:layout_toRightOf="@+id/ic_read"
+                android:text="to turn reading mode ON "
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12sdp" />
+        </RelativeLayout>
+
+    </RelativeLayout>
 </RelativeLayout>

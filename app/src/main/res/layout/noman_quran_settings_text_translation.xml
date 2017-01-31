@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/white">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -65,73 +66,94 @@
                         android:orientation="vertical">
 
                         <TextView
+                            android:id="@+id/title_1"
                             style="@style/setting_row_header"
-                            android:text="Font Size"
-                            android:textAllCaps="true" />
+                            android:text="Font Size" />
 
 
-
-                        <TextView
-                            android:id="@+id/txt_example"
+                        <RelativeLayout
                             android:layout_width="match_parent"
-                            android:layout_height="@dimen/_100sdp"
-                            android:gravity="center"
-                            android:text="الفاتحة"
-                            android:textColor="@color/black"
-                            android:textSize="@dimen/_22sdp" />
+                            android:layout_height="wrap_content">
 
-                        <LinearLayout
-                            android:id="@+id/layout_text_adjust"
-                            android:layout_width="match_parent"
-                            android:layout_height="@dimen/_39sdp"
-                            android:orientation="horizontal">
+                            <TextView
+                                android:id="@+id/txt_example"
+                                android:layout_width="@dimen/_120sdp"
+                                android:layout_height="@dimen/_80sdp"
+                                android:gravity="center"
+                                android:text="الفاتحة"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_22sdp" />
 
-                            <ImageView
-                                android:id="@+id/btn_text_size_decrease"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="0.5"
-                                android:background="@drawable/btn_hower"
-                                android:enabled="false"
-                                android:padding="@dimen/_8sdp"
-                                android:src="@drawable/aa_minus_icon"
-                                android:tint="@color/colorPrimary" />
+                            <LinearLayout
+                                android:layout_marginRight="@dimen/_6sdp"
+                                android:id="@+id/layout_text_adjust"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_39sdp"
+                                android:layout_centerInParent="true"
+                                android:layout_marginBottom="@dimen/_5sdp"
+                                android:layout_toRightOf="@+id/txt_example"
+                                android:orientation="horizontal">
 
-                            <SeekBar
-                                android:id="@+id/seekbar_text_size"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:layout_weight="2"
-                                android:background="@null"
-                                android:max="5"
-                                android:maxHeight="@dimen/_2sdp"
-                                android:progress="0"
-                                android:progressDrawable="@drawable/progress_setting_text_size"
-                                android:splitMotionEvents="false"
-                                android:thumb="@drawable/thumb_setting_text_size" />`
+                                <ImageView
+                                    android:id="@+id/btn_text_size_decrease"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="0.5"
+                                    android:background="@drawable/btn_hower"
+                                    android:enabled="false"
+                                    android:padding="@dimen/_8sdp"
+                                    android:src="@drawable/aa_minus_icon"
+                                    android:tint="@color/colorPrimary"
+                                    android:visibility="gone" />
 
-                            <ImageView
-                                android:id="@+id/btn_text_size_increase"
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="0.5"
-                                android:background="@drawable/btn_hower"
-                                android:enabled="false"
-                                android:padding="@dimen/_8sdp"
-                                android:src="@drawable/aa_plus_icon"
-                                android:tint="@color/colorPrimary" />
+                                <SeekBar
+                                    android:id="@+id/seekbar_text_size"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginRight="@dimen/_8sdp"
+                                    android:layout_weight="2"
+                                    android:background="@null"
+                                    android:max="5"
+                                    android:maxHeight="@dimen/_2sdp"
+                                    android:progress="0"
+                                    android:progressDrawable="@drawable/progress_setting_text_size"
+                                    android:splitMotionEvents="false"
+                                    android:thumb="@drawable/thumb_setting_text_size" />`
+
+                                <ImageView
+                                    android:id="@+id/btn_text_size_increase"
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="0.5"
+                                    android:background="@drawable/btn_hower"
+                                    android:enabled="false"
+                                    android:padding="@dimen/_8sdp"
+                                    android:src="@drawable/aa_plus_icon"
+                                    android:tint="@color/colorPrimary"
+                                    android:visibility="gone" />
 
 
-                        </LinearLayout>
+                            </LinearLayout>
 
-
+                        </RelativeLayout>
                     </LinearLayout>
 
                 </RelativeLayout>
 
-                <RelativeLayout
+                <TextView
+                    android:id="@+id/title_2"
+                    style="@style/setting_row_header"
+                    android:text="@string/phonetic_title"
 
+
+                    />
+
+                <RelativeLayout
+                    android:layout_marginLeft="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:paddingBottom="@dimen/_6sdp"
+                    android:paddingTop="@dimen/_6sdp"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_50sdp"
                     android:padding="@dimen/_5sdp">
@@ -142,9 +164,9 @@
                         android:layout_alignParentLeft="true"
                         android:layout_centerVertical="true"
                         android:gravity="center|left"
-                        android:text="@string/txt_transliteration"
+                        android:text="@string/english_pronounce"
                         android:textColor="@color/black"
-                        android:textSize="@dimen/text_size_eighteen" />
+                        android:textSize="@dimen/_14sdp" />
 
                     <android.support.v7.widget.AppCompatCheckBox
                         android:id="@+id/check_transliteration_settings"
@@ -152,28 +174,27 @@
                         android:layout_height="@dimen/size_twenty_eight"
                         android:layout_alignParentRight="true"
                         android:layout_centerVertical="true"
-                        android:layout_marginRight="@dimen/size_five"
+                        android:layout_marginRight="@dimen/_8sdp"
 
                         android:padding="@dimen/size_three"
                         android:theme="@style/Color1SwitchStyle" />
                 </RelativeLayout>
 
                 <TextView
+                    android:id="@+id/title_3"
                     style="@style/setting_row_header"
                     android:layout_marginTop="@dimen/_10sdp"
-                    android:text="Translation"
-                    android:textAllCaps="true" />
-
-
+                    android:text="@string/txt_translation" />
 
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/recycler_language_transaltion"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/_4sdp"
-                    android:layout_marginTop="@dimen/_4sdp">
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:paddingBottom="@dimen/_6sdp"
+                    android:paddingTop="@dimen/_6sdp" />
 
-                </android.support.v7.widget.RecyclerView>
             </LinearLayout>
         </ScrollView>
     </LinearLayout>

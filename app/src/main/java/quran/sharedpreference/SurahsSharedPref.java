@@ -7,6 +7,9 @@ import android.content.SharedPreferences.Editor;
 import com.quranreading.alarms.AlarmReceiverAyah;
 import com.quranreading.qibladirection.R;
 
+import noman.CommunityGlobalClass;
+import noman.quran.JuzConstant;
+
 public class SurahsSharedPref {
 
     private Editor editor;
@@ -44,8 +47,10 @@ public class SurahsSharedPref {
 
     private static final String LAST_TRANSALATION_POS = "last_translation_pos";
     private static final String READ_MODE_STATE = "read_mode_state";
-
-
+    private static final String IS_FIRSTTIME_QURAN_READ = "is_first_time_quran_read";
+    private static final String IS_FIRSTTIME_NAME_CLICK = "is_first_time_name_click";
+    private static final String IS_FIRSTTIME_HIJRI_CLICK = "is_first_time_hijri_click";
+    private static final String IS_FIRSTTIME_COMMUNITY_CLICK = "is_first_time_community_click";
     private static final String IS_FIRSTTIME_MENU_CLICK = "is_first_time_menu_click";
 
     private static final String IS_FIRSTTIME_QURAN_CLICK = "is_first_time_quran_click";
@@ -57,6 +62,40 @@ public class SurahsSharedPref {
         editor = pref.edit();
     }
 
+
+    public boolean getIsFirstTimeQuranReadOpen() {
+        return pref.getBoolean(IS_FIRSTTIME_QURAN_READ, true);
+    }
+
+    public void setIsFirstTimeQuranReadOpen(boolean size) {
+        editor.putBoolean(IS_FIRSTTIME_QURAN_READ, size);
+        editor.commit();
+    }
+    public boolean getIsFirstTimeNamesOpen() {
+        return pref.getBoolean(IS_FIRSTTIME_NAME_CLICK, true);
+    }
+
+    public void setIsFirstTimeNamesOpen(boolean size) {
+        editor.putBoolean(IS_FIRSTTIME_NAME_CLICK, size);
+        editor.commit();
+    }
+    public boolean getIsFirstTimeHijriOpen() {
+        return pref.getBoolean(IS_FIRSTTIME_HIJRI_CLICK, true);
+    }
+
+    public void setIsFirstTimeHijriOpen(boolean size) {
+        editor.putBoolean(IS_FIRSTTIME_HIJRI_CLICK, size);
+        editor.commit();
+    }
+
+    public boolean getIsFirstTimeCommunityOpen() {
+        return pref.getBoolean(IS_FIRSTTIME_COMMUNITY_CLICK, true);
+    }
+
+    public void setIsFirstTimeCommunityOpen(boolean size) {
+        editor.putBoolean(IS_FIRSTTIME_COMMUNITY_CLICK, size);
+        editor.commit();
+    }
     public boolean getIsFirstTimeQuranOpen() {
         return pref.getBoolean(IS_FIRSTTIME_QURAN_CLICK, true);
     }
@@ -113,7 +152,7 @@ public class SurahsSharedPref {
 
     // ****** Adding Font Sizes here ****************
     public int getEnglishFontSize() {
-        return pref.getInt(FONT_SIZE_ENG,(int) _context. getResources().getDimension(R.dimen.text_size_twelve));
+        return pref.getInt(FONT_SIZE_ENG, JuzConstant.defaultEng);
     }
 
     public void setEnglishFontSize(int size) {
@@ -122,7 +161,7 @@ public class SurahsSharedPref {
     }
 
     public int getArabicFontSize() {
-        return pref.getInt(FONT_SIZE_ARABIC, (int) _context.getResources().getDimension(R.dimen.text_size_fifteen));
+        return pref.getInt(FONT_SIZE_ARABIC, JuzConstant.defaultArabic);
     }
 
     public void setArabicFontSize(int size) {
@@ -131,7 +170,7 @@ public class SurahsSharedPref {
     }
 
     public int getSeekbarPosition() {
-        return pref.getInt(FONT_SIZE_SEEKBAR_POS, 2);
+        return pref.getInt(FONT_SIZE_SEEKBAR_POS, JuzConstant.defaultSeekFont);
     }
 
     public void setSeekbarPosition(int size) {

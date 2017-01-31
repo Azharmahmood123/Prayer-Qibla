@@ -36,8 +36,10 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.github.msarhan.ummalqura.calendar.UmmalquraCalendar;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
@@ -58,10 +60,16 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.List;
+import java.util.Locale;
 
 import noman.CommunityGlobalClass;
+import noman.hijri.acitivity.CalenderActivity;
+import noman.hijri.acitivity.ConverterDialog;
 import noman.quran.activity.QuranReadActivity;
 import places.activities.PlacesListActivity;
 import quran.sharedpreference.SurahsSharedPref;
@@ -226,6 +234,10 @@ public class MainActivityNew extends AppCompatActivity implements AdapterView.On
 
             }
         });
+
+
+        //Setting current hijri date in the toolbar
+        getCurrentHijriDate();
     }
 
     public void initializeMenuList() {
@@ -249,22 +261,22 @@ public class MainActivityNew extends AppCompatActivity implements AdapterView.On
         dataObj = new MenuDrawerModel(false, false, true, "", 5);
         drawerListData.add(dataObj);
 
-        dataObj = new MenuDrawerModel(false, false, false, getResources().getString(R.string.more_apps), menuMoreAppsC);
+        dataObj = new MenuDrawerModel(false, true, false, getResources().getString(R.string.more_apps), menuMoreAppsC);
         drawerListData.add(dataObj);
 
-        dataObj = new MenuDrawerModel(false, false, false, getResources().getString(R.string.share), menuShareC);
+        dataObj = new MenuDrawerModel(false, true, false, getResources().getString(R.string.share), menuShareC);
         drawerListData.add(dataObj);
 
-        dataObj = new MenuDrawerModel(false, false, false, getResources().getString(R.string.instructions), menuInstrctC);
+        dataObj = new MenuDrawerModel(false, true, false, getResources().getString(R.string.instructions), menuInstrctC);
         drawerListData.add(dataObj);
 
-        dataObj = new MenuDrawerModel(false, false, false, getResources().getString(R.string.feedback), menuFeedBackC);
+        dataObj = new MenuDrawerModel(false, true, false, getResources().getString(R.string.feedback), menuFeedBackC);
         drawerListData.add(dataObj);
 
-        dataObj = new MenuDrawerModel(false, false, false, getResources().getString(R.string.about_us), menuAboutUsC);
+        dataObj = new MenuDrawerModel(false, true, false, getResources().getString(R.string.about_us), menuAboutUsC);
         drawerListData.add(dataObj);
 
-        dataObj = new MenuDrawerModel(false, false, false, getResources().getString(R.string.disclaimer), menuDisclaimerC);
+        dataObj = new MenuDrawerModel(false, true, false, getResources().getString(R.string.disclaimer), menuDisclaimerC);
         drawerListData.add(dataObj);
 
         dataObj = new MenuDrawerModel(false, false, false, null, menuFaceBookC);
@@ -1091,4 +1103,63 @@ public class MainActivityNew extends AppCompatActivity implements AdapterView.On
             showInterstitialAd();
         }
     };
+
+
+    public void getCurrentHijriDate()
+    {
+        LinearLayout hijriDateClick=(LinearLayout)findViewById(R.id.toolbar_hijri_date);
+        hijriDateClick.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivityNew.this, CalenderActivity.class));
+            }
+        });
+
+        TextView currentHijriDate=(TextView)findViewById(R.id.txt_toolbar_hijr_date);
+        String months[]   = getResources().getStringArray(R.array.islamic_month_name);
+        Calendar  _calendarLocal = Calendar.getInstance(Locale.getDefault());
+        int  month = _calendarLocal.get(Calendar.MONTH);
+       int year = _calendarLocal.get(Calendar.YEAR);
+        //_calendarLocal.set(Calendar.DAY_OF_WEEK_IN_MONTH,(_calendarLocal.get(Calendar.DAY_OF_WEEK_IN_MONTH)+ 1));
+        _calendarLocal.set(Calendar.DAY_OF_MONTH, (_calendarLocal.get(Calendar.DAY_OF_MONTH) - 1)); //For date issue
+
+        //New changes here
+        GregorianCalendar gCal = new GregorianCalendar(year, month, _calendarLocal.get(Calendar.DAY_OF_MONTH));
+
+        Calendar uCal = new UmmalquraCalendar();
+        uCal.setTime(gCal.getTime());
+        Calendar _calendar = uCal;
+        year = _calendar.get(Calendar.YEAR);
+        month = _calendar.get(Calendar.MONTH);
+
+        //********************************
+
+        //**** Save Hijri current date here with following
+        SimpleDateFormat dateFormat = new SimpleDateFormat("", Locale.ENGLISH);
+        dateFormat.setCalendar(_calendar);
+        dateFormat.applyPattern("d");
+        int cDate = Integer.parseInt(dateFormat.format(_calendar.getTime()));
+        dateFormat.applyPattern("y");
+        int cYear = Integer.parseInt(dateFormat.format(_calendar.getTime()));
+        ConverterDialog.CalenderHijriDate=cDate;
+        String currentDate = cDate + " " + months[month] + ", " + cYear;
+        Log.e("curent date", currentDate);
+        currentHijriDate.setText(currentDate);
+        currentHijriDate.setTypeface(((GlobalClass) getApplicationContext()).faceRobotoR);
+        //**********************************
+
+
+        //Premium icon
+        RelativeLayout layoutImagePremium = (RelativeLayout) findViewById(R.id.layout_image_premium);
+        layoutImagePremium.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent   intent = new Intent(MainActivityNew.this, UpgradeActivity.class);
+                startActivity(intent);
+
+            }
+        });
+
+    }
 }

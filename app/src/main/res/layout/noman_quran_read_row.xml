@@ -5,10 +5,10 @@
     android:orientation="vertical">
 
     <LinearLayout
-        android:layout_gravity="center"
         android:id="@+id/containerJuzzView"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_30sdp"
+        android:layout_gravity="center"
         android:background="@color/cardview_dark_background"
         android:visibility="visible"
         android:weightSum="3">
@@ -57,18 +57,21 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/size_five">
             <!--  Animation of Row of share and fave-->
+
             <TextView
                 android:id="@+id/tv_ayah"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
-                android:layout_marginTop="@dimen/_3sdp"
-                android:layout_marginRight="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_18sdp"
+                android:layout_marginTop="@dimen/_15sdp"
                 android:layout_toRightOf="@+id/layout_ayah_no"
                 android:gravity="right"
                 android:lineSpacingExtra="@dimen/size_ten"
                 android:text="Arabimc here"
                 android:textSize="11dp" />
+
+
             <LinearLayout
                 android:id="@+id/menu_options_layout"
                 android:layout_width="wrap_content"
@@ -119,19 +122,18 @@
                     android:visibility="visible" />
 
                 <RelativeLayout
-                    android:visibility="gone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/size_five"
                     android:layout_marginRight="@dimen/size_one"
                     android:layout_marginTop="@dimen/size_ten"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                    android:visibility="gone">
 
                     <ImageView
-                        android:gravity="center"
                         android:layout_width="@dimen/size_twenty_five"
                         android:layout_height="@dimen/size_thirty_five"
-                        android:src="@drawable/brackets"
-                       />
+                        android:gravity="center"
+                        android:src="@drawable/brackets" />
 
                     <TextView
                         android:id="@+id/tv_ayah_no"
@@ -151,26 +153,37 @@
             android:id="@+id/text_transliteration"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/_10sdp"
             android:gravity="left"
-            android:paddingLeft="@dimen/_5sdp"
-            android:paddingRight="@dimen/_5sdp"
             android:lineSpacingExtra="@dimen/size_two"
+            android:paddingLeft="@dimen/_15sdp"
+            android:paddingRight="@dimen/_5sdp"
+            android:text="Tranisilatie"
             android:textSize="14dp"
+            android:layout_marginBottom="@dimen/_5sdp"
             android:textStyle="italic"
             android:typeface="serif" />
 
         <TextView
-            android:text="Transaltion"
             android:id="@+id/text_translation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/_10sdp"
             android:gravity="left"
             android:lineSpacingExtra="@dimen/size_two"
-            android:paddingTop="@dimen/_2sdp"
-            android:paddingLeft="@dimen/_5sdp"
+            android:paddingLeft="@dimen/_15sdp"
             android:paddingRight="@dimen/_5sdp"
+            android:paddingTop="@dimen/_2sdp"
+            android:text="Transaltion"
             android:textSize="14dp"
-            android:layout_marginBottom="@dimen/_8sdp"/>
+
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_17sdp">
+
+        </LinearLayout>
     </LinearLayout>
 
 

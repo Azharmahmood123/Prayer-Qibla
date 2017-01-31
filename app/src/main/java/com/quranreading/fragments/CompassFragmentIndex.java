@@ -135,9 +135,9 @@ public class CompassFragmentIndex extends Fragment implements RotationUpdateDele
         progressBar = (ProgressBar) rootView.findViewById(R.id.progressBarCompass);
         progressBar.setVisibility(View.VISIBLE);
 
-        tvCity.setTypeface(((GlobalClass) mActivity.getApplicationContext()).faceRobotoL);
-        tvDegree.setTypeface(((GlobalClass) mActivity.getApplicationContext()).faceRobotoL);
-        tvWarning.setTypeface(((GlobalClass) mActivity.getApplicationContext()).faceRobotoL);
+        tvCity.setTypeface(((GlobalClass) mActivity.getApplicationContext()).faceRobotoR);
+        tvDegree.setTypeface(((GlobalClass) mActivity.getApplicationContext()).faceRobotoR);
+        tvWarning.setTypeface(((GlobalClass) mActivity.getApplicationContext()).faceRobotoR);
         tvDegree.setVisibility(View.GONE);
         tvWarning.setVisibility(View.GONE);
 
