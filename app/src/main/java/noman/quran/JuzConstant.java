@@ -18,7 +18,7 @@ public class JuzConstant {
 
     public static int[] flag_images = {R.drawable.off_translation, R.drawable.flag_english, R.drawable.flag_english, R.drawable.flag_english, R.drawable.flag_english, R.drawable.flag_english, R.drawable.flag_english, R.drawable.flag_urdu, R.drawable.flag_spanish, R.drawable.flag_france, R.drawable.flag_chinese, R.drawable.flag_persian, R.drawable.flag_italian, R.drawable.flag_dutch, R.drawable.flag_indonesia, R.drawable.flag_melayu, R.drawable.flag_hindi, R.drawable.flag_bangla, R.drawable.flag_turkish};
     public static CharSequence[] translationList = {"Off", "English (Saheeh)", "English (Pickthal)", "English (Shakir)", "English (Maududi)", "English (Daryabadi)", "English (Yusuf Ali)", "Urdu", "Spanish", "French", "Chinese", "Persian", "Italian", "Dutch", "Indonesian", "Melayu", "Hindi", "Bangla", "Turkish"};
-    public static int defaultSeekFont = 3, defaultEng = 14 , defaultArabic = 23; //For reset or shared prefence setting qibla
+    public static int defaultSeekFont = 2, defaultEng = 14 , defaultArabic = 23; //For reset or shared prefence setting qibla
 
    /* public static int fontSize_English[] = {
             (int) CommunityGlobalClass.getInstance().getResources().getDimension(R.dimen._4sdp),

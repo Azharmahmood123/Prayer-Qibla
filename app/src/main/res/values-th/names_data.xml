@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="names_99">99 ชื่อ</string>
+
     <string name="nameMeanHeading">ชื่อ ความหมาย</string>
     <string name="nameDetailMeanHeading">ชื่อ รายละเอียด</string>
     

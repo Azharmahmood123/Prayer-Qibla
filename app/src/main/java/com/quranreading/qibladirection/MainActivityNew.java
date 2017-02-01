@@ -584,7 +584,7 @@ public class MainActivityNew extends AppCompatActivity implements AdapterView.On
         }
     }
 
-    private void shareMessage(String subject, String body) {
+    public void shareMessage(String subject, String body) {
 
         // if(saveShareImage())
         // {
@@ -602,7 +602,7 @@ public class MainActivityNew extends AppCompatActivity implements AdapterView.On
         // }
     }
 
-    private void shareAppWithAppIcon(String subject, String body) {
+    public void shareAppWithAppIcon(String subject, String body) {
         String fileName = "ic_launcher.png";
         String completePath = Environment.getExternalStorageDirectory() + "/" + fileName;
 
@@ -619,7 +619,7 @@ public class MainActivityNew extends AppCompatActivity implements AdapterView.On
         startActivity(Intent.createChooser(shareIntent, "Share via"));
     }
 
-    private boolean saveShareImage() {
+    public boolean saveShareImage() {
         Bitmap bitmap = Bitmap.createScaledBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.about_app_icon), 100, 100, false);
         File sd = Environment.getExternalStorageDirectory();
         String fileName = "ic_launcher.png";
@@ -677,6 +677,7 @@ public class MainActivityNew extends AppCompatActivity implements AdapterView.On
             stopAdsCall();
             mHandler.removeCallbacks(mRunnableInterstitialRefresh);
         }
+        hideKeyboard();
     }
 
     @Override

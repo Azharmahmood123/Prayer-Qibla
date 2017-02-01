@@ -86,7 +86,7 @@ public class AlarmReceiverPrayers extends BroadcastReceiver {
         String[] arrPrayers = {context.getString(R.string.txt_fajr), context.getString(R.string.txt_zuhr), context.getString(R.string.txt_asar), context.getString(R.string.txt_maghrib), context.getString(R.string.txt_isha), context.getString(R.string.txt_sunrise)};
         String message = arrPrayers[entryId - 1] + " " + context.getString(R.string.salat_timings) + " " + context.getString(R.string.time);
 
-        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(context).setSmallIcon(R.drawable.ic_launcher).setLargeIcon(bm).setAutoCancel(true).setContentTitle(context.getResources().getString(R.string.app_name)).setContentText(message);
+        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(context).setSmallIcon(R.drawable.notification_small).setLargeIcon(bm).setAutoCancel(true).setContentTitle(context.getResources().getString(R.string.app_name)).setContentText(message);
 
         // Creates an explicit intent for an Activity in your app
         Intent resultIntent = new Intent(context, MainActivityNew.class);

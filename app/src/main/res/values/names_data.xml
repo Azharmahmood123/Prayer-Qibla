@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="names_99">99 Names</string>
+
     <string name="nameMeanHeading">Name Meaning</string>
     <string name="nameDetailMeanHeading">Name Details</string>
     
@@ -301,7 +301,7 @@
         <item>Al-Afuww</item>
         <item>Ar-Rauf</item>
         <item>Malik-Al-Mulk</item>
-        <item>Zul-l-Jalal wal-Ikram</item>
+        <item>Zul-Jalal wal-Ikram</item>
         <item>Al-Muqsit</item>
         <item>Aj-Jami</item>
         <item>Al-Ghanee</item>

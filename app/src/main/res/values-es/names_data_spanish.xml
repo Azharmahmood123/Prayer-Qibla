@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="names_99">99 Nombres</string>
+
     <string name="nameMeanHeading">Nombres Sentido</string>
     <string name="nameDetailMeanHeading">Nombres Detalles</string>
     

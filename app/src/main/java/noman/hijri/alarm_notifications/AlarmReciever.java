@@ -11,6 +11,7 @@ import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.BitmapFactory;
 import android.support.v4.app.NotificationCompat;
 
 import com.github.msarhan.ummalqura.calendar.UmmalquraCalendar;
@@ -104,7 +105,8 @@ public class AlarmReciever extends BroadcastReceiver {
                 .setWhen(System.currentTimeMillis())
                 .setContentIntent(pendingIntent)
                 .setDefaults(Notification.DEFAULT_SOUND)
-                .setAutoCancel(true).setSmallIcon(R.drawable.ic_launcher)
+                .setAutoCancel(true).setSmallIcon(R.drawable.notification_small)
+                .setLargeIcon(BitmapFactory.decodeResource(context.getResources(), R.drawable.ic_launcher))
                 .build();
         notification.flags |= Notification.FLAG_AUTO_CANCEL;
         notification.defaults = Notification.DEFAULT_SOUND | Notification.DEFAULT_VIBRATE;

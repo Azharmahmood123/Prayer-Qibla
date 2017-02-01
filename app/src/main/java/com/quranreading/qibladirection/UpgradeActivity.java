@@ -79,7 +79,7 @@ public class UpgradeActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.dialog_premium);
-
+		this.setFinishOnTouchOutside(false);
 		isExitCall = getIntent().getBooleanExtra("Exit", false);
 
 		initViews();

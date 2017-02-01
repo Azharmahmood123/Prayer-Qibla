@@ -2,7 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/size_five"
+    android:paddingRight="@dimen/size_five" >
 
     <RelativeLayout
         android:id="@+id/index_row"
@@ -23,21 +25,20 @@
                 android:padding="@dimen/size_five"
                 android:text="1."
                 android:textColor="@color/black"
-                android:textSize="@dimen/text_size_eighteen" />
+                android:textSize="@dimen/_12sdp" />
 
             <View
                 android:id="@+id/view_navigation"
                 android:layout_width="@dimen/size_one"
-                android:layout_height="@dimen/size_fourty"
+                android:layout_height="@dimen/_30sdp"
                 android:layout_centerVertical="true"
                 android:layout_toRightOf="@+id/tv_surah_no"
-                android:background="@color/dark_gray" />
+                android:background="@color/light_gray" />
         </RelativeLayout>
 
         <LinearLayout
             android:id="@+id/layout_index_details"
-            android:layout_width="match_parent"
-            android:layout_toLeftOf="@+id/arabic_name"
+            android:layout_width="@dimen/_180sdp"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_toRightOf="@+id/layout_no"
@@ -51,7 +52,7 @@
                 android:layout_height="match_parent"
                 android:text="Surah Fatiha"
                 android:textColor="@color/black"
-                android:textSize="@dimen/text_size_timings_row_1" />
+                android:textSize="@dimen/_16sdp" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -60,19 +61,27 @@
                 android:orientation="horizontal" >
 
                 <TextView
+                    android:visibility="gone"
+                    android:id="@+id/verses"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="V"
+                    android:textColor="@color/gray_darkest"
+                    android:textSize="@dimen/_10sdp" />
+
+                <TextView
                     android:id="@+id/maki_madni"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:text="Madni"
-                    android:singleLine="true"
-                    android:textColor="#393939"
-                    android:textSize="@dimen/text_size_twelve" />
+                    android:textColor="@color/gray_darkest"
+                    android:textSize="@dimen/_10sdp" />
             </LinearLayout>
         </LinearLayout>
 
         <TextView
             android:id="@+id/arabic_name"
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/_100sdp"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
@@ -80,7 +89,7 @@
             android:paddingRight="@dimen/size_twelve"
             android:text="الفاتحة"
             android:textColor="#2a2a2a"
-            android:textSize="@dimen/text_size_twenty_two" />
+            android:textSize="@dimen/_16sdp" />
     </RelativeLayout>
 
     <View style="@style/view_transparent_line" />

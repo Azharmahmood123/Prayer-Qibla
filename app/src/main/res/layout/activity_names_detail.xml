@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_gray"
+    android:background="@color/white"
     android:splitMotionEvents="false">
 
 
@@ -57,7 +57,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/size_fifty"
         android:layout_above="@+id/bottom_layout"
-        android:background="@color/header"
+        android:background="@color/cardview_dark_background"
         android:splitMotionEvents="false">
 
         <ImageView
@@ -72,6 +72,7 @@
             android:tag="1" />
 
         <ImageView
+            android:visibility="gone"
             android:id="@+id/stopButton"
             android:layout_width="0dp"
             android:layout_height="match_parent"

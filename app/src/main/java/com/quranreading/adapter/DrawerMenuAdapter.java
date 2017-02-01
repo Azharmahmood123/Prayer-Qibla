@@ -56,6 +56,7 @@ public class DrawerMenuAdapter extends BaseAdapter {
 		LinearLayout rowWithoutIcons;
 		TextView tvRow1, tvRow2, tvHeader1,tv_user_name,tv_user_email;
 		RelativeLayout seprator, hearderView, rowWithIcons;
+		LinearLayout linearUserContainer;
 	}
 
 	@Override
@@ -72,10 +73,11 @@ public class DrawerMenuAdapter extends BaseAdapter {
 
 		if(convertView == null)
 		{
-			if(((GlobalClass) mContext.getApplicationContext()).deviceS3 == true)
+			/*if(((GlobalClass) mContext.getApplicationContext()).deviceS3 == true)
 				convertView = mInflater.inflate(R.layout.menu_drawer_s3, null);
 			else
-				convertView = mInflater.inflate(R.layout.menu_drawer, null);
+*/
+			convertView = mInflater.inflate(R.layout.menu_drawer, null);
 
 			holder = new ViewHolder();
 
@@ -90,13 +92,13 @@ public class DrawerMenuAdapter extends BaseAdapter {
 			holder.rowWithoutIcons = (LinearLayout) convertView.findViewById(R.id.content_layout_without_icons);
 			holder.tv_user_email = (TextView) convertView.findViewById(R.id.tv_user_email);
 			holder.tv_user_name = (TextView) convertView.findViewById(R.id.tv_user_name);
-
+			holder.linearUserContainer = (LinearLayout)convertView.findViewById(R.id.linear_user_container);
 			holder.tvRow1.setTypeface(((GlobalClass) mContext.getApplicationContext()).faceRobotoR);
 			holder.tvRow2.setTypeface(((GlobalClass) mContext.getApplicationContext()).faceRobotoR);
-			holder.tvHeader1.setTypeface(((GlobalClass) mContext.getApplicationContext()).faceRobotoR);
 
-			holder.tv_user_name.setTypeface(((GlobalClass) mContext.getApplicationContext()).faceRobotoL);
-			holder.tv_user_email.setTypeface(((GlobalClass) mContext.getApplicationContext()).faceRobotoL);
+			holder.tvHeader1.setTypeface(((GlobalClass) mContext.getApplicationContext()).faceRobotoR);
+			holder.tv_user_name.setTypeface(((GlobalClass) mContext.getApplicationContext()).faceRobotoR);
+			holder.tv_user_email.setTypeface(((GlobalClass) mContext.getApplicationContext()).faceRobotoR);
 
 			convertView.setTag(holder);
 		}
@@ -154,14 +156,14 @@ public class DrawerMenuAdapter extends BaseAdapter {
 		}
 
 		if (CommunityGlobalClass.mSignInRequests == null) {
-			holder.tvHeader1.setVisibility(View.GONE);
-			holder.tv_user_email.setVisibility(View.GONE);
-			holder.tv_user_name.setText(mContext.getResources().getString(R.string.app_name));
+			LinearLayout.LayoutParams params = new LinearLayout.LayoutParams
+			(LinearLayout.LayoutParams.MATCH_PARENT,(int) mContext.getResources().getDimension(R.dimen._120sdp));
+			holder.hearderView.setLayoutParams(params);
+			holder.linearUserContainer.setVisibility(View.GONE);
 		}
 		else
 		{
-			holder.tvHeader1.setVisibility(View.VISIBLE);
-			holder.tv_user_email.setVisibility(View.VISIBLE);
+			holder.linearUserContainer.setVisibility(View.VISIBLE);
 			holder.tv_user_name.setText(CommunityGlobalClass.mSignInRequests.getName());
 			holder.tv_user_email.setText(CommunityGlobalClass.mSignInRequests.getEmail());
 		}

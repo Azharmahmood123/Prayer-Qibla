@@ -70,7 +70,6 @@ public class PrayerAdapter extends RecyclerView.Adapter<PrayerHolder> {
         //Create issue while converted thats why split it
         String am_pm = " " + time.replaceAll("[^A-Za-z]+", "");
         if (mPrayer.getLocation_status().equals("1")) {
-
             holder.txt_userInfo.setText(mPrayer.getName() + "\n" + CommunityGlobalClass.getInstance().convertDates(mActivity, time) +am_pm);
 
         } else {

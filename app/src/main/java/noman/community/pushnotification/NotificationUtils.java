@@ -106,7 +106,7 @@ public class NotificationUtils {
                 .setSound(alarmSound)
                 .setStyle(inboxStyle)
                 .setWhen(getTimeMilliSec(timeStamp))
-                .setSmallIcon(R.drawable.ic_launcher)
+                .setSmallIcon(R.drawable.notification_small)
                 .setLargeIcon(BitmapFactory.decodeResource(mContext.getResources(), icon))
                 .setContentText(message)
                 .build();
@@ -128,7 +128,7 @@ public class NotificationUtils {
                 .setSound(alarmSound)
                 .setStyle(bigPictureStyle)
                 .setWhen(getTimeMilliSec(timeStamp))
-                .setSmallIcon(R.drawable.ic_launcher)
+                .setSmallIcon(R.drawable.notification_small)
                 .setLargeIcon(BitmapFactory.decodeResource(mContext.getResources(), icon))
                 .setContentText(message)
                 .build();

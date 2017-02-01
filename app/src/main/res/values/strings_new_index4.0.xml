@@ -13,13 +13,13 @@
 
     <string name="grid_quran">QURAN</string>
     <string name="grid_salat">SALAT</string>
-    <string name="grid_direction">DIRECTION</string>
+    <string name="grid_direction">VISUAL QIBLA</string>
     <string name="grid_hijri">HIJRI</string>
     <string name="grid_mosque">FIND MOSQUES</string>
     <string name="grid_premium">PREMIUM</string>
     <string name="grid_community">COMMUNITY</string>
     <string name="grid_halal">HALAL FINDER</string>
-    <string name="grid_names">99 NAMES</string>
+    <string name="grid_names">ALLAH NAMES</string>
     <string name="grid_duas">DUAS</string>
     <string name="grid_settings">SETTINGS</string>
 
@@ -85,16 +85,17 @@
     <string name="auto_edit_alarm_option_2">Reset edited alarms on every new location</string>
     <string name="share_timings_message">To know daily salat timings and accurate Qibla Direction, download Qibla Connect® for Free:\n\n https://play.google.com/store/apps/details?id=com.quranreading.qibladirection</string>
 
-
+    <string name="share_allah_names_message">Prophet PBUH said:\n
+    \"Indeed, Allah has ninety-nine Names, whoever counts them shall enter Paradise.\" Sahih Al-Bukhari – Book 50 Hadith 894 To listen and read all 99 names download Qibla Connect® for Free:\n\n https://play.google.com/store/apps/details?id=com.quranreading.qibladirection</string>
     <string name="ayah_of_day_dialog">Do you want to enable Ayah of the Day?</string>
     <string name="text_translation_setting">Text &amp; Translation</string>
     <string name="text_reset_quran_setting">Reset Quran Setting</string>
     <string name="dialog_reset_quran_setting">Are you sure to reset Quran Settings?</string>
     <string name="txt_enter_between_0_83">Enter Number from 0-83</string>
     <string name="no_surah_found">No Surrah Found</string>
-
+    <string name="names_99">Allah Names</string>
     <string name="ayah_message_dialog">Do you want to turn on Ayah of the Day?</string>
     <string name="phonetic_title">Phonetic Translitration</string>
     <string name="english_pronounce">English Pronounciation</string>
-
+    <string name="laguage_alert_dialog">It will change the language of your whole app except Community and 99 Names. Are you sure you want to select it?</string>
 </resources>

@@ -107,7 +107,7 @@ public class AlarmReceiverAyah extends BroadcastReceiver {
 
 		Bitmap bm = BitmapFactory.decodeResource(context.getResources(), R.drawable.ic_launcher);
 
-		NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(context).setSmallIcon(R.drawable.ic_launcher).setLargeIcon(bm).setAutoCancel(true).setContentTitle(name).setContentText(message);
+		NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(context).setSmallIcon(R.drawable.notification_small).setLargeIcon(bm).setAutoCancel(true).setContentTitle(name).setContentText(message);
 
 		// The stack builder object will contain an artificial back stack for the
 		// started Activity.

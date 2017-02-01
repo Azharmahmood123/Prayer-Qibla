@@ -107,6 +107,7 @@ public class CalenderActivity extends AdIntegration {
 
     public void handleNotificaitonIntent()
     {
+
         //If open from the intent notificaiton
         if(this.getIntent().getExtras() !=null)
         {

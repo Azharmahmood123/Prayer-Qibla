@@ -24,6 +24,7 @@ import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -44,6 +45,7 @@ import names.adapters.NamesListAdapter;
 import names.adapters.NamesModel;
 import names.download.service.ServiceDownloadNames;
 import names.sharedprefs.DownloadingNamesPref;
+import noman.CommunityGlobalClass;
 
 public class NamesListPlayingActivity extends AppCompatActivity implements AdapterView.OnItemClickListener, SeekBar.OnSeekBarChangeListener {
 
@@ -76,9 +78,11 @@ public class NamesListPlayingActivity extends AppCompatActivity implements Adapt
     int totalDuration = 0;
     DownloadingNamesPref downloadingNamesPref;
 
-    private int nameTiming[] = {0, 1310, 3290, 4846, 6343, 8037, 9737, 10950, 12526, 14396, 15766, 17960, 19750, 21210, 23140, 24484, 26334, 28034, 29591, 31351, 32481, 35081, 36672, 38028, 39758, 41158, 42349, 43852, 45502, 46659, 47376, 48706, 50136, 51516, 52916, 54223, 55683, 57213, 58383,
+    private int nameTiming[];/*= {0, 1310, 3290, 4846, 6343, 8037, 9737, 10950, 12526, 14396, 15766, 17960, 19750, 21210, 23140, 24484, 26334, 28034, 29591, 31351, 32481, 35081, 36672, 38028, 39758, 41158, 42349, 43852, 45502, 46659, 47376, 48706, 50136, 51516, 52916, 54223, 55683, 57213, 58383,
             59563, 60973, 62393, 63503, 65047, 66640, 68273, 69833, 71024, 72324, 73934, 75834, 77074, 78277, 79717, 81217, 82517, 83771, 85201, 86418, 87418, 88718, 89928, 91328, 92208, 93948, 95442, 97198, 99015, 100322, 101729, 103309, 104879, 106489, 107602, 108849, 110509, 112119, 113559,
             115079, 115763, 117303, 118873, 120063, 121393, 123786, 127294, 128620, 130320, 131617, 132487, 134707, 138707, 140367, 141425, 142618, 143735, 145555, 147535, 148535, 1600000};
+
+*/
 
 
     ListView gridViewNames;
@@ -92,11 +96,13 @@ public class NamesListPlayingActivity extends AppCompatActivity implements Adapt
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_names_playing);
 
-        downloadingNamesPref = new DownloadingNamesPref(this);
+        nameTiming = convertToMillisMinutes(getResources().getStringArray(R.array.allah_name_time));
+
+       /* downloadingNamesPref = new DownloadingNamesPref(this);
         if (downloadingNamesPref.isFirstTimeNames()) {
             showFirstAlert();
             downloadingNamesPref.setFirstTimeNames();
-        }
+        }*/
 
         LinearLayout backBtn = (LinearLayout) findViewById(R.id.toolbar_btnBack);
         backBtn.setOnClickListener(new View.OnClickListener() {
@@ -121,7 +127,7 @@ public class NamesListPlayingActivity extends AppCompatActivity implements Adapt
         gridViewNames.setOnItemClickListener(this);
 
         seekBarNames = (SeekBar) findViewById(R.id.seekBarNames);
-        seekBarNames.setMax(98);
+        seekBarNames.setMax(99);
         seekBarNames.setEnabled(false);
 
         seekBarNames.setOnSeekBarChangeListener(this);
@@ -135,7 +141,23 @@ public class NamesListPlayingActivity extends AppCompatActivity implements Adapt
 
         initTelephonyCheck();
         initializeAudios();
+
+
+        RelativeLayout relShareIcon = (RelativeLayout) findViewById(R.id.layout_image_share);
+        relShareIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                shareMessage();
+            }
+        });
     }
+
+    public void shareMessage() {
+        String body = getResources().getString(R.string.share_allah_names_message);
+        CommunityGlobalClass.mainActivityNew.shareMessage(getResources().getString(R.string.app_name), body);
+
+    }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -204,12 +226,12 @@ public class NamesListPlayingActivity extends AppCompatActivity implements Adapt
     private final void focusOnView() {
 
         if (mp != null) {
+
+
             int currentDuration = mp.getCurrentPosition();
+
+
             if (currentDuration >= nameTiming[delayIndex]) {
-
-                Log.e("Names:", String.valueOf(delayIndex));
-
-
 //                audioTotalTime = "" + milliSecondsToTimer(totalDuration - currentDuration);
 //                tvTotalTime.setText(audioTotalTime);
 
@@ -219,6 +241,7 @@ public class NamesListPlayingActivity extends AppCompatActivity implements Adapt
                 seekBarNames.setProgress(currentPosition);
                 if (delayIndex < nameTiming.length - 1) {
                     delayIndex++;
+
                 }
             }
 
@@ -707,4 +730,36 @@ public class NamesListPlayingActivity extends AppCompatActivity implements Adapt
         return errorReason;
     }
 
+    // 14:59.073
+    public int[] convertToMillisMinutes(String[] time) {
+        int minutes, seconds, milis, miliSeconds;
+        String[] getTime;
+        int z = 0;
+        // 14:59.073
+        int[] surahTimes = new int[time.length];
+
+        try {
+
+            for (; z < time.length; z++) {
+                getTime = time[z].trim().split(":");
+                minutes = Integer.parseInt(getTime[0].trim());
+
+                String[] sec = getTime[1].split("\\.");
+                seconds = Integer.parseInt(sec[0].trim());
+                milis = Integer.parseInt(sec[1].trim());
+
+                miliSeconds = (minutes * 60 * 1000) + (seconds * 1000) + (milis);
+
+                surahTimes[z] = miliSeconds;
+
+            }
+            z = 0;
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            Toast.makeText(this, "Exception occured at ayat = " + z, Toast.LENGTH_LONG).show();
+            e.printStackTrace();
+        }
+
+        return surahTimes;
+    }
 }

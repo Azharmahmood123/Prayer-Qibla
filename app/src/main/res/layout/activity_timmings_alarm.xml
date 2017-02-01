@@ -75,10 +75,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
-                <!-- style="@style/setting_row_bg_l"-->
-                <RelativeLayout
-                    style="@style/setting_row_bg_l"
 
+                <RelativeLayout
+                    style="@style/setting_row_adhan_sound"
+                    
                     android:tag="0">
 
                     <TextView
@@ -106,7 +106,7 @@
                 <View style="@style/view_line_light_gray" />
                 <RelativeLayout
                     android:id="@+id/row_silent"
-                    style="@style/setting_row_bg_l"
+                    style="@style/setting_row_adhan_sound"
                     android:tag="1">
 
                     <TextView
@@ -134,7 +134,7 @@
                 <View style="@style/view_line_light_gray" />
                 <RelativeLayout
                     android:id="@+id/row_adhan_1"
-                    style="@style/setting_row_bg_l"
+                    style="@style/setting_row_adhan_sound"
                     android:tag="2">
 
                     <TextView
@@ -177,7 +177,7 @@
                 <View style="@style/view_line_light_gray" />
                 <RelativeLayout
                     android:id="@+id/row_adhan_2"
-                    style="@style/setting_row_bg_l"
+                    style="@style/setting_row_adhan_sound"
                     android:tag="3">
 
                     <TextView
@@ -220,7 +220,7 @@
                 <View style="@style/view_line_light_gray" />
                 <RelativeLayout
                     android:id="@+id/row_adhan_3"
-                    style="@style/setting_row_bg_l"
+                    style="@style/setting_row_adhan_sound"
                     android:tag="4">
 
                     <TextView
@@ -264,7 +264,7 @@
 
                 <RelativeLayout
                     android:id="@+id/row_adhan_4"
-                    style="@style/setting_row_bg_l"
+                    style="@style/setting_row_adhan_sound"
                     android:tag="5">
 
                     <TextView
@@ -308,7 +308,7 @@
                 <View style="@style/view_line_light_gray" />
                 <RelativeLayout
                     android:id="@+id/row_adhan_5"
-                    style="@style/setting_row_bg_l"
+                    style="@style/setting_row_adhan_sound"
                     android:tag="6">
 
                     <TextView
@@ -352,7 +352,7 @@
 
                 <RelativeLayout
                     android:id="@+id/row_adhan_6"
-                    style="@style/setting_row_bg_l"
+                    style="@style/setting_row_adhan_sound"
                     android:tag="7">
 
                     <TextView
@@ -396,7 +396,7 @@
                 <View style="@style/view_line_light_gray" />
                 <RelativeLayout
                     android:id="@+id/row_adhan_7"
-                    style="@style/setting_row_bg_l"
+                    style="@style/setting_row_adhan_sound"
                     android:tag="8">
 
                     <TextView
@@ -440,7 +440,7 @@
                 <!--<View style="@style/view_line_light_gray" />
                 <RelativeLayout
                     android:id="@+id/row_adhan_8"
-                    style="@style/setting_row_bg_l"
+                    style="@style/setting_row_adhan_sound"
                     android:tag="9">
                     <TextView
                         android:id="@+id/tv_adhan_8"

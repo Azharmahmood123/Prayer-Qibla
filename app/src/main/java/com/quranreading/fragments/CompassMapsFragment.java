@@ -40,7 +40,7 @@ public class CompassMapsFragment extends Fragment implements OnMapReadyCallback,
 
     int MAX_ZOOM_MAP = 15;
     int MIN_ZOOM_MAP = 3;
-    int POLYLINE_WIDTH = 9;
+    int POLYLINE_WIDTH = 7;
     double SENSOR_CALLBACK_DELAY = 1.5;
 
     double makkahLatitude = 21.422510;
