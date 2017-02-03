@@ -72,6 +72,8 @@ public class MineFragment extends Fragment {
             }
         });
 
+        CommunityGlobalClass.getInstance().sendAnalyticsScreen("Community Mine");
+
         return rootView;
     }
 
@@ -79,6 +81,8 @@ public class MineFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
+
+
     }
 
     @Override

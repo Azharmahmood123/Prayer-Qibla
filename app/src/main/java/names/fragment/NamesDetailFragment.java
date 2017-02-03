@@ -27,6 +27,8 @@ public class NamesDetailFragment extends Fragment {
         mContext = getContext();
         namesData = new NamesData(mContext);
         namesData.setNamesImage();
+
+
     }
 
     @Override

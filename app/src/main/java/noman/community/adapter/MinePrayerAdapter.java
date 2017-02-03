@@ -148,9 +148,11 @@ public class MinePrayerAdapter extends RecyclerView.Adapter<PrayerHolder> {
         public boolean onMenuItemClick(MenuItem menuItem) {
             switch (menuItem.getItemId()) {
                 case R.id.action_delete:
+                    CommunityGlobalClass.getInstance().sendAnalyticEvent("Community Mine","Delete Prayer");
                     callWebDialogApi("Delete Prayer", "Do you really want to delete this prayer request?");
                     return true;
                 case R.id.action_move_top:
+                    CommunityGlobalClass.getInstance().sendAnalyticEvent("Community Mine","Move To Top Prayer");
                     MoveToTopRequest mPrayingRequest = new MoveToTopRequest();
                     mPrayingRequest.setPrayer_id(mPrayerModel.getPrayerId());
                     mPrayingRequest.setUserId(mPrayerModel.getUserId());
@@ -158,6 +160,7 @@ public class MinePrayerAdapter extends RecyclerView.Adapter<PrayerHolder> {
                     callMoveTopApi(mPrayingRequest);
                     return true;
                 case R.id.action_share:
+                    CommunityGlobalClass.getInstance().sendAnalyticEvent("Community Mine","Share Prayer");
                     shareMessage("Please Pray", "\"" + mPrayerModel.getContent() + "\"\nJoin Muslim Community:\nhttps://play.google.com/store/apps/details?id=com.quranreading.qibladirection");
                     return true;
 

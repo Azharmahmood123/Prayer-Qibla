@@ -9,6 +9,7 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -20,6 +21,8 @@ import com.quranreading.ads.AnalyticSingaltonClass;
 import com.quranreading.helper.TimeFormateConverter;
 import com.quranreading.sharedPreference.AlarmSharedPref;
 import com.quranreading.sharedPreference.TimeEditPref;
+
+import java.util.HashMap;
 
 /**
  * Created by cyber on 12/7/2016.
@@ -104,7 +107,7 @@ public class SettingsTimeAlarmActivity extends AppCompatActivity implements Medi
         alarmObj = new AlarmSharedPref(this);
 
         Intent intent = getIntent();
-        time = intent.getStringArrayExtra(EXTRA_PRAYER_NOTIFICATION_TIME);
+       // time = intent.getStringArrayExtra(EXTRA_PRAYER_NOTIFICATION_TIME);
         // String[] timePrayer = intent.getStringArrayExtra(EXTRA_PRAYER_TIME);
         posPrayer = intent.getIntExtra(EXTRA_PRAYER_INDEX, -1);
 
@@ -113,8 +116,8 @@ public class SettingsTimeAlarmActivity extends AppCompatActivity implements Medi
 
         initializeViews();
 
-        String t = TimeFormateConverter.convertTime24To12("" + time[0] + ":" + time[1]);
-        tvNotificationTime.setText(t);
+     //   String t = TimeFormateConverter.convertTime24To12("" + time[0] + ":" + time[1]);
+    //    tvNotificationTime.setText(t);
 
         initializeSettings();
     }
@@ -124,9 +127,31 @@ public class SettingsTimeAlarmActivity extends AppCompatActivity implements Medi
         indexSoundOption = alarmObj.getAlarmOptionIndex(AlarmSharedPref.ALARM_PRAYERS_SOUND[posPrayer], posPrayer);
         if (indexSoundOption == -1) {
             useOldAdhanSettings();
+        } else {
+          //  initPrefSettings();
+        }
+        initPrefSettings();
+        adjustSoundViews();
+    }
+
+
+    public void initPrefSettings() {
+
+
+        TimeEditPref timeEditPref = new TimeEditPref(this);
+        tvNotificationTime.setText(timeEditPref.getAlarmNotifyTime(TimeEditPref.ALARMS_TIME_PRAYERS[posPrayer]));
+        time = timeEditPref.getAlarmNotifyTime(TimeEditPref.ALARMS_TIME_PRAYERS[posPrayer]).split("\\s|:");
+        if (tvNotificationTime.getText().toString().trim().isEmpty()) {
+            AlarmSharedPref mAlarmSharedPref = new AlarmSharedPref(this);
+            HashMap<String, String> alarmTime = mAlarmSharedPref.getPrayerTimes();
+            String timePrayer = alarmTime.get(AlarmSharedPref.TIME_PRAYERS[posPrayer]);
+            tvNotificationTime.setText(timePrayer);
+
+            time = timePrayer.split("\\s|:");
         }
 
-        adjustSoundViews();
+
+
     }
 
     private void useOldAdhanSettings() {
@@ -172,7 +197,7 @@ public class SettingsTimeAlarmActivity extends AppCompatActivity implements Medi
         }
 
         if (!((GlobalClass) getApplication()).isPurchase) {
-            for (int index = 3; index < tvSounds.length; index++) {
+            for (int index = 4; index < tvSounds.length; index++) {
                 tvSounds[index].setTextColor(getResources().getColor(R.color.disable_text_color));
             }
         }

@@ -107,12 +107,13 @@ public class LanguageSelectionActivity extends AppCompatActivity implements OnIt
 //                dailogShow.showTwoButtonDialog();
 //            }
 //        }
-
-        if (!inProccess) {
-            inProccess = true;
-            selectedPosition = position;
-            DailogsClass dailogShow = new DailogsClass(context, getResources().getString(R.string.languages), getResources().getString(R.string.laguage_alert_dialog), this, getResources().getString(R.string.okay), getResources().getString(R.string.cancel));
-            dailogShow.showTwoButtonDialog();
+        if(mGlobalClass.languagePref.getLanguage() != position) {
+            if (!inProccess) {
+                inProccess = true;
+                selectedPosition = position;
+                DailogsClass dailogShow = new DailogsClass(context, getResources().getString(R.string.languages), getResources().getString(R.string.laguage_alert_dialog), this, getResources().getString(R.string.okay), getResources().getString(R.string.cancel));
+                dailogShow.showTwoButtonDialog();
+            }
         }
     }
 

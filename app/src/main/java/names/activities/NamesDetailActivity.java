@@ -38,6 +38,7 @@ import java.io.File;
 import names.adapters.NamesData;
 import names.adapters.NamesPagerAdapter;
 import names.download.service.ServiceDownloadNames;
+import noman.CommunityGlobalClass;
 
 public class NamesDetailActivity extends AppCompatActivity implements MediaPlayer.OnCompletionListener {
 
@@ -90,6 +91,10 @@ public class NamesDetailActivity extends AppCompatActivity implements MediaPlaye
         initializeAds();
         initialize();
         initTelephonyCheck();
+
+
+        //Send Screen analytic
+        CommunityGlobalClass.getInstance().sendAnalyticsScreen("Allah Detail");
     }
 
 
@@ -188,6 +193,9 @@ public class NamesDetailActivity extends AppCompatActivity implements MediaPlaye
                     if (!inProcess) {
                         inProcess = true;
                         share();
+
+                        //Send  analytic
+                        CommunityGlobalClass.getInstance().sendAnalyticEvent("Allah Single Name","Share");
                     }
                     break;
             }

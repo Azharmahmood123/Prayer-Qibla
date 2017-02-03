@@ -54,7 +54,7 @@ public class SplashActivity extends AppCompatActivity {
     /*private final int SPLASH_TIME_LONG = 5000;
     private final int SPLASH_TIME_SHORT = 500;*/
     private final int SPLASH_TIME_LONG = 5000;
-    private final int SPLASH_TIME_SHORT = 2000;
+    private final int SPLASH_TIME_SHORT = 1500;
     QiblaDirectionPref mQiblaDirectionPref;
 
     private Handler myHandler = new Handler();
@@ -116,18 +116,18 @@ public class SplashActivity extends AppCompatActivity {
                 myHandler.postDelayed(mRunnable, SPLASH_TIME_LONG);
             }
         }
-
-	/*	chkDownloadStatus();
+/*
+		chkDownloadStatus();
 
 		startAsyncTask();*/
     }
 
     public void showTextAnimation() {
-        HTextView hTextView = (HTextView) findViewById(R.id.text);
+      /*  HTextView hTextView = (HTextView) findViewById(R.id.text);
         hTextView.setTypeface(((GlobalClass) getApplicationContext()).faceRobotoR);
         hTextView.setAnimateType(HTextViewType.EVAPORATE);
         hTextView.animateText(getString(R.string.app_name)); // animate
-
+*/
         chkDownloadStatus();
         startAsyncTask();
 

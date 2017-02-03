@@ -173,9 +173,9 @@ public class QuranReadListAdapter extends BaseAdapter {
             holder.tvArabicJuzzName = (TextView) convertView.findViewById(R.id.txt_urdu_para_name);
 
             //Set font face
-            holder.tvArabicJuzzName.setTypeface(((GlobalClass) mContext.getApplicationContext()).faceArabic);
+            holder.tvArabicJuzzName.setTypeface(((GlobalClass) mContext.getApplicationContext()).faceRobotoL);
             holder.tvEngJuzzNo.setTypeface(((GlobalClass) mContext.getApplicationContext()).faceRobotoL);
-            holder.tvArabicJuzzNo.setTypeface(((GlobalClass) mContext.getApplicationContext()).faceArabic);
+            holder.tvArabicJuzzNo.setTypeface(((GlobalClass) mContext.getApplicationContext()).faceRobotoL);
 
 
             // ******** END *****************

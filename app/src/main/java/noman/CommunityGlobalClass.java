@@ -20,6 +20,7 @@ import android.widget.CompoundButton;
 import android.widget.Toast;
 
 import com.facebook.FacebookSdk;
+import com.quranreading.ads.AnalyticSingaltonClass;
 import com.quranreading.qibladirection.GlobalClass;
 import com.quranreading.qibladirection.MainActivityNew;
 import com.quranreading.qibladirection.R;
@@ -105,6 +106,14 @@ public class CommunityGlobalClass extends GlobalClass {
         //Load Default Ad here
         CommunityGlobalClass.getInstance().mInterstitialAd = new PreLoadIntersitial(this);
 
+    }
+    public void sendAnalyticsScreen(String name) {
+
+        AnalyticSingaltonClass.getInstance(this).sendScreenAnalytics(name);
+    }
+
+    public void sendAnalyticEvent(String ScreenName,String eventAction) {
+        AnalyticSingaltonClass.getInstance(this).sendEventAnalytics(ScreenName, eventAction);
     }
 
     //For heder add

@@ -44,6 +44,9 @@ public class EventActivity extends AdIntegration {
 
 
         moveToEventTab();
+
+        //Send Screen Analytics
+        CommunityGlobalClass.getInstance().sendAnalyticsScreen("Islamic Event");
     }
 
     public void moveToEventTab() {

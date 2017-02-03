@@ -3,6 +3,7 @@ package noman.hijri.acitivity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -43,7 +44,7 @@ public class CalenderActivity extends AdIntegration {
     private String TIME_PATTERN = "HH:mm";
     Button btnToday, btnEvent, btnConvert;
     CalenderFragment calenderFragment;
-
+    long lastClick=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -81,6 +82,8 @@ public class CalenderActivity extends AdIntegration {
         btnToday.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                CommunityGlobalClass.getInstance().sendAnalyticEvent("Hijri Calendar","Today");
                 moveToCalenderTab();
                 //moveTodayTab();
             }
@@ -94,7 +97,13 @@ public class CalenderActivity extends AdIntegration {
         btnConvert.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(CalenderActivity.this, ConverterDialog.class));
+                if (SystemClock.elapsedRealtime() - lastClick < 2000) {
+                    return;
+                } else {
+                    CommunityGlobalClass.getInstance().sendAnalyticEvent("Hijri Calendar", "Convert");
+                    startActivity(new Intent(CalenderActivity.this, ConverterDialog.class));
+                }
+                lastClick = SystemClock.elapsedRealtime();
             }
         });
 
@@ -103,6 +112,10 @@ public class CalenderActivity extends AdIntegration {
 
       // CommunityGlobalClass.getInstance().notifiyEvents(this);
         handleNotificaitonIntent();
+
+
+        //Send Screen Analytics
+        CommunityGlobalClass.getInstance().sendAnalyticsScreen("Hijri Calendar");
     }
 
     public void handleNotificaitonIntent()

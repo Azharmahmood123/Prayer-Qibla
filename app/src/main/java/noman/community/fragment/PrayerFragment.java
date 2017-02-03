@@ -57,6 +57,9 @@ public class PrayerFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         CommunityGlobalClass.mPrayerFragment = this;
         View rootView = inflater.inflate(R.layout.layout_prayer_tab, container, false);
+
+        CommunityGlobalClass.getInstance().sendAnalyticsScreen("Community Prayer");
+
         isInternetAvailable = CommunityGlobalClass.getInstance().isInternetOn();
         noData = (TextView) rootView.findViewById(R.id.txt_no);
         noData.setVisibility(View.VISIBLE);
@@ -81,6 +84,8 @@ public class PrayerFragment extends Fragment {
         CommunityGlobalClass.getInstance().showLoading(getActivity());
         //For most reset
         callToLoadPrayer("" + SavePreference.getMenuOption(getActivity()));
+
+
         return rootView;
     }
 

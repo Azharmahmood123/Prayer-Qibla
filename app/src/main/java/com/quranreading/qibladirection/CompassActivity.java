@@ -20,7 +20,7 @@ import android.widget.RelativeLayout;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
-import com.quranreading.fragments.CompassInnerFragment;
+import com.quranreading.fragments.CompassDialFragment;
 import com.quranreading.fragments.CompassMapsFragment;
 import com.quranreading.helper.ToastClass;
 import com.quranreading.sharedPreference.LocationPref;
@@ -43,7 +43,7 @@ public class CompassActivity extends AppCompatActivity {
     FragmentManager fm;
     FragmentTransaction ft;
     boolean isMapView = false;
-    CompassInnerFragment compassInnerFragment;
+    CompassDialFragment compassDialFragment;
     CompassMapsFragment compassMapsFragment;
     FrameLayout frameMap, frameCompass;
     ImageView btnViewNavigation;
@@ -129,8 +129,8 @@ public class CompassActivity extends AppCompatActivity {
 
             fm = getSupportFragmentManager();
             ft = fm.beginTransaction();
-            compassInnerFragment = new CompassInnerFragment();
-            ft.add(R.id.frame_compass, compassInnerFragment).commit();
+            compassDialFragment = new CompassDialFragment();
+            ft.add(R.id.frame_compass, compassDialFragment).commit();
         }
 
         if (isMapView) {

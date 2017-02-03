@@ -16,6 +16,7 @@ import com.quranreading.qibladirection.R;
 
 import java.util.ArrayList;
 
+import noman.CommunityGlobalClass;
 import noman.quran.JuzConstant;
 import noman.quran.QuranModuleActivity;
 import noman.quran.activity.QuranReadActivity;
@@ -132,13 +133,17 @@ public class ChildContainerList extends RecyclerView.Adapter<ChildContainerHolde
 
 
         if (childType == 0) {
+            CommunityGlobalClass.getInstance().sendAnalyticEvent("Quran","Quran Menu Juzz");
             juzzContainerOperate(holder, position);
         } else if (childType == 1) {
+            CommunityGlobalClass.getInstance().sendAnalyticEvent("Quran","Quran Menu Favourite");
             favouriteContainerOperate(holder, position);
         } else if (childType == 2) {
+            CommunityGlobalClass.getInstance().sendAnalyticEvent("Quran","Quran Menu Sajdahs");
             holder.linearView.setVisibility(View.GONE);
             sajdahContainerOperate(holder, position);
         } else if (childType == 3) {
+            CommunityGlobalClass.getInstance().sendAnalyticEvent("Quran","Quran Menu StopSign");
             holder.linearView.setVisibility(View.VISIBLE);
             signContainerOperate(holder, position);
         }

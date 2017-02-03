@@ -42,7 +42,7 @@ import com.quranreading.qibladirection.R;
 import com.quranreading.sharedPreference.DialPref;
 import com.quranreading.sharedPreference.LocationPref;
 
-public class CompassFragmentIndex extends Fragment implements RotationUpdateDelegate, OnLocationSetListner {
+public class CompassDialMenuFragment extends Fragment implements RotationUpdateDelegate, OnLocationSetListner {
 
     public static final String LOCATION_INTENT_FILTER = "compass_location_receiver";
     public static final String CITY_NAME = "city";
@@ -71,7 +71,7 @@ public class CompassFragmentIndex extends Fragment implements RotationUpdateDele
     private static ImageView imagePointer;
     private static int imgPointerResrc = 0;
     private Sensor accelerometer, magnetometer;
-    private TextView tvCity, tvDegree, tvWarning;
+    private TextView  tvDegree, tvWarning;
     private LinearLayout lacationNameLayout;
     private boolean locChk = false, chkBlankPin = false;
     private float degree2 = 0, currentDegree = 0f, currentDegree2 = 0f, currentDegree3 = 0f;
@@ -80,7 +80,7 @@ public class CompassFragmentIndex extends Fragment implements RotationUpdateDele
     public boolean isActivityOpened;
 
     MainActivityNew mActivity;
-
+    public static TextView tvCity;
     @Override
     public void onAttach(Context context) {
         // TODO Auto-generated method stub
@@ -100,13 +100,13 @@ public class CompassFragmentIndex extends Fragment implements RotationUpdateDele
             @Override
             public void run() {
                 inProcess = false;
-                mUserLocation.setOnLocationSetListner(CompassFragmentIndex.this);
+                mUserLocation.setOnLocationSetListner(CompassDialMenuFragment.this);
                 mUserLocation.checkLocation(false, false);
             }
         };
 
         mLocationReceiver = new LocationReceiver();
-        mActivity.registerReceiver(mLocationReceiver, new IntentFilter(CompassFragmentIndex.LOCATION_INTENT_FILTER));
+        mActivity.registerReceiver(mLocationReceiver, new IntentFilter(CompassDialMenuFragment.LOCATION_INTENT_FILTER));
 
         locationPref = new LocationPref(mActivity);
         dialPref = new DialPref(mActivity);
@@ -169,11 +169,11 @@ public class CompassFragmentIndex extends Fragment implements RotationUpdateDele
             public void onClick(View v) {
                 if (manualDialog != null) {
                     if (!manualDialog.isShowing()) {
-                        manualDialog = new ManualDialogCustom(mActivity, CompassFragmentIndex.this);
+                        manualDialog = new ManualDialogCustom(mActivity, CompassDialMenuFragment.this);
                         manualDialog.show();
                     }
                 } else {
-                    manualDialog = new ManualDialogCustom(mActivity, CompassFragmentIndex.this);
+                    manualDialog = new ManualDialogCustom(mActivity, CompassDialMenuFragment.this);
                     manualDialog.show();
                 }
             }
@@ -240,7 +240,7 @@ public class CompassFragmentIndex extends Fragment implements RotationUpdateDele
             manualDialog.onResumeLocationDialog();
         }
 
-        Log.e("onResume", "CompassFragmentIndex");
+        Log.e("onResume", "CompassDialMenuFragment");
         isActivityOpened = false;
 
         dialValue = dialPref.getDialValue();
@@ -550,9 +550,9 @@ public class CompassFragmentIndex extends Fragment implements RotationUpdateDele
             progressBar.setVisibility(View.GONE);
 
             try {
-                String city = intent.getStringExtra(CompassFragmentIndex.CITY_NAME);
-                double lat = intent.getDoubleExtra(CompassFragmentIndex.LATITUDE, 0);
-                double lng = intent.getDoubleExtra(CompassFragmentIndex.LONGITUDE, 0);
+                String city = intent.getStringExtra(CompassDialMenuFragment.CITY_NAME);
+                double lat = intent.getDoubleExtra(CompassDialMenuFragment.LATITUDE, 0);
+                double lng = intent.getDoubleExtra(CompassDialMenuFragment.LONGITUDE, 0);
 
                 if (lat != 0 && lat != -2 && lng != 0 && lng != -2) {
                     locChk = true;

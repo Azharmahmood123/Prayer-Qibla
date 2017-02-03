@@ -165,6 +165,8 @@ public class SettingsActivity extends AppCompatActivity implements OnDailogButto
                         mSurahsSharedPref.setLastSaveTransaltion(1);
                         mSurahsSharedPref.setReadModeState(false);
                         mSurahsSharedPref.setAyahNotification(false);
+                        //To reset surah position
+                        ((GlobalClass) getApplication()).ayahPos=0;
 
                         initializeSettings();
 
@@ -759,6 +761,9 @@ public class SettingsActivity extends AppCompatActivity implements OnDailogButto
             MainActivityNew.finishActivity();
             startActivity(new Intent(context, MainActivityNew.class));
         }
+
+        //To reset surah position
+        ((GlobalClass) getApplication()).ayahPos=0;
         finish();
     }
 

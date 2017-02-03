@@ -309,12 +309,15 @@ public class QuranReadActivity extends AppCompatActivity implements OnCompletion
                     btnAudio.setImageResource(R.drawable.play_btn);
                 }
                 handleTextSizeSetting(true);
+
+                CommunityGlobalClass.getInstance().sendAnalyticEvent("Quran","Juz Surah");
                 handleJuzzIndex();
             }
         });
         imgTextSizeIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                CommunityGlobalClass.getInstance().sendAnalyticEvent("Quran","TT Surah");
                 handleTextSizeSetting(false);
             }
         });
@@ -356,6 +359,7 @@ public class QuranReadActivity extends AppCompatActivity implements OnCompletion
             mSurahsSharedPref.setTransliteration(mSurahsSharedPref.getLastTranslirationState());
 
             showShortToast(getResources().getString(R.string.text_read_mode) + " Off", 500, Gravity.CENTER);
+            CommunityGlobalClass.getInstance().sendAnalyticEvent("Quran","Read Mode Off");
 
         } else {
             imgReadMode.setImageResource(R.drawable.open_read_mode);
@@ -367,6 +371,7 @@ public class QuranReadActivity extends AppCompatActivity implements OnCompletion
             mSurahsSharedPref.setTransliteration(false);
             mSurahsSharedPref.setTranslationIndex(0);
             showShortToast(getResources().getString(R.string.text_read_mode) + " On", 500, Gravity.CENTER);
+            CommunityGlobalClass.getInstance().sendAnalyticEvent("Quran","Read Mode ON");
         }
 
         initializeSettings();
@@ -565,25 +570,24 @@ public class QuranReadActivity extends AppCompatActivity implements OnCompletion
     public void onBackPressed() {
         // TODO Auto-generated method stub
 
-
-        if (!inProcess) {
-            inProcess = true;
-            handler.removeCallbacks(sendUpdatesToUI);
-            if (mp != null && isAudioFound) {
-                mp.release();
-                mp = null;
-            }
-
-
-            SurahsSharedPref mSurahsSharedPref = new SurahsSharedPref(QuranReadActivity.this);
-            mSurahsSharedPref.setTranslationIndex(mSurahsSharedPref.getLastSaveTransaltion());
-            mSurahsSharedPref.setTransliteration(mSurahsSharedPref.getLastTranslirationState());
-
 //To Check if calibration is open or not
             if (relCalibraiton.getVisibility() == View.VISIBLE) {
+
                 relCalibraiton.setVisibility(View.GONE);
                 settngPref.setIsFirstTimeQuranReadOpen(false);
             } else {
+                if (!inProcess) {
+                    inProcess = true;
+                    handler.removeCallbacks(sendUpdatesToUI);
+                    if (mp != null && isAudioFound) {
+                        mp.release();
+                        mp = null;
+                    }
+
+
+                    SurahsSharedPref mSurahsSharedPref = new SurahsSharedPref(QuranReadActivity.this);
+                    mSurahsSharedPref.setTranslationIndex(mSurahsSharedPref.getLastSaveTransaltion());
+                    mSurahsSharedPref.setTransliteration(mSurahsSharedPref.getLastTranslirationState());
                 super.onBackPressed();
             }
         }
@@ -984,14 +988,14 @@ public class QuranReadActivity extends AppCompatActivity implements OnCompletion
             initializeSettings();
             initializaSurahData();
             customAdapter.notifyDataSetChanged();
-            if (((GlobalClass) getApplication()).ayahPos > 0) {
+           // if (((GlobalClass) getApplication()).ayahPos > 0) {
                 ayahListView.post(new Runnable() {
                     @Override
                     public void run() {
                         ayahListView.setSelection(((GlobalClass) getApplication()).ayahPos);
                     }
                 });
-            }
+            //}
         }
 
         if (mp != null && isAudioFound) {

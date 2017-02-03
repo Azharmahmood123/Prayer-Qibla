@@ -26,6 +26,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.StatFs;
 import android.support.v7.app.AlertDialog;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Toast;
 import quran.helper.DBManagerQuran;
@@ -239,8 +240,9 @@ public class DownloadDialog extends Activity {
 		{
 			if(!EnoughMemory(fileSize))
 			{
-				Toast.makeText(this, "Not Enough Memory" + "(" + String.format("%.2f", sizeRequired * 1E-6) + "MB Wajib)", Toast.LENGTH_LONG).show();
-
+				Toast toast = Toast.makeText(DownloadDialog.this,"Not Enough Memory" + "(" + String.format("%.2f", sizeRequired * 1E-6) + "MB Wajib)", Toast.LENGTH_SHORT);
+				toast.setGravity(Gravity.CENTER, 0, 0);
+				toast.show();
 			}
 			else
 			{
@@ -266,8 +268,10 @@ public class DownloadDialog extends Activity {
 		}
 		else
 		{
-			Toast.makeText(DownloadDialog.this, R.string.toast_network_error, 0).show();
-		}
+			Toast toast = Toast.makeText(DownloadDialog.this,R.string.toast_network_error, Toast.LENGTH_SHORT);
+			toast.setGravity(Gravity.CENTER, 0, 0);
+			toast.show();
+				}
 
 		finish();
 	}

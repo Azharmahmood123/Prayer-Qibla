@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="save"> บันทึก </string>
+    <string name="new_location_detected"> ใหม่ตำแหน่งที่ตรวจพบ </string>
+    <string name="new_location_detected_msg1"> คุณต้องการที่จะตั้งตำแหน่งของคุณจาก </string>
+    <string name="to"> เพname </string>
+    <string name="and"> และ </string>
+    <string name="new_location_detected_msg2"> ปรับปรุงเวลาละหมาด </string>
+    <string name="auto_settings"> การตั้งค่าอัตโนมัติ </string>
+    <string name="timings"> จับเวลา </string>
+    <string name="in"> ใน </string>
+    <string name="grid_quran"> QURAN </string>
+    <string name="grid_salat"> salat </string>
+    <string name="grid_direction"> VISUAL Qibla </string>
+    <string name="grid_hijri"> ฮิจเราะห์ </string>
+    <string name="grid_mosque"> ค้นหามัสยิด </string>
+    <string name="grid_premium"> PREMIUM </string>
+    <string name="grid_community"> Community </string>
+    <string name="grid_halal"> FINDER ฮาลาล </string>
+    <string name="grid_names"> nameอัลลอ </string>
+    <string name="grid_duas"> Duas </string>
+    <string name="grid_settings"> การตั้งค่า </string>
+
+    <string name="notificaion_time"> เวลาในการแจ้ง </string>
+    <string name="notification_sound"> ​​เสียงแจ้งเตือน </string>
+    <string name="notificaion"> ประกาศ </string>
+    <string name="set_tone"> ตั้งค่าเสียง </string>
+
+    <string-array name="array_calculation_methods_new">
+        <item> แอลจีเรียรัฐมนตรีว่าการกระทรวงกิจการศาสนาและ Wakfs </item>
+        <item> อียิปต์อำนาจทั่วไป </item>
+        <item> อียิปต์อำนาจทั่วไป (BIS) </item>
+        <item> คงมุม Isha ่วงเวลา </item>
+        <item> มหาวิทยาลัยอิสลามการาจี </item>
+        <item> ISNA (รัฐอิสลามแห่งอเมริกาเหนือ) </item>
+        <item> JAKIM (Jabatan Kemajuan อิสลามมาเลเซีย) </item>
+        <item> KEMENAG (Kementerian Agama RI) </item>
+        <item> MUIS (Majlis Ugama Singapura อิสลาม) </item>
+        <item> MWL (โลกมุสลิมลีก) </item>
+        <item> ิ Athna Ashari (Jafari) </item>
+        <item> อำนาจยูเออีโดยทั่วไปของกิจการศาสนาอิสลาม </item>
+        <item> Umm Al-Qura, เมกกะ </item>
+        <item> มหาวิทยาลัยเตหะราน </item>
+    </string-array>
+
+    <string-array name="array_calculation_methods_angles">
+        <item>Fajr 18.0° / Isha\'a 17.0°</item>
+        <item>Fajr 19.5° / Isha\'a 17.5°</item>
+        <item>Fajr 20.0° / Isha\'a 18.0°</item>
+        <item>Fajr 19.5° / Isha\'a 90 min</item>
+        <item>Fajr 18.0° / Isha\'a 18.0°</item>
+        <item>Fajr 15.0° / Isha\'a 15.0°</item>
+        <item>Fajr 20.0° / Isha\'a 18.0°</item>
+        <item>Fajr 20.0° / Isha\'a 18.0°</item>
+        <item>Fajr 20.0° / Isha\'a 18.0°</item>
+        <item>Fajr 18.0° / Isha\'a 17.0°</item>
+        <item>Fajr 16.0° / Isha\'a 14.0°</item>
+        <item>Fajr 19.5° / Isha\'a 90 min</item>
+        <item>Fajr 18.5° / Isha\'a 90 min</item>
+        <item>Fajr 17.7° / Isha\'a 15.0°</item>
+    </string-array>
+
+    <string-array name="array_calculation_methods_index">
+        <item> 12 </item>
+        <item> 5 </item>
+        <item> 7 </item>
+        <item> 10 </item>
+        <item> 1 </item>
+        <item> 2 </item>
+        <item> 11 </item>
+        <item> 8 </item>
+        <item> 9 </item>
+        <item> 3 </item>
+        <item> 0 </item>
+        <item> 10 </item>
+        <item> 4 </item>
+        <item> 6 </item>
+    </string-array>
+
+    <string name="manual_corrections"> คู่มือการใ้งานราทัณฑ์ </string>
+    <string name="auto_edit_alarm"> Auto แก้ไขปลุก </string>
+    <string name="auto_edit_alarm_option_1"> แก้ไขอัตโนมัติด้วยความเคารพต่อสถานที่ใหม่ </string>
+    <string name="auto_edit_alarm_option_2"> รีเซ็ตการเตือนภัยแก้ไขสถานที่ตั้งใหม่ทุก </string>
+    <string name="share_timings_message"> หากต้องการทราบกำหนดเวลาละหมาดประจำวันที่ถูกต้องและทิศทาง Qibla ดาวน์โหลด Qibla Connect®ฟรี: \n \n https://play.google.com/store/apps/details?id=com.quranreading.qibladirection </string>
+
+<string name="share_allah_names_message"> ศาสดา PBUH กล่าวว่า: \n
+    \ "แท้จริงอัลลอมีnameเก้าสิบเก้าใครนับเหล่านี้จะเข้าพาราไดซ์ \." ซาฮิอัลบุคอรี - หนังสือ 50 หะดีษ 894 ที่จะฟังและอ่านทั้งหมด 99 รายnameดาวน์โหลด Qibla Connect®ฟรี: \n \n https://play.google.com/store/apps/details?id=com.quranreading.qibladirection </string>
+    <string name="ayah_of_day_dialog"> คุณต้องการเปิดใ้งาน Ayah ของวันที่?</string>
+    <string name="text_translation_setting"> ข้อความ &amp; แปล </string>
+    <string name="text_reset_quran_setting"> รีเซ็ตการตั้งค่าคัมภีร์กุรอาน </string>
+    <string name="dialog_reset_quran_setting"> คุณแน่ใจว่าจะรีเซ็ตการตั้งค่าคัมภีร์กุรอาน?</string>
+    <string name="txt_enter_between_0_83"> ใส่จำนวน 0-83 </string>
+    <string name="no_surah_found"> ​​ไม่พบ Surrah </string>
+    <string name="names_99"> อัลลอname </string>
+    <string name="ayah_message_dialog"> คุณต้องการที่จะเปิด Ayah ของวันที่?</string>
+    <string name="phonetic_title"> การออกเสียง Translitration </string>
+    <string name="english_pronounce"> ภาษาอังกฤษออกเสียง </string>
+    <string name="logout_dialog"> เป็นคุณแน่ใจหรือว่าต้องการออกจากระบบ?</string>
+    <string name="logout_title"> ออกจากระบบ </string>
+
+
+    <string name="laguage_alert_dialog"> มันจะเปลี่ยนภาษาของ app ของคุณทั้งหมดยกเว้นุมนและ 99 name คุณแน่ใจหรือว่าต้องการลบ?</string>
+
+
+</resources>

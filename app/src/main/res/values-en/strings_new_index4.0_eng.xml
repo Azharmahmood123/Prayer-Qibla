@@ -103,6 +103,6 @@
 
     <string name="laguage_alert_dialog">It will change the language of your whole app except Community and 99 Names. Are you sure you want to select it?</string>
 
-    <string name="_community">COMMUNITY</string>
-    <string name="_hijri">HIJRI</string>
+
+
 </resources>

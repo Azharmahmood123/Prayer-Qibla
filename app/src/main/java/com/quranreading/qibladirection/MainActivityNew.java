@@ -44,13 +44,14 @@ import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.signin.internal.SignInRequest;
 import com.quranreading.adapter.DrawerMenuAdapter;
 import com.quranreading.ads.AnalyticSingaltonClass;
 import com.quranreading.alarms.AlarmHelper;
 import com.quranreading.alarms.AlarmReceiverAyah;
 import com.quranreading.alarms.AlarmReceiverPrayers;
 import com.quranreading.alarms.PrayerTimeUpdateReciever;
-import com.quranreading.fragments.IndexFragment;
+import com.quranreading.fragments.HomeFragment;
 import com.quranreading.helper.Constants;
 import com.quranreading.model.MenuDrawerModel;
 import com.quranreading.sharedPreference.LocationPref;
@@ -68,6 +69,7 @@ import java.util.List;
 import java.util.Locale;
 
 import noman.CommunityGlobalClass;
+import noman.community.prefrences.SavePreference;
 import noman.hijri.acitivity.CalenderActivity;
 import noman.hijri.acitivity.ConverterDialog;
 import noman.quran.activity.QuranReadActivity;
@@ -165,7 +167,8 @@ public class MainActivityNew extends AppCompatActivity implements AdapterView.On
     public static final int menuFeedBackC = 9;
     public static final int menuAboutUsC = 10;
     public static final int menuDisclaimerC = 11;
-    public static final int menuFaceBookC = 12;
+    public static final int menuLogout = 12;
+    public static final int menuFaceBookC = 13;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -220,7 +223,7 @@ public class MainActivityNew extends AppCompatActivity implements AdapterView.On
         }
 
         if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.main_container_frame, new IndexFragment()).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.main_container_frame, new HomeFragment()).commit();
         }
 
         layoutImageShare = (RelativeLayout) findViewById(R.id.layout_image_share);
@@ -241,6 +244,7 @@ public class MainActivityNew extends AppCompatActivity implements AdapterView.On
     }
 
     public void initializeMenuList() {
+        drawerListData.clear();
         MenuDrawerModel dataObj;
 
         dataObj = new MenuDrawerModel(true, false, false, "", 0);
@@ -278,6 +282,15 @@ public class MainActivityNew extends AppCompatActivity implements AdapterView.On
 
         dataObj = new MenuDrawerModel(false, true, false, getResources().getString(R.string.disclaimer), menuDisclaimerC);
         drawerListData.add(dataObj);
+
+        //if User login then add
+        if (CommunityGlobalClass.mSignInRequests != null) {
+            dataObj = new MenuDrawerModel(false, true, false, getResources().getString(R.string.logout_title), menuLogout);
+            drawerListData.add(dataObj);
+        }
+
+
+
 
         dataObj = new MenuDrawerModel(false, false, false, null, menuFaceBookC);
         drawerListData.add(dataObj);
@@ -563,6 +576,13 @@ public class MainActivityNew extends AppCompatActivity implements AdapterView.On
                 }
                 break;
 
+                case menuLogout: {
+                    sendAnalyticEvent("Logout");
+                    showLogoutAlert();
+                }
+                break;
+
+
                 case menuFaceBookC:
                     sendAnalyticEvent("Facebook");
                     String s = "https://www.facebook.com/quranreading";
@@ -677,7 +697,7 @@ public class MainActivityNew extends AppCompatActivity implements AdapterView.On
             stopAdsCall();
             mHandler.removeCallbacks(mRunnableInterstitialRefresh);
         }
-        hideKeyboard();
+        hideKeyboardForce();
     }
 
     @Override
@@ -952,7 +972,29 @@ public class MainActivityNew extends AppCompatActivity implements AdapterView.On
         AlertDialog alert = builder.create();
         alert.show();
     }
+    private void showLogoutAlert() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this,R.style.MyAlertDialogStyle);
+        builder.setTitle(getResources().getString(R.string.logout_title));
+        builder.setMessage(getResources().getString(R.string.logout_dialog) );
 
+        builder.setPositiveButton(getResources().getString(R.string.okay), new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+
+                dialog.dismiss();
+                SavePreference savePreference = new SavePreference();
+                noman.community.model.SignInRequest signInRequest=new  noman.community.model.SignInRequest();
+                savePreference.setDataFromSharedPreferences(signInRequest);
+                CommunityGlobalClass.mSignInRequests =null;
+
+                //Reactivitvate Drowaer layoyt
+                CommunityGlobalClass.mainActivityNew.initializeMenuList();
+                CommunityGlobalClass.mainActivityNew.initDrawer();
+            }
+        });
+
+        AlertDialog alert = builder.create();
+        alert.show();
+    }
     public static void finishActivity() {
         if (activity != null) {
             activity.finish();

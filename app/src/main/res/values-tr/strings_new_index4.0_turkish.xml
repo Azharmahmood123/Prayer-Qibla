@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="save">kayıt etmek</string>
+    <string name="new_location_detected">Yeni konum tespit edildi</string>
+    <string name="new_location_detected_msg1">Bulunduğunuz yeri ayarlamak istiyor musunuz itibaren</string>
+    <string name="to">-e</string>
+    <string name="and">ve</string>
+    <string name="new_location_detected_msg2">Namaz vakitlerini güncelle</string>
+    <string name="auto_settings">Otomatik ayarlar</string>
+    <string name="timings">Zamanlamalar</string>
+    <string name="in">içinde</string>
+
+    <string name="grid_quran">KURAN</string>
+    <string name="grid_salat">Salat</string>
+    <string name="grid_direction">GÖRSEL QIBLA</string>
+    <string name="grid_hijri">Hicri</string>
+    <string name="grid_mosque">cami bulmak</string>
+    <string name="grid_premium">ödül</string>
+    <string name="grid_community">Topluluk</string>
+    <string name="grid_halal">Helal bulucu</string>
+    <string name="grid_names">Allah isimleri</string>
+    <string name="grid_duas">Dua</string>
+    <string name="grid_settings">AYARLAR</string>
+
+    <string name="notificaion_time">Bildirim zaman</string>
+    <string name="notification_sound">Bildirim ses</string>
+    <string name="notificaion">Bildirim</string>
+    <string name="set_tone">Ses ayarla</string>
+
+    <string-array name="array_calculation_methods_new">
+        <item>Cezayir Diyanet İşleri Bakanı ve Wakfs</item>
+        <item>Mısırlı genel yetki</item>
+        <item>Mısırlı genel yetki (bis)</item>
+        <item>Sabit ısha Açı Aralığı</item>
+        <item>İslam Üniversitesi, Karaçi</item>
+        <item>ISNA(Kuzey amerikanın islam devleti)</item>
+        <item>JAKIM(Jabatan Kemajuan İslam Malezya)</item>
+        <item>KEMENAG(Kementerian Agama RI)</item>
+        <item>MUIS(Meclis Ugama İslam Singapur)</item>
+        <item>MWL(Müslüman Dünya Ligi)</item>
+        <item>Shia Athna Ashari(Jafari)</item>
+        <item>UAE İslami İşlerin Genel Otoritesi</item>
+        <item>Umm Al-Qura, Mekke</item>
+        <item>Tahran Üniversitesi</item>
+    </string-array>
+
+    <string-array name="array_calculation_methods_angles">
+        <item>Fajr 18.0° / Isha\'a 17.0°</item>
+        <item>Fajr 19.5° / Isha\'a 17.5°</item>
+        <item>Fajr 20.0° / Isha\'a 18.0°</item>
+        <item>Fajr 19.5° / Isha\'a 90 min</item>
+        <item>Fajr 18.0° / Isha\'a 18.0°</item>
+        <item>Fajr 15.0° / Isha\'a 15.0°</item>
+        <item>Fajr 20.0° / Isha\'a 18.0°</item>
+        <item>Fajr 20.0° / Isha\'a 18.0°</item>
+        <item>Fajr 20.0° / Isha\'a 18.0°</item>
+        <item>Fajr 18.0° / Isha\'a 17.0°</item>
+        <item>Fajr 16.0° / Isha\'a 14.0°</item>
+        <item>Fajr 19.5° / Isha\'a 90 min</item>
+        <item>Fajr 18.5° / Isha\'a 90 min</item>
+        <item>Fajr 17.7° / Isha\'a 15.0°</item>
+    </string-array>
+
+    <integer-array name="array_calculation_methods_index">
+        <item>12</item>
+        <item>5</item>
+        <item>7</item>
+        <item>10</item>
+        <item>1</item>
+        <item>2</item>
+        <item>11</item>
+        <item>8</item>
+        <item>9</item>
+        <item>3</item>
+        <item>0</item>
+        <item>10</item>
+        <item>4</item>
+        <item>6</item>
+    </integer-array>
+
+    <string name="manual_corrections">Manuel düzeltme</string>
+    <string name="auto_edit_alarm">Otomatik Düzenle Alarm</string>
+    <string name="auto_edit_alarm_option_1">Yeni konuma göre otomatik düzenleme</string>
+    <string name="auto_edit_alarm_option_2">Düzenlenen alarmları her yeni konumda sıfırlayın</string>
+    <string name="share_timings_message">Günlük salah zamanlamalarını ve doğru Qibla Yönünü bilmek Qibla Connect® Ücretsiz İndirin:\n\n https://play.google.com/store/apps/details?id=com.quranreading.qibladirection</string>
+
+    <string name="share_allah_names_message">Peygamber sav dedi:\n
+    \"Nitekim Allah\'ın doksan dokuz ismi vardır, Onları sayanlar Cennete girecekler.\" Sahih El-Buhârî – Kitap 50 Hadis 894 Tüm 99 ismi dinlemek ve okumak için Qibla Connect® indirin for Free:\n\n https://play.google.com/store/apps/details?id=com.quranreading.qibladirection</string>
+    <string name="ayah_of_day_dialog">Eğer günün Ayah etkinleştirmek istiyor musunuz?</string>
+    <string name="text_translation_setting">Metin &amp; Çeviri</string>
+    <string name="text_reset_quran_setting">Kuran ayarlarını sıfırlayın</string>
+    <string name="dialog_reset_quran_setting">Eğer Kuran Ayarları sıfırlamak istediğinizden emin misiniz?</string>
+    <string name="txt_enter_between_0_83">0-83 arası bir sayı girin</string>
+    <string name="no_surah_found">Surrah Bulunamadı</string>
+    <string name="names_99">Allah isimleri</string>
+    <string name="ayah_message_dialog">Eğer günün Ayah etkinleştirmek istiyor musunuz?</string>
+    <string name="phonetic_title">Fonetik Çeviriler</string>
+    <string name="english_pronounce">İngilizce Telaffuz</string>
+    <string name="logout_dialog">Çıkış yapmak istediğinizden emin misiniz?</string>
+    <string name="logout_title">Çıkış Yap</string>
+
+
+    <string name="laguage_alert_dialog">Topluluk ve 99 İsimler haricinde uygulamanızın dilini değiştirecektir. Seçmek istediğinizden emin misiniz?</string>
+
+
+
+</resources>

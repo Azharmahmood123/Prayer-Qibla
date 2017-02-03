@@ -31,7 +31,7 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.GoogleApiClient.ConnectionCallbacks;
 import com.google.android.gms.common.api.GoogleApiClient.OnConnectionFailedListener;
 import com.google.android.gms.location.LocationServices;
-import com.quranreading.fragments.CompassFragmentIndex;
+import com.quranreading.fragments.CompassDialMenuFragment;
 import com.quranreading.listeners.OnCurrentLocationFoundListner;
 import com.quranreading.listeners.OnLocationSetListner;
 import com.quranreading.qibladirection.ManualLocationDialog;
@@ -314,7 +314,7 @@ public class ManualDialogCustom extends Dialog implements OnCurrentLocationFound
         builder.setPositiveButton(context.getResources().getString(R.string.settings), new OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {
 
-                CompassFragmentIndex.LOCATION_REQUEST_DELAY = UserLocation.LOCATION_SETTINGS_DELAY;
+                CompassDialMenuFragment.LOCATION_REQUEST_DELAY = UserLocation.LOCATION_SETTINGS_DELAY;
                 Intent settingsIntent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
                 context.startActivity(settingsIntent);
             }
@@ -325,7 +325,7 @@ public class ManualDialogCustom extends Dialog implements OnCurrentLocationFound
 
                 autoLocationText.setText(context.getResources().getString(R.string.error_location_settings_manual_dialog));
                 progressBar.setVisibility(View.GONE);
-                CompassFragmentIndex.LOCATION_REQUEST_DELAY = 0;
+                CompassDialMenuFragment.LOCATION_REQUEST_DELAY = 0;
                 // manualSelected();
             }
         });
@@ -337,7 +337,7 @@ public class ManualDialogCustom extends Dialog implements OnCurrentLocationFound
 
                 autoLocationText.setText(context.getResources().getString(R.string.error_location_settings_manual_dialog));
                 progressBar.setVisibility(View.GONE);
-                CompassFragmentIndex.LOCATION_REQUEST_DELAY = 0;
+                CompassDialMenuFragment.LOCATION_REQUEST_DELAY = 0;
                 // manualSelected();
             }
         });

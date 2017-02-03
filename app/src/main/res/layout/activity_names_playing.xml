@@ -116,7 +116,7 @@
             android:gravity="center|left"
             android:maxLength="5"
             android:padding="@dimen/size_five"
-            android:text="02:38"
+            android:text="03:30"
             android:textColor="@color/white"
             android:textSize="@dimen/text_size_twenty_two" />
 

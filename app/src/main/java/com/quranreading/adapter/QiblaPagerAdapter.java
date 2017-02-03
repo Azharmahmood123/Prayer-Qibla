@@ -5,7 +5,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.quranreading.fragments.CompassFragmentIndex;
+import com.quranreading.fragments.CompassDialMenuFragment;
 import com.quranreading.fragments.MoreAppsGridFragment;
 import com.quranreading.fragments.TimingsFragment;
 import com.quranreading.qibladirection.R;
@@ -36,7 +36,7 @@ public class QiblaPagerAdapter extends FragmentPagerAdapter {
 	public Fragment getItem(int position) {
 		if(position == 0)
 		{
-			return new CompassFragmentIndex();
+			return new CompassDialMenuFragment();
 		}
 		else if(position == 1)
 		{

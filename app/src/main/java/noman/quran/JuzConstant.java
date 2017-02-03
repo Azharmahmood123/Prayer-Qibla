@@ -3,9 +3,6 @@ package noman.quran;
 
 import android.util.DisplayMetrics;
 
-import com.quranreading.fragments.MenuMainFragment;
-import com.quranreading.helper.Constants;
-import com.quranreading.qibladirection.GlobalClass;
 import com.quranreading.qibladirection.R;
 
 import noman.CommunityGlobalClass;

@@ -542,10 +542,10 @@ public class TimingsFragment extends Fragment implements OnLocationSetListner, O
             setNamazTimings(cityName, latitude, longitude);
         }
         try {
-            Intent intnet = new Intent(CompassFragmentIndex.LOCATION_INTENT_FILTER);
-            intnet.putExtra(CompassFragmentIndex.CITY_NAME, cityName);
-            intnet.putExtra(CompassFragmentIndex.LATITUDE, latitude);
-            intnet.putExtra(CompassFragmentIndex.LONGITUDE, longitude);
+            Intent intnet = new Intent(CompassDialMenuFragment.LOCATION_INTENT_FILTER);
+            intnet.putExtra(CompassDialMenuFragment.CITY_NAME, cityName);
+            intnet.putExtra(CompassDialMenuFragment.LATITUDE, latitude);
+            intnet.putExtra(CompassDialMenuFragment.LONGITUDE, longitude);
             mActivity.sendBroadcast(intnet);
         } catch (Exception e) {
             e.printStackTrace();

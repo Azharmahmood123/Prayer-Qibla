@@ -44,9 +44,9 @@ import com.quranreading.qibladirection.R;
 import com.quranreading.sharedPreference.DialPref;
 import com.quranreading.sharedPreference.LocationPref;
 
-import static com.quranreading.fragments.CompassFragmentIndex.LOCATION_REQUEST_DELAY;
+import static com.quranreading.fragments.CompassDialMenuFragment.LOCATION_REQUEST_DELAY;
 
-public class CompassInnerFragment extends Fragment implements RotationUpdateDelegate, OnLocationSetListner {
+public class CompassDialFragment extends Fragment implements RotationUpdateDelegate, OnLocationSetListner {
 
     LocationReceiver mLocationReceiver;
     LocationPref locationPref;
@@ -97,13 +97,13 @@ public class CompassInnerFragment extends Fragment implements RotationUpdateDele
             @Override
             public void run() {
                 inProcess = false;
-                mUserLocation.setOnLocationSetListner(CompassInnerFragment.this);
+                mUserLocation.setOnLocationSetListner(CompassDialFragment.this);
                 mUserLocation.checkLocation(false, true);
             }
         };
 
         mLocationReceiver = new LocationReceiver();
-        mContext.registerReceiver(mLocationReceiver, new IntentFilter(CompassFragmentIndex.LOCATION_INTENT_FILTER));
+        mContext.registerReceiver(mLocationReceiver, new IntentFilter(CompassDialMenuFragment.LOCATION_INTENT_FILTER));
 
         locationPref = new LocationPref(mContext);
         dialPref = new DialPref(mContext);
@@ -202,11 +202,11 @@ public class CompassInnerFragment extends Fragment implements RotationUpdateDele
             public void onClick(View v) {
                 if (manualDialog != null) {
                     if (!manualDialog.isShowing()) {
-                        manualDialog = new ManualDialogCustom(mContext, CompassInnerFragment.this);
+                        manualDialog = new ManualDialogCustom(mContext, CompassDialFragment.this);
                         manualDialog.show();
                     }
                 } else {
-                    manualDialog = new ManualDialogCustom(mContext, CompassInnerFragment.this);
+                    manualDialog = new ManualDialogCustom(mContext, CompassDialFragment.this);
                     manualDialog.show();
                 }
             }
@@ -257,7 +257,7 @@ public class CompassInnerFragment extends Fragment implements RotationUpdateDele
             manualDialog.onResumeLocationDialog();
         }
 
-        Log.e("onResume", "CompassFragmentIndex");
+        Log.e("onResume", "CompassDialMenuFragment");
         isActivityOpened = false;
 
         dialValue = dialPref.getDialValue();
@@ -634,9 +634,9 @@ public class CompassInnerFragment extends Fragment implements RotationUpdateDele
             progressBar.setVisibility(View.GONE);
 
             try {
-                String city = intent.getStringExtra(CompassFragmentIndex.CITY_NAME);
-                double lat = intent.getDoubleExtra(CompassFragmentIndex.LATITUDE, 0);
-                double lng = intent.getDoubleExtra(CompassFragmentIndex.LONGITUDE, 0);
+                String city = intent.getStringExtra(CompassDialMenuFragment.CITY_NAME);
+                double lat = intent.getDoubleExtra(CompassDialMenuFragment.LATITUDE, 0);
+                double lng = intent.getDoubleExtra(CompassDialMenuFragment.LONGITUDE, 0);
 
                 if (lat != 0 && lat != -2 && lng != 0 && lng != -2) {
                     locChk = true;
@@ -693,7 +693,7 @@ public class CompassInnerFragment extends Fragment implements RotationUpdateDele
 
             // send Broadcast to Timings Fragment when user select location from Manual Dailog
             // When tap on City name TextView
-            Intent intnet = new Intent(CompassFragmentIndex.LOCATION_INTENT_FILTER);
+            Intent intnet = new Intent(CompassDialMenuFragment.LOCATION_INTENT_FILTER);
             intnet.putExtra(TimingsFragment.CITY_NAME, cityName);
             intnet.putExtra(TimingsFragment.LATITUDE, latitude);
             intnet.putExtra(TimingsFragment.LONGITUDE, longitude);

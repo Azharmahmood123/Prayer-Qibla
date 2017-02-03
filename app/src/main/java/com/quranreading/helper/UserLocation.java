@@ -21,7 +21,7 @@ import com.google.android.gms.common.api.GoogleApiClient.ConnectionCallbacks;
 import com.google.android.gms.common.api.GoogleApiClient.OnConnectionFailedListener;
 import com.google.android.gms.location.LocationServices;
 import com.quranreading.ads.AnalyticSingaltonClass;
-import com.quranreading.fragments.CompassFragmentIndex;
+import com.quranreading.fragments.CompassDialMenuFragment;
 import com.quranreading.listeners.OnCurrentLocationFoundListner;
 import com.quranreading.listeners.OnLocationSetListner;
 import com.quranreading.qibladirection.ManualLocationDialog;
@@ -226,13 +226,13 @@ public class UserLocation implements OnCurrentLocationFoundListner, OnLocationSe
             public void onClick(DialogInterface dialog, int whichButton) {
                 Intent settingsIntent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
                 mContext.startActivity(settingsIntent);
-                CompassFragmentIndex.LOCATION_REQUEST_DELAY = LOCATION_SETTINGS_DELAY;
+                CompassDialMenuFragment.LOCATION_REQUEST_DELAY = LOCATION_SETTINGS_DELAY;
             }
         });
 
         builder.setNegativeButton(mContext.getResources().getString(R.string.cancel), new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {
-                CompassFragmentIndex.LOCATION_REQUEST_DELAY = 0;
+                CompassDialMenuFragment.LOCATION_REQUEST_DELAY = 0;
                 if (!isShown) {
 
                     if (locationPref.getCityName().equals("") && locationPref.isFirstLaunch()) {

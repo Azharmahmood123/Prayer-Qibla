@@ -23,7 +23,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.quranreading.alarms.AlarmHelper;
-import com.quranreading.fragments.CompassFragmentIndex;
+import com.quranreading.fragments.CompassDialMenuFragment;
 import com.quranreading.helper.CalculatePrayerTime;
 import com.quranreading.helper.ManualDialogCustom;
 import com.quranreading.helper.TimeFormateConverter;
@@ -37,6 +37,8 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
+
+import noman.CommunityGlobalClass;
 
 public class TimingsActivity extends AppCompatActivity implements OnLocationSetListner, OnClickListener, OnDailogButtonSelectionListner {
 
@@ -109,6 +111,9 @@ public class TimingsActivity extends AppCompatActivity implements OnLocationSetL
     protected void onCreate(Bundle savedInstanceState) {
         // TODO Auto-generated methodIndex stub
         super.onCreate(savedInstanceState);
+
+        CommunityGlobalClass.getInstance().sendAnalyticsScreen("Salat Screen");
+
         setContentView(R.layout.fragment_timings);
         //mUserLocation = new UserLocation(mContext);
 
@@ -481,12 +486,14 @@ public class TimingsActivity extends AppCompatActivity implements OnLocationSetL
             //////////////////////////////
             ///////if New Time of Prayer is Changed Change Alarm time Accordingly//////
             ///////////////////////////////////
-            if (!lastTime.equals(timePrayer)) {
-                if (!timeNotification.isEmpty()) {
-                    int diff = getTimeDiffInMinutes(lastTime, timePrayer);
-                    timeNotification = getNewAddedTime(timeNotification, diff);
+            if(!lastTime.isEmpty() && lastTime !=null ) {
+                if (!lastTime.equals(timePrayer)) {
+                    if (!timeNotification.isEmpty()) {
+                        int diff = getTimeDiffInMinutes(lastTime, timePrayer);
+                        timeNotification = getNewAddedTime(timeNotification, diff);
 
-                    timeEditPref.setAlarmNotifyTime(TimeEditPref.ALARMS_TIME_PRAYERS[index], timeNotification);
+                        timeEditPref.setAlarmNotifyTime(TimeEditPref.ALARMS_TIME_PRAYERS[index], timeNotification);
+                    }
                 }
             }
             ////////////////////////////
@@ -699,10 +706,10 @@ public class TimingsActivity extends AppCompatActivity implements OnLocationSetL
             setNamazTimings(cityName, latitude, longitude);
         }
         try {
-            Intent intnet = new Intent(CompassFragmentIndex.LOCATION_INTENT_FILTER);
-            intnet.putExtra(CompassFragmentIndex.CITY_NAME, cityName);
-            intnet.putExtra(CompassFragmentIndex.LATITUDE, latitude);
-            intnet.putExtra(CompassFragmentIndex.LONGITUDE, longitude);
+            Intent intnet = new Intent(CompassDialMenuFragment.LOCATION_INTENT_FILTER);
+            intnet.putExtra(CompassDialMenuFragment.CITY_NAME, cityName);
+            intnet.putExtra(CompassDialMenuFragment.LATITUDE, latitude);
+            intnet.putExtra(CompassDialMenuFragment.LONGITUDE, longitude);
             mActivity.sendBroadcast(intnet);
         } catch (Exception e) {
             e.printStackTrace();

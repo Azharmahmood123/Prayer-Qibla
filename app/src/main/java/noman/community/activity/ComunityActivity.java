@@ -50,6 +50,13 @@ public class ComunityActivity extends AdIntegration {
         //get PreFerence in the list
         SavePreference savePreference = new SavePreference();
         CommunityGlobalClass.mSignInRequests = savePreference.getDataFromSharedPreferences();
+        if (CommunityGlobalClass.mSignInRequests != null) {
+            if (CommunityGlobalClass.mSignInRequests.getName() == null) {
+                CommunityGlobalClass.mSignInRequests = null;
+            }
+        } else {
+            CommunityGlobalClass.mSignInRequests = null;
+        }
         CommunityGlobalClass.getInstance().getHashKey(getPackageName());
 
         RelativeLayout img_back = (RelativeLayout) findViewById(R.id.layout_drawer_menu_ic);
@@ -59,10 +66,12 @@ public class ComunityActivity extends AdIntegration {
                 onBackPressed();
             }
         });
-        menu_filter=(RelativeLayout) findViewById(R.id.menu_filter);
+        menu_filter = (RelativeLayout) findViewById(R.id.menu_filter);
         menu_filter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                CommunityGlobalClass.getInstance().sendAnalyticEvent("Community Prayer", "Filter");
                 showDialogFilter();
             }
         });
@@ -79,7 +88,9 @@ public class ComunityActivity extends AdIntegration {
                 if (SystemClock.elapsedRealtime() - lastClick < 2000) {
                     return;
                 } else {
-                    if( CommunityGlobalClass.mPrayerModel.size() > 1) {
+                    CommunityGlobalClass.getInstance().sendAnalyticEvent("Community Prayer", "Add Prayer");
+
+                    if (CommunityGlobalClass.mPrayerModel.size() > 1) {
                         if (PrayerAdapter.clickingCounter == 3) {
                             if (CommunityGlobalClass.mSignInRequests == null) {
                                 startActivity(new Intent(ComunityActivity.this, LoginActivity.class));
@@ -90,9 +101,7 @@ public class ComunityActivity extends AdIntegration {
                         } else {
                             CommunityGlobalClass.getInstance().showToast("Please Pray for " + (3 - PrayerAdapter.clickingCounter) + " other users to submit your own request to pray");
                         }
-                    }
-                    else
-                    {
+                    } else {
                         if (CommunityGlobalClass.mSignInRequests == null) {
                             startActivity(new Intent(ComunityActivity.this, LoginActivity.class));
                         } else {
@@ -106,6 +115,7 @@ public class ComunityActivity extends AdIntegration {
 
             }
         });
+
 
     }
 
@@ -178,7 +188,7 @@ public class ComunityActivity extends AdIntegration {
     public void showDialogFilter() {
 
         CharSequence[] array = {"Most Recent", "Most Prayed"};
-        AlertDialog a=  new AlertDialog.Builder(this, R.style.MyAlertDialogStyle)
+        AlertDialog a = new AlertDialog.Builder(this, R.style.MyAlertDialogStyle)
                 .setTitle("Select Option")
                 .setSingleChoiceItems(array, SavePreference.getMenuOption(ComunityActivity.this), null)
                 .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
@@ -190,12 +200,12 @@ public class ComunityActivity extends AdIntegration {
                         CommunityGlobalClass.mPrayerFragment.refreshItems();
                     }
                 }).setNegativeButton("Cancel",
-                new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int whichButton) {
-                        dialog.dismiss();
-                    }
-                }
-        )
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int whichButton) {
+                                dialog.dismiss();
+                            }
+                        }
+                )
                 .show();
 
 

@@ -34,6 +34,8 @@ import com.quranreading.qibladirection.GlobalClass;
 import com.quranreading.qibladirection.R;
 import com.quranreading.sharedPreference.LocationPref;
 
+import noman.CommunityGlobalClass;
+
 import static com.quranreading.helper.UserLocation.LOCATION_SETTINGS_DELAY;
 
 public class CompassMapsFragment extends Fragment implements OnMapReadyCallback, View.OnClickListener, RotationUpdateDelegate/*, GoogleMap.OnCameraChangeListener*/ {
@@ -70,6 +72,8 @@ public class CompassMapsFragment extends Fragment implements OnMapReadyCallback,
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+
+
         super.onCreate(savedInstanceState);
         mContext = getContext();
 
@@ -80,7 +84,9 @@ public class CompassMapsFragment extends Fragment implements OnMapReadyCallback,
         magnetometer = mSensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
 
         mLocationReceiver = new LocationReceiver();
-        mContext.registerReceiver(mLocationReceiver, new IntentFilter(CompassFragmentIndex.LOCATION_INTENT_FILTER));
+        mContext.registerReceiver(mLocationReceiver, new IntentFilter(CompassDialMenuFragment.LOCATION_INTENT_FILTER));
+
+        CommunityGlobalClass.getInstance().sendAnalyticsScreen("Visual Qibla");
     }
 
     @Override
@@ -380,7 +386,7 @@ public class CompassMapsFragment extends Fragment implements OnMapReadyCallback,
 
         Intent settingsIntent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
         startActivity(settingsIntent);
-        CompassFragmentIndex.LOCATION_REQUEST_DELAY = LOCATION_SETTINGS_DELAY;
+        CompassDialMenuFragment.LOCATION_REQUEST_DELAY = LOCATION_SETTINGS_DELAY;
 
 
 //        AlertDialog alertProvider = null;
@@ -394,7 +400,7 @@ public class CompassMapsFragment extends Fragment implements OnMapReadyCallback,
 //            public void onClick(DialogInterface dialog, int whichButton) {
 //                Intent settingsIntent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
 //                startActivity(settingsIntent);
-//                CompassFragmentIndex.LOCATION_REQUEST_DELAY = LOCATION_SETTINGS_DELAY;
+//                CompassDialMenuFragment.LOCATION_REQUEST_DELAY = LOCATION_SETTINGS_DELAY;
 //            }
 //        });
 //

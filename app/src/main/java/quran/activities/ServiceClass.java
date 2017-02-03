@@ -22,6 +22,7 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.IBinder;
 import android.util.Log;
+import android.view.Gravity;
 import android.widget.Toast;
 import quran.helper.DBManagerQuran;
 import quran.helper.FileUtils;
@@ -380,7 +381,9 @@ public class ServiceClass extends Service {
 		if(status)
 		{
 			String[] arrNames = getResources().getStringArray(R.array.surah_names);
-			Toast.makeText(ServiceClass.this, getString(R.string.download) + " " + getString(R.string.completed) + "\n" + arrNames[position - 1], 0).show();
+			 Toast toast = Toast.makeText(ServiceClass.this, getString(R.string.download) + " " + getString(R.string.completed) + "\n" + arrNames[position - 1], Toast.LENGTH_SHORT);
+			toast.setGravity(Gravity.CENTER, 0, 0);
+			toast.show();
 		}
 
 		Intent broadcastIntent = new Intent(Constants.BroadcastActionComplete);

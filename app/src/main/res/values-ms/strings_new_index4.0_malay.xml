@@ -1,0 +1,108 @@
+<?short xml = "1.0" encoding = "utf-8"?>
+<resources>
+
+    <string name = "save"> Simpan </string>
+    <string name = "new_location_detected"> Lokasi Baru Dikesan </string>
+    <string name = "new_location_detected_msg1"> Adakah anda ingin untuk menetapkan lokasi anda dari </string>
+    <string name = "to"> untuk </string>
+    <string name = "amd"> dan </string>
+    <string name = "new_location_detected_msg2"> kali Update Doa </string>
+    <string name = "auto_settings"> Tetapan Auto </string>
+    <string name = "timing"> Pengaturan masa </string>
+    <string name = "di"> dalam </string>
+
+    <string name = "grid_quran"> QURAN </string>
+    <string name = "grid_salat"> SALAT </string>
+    <string name = "grid_direction"> VISUAL kiblat </string>
+    <string name = "grid_hijri"> Hijrah </string>
+    <string name = "grid_mosque"> MENCARI MASJID </string>
+    <string name = "grid_premium"> PREMIUM </string>
+    <string name = "grid_community"> COMMUNITY </string>
+    <string name = "grid_halal"> FINDER HALAL </string>
+    <string name = "grid_names"> NAMA ALLAH </string>
+    <string name = "grid_duas"> Duas </string>
+    <string name = "grid_settings"> SETTINGS </string>
+
+    <string name = "notificaion_time"> Pemberitahuan Masa </string>
+    <string name = "notification_sound"> ​​Bunyi Pemberitahuan </string>
+    <string name = "notificaion"> Pemberitahuan </string>
+    <string name = "set_tone"> Tetapkan nada </string>
+
+    <string-array name= "array_calculation_methods_new">
+       <item> Algeria Menteri Hal Ehwal Ugama dan Wakfs </item>
+       <item> Mesir Pihak Berkuasa Am </item>
+       <item> Mesir Pihak Berkuasa Am (bis) </item>
+       <item> Tetap Isha Angle Interval </item>
+       <item> Universiti Islam, Karachi </item>
+       <item> ISNA (Negara Islam Amerika Utara) </item>
+       <item> JAKIM (Jabatan Kemajuan Islam Malaysia) </item>
+       <item> KEMENAG (Kementerian Agama RI) </item>
+       <item> MUIS (Majlis Ugama Islam Singapura) </item>
+       <item> MWL (Muslim World League) </item>
+       <item> Syiah Athna Ashari (Jafari) </item>
+       <item> Lembaga UAE Ketua Hal Ehwal Islam </item>
+       <item> Umm Al-Qura, Makkah </item>
+       <item> University of Tehran </item>
+    </string-array>
+
+    <string-array name="array_calculation_methods_angles">
+        <item>Fajr 18.0° / Isha\'a 17.0°</item>
+        <item>Fajr 19.5° / Isha\'a 17.5°</item>
+        <item>Fajr 20.0° / Isha\'a 18.0°</item>
+        <item>Fajr 19.5° / Isha\'a 90 min</item>
+        <item>Fajr 18.0° / Isha\'a 18.0°</item>
+        <item>Fajr 15.0° / Isha\'a 15.0°</item>
+        <item>Fajr 20.0° / Isha\'a 18.0°</item>
+        <item>Fajr 20.0° / Isha\'a 18.0°</item>
+        <item>Fajr 20.0° / Isha\'a 18.0°</item>
+        <item>Fajr 18.0° / Isha\'a 17.0°</item>
+        <item>Fajr 16.0° / Isha\'a 14.0°</item>
+        <item>Fajr 19.5° / Isha\'a 90 min</item>
+        <item>Fajr 18.5° / Isha\'a 90 min</item>
+        <item>Fajr 17.7° / Isha\'a 15.0°</item>
+    </string-array>
+
+  <integer-array name = "array_calculation_methods_index">
+       <item> 12 </item>
+       <item> 5 </item>
+       <item> 7 </item>
+       <item> 10 </item>
+       <item> 1 </item>
+       <item> 2 </item>
+       <item> 11 </item>
+       <item> 8 </item>
+       <item> 9 </item>
+       <item> 3 </item>
+       <item> 0 </item>
+       <item> 10 </item>
+       <item> 4 </item>
+       <item> 6 </item>
+   </integer-array>
+
+    <string name = "manual_corrections"> Manual Pembetulan </string>
+    <string name = "auto_edit_alarm"> Auto Edit penggera </string>
+    <string name = "auto_edit_alarm_option_1"> edit Auto berkenaan dengan lokasi baru </string>
+    <string name = "auto_edit_alarm_option_2"> Tetap semula penggera disunting pada setiap lokasi baru </string>
+    <string name = "share_timings_message"> Untuk mengetahui pengaturan masa salat setiap hari dan tepat Qibla Direction, muat turun Qibla Connect® untuk Percuma: \n \n https://play.google.com/store/apps/details?id=com.quranreading.qibladirection </string>
+
+    <string name = "share_allah_names_message"> Nabi SAW bersabda: \n
+    \ "Sesungguhnya Allah mempunyai sembilan puluh sembilan Nama, sesiapa mengiranya akan masuk syurga. \" Sahih Al-Bukhari - Book 50 Hadis 894 Untuk mendengar dan membaca semua 99 nama turun Qibla Connect® untuk Percuma: \n \n https://play.google.com/store/apps/details?id=com.quranreading.qibladirection</string>
+    <string name = "ayah_of_day_dialog"> Adakah anda mahu untuk membolehkan Ayat Hari?</string>
+    <string name = "text_translation_setting"> Text &amp; Terjemahan </string>
+    <string name = "text_reset_quran_setting"> Tetap semula Menetapkan Quran </string>
+    <string name = "dialog_reset_quran_setting"> Adakah anda pasti untuk menetapkan semula Tetapan Quran?</string>
+    <string name = "txt_enter_between_0_83"> Masukkan Nombor 0-83 </string>
+    <string name = "no_surah_found"> ​​No Surrah Terdapat </string>
+    <string name = "names_99"> Allah Names </string>
+    <string name = "ayah_message_dialog"> Adakah anda mahu menghidupkan Ayat Hari?</string>
+    <string name = "phonetic_title"> Fonetik Translitration </string>
+    <string name = "english_pronounce"> Bahasa Inggeris sebutan </string>
+    <string name = "logout_dialog"> Adakah anda pasti anda mahu log keluar?</string>
+    <string name = "logout_title"> Logout </string>
+
+
+    <string name = "laguage_alert_dialog"> Ia akan mengubah bahasa untuk seluruh app anda kecuali Komuniti dan 99 Nama. Adakah anda pasti anda mahu memilihnya?</string>
+
+
+
+</resources>

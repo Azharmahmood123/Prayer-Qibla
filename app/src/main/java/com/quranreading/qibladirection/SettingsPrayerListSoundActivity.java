@@ -14,6 +14,7 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.text.format.Time;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -28,6 +29,7 @@ import android.widget.TextView;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.quranreading.fragments.CompassDialMenuFragment;
 import com.quranreading.helper.TimeFormateConverter;
 import com.quranreading.sharedPreference.AlarmSharedPref;
 import com.quranreading.sharedPreference.PrayerTimeSettingsPref;
@@ -35,6 +37,8 @@ import com.quranreading.sharedPreference.TimeEditPref;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+
+import noman.CommunityGlobalClass;
 
 /**
  * Created by cyber on 12/20/2016.
@@ -89,8 +93,9 @@ public class SettingsPrayerListSoundActivity extends AppCompatActivity implement
         listView = (ListView) findViewById(R.id.listview_language);
         listView.setOnItemClickListener(this);
 
-        populateData();
+
     }
+
 
     private void populateData() {
 
@@ -176,16 +181,17 @@ public class SettingsPrayerListSoundActivity extends AppCompatActivity implement
 
     @Override
     public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3) {
-
-        selectedPosition = position;
-
-        String[] timeNotification = getPrayerNotificationTime(selectedPosition);
-
-        Intent intent = new Intent(this, SettingsTimeAlarmActivity.class);
-        intent.putExtra(SettingsTimeAlarmActivity.EXTRA_PRAYER_INDEX, selectedPosition);
-        intent.putExtra(SettingsTimeAlarmActivity.EXTRA_PRAYER_NOTIFICATION_TIME, timeNotification);
-        startActivity(intent);
-
+        //check if location not set in menu index
+        if (CompassDialMenuFragment.tvCity.getText().toString().equals(getString(R.string.set) + " " + getString(R.string.location))) {
+            CommunityGlobalClass.getInstance().showShortToast(getString(R.string.set) + " " + getString(R.string.location),500, Gravity.CENTER);
+        } else {
+            selectedPosition = position;
+            //String[] timeNotification = getPrayerNotificationTime(selectedPosition);
+            Intent intent = new Intent(this, SettingsTimeAlarmActivity.class);
+            intent.putExtra(SettingsTimeAlarmActivity.EXTRA_PRAYER_INDEX, selectedPosition);
+            //  intent.putExtra(SettingsTimeAlarmActivity.EXTRA_PRAYER_NOTIFICATION_TIME, timeNotification);
+            startActivity(intent);
+        }
     }
 
     @Override
@@ -199,6 +205,7 @@ public class SettingsPrayerListSoundActivity extends AppCompatActivity implement
         } else {
             startAdsCall();
         }
+        populateData();
     }
 
     @Override

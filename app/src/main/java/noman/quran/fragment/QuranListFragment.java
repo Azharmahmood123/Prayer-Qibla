@@ -341,6 +341,7 @@ public class QuranListFragment extends Fragment implements OnClickListener, Text
     }
 
     private void showSearchBar() {
+        CommunityGlobalClass.getInstance().sendAnalyticEvent("Quran","Quran Search Icon");
         showSoftKeyboard();
         layoutSearch.setVisibility(View.VISIBLE);
         layoutOptions.setVisibility(View.GONE);

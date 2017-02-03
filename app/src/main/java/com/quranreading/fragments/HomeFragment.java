@@ -15,17 +15,17 @@ import com.quranreading.qibladirection.R;
  * Created by cyber on 11/30/2016.
  */
 
-public class IndexFragment extends Fragment {
+public class HomeFragment extends Fragment {
 
-    CompassFragmentIndex compassFragmentIndex;
-    MenuMainFragment menuFragment;
+    CompassDialMenuFragment compassDialMenuFragment;
+    MenuFragment menuFragment;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        compassFragmentIndex = new CompassFragmentIndex();
-        menuFragment = new MenuMainFragment();
+        compassDialMenuFragment = new CompassDialMenuFragment();
+        menuFragment = new MenuFragment();
 
     }
 
@@ -36,7 +36,7 @@ public class IndexFragment extends Fragment {
 
         FragmentManager fm = getChildFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
-        ft.add(R.id.container_frame_qibla, compassFragmentIndex);
+        ft.add(R.id.container_frame_qibla, compassDialMenuFragment);
         ft.commit();
 
 

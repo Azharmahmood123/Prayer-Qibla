@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="save">économiser</string>
+    <string name="new_location_detected">Nouveau lieu détecté</string>
+    <string name="new_location_detected_msg1">Voulez-vous définir votre position à partir de</string>
+    <string name="to">à</string>
+    <string name="and">et</string>
+    <string name="new_location_detected_msg2">Mise à jour de temps de prière</string>
+    <string name="auto_settings">Réglages automatiques</string>
+    <string name="timings">minutage</string>
+    <string name="in">dans</string>
+
+    <string name="grid_quran">QURAN</string>
+    <string name="grid_salat">SALAT</string>
+    <string name="grid_direction">qibla visuelle</string>
+    <string name="grid_hijri">HIJRI</string>
+    <string name="grid_mosque">Trouver des mosquées</string>
+    <string name="grid_premium">prime</string>
+    <string name="grid_community">communauté</string>
+    <string name="grid_halal">Trouver hilal</string>
+    <string name="grid_names">Allah noms</string>
+    <string name="grid_duas">DUAS</string>
+    <string name="grid_settings">paramètres</string>
+
+    <string name="notificaion_time">Temps de notification</string>
+    <string name="notification_sound">notification Sonner</string>
+    <string name="notificaion">notification</string>
+    <string name="set_tone">Régler le son</string>
+
+    <string-array name="array_calculation_methods_new">
+        <item>Ministre algérien des Affaires religieuses et du Wakfs</item>
+        <item>Autorité générale égyptienne</item>
+        <item>Autorité générale égyptienne (bis)</item>
+        <item>Fixé Isha angle intervalle</item>
+        <item>Université Islamique, Karachi</item>
+        <item>ISNA(État islamique d\'Amérique du Nord)</item>
+        <item>JAKIM(Jabatan Kemajuan Islam Malaysia)</item>
+        <item>KEMENAG(Kementerian Agama RI)</item>
+        <item>MUIS(Majlis Ugama Islam Singapura)</item>
+        <item>MWL(Ligue Musulmane Mondiale)</item>
+        <item>Shia Athna Ashari(Jafari)</item>
+        <item>EAU Autorité générale des affaires islamiques</item>
+        <item>Umm Al-Qura, Makkah</item>
+        <item>Université de Téhéran</item>
+    </string-array>
+
+    <string-array name="array_calculation_methods_angles">
+        <item>Fajr 18.0° / Isha\'a 17.0°</item>
+        <item>Fajr 19.5° / Isha\'a 17.5°</item>
+        <item>Fajr 20.0° / Isha\'a 18.0°</item>
+        <item>Fajr 19.5° / Isha\'a 90 min</item>
+        <item>Fajr 18.0° / Isha\'a 18.0°</item>
+        <item>Fajr 15.0° / Isha\'a 15.0°</item>
+        <item>Fajr 20.0° / Isha\'a 18.0°</item>
+        <item>Fajr 20.0° / Isha\'a 18.0°</item>
+        <item>Fajr 20.0° / Isha\'a 18.0°</item>
+        <item>Fajr 18.0° / Isha\'a 17.0°</item>
+        <item>Fajr 16.0° / Isha\'a 14.0°</item>
+        <item>Fajr 19.5° / Isha\'a 90 min</item>
+        <item>Fajr 18.5° / Isha\'a 90 min</item>
+        <item>Fajr 17.7° / Isha\'a 15.0°</item>
+    </string-array>
+
+    <integer-array name="array_calculation_methods_index">
+        <item>12</item>
+        <item>5</item>
+        <item>7</item>
+        <item>10</item>
+        <item>1</item>
+        <item>2</item>
+        <item>11</item>
+        <item>8</item>
+        <item>9</item>
+        <item>3</item>
+        <item>0</item>
+        <item>10</item>
+        <item>4</item>
+        <item>6</item>
+    </integer-array>
+
+    <string name="manual_corrections">Corrections manuelles</string>
+    <string name="auto_edit_alarm">Alarme d\'édition automatique</string>
+    <string name="auto_edit_alarm_option_1">Modification automatique en fonction du nouvel emplacement</string>
+    <string name="auto_edit_alarm_option_2">Réinitialiser les alarmes modifiées sur chaque nouvel emplacement</string>
+    <string name="share_timings_message">our connaître les horaires quotidiens de salah et la précision Qibla Direction, Télécharger gratuitement Qibla Connect®:\n\n https://play.google.com/store/apps/details?id=com.quranreading.qibladirection</string>
+
+    <string name="share_allah_names_message">Prophète PBUH dit:\n
+    \"En effet, Allah a quatre-vingt-dix-neuf Noms, Quiconque les compte entrera dans le Paradis.\" Sahih Al-Bukhari – Livre 50 Hadith 894 Pour écouter et lire les 99 noms, téléchargez Qibla Connect® gratuitement:\n\n https://play.google.com/store/apps/details?id=com.quranreading.qibladirection</string>
+    <string name="ayah_of_day_dialog">Voulez-vous activer Ayah du jour?</string>
+    <string name="text_translation_setting">Texte &amp; Traduction</string>
+    <string name="text_reset_quran_setting">Réinitialiser les paramètres du coran</string>
+    <string name="dialog_reset_quran_setting">Voulez-vous réinitialiser les paramètres du Coran?</string>
+    <string name="txt_enter_between_0_83">Entrez le numéro de 0-83</string>
+    <string name="no_surah_found">Aucun Surrah trouvé</string>
+    <string name="names_99">Allah noms</string>
+    <string name="ayah_message_dialog">Voulez-vous activer Ayah du jour?</string>
+    <string name="phonetic_title">Translittération phonétique</string>
+    <string name="english_pronounce">Prononciation anglaise</string>
+    <string name="logout_dialog">Etes-vous sûr de vouloir vous déconnecter?</string>
+    <string name="logout_title">se déconnecter</string>
+
+
+    <string name="laguage_alert_dialog">Cela changera la langue de votre application entière, sauf la Communauté et 99 noms. Voulez-vous vraiment le sélectionner?</string>
+
+
+
+</resources>

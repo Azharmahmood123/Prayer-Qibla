@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="save">экономить</string>
+    <string name="new_location_detected">Новое местоположение Обнаружен</string>
+    <string name="new_location_detected_msg1">Вы хотите, чтобы установить свое местоположение</string>
+    <string name="to">к</string>
+    <string name="and">а также</string>
+    <string name="new_location_detected_msg2">Обновление раз Молитвенные</string>
+    <string name="auto_settings">Автоматические настройки</string>
+    <string name="timings">тайминги</string>
+    <string name="in">в</string>
+
+    <string name="grid_quran">Куран</string>
+    <string name="grid_salat">намаза</string>
+    <string name="grid_direction">визуальный кибла</string>
+    <string name="grid_hijri">Хиджри</string>
+    <string name="grid_mosque">найти мечеть</string>
+    <string name="grid_premium">премия</string>
+    <string name="grid_community">сообщество</string>
+    <string name="grid_halal">халал искатель</string>
+    <string name="grid_names">имена аллах</string>
+    <string name="grid_duas">молитвы</string>
+    <string name="grid_settings">настройки</string>
+
+    <string name="notificaion_time">время уведомления</string>
+    <string name="notification_sound">Звук уведомления</string>
+    <string name="notificaion">уведомление</string>
+    <string name="set_tone">набор тон</string>
+
+    <string-array name="array_calculation_methods_new">
+        <item>Алжирский министр по делам религии и вакфов</item>
+        <item>Египетская Авторитет</item>
+        <item>Египетская Авторитет (bis)</item>
+        <item>Исправлен иша угол  интервал</item>
+        <item>IИсламский университет, Карачи</item>
+        <item>ISNA(Исламское государство в Северной Америке)</item>
+        <item>JAKIM(Jabatan Kemajuan Ислам Малайзия)</item>
+        <item>KEMENAG(Kementerian Agama RI)</item>
+        <item>MUIS(Majlis Ugama Islam Singapura)</item>
+        <item>MWL(Всемирная мусульманская лига)</item>
+        <item>Шайа Athna Ашари(Джафари)</item>
+        <item>ОАЭ Главное управление по делам ислама</item>
+        <item>Умм-аль-Кура, Мекка</item>
+        <item>Университет Тегерана</item>
+    </string-array>
+
+    <string-array name="array_calculation_methods_angles">
+        <item>Fajr 18.0° / Isha\'a 17.0°</item>
+        <item>Fajr 19.5° / Isha\'a 17.5°</item>
+        <item>Fajr 20.0° / Isha\'a 18.0°</item>
+        <item>Fajr 19.5° / Isha\'a 90 min</item>
+        <item>Fajr 18.0° / Isha\'a 18.0°</item>
+        <item>Fajr 15.0° / Isha\'a 15.0°</item>
+        <item>Fajr 20.0° / Isha\'a 18.0°</item>
+        <item>Fajr 20.0° / Isha\'a 18.0°</item>
+        <item>Fajr 20.0° / Isha\'a 18.0°</item>
+        <item>Fajr 18.0° / Isha\'a 17.0°</item>
+        <item>Fajr 16.0° / Isha\'a 14.0°</item>
+        <item>Fajr 19.5° / Isha\'a 90 min</item>
+        <item>Fajr 18.5° / Isha\'a 90 min</item>
+        <item>Fajr 17.7° / Isha\'a 15.0°</item>
+    </string-array>
+
+    <integer-array name="array_calculation_methods_index">
+        <item>12</item>
+        <item>5</item>
+        <item>7</item>
+        <item>10</item>
+        <item>1</item>
+        <item>2</item>
+        <item>11</item>
+        <item>8</item>
+        <item>9</item>
+        <item>3</item>
+        <item>0</item>
+        <item>10</item>
+        <item>4</item>
+        <item>6</item>
+    </integer-array>
+
+    <string name="manual_corrections">Руководство исправления</string>
+    <string name="auto_edit_alarm">Авто Редактировать сигнала тревоги</string>
+    <string name="auto_edit_alarm_option_1">Авто редактирование относительно новое место</string>
+    <string name="auto_edit_alarm_option_2">Сброс отредактированных тревоги на каждом новом месте</string>
+    <string name="share_timings_message">Чтобы знать ежедневные SALAT тайминги и точной направление Qibla, скачать Qibla Connect® бесплатно:\n\n https://play.google.com/store/apps/details?id=com.quranreading.qibladirection</string>
+
+    <string name="share_allah_names_message">Пророк сказал PBUH:\n
+    \"Воистину, Аллах имеет девяносто девять имен, кто считает их войдет в Рай.\" Сахих аль-Бухари – Книга 50 Хадис 894 Для того, чтобы слушать и читать все 99 имен скачать Qibla Connect® бесплатно:\n\n https://play.google.com/store/apps/details?id=com.quranreading.qibladirection</string>
+    <string name="ayah_of_day_dialog">вы хотите разрешить аят дня?</string>
+    <string name="text_translation_setting">текст &amp; трансляция</string>
+    <string name="text_reset_quran_setting">Сброс настроек Кораном</string>
+    <string name="dialog_reset_quran_setting">Вы уверены, что для сброса настроек Корана?</string>
+    <string name="txt_enter_between_0_83">Введите номер от 0-83</string>
+    <string name="no_surah_found">Нет Surrah не найдено</string>
+    <string name="names_99">имена аллах</string>
+    <string name="ayah_message_dialog">вы хотите разрешить аят дня?</string>
+    <string name="phonetic_title">фонетическая транслитерация</string>
+    <string name="english_pronounce">английский Произношение</string>
+    <string name="logout_dialog">Вы уверены, что хотите выйдите из системы?</string>
+    <string name="logout_title">выйти из системы</string>
+
+
+    <string name="laguage_alert_dialog">Это изменит язык всего приложения, за исключением Сообщества и 99 имен. Вы уверены, что вы хотите, чтобы выбрать его?</string>
+
+
+
+</resources>

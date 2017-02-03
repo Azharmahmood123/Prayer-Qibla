@@ -147,9 +147,17 @@ public class NamesListPlayingActivity extends AppCompatActivity implements Adapt
         relShareIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //Send  analytic
+                CommunityGlobalClass.getInstance().sendAnalyticEvent("Allah Names","Share");
+
                 shareMessage();
             }
         });
+
+
+        //Send Screen analytic
+        CommunityGlobalClass.getInstance().sendAnalyticsScreen("Allah Names");
+
     }
 
     public void shareMessage() {
@@ -226,11 +234,7 @@ public class NamesListPlayingActivity extends AppCompatActivity implements Adapt
     private final void focusOnView() {
 
         if (mp != null) {
-
-
             int currentDuration = mp.getCurrentPosition();
-
-
             if (currentDuration >= nameTiming[delayIndex]) {
 //                audioTotalTime = "" + milliSecondsToTimer(totalDuration - currentDuration);
 //                tvTotalTime.setText(audioTotalTime);
@@ -379,7 +383,7 @@ public class NamesListPlayingActivity extends AppCompatActivity implements Adapt
 
     public void reset() {
 
-        if (mp != null && isAudioFound) {
+    /*    if (mp != null && isAudioFound) {
             if (play == 1) {
                 mp.seekTo(0);
                 mp.pause();
@@ -400,10 +404,34 @@ public class NamesListPlayingActivity extends AppCompatActivity implements Adapt
         seekBarNames.setProgress(0);
         seekBarNames.setEnabled(false);
         handler.removeCallbacks(runnableTimeUpdate);
-        handler.removeCallbacks(sendUpdatesAdsToUI);
+        handler.removeCallbacks(sendUpdatesAdsToUI);*/
+
+
+        if (mp != null) {
+            if (mp != null) {
+                mp.release();
+                mp = null;
+            }
+        }
+        initializeAudios();
+        tvTotalTime.setText(audioTotalTime);
+        btnAudio.setImageResource(R.drawable.play_btn);
+        play = 0;
+        delayIndex = 0;
+        mGridViewAdapter.hilightListItem(0);
+        gridViewNames.setSelection(0);
+        delayIndex++;
+        seekBarNames.setProgress(0);
+        seekBarNames.setEnabled(false);
+        handler.removeCallbacks(runnableTimeUpdate);
+        handler.removeCallbacks(sendUpdatesToUI);
     }
 
     public void onPlayClick(View v) {
+
+        //Send  analytic
+        CommunityGlobalClass.getInstance().sendAnalyticEvent("Allah Names","Full Play");
+
         if (isAudioFound && !inProcess) {
             if (play == 0 && mp != null) {
                 play = 1;
@@ -490,12 +518,21 @@ public class NamesListPlayingActivity extends AppCompatActivity implements Adapt
         super.onPause();
 
 
-        if (mp != null) {
+      /*  if (mp != null) {
             if (play == 1) {
                 mp.seekTo(0);
                 mp.pause();
-                seekBarNames.setEnabled(false);
-            }
+
+            }*/
+            if (mp != null && isAudioFound) {
+                if (play == 1) {
+                    handler.removeCallbacks(sendUpdatesToUI);
+                    mp.pause();
+                    play = 0;
+                    btnAudio.setImageResource(R.drawable.play_btn);
+                    seekBarNames.setEnabled(false);
+                }
+
         }
 
 

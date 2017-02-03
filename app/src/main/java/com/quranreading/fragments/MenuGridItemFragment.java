@@ -28,13 +28,11 @@ import android.widget.Toast;
 
 import com.quranreading.model.GridItems;
 import com.quranreading.qibladirection.CompassActivity;
-import com.quranreading.qibladirection.FirstOptionsActivity;
 import com.quranreading.qibladirection.GlobalClass;
 import com.quranreading.qibladirection.MainActivityNew;
 import com.quranreading.qibladirection.R;
 import com.quranreading.qibladirection.SettingsActivity;
 import com.quranreading.qibladirection.TimingsActivity;
-import com.quranreading.qibladirection.UpgradeActivity;
 import com.quranreading.sharedPreference.LocationPref;
 
 import duas.activities.DuasGridActivity;
@@ -49,7 +47,7 @@ import quran.sharedpreference.SurahsSharedPref;
  * Created by cyber on 11/30/2016.
  */
 
-public class MenuGridFragment extends Fragment {
+public class MenuGridItemFragment extends Fragment {
 
     public static final int MENU_TIMINGS = 0;
     public static final int MENU_QIBLA_MAP_DIRECION = 1;
@@ -83,7 +81,7 @@ public class MenuGridFragment extends Fragment {
     boolean isGPSEnabled;
     boolean isNetworkEnabled;
 
-    public void getInstance(GridItems[] gridItems, MenuGridFragment fragment) {
+    public void getInstance(GridItems[] gridItems, MenuGridItemFragment fragment) {
 
         Bundle bundle = new Bundle();
         bundle.putSerializable(GRID_ITEMS, gridItems);
@@ -382,7 +380,7 @@ public class MenuGridFragment extends Fragment {
 
             //for check which device is runing
 
-            if (!MenuMainFragment.isSmallDevice) {
+            if (!MenuFragment.isSmallDevice) {
                 LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams((int) context.getResources().getDimension(R.dimen._50sdp), (int) context.getResources().getDimension(R.dimen._50sdp));
                 viewHolder.imageView.setLayoutParams(layoutParams);
                 viewHolder.textTitle.setTextSize(12);

@@ -14,7 +14,6 @@ import android.view.ViewGroup;
 
 import com.quranreading.model.GridItem;
 import com.quranreading.model.GridItems;
-import com.quranreading.qibladirection.GlobalClass;
 import com.quranreading.qibladirection.R;
 import com.viewpagerindicator.CirclePageIndicator;
 
@@ -26,7 +25,7 @@ import java.util.List;
  * Created by cyber on 11/30/2016.
  */
 
-public class MenuMainFragment extends Fragment {
+public class MenuFragment extends Fragment {
 
     Context mContext;
 
@@ -64,9 +63,9 @@ public class MenuMainFragment extends Fragment {
         menuItems.add(mContext.getString(R.string.grid_direction));
 
         menuItems.add(mContext.getString(R.string.grid_quran));
-        menuItems.add(mContext.getString(R.string.grid_community));
+        menuItems.add(mContext.getString(R.string._community));
         menuItems.add(mContext.getString(R.string.grid_names));
-        menuItems.add(mContext.getString(R.string.grid_hijri));
+        menuItems.add(mContext.getString(R.string._hijri));
         menuItems.add(mContext.getString(R.string.grid_mosque));
       /*  menuItems.add(mContext.getString(R.string.grid_premium));*/
 
@@ -88,7 +87,7 @@ public class MenuMainFragment extends Fragment {
 
         Iterator<String> it = items.iterator();
 
-        List<MenuGridFragment> gridFragments = new ArrayList<>();
+        List<MenuGridItemFragment> gridFragments = new ArrayList<>();
 
         int i = 0;
         while (it.hasNext()) {
@@ -151,7 +150,7 @@ public class MenuMainFragment extends Fragment {
             }
             GridItems[] gp = {};
             GridItems[] gridPage = itmLst.toArray(gp);
-            MenuGridFragment fragment = new MenuGridFragment();
+            MenuGridItemFragment fragment = new MenuGridItemFragment();
             fragment.getInstance(gridPage, fragment);
             gridFragments.add(fragment);
         }
@@ -175,9 +174,9 @@ public class MenuMainFragment extends Fragment {
 
 
     private class PagerAdapter extends FragmentStatePagerAdapter {
-        private List<MenuGridFragment> fragments;
+        private List<MenuGridItemFragment> fragments;
 
-        public PagerAdapter(FragmentManager fm, List<MenuGridFragment> fragments) {
+        public PagerAdapter(FragmentManager fm, List<MenuGridItemFragment> fragments) {
             super(fm);
             this.fragments = fragments;
         }

@@ -179,7 +179,11 @@ public class FacebookActivity extends AppCompatActivity {
                 savePreference.setDataFromSharedPreferences(mSignUpRequest);
                 CommunityGlobalClass.mSignInRequests = mSignUpRequest;
 
+                //Reactivitvate Drowaer layoyt
+                CommunityGlobalClass.mainActivityNew.initializeMenuList();
                 CommunityGlobalClass.mainActivityNew.initDrawer();
+
+
                 FacebookActivity.super.onBackPressed();
                 startActivity(new Intent(FacebookActivity.this, PostActivity.class));
                 //Refresh the Mine Tab
