@@ -103,6 +103,23 @@
 
     <string name="laguage_alert_dialog">Topluluk ve 99 İsimler haricinde uygulamanızın dilini değiştirecektir. Seçmek istediğinizden emin misiniz?</string>
 
+    <string name="txt_font_size"> Yazı Boyutu </string>
+    <string name="txt_read_mode_off"> Okuma Modu Kapalı </string>
+    <string name="txt_read_mode_on"> Okuma Modu Açık </string>
+    <string name="txt_no_fav"> Hayır Favori Ayah Bulundu </string>
+    <string name="txt_add_fav">Sık eklendi</string>
+    <string name="txt_remove_fav">Sık kaldırıldı</string>
+    <string name="txt_tap"> dokunun </string>
+    <string name="txt_tap_text"> AÇIK modu okuma açmak için </string>
 
-
+   <string name= "txt_reset_quran_setting"> emin Kuran Ayarları sıfırlamak musunuz? </string>
+   <string name= "txt_yes"> Evet </string>
+   <string name= "txt_no"> Hayır </string>
+   <string name= "adhan1_new"> Adhan Fajr Madina </string>
+   <string name= "adhan2_new"> En Popüler Adhan </string>
+   <string name= "adhan3_new"> Adhan Madina </string>
+   <string name= "adhan4_new"> Adhan Nasir Al-Qatami </string>
+   <string name= "adhan5_new"> Adhan Mansur Al-Zahrani </string>
+   <string name= "adhan6_new"> Mishary Rashid Al-Afsay </string>
+   <string name= "adhan7_new"> Adhan, Mısır\'dan </string>
 </resources>

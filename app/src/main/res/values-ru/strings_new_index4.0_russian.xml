@@ -104,5 +104,24 @@
     <string name="laguage_alert_dialog">Это изменит язык всего приложения, за исключением Сообщества и 99 имен. Вы уверены, что вы хотите, чтобы выбрать его?</string>
 
 
+    <string name="txt_font_size"> Размер шрифта </string>
+    <string name="txt_read_mode_off"> Read Mode Off </string>
+    <string name="txt_read_mode_on"> Read Mode On </string>
+    <string name="txt_no_fav"> Нет Любимый Ayah Найдено </string>
+    <string name="txt_add_fav"> Добавлено в Избранном </string>
+    <string name="txt_remove_fav"> Удалено из избранного </string>
+    <string name="txt_tap"> Нажмите </string>
+    <string name="txt_tap_text">, чтобы включить режим чтения ON </string>
 
+    <string name = "txt_reset_quran_setting"> Вы уверены, что для сброса настроек Корана? </string>
+    <string name= "txt_yes"> Да </string>
+    <string name= "txt_no"> Нет</string>
+
+<string name = "adhan1_new"> Азан Фаджр Мадина </string>
+<string name = "adhan2_new"> Самые популярные Азан </string>
+<string name = "adhan3_new"> Азан Мадина </string>
+<string name = "adhan4_new"> Азан Насир Аль-Qatami </string>
+<string name = "adhan5_new"> Азан Мансур Аль-Захрани </string>
+<string name = "adhan6_new"> Мишари Рашид аль-Afsay </string>
+<string name = "adhan7_new"> Азан из Египта </string>
 </resources>

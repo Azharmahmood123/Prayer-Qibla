@@ -425,7 +425,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="@dimen/_20sdp"
-                android:text="Tap "
+                android:text="@string/txt_tap"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_12sdp" />
 
@@ -446,7 +446,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="@dimen/_4sdp"
                 android:layout_toRightOf="@+id/ic_read"
-                android:text="to turn reading mode ON "
+                android:text="@string/txt_tap_text"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_12sdp" />
         </RelativeLayout>

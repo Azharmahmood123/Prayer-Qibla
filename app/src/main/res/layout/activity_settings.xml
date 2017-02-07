@@ -364,7 +364,7 @@
                 style="@style/setting_row_bg_l"
                 android:orientation="vertical"
                 android:tag="6"
-                android:visibility="gone">
+                android:visibility="visible">
 
                 <TextView
                     android:id="@+id/tv_advance_help"

@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_marginRight="@dimen/size_fifteen"
-        android:layout_marginTop="@dimen/size_ten"
+        android:layout_marginTop="@dimen/size_five"
         android:background="@drawable/bg_row_corners"
         android:clickable="true"
         android:gravity="center_vertical"
@@ -52,10 +52,51 @@
             android:src="@drawable/ic_navigation" />
     </LinearLayout>
 
-    <RelativeLayout
+    <LinearLayout
+
+        android:id="@+id/linear_bottom"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/tv_Degree"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/_5sdp"
+
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_Degree"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="Qibla Status"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_Warning"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="Qibla Status"
+            android:textColor="@color/warning_text_color"
+            android:textSize="@dimen/_11sdp" />
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBarCompass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:id="@+id/rel_dial_container"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_160sdp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_below="@+id/layout_locationCompass"
         android:orientation="vertical">
 
@@ -68,8 +109,8 @@
 
             <ImageView
                 android:id="@+id/imageViewCompassBorder"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
+                android:layout_width="@dimen/_150sdp"
+                android:layout_height="@dimen/_150sdp"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:adjustViewBounds="true"
@@ -86,62 +127,27 @@
 
                 <ImageView
                     android:id="@+id/imageViewCompass"
-                    android:layout_width="110dp"
-                    android:layout_height="110dp"
+                    android:layout_width="@dimen/_120sdp"
+                    android:layout_height="@dimen/_120sdp"
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
                     android:adjustViewBounds="true"
                     android:contentDescription="@string/img_desrcptn"
-                    android:scaleType="fitXY" />
+                    android:scaleType="fitXY"
+                    android:src="@drawable/dial_1_l" />
 
                 <ImageView
                     android:id="@+id/imageViewPointer"
-                    android:layout_width="165dp"
-                    android:layout_height="165dp"
+                    android:layout_width="@dimen/_150sdp"
+                    android:layout_height="@dimen/_150sdp"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentTop="true"
                     android:adjustViewBounds="true"
-                    android:contentDescription="@string/img_desrcptn" />
+                    android:contentDescription="@string/img_desrcptn"
+                    android:src="@drawable/ic_kaba_neddle" />
             </RelativeLayout>
         </RelativeLayout>
     </RelativeLayout>
-
-
-    <TextView
-        android:id="@+id/tv_Degree"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/tv_Warning"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="2dp"
-        android:layout_marginTop="2dp"
-        android:gravity="center"
-        android:textColor="@color/black"
-        android:textSize="12dp"
-        android:textStyle="bold" />
-
-
-    <TextView
-        android:id="@+id/tv_Warning"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="15dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="3dp"
-        android:gravity="center"
-        android:textColor="@color/warning_text_color"
-        android:textSize="11dp" />
-
-    <ProgressBar
-        android:id="@+id/progressBarCompass"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:visibility="gone" />
 
 </RelativeLayout>

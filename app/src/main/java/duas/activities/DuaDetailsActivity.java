@@ -48,6 +48,7 @@ import java.util.ArrayList;
 import duas.db.DuaModel;
 import duas.download.service.ServiceDownloadDua;
 import duas.fragments.DuasDetailFragment;
+import noman.CommunityGlobalClass;
 
 public class DuaDetailsActivity extends AppCompatActivity implements OnCompletionListener, OnClickListener {
 
@@ -87,6 +88,7 @@ public class DuaDetailsActivity extends AppCompatActivity implements OnCompletio
     DuaViewPagerAdapter mDuaViewPagerAdapter;
     boolean isSettings = false;
 
+    int currentPagerPos=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         // TODO Auto-generated method stub
@@ -121,6 +123,7 @@ public class DuaDetailsActivity extends AppCompatActivity implements OnCompletio
 
 //        tvHeading.setText(R.string.languages);
 
+
         btnAudio = (ImageView) findViewById(R.id.btn_audio_duas);
         btnStop = (ImageView) findViewById(R.id.btn_stop_duas);
         btnShare = (ImageView) findViewById(R.id.btn_share_duas);
@@ -137,35 +140,7 @@ public class DuaDetailsActivity extends AppCompatActivity implements OnCompletio
         duaCategory = getIntent().getStringExtra(EXTRA_DUA_CATEGORY);
         setDuaData(duaPosition);
 
-        vp = (ViewPager) findViewById(R.id.viewpager_duas);
-        mDuaViewPagerAdapter = new DuaViewPagerAdapter(getSupportFragmentManager());
-
-        vp.addOnPageChangeListener(new OnPageChangeListener() {
-
-            @Override
-            public void onPageSelected(int position) {
-                // TODO Auto-generated method stub
-
-                reset();
-                setDuaData(position);
-            }
-
-            @Override
-            public void onPageScrolled(int arg0, float arg1, int arg2) {
-                // TODO Auto-generated method stub
-
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int arg0) {
-                // TODO Auto-generated method stub
-
-            }
-        });
-
-        vp.setAdapter(mDuaViewPagerAdapter);
-
-        vp.setCurrentItem(duaPosition);
+        setAdapter(duaPosition);
     }
 
 
@@ -326,7 +301,7 @@ public class DuaDetailsActivity extends AppCompatActivity implements OnCompletio
                 }
 
             } else {
-                showShortToast(getResources().getString(R.string.toast_network_error), 500, Gravity.BOTTOM);
+                showShortToast(getResources().getString(R.string.toast_network_error), 500, Gravity.CENTER);
             }
         }
     }
@@ -398,7 +373,12 @@ public class DuaDetailsActivity extends AppCompatActivity implements OnCompletio
     protected void onResume() {
         // TODO Auto-generated method stub
         super.onResume();
-
+        if (isSettings) {
+          if(mDuaViewPagerAdapter !=null)
+          {
+              setAdapter(currentPagerPos);
+          }
+        }
         inProcess = false;
         isSettings = false;
 
@@ -409,7 +389,34 @@ public class DuaDetailsActivity extends AppCompatActivity implements OnCompletio
             startAdsCall();
         }
     }
+    public void setAdapter(int duaPosition) {
+        vp = (ViewPager) findViewById(R.id.viewpager_duas);
+        mDuaViewPagerAdapter = new DuaViewPagerAdapter(getSupportFragmentManager());
+        vp.addOnPageChangeListener(new OnPageChangeListener() {
 
+            @Override
+            public void onPageSelected(int position) {
+                // TODO Auto-generated method stub
+                reset();
+                setDuaData(position);
+                currentPagerPos=position;
+            }
+
+            @Override
+            public void onPageScrolled(int arg0, float arg1, int arg2) {
+                // TODO Auto-generated method stub
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int arg0) {
+                // TODO Auto-generated method stub
+            }
+        });
+
+        vp.setAdapter(mDuaViewPagerAdapter);
+        vp.setCurrentItem(duaPosition);
+
+    }
     @Override
     protected void onPause() {
         // TODO Auto-generated method stub
@@ -470,21 +477,7 @@ public class DuaDetailsActivity extends AppCompatActivity implements OnCompletio
 
     private void showShortToast(String message, int milliesTime, int gravity) {
 
-        if (getString(R.string.device).equals("large")) {
-            final Toast toast = Toast.makeText(this, message, Toast.LENGTH_SHORT);
-            toast.show();
-        } else {
-            final Toast toast = Toast.makeText(this, message, Toast.LENGTH_SHORT);
-            toast.show();
-
-            Handler handler = new Handler();
-            handler.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    toast.cancel();
-                }
-            }, milliesTime);
-        }
+        CommunityGlobalClass.getInstance().showShortToast(message, milliesTime, gravity);
     }
 
     class DuaViewPagerAdapter extends FragmentPagerAdapter {

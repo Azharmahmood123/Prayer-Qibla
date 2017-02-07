@@ -39,7 +39,7 @@ public class ParentContainerList extends RecyclerView.Adapter<ParentContainerHol
     Context mContext;
     ParentContainerList parentContainerList;
 
-    String[] navItemParent = {"Juzz", "Favourite", "Sajdahs", "Stop Sign"};
+    String[] navItemParent = {"Juz", "Favourite", "Sajdahs", "Stop Sign"};
     int[] imgId = {R.drawable.juz_nav, R.drawable.fav_nav, R.drawable.sajdah_nav, R.drawable.stopsign_nav};
     int[] imgId_hover = {R.drawable.juz_nav_hover, R.drawable.fav_nav_hover, R.drawable.sajdah_nav_hover, R.drawable.stopsign_nav_hover};
     int parentPos = -1;
@@ -87,7 +87,7 @@ public class ParentContainerList extends RecyclerView.Adapter<ParentContainerHol
                     {
                         if(initFavouriteSurahList().size()==0)
                         {
-                            CommunityGlobalClass.getInstance().showShortToast("No Favourite Ayah Found", 500, Gravity.CENTER);
+                            CommunityGlobalClass.getInstance().showShortToast(mContext.getResources().getString(R.string.txt_no_fav), 500, Gravity.CENTER);
                         }
                     }
 

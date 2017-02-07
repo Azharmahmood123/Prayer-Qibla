@@ -68,7 +68,7 @@
                         <TextView
                             android:id="@+id/title_1"
                             style="@style/setting_row_header"
-                            android:text="Font Size" />
+                            android:text="@string/txt_font_size" />
 
 
                         <RelativeLayout

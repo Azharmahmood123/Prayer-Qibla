@@ -103,6 +103,24 @@
 
     <string name="laguage_alert_dialog">Cela changera la langue de votre application entière, sauf la Communauté et 99 noms. Voulez-vous vraiment le sélectionner?</string>
 
+    <string name =  "txt_font_size"> Taille de police </string>
+    <string name =  "txt_read_mode_off"> Mode lecture désactivé </string>
+    <string name =  "txt_read_mode_on"> Mode lecture </string>
+    <string name =  "txt_no_fav"> Aucun favori Ayah Found </string>
+    <string name =  "txt_add_fav"> Ajouté aux favoris </string>
+    <string name =  "txt_remove_fav"> Supprimé du favori </string>
+    <string name =  "txt_tap"> Appuyez sur </string>
+    <string name =  "txt_tap_text"> pour activer le mode lecture </string>
 
+    <string name =  "txt_reset_quran_setting"> Etes-vous sûr de réinitialiser les paramètres du Coran? </string>
+    <string name =  "txt_yes"> Oui </string>
+    <string name =  "txt_no"> Non </string>
 
+    <string name =  "adhan1_new"> Adhan Fajr Madina</string>
+    <string name =  "adhan2_new"> Les plus populaires Adhan</string>
+    <string name =  "adhan3_new"> Adhan Madina</string>
+    <string name =  "adhan4_new"> Adhan Nasir Al-Qatami</string>
+    <string name =  "adhan5_new"> Adhan Mansur Al-Zahrani</string>
+    <string name =  "adhan6_new"> Mishary Rashid Al-Afsay</string>
+    <string name =  "adhan7_new"> Adhan d\'Egypte</string>
 </resources>

@@ -1,11 +1,14 @@
 package com.quranreading.qibladirection;
 
+import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MenuItem;
@@ -24,6 +27,8 @@ import com.quranreading.ads.AnalyticSingaltonClass;
 import com.quranreading.helper.DailogsClass;
 import com.quranreading.listeners.OnDailogButtonSelectionListner;
 import com.quranreading.sharedPreference.LanguagePref;
+
+import noman.quran.JuzConstant;
 
 public class LanguageSelectionActivity extends AppCompatActivity implements OnItemClickListener, OnDailogButtonSelectionListner {
 
@@ -111,8 +116,37 @@ public class LanguageSelectionActivity extends AppCompatActivity implements OnIt
             if (!inProccess) {
                 inProccess = true;
                 selectedPosition = position;
-                DailogsClass dailogShow = new DailogsClass(context, getResources().getString(R.string.languages), getResources().getString(R.string.laguage_alert_dialog), this, getResources().getString(R.string.okay), getResources().getString(R.string.cancel));
-                dailogShow.showTwoButtonDialog();
+               // DailogsClass dailogShow = new DailogsClass(context, getResources().getString(R.string.languages), getResources().getString(R.string.laguage_alert_dialog), this, getResources().getString(R.string.okay), getResources().getString(R.string.cancel));
+              //  dailogShow.showTwoButtonDialog();
+
+                new AlertDialog.Builder(LanguageSelectionActivity.this, R.style.MyAlertDialogStyle)
+                        .setTitle(getResources().getString(R.string.languages))
+                        .setMessage(getResources().getString(R.string.laguage_alert_dialog))
+                        .setPositiveButton(getString(R.string.txt_yes), new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                                inProccess = false;
+
+
+                                    sendAnalyticEvent(languagesData[selectedPosition]);
+                                    mGlobalClass.setLocale(selectedPosition);
+
+                                    if (!mLanguagePref.getFirstTimeLanguage()) {
+                                        mLanguagePref.setFirstTimeLanguage(true);
+                                    }
+                                    Intent intent = new Intent(getApplicationContext(), MainActivityNew.class);
+                                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);//Remove all previeous activity
+                                    startActivity(intent);
+                                }
+
+                        }).setNegativeButton(getString(R.string.txt_no), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                }).show();
+
             }
         }
     }
@@ -121,7 +155,11 @@ public class LanguageSelectionActivity extends AppCompatActivity implements OnIt
     public void onDailogButtonSelectionListner(String title, int selectedIndex, boolean selection) {
         // TODO Auto-generated methodIndex stub
 
-        inProccess = false;
+
+
+
+
+       /* inProccess = false;
         if (selection) {
             sendAnalyticEvent(languagesData[selectedPosition]);
             mGlobalClass.setLocale(selectedPosition);
@@ -133,7 +171,12 @@ public class LanguageSelectionActivity extends AppCompatActivity implements OnIt
             MainActivityNew.finishActivity();
             finish();
             startActivity(new Intent(context, MainActivityNew.class));
-        }
+
+            //MainActivityNew.finishActivity();
+            Intent intent = new Intent(getApplicationContext(), MainActivityNew.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);//Remove all previeous activity
+            startActivity(intent);
+        }*/
     }
 
     @Override

@@ -211,7 +211,7 @@ public class QuranReadListAdapter extends BaseAdapter {
 
             holder.continerJuzzTitle.setVisibility(View.VISIBLE);
             holder.tvEngJuzzNo.setText("Juz: " + (juzModelList.get(position).getParaId()));
-            holder.tvArabicJuzzName.setText(ArabicUtilities.reshapeSentence(urduParah[juzModelList.get(position).getParaId() - 1]));
+            holder.tvArabicJuzzName.setText(urduParah[juzModelList.get(position).getParaId() - 1]);
             holder.tvArabicJuzzNo.setText(JuzConstant.arabicCounting[juzModelList.get(position).getParaId()] + " :" + ArabicUtilities.reshapeSentence("جزء"));
 
         } else {
@@ -230,7 +230,6 @@ public class QuranReadListAdapter extends BaseAdapter {
             String styledText = arabicAyat + "<font color='#805D01'>" + ayaNumber + "</font>";
             holder.tvArabic.setText(Html.fromHtml(styledText), TextView.BufferType.SPANNABLE);
         } else {
-
             //only surrah Fatiah
             if (surahPosition == 1) {
 
@@ -239,7 +238,7 @@ public class QuranReadListAdapter extends BaseAdapter {
                 holder.tvAyahNo.setText(JuzConstant.arabicCounting[position + 1]);
                 String ayaNumber = "\uFD3F" + JuzConstant.arabicCounting[position + 1] + "\uFD3E";
                 arabicAyat = ArabicUtilities.reshapeSentence(arabic);
-                String styledText = arabicAyat + "<font color='#805D01' size='1'>" + ayaNumber + "</font>";
+                String styledText = arabicAyat + "<font color='#805D01'>" + ayaNumber + "</font>";
                 holder.tvArabic.setText(Html.fromHtml(styledText), TextView.BufferType.SPANNABLE);
             } else {
                 if (position == 0) {
@@ -257,7 +256,7 @@ public class QuranReadListAdapter extends BaseAdapter {
                 }
             }
 
-        }
+       }
 
 
         // holder.tvArabic.setText(arabic);
@@ -504,12 +503,12 @@ public class QuranReadListAdapter extends BaseAdapter {
         if (id == -1) {
             id = (int) dbObj.addBookmark(surahName, surahNo, ayahNo);
             model.setBookMarkId(id);
-            CommunityGlobalClass.getInstance().showShortToast("Added to Favourite", 500, Gravity.CENTER);
+            CommunityGlobalClass.getInstance().showShortToast(mContext.getResources().getString(R.string.txt_add_fav), 500, Gravity.CENTER);
             mImageMenuList.get(ayahNo).setBackgroundResource(R.drawable.fav_mark);
         } else {
             if (dbObj.deleteOneBookmark(id)) {
                 model.setBookMarkId(-1);
-                CommunityGlobalClass.getInstance().showShortToast("Removed from Favourite", 500, Gravity.CENTER);
+                CommunityGlobalClass.getInstance().showShortToast(mContext.getResources().getString(R.string.txt_remove_fav), 500, Gravity.CENTER);
                 mImageMenuList.get(ayahNo).setBackgroundResource(R.drawable.side_arrow_open);
             }
         }

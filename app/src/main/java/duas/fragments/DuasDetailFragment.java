@@ -6,9 +6,11 @@ import com.quranreading.qibladirection.R;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import duas.activities.DuaDetailsActivity;
 import duas.db.DuaModel;
@@ -59,7 +61,20 @@ public class DuasDetailFragment extends Fragment {
 
 		tvTitle.setText(data.getDuaTitle().trim());
 		tvArabic.setText(data.getDuaArabic().trim());
-		tvTranslation.setText(data.getDuaEnglish().trim());
+
+		if(duasSharedPref.getDuaSettingTransaltionId()==2) {
+			tvTranslation.setText(data.getDuaEnglish().trim());
+		}
+
+		else if(duasSharedPref.getDuaSettingTransaltionId()==1)
+		{
+			LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.FILL_PARENT);
+			params.gravity = Gravity.RIGHT;
+			tvTranslation.setLayoutParams(params);
+			tvTranslation.setText(data.getDuaUrdu());
+
+		}
+
 		tvTransliteration.setText(data.getDuaTransliteration().trim());
 
 		return v;
@@ -69,7 +84,14 @@ public class DuasDetailFragment extends Fragment {
 	public void onResume() {
 		// TODO Auto-generated method stub
 		super.onResume();
-		isTranslation = duasSharedPref.isTranslation();
+		//isTranslation = duasSharedPref.isTranslation();
+		if (duasSharedPref.getDuaSettingTransaltionId() == 0) {
+			//chkTranslationDua = mDuasSharedPref.isTranslation();
+			isTranslation = false;
+		} else {
+			isTranslation = true;
+		}
+
 		isTransliteration = duasSharedPref.isTransliteration();
 
 		if(!isTranslation)

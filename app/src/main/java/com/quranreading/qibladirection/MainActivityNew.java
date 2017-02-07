@@ -17,6 +17,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
+import android.os.SystemClock;
 import android.provider.Settings;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -74,6 +75,8 @@ import noman.hijri.acitivity.CalenderActivity;
 import noman.hijri.acitivity.ConverterDialog;
 import noman.quran.activity.QuranReadActivity;
 import places.activities.PlacesListActivity;
+import quran.helper.DBManagerQuran;
+import quran.model.SurahModel;
 import quran.sharedpreference.SurahsSharedPref;
 
 import static com.quranreading.qibladirection.R.id.toolbar_btnMenu;
@@ -169,6 +172,7 @@ public class MainActivityNew extends AppCompatActivity implements AdapterView.On
     public static final int menuDisclaimerC = 11;
     public static final int menuLogout = 12;
     public static final int menuFaceBookC = 13;
+    private long lastClick=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -206,8 +210,6 @@ public class MainActivityNew extends AppCompatActivity implements AdapterView.On
             }
         }
 
-        initializeMenuList();
-        initialize();
 
         if (getIntent().getIntExtra("notificationID", -1) > 0) {
 
@@ -222,9 +224,7 @@ public class MainActivityNew extends AppCompatActivity implements AdapterView.On
             startActivity(intent);
         }
 
-        if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.main_container_frame, new HomeFragment()).commit();
-        }
+
 
         layoutImageShare = (RelativeLayout) findViewById(R.id.layout_image_share);
         layoutImageShare.setOnClickListener(new View.OnClickListener() {
@@ -232,8 +232,12 @@ public class MainActivityNew extends AppCompatActivity implements AdapterView.On
             @Override
             public void onClick(View v) {
 
-                String body = getResources().getString(R.string.share_msg);
-                shareMessage(getResources().getString(R.string.app_name), body);
+                if (SystemClock.elapsedRealtime() - lastClick < 3000) {
+                    return;
+                } else {
+                    String body = getResources().getString(R.string.share_msg);
+                    shareMessage(getResources().getString(R.string.app_name), body);
+                }
 
             }
         });
@@ -241,7 +245,33 @@ public class MainActivityNew extends AppCompatActivity implements AdapterView.On
 
         //Setting current hijri date in the toolbar
         getCurrentHijriDate();
+
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.main_container_frame, new HomeFragment()).commit();
+        }
+
+
+        initializeViews(false);
+
+
+        //Is First Time app Lauunch so add Fav ayash
+       if( locationPref.isFirstTimeAppLaunch())
+        {
+            doFirstBookMarksAyah();
+            locationPref.setFirstTimeAppLaunch();
+        }
     }
+
+    public void initializeViews(boolean isAgainLoaded)
+    {
+
+        initializeMenuList();
+        initialize();
+        if(isAgainLoaded) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.main_container_frame, new HomeFragment()).commit();
+        }
+    }
+
 
     public void initializeMenuList() {
         drawerListData.clear();
@@ -508,9 +538,13 @@ public class MainActivityNew extends AppCompatActivity implements AdapterView.On
                 break;
 
                 case menuRemoveAdsC: {
+                    if (SystemClock.elapsedRealtime() - lastClick < 3000) {
+                        return;
+                    } else {
                     inProcess = true;
                     sendAnalyticEvent("Remove Ads");
                     startActivity(new Intent(MainActivityNew.this, UpgradeActivity.class));
+                    }
                 }
                 break;
 
@@ -1205,4 +1239,16 @@ public class MainActivityNew extends AppCompatActivity implements AdapterView.On
         });
 
     }
+
+    public void doFirstBookMarksAyah()
+    {
+       String[] surahNames = getResources().getStringArray(R.array.surah_names);
+        DBManagerQuran dbObj = new DBManagerQuran(MainActivityNew.this);
+        dbObj.open();
+        dbObj.addBookmark(surahNames[3 - 1], 3, 193);
+        dbObj.addBookmark(surahNames[18 - 1], 18, 10);
+        dbObj.close();
+
+    }
+
 }

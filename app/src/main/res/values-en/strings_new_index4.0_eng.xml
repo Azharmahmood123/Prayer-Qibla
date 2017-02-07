@@ -103,6 +103,23 @@
 
     <string name="laguage_alert_dialog">It will change the language of your whole app except Community and 99 Names. Are you sure you want to select it?</string>
 
+     <string name="txt_font_size">Font Size</string>
+    <string name="txt_read_mode_off">Read Mode Off</string>
+    <string name="txt_read_mode_on">Read Mode On</string>
+    <string name="txt_no_fav">No Favourite Ayah Found</string>
+    <string name="txt_add_fav">Added to Favourite</string>
+    <string name="txt_remove_fav">Removed from Favourite</string>
+    <string name="txt_tap">Tap </string>
+    <string name="txt_tap_text">to turn reading mode ON </string>
+    <string name="txt_reset_quran_setting">Are you sure to reset Quran Settings?</string>
+    <string name="txt_yes">Yes</string>
+    <string name="txt_no">No</string>
 
-
+    <string name="adhan1_new">Adhan Fajr Madina</string>
+    <string name="adhan2_new">Most Popular Adhan</string>
+    <string name="adhan3_new">Adhan Madina</string>
+    <string name="adhan4_new">Adhan Nasir Al-Qatami</string>
+    <string name="adhan5_new">Adhan Mansur Al-Zahrani</string>
+    <string name="adhan6_new">Mishary Rashid Al-Afsay</string>
+    <string name="adhan7_new">Adhan from Egypt</string>
 </resources>

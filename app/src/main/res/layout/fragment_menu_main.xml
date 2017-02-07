@@ -12,12 +12,13 @@
         android:id="@+id/pager"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"/>
+        android:layout_weight="2"/>
 
     <com.viewpagerindicator.CirclePageIndicator
         android:id="@+id/pagerIndicator"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
         android:layout_marginBottom="@dimen/size_five"
         android:layout_marginTop="@dimen/size_five"
         app:fillColor="@color/ColorPrimary"

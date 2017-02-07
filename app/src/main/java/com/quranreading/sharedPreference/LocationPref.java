@@ -37,12 +37,24 @@ public class LocationPref {
     public static final String HALAL_PLACES_OFFLINE = "places_offline";
     public static final String MOSQUE_OFFLINE = "places_offline";
     public static final String CURRENT_LOCATION = "current_location";
+    public static final String FIRST_TIME_APP_LAUNCH = "first_time_app";
 
     public LocationPref(Context context) {
         this._context = context;
         pref = _context.getSharedPreferences(PREF_NAME, PRIVATE_MODE);
         editor = pref.edit();
     }
+
+
+    public void setFirstTimeAppLaunch() {
+        editor.putBoolean(FIRST_TIME_APP_LAUNCH, false);
+        editor.commit();
+    }
+
+    public boolean isFirstTimeAppLaunch() {
+        return pref.getBoolean(FIRST_TIME_APP_LAUNCH, true);
+    }
+
 
     public void setLocation(String city, /* String country, */ String latd, String longit/* , String timezone */) {
         // editor.putBoolean(MANUAL_LOCATION, true);

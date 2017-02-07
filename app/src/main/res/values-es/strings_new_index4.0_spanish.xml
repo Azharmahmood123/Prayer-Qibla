@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="save">guardar</string>
-    <string name="new_location_detected">Nueva ubicación detectada</string>
-    <string name="new_location_detected_msg1">¿Desea establecer su ubicación desde</string>
-    <string name="to">a</string>
-    <string name="and">e</string>
-    <string name="new_location_detected_msg2">Actualizar los tiempos de oración</string>
-    <string name="auto_settings">Ajustes automáticos</string>
-    <string name="timings">Tiempos</string>
-    <string name="in">en</string>
+      <string name="save">guardar</string>
+      <string name="new_location_detected">Nueva ubicación detectada</string>
+      <string name="new_location_detected_msg1">¿Desea establecer su ubicación desde</string>
+      <string name="to">a</string>
+      <string name="and">e</string>
+      <string name="new_location_detected_msg2">Actualizar los tiempos de oración</string>
+      <string name="auto_settings">Ajustes automáticos</string>
+      <string name="timings">Tiempos</string>
+      <string name="in">en</string>
 
-    <string name="grid_quran">corán</string>
-    <string name="grid_salat">Salat</string>
-    <string name="grid_direction">Qibla visual</string>
-    <string name="grid_hijri">Hijri</string>
-    <string name="grid_mosque">Encontrar mezquitas</string>
-    <string name="grid_premium">premio</string>
-    <string name="grid_community">comunidad</string>
-    <string name="grid_halal">Halal encontrar</string>
-    <string name="grid_names">Nombres de Allah</string>
-    <string name="grid_duas">oración</string>
-    <string name="grid_settings">Ajustes</string>
+      <string name="grid_quran">corán</string>
+      <string name="grid_salat">Salat</string>
+      <string name="grid_direction">Qibla visual</string>
+      <string name="grid_hijri">Hijri</string>
+      <string name="grid_mosque">Encontrar mezquitas</string>
+      <string name="grid_premium">premio</string>
+      <string name="grid_community">comunidad</string>
+      <string name="grid_halal">Halal encontrar</string>
+      <string name="grid_names">Nombres de Allah</string>
+      <string name="grid_duas">oración</string>
+      <string name="grid_settings">Ajustes</string>
 
-    <string name="notificaion_time">Tiempo de notificación</string>
-    <string name="notification_sound">sonido de notificación</string>
-    <string name="notificaion">notificación</string>
-    <string name="set_tone">Establecer sonido</string>
+      <string name="notificaion_time">Tiempo de notificación</string>
+      <string name="notification_sound">sonido de notificación</string>
+      <string name="notificaion">notificación</string>
+      <string name="set_tone">Establecer sonido</string>
 
     <string-array name="array_calculation_methods_new">
         <item>Ministro Argelino de Asuntos Religiosos y Wakfs</item>
@@ -79,30 +79,51 @@
         <item>6</item>
     </integer-array>
 
-    <string name="manual_corrections">Correcciones manuales</string>
-    <string name="auto_edit_alarm">Alarma de edición automática</string>
-    <string name="auto_edit_alarm_option_1">Edición automática con respecto a la nueva ubicación</string>
-    <string name="auto_edit_alarm_option_2">Restablecer las alarmas editadas en cada nueva ubicación</string>
-    <string name="share_timings_message">Conocer los horarios diarios de salat y la dirección exacta de Qibla Descargar Qibla Connect® gratis:\n\n https://play.google.com/store/apps/details?id=com.quranreading.qibladirection</string>
+      <string name="manual_corrections">Correcciones manuales</string>
+      <string name="auto_edit_alarm">Alarma de edición automática</string>
+      <string name="auto_edit_alarm_option_1">Edición automática con respecto a la nueva ubicación</string>
+      <string name="auto_edit_alarm_option_2">Restablecer las alarmas editadas en cada nueva ubicación</string>
+      <string name="share_timings_message">Conocer los horarios diarios de salat y la dirección exacta de Qibla Descargar Qibla Connect® gratis:\n\n https://play.google.com/store/apps/details?id=com.quranreading.qibladirection</string>
 
-    <string name="share_allah_names_message">El Profeta PBUH dijo:\n
+      <string name="share_allah_names_message">El Profeta PBUH dijo:\n
     \"De hecho, Allah tiene noventa y nueve nombres, El que los cuenta entrará en el Paraíso.\"Sahih Al-Bukhari – Libro 50 Hadith 894 Para escuchar y leer los 99 nombres descarga Qibla Connect® for Free:\n\n https://play.google.com/store/apps/details?id=com.quranreading.qibladirection</string>
-    <string name="ayah_of_day_dialog">¿Quieres habilitar Ayah del día?</string>
-    <string name="text_translation_setting">Texto &amp; Traducción</string>
-    <string name="text_reset_quran_setting">Restablecer configuración de QuranReset Quran Setting</string>
-    <string name="dialog_reset_quran_setting">¿Estás seguro de restablecer la configuración de Quran?</string>
-    <string name="txt_enter_between_0_83">Ingrese número desde 0-83</string>
-    <string name="no_surah_found">No se encontró Surrah</string>
-    <string name="names_99">Allah nombres</string>
-    <string name="ayah_message_dialog">¿Quieres habilitar Ayah del día?</string>
-    <string name="phonetic_title">Transliteración fonética</string>
-    <string name="english_pronounce">Pronunciacion inglesa</string>
-    <string name="logout_dialog">¿Está seguro de que desea cerrar la sesión?</string>
-    <string name="logout_title">Cerrar sesión</string>
+      <string name="ayah_of_day_dialog">¿Quieres habilitar Ayah del día?</string>
+      <string name="text_translation_setting">Texto &amp; Traducción</string>
+      <string name="text_reset_quran_setting">Restablecer configuración de QuranReset Quran Setting</string>
+      <string name="dialog_reset_quran_setting">¿Estás seguro de restablecer la configuración de Quran?</string>
+      <string name="txt_enter_between_0_83">Ingrese número desde 0-83</string>
+      <string name="no_surah_found">No se encontró Surrah</string>
+      <string name="names_99">Allah nombres</string>
+      <string name="ayah_message_dialog">¿Quieres habilitar Ayah del día?</string>
+      <string name="phonetic_title">Transliteración fonética</string>
+      <string name="english_pronounce">Pronunciacion inglesa</string>
+      <string name="logout_dialog">¿Está seguro de que desea cerrar la sesión?</string>
+      <string name="logout_title">Cerrar sesión</string>
 
 
-    <string name="laguage_alert_dialog">Cambiará el idioma de toda tu aplicación excepto Comunidad y 99 nombres.¿Estás seguro de que quieres seleccionarlo?</string>
+      <string name="laguage_alert_dialog">Cambiará el idioma de toda tu aplicación excepto Comunidad y 99 nombres.¿Estás seguro de que quieres seleccionarlo?</string>
 
 
 
+      <string name = "txt_font_size"> Tamaño de fuente   </string>
+      <string name = "txt_read_mode_off"> Modo de lectura Off   </string>
+      <string name = "txt_read_mode_on"> Modo de lectura En   </string>
+      <string name = "txt_no_fav"> No se Favorito Ayah Encontrado   </string>
+      <string name = "txt_add_fav"> Añadido a Favoritos   </string>
+      <string name = "txt_remove_fav"> Fuera del favorito   </string>
+      <string name = "txt_tap"> Pulse   </string>
+      <string name = "txt_tap_text"> para activar el modo de lectura EN </string>
+
+    <string name = "txt_reset_quran_setting"> ¿Está seguro para restablecer la configuración del Corán? </string>
+    <string name = "txt_yes"> Sí </string>
+    <string name = "txt_no"> no </string>
+
+
+    <string name = "adhan1_new"> Adhan Fajr Madina </string>
+    <string name = "adhan2_new"> Los más populares Adhan </string>
+    <string name = "adhan3_new"> Adhan Madina </string>
+    <string name = "adhan4_new"> Adhan Nasir Al-Qatami </string>
+    <string name = "adhan5_new"> Adhan Mansur Al-Zahrani </string>
+    <string name = "adhan6_new"> Mishary Rashid Al-Afsay </string>
+    <string name = "adhan7_new"> Adhan de Egipto </string>
 </resources>

@@ -98,9 +98,26 @@
     <string name="english_pronounce"> ภาษาอังกฤษออกเสียง </string>
     <string name="logout_dialog"> เป็นคุณแน่ใจหรือว่าต้องการออกจากระบบ?</string>
     <string name="logout_title"> ออกจากระบบ </string>
-
-
     <string name="laguage_alert_dialog"> มันจะเปลี่ยนภาษาของ app ของคุณทั้งหมดยกเว้นุมนและ 99 name คุณแน่ใจหรือว่าต้องการลบ?</string>
 
+    <string name="txt_font_size"> ขนาดตัวอักษร </string>
+    <string name="txt_read_mode_off"> โหมดอ่านปิด </string>
+    <string name="txt_read_mode_on"> อ่านโหมด </string>
+    <string name="txt_no_fav"> ไม่พบโปรด Ayah </string>
+    <string name="txt_add_fav"> เพิ่มเข้ามาเพื่อโปรด </string>
+    <string name="txt_remove_fav"> ลบออกจากรายการโปรด </string>
+    <string name="txt_tap"> แตะ </string>
+    <string name="txt_tap_text"> เพื่อเปิดโหมดการอ่านบน </string>
 
+    <string name = "txt_reset_quran_setting"> คุณแน่ใจแล้วหรือที่จะรีเซ็ตการตั้งค่าคัมภีร์กุรอาน </string>
+    <string name="txt_yes"> ใช่ </string>
+    <string name="txt_no"> ไม่ </string>
+
+  <string name= "adhan1_new"> Adhan Fajr Madina</string>
+ <string name= "adhan2_new"> ยอดนิยม Adhan</string>
+ <string name= "adhan3_new"> Adhan Madina</string>
+ <string name= "adhan4_new"> Adhan นาซีร์อัล Qatami</string>
+ <string name= "adhan5_new"> Adhan มันซูร์อัล Zahrani</string>
+ <string name= "adhan6_new"> Mishary Rashid Al-Afsay</string>
+ <string name= "adhan7_new"> Adhan จากอียิปต์</string>
 </resources>

@@ -43,6 +43,27 @@
                 android:text="@string/settings"
                 android:textColor="@color/white"
                 />
+
+
+            <RelativeLayout
+                android:id="@+id/layout_settings_surahs"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/bg_drawer_menu"
+                android:onClick="onSettingsDuasClick">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/img_desrcptn"
+                    android:padding="@dimen/_15sdp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/settng_r" />
+            </RelativeLayout>
         </RelativeLayout>
 
 

@@ -12,7 +12,7 @@ public class DuasSharedPref {
 	SharedPreferences pref;
 	private static final String PREF_NAME = "DuasSharedPref";
 	public static String REFERENCE_ID = "reference_id";
-
+	public static String TRANSALATION_ID = "setting_translation";
 	private static final String TRANSLATION = "translation_duas";
 	private static final String TRANSLITERATION = "transliteration_duas";
 
@@ -21,7 +21,15 @@ public class DuasSharedPref {
 		pref = _context.getSharedPreferences(PREF_NAME, PRIVATE_MODE);
 		editor = pref.edit();
 	}
+	public void setDuaSettingTransaltionId(int checkId) {
+		editor.putInt(TRANSALATION_ID, checkId);
+		editor.commit();
+	}
 
+	public int getDuaSettingTransaltionId() {
+		return pref.getInt(TRANSALATION_ID, 2);//DefaultEnglish
+		// return true;
+	}
 	public void setReferenceId(String refId) {
 		editor.putString(REFERENCE_ID, refId);
 		editor.commit();

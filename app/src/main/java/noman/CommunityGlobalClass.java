@@ -159,7 +159,7 @@ public class CommunityGlobalClass extends GlobalClass {
 
         pd = new SweetAlertDialog(context, SweetAlertDialog.PROGRESS_TYPE);
         pd.getProgressHelper().setBarColor(context.getResources().getColor(R.color.colorPrimary));
-        pd.setTitleText("Loading");
+        pd.setTitleText(getResources().getString(R.string.txt_loading));
         pd.setCancelable(false);
         pd.show();
     }

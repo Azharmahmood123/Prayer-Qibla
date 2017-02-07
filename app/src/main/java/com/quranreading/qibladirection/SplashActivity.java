@@ -68,7 +68,6 @@ public class SplashActivity extends AppCompatActivity {
             FacebookSdk.sdkInitialize(getApplicationContext());
             AppEventsLogger.activateApp(this);
         }
-
         // FileUtils.test(this);
         CommunityGlobalClass.mMainActivityNew = this;
         //Copy JuzzData from Database
@@ -116,10 +115,9 @@ public class SplashActivity extends AppCompatActivity {
                 myHandler.postDelayed(mRunnable, SPLASH_TIME_LONG);
             }
         }
-/*
 		chkDownloadStatus();
 
-		startAsyncTask();*/
+		startAsyncTask();
     }
 
     public void showTextAnimation() {
@@ -128,9 +126,9 @@ public class SplashActivity extends AppCompatActivity {
         hTextView.setAnimateType(HTextViewType.EVAPORATE);
         hTextView.animateText(getString(R.string.app_name)); // animate
 */
-        chkDownloadStatus();
+        /*chkDownloadStatus();
         startAsyncTask();
-
+*/
     }
 
     public void needleAnimation() {
@@ -139,7 +137,7 @@ public class SplashActivity extends AppCompatActivity {
                 Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
 
         aRotate.setStartOffset(0);
-        aRotate.setDuration(1500);
+        aRotate.setDuration(1400);
         aRotate.setFillAfter(true);
         aRotate.setInterpolator(this, android.R.anim.decelerate_interpolator);
 
@@ -177,7 +175,7 @@ public class SplashActivity extends AppCompatActivity {
         // TODO Auto-generated methodIndex stub
         super.onResume();
 
-		/*if(index > 0)
+		if(index > 0)
 		{
 			startNextActivity();
 		}
@@ -186,7 +184,7 @@ public class SplashActivity extends AppCompatActivity {
 			index++;
 		}
 
-		isShowInterstitial = true;*/
+		isShowInterstitial = true;
 
     }
 

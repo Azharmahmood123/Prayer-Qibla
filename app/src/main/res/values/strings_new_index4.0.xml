@@ -105,4 +105,20 @@
 
     <string name="_community">COMMUNITY</string>
     <string name="_hijri">HIJRI</string>
+
+    <string name="txt_font_size">Font Size</string>
+    <string name="txt_read_mode_off">Read Mode Off</string>
+    <string name="txt_read_mode_on">Read Mode On</string>
+    <string name="txt_no_fav">No Favourite Ayah Found</string>
+    <string name="txt_add_fav">Added to Favourite</string>
+    <string name="txt_remove_fav">Removed from Favourite</string>
+    <string name="txt_tap">Tap </string>
+    <string name="txt_tap_text">to turn reading mode ON </string>
+
+
+    <string name="txt_reset_quran_setting">Are you sure to reset Quran Settings?</string>
+    <string name="txt_yes">Yes</string>
+    <string name="txt_no">No</string>
+    <string name="txt_loading">Loading....</string>
+
 </resources>

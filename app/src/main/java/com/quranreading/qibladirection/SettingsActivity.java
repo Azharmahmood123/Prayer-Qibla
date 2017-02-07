@@ -1,7 +1,8 @@
 package com.quranreading.qibladirection;
 
-import android.app.AlertDialog;
+
 import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -11,8 +12,10 @@ import android.content.DialogInterface.OnDismissListener;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatCheckBox;
 import android.util.Log;
@@ -47,9 +50,13 @@ import com.quranreading.sharedPreference.PrayerTimeSettingsPref;
 import java.util.HashMap;
 
 import duas.sharedprefs.DuasSharedPref;
+import noman.CommunityGlobalClass;
 import noman.quran.JuzConstant;
+import noman.quran.activity.QuranReadActivity;
 import noman.quran.activity.TextSettingScreen;
 import quran.sharedpreference.SurahsSharedPref;
+
+import static noman.quran.JuzConstant.juzzIndex;
 
 public class SettingsActivity extends AppCompatActivity implements OnDailogButtonSelectionListner {
 
@@ -147,31 +154,33 @@ public class SettingsActivity extends AppCompatActivity implements OnDailogButto
         intializeViews();
         initializeSettings();
         //Surrah Reset Settings
-        LinearLayout  resetSurrahSettings = (LinearLayout) findViewById(R.id.surah_reset_setting);
+        LinearLayout resetSurrahSettings = (LinearLayout) findViewById(R.id.surah_reset_setting);
         // resetSurrahSettings.setTypeface(((GlobalClass) getApplication()).faceRobotoL);
         resetSurrahSettings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new AlertDialog.Builder(SettingsActivity.this).setMessage("Are you sure to reset Quran Settings?").setPositiveButton("Yes", new OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-                        mSurahsSharedPref.setSeekbarPosition(JuzConstant.defaultSeekFont);
-                        mSurahsSharedPref.setEnglishFontSize(JuzConstant.defaultEng);
-                        mSurahsSharedPref.setArabicFontSize(JuzConstant.defaultArabic);
-                        mSurahsSharedPref.setTranslationIndex(1);
-                        mSurahsSharedPref.setTransliteration(true);
-                        mSurahsSharedPref.setLastTranslirationState(true);
-                        mSurahsSharedPref.setLastSaveTransaltion(1);
-                        mSurahsSharedPref.setReadModeState(false);
-                        mSurahsSharedPref.setAyahNotification(false);
-                        //To reset surah position
-                        ((GlobalClass) getApplication()).ayahPos=0;
+                new AlertDialog.Builder(SettingsActivity.this, R.style.MyAlertDialogStyle)
+                        .setMessage(getString(R.string.txt_reset_quran_setting))
+                        .setPositiveButton(getString(R.string.txt_yes), new OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                                mSurahsSharedPref.setSeekbarPosition(JuzConstant.defaultSeekFont);
+                                mSurahsSharedPref.setEnglishFontSize(JuzConstant.defaultEng);
+                                mSurahsSharedPref.setArabicFontSize(JuzConstant.defaultArabic);
+                                mSurahsSharedPref.setTranslationIndex(1);
+                                mSurahsSharedPref.setTransliteration(true);
+                                mSurahsSharedPref.setLastTranslirationState(true);
+                                mSurahsSharedPref.setLastSaveTransaltion(1);
+                                mSurahsSharedPref.setReadModeState(false);
+                                mSurahsSharedPref.setAyahNotification(false);
+                                //To reset surah position
+                                ((GlobalClass) getApplication()).ayahPos = 0;
 
-                        initializeSettings();
+                                initializeSettings();
 
-                    }
-                }).setNegativeButton("No", new OnClickListener() {
+                            }
+                        }).setNegativeButton(getString(R.string.txt_no), new OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();
@@ -413,9 +422,10 @@ public class SettingsActivity extends AppCompatActivity implements OnDailogButto
                 break;
 
                 case TRANSLATION_DUAS: {
+                    sendAnalyticEvent("Duas Translation dialog");
+                    showDuaTranslationDialog();
+                    /*if (chkTranslationDua) {
 
-                    if (chkTranslationDua) {
-                        sendAnalyticEvent("Duas Translation Off");
                         chkTranslationDua = false;
                         mDuasSharedPref.setTranslation(chkTranslationDua);
                         btnTranslationDuas.setChecked(false);
@@ -424,7 +434,7 @@ public class SettingsActivity extends AppCompatActivity implements OnDailogButto
                         chkTranslationDua = true;
                         mDuasSharedPref.setTranslation(chkTranslationDua);
                         btnTranslationDuas.setChecked(true);
-                    }
+                    }*/
                 }
                 break;
 
@@ -464,6 +474,29 @@ public class SettingsActivity extends AppCompatActivity implements OnDailogButto
         }
     }
 
+    public void showDuaTranslationDialog() {
+        CharSequence[] array = {"Off", "Urdu", "English"};
+        new AlertDialog.Builder(SettingsActivity.this, R.style.MyAlertDialogStyle)
+                .setTitle("Select Juz")
+                .setSingleChoiceItems(array, mDuasSharedPref.getDuaSettingTransaltionId(), null)
+                .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        dialog.dismiss();
+                        int selectedPosition = ((AlertDialog) dialog).getListView().getCheckedItemPosition();
+
+                        mDuasSharedPref.setDuaSettingTransaltionId(selectedPosition);
+                        initializeSettings();
+
+                    }
+                }).setNegativeButton("Cancel",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        dialog.dismiss();
+                    }
+                }
+        )
+                .show();
+    }
 
     public void saveAutoSettings() {
         AutoSettingsJsonParser autoSettingsJsonParser = new AutoSettingsJsonParser();
@@ -636,7 +669,15 @@ public class SettingsActivity extends AppCompatActivity implements OnDailogButto
         ayahNotifyTime = TimeFormateConverter.convertTime24To12(ayahNotifyTime);
         tvAyahNotifyTime.setText(ayahNotifyTime);
 
-        chkTranslationDua = mDuasSharedPref.isTranslation();
+
+        if (mDuasSharedPref.getDuaSettingTransaltionId() == 0) {
+            //chkTranslationDua = mDuasSharedPref.isTranslation();
+            chkTranslationDua = false;
+        } else {
+            chkTranslationDua = true;
+        }
+
+
         chkTransliterationDua = mDuasSharedPref.isTransliteration();
 
         if (chkAutoSettings) {
@@ -723,6 +764,12 @@ public class SettingsActivity extends AppCompatActivity implements OnDailogButto
     }
 
     private void resetSettings() {
+
+        ProgressDialog myPd_bar = new ProgressDialog(SettingsActivity.this);
+        myPd_bar.setMessage(getResources().getString(R.string.txt_loading));
+        myPd_bar.show();
+
+
         int language = -1;
 
         LanguagePref languagePref = new LanguagePref(this);
@@ -754,16 +801,21 @@ public class SettingsActivity extends AppCompatActivity implements OnDailogButto
         // locPref.setManualLocationOff();
         // initializeSettings();
 
+
+        //It will not finish main Acitvity when its langauage is already English selected
         if (language != 0) {
             languagePref.setLanguage(0);
             ((GlobalClass) getApplication()).setLocale(0);
-
-            MainActivityNew.finishActivity();
-            startActivity(new Intent(context, MainActivityNew.class));
+            //MainActivityNew.finishActivity();
+            Intent intent = new Intent(getApplicationContext(), MainActivityNew.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);//Remove all previeous activity
+            startActivity(intent);
         }
 
         //To reset surah position
-        ((GlobalClass) getApplication()).ayahPos=0;
+        ((GlobalClass) getApplication()).ayahPos = 0;
+
+
         finish();
     }
 
@@ -779,7 +831,7 @@ public class SettingsActivity extends AppCompatActivity implements OnDailogButto
         } else {
             startAdsCall();
         }
-initializeSettings();
+        initializeSettings();
     }
 
     @Override
@@ -859,7 +911,10 @@ initializeSettings();
             settingsRowtexts[LATITUDE_ADJUSTMENT].setText(dataAdjustment[savedIndex]);
         } else if (title.equals(getResources().getString(R.string.reset_all)) && selection) {
             sendAnalyticEvent("Reset");
+
             resetSettings();
+
+
         } else if (title.equals(getResources().getString(R.string.auto_edit_alarm)) && selection) {
             autoEditTime = savedIndex;
             salatSharedPref.setAutoEditTime(autoEditTime);
