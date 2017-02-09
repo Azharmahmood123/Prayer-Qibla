@@ -39,7 +39,7 @@ public class DuasGridFragment extends Fragment {
 		super.onCreate(savedInstanceState);
 
 		mContext = getContext();
-		AnalyticSingaltonClass.getInstance(mContext).sendScreenAnalytics("Duas_Categories");
+		AnalyticSingaltonClass.getInstance(mContext).sendScreenAnalytics("Duas Categories 4.0");
 
 	}
 

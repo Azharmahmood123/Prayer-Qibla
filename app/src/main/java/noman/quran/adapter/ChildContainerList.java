@@ -133,17 +133,17 @@ public class ChildContainerList extends RecyclerView.Adapter<ChildContainerHolde
 
 
         if (childType == 0) {
-            CommunityGlobalClass.getInstance().sendAnalyticEvent("Quran","Quran Menu Juzz");
+            CommunityGlobalClass.getInstance().sendAnalyticEvent("Quran 4.0","Quran Menu Juzz");
             juzzContainerOperate(holder, position);
         } else if (childType == 1) {
-            CommunityGlobalClass.getInstance().sendAnalyticEvent("Quran","Quran Menu Favourite");
+            CommunityGlobalClass.getInstance().sendAnalyticEvent("Quran 4.0","Quran Menu Favourite");
             favouriteContainerOperate(holder, position);
         } else if (childType == 2) {
-            CommunityGlobalClass.getInstance().sendAnalyticEvent("Quran","Quran Menu Sajdahs");
+            CommunityGlobalClass.getInstance().sendAnalyticEvent("Quran 4.0","Quran Menu Sajdahs");
             holder.linearView.setVisibility(View.GONE);
             sajdahContainerOperate(holder, position);
         } else if (childType == 3) {
-            CommunityGlobalClass.getInstance().sendAnalyticEvent("Quran","Quran Menu StopSign");
+            CommunityGlobalClass.getInstance().sendAnalyticEvent("Quran 4.0","Quran Menu StopSign");
             holder.linearView.setVisibility(View.VISIBLE);
             signContainerOperate(holder, position);
         }

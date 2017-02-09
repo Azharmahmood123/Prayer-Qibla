@@ -86,7 +86,7 @@ public class CompassMapsFragment extends Fragment implements OnMapReadyCallback,
         mLocationReceiver = new LocationReceiver();
         mContext.registerReceiver(mLocationReceiver, new IntentFilter(CompassDialMenuFragment.LOCATION_INTENT_FILTER));
 
-        CommunityGlobalClass.getInstance().sendAnalyticsScreen("Visual Qibla");
+        CommunityGlobalClass.getInstance().sendAnalyticsScreen("Qibla Visual 4.0");
     }
 
     @Override

@@ -172,13 +172,19 @@ public class MainActivityNew extends AppCompatActivity implements AdapterView.On
     public static final int menuDisclaimerC = 11;
     public static final int menuLogout = 12;
     public static final int menuFaceBookC = 13;
-    private long lastClick=0;
+    private long lastClick = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
         setContentView(R.layout.activity_main_new);
         CommunityGlobalClass.mainActivityNew = this;
+
+        //New Screen Added
+        sendAnalyticsData("Qibla Home 4.0");
+
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);
         int height = dm.heightPixels;
@@ -225,7 +231,6 @@ public class MainActivityNew extends AppCompatActivity implements AdapterView.On
         }
 
 
-
         layoutImageShare = (RelativeLayout) findViewById(R.id.layout_image_share);
         layoutImageShare.setOnClickListener(new View.OnClickListener() {
 
@@ -255,19 +260,17 @@ public class MainActivityNew extends AppCompatActivity implements AdapterView.On
 
 
         //Is First Time app Lauunch so add Fav ayash
-       if( locationPref.isFirstTimeAppLaunch())
-        {
+        if (locationPref.isFirstTimeAppLaunch()) {
             doFirstBookMarksAyah();
             locationPref.setFirstTimeAppLaunch();
         }
     }
 
-    public void initializeViews(boolean isAgainLoaded)
-    {
+    public void initializeViews(boolean isAgainLoaded) {
 
         initializeMenuList();
         initialize();
-        if(isAgainLoaded) {
+        if (isAgainLoaded) {
             getSupportFragmentManager().beginTransaction().replace(R.id.main_container_frame, new HomeFragment()).commit();
         }
     }
@@ -314,13 +317,12 @@ public class MainActivityNew extends AppCompatActivity implements AdapterView.On
         drawerListData.add(dataObj);
 
         //if User login then add
+        SavePreference savePreference = new SavePreference();
+        CommunityGlobalClass.mSignInRequests = savePreference.getDataFromSharedPreferences();
         if (CommunityGlobalClass.mSignInRequests != null) {
             dataObj = new MenuDrawerModel(false, true, false, getResources().getString(R.string.logout_title), menuLogout);
             drawerListData.add(dataObj);
         }
-
-
-
 
         dataObj = new MenuDrawerModel(false, false, false, null, menuFaceBookC);
         drawerListData.add(dataObj);
@@ -541,14 +543,15 @@ public class MainActivityNew extends AppCompatActivity implements AdapterView.On
                     if (SystemClock.elapsedRealtime() - lastClick < 3000) {
                         return;
                     } else {
-                    inProcess = true;
-                    sendAnalyticEvent("Remove Ads");
-                    startActivity(new Intent(MainActivityNew.this, UpgradeActivity.class));
+                        inProcess = true;
+                        sendAnalyticEvent("Remove Ads");
+                        startActivity(new Intent(MainActivityNew.this, UpgradeActivity.class));
                     }
                 }
                 break;
 
                 case menuSettingsC: {
+                    AnalyticSingaltonClass.getInstance(MainActivityNew.this).sendEventAnalytics("Settings", "Settings_Drawer");
                     inProcess = true;
                     Intent settingsIntent = new Intent(MainActivityNew.this, SettingsActivity.class);
                     startActivity(settingsIntent);
@@ -811,7 +814,7 @@ public class MainActivityNew extends AppCompatActivity implements AdapterView.On
     }
 
     private void feedBackDailog(final boolean isAppClosed) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this,R.style.MyAlertDialogStyle);
+        AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.MyAlertDialogStyle);
         builder.setTitle(getResources().getString(R.string.feedback));
         builder.setMessage(getResources().getString(R.string.feedback_msg));
 
@@ -1006,19 +1009,25 @@ public class MainActivityNew extends AppCompatActivity implements AdapterView.On
         AlertDialog alert = builder.create();
         alert.show();
     }
-    private void showLogoutAlert() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this,R.style.MyAlertDialogStyle);
-        builder.setTitle(getResources().getString(R.string.logout_title));
-        builder.setMessage(getResources().getString(R.string.logout_dialog) );
 
-        builder.setPositiveButton(getResources().getString(R.string.okay), new DialogInterface.OnClickListener() {
+    private void showLogoutAlert() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.MyAlertDialogStyle);
+        builder.setTitle(getResources().getString(R.string.logout_title));
+        builder.setNegativeButton(R.string.txt_no, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        builder.setMessage(getResources().getString(R.string.logout_dialog));
+
+        builder.setPositiveButton(getResources().getString(R.string.yes), new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {
 
                 dialog.dismiss();
                 SavePreference savePreference = new SavePreference();
-                noman.community.model.SignInRequest signInRequest=new  noman.community.model.SignInRequest();
-                savePreference.setDataFromSharedPreferences(signInRequest);
-                CommunityGlobalClass.mSignInRequests =null;
+                savePreference.setDataFromSharedPreferences(null);
+                CommunityGlobalClass.mSignInRequests = null;
 
                 //Reactivitvate Drowaer layoyt
                 CommunityGlobalClass.mainActivityNew.initializeMenuList();
@@ -1029,6 +1038,7 @@ public class MainActivityNew extends AppCompatActivity implements AdapterView.On
         AlertDialog alert = builder.create();
         alert.show();
     }
+
     public static void finishActivity() {
         if (activity != null) {
             activity.finish();
@@ -1182,9 +1192,8 @@ public class MainActivityNew extends AppCompatActivity implements AdapterView.On
     };
 
 
-    public void getCurrentHijriDate()
-    {
-        LinearLayout hijriDateClick=(LinearLayout)findViewById(R.id.toolbar_hijri_date);
+    public void getCurrentHijriDate() {
+        LinearLayout hijriDateClick = (LinearLayout) findViewById(R.id.toolbar_hijri_date);
         hijriDateClick.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -1192,11 +1201,11 @@ public class MainActivityNew extends AppCompatActivity implements AdapterView.On
             }
         });
 
-        TextView currentHijriDate=(TextView)findViewById(R.id.txt_toolbar_hijr_date);
-        String months[]   = getResources().getStringArray(R.array.islamic_month_name);
-        Calendar  _calendarLocal = Calendar.getInstance(Locale.getDefault());
-        int  month = _calendarLocal.get(Calendar.MONTH);
-       int year = _calendarLocal.get(Calendar.YEAR);
+        TextView currentHijriDate = (TextView) findViewById(R.id.txt_toolbar_hijr_date);
+        String months[] = getResources().getStringArray(R.array.islamic_month_name);
+        Calendar _calendarLocal = Calendar.getInstance(Locale.getDefault());
+        int month = _calendarLocal.get(Calendar.MONTH);
+        int year = _calendarLocal.get(Calendar.YEAR);
         //_calendarLocal.set(Calendar.DAY_OF_WEEK_IN_MONTH,(_calendarLocal.get(Calendar.DAY_OF_WEEK_IN_MONTH)+ 1));
         _calendarLocal.set(Calendar.DAY_OF_MONTH, (_calendarLocal.get(Calendar.DAY_OF_MONTH) - 1)); //For date issue
 
@@ -1218,7 +1227,7 @@ public class MainActivityNew extends AppCompatActivity implements AdapterView.On
         int cDate = Integer.parseInt(dateFormat.format(_calendar.getTime()));
         dateFormat.applyPattern("y");
         int cYear = Integer.parseInt(dateFormat.format(_calendar.getTime()));
-        ConverterDialog.CalenderHijriDate=cDate;
+        ConverterDialog.CalenderHijriDate = cDate;
         String currentDate = cDate + " " + months[month] + ", " + cYear;
         Log.e("curent date", currentDate);
         currentHijriDate.setText(currentDate);
@@ -1232,7 +1241,7 @@ public class MainActivityNew extends AppCompatActivity implements AdapterView.On
 
             @Override
             public void onClick(View v) {
-                Intent   intent = new Intent(MainActivityNew.this, UpgradeActivity.class);
+                Intent intent = new Intent(MainActivityNew.this, UpgradeActivity.class);
                 startActivity(intent);
 
             }
@@ -1240,9 +1249,8 @@ public class MainActivityNew extends AppCompatActivity implements AdapterView.On
 
     }
 
-    public void doFirstBookMarksAyah()
-    {
-       String[] surahNames = getResources().getStringArray(R.array.surah_names);
+    public void doFirstBookMarksAyah() {
+        String[] surahNames = getResources().getStringArray(R.array.surah_names);
         DBManagerQuran dbObj = new DBManagerQuran(MainActivityNew.this);
         dbObj.open();
         dbObj.addBookmark(surahNames[3 - 1], 3, 193);

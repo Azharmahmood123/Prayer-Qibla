@@ -37,6 +37,8 @@ import com.quranreading.listeners.OnLocationSetListner;
 import com.quranreading.qibladirection.ManualLocationDialog;
 import com.quranreading.qibladirection.R;
 
+import noman.CommunityGlobalClass;
+
 public class ManualDialogCustom extends Dialog implements OnCurrentLocationFoundListner, ConnectionCallbacks, OnConnectionFailedListener {
 
     private Context context;
@@ -186,12 +188,17 @@ public class ManualDialogCustom extends Dialog implements OnCurrentLocationFound
                                 editLocation.setText("");
                             }
                         }
+
+                        CommunityGlobalClass.getInstance().sendAnalyticEvent("Location 4.0","Manual Location");
+
                     } else {
                         hideKeyboard();
                         ManualDialogCustom.this.dismiss();
                         if (!cityName.isEmpty()) {
                             mOnLocationSetListner.onLocationSet(cityName, latitude, longitude);
                         }
+
+                        CommunityGlobalClass.getInstance().sendAnalyticEvent("Location 4.0","Current Location");
                     }
                     break;
                 case R.id.dialog_cancel:

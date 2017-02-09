@@ -111,7 +111,7 @@ public class PrayerAdapter extends RecyclerView.Adapter<PrayerHolder> {
                     txtCounter = holder.txt_counter;
                     callWebDialogApi("Prayer Request","Have you prayed for the request by " + mPrayer.getName()+" ?", false);
 
-                    CommunityGlobalClass.getInstance().sendAnalyticEvent("Community Prayer","Pray for this");
+                    CommunityGlobalClass.getInstance().sendAnalyticEvent("Community Prayers 4.0","Pray for this");
                 }
                 lastClick = SystemClock.elapsedRealtime();
 
@@ -153,7 +153,7 @@ public class PrayerAdapter extends RecyclerView.Adapter<PrayerHolder> {
         public boolean onMenuItemClick(MenuItem menuItem) {
             switch (menuItem.getItemId()) {
                 case R.id.action_report:
-                    CommunityGlobalClass.getInstance().sendAnalyticEvent("Community Prayer","Report");
+                    CommunityGlobalClass.getInstance().sendAnalyticEvent("Community Prayers 4.0","Report");
                     callWebDialogApi("Report Prayer","Are you sure you want to report this prayer request as inappropriate?", true);
                     return true;
 

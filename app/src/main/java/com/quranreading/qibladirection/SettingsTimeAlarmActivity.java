@@ -81,6 +81,7 @@ public class SettingsTimeAlarmActivity extends AppCompatActivity implements Medi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timmings_alarm);
 
+        AnalyticSingaltonClass.getInstance(this).sendScreenAnalytics("Salat Notification 4.0");
 
         LinearLayout backBtn = (LinearLayout) findViewById(R.id.toolbar_btnBack);
         backBtn.setOnClickListener(new View.OnClickListener() {
@@ -435,8 +436,8 @@ public class SettingsTimeAlarmActivity extends AppCompatActivity implements Medi
 //    }
 
     private void sendAnalyticEvent(int indexSoundOption) {
-        String[] arrEvents = {"Adhan Default", "Adhan Silent", "Adhan 1", "Adhan 2", "Adhan 3"};
-        AnalyticSingaltonClass.getInstance(this).sendEventAnalytics("Settings-Qibla", arrEvents[indexSoundOption]);
+       // String[] arrEvents = {"Adhan Default", "Adhan Silent", "Adhan 1", "Adhan 2", "Adhan 3"};
+     //   AnalyticSingaltonClass.getInstance(this).sendEventAnalytics("Settings-Qibla", arrEvents[indexSoundOption]);
     }
 
     public static class TimePickerFragment extends DialogFragment implements TimePickerDialog.OnTimeSetListener {

@@ -183,7 +183,6 @@ public class FacebookActivity extends AppCompatActivity {
                 CommunityGlobalClass.mainActivityNew.initializeMenuList();
                 CommunityGlobalClass.mainActivityNew.initDrawer();
 
-
                 FacebookActivity.super.onBackPressed();
                 startActivity(new Intent(FacebookActivity.this, PostActivity.class));
                 //Refresh the Mine Tab

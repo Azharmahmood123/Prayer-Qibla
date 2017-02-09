@@ -54,7 +54,7 @@ public class DrawerMenuAdapter extends BaseAdapter {
     private class ViewHolder {
         ImageView imgMenu, fb_img;
         LinearLayout rowWithoutIcons;
-        TextView tvRow1, tvRow2, tvHeader1, tv_user_name, tv_user_email;
+        TextView tvRow1, tvRow2, tvHeader1,tvHeader2, tv_user_name, tv_user_email;
         RelativeLayout seprator, hearderView, rowWithIcons;
         LinearLayout linearUserContainer;
     }
@@ -76,6 +76,8 @@ public class DrawerMenuAdapter extends BaseAdapter {
 				convertView = mInflater.inflate(R.layout.menu_drawer_s3, null);
 			else
 */
+
+
             convertView = mInflater.inflate(R.layout.menu_drawer, null);
 
             holder = new ViewHolder();
@@ -85,6 +87,7 @@ public class DrawerMenuAdapter extends BaseAdapter {
             holder.imgMenu = (ImageView) convertView.findViewById(R.id.img_menu);
             holder.fb_img = (ImageView) convertView.findViewById(R.id.fb_img);
             holder.tvHeader1 = (TextView) convertView.findViewById(R.id.tv_header_1);
+            holder.tvHeader2 = (TextView) convertView.findViewById(R.id.tv_header_2);
             holder.seprator = (RelativeLayout) convertView.findViewById(R.id.seprator_line);
             holder.hearderView = (RelativeLayout) convertView.findViewById(R.id.header_layout);
             holder.rowWithIcons = (RelativeLayout) convertView.findViewById(R.id.content_layout_with_icons);
@@ -102,6 +105,8 @@ public class DrawerMenuAdapter extends BaseAdapter {
             convertView.setTag(holder);
         } else
             holder = (ViewHolder) convertView.getTag();
+
+
 
         if (showViewHeading) {
             holder.seprator.setVisibility(View.GONE);
@@ -144,11 +149,15 @@ public class DrawerMenuAdapter extends BaseAdapter {
         }
 
         if (CommunityGlobalClass.mSignInRequests == null) {
-            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams
+            holder.tvHeader2.setVisibility(View.GONE);//For Right of Quran
+      /*      LinearLayout.LayoutParams params = new LinearLayout.LayoutParams
                     (LinearLayout.LayoutParams.MATCH_PARENT, (int) mContext.getResources().getDimension(R.dimen._115sdp));
-            holder.hearderView.setLayoutParams(params);
+            holder.hearderView.setLayoutParams(params);*/
             holder.linearUserContainer.setVisibility(View.GONE);
+            holder.tvHeader1.setVisibility(View.VISIBLE);//For Bottom of Quran
         } else {
+            holder.tvHeader1.setVisibility(View.GONE);
+            holder.tvHeader2.setVisibility(View.VISIBLE);//For Bottom of Quran
             holder.linearUserContainer.setVisibility(View.VISIBLE);
             holder.tv_user_name.setText(CommunityGlobalClass.mSignInRequests.getName());
             holder.tv_user_email.setText(CommunityGlobalClass.mSignInRequests.getEmail());

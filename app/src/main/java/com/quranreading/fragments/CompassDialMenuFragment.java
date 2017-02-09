@@ -204,8 +204,7 @@ public class CompassDialMenuFragment extends Fragment implements RotationUpdateD
     }
 
     private void sendAnalyticsData() {
-
-        AnalyticSingaltonClass.getInstance(mActivity.getBaseContext()).sendScreenAnalytics("Qibla Direction Screen");
+      //  AnalyticSingaltonClass.getInstance(mActivity.getBaseContext()).sendScreenAnalytics("Qibla Direction Screen");
     }
 
     @Override

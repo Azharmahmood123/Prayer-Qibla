@@ -61,7 +61,7 @@ public class DuasListActivity extends AppCompatActivity implements OnItemClickLi
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.dua_activity_list);
 
-		AnalyticSingaltonClass.getInstance(mContext).sendScreenAnalytics("Duas_Categories");
+		AnalyticSingaltonClass.getInstance(mContext).sendScreenAnalytics("Duas Categories 4.0");
 
 		initializeAds();
 

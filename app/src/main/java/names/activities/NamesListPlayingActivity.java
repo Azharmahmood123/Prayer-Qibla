@@ -108,7 +108,8 @@ public class NamesListPlayingActivity extends AppCompatActivity implements Adapt
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                NamesListPlayingActivity.super.onBackPressed();
+
+                onBackPressed();
 
             }
         });
@@ -148,7 +149,7 @@ public class NamesListPlayingActivity extends AppCompatActivity implements Adapt
             @Override
             public void onClick(View v) {
                 //Send  analytic
-                CommunityGlobalClass.getInstance().sendAnalyticEvent("Allah Names","Share");
+                CommunityGlobalClass.getInstance().sendAnalyticEvent("Allah Names 4.0","Share");
 
                 shareMessage();
             }
@@ -156,7 +157,7 @@ public class NamesListPlayingActivity extends AppCompatActivity implements Adapt
 
 
         //Send Screen analytic
-        CommunityGlobalClass.getInstance().sendAnalyticsScreen("Allah Names");
+        CommunityGlobalClass.getInstance().sendAnalyticsScreen("Allah Names 4.0");
 
     }
 
@@ -430,7 +431,7 @@ public class NamesListPlayingActivity extends AppCompatActivity implements Adapt
     public void onPlayClick(View v) {
 
         //Send  analytic
-        CommunityGlobalClass.getInstance().sendAnalyticEvent("Allah Names","Full Play");
+        CommunityGlobalClass.getInstance().sendAnalyticEvent("Allah Names 4.0","Full Play");
 
         if (isAudioFound && !inProcess) {
             if (play == 0 && mp != null) {

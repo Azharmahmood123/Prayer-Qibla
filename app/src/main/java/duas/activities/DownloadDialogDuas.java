@@ -67,7 +67,7 @@ public class DownloadDialogDuas extends Activity {
 	}
 
 	private void sendAnalyticsData() {
-		AnalyticSingaltonClass.getInstance(this).sendScreenAnalytics("Download Dialog Screen");
+	//	AnalyticSingaltonClass.getInstance(this).sendScreenAnalytics("Download Dialog Screen");
 	}
 
 	public boolean checkDownloadStatus() {

@@ -228,7 +228,7 @@ public class CompassDialFragment extends Fragment implements RotationUpdateDeleg
 
     private void sendAnalyticsData() {
 
-        AnalyticSingaltonClass.getInstance(mContext).sendScreenAnalytics("Qibla Direction Screen");
+        AnalyticSingaltonClass.getInstance(mContext).sendScreenAnalytics("Qibla Compass 4.0");
     }
 
     private void requestLocaion() {

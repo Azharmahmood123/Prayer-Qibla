@@ -58,7 +58,7 @@ public class PrayerFragment extends Fragment {
         CommunityGlobalClass.mPrayerFragment = this;
         View rootView = inflater.inflate(R.layout.layout_prayer_tab, container, false);
 
-        CommunityGlobalClass.getInstance().sendAnalyticsScreen("Community Prayer");
+        CommunityGlobalClass.getInstance().sendAnalyticsScreen("Community Prayers 4.0");
 
         isInternetAvailable = CommunityGlobalClass.getInstance().isInternetOn();
         noData = (TextView) rootView.findViewById(R.id.txt_no);

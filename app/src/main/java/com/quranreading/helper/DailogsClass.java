@@ -64,7 +64,8 @@ public class DailogsClass {
 		if(options != null)
 		{
 			AlertDialog.Builder builder = new AlertDialog.Builder(context);
-			builder.setCancelable(true).setTitle(title).setSingleChoiceItems(options, selectedIndex, new DialogInterface.OnClickListener() {
+			builder.setCancelable(false)
+					.setTitle(title).setSingleChoiceItems(options, selectedIndex, new DialogInterface.OnClickListener() {
 				public void onClick(DialogInterface dialog, int which) {
 					selectedIndex = which;
 

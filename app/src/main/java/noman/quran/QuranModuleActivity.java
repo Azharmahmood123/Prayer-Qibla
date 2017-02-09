@@ -66,7 +66,7 @@ public class QuranModuleActivity extends AdIntegration implements View.OnClickLi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        CommunityGlobalClass.getInstance().sendAnalyticsScreen("Quran Surah List");
+       // CommunityGlobalClass.getInstance().sendAnalyticsScreen("Quran Surah List");
         setContentView(R.layout.noman_navigation_main);
        /* InterstitialAd interstitialAd = CommunityGlobalClass.mInterstitialAd.getAd();
         if (interstitialAd.isLoaded()) {
@@ -185,7 +185,7 @@ public class QuranModuleActivity extends AdIntegration implements View.OnClickLi
             @Override
             public void onClick(View v) {
 
-                CommunityGlobalClass.getInstance().sendAnalyticEvent("Quran","Quran Menu");
+                CommunityGlobalClass.getInstance().sendAnalyticEvent("Quran 4.0","Quran Menu");
                 surahsSharedPref.setIsFirstTimeMenuOpen(false);
                 if (!surahsSharedPref.getIsFirstTimeMenuOpen()) {
                     imgHomeBtn.setImageResource(R.drawable.ic_menu_hamburg);
@@ -441,7 +441,7 @@ public class QuranModuleActivity extends AdIntegration implements View.OnClickLi
 
     public void showSearchBar() {
 
-        CommunityGlobalClass.getInstance().sendAnalyticEvent("Quran","Quran Search Icon");
+        CommunityGlobalClass.getInstance().sendAnalyticEvent("Quran 4.0","Quran Search Icon");
 
         if (mDrawerLayout.isDrawerOpen(GravityCompat.END)) {
             closeDrawer();

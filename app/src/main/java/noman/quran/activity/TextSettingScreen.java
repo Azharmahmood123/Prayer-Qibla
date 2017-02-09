@@ -15,6 +15,7 @@ import android.widget.TextView;
 import com.quranreading.qibladirection.GlobalClass;
 import com.quranreading.qibladirection.R;
 
+import noman.CommunityGlobalClass;
 import noman.quran.JuzConstant;
 import noman.quran.adapter.LanguageListAdapter;
 import quran.arabicutils.ArabicUtilities;
@@ -150,12 +151,13 @@ public class TextSettingScreen extends Activity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 
                 if (chkTransliteration) {
+                    CommunityGlobalClass.getInstance().sendAnalyticEvent("Settings-Qibla","Surahs Transliteration Off");
                     chkTransliteration = false;
                     mSurahsSharedPref.setTransliteration(chkTransliteration);
                     mSurahsSharedPref.setLastTranslirationState(chkTransliteration);
                     // btnTransliteration.setChecked(false);
                 } else {
-
+                    CommunityGlobalClass.getInstance().sendAnalyticEvent("Settings-Qibla","Surahs Transliteration ON");
                     chkTransliteration = true;
                     mSurahsSharedPref.setTransliteration(chkTransliteration);
                     mSurahsSharedPref.setLastTranslirationState(chkTransliteration);

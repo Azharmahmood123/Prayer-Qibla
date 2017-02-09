@@ -39,7 +39,7 @@ public class DialsActivity extends AppCompatActivity {
 	}
 
 	private void sendAnalyticsData() {
-		AnalyticSingaltonClass.getInstance(this).sendScreenAnalytics("Dails Compass Screen");
+		//AnalyticSingaltonClass.getInstance(this).sendScreenAnalytics("Dails Compass Screen");
 	}
 
 	public void onBackButtonClick(View v) {

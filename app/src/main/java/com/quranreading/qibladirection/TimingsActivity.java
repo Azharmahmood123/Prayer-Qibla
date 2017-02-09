@@ -22,6 +22,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.quranreading.ads.AnalyticSingaltonClass;
 import com.quranreading.alarms.AlarmHelper;
 import com.quranreading.fragments.CompassDialMenuFragment;
 import com.quranreading.helper.CalculatePrayerTime;
@@ -112,7 +113,7 @@ public class TimingsActivity extends AppCompatActivity implements OnLocationSetL
         // TODO Auto-generated methodIndex stub
         super.onCreate(savedInstanceState);
 
-        CommunityGlobalClass.getInstance().sendAnalyticsScreen("Salat Screen");
+        CommunityGlobalClass.getInstance().sendAnalyticsScreen("Salat Timings 4.0");
 
         setContentView(R.layout.fragment_timings);
         //mUserLocation = new UserLocation(mContext);
@@ -279,7 +280,7 @@ public class TimingsActivity extends AppCompatActivity implements OnLocationSetL
 
             @Override
             public void onClick(View v) {
-
+                AnalyticSingaltonClass.getInstance(TimingsActivity.this).sendEventAnalytics("Settings", "Settings_Salat");
                 startActivity(new Intent(TimingsActivity.this, SettingsActivity.class));
             }
         });

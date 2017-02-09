@@ -83,7 +83,7 @@ public class CalenderActivity extends AdIntegration {
             @Override
             public void onClick(View v) {
 
-                CommunityGlobalClass.getInstance().sendAnalyticEvent("Hijri Calendar","Today");
+                CommunityGlobalClass.getInstance().sendAnalyticEvent("Hijri Calendar 4.0","Today");
                 moveToCalenderTab();
                 //moveTodayTab();
             }
@@ -91,6 +91,7 @@ public class CalenderActivity extends AdIntegration {
         btnEvent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                CommunityGlobalClass.getInstance().sendAnalyticEvent("Hijri Calendar 4.0", "Events");
                 startActivity(new Intent(CalenderActivity.this, EventActivity.class));
             }
         });
@@ -100,7 +101,7 @@ public class CalenderActivity extends AdIntegration {
                 if (SystemClock.elapsedRealtime() - lastClick < 2000) {
                     return;
                 } else {
-                    CommunityGlobalClass.getInstance().sendAnalyticEvent("Hijri Calendar", "Convert");
+                    CommunityGlobalClass.getInstance().sendAnalyticEvent("Hijri Calendar 4.0", "Convert");
                     startActivity(new Intent(CalenderActivity.this, ConverterDialog.class));
                 }
                 lastClick = SystemClock.elapsedRealtime();
@@ -115,7 +116,7 @@ public class CalenderActivity extends AdIntegration {
 
 
         //Send Screen Analytics
-        CommunityGlobalClass.getInstance().sendAnalyticsScreen("Hijri Calendar");
+        CommunityGlobalClass.getInstance().sendAnalyticsScreen("Hijri Calendar 4.0");
     }
 
     public void handleNotificaitonIntent()

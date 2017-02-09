@@ -161,6 +161,7 @@ public class SettingsActivity extends AppCompatActivity implements OnDailogButto
             public void onClick(View v) {
                 new AlertDialog.Builder(SettingsActivity.this, R.style.MyAlertDialogStyle)
                         .setMessage(getString(R.string.txt_reset_quran_setting))
+                        .setCancelable(false)
                         .setPositiveButton(getString(R.string.txt_yes), new OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
@@ -323,13 +324,13 @@ public class SettingsActivity extends AppCompatActivity implements OnDailogButto
 
                 case DAYLIGHT_SAVING: {
                     if (chkDaylightSaving) {
-                        sendAnalyticEvent("Daylight Saving Off");
+                        //  sendAnalyticEvent("Daylight Saving Off");
                         chkDaylightSaving = false;
                         salatSharedPref.setDaylightSaving(chkDaylightSaving);
                         showShortToast(getResources().getString(R.string.daylight_saving) + " " + getResources().getString(R.string.off), 400);
                         btnDaylightSaving.setChecked(false);
                     } else {
-                        sendAnalyticEvent("Daylight Saving ON");
+                        //   sendAnalyticEvent("Daylight Saving ON");
                         chkDaylightSaving = true;
                         salatSharedPref.setDaylightSaving(chkDaylightSaving);
                         showShortToast(getResources().getString(R.string.daylight_saving) + " " + getResources().getString(R.string.on), 400);
@@ -357,7 +358,7 @@ public class SettingsActivity extends AppCompatActivity implements OnDailogButto
                 case ALARM_SOUND: {
                     inProcess = true;
 
-
+                    sendAnalyticEvent("Tone Settings");
                     startActivity(new Intent(SettingsActivity.this, SettingsPrayerListSoundActivity.class));
 
 //                    startActivityForResult(new Intent(SettingsActivity.this, SettingSoundsActivityOld.class), REQUEST_ADHAN_SOUND);
@@ -379,12 +380,12 @@ public class SettingsActivity extends AppCompatActivity implements OnDailogButto
 
                 case TRANSLITERATION: {
                     if (chkTransliteration) {
-                        sendAnalyticEvent("Surahs Transliteration Off");
+                        //     sendAnalyticEvent("Surahs Transliteration Off");
                         chkTransliteration = false;
                         mSurahsSharedPref.setTransliteration(chkTransliteration);
                         btnTransliteration.setChecked(false);
                     } else {
-                        sendAnalyticEvent("Surahs Transliteration ON");
+                        //      sendAnalyticEvent("Surahs Transliteration ON");
                         chkTransliteration = true;
                         mSurahsSharedPref.setTransliteration(chkTransliteration);
                         btnTransliteration.setChecked(true);
@@ -395,7 +396,7 @@ public class SettingsActivity extends AppCompatActivity implements OnDailogButto
                 case AYAH_NOTIFICAION: {
                     AlarmHelper mAlarmHelper = new AlarmHelper(context);
                     if (chkAyahNotification) {
-                        sendAnalyticEvent("Ayah Notification Off");
+                        //  sendAnalyticEvent("Ayah Notification Off");
                         chkAyahNotification = false;
                         mSurahsSharedPref.setAyahNotification(chkAyahNotification);
                         btnAyahNotification.setChecked(false);
@@ -422,7 +423,7 @@ public class SettingsActivity extends AppCompatActivity implements OnDailogButto
                 break;
 
                 case TRANSLATION_DUAS: {
-                    sendAnalyticEvent("Duas Translation dialog");
+
                     showDuaTranslationDialog();
                     /*if (chkTranslationDua) {
 
@@ -486,6 +487,15 @@ public class SettingsActivity extends AppCompatActivity implements OnDailogButto
 
                         mDuasSharedPref.setDuaSettingTransaltionId(selectedPosition);
                         initializeSettings();
+
+                        //events analytics
+                        if (selectedPosition == 0) {
+                            sendAnalyticEvent("Duas Translations Off");
+                        } else if (selectedPosition == 1) {
+                            sendAnalyticEvent("Duas Translations Urdu");
+                        } else {
+                            sendAnalyticEvent("Duas Translations Eng");
+                        }
 
                     }
                 }).setNegativeButton("Cancel",

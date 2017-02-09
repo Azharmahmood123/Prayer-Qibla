@@ -85,7 +85,7 @@ public class DuasGridActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> arg0, View arg1, int position, long arg3) {
 
-                AnalyticSingaltonClass.getInstance(DuasGridActivity.this).sendEventAnalytics("Duas_Categories", categories[position]);
+                AnalyticSingaltonClass.getInstance(DuasGridActivity.this).sendEventAnalytics("Duas Categories 4.0", categories[position]);
                 if (!inProcess) {
                     inProcess = true;
                     Intent intent = new Intent(DuasGridActivity.this, DuasListActivity.class);

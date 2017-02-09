@@ -121,14 +121,13 @@ public class LanguageSelectionActivity extends AppCompatActivity implements OnIt
 
                 new AlertDialog.Builder(LanguageSelectionActivity.this, R.style.MyAlertDialogStyle)
                         .setTitle(getResources().getString(R.string.languages))
+                        .setCancelable(false)
                         .setMessage(getResources().getString(R.string.laguage_alert_dialog))
                         .setPositiveButton(getString(R.string.txt_yes), new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 dialog.dismiss();
                                 inProccess = false;
-
-
                                     sendAnalyticEvent(languagesData[selectedPosition]);
                                     mGlobalClass.setLocale(selectedPosition);
 
@@ -144,6 +143,7 @@ public class LanguageSelectionActivity extends AppCompatActivity implements OnIt
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();
+                        inProccess = false;
                     }
                 }).show();
 

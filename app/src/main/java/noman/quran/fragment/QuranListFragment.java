@@ -241,7 +241,7 @@ public class QuranListFragment extends Fragment implements OnClickListener, Text
     }
 
     private void sendAnalyticsData() {
-        AnalyticSingaltonClass.getInstance(mActivity.getBaseContext()).sendScreenAnalytics("Surahs Screen");
+        AnalyticSingaltonClass.getInstance(mActivity.getBaseContext()).sendScreenAnalytics("Surahs Screen 4.0");
     }
 
     @Override

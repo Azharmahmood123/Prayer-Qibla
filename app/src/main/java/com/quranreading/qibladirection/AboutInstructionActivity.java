@@ -140,7 +140,7 @@ public class AboutInstructionActivity extends AppCompatActivity {
     }
 
     private void sendAnalyticsData() {
-        AnalyticSingaltonClass.getInstance(context).sendScreenAnalytics("About/App Instructions Screen");
+        AnalyticSingaltonClass.getInstance(context).sendScreenAnalytics("Instructions Screen 4.0");
     }
 
     private void initializeAds() {

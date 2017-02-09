@@ -126,7 +126,7 @@ public class UserLocation implements OnCurrentLocationFoundListner, OnLocationSe
             latitude = Double.parseDouble(alarm.get(LocationPref.LATITUDE));
             longitude = Double.parseDouble(alarm.get(LocationPref.LONGITUDE));
 
-            sendAnalyticsData("Location Manual");
+         //   sendAnalyticsData("Location Manual");
             isLocationSet = true;
             mOnLocationSetListner.onLocationSet(Address, latitude, longitude);
         } else {

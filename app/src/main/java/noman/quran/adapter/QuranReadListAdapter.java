@@ -24,6 +24,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.quranreading.ads.AnalyticSingaltonClass;
 import com.quranreading.qibladirection.GlobalClass;
 import com.quranreading.qibladirection.R;
 
@@ -396,7 +397,7 @@ public class QuranReadListAdapter extends BaseAdapter {
         holder.imgMenuFav.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                sendAnalyticEvent("Favorite Ayah");
 
                 saveFavouriteAyat(mContext.surahName, mContext.surahNumber, position);
                 mViewHolder.imgMenuOption.performClick();
@@ -408,7 +409,7 @@ public class QuranReadListAdapter extends BaseAdapter {
             public void onClick(View v) {
                 //Move to fav
                 //To pause the recite audio while is playing
-
+                sendAnalyticEvent("Share Ayah");
                 if (!mContext.inProcess) {
                     mContext.inProcess = true;
                     mContext.isSettings = true;
@@ -585,6 +586,10 @@ int length=0;
 
         });
         colorAnimation.start();
+    }
+
+    private void sendAnalyticEvent(String eventAction) {
+        AnalyticSingaltonClass.getInstance(mContext).sendEventAnalytics("Quran 4.0", eventAction);
     }
 }
 

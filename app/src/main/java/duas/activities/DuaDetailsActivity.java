@@ -95,7 +95,7 @@ public class DuaDetailsActivity extends AppCompatActivity implements OnCompletio
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dua_details_activity);
 
-        AnalyticSingaltonClass.getInstance(this).sendScreenAnalytics("Duas_Detail");
+        AnalyticSingaltonClass.getInstance(this).sendScreenAnalytics("Duas Detail 4.0");
 
         registerReceiver(mAlarmBroadcastReceiver, new IntentFilter(AlarmReceiverPrayers.STOP_SOUND));
         IntentFilter surahDownloadComplete = new IntentFilter(ServiceDownloadDua.ACTION_DUA_DOWNLOAD_COMPLETED);

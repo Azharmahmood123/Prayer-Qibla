@@ -234,7 +234,7 @@
 
     <style name="setting_row_bg_l">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">@dimen/size_fifty_five</item>
+        <item name="android:layout_height">@dimen/_52sdp</item>
         <item name="android:paddingRight">@dimen/size_five</item>
         <item name="android:paddingTop">@dimen/_6sdp</item>
         <item name="android:paddingBottom">@dimen/_6sdp</item>

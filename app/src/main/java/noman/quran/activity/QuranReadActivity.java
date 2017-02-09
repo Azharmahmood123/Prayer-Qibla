@@ -300,7 +300,7 @@ public class QuranReadActivity extends AppCompatActivity implements OnCompletion
 
         telephonyCheck();
 
-        AnalyticSingaltonClass.getInstance(this).sendScreenAnalytics("Quran Playing Screen");
+        AnalyticSingaltonClass.getInstance(this).sendScreenAnalytics("Quran Playing Screen 4.0");
         startAsyncTask(false);
 
         relContanerJuzIndex.setOnClickListener(new View.OnClickListener() {
@@ -315,14 +315,14 @@ public class QuranReadActivity extends AppCompatActivity implements OnCompletion
                 }
                 handleTextSizeSetting(true);
 
-                CommunityGlobalClass.getInstance().sendAnalyticEvent("Quran", "Juz Surah");
+                CommunityGlobalClass.getInstance().sendAnalyticEvent("Quran 4.0", "Juz Surah");
                 handleJuzzIndex();
             }
         });
         imgTextSizeIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                CommunityGlobalClass.getInstance().sendAnalyticEvent("Quran", "TT Surah");
+                CommunityGlobalClass.getInstance().sendAnalyticEvent("Quran 4.0", "TT Surah");
                 handleTextSizeSetting(false);
             }
         });
@@ -364,7 +364,7 @@ public class QuranReadActivity extends AppCompatActivity implements OnCompletion
             mSurahsSharedPref.setTransliteration(mSurahsSharedPref.getLastTranslirationState());
 
             showShortToast(getResources().getString(R.string.txt_read_mode_off), 500, Gravity.CENTER);
-            CommunityGlobalClass.getInstance().sendAnalyticEvent("Quran", "Read Mode Off");
+            CommunityGlobalClass.getInstance().sendAnalyticEvent("Quran 4.0", "Read Mode Off");
 
         } else {
             imgReadMode.setImageResource(R.drawable.open_read_mode);
@@ -376,7 +376,7 @@ public class QuranReadActivity extends AppCompatActivity implements OnCompletion
             mSurahsSharedPref.setTransliteration(false);
             mSurahsSharedPref.setTranslationIndex(0);
             showShortToast(getResources().getString(R.string.txt_read_mode_on), 500, Gravity.CENTER);
-            CommunityGlobalClass.getInstance().sendAnalyticEvent("Quran", "Read Mode ON");
+            CommunityGlobalClass.getInstance().sendAnalyticEvent("Quran 4.0", "Read Mode ON");
         }
 
         initializeSettings();
@@ -1495,12 +1495,12 @@ public class QuranReadActivity extends AppCompatActivity implements OnCompletion
 
                 shareMessage(getString(R.string.app_name), aya);
 
-                sendAnalyticEvent("Share_Ayah");
+
             }
             break;
             case R.id.btn_bookmark: {
                 addRemoveSurahBookmarks(surahNumber, bookmarkAyahPos);
-                sendAnalyticEvent("Bookmark_Ayah");
+
             }
             break;
             case R.id.btn_close: {
@@ -1632,9 +1632,7 @@ public class QuranReadActivity extends AppCompatActivity implements OnCompletion
         }
     };
 
-    private void sendAnalyticEvent(String eventAction) {
-        AnalyticSingaltonClass.getInstance(this).sendEventAnalytics("Ayah Options", eventAction);
-    }
+
 
     ///////////////////////////
     //////////////////////////

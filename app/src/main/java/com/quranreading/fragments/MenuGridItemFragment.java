@@ -26,6 +26,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.quranreading.ads.AnalyticSingaltonClass;
 import com.quranreading.model.GridItems;
 import com.quranreading.qibladirection.CompassActivity;
 import com.quranreading.qibladirection.GlobalClass;
@@ -260,6 +261,7 @@ public class MenuGridItemFragment extends Fragment {
                     break;
 
                 case MENU_SETTINGS:
+                    AnalyticSingaltonClass.getInstance(mContext).sendEventAnalytics("Settings", "Settings_Home");
                     intent = new Intent(mContext, SettingsActivity.class);
                     startActivity(intent);
                     break;

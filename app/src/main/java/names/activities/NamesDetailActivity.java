@@ -94,7 +94,7 @@ public class NamesDetailActivity extends AppCompatActivity implements MediaPlaye
 
 
         //Send Screen analytic
-        CommunityGlobalClass.getInstance().sendAnalyticsScreen("Allah Detail");
+        CommunityGlobalClass.getInstance().sendAnalyticsScreen("Allah Detail 4.0");
     }
 
 

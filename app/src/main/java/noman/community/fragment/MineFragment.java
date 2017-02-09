@@ -72,7 +72,7 @@ public class MineFragment extends Fragment {
             }
         });
 
-        CommunityGlobalClass.getInstance().sendAnalyticsScreen("Community Mine");
+      //  CommunityGlobalClass.getInstance().sendAnalyticsScreen("Community Mine");
 
         return rootView;
     }
