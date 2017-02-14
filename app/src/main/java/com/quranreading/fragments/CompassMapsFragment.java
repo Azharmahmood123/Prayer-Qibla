@@ -4,17 +4,22 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.graphics.Point;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import android.location.LocationManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.provider.Settings;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Interpolator;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -26,13 +31,17 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PolylineOptions;
+import com.google.android.gms.maps.model.VisibleRegion;
 import com.quranreading.listeners.MagAccelListener;
 import com.quranreading.listeners.RotationUpdateDelegate;
 import com.quranreading.qibladirection.GlobalClass;
 import com.quranreading.qibladirection.R;
 import com.quranreading.sharedPreference.LocationPref;
+
+import java.util.HashSet;
 
 import noman.CommunityGlobalClass;
 
@@ -240,14 +249,21 @@ public class CompassMapsFragment extends Fragment implements OnMapReadyCallback,
 
         mMap.getUiSettings().setCompassEnabled(false);
 
-        mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
-        btnMapView.setImageResource(R.drawable.ic_map_img_1);
+        mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+        btnMapView.setImageResource(R.drawable.ic_map_img_3);
         // mMap.getUiSettings().setZoomControlsEnabled(false);
         //mMap.getUiSettings().setZoomGesturesEnabled(false);
 
         // Add a marker in Sydney and move the camera
+
+
+
+
         currentLat = Double.parseDouble(locationPref.getLatitudeCurrent());
-        currentLng = Double.parseDouble(locationPref.getLongitudeCurrent());
+       currentLng = Double.parseDouble(locationPref.getLongitudeCurrent());
+
+
+
         currentLocation = new LatLng(currentLat, currentLng);
 
         String calcDistance = locationPref.getDistance();
@@ -257,8 +273,8 @@ public class CompassMapsFragment extends Fragment implements OnMapReadyCallback,
         qiblaLocation = new LatLng(makkahLatitude, makkahLongitude);
         // mMap.setOnCameraChangeListener(this);
 
-        mMap.addMarker(new MarkerOptions().position(currentLocation).title("Your Location").icon(BitmapDescriptorFactory.fromResource(R.drawable.marker_blue)));
-        mMap.addMarker(new MarkerOptions().position(qiblaLocation).title("Qibla").icon(BitmapDescriptorFactory.fromResource(R.drawable.marker_kaaba_map)));
+        mMap.addMarker(new MarkerOptions().position(currentLocation).title("Your Location").anchor(0.5f,0.5f).icon(BitmapDescriptorFactory.fromResource(R.drawable.marker_blue)));
+        mMap.addMarker(new MarkerOptions().position(qiblaLocation).title("Qibla").anchor(0.5f,0.5f).icon(BitmapDescriptorFactory.fromResource(R.drawable.marker_kaaba_map)));
         //  mMap.addMarker(new MarkerOptions().position(qiblaLocation).title("Qibla").icon(BitmapDescriptorFactory.fromResource(R.drawable.marker_kaaba_map)));
 
 
@@ -330,7 +346,6 @@ public class CompassMapsFragment extends Fragment implements OnMapReadyCallback,
             azimut = orientation[0]; // orientation contains: azimut, pitch and roll
 
             azimut = azimut * 360 / (2 * 3.14159f);
-
             float degree = Math.round(azimut);
             updateCamera(degree);
         }
@@ -349,17 +364,21 @@ public class CompassMapsFragment extends Fragment implements OnMapReadyCallback,
 
     private void updateCamera(float bearing) {
         if (mMap != null) {
+
+
             CameraPosition oldPos = mMap.getCameraPosition();
 
-            CameraPosition pos = CameraPosition.builder(oldPos).bearing(bearing).build();
+            CameraPosition pos = CameraPosition.builder(oldPos).bearing(bearing).target(new LatLng(oldPos.target.latitude,oldPos.target.longitude)).build();
 
             float diff = pos.bearing - oldPos.bearing;
 
             if (diff > SENSOR_CALLBACK_DELAY || diff < -SENSOR_CALLBACK_DELAY) {
-                mMap.moveCamera(CameraUpdateFactory.newCameraPosition(pos));
+             mMap.moveCamera(CameraUpdateFactory.newCameraPosition(pos));
+
             }
         }
     }
+
 
     View.OnClickListener mapChangeClickListner = new View.OnClickListener() {
         @Override
@@ -459,5 +478,7 @@ public class CompassMapsFragment extends Fragment implements OnMapReadyCallback,
         }
 
     }
+
+
 
 }

@@ -33,8 +33,6 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.view.animation.TranslateAnimation;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
@@ -58,11 +56,9 @@ import com.quranreading.alarms.AlarmReceiverPrayers;
 import com.quranreading.helper.Constants;
 import com.quranreading.listeners.OnSurahDownloadComplete;
 import com.quranreading.qibladirection.GlobalClass;
-import com.quranreading.qibladirection.MainActivityNew;
 import com.quranreading.qibladirection.R;
 import com.quranreading.qibladirection.SettingsActivity;
 
-import org.w3c.dom.Text;
 import org.xmlpull.v1.XmlPullParser;
 
 import java.io.File;
@@ -75,7 +71,7 @@ import java.util.List;
 import noman.CommunityGlobalClass;
 import noman.quran.JuzConstant;
 import noman.quran.adapter.QuranReadListAdapter;
-import quran.activities.DownloadDialog;
+import quran.activities.DownloadDialogQuran;
 import quran.adapter.AudioTimeXMLParser;
 import quran.adapter.XMLParser;
 import quran.helper.DBManagerQuran;
@@ -181,10 +177,6 @@ public class QuranReadActivity extends AppCompatActivity implements OnCompletion
         // TODO Auto-generated method stub
         super.onCreate(savedInstanceState);
         setContentView(R.layout.noman_quran_read);
-        //Call Ads on Launch
-        if (!((GlobalClass) getApplicationContext()).isPurchase) {
-            sendBroadcast(new Intent(MainActivityNew.ACTION_INTERSTITIAL_ADS_SHOW));
-        }
 
         IntentFilter surahDownloadComplete = new IntentFilter(Constants.BroadcastActionComplete);
         registerReceiver(downloadComplete, surahDownloadComplete);
@@ -785,7 +777,7 @@ public class QuranReadActivity extends AppCompatActivity implements OnCompletion
 
                 if (!inProcess) {
                     inProcess = true;
-                    Intent downloadDialog = new Intent(QuranReadActivity.this, DownloadDialog.class);
+                    Intent downloadDialog = new Intent(QuranReadActivity.this, DownloadDialogQuran.class);
                     downloadDialog.putExtra("SURAHNAME", surahName);
                     downloadDialog.putExtra("POSITION", surahNumber);
                     downloadDialog.putExtra("ANAME", audioFile);

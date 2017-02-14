@@ -56,6 +56,9 @@ public class LocationPref {
     }
 
 
+
+
+
     public void setLocation(String city, /* String country, */ String latd, String longit/* , String timezone */) {
         // editor.putBoolean(MANUAL_LOCATION, true);
         editor.putString(CITY_NAME, city);

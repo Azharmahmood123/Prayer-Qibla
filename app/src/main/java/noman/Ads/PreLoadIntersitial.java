@@ -36,14 +36,14 @@ public class PreLoadIntersitial {
             @Override
             public void onAdClosed() {
 
-                final Handler handler = new Handler();
+              /*  final Handler handler = new Handler();
                 handler.postDelayed(new Runnable() {
                     public void run() {
                         Log.e("Refresh-Inersitail", "ads");
                         interstitialAd.loadAd(adRequest);
                         handler.postDelayed(this, timeSeconds);
                     }
-                }, timeSeconds);
+                }, timeSeconds);*/
                 //    interstitialAd.loadAd(adRequest);
                 super.onAdClosed();
             }
@@ -51,6 +51,14 @@ public class PreLoadIntersitial {
             @Override
             public void onAdFailedToLoad(int i) {
                 super.onAdFailedToLoad(i);
+                  final Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        Log.e("Refresh-Inersitail", "ads");
+                        interstitialAd.loadAd(adRequest);
+                        handler.postDelayed(this, timeSeconds);
+                    }
+                }, timeSeconds);
             }
 
             @Override

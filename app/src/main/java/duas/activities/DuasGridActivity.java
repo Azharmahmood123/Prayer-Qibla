@@ -73,7 +73,7 @@ public class DuasGridActivity extends AppCompatActivity {
         });
         TextView tvHeading = (TextView) findViewById(R.id.txt_toolbar);
         tvHeading.setSelected(true);
-        tvHeading.setText(R.string.duas);
+        tvHeading.setText(R.string.grid_duas);
 
         loadGridItems();
 

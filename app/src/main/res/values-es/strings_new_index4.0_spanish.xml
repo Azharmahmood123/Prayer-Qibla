@@ -11,16 +11,16 @@
       <string name="timings">Tiempos</string>
       <string name="in">en</string>
 
-      <string name="grid_quran">corán</string>
+      <string name="grid_quran">Corán</string>
       <string name="grid_salat">Salat</string>
-      <string name="grid_direction">Qibla visual</string>
+      <string name="grid_direction">Qibla Visual</string>
       <string name="grid_hijri">Hijri</string>
       <string name="grid_mosque">Encontrar mezquitas</string>
       <string name="grid_premium">premio</string>
-      <string name="grid_community">comunidad</string>
+      <string name="grid_community">Comunidad</string>
       <string name="grid_halal">Halal encontrar</string>
       <string name="grid_names">Nombres de Allah</string>
-      <string name="grid_duas">oración</string>
+      <string name="grid_duas">Oración</string>
       <string name="grid_settings">Ajustes</string>
 
       <string name="notificaion_time">Tiempo de notificación</string>
@@ -86,7 +86,7 @@
       <string name="share_timings_message">Conocer los horarios diarios de salat y la dirección exacta de Qibla Descargar Qibla Connect® gratis:\n\n https://play.google.com/store/apps/details?id=com.quranreading.qibladirection</string>
 
       <string name="share_allah_names_message">El Profeta PBUH dijo:\n
-    \"De hecho, Allah tiene noventa y nueve nombres, El que los cuenta entrará en el Paraíso.\"Sahih Al-Bukhari – Libro 50 Hadith 894 Para escuchar y leer los 99 nombres descarga Qibla Connect® for Free:\n\n https://play.google.com/store/apps/details?id=com.quranreading.qibladirection</string>
+    \"De hecho, Allah tiene noventa y nueve nombres, El que los cuenta entrará en el Paraíso.\"Sahih Al-Bukhari – Libro 50 Hadith 894 Para escuchar y leer los nombres descarga Qibla Connect® for Free:\n\n https://play.google.com/store/apps/details?id=com.quranreading.qibladirection</string>
       <string name="ayah_of_day_dialog">¿Quieres habilitar Ayah del día?</string>
       <string name="text_translation_setting">Texto &amp; Traducción</string>
       <string name="text_reset_quran_setting">Restablecer configuración de QuranReset Quran Setting</string>
@@ -101,7 +101,7 @@
       <string name="logout_title">Cerrar sesión</string>
 
 
-      <string name="laguage_alert_dialog">Cambiará el idioma de toda tu aplicación excepto Comunidad y 99 nombres.¿Estás seguro de que quieres seleccionarlo?</string>
+      <string name="laguage_alert_dialog">Cambiará el idioma de toda tu aplicación excepto Comunidad, Hijri y Nombres de Allah.¿Estás seguro de que quieres seleccionarlo?</string>
 
 
 
@@ -126,4 +126,8 @@
     <string name = "adhan5_new"> Adhan Mansur Al-Zahrani </string>
     <string name = "adhan6_new"> Mishary Rashid Al-Afsay </string>
     <string name = "adhan7_new"> Adhan de Egipto </string>
+
+    <string name = "txt_duas_title"> Seleccione Traducción </string>
+    <string name = "txt_urdu"> Urdu </string>
+    <string name = "txt_eng"> English </string>
 </resources>

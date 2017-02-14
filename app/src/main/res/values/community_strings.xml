@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="activity_calender">Hijri Calander</string>
+    <string name="activity_calender">Hijri Calendar</string>
     <string name="activity_community">Community</string>
     <string name="activity_post">New Request</string>
     <string name="activity_login">SignUp or Login</string>
     <string name="activity_event">Events</string>
 
 
-    <string name="tab_calander">Calander</string>
+    <string name="tab_calander">Calendar</string>
     <string name="tab_event">Event</string>
     <string name="tab_converter">Convert</string>
 

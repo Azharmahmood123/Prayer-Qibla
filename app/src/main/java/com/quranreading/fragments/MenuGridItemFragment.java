@@ -149,9 +149,7 @@ public class MenuGridItemFragment extends Fragment {
                 case MENU_TIMINGS:
                     LocationPref  locationPref = new LocationPref(getActivity());
                      if (!locationPref.isFirstSalatLaunch()) { //beacuse dialog apper on the intersitial  which is setAalarm
-                         if (!((GlobalClass) mContext.getApplicationContext()).isPurchase) {
-                             mContext.sendBroadcast(new Intent(MainActivityNew.ACTION_INTERSTITIAL_ADS_SHOW));
-                         }
+                         
                      }
                     intent = new Intent(mContext, TimingsActivity.class);
                     startActivity(intent);
@@ -172,9 +170,7 @@ public class MenuGridItemFragment extends Fragment {
                             }
 
                         } else {
-                            if (!((GlobalClass) mContext.getApplicationContext()).isPurchase) {
-                                mContext.sendBroadcast(new Intent(MainActivityNew.ACTION_INTERSTITIAL_ADS_SHOW));
-                            }
+
                             intent = new Intent(mContext, CompassActivity.class);
                             intent.putExtra(CompassActivity.EXTRA_IS_SHOW_MAP, true);
                             startActivity(intent);
@@ -196,9 +192,7 @@ public class MenuGridItemFragment extends Fragment {
                     //////////////
 
                     mGridAdapter.notifyDataSetChanged();
-                    if (!((GlobalClass) mContext.getApplicationContext()).isPurchase) {
-                        mContext.sendBroadcast(new Intent(MainActivityNew.ACTION_INTERSTITIAL_ADS_SHOW));
-                    }
+
 
                     if (mSurahsSharedPref.getIsFirstTimeHijriOpen()) {
                         mSurahsSharedPref.setIsFirstTimeHijriOpen(false);
@@ -238,9 +232,6 @@ public class MenuGridItemFragment extends Fragment {
                         mSurahsSharedPref.setIsFirstTimeNamesOpen(false);
                     }
 
-                    if (!((GlobalClass) mContext.getApplicationContext()).isPurchase) {
-                        mContext.sendBroadcast(new Intent(MainActivityNew.ACTION_INTERSTITIAL_ADS_SHOW));
-                    }
 
                     intent = new Intent(mContext, NamesListPlayingActivity.class);
                     startActivity(intent);
@@ -428,9 +419,7 @@ public class MenuGridItemFragment extends Fragment {
                 Intent intent = new Intent(mContext, PlacesListActivity.class);
                 intent.putExtra(PlacesListActivity.EXTRA_PLACE_TYPE, type);
                 startActivity(intent);
-                if (!((GlobalClass) mContext.getApplicationContext()).isPurchase) {
-                    mContext.sendBroadcast(new Intent(MainActivityNew.ACTION_INTERSTITIAL_ADS_SHOW));
-                }
+
 
             } else {
                 LocationPref mLocationPref = new LocationPref(mContext);
@@ -439,9 +428,7 @@ public class MenuGridItemFragment extends Fragment {
                     Intent intent = new Intent(mContext, PlacesListActivity.class);
                     intent.putExtra(PlacesListActivity.EXTRA_PLACE_TYPE, type);
                     startActivity(intent);
-                    if (!((GlobalClass) mContext.getApplicationContext()).isPurchase) {
-                        mContext.sendBroadcast(new Intent(MainActivityNew.ACTION_INTERSTITIAL_ADS_SHOW));
-                    }
+
 
                 } else {
                     providerAlertMessage();
@@ -465,9 +452,7 @@ public class MenuGridItemFragment extends Fragment {
                 Intent intent = new Intent(mContext, PlacesListActivity.class);
                 intent.putExtra(PlacesListActivity.EXTRA_PLACE_TYPE, type);
                 startActivity(intent);
-                if (!((GlobalClass) mContext.getApplicationContext()).isPurchase) {
-                    mContext.sendBroadcast(new Intent(MainActivityNew.ACTION_INTERSTITIAL_ADS_SHOW));
-                }
+
 
             } else {
                 LocationPref mLocationPref = new LocationPref(mContext);
@@ -476,9 +461,7 @@ public class MenuGridItemFragment extends Fragment {
                     Intent intent = new Intent(mContext, PlacesListActivity.class);
                     intent.putExtra(PlacesListActivity.EXTRA_PLACE_TYPE, type);
                     startActivity(intent);
-                    if (!((GlobalClass) mContext.getApplicationContext()).isPurchase) {
-                        mContext.sendBroadcast(new Intent(MainActivityNew.ACTION_INTERSTITIAL_ADS_SHOW));
-                    }
+                  
 
                 } else {
                     providerAlertMessage();

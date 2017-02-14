@@ -33,7 +33,7 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="@dimen/_5sdp"
             android:layout_toRightOf="@+id/toolbar_btnBack"
-            android:text="@string/settings"
+            android:text="@string/grid_settings"
             android:textColor="@color/white"
             android:textSize="@dimen/_18sdp" />
     </RelativeLayout>

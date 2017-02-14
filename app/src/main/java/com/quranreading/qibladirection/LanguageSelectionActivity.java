@@ -28,6 +28,7 @@ import com.quranreading.helper.DailogsClass;
 import com.quranreading.listeners.OnDailogButtonSelectionListner;
 import com.quranreading.sharedPreference.LanguagePref;
 
+import noman.CommunityGlobalClass;
 import noman.quran.JuzConstant;
 
 public class LanguageSelectionActivity extends AppCompatActivity implements OnItemClickListener, OnDailogButtonSelectionListner {
@@ -112,12 +113,12 @@ public class LanguageSelectionActivity extends AppCompatActivity implements OnIt
 //                dailogShow.showTwoButtonDialog();
 //            }
 //        }
-        if(mGlobalClass.languagePref.getLanguage() != position) {
+        if (mGlobalClass.languagePref.getLanguage() != position) {
             if (!inProccess) {
                 inProccess = true;
                 selectedPosition = position;
-               // DailogsClass dailogShow = new DailogsClass(context, getResources().getString(R.string.languages), getResources().getString(R.string.laguage_alert_dialog), this, getResources().getString(R.string.okay), getResources().getString(R.string.cancel));
-              //  dailogShow.showTwoButtonDialog();
+                // DailogsClass dailogShow = new DailogsClass(context, getResources().getString(R.string.languages), getResources().getString(R.string.laguage_alert_dialog), this, getResources().getString(R.string.okay), getResources().getString(R.string.cancel));
+                //  dailogShow.showTwoButtonDialog();
 
                 new AlertDialog.Builder(LanguageSelectionActivity.this, R.style.MyAlertDialogStyle)
                         .setTitle(getResources().getString(R.string.languages))
@@ -126,18 +127,26 @@ public class LanguageSelectionActivity extends AppCompatActivity implements OnIt
                         .setPositiveButton(getString(R.string.txt_yes), new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
+                               // CommunityGlobalClass.mainActivityNew.initializeViews(true);
                                 dialog.dismiss();
                                 inProccess = false;
-                                    sendAnalyticEvent(languagesData[selectedPosition]);
-                                    mGlobalClass.setLocale(selectedPosition);
+                                sendAnalyticEvent(languagesData[selectedPosition]);
+                                mGlobalClass.setLocale(selectedPosition);
 
-                                    if (!mLanguagePref.getFirstTimeLanguage()) {
-                                        mLanguagePref.setFirstTimeLanguage(true);
-                                    }
-                                    Intent intent = new Intent(getApplicationContext(), MainActivityNew.class);
-                                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);//Remove all previeous activity
-                                    startActivity(intent);
+                                if (!mLanguagePref.getFirstTimeLanguage()) {
+                                    mLanguagePref.setFirstTimeLanguage(true);
                                 }
+
+                                LanguageSelectionActivity.this.finish();
+                                Intent intent = new Intent(getApplicationContext(), MainActivityNew.class);
+                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);//Remove all previeous activity
+                                startActivity(intent);
+
+
+                                //Reload Main Activity
+
+
+                            }
 
                         }).setNegativeButton(getString(R.string.txt_no), new DialogInterface.OnClickListener() {
                     @Override

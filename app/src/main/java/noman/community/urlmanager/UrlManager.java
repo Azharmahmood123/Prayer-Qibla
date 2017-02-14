@@ -8,7 +8,9 @@ package noman.community.urlmanager;
 public class UrlManager {
     //Production Server
    // public static final String SERVER_URL       = "http://www.nineapplications.com/qibla_community/";
-    public static final String SERVER_URL       = "https://qibla-connect-community.appspot.com";
+   public static final String SERVER_URL       = "https://qibla-connect-community.appspot.com/";
+
+
 
     public static final String IP  ="https://api.ipify.org/";
     public static final String IP_URL  ="http://freegeoip.net/";

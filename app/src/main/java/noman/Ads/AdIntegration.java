@@ -30,7 +30,7 @@ public class AdIntegration extends AppCompatActivity {
         this.adLayout = adLayout;
         mAdView = new AdView(context);
         mAdView.setAdSize(AdSize.SMART_BANNER);
-        mAdView.setAdUnitId(context.getResources().getString(R.string.admob_id_quran_banner));
+        mAdView.setAdUnitId(context.getResources().getString(R.string.admob_id));
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
         this.adLayout.addView(mAdView, params);
         adsDisplay();

@@ -5,23 +5,27 @@
     <string name="new_location_detected"> Lokasi Baru Dikesan </string>
     <string name="new_location_detected_msg1"> Adakah anda ingin untuk menetapkan lokasi anda dari </string>
     <string name="to"> untuk </string>
-    <string name="amd"> dan </string>
+    <string name="and"> dan </string>
     <string name="new_location_detected_msg2"> kali Update Doa </string>
     <string name="auto_settings"> Tetapan Auto </string>
     <string name="timing"> Pengaturan masa </string>
-    <string name="di"> dalam </string>
+    <string name="in"> dalam </string>
 
-    <string name="grid_quran"> QURAN </string>
-    <string name="grid_salat"> SALAT </string>
-    <string name="grid_direction"> VISUAL kiblat </string>
-    <string name="grid_hijri"> Hijrah </string>
-    <string name="grid_mosque"> MENCARI MASJID </string>
-    <string name="grid_premium"> PREMIUM </string>
-    <string name="grid_community"> COMMUNITY </string>
-    <string name="grid_halal"> FINDER HALAL </string>
-    <string name="grid_names"> NAMA ALLAH </string>
-    <string name="grid_duas"> Duas </string>
-    <string name="grid_settings"> SETTINGS </string>
+
+
+    <string name="grid_quran">Quran</string>
+    <string name="grid_salat">Salat</string>
+    <string name="grid_direction">Visual kiblat</string>
+    <string name="grid_hijri">Hijri</string>
+    <string name="grid_mosque">Mencari Masjid</string>
+    <string name="grid_premium">PREMIUM</string>
+    <string name="grid_community">Community</string>
+    <string name="grid_halal">Halal Finder</string>
+    <string name="grid_names">Allah Nama</string>
+    <string name="grid_duas">Duas</string>
+    <string name="grid_settings">Settings</string>
+
+
 
     <string name="notificaion_time"> Pemberitahuan Masa </string>
     <string name="notification_sound"> ​​Bunyi Pemberitahuan </string>
@@ -86,7 +90,7 @@
     <string name="share_timings_message"> Untuk mengetahui pengaturan masa salat setiap hari dan tepat Qibla Direction, muat turun Qibla Connect® untuk Percuma: \n \n https://play.google.com/store/apps/details?id=com.quranreading.qibladirection </string>
 
  <string name="share_allah_names_message"> Nabi SAW bersabda: \n
-    \ "Sesungguhnya Allah mempunyai sembilan puluh sembilan Nama, sesiapa mengiranya akan masuk syurga. \" Sahih Al-Bukhari - Book 50 Hadis 894 Untuk mendengar dan membaca semua 99 nama turun Qibla Connect® untuk Percuma: \n \n https://play.google.com/store/apps/details?id=com.quranreading.qibladirection</string>
+    \ "Sesungguhnya Allah mempunyai sembilan puluh sembilan Nama, sesiapa mengiranya akan masuk syurga. \" Sahih Al-Bukhari - Book 50 Hadis 894 Untuk mendengar dan membaca semua  nama turun Qibla Connect® untuk Percuma: \n \n https://play.google.com/store/apps/details?id=com.quranreading.qibladirection</string>
     <string name="ayah_of_day_dialog"> Adakah anda mahu untuk membolehkan Ayat Hari?</string>
     <string name="text_translation_setting"> Text &amp; Terjemahan </string>
     <string name="text_reset_quran_setting"> Tetap semula Menetapkan Quran </string>
@@ -101,7 +105,7 @@
     <string name="logout_title"> Logout </string>
 
 
-    <string name="laguage_alert_dialog"> Ia akan mengubah bahasa untuk seluruh app anda kecuali Komuniti dan 99 Nama. Adakah anda pasti anda mahu memilihnya?</string>
+    <string name="laguage_alert_dialog"> Ia akan mengubah bahasa untuk seluruh app anda kecuali Komuniti, Hijri dan Allah Nama. Adakah anda pasti anda mahu memilihnya?</string>
 
     <string name="txt_font_size"> Saiz </string>
     <string name="txt_read_mode_off"> Baca Mode Off </string>
@@ -124,4 +128,8 @@
      <string name= "adhan6_new"> Mishary Rashid Al-Afsay</string>
      <string name= "adhan7_new"> azan dari Mesir</string>
 
+
+    <string name="txt_duas_title">Pilih Terjemahan</string>
+    <string name="txt_urdu">Urdu</string>
+    <string name="txt_eng">English</string>
 </resources>

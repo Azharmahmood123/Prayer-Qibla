@@ -102,7 +102,9 @@ public class DBManager {
 	public Cursor getCityInfo(String country, String city) throws SQLException {
 		return db.query(true, TBL_CITIESINFO, new String[] { FLD_COUNTRY, FLD_CITY, FLD_LATITUDE, FLD_LONGITUDE, FLD_TIME_ZONE }, FLD_COUNTRY + "='" + country + "' COLLATE NOCASE AND " + FLD_CITY + "='" + city + "'" + " COLLATE NOCASE", null, null, null, null, null);
 	}
-
+	public Cursor getTimeZone(String city) throws SQLException {
+		return db.query(true, TBL_CITIESINFO, new String[] { FLD_COUNTRY, FLD_CITY, FLD_LATITUDE, FLD_LONGITUDE, FLD_TIME_ZONE }, FLD_CITY + "='" + city + "' COLLATE NOCASE ", null, null, null, null, null);
+	}
 	///////////////////// Get Cities/Countries For AutoCompleteText /////////////////////////
 
 	public Cursor getAllCities() {
@@ -262,7 +264,7 @@ public class DBManager {
 				myOutput.write(buffer, 0, length);
 			}
 			qiblaPref.setDatabaseCopied(true);
-
+Log.e("TimeZone","Cities copied");
 			// Close the streams
 			myOutput.flush();
 			myOutput.close();

@@ -72,9 +72,7 @@ public class SajdasActivity extends AppCompatActivity {
                 // ayahNo = ayahNo - 1;
                 end_actvty.putExtra(SurahActivity.KEY_EXTRA_AYAH_NO, ayahNo);
                 startActivity(end_actvty);
-                if (!((GlobalClass) getApplication()).isPurchase) {
-                    sendBroadcast(new Intent(MainActivityNew.ACTION_INTERSTITIAL_ADS_SHOW));
-                }
+
             }
         });
 

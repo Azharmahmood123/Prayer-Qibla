@@ -476,9 +476,9 @@ public class SettingsActivity extends AppCompatActivity implements OnDailogButto
     }
 
     public void showDuaTranslationDialog() {
-        CharSequence[] array = {"Off", "Urdu", "English"};
+        CharSequence[] array = {getString(R.string.off), getString(R.string.txt_urdu), getString(R.string.txt_eng)};
         new AlertDialog.Builder(SettingsActivity.this, R.style.MyAlertDialogStyle)
-                .setTitle("Select Juz")
+                .setTitle(getString(R.string.txt_duas_title))
                 .setSingleChoiceItems(array, mDuasSharedPref.getDuaSettingTransaltionId(), null)
                 .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int whichButton) {

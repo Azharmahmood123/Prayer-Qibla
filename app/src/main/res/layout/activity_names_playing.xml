@@ -35,7 +35,7 @@
             android:layout_marginLeft="@dimen/_5sdp"
             android:textSize="@dimen/_18sdp"
             android:layout_toRightOf="@+id/toolbar_btnBack"
-            android:text="@string/names_99"
+            android:text="@string/grid_names"
             android:textColor="@color/white"
             />
         <RelativeLayout

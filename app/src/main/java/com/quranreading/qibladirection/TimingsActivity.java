@@ -4,16 +4,17 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
 import android.text.format.Time;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
@@ -26,22 +27,30 @@ import com.quranreading.ads.AnalyticSingaltonClass;
 import com.quranreading.alarms.AlarmHelper;
 import com.quranreading.fragments.CompassDialMenuFragment;
 import com.quranreading.helper.CalculatePrayerTime;
+import com.quranreading.helper.DBManager;
 import com.quranreading.helper.ManualDialogCustom;
 import com.quranreading.helper.TimeFormateConverter;
 import com.quranreading.listeners.OnDailogButtonSelectionListner;
 import com.quranreading.listeners.OnLocationSetListner;
+import com.quranreading.helper.PrayerCalculationNew;
 import com.quranreading.sharedPreference.AlarmSharedPref;
 import com.quranreading.sharedPreference.LocationPref;
+import com.quranreading.sharedPreference.PrayerTimeSettingsPref;
 import com.quranreading.sharedPreference.TimeEditPref;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.TimeZone;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
+import noman.Ads.AdIntegration;
 import noman.CommunityGlobalClass;
 
-public class TimingsActivity extends AppCompatActivity implements OnLocationSetListner, OnClickListener, OnDailogButtonSelectionListner {
+public class TimingsActivity extends AdIntegration implements OnLocationSetListner, OnClickListener, OnDailogButtonSelectionListner {
 
     public static final String LOCATION_INTENT_FILTER = "timings_location_receiver";
     public static final String CITY_NAME = "city";
@@ -117,7 +126,7 @@ public class TimingsActivity extends AppCompatActivity implements OnLocationSetL
 
         setContentView(R.layout.fragment_timings);
         //mUserLocation = new UserLocation(mContext);
-
+        super.showBannerAd(this, (LinearLayout) findViewById(R.id.linear_ad));
 
         LinearLayout backBtn = (LinearLayout) findViewById(R.id.toolbar_btnBack);
         backBtn.setOnClickListener(new View.OnClickListener() {
@@ -128,7 +137,7 @@ public class TimingsActivity extends AppCompatActivity implements OnLocationSetL
             }
         });
         tvHeading = (TextView) findViewById(R.id.txt_toolbar);
-        tvHeading.setText(R.string.salat_timings);
+        tvHeading.setText(R.string.grid_salat);
         layoutImageShare = (RelativeLayout) findViewById(R.id.layout_image_share);
         layoutImageSettings = (RelativeLayout) findViewById(R.id.layout_timmings_settings);
 
@@ -206,8 +215,7 @@ public class TimingsActivity extends AppCompatActivity implements OnLocationSetL
         tvEdited[Maghrib] = (TextView) findViewById(R.id.tv_maghrib_time_edited);
         tvEdited[Isha] = (TextView) findViewById(R.id.tv_isha_time_edited);
 
-        for (int i = 0; i<tvEdited.length;i++)
-        {
+        for (int i = 0; i < tvEdited.length; i++) {
             tvEdited[i].setTypeface(((GlobalClass) mActivity.getApplicationContext()).faceRobotoR);
         }
 
@@ -409,7 +417,10 @@ public class TimingsActivity extends AppCompatActivity implements OnLocationSetL
         String city = locationPref.getCityName();
         double lat = Double.parseDouble(locationPref.getLatitude());
         double lng = Double.parseDouble(locationPref.getLongitude());
+
+
         onLocationSet(city, lat, lng);
+
 
         if (manualDialog != null) {
             manualDialog.onResumeLocationDialog();
@@ -428,7 +439,7 @@ public class TimingsActivity extends AppCompatActivity implements OnLocationSetL
     }
 
     @Override
-    protected void onPause() {
+    public void onPause() {
         super.onPause();
 
         // mContext.unregisterReceiver(mNetworkStateBroadcast);
@@ -439,7 +450,7 @@ public class TimingsActivity extends AppCompatActivity implements OnLocationSetL
     }
 
     @Override
-    protected void onDestroy() {
+    public void onDestroy() {
         super.onDestroy();
         mActivity.unregisterReceiver(mLocationReceiver);
     }
@@ -473,7 +484,15 @@ public class TimingsActivity extends AppCompatActivity implements OnLocationSetL
 
         setHeading();
 
-        prayerTimingsDefault = mCalculatePrayerTime.NamazTimings(mCalender, latitude, longitude);
+        //  prayerTimingsDefault = mCalculatePrayerTime.NamazTimings(mCalender, latitude, longitude);
+
+        PrayerTimeSettingsPref mSalatPref = new PrayerTimeSettingsPref(TimingsActivity.this);
+        if (mSalatPref.isAutoSettings()) {
+            prayerTimingsDefault = newMyTimings();
+        } else {
+            prayerTimingsDefault = mCalculatePrayerTime.NamazTimings(mCalender, latitude, longitude);
+        }
+
 
         for (int index = 0; index < btnBells.length; index++) {
 
@@ -487,7 +506,7 @@ public class TimingsActivity extends AppCompatActivity implements OnLocationSetL
             //////////////////////////////
             ///////if New Time of Prayer is Changed Change Alarm time Accordingly//////
             ///////////////////////////////////
-            if(!lastTime.isEmpty() && lastTime !=null ) {
+            if (!lastTime.isEmpty() && lastTime != null) {
                 if (!lastTime.equals(timePrayer)) {
                     if (!timeNotification.isEmpty()) {
                         int diff = getTimeDiffInMinutes(lastTime, timePrayer);
@@ -645,6 +664,62 @@ public class TimingsActivity extends AppCompatActivity implements OnLocationSetL
         mCalender = Calendar.getInstance();
         mCalender.setTime(now);
         getTimings();
+
+
+    }
+
+    private String getTimeZone() {
+        DBManager dbObj = new DBManager(TimingsActivity.this);
+        dbObj.open();
+        String timeZone = "";
+
+        HashMap<String, String> alarm = locationPref.getLocation();
+        Cursor c = dbObj.getTimeZone(alarm.get(LocationPref.CITY_NAME));
+
+        if (c.moveToFirst()) {
+            timeZone = c.getString(c.getColumnIndex(DBManager.FLD_TIME_ZONE));
+            c.close();
+            dbObj.close();
+        }
+
+
+        //Extract only paranthesis data
+        Matcher m = Pattern.compile("\\(([^)]+)\\)").matcher(timeZone);
+        while (m.find()) {
+            timeZone = m.group(1);
+            break;
+        }
+
+        return timeZone;
+    }
+
+    private ArrayList<String> newMyTimings() {
+
+        TimeZone tz = TimeZone.getTimeZone(getTimeZone());
+        long timeNow = new Date().getTime();
+        double timezone = (double) ((tz.getOffset(timeNow) / 1000) / 60) / 60;
+
+        // Test Prayer times here
+        PrayerCalculationNew prayers = new PrayerCalculationNew();
+        prayers.setTimeFormat(prayers.Time12);
+        prayers.setCalcMethod(prayers.Jafari);
+        prayers.setAsrJuristic(prayers.Shafii);
+        prayers.setAdjustHighLats(prayers.AngleBased);
+        int[] offsets = {0, 0, 0, 0, 0, 0, 0}; // {Fajr,Sunrise,Dhuhr,Asr,Sunset,Maghrib,Isha}
+        prayers.tune(offsets);
+
+        Date now = new Date();
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(now);
+
+        ArrayList<String> prayerTimes = prayers.getPrayerTimes(cal,
+                latitude, longitude, timezone);
+       /* ArrayList<String> prayerNames = prayers.getTimeNames();
+
+        for (int i = 0; i < prayerTimes.size(); i++) {
+            Log.e("Time", prayerNames.get(i) + " - " + prayerTimes.get(i));
+        }*/
+        return prayerTimes;
     }
 
 

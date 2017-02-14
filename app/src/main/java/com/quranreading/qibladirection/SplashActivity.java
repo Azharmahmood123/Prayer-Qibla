@@ -17,17 +17,18 @@ import android.widget.ImageView;
 
 import com.facebook.FacebookSdk;
 import com.facebook.appevents.AppEventsLogger;
-import com.google.android.gms.ads.AdListener;
+
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
-import com.hanks.htextview.HTextView;
-import com.hanks.htextview.HTextViewType;
+
 import com.quranreading.helper.DBManager;
 import com.quranreading.helper.MyService;
+import com.quranreading.sharedPreference.LocationPref;
 import com.quranreading.sharedPreference.QiblaDirectionPref;
 
 import java.io.IOException;
 
+import noman.Ads.PreLoadIntersitial;
 import noman.CommunityGlobalClass;
 import noman.quran.dbconnection.DataBaseHelper;
 import quran.activities.ServiceClass;
@@ -68,8 +69,13 @@ public class SplashActivity extends AppCompatActivity {
             FacebookSdk.sdkInitialize(getApplicationContext());
             AppEventsLogger.activateApp(this);
         }
-        // FileUtils.test(this);
+
+
+        //Load Default Ad here
+        CommunityGlobalClass.getInstance().mInterstitialAd = new PreLoadIntersitial(this);
         CommunityGlobalClass.mMainActivityNew = this;
+
+
         //Copy JuzzData from Database
         new copyJuzDatabase().execute();
         DisplayMetrics dm = new DisplayMetrics();
@@ -115,10 +121,15 @@ public class SplashActivity extends AppCompatActivity {
                 myHandler.postDelayed(mRunnable, SPLASH_TIME_LONG);
             }
         }
-		chkDownloadStatus();
+        chkDownloadStatus();
 
-		startAsyncTask();
+        startAsyncTask();
+
+
     }
+
+
+
 
     public void showTextAnimation() {
       /*  HTextView hTextView = (HTextView) findViewById(R.id.text);
@@ -146,7 +157,7 @@ public class SplashActivity extends AppCompatActivity {
 
             @Override
             public void onAnimationStart(Animation animation) {
-            showTextAnimation();
+                showTextAnimation();
             }
 
             @Override
@@ -175,16 +186,13 @@ public class SplashActivity extends AppCompatActivity {
         // TODO Auto-generated methodIndex stub
         super.onResume();
 
-		if(index > 0)
-		{
-			startNextActivity();
-		}
-		else
-		{
-			index++;
-		}
+        if (index > 0) {
+            startNextActivity();
+        } else {
+            index++;
+        }
 
-		isShowInterstitial = true;
+        isShowInterstitial = true;
 
     }
 

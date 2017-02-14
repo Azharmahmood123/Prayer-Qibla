@@ -4,7 +4,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.SystemClock;
-import android.support.design.widget.FloatingActionButton;
+
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
+import com.melnykov.fab.FloatingActionButton;
 import com.quranreading.helper.SlidingTabLayout;
 import com.quranreading.qibladirection.GlobalClass;
 import com.quranreading.qibladirection.R;
@@ -23,6 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import noman.Ads.AdIntegration;
+import noman.Ads.AdIntegration2;
 import noman.CommunityGlobalClass;
 import noman.community.adapter.PrayerAdapter;
 import noman.community.fragment.MineFragment;
@@ -30,7 +32,7 @@ import noman.community.fragment.PrayerFragment;
 import noman.community.prefrences.SavePreference;
 
 
-public class ComunityActivity extends AdIntegration {
+public class ComunityActivity extends AdIntegration2 {
 
     private SlidingTabLayout tabLayout;
     ViewPager viewPager;
@@ -38,6 +40,7 @@ public class ComunityActivity extends AdIntegration {
 
     private long lastClick = 0;
     public RelativeLayout menu_filter;
+    public FloatingActionButton fab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,7 +84,8 @@ public class ComunityActivity extends AdIntegration {
 
         tabLayout = (SlidingTabLayout) findViewById(R.id.tabs);
         tabLayout.setViewPager(viewPager);
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab = (FloatingActionButton) findViewById(R.id.fab);
+
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

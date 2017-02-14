@@ -11,16 +11,18 @@
     <string name  = "timing"> Frequenze </string>
     <string name  = "in"> in </string>
 
-    <string name  = "grid_quran"> Corano </string>
-    <string name  = "grid_salat"> SALAT </string>
-    <string name  = "grid_direction"> VISUAL qibla </string>
-    <string name  = "grid_hijri"> Hijri </string>
-    <string name  = "grid_mosque"> TROVA MOSCHEE </string>
-    <string name  = "grid_premium"> PREMIUM </string>
-    <string name  = "grid_community"> Comunità </string>
-    <string name  = "grid_halal"> RICERCA HALAL </string>
-    <string name  = "grid_names"> grid_names NOMI ALLAH </string>
-    <string name  = "grid_duas"> DUAS </string>
+
+
+    <string name="grid_quran">Quran</string>
+    <string name="grid_salat">Salat</string>
+    <string name="grid_direction">Visual Qibla</string>
+    <string name="grid_hijri">Hijri</string>
+    <string name="grid_community">Community</string>
+    <string name="grid_names">Allah Nomes</string>
+    <string name="grid_duas">Duas</string>
+    <string name  = "grid_mosque">Trova Moschee </string>
+    <string name  = "grid_premium">PREMIUM </string>
+    <string name  = "grid_halal">Halal Ricerca</string>
     <string name  = "grid_settings"> Impostazioni </string>
 
     <string name  = "notificaion_time"> Notifica Tempo </string>
@@ -86,7 +88,7 @@
     <string name  = "share_timings_message"> Per conoscere tempi salat quotidiane e preciso senso di Qibla, scarica Qibla Connect® for Free: \n \n https://play.google.com/store/apps/details?id=com.quranreading.qibladirection </string>
 
     <string name  = "share_allah_names_message"> Profeta pace su di lui ha detto: \n
-    \ "In verità Allah ha novantanove nomi, chi conta di loro entra Paradiso \". Sahih al-Bukhari - Libro 50 Hadith 894 Per ascoltare e leggere tutti i 99 nomi scaricare Qibla Connect® for Free: \n \n https://play.google.com/store/apps/details?id=com.quranreading.qibladirection</string>
+    \ "In verità Allah ha novantanove nomi, chi conta di loro entra Paradiso \". Sahih al-Bukhari - Libro 50 Hadith 894 Per ascoltare e leggere tutti i nomi scaricare Qibla Connect® for Free: \n \n https://play.google.com/store/apps/details?id=com.quranreading.qibladirection</string>
     <string name  = "ayah_of_day_dialog"> Vuoi attivare Ayah del giorno?</string>
     <string name  = "text_translation_setting"> Text &amp; Traduzione </string>
     <string name  = "text_reset_quran_setting"> Ripristina Quran Impostazione </string>
@@ -101,7 +103,7 @@
     <string name  = "logout_title"> Esci </string>
 
 
-    <string name  = "laguage_alert_dialog"> Cambierà la lingua di tutta la vostra applicazione, tranne Comunità e 99 nomi. Sei sicuro di voler eliminare?.</string>
+    <string name  = "laguage_alert_dialog"> Cambierà la lingua di tutta la vostra applicazione, tranne Comunità, Hijri e Allah nomi. Sei sicuro di voler eliminare?.</string>
     
      <string name  = "txt_font_size"> Dimensione carattere </string>
      <string name  = "txt_read_mode_off"> Leggi modalità Off </string>
@@ -114,8 +116,8 @@
 
 
     <string name  = "txt_reset_quran_setting"> Sei sicuro di voler ripristinare le impostazioni Corano?</string>
-    <string name  = "txt_yes"> Sì</string>
-    <string name  = "txt_no"> No </string>
+    <string name  = "txt_yes">Sì</string>
+    <string name  = "txt_no">No</string>
 
 
      <string name  = "adhan1_new"> Adhan Fajr Madina </string>
@@ -125,4 +127,8 @@
      <string name  = "adhan5_new"> Adhan Mansur Al-Zahrani </string>
      <string name  = "adhan6_new"> Mishary Rashid Al-Afsay </string>
      <string name  = "adhan7_new"> Adhan dall\'Egitto </string>
+
+    <string name="txt_duas_title">Seleziona Traduzione</string>
+    <string name="txt_urdu">Urdu</string>
+    <string name="txt_eng">English</string>
 </resources>

@@ -65,6 +65,11 @@ public class PrayerFragment extends Fragment {
         noData.setVisibility(View.VISIBLE);
         mSwipeRefreshLayout = (SwipeRefreshLayout) rootView.findViewById(R.id.swipeRefreshLayout);
         mRecyclerView = (RecyclerView) rootView.findViewById(R.id.recycler_prayer);
+
+        //Attach fab with recyclerview
+
+        mComunityActivity.fab.attachToRecyclerView(mRecyclerView);
+
       //  mSwipeRefreshLayout.setColorScheme(getResources().getColor(android.R.color.holo_blue_bright), getResources().getColor(android.R.color.holo_green_light),getResources().getColor(android.R.color.holo_orange_light),getResources().getColor(android.R.color.holo_red_light));
 
         mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
@@ -171,6 +176,8 @@ public class PrayerFragment extends Fragment {
                 mList.add(CommunityGlobalClass.mPrayerModel.get(i));
             }
         }
+
+
 
 
          return mList;

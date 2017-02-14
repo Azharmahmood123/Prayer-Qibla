@@ -94,11 +94,7 @@ public class BookmarksActivity extends AppCompatActivity {
 				end_actvty.putExtra(SurahActivity.KEY_EXTRA_AYAH_NO, ayahNo);
 				startActivity(end_actvty);
 
-				showInterstitialAd();
-				if(!((GlobalClass) getApplication()).isPurchase)
-				{
-					sendBroadcast(new Intent(MainActivityNew.ACTION_INTERSTITIAL_ADS_SHOW));
-				}
+
 			}
 		});
 

@@ -137,7 +137,7 @@
             android:name="quran.activities.SajdasActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="quran.activities.DownloadDialog"
+            android:name="quran.activities.DownloadDialogQuran"
             android:screenOrientation="portrait"
             android:theme="@style/Transparent" />
         <activity

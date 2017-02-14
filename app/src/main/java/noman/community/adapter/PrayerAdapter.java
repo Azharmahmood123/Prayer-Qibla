@@ -6,6 +6,7 @@ import android.os.SystemClock;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.RecyclerView;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -64,7 +65,7 @@ public class PrayerAdapter extends RecyclerView.Adapter<PrayerHolder> {
     @Override
     public void onBindViewHolder(final PrayerHolder holder, final int position) {
         final Prayer mPrayer = prayerList.get(position);
-        holder.txt_prayer.setText(mPrayer.getContent());
+        holder.txt_prayer.setText(Html.fromHtml(mPrayer.getContent()));
         holder.txt_counter.setText(mPrayer.getPrayedCounter() + " users have prayed for this");
         String time=mPrayer.getDatePosted().replace("UTC", "");
         //Create issue while converted thats why split it

@@ -105,7 +105,7 @@ public class MainActivityNew extends AppCompatActivity implements AdapterView.On
     private static final String LOG_TAG = "Ads";
     private final Handler adsHandler = new Handler();
     private int timerValue = 3000, networkRefreshTime = 10000;
-    InterstitialAd mInterstitialAd;
+  //  InterstitialAd mInterstitialAd;
     private Runnable mRunnableInterstitialAd = new Runnable() {
 
         @Override
@@ -127,9 +127,9 @@ public class MainActivityNew extends AppCompatActivity implements AdapterView.On
         }
     };
 
-    boolean isAdLoaded = false;
-    final int INTERSTITIAL_REFRESH_TIME = 15000;
-    Runnable mRunnableInterstitialRefresh = new Runnable() {
+   // boolean isAdLoaded = false;
+   // final int INTERSTITIAL_REFRESH_TIME = 15000;
+   /* Runnable mRunnableInterstitialRefresh = new Runnable() {
 
         @Override
         public void run() {
@@ -138,7 +138,7 @@ public class MainActivityNew extends AppCompatActivity implements AdapterView.On
                 requestNewInterstitial();
             }
         }
-    };
+    };*/
 
     // Defining Variables
 
@@ -181,6 +181,11 @@ public class MainActivityNew extends AppCompatActivity implements AdapterView.On
 
         setContentView(R.layout.activity_main_new);
         CommunityGlobalClass.mainActivityNew = this;
+
+
+        //Community  Global Class
+        registerHandlerService();
+
 
         //New Screen Added
         sendAnalyticsData("Qibla Home 4.0");
@@ -341,7 +346,7 @@ public class MainActivityNew extends AppCompatActivity implements AdapterView.On
         adview.setVisibility(View.GONE);
 
         if (!((GlobalClass) getApplication()).isPurchase) {
-            mInterstitialAd = new InterstitialAd(this);
+           /* mInterstitialAd = new InterstitialAd(this);
             mInterstitialAd.setAdUnitId(getString(R.string.admob_interstitial));
 
             mInterstitialAd.setAdListener(new AdListener() {
@@ -371,7 +376,7 @@ public class MainActivityNew extends AppCompatActivity implements AdapterView.On
             });
 
             requestNewInterstitial();
-
+*/
             if (isNetworkConnected()) {
                 this.adview.setVisibility(View.VISIBLE);
             } else {
@@ -380,17 +385,18 @@ public class MainActivityNew extends AppCompatActivity implements AdapterView.On
             setAdsListener();
 
             registerReceiver(interstitialAdReciever, new IntentFilter(ACTION_INTERSTITIAL_ADS_SHOW));
+
         }
     }
 
-    private void requestNewInterstitial() {
+   /* private void requestNewInterstitial() {
 
         AdRequest adRequest = new AdRequest.Builder().build();
         try {
             mInterstitialAd.loadAd(adRequest);
         } catch (Exception e) {
         }
-    }
+    }*/
 
     public void initDrawer() {
 
@@ -535,7 +541,7 @@ public class MainActivityNew extends AppCompatActivity implements AdapterView.On
                     inProcess = true;
                     Intent dialsIntent = new Intent(MainActivityNew.this, DialsActivity.class);
                     startActivity(dialsIntent);
-                    showInterstitialAd();
+                //    showInterstitialAd();
                 }
                 break;
 
@@ -555,7 +561,7 @@ public class MainActivityNew extends AppCompatActivity implements AdapterView.On
                     inProcess = true;
                     Intent settingsIntent = new Intent(MainActivityNew.this, SettingsActivity.class);
                     startActivity(settingsIntent);
-                    showInterstitialAd();
+               //     showInterstitialAd();
                 }
                 break;
 
@@ -563,7 +569,7 @@ public class MainActivityNew extends AppCompatActivity implements AdapterView.On
                     inProcess = true;
                     Intent intent = new Intent(MainActivityNew.this, LanguageSelectionActivity.class);
                     startActivity(intent);
-                    showInterstitialAd();
+                //    showInterstitialAd();
 
                 }
                 break;
@@ -590,7 +596,7 @@ public class MainActivityNew extends AppCompatActivity implements AdapterView.On
                 case menuInstrctC: {
                     inProcess = true;
                     startActivity(new Intent(getApplicationContext(), AboutInstructionActivity.class).putExtra(ACTIVITY_SELECTION, ACTIVITY_INSTRUCTION));
-                    showInterstitialAd();
+                 //   showInterstitialAd();
                 }
                 break;
 
@@ -603,7 +609,7 @@ public class MainActivityNew extends AppCompatActivity implements AdapterView.On
                 case menuAboutUsC: {
                     inProcess = true;
                     startActivity(new Intent(getApplicationContext(), AboutInstructionActivity.class).putExtra(ACTIVITY_SELECTION, ACTIVITY_ABOUT));
-                    showInterstitialAd();
+                   // showInterstitialAd();
                 }
                 break;
 
@@ -622,7 +628,7 @@ public class MainActivityNew extends AppCompatActivity implements AdapterView.On
 
                 case menuFaceBookC:
                     sendAnalyticEvent("Facebook");
-                    String s = "https://www.facebook.com/quranreading";
+                    String s = "https://www.facebook.com/QiblaConnect/";
                     Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(s));
                     startActivity(browserIntent);
                     break;
@@ -634,10 +640,15 @@ public class MainActivityNew extends AppCompatActivity implements AdapterView.On
     }
 
     private void showInterstitialAd() {
-        if (!((GlobalClass) getApplication()).isPurchase) {
+       /* if (!((GlobalClass) getApplication()).isPurchase) {
             if (mInterstitialAd.isLoaded()) {
                 mInterstitialAd.show();
             }
+        }*/
+
+        if( CommunityGlobalClass.getInstance().mInterstitialAd.getAd().isLoaded())
+        {
+            CommunityGlobalClass.getInstance().mInterstitialAd.getAd().show();
         }
     }
 
@@ -703,6 +714,15 @@ public class MainActivityNew extends AppCompatActivity implements AdapterView.On
     protected void onResume() {
         // TODO Auto-generated methodIndex stub
         super.onResume();
+        if (CommunityGlobalClass.isQuranModuleOpen && !CommunityGlobalClass.isAdAlreadyShow) {
+            //Make Sure Quran Module is in False state
+            if (!((GlobalClass) getApplication()).isPurchase) {
+                sendBroadcast(new Intent(MainActivityNew.ACTION_INTERSTITIAL_ADS_SHOW));
+                Log.e("OnResume","Ads Display");
+            }
+            CommunityGlobalClass.isQuranModuleOpen = false;
+            CommunityGlobalClass.isAdAlreadyShow = true;
+        }
 
         inProcess = false;
         if (((GlobalClass) getApplication()).isPurchase) {
@@ -714,12 +734,12 @@ public class MainActivityNew extends AppCompatActivity implements AdapterView.On
                 adapter.notifyDataSetChanged();
             }
         } else {
-            mHandler.removeCallbacks(mRunnableInterstitialAd);
+           /* mHandler.removeCallbacks(mRunnableInterstitialAd);
             mHandler.postDelayed(mRunnableInterstitialAd, TIMER_INTERSTITIAL_AD);
             if (!isAdLoaded) {
                 mHandler.removeCallbacks(mRunnableInterstitialRefresh);
                 mHandler.postDelayed(mRunnableInterstitialRefresh, INTERSTITIAL_REFRESH_TIME);
-            }
+            }*/
 
             startAdsCall();
         }
@@ -729,11 +749,11 @@ public class MainActivityNew extends AppCompatActivity implements AdapterView.On
     protected void onPause() {
         // TODO Auto-generated methodIndex stub
         super.onPause();
-        mHandler.removeCallbacks(mRunnableInterstitialAd);
+       /* mHandler.removeCallbacks(mRunnableInterstitialAd);
         if (!((GlobalClass) getApplication()).isPurchase) {
             stopAdsCall();
             mHandler.removeCallbacks(mRunnableInterstitialRefresh);
-        }
+        }*/
         hideKeyboardForce();
     }
 
@@ -747,13 +767,15 @@ public class MainActivityNew extends AppCompatActivity implements AdapterView.On
     @Override
     protected void onDestroy() {
         // TODO Auto-generated methodIndex stub
-        if (!((GlobalClass) getApplication()).isPurchase) {
+        /*if (!((GlobalClass) getApplication()).isPurchase) {
             destroyAds();
             unregisterReceiver(interstitialAdReciever);
+
+
             if (mInterstitialAd != null)
                 mInterstitialAd.setAdListener(null);
             mInterstitialAd = null;
-        }
+        }*/
         super.onDestroy();
     }
 
@@ -1182,6 +1204,8 @@ public class MainActivityNew extends AppCompatActivity implements AdapterView.On
         return errorReason;
     }
 
+
+    //Donot Show anny ads
     BroadcastReceiver interstitialAdReciever = new BroadcastReceiver() {
 
         @Override
@@ -1258,5 +1282,20 @@ public class MainActivityNew extends AppCompatActivity implements AdapterView.On
         dbObj.close();
 
     }
+    public void registerHandlerService() {
+        ///Ads Stretegy
+        CommunityGlobalClass.isAdAlreadyShow = false;
+        CommunityGlobalClass.isQuranModuleOpen = false;
 
+        CommunityGlobalClass.getInstance().handler = new Handler();
+        CommunityGlobalClass.getInstance().runTimerForAdsStratedgy();
+        LocationPref locationPref = new LocationPref(this);
+        if (locationPref.isFirstTimeAppLaunch()) {
+            CommunityGlobalClass.getInstance().timeDelay = 50 * 1000;//for 50 sec
+        } else {
+
+            CommunityGlobalClass.getInstance().timeDelay = 5 * 1000;
+        }
+        CommunityGlobalClass.getInstance().handler.postDelayed(CommunityGlobalClass.getInstance().runnable, CommunityGlobalClass.getInstance().timeDelay);//Run handler
+    }
 }

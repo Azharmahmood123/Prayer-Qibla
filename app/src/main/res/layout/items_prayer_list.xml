@@ -60,7 +60,7 @@
                         android:layout_marginTop="@dimen/_5sdp"
                         android:text="Prayer show here"
                         android:textColor="@color/black"
-                        android:textSize="@dimen/_16sdp" />
+                        android:textSize="@dimen/_14sdp" />
 
                     <TextView
                         android:id="@+id/txt_count_prayer"

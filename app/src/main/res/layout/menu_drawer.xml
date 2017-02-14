@@ -145,14 +145,15 @@
     </LinearLayout>
 
     <ImageView
-
+        android:layout_marginLeft="@dimen/_11sdp"
         android:id="@+id/fb_img"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="@dimen/_40sdp"
         android:adjustViewBounds="true"
         android:padding="@dimen/size_eight"
         android:scaleType="fitCenter"
         android:src="@drawable/fb"
-        android:visibility="gone" />
+        android:visibility="gone"
+         />
 
 </LinearLayout>

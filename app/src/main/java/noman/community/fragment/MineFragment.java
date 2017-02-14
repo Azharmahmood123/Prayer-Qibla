@@ -71,6 +71,9 @@ public class MineFragment extends Fragment {
 
             }
         });
+        mComunityActivity.fab.attachToRecyclerView(mRecyclerView);
+        //Atach fab with recycler view
+
 
       //  CommunityGlobalClass.getInstance().sendAnalyticsScreen("Community Mine");
 

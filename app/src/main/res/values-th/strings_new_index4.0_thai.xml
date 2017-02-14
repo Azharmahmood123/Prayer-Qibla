@@ -10,14 +10,16 @@
     <string name="auto_settings"> การตั้งค่าอัตโนมัติ </string>
     <string name="timings"> จับเวลา </string>
     <string name="in"> ใน </string>
-    <string name="grid_quran"> QURAN </string>
-    <string name="grid_salat"> salat </string>
-    <string name="grid_direction"> VISUAL Qibla </string>
+
+
+    <string name="grid_quran"> คัมภีร์กุรอาน </string>
+    <string name="grid_salat"> ละหมาด </string>
+    <string name="grid_direction">ภาพ Qibla </string>
     <string name="grid_hijri"> ฮิจเราะห์ </string>
     <string name="grid_mosque"> ค้นหามัสยิด </string>
     <string name="grid_premium"> PREMIUM </string>
-    <string name="grid_community"> Community </string>
-    <string name="grid_halal"> FINDER ฮาลาล </string>
+    <string name="grid_community"> ชุมชน </string>
+    <string name="grid_halal"> Finder ฮาลาล </string>
     <string name="grid_names"> nameอัลลอ </string>
     <string name="grid_duas"> Duas </string>
     <string name="grid_settings"> การตั้งค่า </string>
@@ -85,7 +87,7 @@
     <string name="share_timings_message"> หากต้องการทราบกำหนดเวลาละหมาดประจำวันที่ถูกต้องและทิศทาง Qibla ดาวน์โหลด Qibla Connect®ฟรี: \n \n https://play.google.com/store/apps/details?id=com.quranreading.qibladirection </string>
 
 <string name="share_allah_names_message"> ศาสดา PBUH กล่าวว่า: \n
-    \ "แท้จริงอัลลอมีnameเก้าสิบเก้าใครนับเหล่านี้จะเข้าพาราไดซ์ \." ซาฮิอัลบุคอรี - หนังสือ 50 หะดีษ 894 ที่จะฟังและอ่านทั้งหมด 99 รายnameดาวน์โหลด Qibla Connect®ฟรี: \n \n https://play.google.com/store/apps/details?id=com.quranreading.qibladirection </string>
+    \ "แท้จริงอัลลอมีnameเก้าสิบเก้าใครนับเหล่านี้จะเข้าพาราไดซ์ \." ซาฮิอัลบุคอรี - หนังสือ 50 หะดีษ 894 ที่จะฟังและอ่านทั้งหมด ายnameดาวน์โหลด Qibla Connect®ฟรี: \n \n https://play.google.com/store/apps/details?id=com.quranreading.qibladirection </string>
     <string name="ayah_of_day_dialog"> คุณต้องการเปิดใ้งาน Ayah ของวันที่?</string>
     <string name="text_translation_setting"> ข้อความ &amp; แปล </string>
     <string name="text_reset_quran_setting"> รีเซ็ตการตั้งค่าคัมภีร์กุรอาน </string>
@@ -120,4 +122,9 @@
  <string name= "adhan5_new"> Adhan มันซูร์อัล Zahrani</string>
  <string name= "adhan6_new"> Mishary Rashid Al-Afsay</string>
  <string name= "adhan7_new"> Adhan จากอียิปต์</string>
+
+
+    <string name = "txt_duas_title"> เลือกแปล </string>
+    <string name = "txt_urdu"> ภาษาอูรดู </string>
+    <string name = "txt_eng"> ภาษาอังกฤษ </string>
 </resources>

@@ -11,17 +11,18 @@
     <string name="timings">minutage</string>
     <string name="in">dans</string>
 
-    <string name="grid_quran">QURAN</string>
-    <string name="grid_salat">SALAT</string>
-    <string name="grid_direction">qibla visuelle</string>
-    <string name="grid_hijri">HIJRI</string>
+
+    <string name="grid_quran">Quran</string>
+    <string name="grid_salat">Salat</string>
+    <string name="grid_hijri">Hijri</string>
+    <string name="grid_duas">Duas</string>
+    <string name="grid_direction">Visuelle Qibla</string>
     <string name="grid_mosque">Trouver des mosquées</string>
-    <string name="grid_premium">prime</string>
-    <string name="grid_community">communauté</string>
-    <string name="grid_halal">Trouver hilal</string>
-    <string name="grid_names">Allah noms</string>
-    <string name="grid_duas">DUAS</string>
-    <string name="grid_settings">paramètres</string>
+    <string name="grid_premium">Prime</string>
+    <string name="grid_community">Communauté</string>
+    <string name="grid_halal">Hilal Trouver</string>
+    <string name="grid_names">Allah Noms</string>
+    <string name="grid_settings">Paramètres</string>
 
     <string name="notificaion_time">Temps de notification</string>
     <string name="notification_sound">notification Sonner</string>
@@ -86,7 +87,7 @@
     <string name="share_timings_message">our connaître les horaires quotidiens de salah et la précision Qibla Direction, Télécharger gratuitement Qibla Connect®:\n\n https://play.google.com/store/apps/details?id=com.quranreading.qibladirection</string>
 
     <string name="share_allah_names_message">Prophète PBUH dit:\n
-    \"En effet, Allah a quatre-vingt-dix-neuf Noms, Quiconque les compte entrera dans le Paradis.\" Sahih Al-Bukhari – Livre 50 Hadith 894 Pour écouter et lire les 99 noms, téléchargez Qibla Connect® gratuitement:\n\n https://play.google.com/store/apps/details?id=com.quranreading.qibladirection</string>
+    \"En effet, Allah a quatre-vingt-dix-neuf Noms, Quiconque les compte entrera dans le Paradis.\" Sahih Al-Bukhari – Livre 50 Hadith 894 Pour écouter et lire les  noms, téléchargez Qibla Connect® gratuitement:\n\n https://play.google.com/store/apps/details?id=com.quranreading.qibladirection</string>
     <string name="ayah_of_day_dialog">Voulez-vous activer Ayah du jour?</string>
     <string name="text_translation_setting">Texte &amp; Traduction</string>
     <string name="text_reset_quran_setting">Réinitialiser les paramètres du coran</string>
@@ -101,7 +102,7 @@
     <string name="logout_title">se déconnecter</string>
 
 
-    <string name="laguage_alert_dialog">Cela changera la langue de votre application entière, sauf la Communauté et 99 noms. Voulez-vous vraiment le sélectionner?</string>
+    <string name="laguage_alert_dialog">Cela changera la langue de votre application entière, sauf la Communauté , Hijri et Allah noms. Voulez-vous vraiment le sélectionner?</string>
 
     <string name =  "txt_font_size"> Taille de police </string>
     <string name =  "txt_read_mode_off"> Mode lecture désactivé </string>
@@ -123,4 +124,9 @@
     <string name =  "adhan5_new"> Adhan Mansur Al-Zahrani</string>
     <string name =  "adhan6_new"> Mishary Rashid Al-Afsay</string>
     <string name =  "adhan7_new"> Adhan d\'Egypte</string>
+
+
+    <string name = "txt_duas_title"> Sélectionnez Traduction </string>
+    <string name = "txt_urdu"> Urdu </string>
+    <string name = "txt_eng"> English </string>
 </resources>

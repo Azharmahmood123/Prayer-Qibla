@@ -292,9 +292,7 @@ public class ChildContainerList extends RecyclerView.Adapter<ChildContainerHolde
                 end_actvty.putExtra(SurahActivity.KEY_EXTRA_SURAH_NO, surahNo);
                 end_actvty.putExtra(SurahActivity.KEY_EXTRA_AYAH_NO, ayahNo);
                 mContext.startActivity(end_actvty);
-                if (!((GlobalClass) mContext.getApplicationContext()).isPurchase) {
-                    mContext.sendBroadcast(new Intent(MainActivityNew.ACTION_INTERSTITIAL_ADS_SHOW));
-                }
+
                 if (quranModuleActivity.mDrawerLayout.isDrawerOpen(GravityCompat.END)) {
                     quranModuleActivity.closeDrawer();
                 }

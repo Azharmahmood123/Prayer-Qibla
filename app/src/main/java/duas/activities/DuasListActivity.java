@@ -227,10 +227,6 @@ public class DuasListActivity extends AppCompatActivity implements OnItemClickLi
 			intent.putExtras(b);
 			startActivity(intent);
 
-			if(!((GlobalClass) getApplication()).isPurchase)
-			{
-				sendBroadcast(new Intent(MainActivityNew.ACTION_INTERSTITIAL_ADS_SHOW));
-			}
 
 			// showInterstitialAd();
 		}

@@ -63,9 +63,9 @@ public class MenuFragment extends Fragment {
         menuItems.add(mContext.getString(R.string.grid_direction));
 
         menuItems.add(mContext.getString(R.string.grid_quran));
-        menuItems.add(mContext.getString(R.string._community));
+        menuItems.add(mContext.getString(R.string.grid_community));
         menuItems.add(mContext.getString(R.string.grid_names));
-        menuItems.add(mContext.getString(R.string._hijri));
+        menuItems.add(mContext.getString(R.string.grid_hijri));
         menuItems.add(mContext.getString(R.string.grid_mosque));
       /*  menuItems.add(mContext.getString(R.string.grid_premium));*/
 

@@ -1,51 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-<string name = "save"> Speichern </string>
-<string name = "new_location_detected"> Neuer Standort erkannt </string>
-<string name = "new_location_detected_msg1"> Haben Sie Ihren Standort angeben wollen aus </string>
-<string name = "to"> bis </string>
-<string name = "and"> ​​und </string>
-<string name = "new_location_detected_msg2"> Update Gebetszeiten </string>
-<string name = "auto_settings"> Auto-Einstellungen </string>
-<string name = "timings"> Timings </string>
-<string name = "in"> in </string>
+    <string name="save"> Speichern </string>
+    <string name="new_location_detected"> Neuer Standort erkannt </string>
+    <string name="new_location_detected_msg1"> Haben Sie Ihren Standort angeben wollen aus </string>
+    <string name="to"> bis </string>
+    <string name="and"> ​​und </string>
+    <string name="new_location_detected_msg2"> Update Gebetszeiten </string>
+    <string name="auto_settings"> Auto-Einstellungen </string>
+    <string name="timings"> Timings </string>
+    <string name="in"> in </string>
 
-<string name = "grid_quran"> QURAN </string>
-<string name = "grid_salat"> SALAT </string>
-<string name = "grid_direction"> VISUAL QIBLA </string>
-<string name = "grid_hijri"> hijri </string>
-<string name = "grid_mosque"> FIND MOSCHEEN </string>
-<string name = "grid_premium"> PREMIUM </string>
-<string name = "grid_community"> Community </string>
-<string name = "grid_halal"> HALAL FINDER </string>
-<string name = "grid_names"> ALLAH NAMES </string>
-<string name = "grid_duas"> DUAS </string>
-<string name = "grid_settings"> Einstellungen </string>
 
-<string name = "notificaion_time"> Benachrichtigung Zeit </string>
-<string name = "notification_sound"> ​​Notification Sound </string>
-<string name = "notificaion"> Mitteilung </string>
-<string name = "set_tone"> Set Tone </string>
+    <string name="grid_mosque"> Find Moscheen </string>
+    <string name="grid_settings"> Einstellungen </string>
+    <string name="grid_quran">Quran</string>
+    <string name="grid_salat">Salat</string>
+    <string name="grid_direction">Visual Qibla</string>
+    <string name="grid_hijri">Hijri</string>
+    <string name="grid_premium">PREMIUM</string>
+    <string name="grid_community">Community</string>
+    <string name="grid_halal">Halal Finder</string>
+    <string name="grid_names">Allah Names</string>
+    <string name="grid_duas">Duas</string>
 
-  <string-array name = "array_calculation_methods_new">
-       <item> algerische Minister für religiöse Angelegenheiten und Wakfs </item>
-       <item> ägyptischen Generalautorität </item>
-       <item> ägyptischen Generalautorität (bis) </item>
-       <item> Fixed Isha Winkelintervall </item>
-       <item> Islamic University, Karachi </item>
-       <item> ISNA (Islamischer Staat Nordamerika) </item>
-       <item> JAKIM (Jabatan Kemajuan Islam Malaysia) </item>
-       <item> KEMENAG (Kementerian Agama RI) </item>
-       <item> MUIS (Majlis Ugama Islam Singapura) </item>
-       <item> MWL (Muslim World League) </item>
-       <item> Shia Athna Ashari (Jafari) </item>
-       <item> VAE Generalautorität für Islamische Angelegenheiten </item>
-       <item> Umm Al-Qura, Makkah </item>
-       <item> Universität Teheran </item>
+
+    <string name="notificaion_time"> Benachrichtigung Zeit </string>
+    <string name="notification_sound"> ​​Notification Sound </string>
+    <string name="notificaion"> Mitteilung </string>
+    <string name="set_tone"> Set Tone </string>
+
+    <string-array name="array_calculation_methods_new">
+        <item> algerische Minister für religiöse Angelegenheiten und Wakfs </item>
+        <item> ägyptischen Generalautorität </item>
+        <item> ägyptischen Generalautorität (bis) </item>
+        <item> Fixed Isha Winkelintervall </item>
+        <item> Islamic University, Karachi </item>
+        <item> ISNA (Islamischer Staat Nordamerika) </item>
+        <item> JAKIM (Jabatan Kemajuan Islam Malaysia) </item>
+        <item> KEMENAG (Kementerian Agama RI) </item>
+        <item> MUIS (Majlis Ugama Islam Singapura) </item>
+        <item> MWL (Muslim World League) </item>
+        <item> Shia Athna Ashari (Jafari) </item>
+        <item> VAE Generalautorität für Islamische Angelegenheiten </item>
+        <item> Umm Al-Qura, Makkah </item>
+        <item> Universität Teheran </item>
     </string-array>
 
-   <string-array name="array_calculation_methods_angles">
+    <string-array name="array_calculation_methods_angles">
         <item>Fajr 18.0° / Isha\'a 17.0°</item>
         <item>Fajr 19.5° / Isha\'a 17.5°</item>
         <item>Fajr 20.0° / Isha\'a 18.0°</item>
@@ -62,65 +64,69 @@
         <item>Fajr 17.7° / Isha\'a 15.0°</item>
     </string-array>
 
-    <integer-array name = "array_calculation_methods_index">
-       <item> 12 </item>
-       <item> 5 </item>
-       <item> 7 </item>
-       <item> 10 </item>
-       <item> 1 </item>
-       <item> 2 </item>
-       <item> 11 </item>
-       <item> 8 </item>
-       <item> 9 </item>
-       <item> 3 </item>
-       <item> 0 </item>
-       <item> 10 </item>
-       <item> 4 </item>
-       <item> 6 </item>
+    <integer-array name="array_calculation_methods_index">
+        <item>12</item>
+        <item>5</item>
+        <item>7</item>
+        <item>10</item>
+        <item>1</item>
+        <item>2</item>
+        <item>11</item>
+        <item>8</item>
+        <item>9</item>
+        <item>3</item>
+        <item>0</item>
+        <item>10</item>
+        <item>4</item>
+        <item>6</item>
     </integer-array>
 
-<string name = "manual_corrections"> Manuelle Korrekturen </string>
-<string name = "auto_edit_alarm"> Auto Alarm bearbeiten </string>
-<string name = "auto_edit_alarm_option_1"> Auto bearbeiten in Bezug auf neue Position </string>
-<string name = "auto_edit_alarm_option_2"> Reset bearbeitet Alarme an jedem neuen Standort </string>
-<string name = "share_timings_message"> Um zu wissen, täglich Salat Timings und genaue Qibla Richtung, herunterladen Qibla Connect® for Free: \n \n https://play.google.com/store/apps/details?id=com.quranreading.qibladirection </string>
+    <string name="manual_corrections"> Manuelle Korrekturen </string>
+    <string name="auto_edit_alarm"> Auto Alarm bearbeiten </string>
+    <string name="auto_edit_alarm_option_1"> Auto bearbeiten in Bezug auf neue Position </string>
+    <string name="auto_edit_alarm_option_2"> Reset bearbeitet Alarme an jedem neuen Standort </string>
+    <string name="share_timings_message"> Um zu wissen, täglich Salat Timings und genaue Qibla Richtung, herunterladen Qibla Connect® for Free: \n \n https://play.google.com/store/apps/details?id=com.quranreading.qibladirection </string>
 
-<string name = "share_allah_names_message"> Prophet Friede sei mit ihm, sagte: \n
-    \"In der Tat hat Allah neunundneunzig Namen, wer auch immer sie zählt ist das Paradies betreten. \" Sahih Al-Bukhari - Buch 50 Hadith 894 Um alle 99 Namen Qibla Connect® kostenlos hören und lesen herunterladen: \n \n https://play.google.com/store/apps/details?id=com.quranreading.qibladirection </string>
-<string name = "ayah_of_day_dialog"> Haben Sie Ayah des Tages zu aktivieren?"</string>
-<string name = "text_translation_setting"> Text &amp; Übersetzung </string>
-<string name = "text_reset_quran_setting"> Zurücksetzen Koran Einstellung </string>
-<string name = "dialog_reset_quran_setting"> Sind Sie sicher, Koran-Einstellungen zurücksetzen?"</string>
-<string name = "txt_enter_between_0_83"> Nummer eingeben 0-83 </string>
-<string name = "no_surah_found"> ​​No Surrah gefunden </string>
-<string name = "names_99"> Allah-Namen </string>
-<string name = "ayah_message_dialog"> Haben Sie auf Ayah des Tages zu verwandeln?"</string>
-<string name = "phonetic_title"> Phonetik Translitration </string>
-<string name = "english_pronounce"> Englisch pronounciation </string>
-<string name = "logout_dialog"> Sind Ihre sicher, dass Sie sich abmelden?"</string>
-<string name = "logout_title"> Abmelden </string>
+<string name="share_allah_names_message"> Prophet Friede sei mit ihm, sagte: \n
+    \"In der Tat hat Allah neunundneunzig Namen, wer auch immer sie zählt ist das Paradies betreten. \" Sahih Al-Bukhari - Buch 50 Hadith 894 Um alle Namen Qibla Connect® kostenlos hören und lesen herunterladen: \n \n https://play.google.com/store/apps/details?id=com.quranreading.qibladirection </string>
+    <string name="ayah_of_day_dialog"> Haben Sie Ayah des Tages zu aktivieren?"</string>
+    <string name="text_translation_setting"> Text &amp; Übersetzung </string>
+    <string name="text_reset_quran_setting"> Zurücksetzen Koran Einstellung </string>
+    <string name="dialog_reset_quran_setting"> Sind Sie sicher, Koran-Einstellungen zurücksetzen?"</string>
+    <string name="txt_enter_between_0_83"> Nummer eingeben 0-83 </string>
+    <string name="no_surah_found"> ​​No Surrah gefunden </string>
+    <string name="names_99"> Allah-Namen </string>
+    <string name="ayah_message_dialog"> Haben Sie auf Ayah des Tages zu verwandeln?"</string>
+    <string name="phonetic_title"> Phonetik Translitration </string>
+    <string name="english_pronounce"> Englisch pronounciation </string>
+    <string name="logout_dialog"> Sind Ihre sicher, dass Sie sich abmelden?"</string>
+    <string name="logout_title"> Abmelden </string>
 
 
-<string name = "laguage_alert_dialog"> Es wird die Sprache Ihrer ganzen App mit Ausnahme der Gemeinschaft und 99 Namen ändern. Sind Sie sicher, dass Sie es überspringen wollen?"</string>
+    <string name="laguage_alert_dialog"> Es wird die Sprache Ihrer ganzen App mit Ausnahme der Gemeinschaft, Hijri und Allah Namen ändern. Sind Sie sicher, dass Sie es überspringen wollen?"</string>
 
-<string name = "txt_font_size"> Schriftgröße </string>
-<string name = "txt_read_mode_off"> Lese-Modus aus </string>
-<string name = "txt_read_mode_on"> Lesemodus Ein </string>
-<string name = "txt_no_fav"> Kein Favorit ayah gefunden </string>
-<string name = "txt_add_fav"> Zu Favoriten hinzugefügt </string>
-<string name = "txt_remove_fav"> Aus Favoriten entfernt </string>
-<string name = "txt_tap"> Tippen Sie auf </string>
-   
-<string name = "txt_tap_text"> zu aktivieren, um den Lesemodus ON </string>
-<string name = "txt_reset_quran_setting"> Sind Sie sicher, Koran-Einstellungen zurücksetzen? </string>
-    <string name  = "txt_yes"> Ja </string>
-    <string name  = "txt_no"> Nein </string>
+    <string name="txt_font_size"> Schriftgröße </string>
+    <string name="txt_read_mode_off"> Lese-Modus aus </string>
+    <string name="txt_read_mode_on"> Lesemodus Ein </string>
+    <string name="txt_no_fav"> Kein Favorit ayah gefunden </string>
+    <string name="txt_add_fav"> Zu Favoriten hinzugefügt </string>
+    <string name="txt_remove_fav"> Aus Favoriten entfernt </string>
+    <string name="txt_tap"> Tippen Sie auf </string>
 
-<string name = "adhan1_new"> Adhan Fajr Madina </string>
-<string name = "adhan2_new"> Die beliebtesten Adhan </string>
-<string name = "adhan3_new"> Adhan Madina </string>
-<string name = "adhan4_new"> Adhan Nasir Al-Qatami </string>
-<string name = "adhan5_new"> Adhan Mansur Al-Zahrani </string>
-<string name = "adhan6_new"> Mishary Rashid Al-Afsay </string>
-<string name = "adhan7_new"> Adhan aus Ägypten </string>
+    <string name="txt_tap_text"> zu aktivieren, um den Lesemodus ON </string>
+    <string name="txt_reset_quran_setting"> Sind Sie sicher, Koran-Einstellungen zurücksetzen? </string>
+    <string name="txt_yes"> Ja </string>
+    <string name="txt_no"> Nein </string>
+
+    <string name="adhan1_new"> Adhan Fajr Madina </string>
+    <string name="adhan2_new"> Die beliebtesten Adhan </string>
+    <string name="adhan3_new"> Adhan Madina </string>
+    <string name="adhan4_new"> Adhan Nasir Al-Qatami </string>
+    <string name="adhan5_new"> Adhan Mansur Al-Zahrani </string>
+    <string name="adhan6_new"> Mishary Rashid Al-Afsay </string>
+    <string name="adhan7_new"> Adhan aus Ägypten </string>
+
+    <string name = "txt_duas_title"> Wählen Sie Übersetzung </string>
+    <string name = "txt_urdu"> Urdu </string>
+    <string name = "txt_eng"> English </string>
 </resources>

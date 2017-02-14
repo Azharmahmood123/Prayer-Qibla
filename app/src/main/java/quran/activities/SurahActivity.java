@@ -557,7 +557,7 @@ public class SurahActivity extends AppCompatActivity implements OnCompletionList
 
                 if (!inProcess) {
                     inProcess = true;
-                    Intent downloadDialog = new Intent(SurahActivity.this, DownloadDialog.class);
+                    Intent downloadDialog = new Intent(SurahActivity.this, DownloadDialogQuran.class);
                     downloadDialog.putExtra("SURAHNAME", surahName);
                     downloadDialog.putExtra("POSITION", surahNumber);
                     downloadDialog.putExtra("ANAME", audioFile);

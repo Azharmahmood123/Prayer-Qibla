@@ -21,6 +21,7 @@ import android.view.View;
 import android.widget.Toast;
 import names.download.service.ServiceDownloadNames;
 import names.sharedprefs.DownloadingNamesPref;
+import quran.activities.DownloadDialogQuran;
 import quran.helper.FileUtils;
 
 public class DownloadDialogNames extends Activity {
@@ -68,7 +69,7 @@ public class DownloadDialogNames extends Activity {
 	}
 
 	private void sendAnalyticsData() {
-		//AnalyticSingaltonClass.getInstance(this).sendScreenAnalytics("Download Dialog Screen");
+		AnalyticSingaltonClass.getInstance(this).sendScreenAnalytics("Download Dialog Screen");
 	}
 
 	public boolean checkDownloadStatus() {
@@ -198,6 +199,7 @@ public class DownloadDialogNames extends Activity {
 		builder.setPositiveButton(getResources().getString(R.string.okay), new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int whichButton) {
 				finish();
+
 			}
 		});
 
@@ -214,6 +216,8 @@ public class DownloadDialogNames extends Activity {
 		builder.setPositiveButton(getResources().getString(R.string.okay), new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int whichButton) {
 				onDownloadSurah();
+				AnalyticSingaltonClass.getInstance(DownloadDialogNames.this).sendEventAnalytics("Downloads 4.0","99Names Download Ok");
+
 			}
 		});
 

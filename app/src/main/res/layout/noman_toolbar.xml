@@ -65,7 +65,7 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_toRightOf="@+id/toolbar_btnBack"
-            android:text="@string/quran"
+            android:text="@string/grid_quran"
             android:textColor="@color/white"
             android:layout_marginLeft="@dimen/_5sdp"
             android:textSize="@dimen/_18sdp" />

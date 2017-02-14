@@ -25,6 +25,7 @@ import com.quranreading.qibladirection.GlobalClass;
 import com.quranreading.qibladirection.MainActivityNew;
 import com.quranreading.qibladirection.R;
 import com.quranreading.qibladirection.SplashActivity;
+import com.quranreading.sharedPreference.LocationPref;
 import com.squareup.okhttp.OkHttpClient;
 
 import net.danlew.android.joda.JodaTimeAndroid;
@@ -90,12 +91,20 @@ public class CommunityGlobalClass extends GlobalClass {
     public static MainActivityNew mainActivityNew;
 
 
+
+
+
+
     public static CommunityGlobalClass getInstance() {
         return me;
     }
 
     public Toast mToast;
-
+    public static Handler handler;
+    public static Runnable runnable;
+    public static long timeDelay = 0;
+    public static boolean isAdAlreadyShow = false;
+    public static boolean isQuranModuleOpen = false;
     @Override
 
     public void onCreate() {
@@ -106,13 +115,15 @@ public class CommunityGlobalClass extends GlobalClass {
         //Load Default Ad here
         CommunityGlobalClass.getInstance().mInterstitialAd = new PreLoadIntersitial(this);
 
+
     }
+
     public void sendAnalyticsScreen(String name) {
 
         AnalyticSingaltonClass.getInstance(this).sendScreenAnalytics(name);
     }
 
-    public void sendAnalyticEvent(String ScreenName,String eventAction) {
+    public void sendAnalyticEvent(String ScreenName, String eventAction) {
         AnalyticSingaltonClass.getInstance(this).sendEventAnalytics(ScreenName, eventAction);
     }
 
@@ -355,5 +366,22 @@ public class CommunityGlobalClass extends GlobalClass {
         }
     }
 
+    public void runTimerForAdsStratedgy() {
+
+        if (CommunityGlobalClass.isAdAlreadyShow == false) {
+            runnable = new Runnable() {
+                @Override
+                public void run() {
+                    if (CommunityGlobalClass.isQuranModuleOpen == false ) {
+                        if (!((GlobalClass) mainActivityNew.getApplicationContext()).isPurchase) {
+                            mainActivityNew.sendBroadcast(new Intent(MainActivityNew.ACTION_INTERSTITIAL_ADS_SHOW));
+                            CommunityGlobalClass.isAdAlreadyShow=true;
+                        }
+                    }
+                    handler.removeCallbacks(runnable);
+                }
+            };
+        }
+    }
 
 }

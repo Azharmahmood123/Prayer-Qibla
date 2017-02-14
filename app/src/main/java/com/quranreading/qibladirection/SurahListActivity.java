@@ -107,9 +107,7 @@ public class SurahListActivity extends AppCompatActivity implements OnClickListe
                     intent.putExtra(SurahActivity.KEY_EXTRA_SURAH_NO, dataList.get(position).getItemPosition() + 1);
                     startActivity(intent);
                     hideSearchBar();
-                    if (!((GlobalClass) getApplication()).isPurchase) {
-                        sendBroadcast(new Intent(MainActivityNew.ACTION_INTERSTITIAL_ADS_SHOW));
-                    }
+
                 }
             }
         });
@@ -173,10 +171,8 @@ public class SurahListActivity extends AppCompatActivity implements OnClickListe
                 if (!inProcess) {
                     inProcess = true;
                     startActivity(new Intent(mContext, StopSignsActivity.class));
-                    if (!((GlobalClass) getApplication()).isPurchase) {
-                        sendBroadcast(new Intent(MainActivityNew.ACTION_INTERSTITIAL_ADS_SHOW));
-                    }
-                }
+
+    }
                 break;
             case R.id.btn_option_sajda: {
                 if (!inProcess) {
@@ -209,9 +205,7 @@ public class SurahListActivity extends AppCompatActivity implements OnClickListe
                 end_actvty.putExtra(SurahActivity.KEY_EXTRA_SURAH_NO, settngPref.getLastReadSurah());
                 end_actvty.putExtra(SurahActivity.KEY_EXTRA_AYAH_NO, settngPref.getLastRead());
                 startActivity(end_actvty);
-                if (!((GlobalClass) getApplication()).isPurchase) {
-                    sendBroadcast(new Intent(MainActivityNew.ACTION_INTERSTITIAL_ADS_SHOW));
-                }
+
             }
         } else {
             showShortToast(getString(R.string.last_read_not_saved), 500);

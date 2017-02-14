@@ -11,17 +11,17 @@
     <string name="timings">Timings</string>
     <string name="in">in</string>
 
-    <string name="grid_quran">QURAN</string>
-    <string name="grid_salat">SALAT</string>
-    <string name="grid_direction">VISUAL QIBLA</string>
-    <string name="grid_hijri">HIJRI</string>
-    <string name="grid_mosque">FIND MOSQUES</string>
+    <string name="grid_quran">Quran</string>
+    <string name="grid_salat">Salat</string>
+    <string name="grid_direction">Visual Qibla</string>
+    <string name="grid_hijri">Hijri</string>
+    <string name="grid_mosque">Find Mosques</string>
     <string name="grid_premium">PREMIUM</string>
-    <string name="grid_community">COMMUNITY</string>
-    <string name="grid_halal">HALAL FINDER</string>
-    <string name="grid_names">ALLAH NAMES</string>
-    <string name="grid_duas">DUAS</string>
-    <string name="grid_settings">SETTINGS</string>
+    <string name="grid_community">Community</string>
+    <string name="grid_halal">Halal Finder</string>
+    <string name="grid_names">Allah Names</string>
+    <string name="grid_duas">Duas</string>
+    <string name="grid_settings">Settings</string>
 
     <string name="notificaion_time">Notification Time</string>
     <string name="notification_sound">Notification Sound</string>
@@ -86,7 +86,7 @@
     <string name="share_timings_message">To know daily salat timings and accurate Qibla Direction, download Qibla Connect® for Free:\n\n https://play.google.com/store/apps/details?id=com.quranreading.qibladirection</string>
 
     <string name="share_allah_names_message">Prophet PBUH said:\n
-    \"Indeed, Allah has ninety-nine Names, whoever counts them shall enter Paradise.\" Sahih Al-Bukhari – Book 50 Hadith 894 To listen and read all 99 names download Qibla Connect® for Free:\n\n https://play.google.com/store/apps/details?id=com.quranreading.qibladirection</string>
+    \"Indeed, Allah has ninety-nine Names, whoever counts them shall enter Paradise.\" Sahih Al-Bukhari – Book 50 Hadith 894 To listen and read all Allah names download Qibla Connect® for Free:\n\n https://play.google.com/store/apps/details?id=com.quranreading.qibladirection</string>
     <string name="ayah_of_day_dialog">Do you want to enable Ayah of the Day?</string>
     <string name="text_translation_setting">Text &amp; Translation</string>
     <string name="text_reset_quran_setting">Reset Quran Setting</string>
@@ -101,7 +101,7 @@
     <string name="logout_title">Logout</string>
 
 
-    <string name="laguage_alert_dialog">It will change the language of your whole app except Community and 99 Names. Are you sure you want to select it?</string>
+    <string name="laguage_alert_dialog">It will change the language of your whole app except Community,Hijri and Allah Names. Are you sure you want to select it?</string>
 
     <string name="_community">COMMUNITY</string>
     <string name="_hijri">HIJRI</string>
@@ -120,5 +120,10 @@
     <string name="txt_yes">Yes</string>
     <string name="txt_no">No</string>
     <string name="txt_loading">Loading....</string>
+
+
+    <string name="txt_duas_title">Select Translation</string>
+    <string name="txt_urdu">Urdu</string>
+    <string name="txt_eng">English</string>
 
 </resources>

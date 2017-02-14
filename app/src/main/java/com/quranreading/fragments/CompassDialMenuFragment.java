@@ -121,12 +121,12 @@ public class CompassDialMenuFragment extends Fragment implements RotationUpdateD
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = null;
 
-        if (((GlobalClass) mActivity.getApplication()).deviceS3) {
+       /* if (((GlobalClass) mActivity.getApplication()).deviceS3) {
             // Samsung S3 && s4 etc.
             rootView = inflater.inflate(R.layout.fragment_compass_index_s3, container, false);
-        } else {
-            rootView = inflater.inflate(R.layout.fragment_compass_index, container, false);
-        }
+        } else {*/
+            rootView = inflater.inflate(R.layout.fragment_compass_index_s3, container, false);
+       // }
 
         lacationNameLayout = (LinearLayout) rootView.findViewById(R.id.layout_locationCompass);
         tvCity = (TextView) rootView.findViewById(R.id.tv_city);
