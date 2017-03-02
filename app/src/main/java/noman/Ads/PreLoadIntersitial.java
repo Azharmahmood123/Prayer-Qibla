@@ -54,7 +54,7 @@ public class PreLoadIntersitial {
                   final Handler handler = new Handler();
                 handler.postDelayed(new Runnable() {
                     public void run() {
-                        Log.e("Refresh-Inersitail", "ads");
+                      //  Log.e("Refresh-Inersitail", "ads");
                         interstitialAd.loadAd(adRequest);
                         handler.postDelayed(this, timeSeconds);
                     }

@@ -22,6 +22,8 @@ import com.quranreading.qibladirection.R;
 import java.util.List;
 
 import noman.CommunityGlobalClass;
+import noman.community.activity.ComunityActivity;
+import noman.community.prefrences.SavePreference;
 import noman.community.utility.DebugInfo;
 import noman.community.holder.PrayerHolder;
 import noman.community.model.Prayer;
@@ -47,7 +49,7 @@ public class PrayerAdapter extends RecyclerView.Adapter<PrayerHolder> {
     int pos = 0;
     private long lastClick = 0;
     //to acces this counter for post new prayer
-    public static int clickingCounter = 0;
+    int clickingCounter = 0;
 
     public PrayerAdapter(List<Prayer> prayerList, Activity mActivity) {
         this.prayerList = prayerList;
@@ -101,11 +103,11 @@ public class PrayerAdapter extends RecyclerView.Adapter<PrayerHolder> {
                 if (SystemClock.elapsedRealtime() - lastClick < 2000) {
                     return;
                 } else {
-                    if (clickingCounter == 3) {
-                        clickingCounter = 0;
-                    } else {
-                        clickingCounter = clickingCounter + 1;
-                    }
+                    clickingCounter = clickingCounter + 1;
+                    //Save counter in Preferences
+                    CommunityGlobalClass.prayerCounter=clickingCounter;
+
+
                     inappropirateCounter = Integer.parseInt(mPrayer.getInappropriate_counter());
                     mPrayerModel = mPrayer;
                     prayerCounter = holder.txt_counter.getText().toString().replaceAll("\\D+", "");

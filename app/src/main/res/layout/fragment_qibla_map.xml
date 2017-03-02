@@ -4,25 +4,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
+
+    <FrameLayout
+        android:layout_above="@+id/tv_distance_qibla_map"
+        android:id="@+id/frame_qibla"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+         />
     <TextView
+
+
         android:id="@+id/tv_distance_qibla_map"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/_35sdp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:background="@color/gray_transperant"
+        android:background="@drawable/bg_distance_qibla"
         android:gravity="center"
         android:padding="@dimen/size_five"
         android:textColor="@color/black"
         android:textSize="@dimen/text_size_fifteen"
         android:textStyle="bold" />
-
-    <FrameLayout
-        android:id="@+id/frame_qibla"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@id/tv_distance_qibla_map" />
-
     <LinearLayout
         android:id="@+id/layout_location_error"
         android:layout_width="match_parent"

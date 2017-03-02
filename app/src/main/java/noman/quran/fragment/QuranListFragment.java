@@ -44,7 +44,7 @@ import quran.activities.BookmarksActivity;
 import quran.activities.SajdasActivity;
 import quran.activities.StopSignsActivity;
 import quran.model.IndexListModel;
-import quran.sharedpreference.SurahsSharedPref;
+import noman.sharedpreference.SurahsSharedPref;
 
 import static quran.activities.SurahActivity.KEY_EXTRA_SURAH_NO;
 
@@ -187,14 +187,25 @@ public class QuranListFragment extends Fragment implements OnClickListener, Text
                 if (juzModel == null) {
                     juzModel = juzDataManager.getJuzNumber(settngPref.getLastReadSurah(), settngPref.getLastRead());
                 }
-                if (settngPref.getLastReadSurah() == 1 || settngPref.getLastReadSurah() == 9) {
-                    tvVerses.setText("Verse: " + (settngPref.getLastRead() + 1) + "," + reveledPlacesSurrah[settngPref.getLastReadSurah() - 1] + " ,Juz: " + juzModel.getParaId());
+                if (juzModel != null) {
+                    if (settngPref.getLastReadSurah() == 1 || settngPref.getLastReadSurah() == 9) {
+                        tvVerses.setText("Verse: " + (settngPref.getLastRead() + 1) + "," + reveledPlacesSurrah[settngPref.getLastReadSurah() - 1] + " ,Juz: " + juzModel.getParaId());
 
+                    } else {
+                        tvVerses.setText("Verse: " + (settngPref.getLastRead()) + "," + reveledPlacesSurrah[settngPref.getLastReadSurah() - 1] + " ,Juz: " + juzModel.getParaId());
+
+                    }
+                    tvMakkiMadni.setText("");
                 } else {
-                    tvVerses.setText("Verse: " + (settngPref.getLastRead()) + "," + reveledPlacesSurrah[settngPref.getLastReadSurah() - 1] + " ,Juz: " + juzModel.getParaId());
+                    if (settngPref.getLastReadSurah() == 1 || settngPref.getLastReadSurah() == 9) {
+                        tvVerses.setText("Verse: " + (settngPref.getLastRead() + 1) + "," + reveledPlacesSurrah[settngPref.getLastReadSurah() - 1]);
 
+                    } else {
+                        tvVerses.setText("Verse: " + (settngPref.getLastRead()) + "," + reveledPlacesSurrah[settngPref.getLastReadSurah() - 1]);
+
+                    }
+                    tvMakkiMadni.setText("");
                 }
-                tvMakkiMadni.setText("");
                 //  }
             } else {
                 //showShortToast(getString(R.string.last_read_not_saved), 500);
@@ -241,7 +252,7 @@ public class QuranListFragment extends Fragment implements OnClickListener, Text
     }
 
     private void sendAnalyticsData() {
-        AnalyticSingaltonClass.getInstance(mActivity.getBaseContext()).sendScreenAnalytics("Surahs Screen 4.0");
+        AnalyticSingaltonClass.getInstance(mActivity.getBaseContext()).sendScreenAnalytics("Surahs Screen");
     }
 
     @Override
@@ -300,6 +311,7 @@ public class QuranListFragment extends Fragment implements OnClickListener, Text
                 Intent end_actvty = new Intent(mActivity, QuranReadActivity.class);
                 end_actvty.putExtra(KEY_EXTRA_SURAH_NO, settngPref.getLastReadSurah());
                 end_actvty.putExtra(QuranReadActivity.KEY_EXTRA_AYAH_NO, settngPref.getLastRead());
+                end_actvty.putExtra(QuranReadActivity.KEY_EXTRA_IS_TOPIC,true);
                 startActivity(end_actvty);
             }
         } else {
@@ -341,7 +353,7 @@ public class QuranListFragment extends Fragment implements OnClickListener, Text
     }
 
     private void showSearchBar() {
-        CommunityGlobalClass.getInstance().sendAnalyticEvent("Quran","Quran Search Icon");
+        CommunityGlobalClass.getInstance().sendAnalyticEvent("Quran", "Quran Search Icon");
         showSoftKeyboard();
         layoutSearch.setVisibility(View.VISIBLE);
         layoutOptions.setVisibility(View.GONE);

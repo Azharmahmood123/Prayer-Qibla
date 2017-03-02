@@ -95,7 +95,7 @@ public class ComunityActivity extends AdIntegration2 {
                     CommunityGlobalClass.getInstance().sendAnalyticEvent("Community Prayer", "Add Prayer");
 
                     if (CommunityGlobalClass.mPrayerModel.size() > 1) {
-                        if (PrayerAdapter.clickingCounter == 3) {
+                        if ( CommunityGlobalClass.prayerCounter >= 3) {
                             if (CommunityGlobalClass.mSignInRequests == null) {
                                 startActivity(new Intent(ComunityActivity.this, LoginActivity.class));
                             } else {
@@ -103,7 +103,7 @@ public class ComunityActivity extends AdIntegration2 {
                                 startActivity(new Intent(ComunityActivity.this, PostActivity.class));
                             }
                         } else {
-                            CommunityGlobalClass.getInstance().showToast("Please Pray for " + (3 - PrayerAdapter.clickingCounter) + " other users to submit your own request to pray");
+                            CommunityGlobalClass.getInstance().showToast("Please Pray for " + (3 - CommunityGlobalClass.prayerCounter ) + " other users to submit your own request to pray");
                         }
                     } else {
                         if (CommunityGlobalClass.mSignInRequests == null) {

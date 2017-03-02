@@ -12,7 +12,6 @@ import android.content.DialogInterface.OnDismissListener;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AlertDialog;
@@ -50,13 +49,9 @@ import com.quranreading.sharedPreference.PrayerTimeSettingsPref;
 import java.util.HashMap;
 
 import duas.sharedprefs.DuasSharedPref;
-import noman.CommunityGlobalClass;
 import noman.quran.JuzConstant;
-import noman.quran.activity.QuranReadActivity;
 import noman.quran.activity.TextSettingScreen;
-import quran.sharedpreference.SurahsSharedPref;
-
-import static noman.quran.JuzConstant.juzzIndex;
+import noman.sharedpreference.SurahsSharedPref;
 
 public class SettingsActivity extends AppCompatActivity implements OnDailogButtonSelectionListner {
 
@@ -76,7 +71,7 @@ public class SettingsActivity extends AppCompatActivity implements OnDailogButto
     Context context = this;
 
     LocationPref locPref;
-    TextView[] settingsRowtexts = new TextView[24];
+    TextView[] settingsRowtexts = new TextView[25];
     int indexSoundOption = 0;
 
     Button btnTransprnt;
@@ -98,7 +93,7 @@ public class SettingsActivity extends AppCompatActivity implements OnDailogButto
     public static final int TRANSLITERATION_DUAS = 12;
     public static final int MANUAL_CORRECTIONS = 13;
     public static final int AUTO_EDIT_SETTINGS = 14;
-
+    public static final int LOC_DETECTION_METHOD = 18;
     private boolean inProcess = false;
 
     AppCompatCheckBox btnAutoSettings, btnDaylightSaving, btnTransliteration, btnAyahNotification, btnTransliterationDuas, btnTranslationDuas;
@@ -192,6 +187,15 @@ public class SettingsActivity extends AppCompatActivity implements OnDailogButto
         });
     }
 
+    public void initializeLocationDetectionSettings() {
+        TextView tv_lcation_method = (TextView) findViewById(R.id.tv_loc_method);
+        String[] stringArrayOption = getResources().getStringArray(R.array.array_location_method);
+        LocationPref locationPref = new LocationPref(this);
+        int option = locationPref.getLocationMethodPref();
+        tv_lcation_method.setText("" + stringArrayOption[option]);
+    }
+
+
     public void intializeViews() {
         Button btnResetAll;
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
@@ -229,9 +233,11 @@ public class SettingsActivity extends AppCompatActivity implements OnDailogButto
         settingsRowtexts[21] = (TextView) findViewById(R.id.tv_corrections_opt);
         settingsRowtexts[22] = (TextView) findViewById(R.id.tv_auto_selection_head);
         settingsRowtexts[23] = (TextView) findViewById(R.id.tv_auto_selection_opt);
+        settingsRowtexts[24]  = (TextView) findViewById(R.id.heading_loc_settings);
+
 
         for (int pos = 0; pos < settingsRowtexts.length; pos++) {
-            if (pos == 0 || pos == 11 || pos == 12 || pos == 16) {
+            if (pos == 0 || pos == 11 || pos == 12 || pos == 16 || pos == 24) {
                 settingsRowtexts[pos].setTypeface(((GlobalClass) getApplication()).faceRobotoB);
             } else {
                 settingsRowtexts[pos].setTypeface(((GlobalClass) getApplication()).faceRobotoR);
@@ -318,6 +324,16 @@ public class SettingsActivity extends AppCompatActivity implements OnDailogButto
                         btnAutoSettings.setChecked(true);
                         layoutSalatSettings.setVisibility(View.GONE);
                     }
+                    //Text of Autton settings
+                    TextView tvSettingsOff = (TextView) findViewById(R.id.tv_auto_setting_off);
+                    tvSettingsOff.setTypeface(((GlobalClass) getApplication()).faceRobotoR);
+                    if (layoutSalatSettings.getVisibility() == View.VISIBLE) {
+                        tvSettingsOff.setVisibility(View.VISIBLE);
+                    } else {
+                        tvSettingsOff.setVisibility(View.GONE);
+                    }
+
+// ********************************************
                 }
 
                 break;
@@ -469,10 +485,39 @@ public class SettingsActivity extends AppCompatActivity implements OnDailogButto
 
                 break;
 
+
+                case LOC_DETECTION_METHOD:
+
+                    locationDetectionSettingDialog();
+                break;
+
                 default:
                     return;
             }
         }
+    }
+
+    void locationDetectionSettingDialog() {
+        CharSequence[] array = getResources().getStringArray(R.array.array_location_method);
+        new AlertDialog.Builder(SettingsActivity.this, R.style.MyAlertDialogStyle)
+                .setTitle(getString(R.string.location_method))
+                .setSingleChoiceItems(array, locPref.getLocationMethodPref(), null)
+                .setPositiveButton(getString(R.string.okay), new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        dialog.dismiss();
+                        int selectedPosition = ((AlertDialog) dialog).getListView().getCheckedItemPosition();
+                        locPref.setLocationMethodPref(selectedPosition);
+                        initializeLocationDetectionSettings();
+
+                    }
+                }).setNegativeButton(getString(R.string.cancel),
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        dialog.dismiss();
+                    }
+                }
+        )
+                .show();
     }
 
     public void showDuaTranslationDialog() {
@@ -645,6 +690,7 @@ public class SettingsActivity extends AppCompatActivity implements OnDailogButto
 
 
     private void initializeSalatSettings() {
+
         chkDaylightSaving = salatSharedPref.isDaylightSaving();
 
         if (chkDaylightSaving) {
@@ -668,7 +714,12 @@ public class SettingsActivity extends AppCompatActivity implements OnDailogButto
 
     public void initializeSettings() {
 
+        //Detection Settings
+        initializeLocationDetectionSettings();
+
+
         chkAutoSettings = salatSharedPref.isAutoSettings();
+
         chkDaylightSaving = salatSharedPref.isDaylightSaving();
         chkTransliteration = mSurahsSharedPref.isTransliteration();
         chkAyahNotification = mSurahsSharedPref.isAyahNotification();
@@ -754,6 +805,18 @@ public class SettingsActivity extends AppCompatActivity implements OnDailogButto
         // initializeAudios();
 
         showManualCorrectionData();
+
+
+        //Text of Autton settings
+        TextView tvSettingsOff = (TextView) findViewById(R.id.tv_auto_setting_off);
+        tvSettingsOff.setTypeface(((GlobalClass) getApplication()).faceRobotoR);
+        if (layoutSalatSettings.getVisibility() == View.VISIBLE) {
+            tvSettingsOff.setVisibility(View.VISIBLE);
+        } else {
+            tvSettingsOff.setVisibility(View.GONE);
+        }
+
+
     }
 
     private void useOldAdhanSettings() {
@@ -807,7 +870,7 @@ public class SettingsActivity extends AppCompatActivity implements OnDailogButto
         mSurahsSharedPref.setLastSaveTransaltion(1);
         mSurahsSharedPref.setReadModeState(false);
         mSurahsSharedPref.setAyahNotification(false);
-
+        locPref.setLocationMethodPref(2);
         // locPref.setManualLocationOff();
         // initializeSettings();
 

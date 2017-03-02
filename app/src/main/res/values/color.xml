@@ -97,7 +97,7 @@
     <color name="color_tab_select">#797979</color>
     <color name="color_tab_unselect">#FFFFFF</color>
     <color name="header_text">#05CAC8</color>
-
+    <color name="color_search_button">#D64937</color>
     <color name="progress_primary_color">#3574A8</color>
 <!--My Implementation-->
 
@@ -117,7 +117,7 @@
 
     <color name="read_list_select">#EEEEEE</color><!--#B3E5FC-->
     <color name="transliration_color">#0077aa</color><!--009BDA-->
-
+    <color name="link_text_color">#3366BB</color><!--009BDA-->
 
     <!--My Implementation-->
 

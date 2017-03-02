@@ -21,6 +21,7 @@ public class AyahNotificationActivity extends Activity {
 
 		end_actvty.putExtra(QuranReadActivity.KEY_EXTRA_SURAH_NO, getIntent().getIntExtra(QuranReadActivity.KEY_EXTRA_SURAH_NO, -1));
 		end_actvty.putExtra(QuranReadActivity.KEY_EXTRA_AYAH_NO, getIntent().getIntExtra(QuranReadActivity.KEY_EXTRA_AYAH_NO, -1));
+		end_actvty.putExtra(QuranReadActivity.KEY_EXTRA_IS_TOPIC,true);
 		startActivity(end_actvty);
 
 		finish();

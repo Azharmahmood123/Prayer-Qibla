@@ -235,15 +235,15 @@ public class MinePrayerAdapter extends RecyclerView.Adapter<PrayerHolder> {
 
     private void shareMessage(String subject, String body) {
 
-        if (saveShareImage()) {
+       /* if (saveShareImage()) {
             shareAppWithAppIcon(subject, body);
-        } else {
+        } else {*/
             Intent shareIntent = new Intent(Intent.ACTION_SEND);
             shareIntent.setType("text/plain");
             shareIntent.putExtra(Intent.EXTRA_SUBJECT, subject);
             shareIntent.putExtra(Intent.EXTRA_TEXT, body);
             mActivity.startActivity(Intent.createChooser(shareIntent, "Share via"));
-        }
+       // }
     }
 
     private void shareAppWithAppIcon(String subject, String body) {

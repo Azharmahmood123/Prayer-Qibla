@@ -90,6 +90,7 @@ public class CommunityGlobalClass extends GlobalClass {
     public static PreLoadIntersitial mInterstitialAd;
     public static MainActivityNew mainActivityNew;
 
+    public static int prayerCounter=0;
 
 
 
@@ -376,6 +377,7 @@ public class CommunityGlobalClass extends GlobalClass {
                         if (!((GlobalClass) mainActivityNew.getApplicationContext()).isPurchase) {
                             mainActivityNew.sendBroadcast(new Intent(MainActivityNew.ACTION_INTERSTITIAL_ADS_SHOW));
                             CommunityGlobalClass.isAdAlreadyShow=true;
+                            Log.e("Ads","Display Intersitial");
                         }
                     }
                     handler.removeCallbacks(runnable);

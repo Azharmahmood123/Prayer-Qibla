@@ -14,6 +14,7 @@ import android.util.Log;
 import android.view.animation.Animation;
 import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.facebook.FacebookSdk;
 import com.facebook.appevents.AppEventsLogger;
@@ -23,18 +24,28 @@ import com.google.android.gms.ads.InterstitialAd;
 
 import com.quranreading.helper.DBManager;
 import com.quranreading.helper.MyService;
-import com.quranreading.sharedPreference.LocationPref;
+import com.quranreading.qibladirection.util.IabHelper;
+import com.quranreading.qibladirection.util.IabResult;
+import com.quranreading.qibladirection.util.Inventory;
+import com.quranreading.qibladirection.util.Purchase;
 import com.quranreading.sharedPreference.QiblaDirectionPref;
 
 import java.io.IOException;
+import java.nio.charset.Charset;
+import java.security.GeneralSecurityException;
+
+import javax.crypto.Cipher;
+import javax.crypto.spec.IvParameterSpec;
+import javax.crypto.spec.SecretKeySpec;
 
 import noman.Ads.PreLoadIntersitial;
 import noman.CommunityGlobalClass;
+import noman.Tasbeeh.activity.TasbeehListActivity;
 import noman.quran.dbconnection.DataBaseHelper;
 import quran.activities.ServiceClass;
 import quran.helper.DBManagerQuran;
 import quran.helper.FileUtils;
-import quran.sharedpreference.SurahsSharedPref;
+import noman.sharedpreference.SurahsSharedPref;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -70,6 +81,7 @@ public class SplashActivity extends AppCompatActivity {
             AppEventsLogger.activateApp(this);
         }
 
+        isAppPurchase();
 
         //Load Default Ad here
         CommunityGlobalClass.getInstance().mInterstitialAd = new PreLoadIntersitial(this);
@@ -282,7 +294,7 @@ public class SplashActivity extends AppCompatActivity {
         isShowInterstitial = false;
         myHandler.removeCallbacks(mRunnable);
 
-        Intent intent = new Intent(context, MainActivityNew.class);
+        Intent intent = new Intent(context, TasbeehListActivity.class);
         startActivity(intent);
         finish();
     }
@@ -339,4 +351,84 @@ public class SplashActivity extends AppCompatActivity {
         }
 
     }
+
+    public void isAppPurchase()
+    {
+        final IabHelper mHelper = new IabHelper(this, getValue());
+
+        mHelper.startSetup(new IabHelper.OnIabSetupFinishedListener() {
+            public void onIabSetupFinished(IabResult result) {
+                if(!result.isSuccess())
+                {
+                    return;
+                }
+                if(mHelper == null)
+                    return;
+
+                Log.e("Billing", "Setup successful. Querying inventory.");
+                mHelper.queryInventoryAsync(mGotInventoryListener);
+            }
+        });
+
+    }
+
+    private String getValue() {
+        String keyValue = "";
+
+        try
+        {
+            String key = "NinSolIslamicKey";
+
+            // String s = getString(R.string.key);
+            // byte[] ciphertext = encrypt(key, s);
+
+            byte[] theByteArray = { 29, -39, -49, 44, 58, 28, -121, -70, 94, 70, -3, 34, -50, -14, 29, -95, -15, 125, 90, -58, 16, -18, -17, -118, 16, 83, 99, 7, -21, 59, 57, -101, -30, -33, 42, 16, -86, 2, 125, 96, -118, 96, -94, -45, 40, 89, -71, -124, 89, -90, -8, 60, -52, 5, 66, -93, -111, 74,
+                    47, -59, -87, 72, -26, -4, 31, 11, 90, -80, -5, 70, -68, 81, -100, -40, 117, 47, 91, 37, -37, -23, -34, 70, 114, 100, -128, 95, 28, -28, -86, 96, 58, -10, -99, -29, 43, -3, -78, -25, -57, -77, 4, 70, 120, -16, 17, -8, 4, 42, 66, -73, 1, 11, -66, -39, 44, -56, -119, -50, -21, 87,
+                    -79, 104, -36, -8, 66, -107, -40, 14, -6, 103, 83, -60, 75, -18, -72, -35, 122, -47, 25, 89, -109, -82, 35, 76, 87, -10, 110, -114, -15, 41, -110, -71, 37, 99, 94, -87, -64, -29, 117, -66, -51, -25, -90, -56, -115, 102, 100, -61, -52, 80, -90, 127, 119, -15, -64, -45, -1, 78, 21,
+                    119, -7, 87, 126, -3, -86, -102, -27, -92, 1, -48, 42, -10, -125, 4, -1, 17, -46, -7, 36, -100, -53, 51, -14, 15, 24, -100, -56, 93, -6, 79, 5, 84, -27, 127, 117, -16, 71, -62, 39, -41, -124, 93, -4, 29, 37, -107, 5, -14, 36, -51, 9, 54, 121, -53, 26, 116, 36, 3, 112, -18, 86,
+                    -8, 47, -27, -91, 12, -33, 30, -110, 99, -59, -98, 57, 77, -96, -10, 34, 87, 80, 30, 104, -127, -16, -21, -17, 124, -9, 91, -4, 1, 13, -73, -26, -66, 18, 76, 119, 89, 107, -80, 93, -47, -89, 13, 59, -17, -19, 100, -80, -68, -128, -23, 40, 96, 58, -88, -10, 97, 78, -33, -45, -37,
+                    50, 68, 115, 47, 22, -29, -120, 61, -50, -84, -52, 32, -41, -93, 5, 124, 80, -83, -91, -43, -31, -27, -85, 1, 44, 111, -65, -88, 61, -22, -74, 65, -102, -50, -111, 16, 82, 3, -62, -3, -77, 14, -30, 48, 46, 95, -21, 120, -16, 72, -34, -56, 64, -75, -28, -111, -79, 73, -1, -82, 19,
+                    -55, 106, -50, -70, -89, 42, 71, 38, -72, 91, -14, 53, 23, 97, 59, -54, 62, -104, 75, -91, -52, 18, 12, -101, 26, 90, 109, -83, 77, -59, 83, -49, -17, 100, 67, -3, -115 };
+
+            byte[] raw = key.getBytes(Charset.forName("US-ASCII"));
+            if(raw.length != 16)
+            {
+                return keyValue;
+            }
+
+            SecretKeySpec skeySpec = new SecretKeySpec(raw, "AES");
+            Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
+            cipher.init(Cipher.DECRYPT_MODE, skeySpec, new IvParameterSpec(new byte[16]));
+            byte[] original = cipher.doFinal(theByteArray);
+            keyValue = new String(original, Charset.forName("US-ASCII"));
+            return keyValue;
+        }
+        catch (GeneralSecurityException e)
+        {
+            e.printStackTrace();
+            return keyValue;
+        }
+    }
+    IabHelper.QueryInventoryFinishedListener mGotInventoryListener = new IabHelper.QueryInventoryFinishedListener() {
+        public void onQueryInventoryFinished(IabResult result, Inventory inventory) {
+            String SKU_UNLOCK = "sku_unlock";
+            Purchase unlockPurchase = inventory.getPurchase(SKU_UNLOCK);
+            boolean isUpgrade = (unlockPurchase != null && verifyDeveloperPayload(unlockPurchase));
+            Log.e("Billing", "Kalmas " + (isUpgrade ? "Locked" : "Unlocked"));
+            if(isUpgrade)
+            {
+                Log.e("Billing", "Qibla is purchased");
+                Toast.makeText(SplashActivity.this,"APP is already purchased",Toast.LENGTH_LONG).show();
+                ((GlobalClass) getApplication()).isPurchase = true;
+                ((GlobalClass) getApplication()).purchasePref.setPurchased(true);
+            }
+        }
+    };
+
+    boolean verifyDeveloperPayload(Purchase p) {
+        String payload = p.getDeveloperPayload();
+        return true;
+    }
+
+
 }

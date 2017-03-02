@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="@dimen/_5sdp"
+    android:layout_marginRight="@dimen/_5sdp"
+    android:orientation="vertical"
+    android:splitMotionEvents="false"
+    app:cardCornerRadius="@dimen/_5sdp"
+    android:layout_marginTop="@dimen/_5sdp"
+    >
+    <LinearLayout
+        android:layout_height="match_parent"
+        android:layout_width="fill_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_width="match_parent"
+            android:text="@string/new_location_detected"
+            android:textColor="@color/ColorPrimary"
+            android:textSize="@dimen/_18sdp" />
+
+        <ImageView
+            android:gravity="center_horizontal"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_width="match_parent"
+            android:src="@drawable/ic_location_detection" />
+
+        <TextView
+
+            android:gravity="center"
+            android:id="@+id/text_locaiton_dectection_msg"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_8sdp"
+            android:layout_marginRight="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_width="match_parent"
+            android:text="New location message dialog"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sdp" />
+
+        <LinearLayout
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_3sdp"
+            android:layout_width="match_parent">
+
+            <android.support.v7.widget.AppCompatCheckBox
+                android:id="@+id/chk_dialog_loc"
+                android:layout_height="wrap_content"
+                android:layout_width="fill_parent"
+                android:text="@string/dont_show_msg_loc"
+                android:textColor="@color/black" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_weight="2"
+            android:orientation="horizontal"
+            android:gravity="right"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_width="match_parent">
+
+            <Button
+
+                android:background="@drawable/convert_btn_bg"
+                android:id="@+id/loc_no_btn"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="@string/no_thanks"
+                android:textAllCaps="false"
+                android:textColor="@drawable/converter_btn_text_color"
+                android:textSize="@dimen/_12sdp" />
+
+            <Button
+                android:background="@drawable/convert_btn_bg"
+                android:id="@+id/loc_yes_btn"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="@dimen/_50sdp"
+                android:text="@string/okay"
+                android:textAllCaps="false"
+                android:textColor="@drawable/converter_btn_text_color"
+                android:textSize="@dimen/_12sdp" />
+        </LinearLayout>
+    </LinearLayout>
+</android.support.v7.widget.CardView>

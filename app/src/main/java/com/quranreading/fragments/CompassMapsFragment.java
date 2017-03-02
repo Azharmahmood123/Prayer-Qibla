@@ -202,15 +202,21 @@ public class CompassMapsFragment extends Fragment implements OnMapReadyCallback,
 
 
         if (accelerometer == null && magnetometer == null) {
-//            tvWarning.setText(mContext.getResources().getString(R.string.cannot) + " " + mContext.getResources().getString(R.string.find_qibla_direction) + "\n" + mContext.getResources().getString(R.string.your_device_not_compatible));
+       //            tvWarning.setText(mContext.getResources().getString(R.string.cannot) + " " + mContext.getResources().getString(R.string.find_qibla_direction) + "\n" + mContext.getResources().getString(R.string.your_device_not_compatible));
 //            tvWarning.setVisibility(View.VISIBLE);
+         //   tvDistance.setText(mContext.getResources().getString(R.string.cannot) + " " + mContext.getResources().getString(R.string.find_qibla_direction) + "." + mContext.getResources().getString(R.string.your_device_not_compatible));
+         //   tvDistance.setTextSize(getResources().getDimension(R.dimen._6sdp));
         } else if (accelerometer == null) {
 //            tvWarning.setText(mContext.getResources().getString(R.string.cannot) + " " + mContext.getResources().getString(R.string.find_qibla_direction) + "\n" + mContext.getResources().getString(R.string.your_device_not_compatible));
 //            tvWarning.setVisibility(View.VISIBLE);
+          //  tvDistance.setText(mContext.getResources().getString(R.string.cannot) + " " + mContext.getResources().getString(R.string.find_qibla_direction) + "." + mContext.getResources().getString(R.string.your_device_not_compatible));
+          //  tvDistance.setTextSize(getResources().getDimension(R.dimen._6sdp));
 
         } else if (magnetometer == null) {
 //            tvWarning.setText(mContext.getResources().getString(R.string.cannot) + " " + mContext.getResources().getString(R.string.find_qibla_direction) + "\n" + mContext.getResources().getString(R.string.your_device_not_compatible));
 //            tvWarning.setVisibility(View.VISIBLE);
+           // tvDistance.setText(mContext.getResources().getString(R.string.cannot) + " " + mContext.getResources().getString(R.string.find_qibla_direction) + "." + mContext.getResources().getString(R.string.your_device_not_compatible));
+            //tvDistance.setTextSize(getResources().getDimension(R.dimen._6sdp));
         } else {
             mSensorManager.unregisterListener(mMagAccel);
             mSensorManager.registerListener(mMagAccel, accelerometer, SensorManager.SENSOR_DELAY_GAME);
@@ -259,15 +265,19 @@ public class CompassMapsFragment extends Fragment implements OnMapReadyCallback,
 
 
 
-        currentLat = Double.parseDouble(locationPref.getLatitudeCurrent());
-       currentLng = Double.parseDouble(locationPref.getLongitudeCurrent());
+       currentLat = Double.parseDouble(locationPref.getLatitudeCurrent());
+         currentLng = Double.parseDouble(locationPref.getLongitudeCurrent());
 
-
+     // currentLat= 40.71375;
+      // currentLng=-74.0061631;
 
         currentLocation = new LatLng(currentLat, currentLng);
 
         String calcDistance = locationPref.getDistance();
+
+      //  if(accelerometer != null && magnetometer != null)
         tvDistance.setText(getResources().getString(R.string.distance_from_qibla) + " " + calcDistance + " KM");
+
 
 
         qiblaLocation = new LatLng(makkahLatitude, makkahLongitude);

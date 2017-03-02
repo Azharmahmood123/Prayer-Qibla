@@ -30,7 +30,6 @@ import com.quranreading.ads.AnalyticSingaltonClass;
 import com.quranreading.model.GridItems;
 import com.quranreading.qibladirection.CompassActivity;
 import com.quranreading.qibladirection.GlobalClass;
-import com.quranreading.qibladirection.MainActivityNew;
 import com.quranreading.qibladirection.R;
 import com.quranreading.qibladirection.SettingsActivity;
 import com.quranreading.qibladirection.TimingsActivity;
@@ -41,8 +40,9 @@ import names.activities.NamesListPlayingActivity;
 import noman.community.activity.ComunityActivity;
 import noman.hijri.acitivity.CalenderActivity;
 import noman.quran.QuranModuleActivity;
+import noman.quran.TopicActivity;
 import places.activities.PlacesListActivity;
-import quran.sharedpreference.SurahsSharedPref;
+import noman.sharedpreference.SurahsSharedPref;
 
 /**
  * Created by cyber on 11/30/2016.
@@ -54,16 +54,13 @@ public class MenuGridItemFragment extends Fragment {
     public static final int MENU_QIBLA_MAP_DIRECION = 1;
     public static final int MENU_QURAN = 2;
     public static final int MENU_COMMUNITY = 3;
-
-    public static final int MENU_NAMES = 4;
+    public static final int MENU_SEARCH_QURAN = 4;
     public static final int MENU_HIJRI = 5;
     public static final int MENU_MOSQUES = 6;
- /*   public static final int MENU_REMOVE_ADS = 5;*/
-
     public static final int MENU_HALAL = 7;
-
     public static final int MENU_DUAS = 8;
-    public static final int MENU_SETTINGS = 9;
+    public static final int MENU_NAMES = 9;
+    public static final int MENU_SETTINGS = 10;
 
 
     public static final String GRID_ITEMS = "grid_items";
@@ -147,10 +144,10 @@ public class MenuGridItemFragment extends Fragment {
 
             switch (pos) {
                 case MENU_TIMINGS:
-                    LocationPref  locationPref = new LocationPref(getActivity());
-                     if (!locationPref.isFirstSalatLaunch()) { //beacuse dialog apper on the intersitial  which is setAalarm
-                         
-                     }
+                    LocationPref locationPref = new LocationPref(getActivity());
+                    if (!locationPref.isFirstSalatLaunch()) { //beacuse dialog apper on the intersitial  which is setAalarm
+
+                    }
                     intent = new Intent(mContext, TimingsActivity.class);
                     startActivity(intent);
                     break;
@@ -257,10 +254,15 @@ public class MenuGridItemFragment extends Fragment {
                     startActivity(intent);
                     break;
 
-             /*   case MENU_REMOVE_ADS:
-                    intent = new Intent(mContext, UpgradeActivity.class);
+                case MENU_SEARCH_QURAN:
+
+                    if (mSurahsSharedPref.getIsFirstTimeSearchOpen()) {
+                        mSurahsSharedPref.setIsFirstTimeSearchOpen(false);
+                    }
+                    intent = new Intent(mContext, TopicActivity.class);
+                  //  intent = new Intent(mContext, SearchQuranResultActivity.class);
                     startActivity(intent);
-                    break;*/
+                    break;
 
 //            case MENU_ABOUT_US:
 //                intent = new Intent(mContext, AboutInstructionActivity.class);
@@ -279,9 +281,9 @@ public class MenuGridItemFragment extends Fragment {
         Context context;
         int images[] = {
                 R.drawable.grid_bg_timings, R.drawable.grid_bg_direction, R.drawable.grid_bg_quran,
-                R.drawable.grid_bg_old_community, R.drawable.grid_bg_names, R.drawable.grid_bg_calendar,
+                R.drawable.grid_bg_old_community,R.drawable.grid_bg_search, R.drawable.grid_bg_calendar,
                 R.drawable.grid_bg_mosque, R.drawable.grid_bg_halal, R.drawable.grid_bg_duas,
-                R.drawable.grid_bg_settings};
+                R.drawable.grid_bg_names, R.drawable.grid_bg_settings, };
 
 
         public class ViewHolder {
@@ -379,23 +381,30 @@ public class MenuGridItemFragment extends Fragment {
                 viewHolder.textTitle.setTextSize(12);
             }
             viewHolder.imageView.setImageResource(images[pos]);
-            if (pos == 3) {//Compuntiy
+           /* if (pos == MENU_COMMUNITY) {//Compuntiy
                 if (mSurahsSharedPref.getIsFirstTimeCommunityOpen()) {
                     viewHolder.imageView.setImageResource(R.drawable.grid_bg_community);
                 }
             }
-            if (pos == 4) {//Names
+            if (pos == MENU_NAMES) {//Names
                 if (mSurahsSharedPref.getIsFirstTimeNamesOpen()) {
                     viewHolder.imageView.setImageResource(R.drawable.grid_names_new);
                 }
 
             }
-            if (pos == 5) {//Hijri
+            if (pos == MENU_HIJRI) {//Hijri
                 if (mSurahsSharedPref.getIsFirstTimeHijriOpen()) {
                     viewHolder.imageView.setImageResource(R.drawable.grid_hijri_new);
                 }
 
             }
+
+            if (pos == MENU_SEARCH_QURAN) {//Search Quran
+                if (mSurahsSharedPref.getIsFirstTimeSearchOpen()) {
+                    viewHolder.imageView.setImageResource(R.drawable.grid_ic_search_new);
+                }
+            }*/
+
 
 
             //    viewHolder.imageView.setImageResource(images[pos]);
@@ -461,7 +470,7 @@ public class MenuGridItemFragment extends Fragment {
                     Intent intent = new Intent(mContext, PlacesListActivity.class);
                     intent.putExtra(PlacesListActivity.EXTRA_PLACE_TYPE, type);
                     startActivity(intent);
-                  
+
 
                 } else {
                     providerAlertMessage();

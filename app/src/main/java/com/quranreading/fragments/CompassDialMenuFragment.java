@@ -1,10 +1,12 @@
 package com.quranreading.fragments;
 
+import android.app.Dialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.graphics.drawable.ColorDrawable;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import android.os.Bundle;
@@ -22,6 +24,8 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.RotateAnimation;
+import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
@@ -29,7 +33,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.quranreading.ads.AnalyticSingaltonClass;
 import com.quranreading.helper.ManualDialogCustom;
 import com.quranreading.helper.UserLocation;
 import com.quranreading.listeners.MagAccelListener;
@@ -70,8 +73,8 @@ public class CompassDialMenuFragment extends Fragment implements RotationUpdateD
     private SensorManager mSensorManager;
     private static ImageView imagePointer;
     private static int imgPointerResrc = 0;
-    private Sensor accelerometer, magnetometer;
-    private TextView  tvDegree, tvWarning;
+    public  Sensor accelerometer, magnetometer;
+    private TextView tvDegree, tvWarning;
     private LinearLayout lacationNameLayout;
     private boolean locChk = false, chkBlankPin = false;
     private float degree2 = 0, currentDegree = 0f, currentDegree2 = 0f, currentDegree3 = 0f;
@@ -81,6 +84,7 @@ public class CompassDialMenuFragment extends Fragment implements RotationUpdateD
 
     MainActivityNew mActivity;
     public static TextView tvCity;
+
     @Override
     public void onAttach(Context context) {
         // TODO Auto-generated method stub
@@ -125,8 +129,8 @@ public class CompassDialMenuFragment extends Fragment implements RotationUpdateD
             // Samsung S3 && s4 etc.
             rootView = inflater.inflate(R.layout.fragment_compass_index_s3, container, false);
         } else {*/
-            rootView = inflater.inflate(R.layout.fragment_compass_index_s3, container, false);
-       // }
+        rootView = inflater.inflate(R.layout.fragment_compass_index_s3, container, false);
+        // }
 
         lacationNameLayout = (LinearLayout) rootView.findViewById(R.id.layout_locationCompass);
         tvCity = (TextView) rootView.findViewById(R.id.tv_city);
@@ -204,7 +208,7 @@ public class CompassDialMenuFragment extends Fragment implements RotationUpdateD
     }
 
     private void sendAnalyticsData() {
-      //  AnalyticSingaltonClass.getInstance(mActivity.getBaseContext()).sendScreenAnalytics("Qibla Direction Screen");
+        //  AnalyticSingaltonClass.getInstance(mActivity.getBaseContext()).sendScreenAnalytics("Qibla Direction Screen");
     }
 
     @Override
@@ -623,7 +627,20 @@ public class CompassDialMenuFragment extends Fragment implements RotationUpdateD
     @Override
     public void onNewLocationDetected(String newCityName, String oldCityName, double latitude, double longitude) {
 
-        showNewLocationAlert(newCityName, oldCityName, latitude, longitude);
+        //   showNewLocationAlert(newCityName, oldCityName, latitude, longitude);
+
+        if (locationPref.getLocationMethodPref() == 2) {
+            showNewAlertLocationDialog(newCityName, oldCityName, latitude, longitude);
+        } else if (locationPref.getLocationMethodPref() ==0) {
+            onLocationSet(newCityName, latitude, longitude);
+        } else {
+            String city = locationPref.getCityName();
+            double lat = Double.parseDouble(locationPref.getLatitude());
+            double lng = Double.parseDouble(locationPref.getLongitude());
+            onLocationSet(city, lat, lng);
+
+        }
+
     }
 
     private void showNewLocationAlert(final String newCityName, String oldCityName, final double latitude, final double longitude) {
@@ -650,6 +667,7 @@ public class CompassDialMenuFragment extends Fragment implements RotationUpdateD
                 double lat = Double.parseDouble(locationPref.getLatitude());
                 double lng = Double.parseDouble(locationPref.getLongitude());
                 onLocationSet(city, lat, lng);
+
 
                 dialog.dismiss();
             }
@@ -678,7 +696,55 @@ public class CompassDialMenuFragment extends Fragment implements RotationUpdateD
         alertProvider.show();
     }
 
+    private void showNewAlertLocationDialog(final String newCityName, String oldCityName, final double latitude, final double longitude) {
+
+        Spanned message = Html.fromHtml(getString(R.string.new_location_detected_msg1) + " <b>" + oldCityName + "</b> " + getString(R.string.to) + " <b>" + newCityName + "</b> " + getString(R.string.and) + " " + getString(R.string.new_location_detected_msg2) + "?");
+
+        // custom dialog
+        final Dialog dialog = new Dialog(mActivity, R.style.MyAlertDialogStyle);
+
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
+        dialog.setContentView(R.layout.custom_loc_dialog);
+
+        dialog.setTitle(getString(R.string.new_location_detected));
+        TextView msgText = (TextView) dialog.findViewById(R.id.text_locaiton_dectection_msg);
+        msgText.setText(message);
+        dialog.setCancelable(false);
+        final CheckBox checkBox = (CheckBox) dialog.findViewById(R.id.chk_dialog_loc);
+        Button dialogYesButton = (Button) dialog.findViewById(R.id.loc_yes_btn);
+        dialogYesButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+                if (checkBox.isChecked()) {
+                    locationPref.setLocationMethodPref(0);
+                }
+
+                onLocationSet(newCityName, latitude, longitude);
+            }
+        });
+
+        Button dialogNoButton = (Button) dialog.findViewById(R.id.loc_no_btn);
+        dialogNoButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+                if (checkBox.isChecked()) {
+                    locationPref.setLocationMethodPref(1);
+                }
+                progressBar.setVisibility(View.GONE);
+                String city = locationPref.getCityName();
+                double lat = Double.parseDouble(locationPref.getLatitude());
+                double lng = Double.parseDouble(locationPref.getLongitude());
+                onLocationSet(city, lat, lng);
+            }
+        });
+        dialog.show();
+    }
+
+
     private void saveLatestLocation(String address, String lat, String lng) {
+
         locationPref.setLocation(address, lat, lng);
     }
 }

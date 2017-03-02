@@ -15,7 +15,7 @@ import java.util.List;
 
 import noman.quran.JuzConstant;
 import noman.quran.holder.LanguageHolder;
-import quran.sharedpreference.SurahsSharedPref;
+import noman.sharedpreference.SurahsSharedPref;
 
 /**
  * Created by Administrator on 1/3/2017.

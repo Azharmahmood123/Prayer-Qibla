@@ -12,7 +12,6 @@ import android.text.Html;
 import android.text.Spannable;
 import android.text.SpannableStringBuilder;
 import android.text.style.ForegroundColorSpan;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -35,13 +34,12 @@ import java.util.List;
 import noman.CommunityGlobalClass;
 import noman.quran.JuzConstant;
 import noman.quran.activity.QuranReadActivity;
-import noman.quran.activity.TextSettingScreen;
 import noman.quran.dbmanager.JuzDataManager;
 import noman.quran.model.JuzModel;
 import quran.arabicutils.ArabicUtilities;
 import quran.helper.DBManagerQuran;
 import quran.model.SurahModel;
-import quran.sharedpreference.SurahsSharedPref;
+import noman.sharedpreference.SurahsSharedPref;
 
 import static android.text.Html.fromHtml;
 
@@ -207,7 +205,7 @@ public class QuranReadListAdapter extends BaseAdapter {
         mContext.tvJuzNumber.setText("Juz: " + juzModelList.get(position).getParaId());
 
         int juzIndex = surahList.get(position).getJuzzIndex();
-        int paraIndex = surahList.get(position).getParaIndex();
+       // int paraIndex = surahList.get(position).getParaIndex();
         if (juzIndex > -1) {
 
             holder.continerJuzzTitle.setVisibility(View.VISIBLE);

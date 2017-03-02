@@ -83,7 +83,6 @@ public class SettingsPrayerListSoundActivity extends AppCompatActivity implement
             }
         });
         TextView tvHeading = (TextView) findViewById(R.id.txt_toolbar);
-        tvHeading.setText(R.string.settings);
 
         tvHeading.setText(R.string.tone_settings);
 
@@ -120,7 +119,7 @@ public class SettingsPrayerListSoundActivity extends AppCompatActivity implement
 
         String[] methodNames = {getString(R.string.txt_fajr), getString(R.string.txt_sunrise), getString(R.string.txt_zuhr), getString(R.string.txt_asar), getString(R.string.txt_maghrib), getString(R.string.txt_isha)};
 
-        String[] soundOption = {getResources().getString(R.string.default_tone), getResources().getString(R.string.silent), getResources().getString(R.string.adhan1_new), getResources().getString(R.string.adhan2_new), getResources().getString(R.string.adhan3_new), getResources().getString(R.string.adhan4_new), getResources().getString(R.string.adhan5_new), getResources().getString(R.string.adhan6_new), getResources().getString(R.string.adhan7_new)};
+        String[] soundOption = {getResources().getString(R.string.default_tone), getResources().getString(R.string.silent), getResources().getString(R.string.adhan1_new), getResources().getString(R.string.adhan3_new),getResources().getString(R.string.adhan2_new),  getResources().getString(R.string.adhan4_new), getResources().getString(R.string.adhan5_new), getResources().getString(R.string.adhan6_new), getResources().getString(R.string.adhan7_new)};
         String[] alarmTones = new String[6];
 
         AlarmSharedPref alarmObj = new AlarmSharedPref(this);

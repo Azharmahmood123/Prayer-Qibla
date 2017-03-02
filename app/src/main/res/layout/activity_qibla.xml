@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:background="@color/color_background"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/color_background">
 
     <include
         android:id="@+id/toolbar"
         layout="@layout/toolbar_qibla" />
 
     <LinearLayout
-        android:layout_below="@id/toolbar"
+        android:layout_above="@+id/ads_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
         android:orientation="vertical">
 
 
@@ -38,35 +39,35 @@
             </FrameLayout>
         </LinearLayout>
 
-        <RelativeLayout
-            android:id="@+id/ads_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true">
 
-            <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
-                android:id="@+id/adView"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layerType="software"
-                ads:adSize="SMART_BANNER"
-                ads:adUnitId="@string/admob_id" />
-
-            <ImageView
-                android:id="@+id/adimg"
-                android:layout_width="fill_parent"
-                android:layout_height="@dimen/size_fourty_eight"
-                android:adjustViewBounds="true"
-                android:clickable="true"
-                android:contentDescription="@string/img_desrcptn"
-                android:onClick="onClickAdImage"
-                android:scaleType="fitXY"
-                android:src="@drawable/adbanner1" />
-        </RelativeLayout>
 
     </LinearLayout>
 
+    <RelativeLayout
+        android:id="@+id/ads_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
 
+        <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/adView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layerType="software"
+            ads:adSize="SMART_BANNER"
+            ads:adUnitId="@string/admob_id" />
+
+        <ImageView
+            android:id="@+id/adimg"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/size_fourty_eight"
+            android:adjustViewBounds="true"
+            android:clickable="true"
+            android:contentDescription="@string/img_desrcptn"
+            android:onClick="onClickAdImage"
+            android:scaleType="fitXY"
+            android:src="@drawable/adbanner1" />
+    </RelativeLayout>
     <RelativeLayout
         android:id="@+id/calibration_layout"
         android:layout_width="match_parent"
@@ -95,15 +96,15 @@
                 android:text="@string/txt_accurate_direction"
                 android:textColor="@color/white"
                 android:textSize="@dimen/text_size_twenty_two"
-                android:visibility="gone"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:visibility="gone" />
 
             <RelativeLayout
                 android:id="@+id/layout_calib_1"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:visibility="gone"
-                android:layout_weight="0.8">
+                android:layout_weight="0.8"
+                android:visibility="gone">
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -120,10 +121,10 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:padding="@dimen/size_ten"
-                android:visibility="gone"
                 android:text="@string/calibration_txt_shake"
                 android:textColor="@color/white"
-                android:textSize="@dimen/text_size_eighteen" />
+                android:textSize="@dimen/text_size_eighteen"
+                android:visibility="gone" />
 
             <View
                 android:layout_width="match_parent"
@@ -163,8 +164,8 @@
             <RelativeLayout
                 android:id="@+id/layout_calib_4"
                 android:layout_width="match_parent"
-                android:visibility="gone"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:visibility="gone">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -187,8 +188,8 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:visibility="gone"
-                android:layout_weight="0.4" />
+                android:layout_weight="0.4"
+                android:visibility="gone" />
         </LinearLayout>
     </RelativeLayout>
 

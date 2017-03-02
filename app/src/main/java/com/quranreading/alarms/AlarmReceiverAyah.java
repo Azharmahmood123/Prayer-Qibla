@@ -22,7 +22,7 @@ import android.support.v4.app.TaskStackBuilder;
 import android.util.Log;
 import quran.activities.SurahActivity;
 import quran.adapter.XMLParser;
-import quran.sharedpreference.SurahsSharedPref;
+import noman.sharedpreference.SurahsSharedPref;
 
 public class AlarmReceiverAyah extends BroadcastReceiver {
 

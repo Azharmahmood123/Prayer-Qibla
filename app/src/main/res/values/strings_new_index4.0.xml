@@ -16,12 +16,13 @@
     <string name="grid_direction">Visual Qibla</string>
     <string name="grid_hijri">Hijri</string>
     <string name="grid_mosque">Find Mosques</string>
-    <string name="grid_premium">PREMIUM</string>
+    <string name="grid_search">Search Quran</string>
     <string name="grid_community">Community</string>
     <string name="grid_halal">Halal Finder</string>
     <string name="grid_names">Allah Names</string>
     <string name="grid_duas">Duas</string>
     <string name="grid_settings">Settings</string>
+    <string name="grid_tasbeeh">Tasbeeh</string>
 
     <string name="notificaion_time">Notification Time</string>
     <string name="notification_sound">Notification Sound</string>
@@ -125,5 +126,19 @@
     <string name="txt_duas_title">Select Translation</string>
     <string name="txt_urdu">Urdu</string>
     <string name="txt_eng">English</string>
+
+
+    <string name="txt_auto_setting_off">Recommended to turn Auto Settings \'ON\' for accurate Salat timings.</string>
+    <string name="location_settings">Location</string>
+    <string name="location_method">Location Detection Method</string>
+    <string name="dont_show_msg_loc">Don\'t show message again</string>
+
+    <string-array name="array_location_method">
+
+        <item>Update location automatically every time when new location detected</item>
+        <item>Don\'t update location automatically every time when new location detected</item>
+        <item>Always ask for my preference whenever new location detected</item>
+    </string-array>
+
 
 </resources>

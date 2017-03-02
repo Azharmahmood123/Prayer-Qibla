@@ -100,7 +100,7 @@
     <string name="english_pronounce"> ภาษาอังกฤษออกเสียง </string>
     <string name="logout_dialog"> เป็นคุณแน่ใจหรือว่าต้องการออกจากระบบ?</string>
     <string name="logout_title"> ออกจากระบบ </string>
-    <string name="laguage_alert_dialog"> มันจะเปลี่ยนภาษาของ app ของคุณทั้งหมดยกเว้นุมนและ 99 name คุณแน่ใจหรือว่าต้องการลบ?</string>
+    <string name="laguage_alert_dialog"> มันจะเปลี่ยนภาษาของ app ของคุณทั้งหมดยกเว้นุมนและ nameอัลลอ คุณแน่ใจหรือว่าต้องการลบ?</string>
 
     <string name="txt_font_size"> ขนาดตัวอักษร </string>
     <string name="txt_read_mode_off"> โหมดอ่านปิด </string>

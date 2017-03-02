@@ -77,7 +77,7 @@ import quran.adapter.XMLParser;
 import quran.helper.DBManagerQuran;
 import quran.helper.FileUtils;
 import quran.model.SurahModel;
-import quran.sharedpreference.SurahsSharedPref;
+import noman.sharedpreference.SurahsSharedPref;
 
 import static noman.quran.JuzConstant.juzzIndex;
 
@@ -86,6 +86,8 @@ public class QuranReadActivity extends AppCompatActivity implements OnCompletion
     private static final String RECITER_MP3 = "_a.mp3";
     public static final String KEY_EXTRA_SURAH_NO = "surah_no";
     public static final String KEY_EXTRA_AYAH_NO = "ayah_no";
+    public static final String KEY_EXTRA_IS_TOPIC = "istopic";
+
     public static final int requestDownload = 1;
 
     private static final int LANGUAGE_Off = 0;
@@ -261,7 +263,7 @@ public class QuranReadActivity extends AppCompatActivity implements OnCompletion
 
         ((GlobalClass) getApplication()).ayahPos = getIntent().getIntExtra(KEY_EXTRA_AYAH_NO, 0);
 
-        if (surahNumber == 9) {
+        if (surahNumber == 9 && !getIntent().getBooleanExtra(KEY_EXTRA_IS_TOPIC, false)) {
             ((GlobalClass) getApplication()).ayahPos = 93;//Because we had increse the postion of surah bissmilah is not in this surrah
         }
 
@@ -292,7 +294,7 @@ public class QuranReadActivity extends AppCompatActivity implements OnCompletion
 
         telephonyCheck();
 
-        AnalyticSingaltonClass.getInstance(this).sendScreenAnalytics("Quran Playing Screen 4.0");
+        AnalyticSingaltonClass.getInstance(this).sendScreenAnalytics("Quran Playing Screen");
         startAsyncTask(false);
 
         relContanerJuzIndex.setOnClickListener(new View.OnClickListener() {
@@ -620,13 +622,14 @@ public class QuranReadActivity extends AppCompatActivity implements OnCompletion
             for (int i = 0; i < 30; i++) {
                 if (JuzConstant.juzAyahNumber[i] == pos && JuzConstant.juzSurrahNumber[i] == surahNumber) {
                     model.setJuzzIndex(pos);
-                    int[][] juzzIndex = JuzConstant.juzzIndex;
+                   /* int[][] juzzIndex = JuzConstant.juzzIndex;
                     for (int ii = 0; ii < 30; ii++) {
                         int[] selectedArray = juzzIndex[ii];
                         if (selectedArray[0] == surahNumber && selectedArray[1] == pos) {
                             model.setParaIndex(ii);
                         }
-                    }
+                    }*/
+
                 }
 
             }

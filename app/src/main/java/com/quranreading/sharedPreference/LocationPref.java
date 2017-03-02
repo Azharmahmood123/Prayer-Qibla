@@ -39,11 +39,26 @@ public class LocationPref {
     public static final String CURRENT_LOCATION = "current_location";
     public static final String FIRST_TIME_APP_LAUNCH = "first_time_app";
 
+    public static final String LOCATION_METHOD_OPTION = "loc_method_detection";
+
+
     public LocationPref(Context context) {
         this._context = context;
         pref = _context.getSharedPreferences(PREF_NAME, PRIVATE_MODE);
         editor = pref.edit();
     }
+
+    //lOCATION DETECTION DIALOG OPTION SELECTION ALWAYS
+    public void setLocationMethodPref(int option) {
+        editor.putInt(LOCATION_METHOD_OPTION, option);
+        editor.commit();
+    }
+
+    public int getLocationMethodPref() {
+        return pref.getInt(LOCATION_METHOD_OPTION, 2);
+    }
+
+///***************************
 
 
     public void setFirstTimeAppLaunch() {
@@ -54,9 +69,6 @@ public class LocationPref {
     public boolean isFirstTimeAppLaunch() {
         return pref.getBoolean(FIRST_TIME_APP_LAUNCH, true);
     }
-
-
-
 
 
     public void setLocation(String city, /* String country, */ String latd, String longit/* , String timezone */) {

@@ -19,7 +19,7 @@ import noman.CommunityGlobalClass;
 import noman.quran.JuzConstant;
 import noman.quran.adapter.LanguageListAdapter;
 import quran.arabicutils.ArabicUtilities;
-import quran.sharedpreference.SurahsSharedPref;
+import noman.sharedpreference.SurahsSharedPref;
 
 /**
  * Created by Administrator on 1/3/2017.

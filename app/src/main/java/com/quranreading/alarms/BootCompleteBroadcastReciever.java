@@ -11,7 +11,7 @@ import com.quranreading.sharedPreference.TimeEditPref;
 import java.util.Calendar;
 import java.util.HashMap;
 
-import quran.sharedpreference.SurahsSharedPref;
+import noman.sharedpreference.SurahsSharedPref;
 
 public class BootCompleteBroadcastReciever extends BroadcastReceiver {
 

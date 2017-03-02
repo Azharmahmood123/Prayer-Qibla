@@ -34,7 +34,7 @@ import quran.activities.SajdasActivity;
 import quran.activities.StopSignsActivity;
 import quran.activities.SurahActivity;
 import quran.model.IndexListModel;
-import quran.sharedpreference.SurahsSharedPref;
+import noman.sharedpreference.SurahsSharedPref;
 
 public class SurahListFragment extends Fragment implements OnClickListener, TextWatcher {
 

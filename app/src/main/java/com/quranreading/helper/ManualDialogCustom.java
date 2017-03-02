@@ -13,8 +13,10 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.telephony.TelephonyManager;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.View;
@@ -36,6 +38,7 @@ import com.quranreading.listeners.OnCurrentLocationFoundListner;
 import com.quranreading.listeners.OnLocationSetListner;
 import com.quranreading.qibladirection.ManualLocationDialog;
 import com.quranreading.qibladirection.R;
+import com.quranreading.sharedPreference.LocationPref;
 
 import noman.CommunityGlobalClass;
 
@@ -189,16 +192,18 @@ public class ManualDialogCustom extends Dialog implements OnCurrentLocationFound
                             }
                         }
 
-                        CommunityGlobalClass.getInstance().sendAnalyticEvent("Location 4.0","Manual Location");
+                        CommunityGlobalClass.getInstance().sendAnalyticEvent("Location 4.0", "Manual Location");
 
                     } else {
                         hideKeyboard();
                         ManualDialogCustom.this.dismiss();
                         if (!cityName.isEmpty()) {
+
+
                             mOnLocationSetListner.onLocationSet(cityName, latitude, longitude);
                         }
 
-                        CommunityGlobalClass.getInstance().sendAnalyticEvent("Location 4.0","Current Location");
+                        CommunityGlobalClass.getInstance().sendAnalyticEvent("Location 4.0", "Current Location");
                     }
                     break;
                 case R.id.dialog_cancel:
@@ -431,6 +436,10 @@ public class ManualDialogCustom extends Dialog implements OnCurrentLocationFound
             cityName = Address;
             this.latitude = latitude;
             this.longitude = longitude;
+
+
         }
     }
+
+
 }

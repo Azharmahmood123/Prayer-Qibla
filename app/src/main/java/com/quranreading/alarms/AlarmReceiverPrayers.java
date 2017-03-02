@@ -119,7 +119,7 @@ public class AlarmReceiverPrayers extends BroadcastReceiver {
 //                uriAudio = "azan_" + (indexSoundOption - 1);
 //            }
 
-            String[] adhanSounds = {"adhan_fajr_madina", "most_popular_adhan", "adhan_from_egypt", "adhan_madina", "azan_by_nasir_a_qatami", "azan_mansoural_zahrani", "mishary_rashid_al_afasy"};
+            String[] adhanSounds = {"adhan_fajr_madina","adhan_madina", "most_popular_adhan" , "azan_by_nasir_a_qatami", "azan_mansoural_zahrani", "mishary_rashid_al_afasy","adhan_from_egypt"};
 
             uriAudio = adhanSounds[indexSoundOption - 2];
 
@@ -130,6 +130,7 @@ public class AlarmReceiverPrayers extends BroadcastReceiver {
 
         if (uri != null) {
             mBuilder.setSound(uri);
+
         }
         mNotificationManager.notify(notificationID, mBuilder.build());
     }

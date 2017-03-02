@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="no_topic_found">No Topic Found</string>
+    <string name="text_verse_no">Verse</string>
+    <string name="text_search_hint_topic">Search Topics</string>
+    <string name="text_search_quran">Search from Quran</string>
+    <string name="text_common_topic">Common Topics</string>
+    <string name="text_search">Search</string>
+    <string name="no_text_search">Please enter word to search</string>
+    <string name="no_result_quran">No word found in Quran</string>
+</resources>

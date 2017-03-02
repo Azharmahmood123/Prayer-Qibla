@@ -42,7 +42,7 @@ public class SettingsTimeAlarmActivity extends AppCompatActivity implements Medi
     int value = 0;
     int indexSoundOption = 0;
 
-    int[] adhanSounds = {R.raw.adhan_fajr_madina, R.raw.most_popular_adhan, R.raw.adhan_from_egypt, R.raw.adhan_madina, R.raw.azan_by_nasir_a_qatami, R.raw.azan_mansoural_zahrani, R.raw.mishary_rashid_al_afasy};
+    int[] adhanSounds = {R.raw.adhan_fajr_madina, R.raw.adhan_madina, R.raw.most_popular_adhan,  R.raw.azan_by_nasir_a_qatami, R.raw.azan_mansoural_zahrani, R.raw.mishary_rashid_al_afasy,R.raw.adhan_from_egypt};
 
     private boolean[] chkPlay = new boolean[7];
     private ImageView[] btnPlay = new ImageView[7];

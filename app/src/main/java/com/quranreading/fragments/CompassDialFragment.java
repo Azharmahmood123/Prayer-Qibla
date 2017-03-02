@@ -1,10 +1,12 @@
 package com.quranreading.fragments;
 
+import android.app.Dialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.graphics.drawable.ColorDrawable;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import android.net.Uri;
@@ -26,6 +28,8 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.RotateAnimation;
+import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
@@ -707,7 +711,63 @@ public class CompassDialFragment extends Fragment implements RotationUpdateDeleg
     @Override
     public void onNewLocationDetected(String newCityName, String oldCityName, double latitude, double longitude) {
 
-        showNewLocationAlert(newCityName, oldCityName, latitude, longitude);
+        //  showNewLocationAlert(newCityName, oldCityName, latitude, longitude);
+
+
+        if (locationPref.getLocationMethodPref() == 2) {
+            showNewAlertLocationDialog(newCityName, oldCityName, latitude, longitude);
+        } else if (locationPref.getLocationMethodPref() == 0) {
+            onLocationSet(newCityName, latitude, longitude);
+        } else {
+            String city = locationPref.getCityName();
+            double lat = Double.parseDouble(locationPref.getLatitude());
+            double lng = Double.parseDouble(locationPref.getLongitude());
+            onLocationSet(city, lat, lng);
+
+        }
+    }
+
+    private void showNewAlertLocationDialog(final String newCityName, String oldCityName, final double latitude, final double longitude) {
+
+        Spanned message = Html.fromHtml(getString(R.string.new_location_detected_msg1) + " <b>" + oldCityName + "</b> " + getString(R.string.to) + " <b>" + newCityName + "</b> " + getString(R.string.and) + " " + getString(R.string.new_location_detected_msg2) + "?");
+        // custom dialog
+        final Dialog dialog = new Dialog(mContext, R.style.MyAlertDialogStyle);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
+        dialog.setContentView(R.layout.custom_loc_dialog);
+
+        dialog.setTitle(getString(R.string.new_location_detected));
+        TextView msgText = (TextView) dialog.findViewById(R.id.text_locaiton_dectection_msg);
+        msgText.setText(message);
+        dialog.setCancelable(false);
+        final CheckBox checkBox = (CheckBox) dialog.findViewById(R.id.chk_dialog_loc);
+        Button dialogYesButton = (Button) dialog.findViewById(R.id.loc_yes_btn);
+        dialogYesButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+                if (checkBox.isChecked()) {
+                    locationPref.setLocationMethodPref(0);
+                }
+                onLocationSet(newCityName, latitude, longitude);
+            }
+        });
+
+        Button dialogNoButton = (Button) dialog.findViewById(R.id.loc_no_btn);
+        dialogNoButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+                if (checkBox.isChecked()) {
+                    locationPref.setLocationMethodPref(1);
+                }
+                progressBar.setVisibility(View.GONE);
+                String city = locationPref.getCityName();
+                double lat = Double.parseDouble(locationPref.getLatitude());
+                double lng = Double.parseDouble(locationPref.getLongitude());
+                onLocationSet(city, lat, lng);
+            }
+        });
+        dialog.show();
     }
 
 
@@ -735,6 +795,7 @@ public class CompassDialFragment extends Fragment implements RotationUpdateDeleg
                 double lat = Double.parseDouble(locationPref.getLatitude());
                 double lng = Double.parseDouble(locationPref.getLongitude());
                 onLocationSet(city, lat, lng);
+
 
                 dialog.dismiss();
             }
@@ -764,6 +825,7 @@ public class CompassDialFragment extends Fragment implements RotationUpdateDeleg
     }
 
     private void saveLatestLocation(String address, String lat, String lng) {
+
         locationPref.setLocation(address, lat, lng);
     }
 

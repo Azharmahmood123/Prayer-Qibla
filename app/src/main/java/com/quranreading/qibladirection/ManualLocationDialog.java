@@ -29,329 +29,314 @@ import java.util.HashMap;
 
 public class ManualLocationDialog {
 
-	Context context;
-	AlertDialog locationProvider = null;
-	ArrayAdapter<String> cityNamesAdapter = null;
-	OnLocationSetListner mOnLocationSetListner;
+    Context context;
+    AlertDialog locationProvider = null;
+    ArrayAdapter<String> cityNamesAdapter = null;
+    OnLocationSetListner mOnLocationSetListner;
 
-	public ManualLocationDialog(Context ctx, OnLocationSetListner onLocationSetListner) {
-		context = ctx;
-		mOnLocationSetListner = onLocationSetListner;
-	}
+    public ManualLocationDialog(Context ctx, OnLocationSetListner onLocationSetListner) {
+        context = ctx;
+        mOnLocationSetListner = onLocationSetListner;
+    }
 
-	public void showDialog() {
-		if(new QiblaDirectionPref(context).isDatabaseCopied())
-		{
-			if(locationProvider != null)
-				locationProvider.dismiss();
+    public void showDialog() {
+        if (new QiblaDirectionPref(context).isDatabaseCopied()) {
+            if (locationProvider != null)
+                locationProvider.dismiss();
 
-			ArrayAdapter<String> adapter;
+            ArrayAdapter<String> adapter;
 
-			if(cityNamesAdapter == null)
-			{
-				getdata();
-			}
+            if (cityNamesAdapter == null) {
+                getdata();
+            }
 
-			if(cityNamesAdapter == null)
-				return;
-			else
-				adapter = cityNamesAdapter;
+            if (cityNamesAdapter == null)
+                return;
+            else
+                adapter = cityNamesAdapter;
 
-			int topPadding = 0, paddingLeftRightBottom = 0;
-			String device = context.getResources().getString(R.string.device);
-			if(device.equals("large"))
-			{
-				topPadding = 90;
-				paddingLeftRightBottom = 30;
-			}
-			else if(device.equals("medium"))
-			{
-				topPadding = 85;
-				paddingLeftRightBottom = 25;
-			}
-			else
-			{
-				topPadding = 70;
-				paddingLeftRightBottom = 20;
-			}
+            int topPadding = 0, paddingLeftRightBottom = 0;
+            String device = context.getResources().getString(R.string.device);
+            if (device.equals("large")) {
+                topPadding = 90;
+                paddingLeftRightBottom = 30;
+            } else if (device.equals("medium")) {
+                topPadding = 85;
+                paddingLeftRightBottom = 25;
+            } else {
+                topPadding = 70;
+                paddingLeftRightBottom = 20;
+            }
 
-			AlertDialog.Builder builder = new AlertDialog.Builder(context);
-			builder.setTitle(context.getResources().getString(R.string.enter_location_manually));
-			// builder.setMessage(context.getResources().getString(R.string.enter_location_manually));
-			// builder.setMessage("");
+            AlertDialog.Builder builder = new AlertDialog.Builder(context);
+            builder.setTitle(context.getResources().getString(R.string.enter_location_manually));
+            // builder.setMessage(context.getResources().getString(R.string.enter_location_manually));
+            // builder.setMessage("");
 
-			final AutoCompleteTextView autoText = new AutoCompleteTextView(context);
-			autoText.addTextChangedListener(new TextWatcher() {
+            final AutoCompleteTextView autoText = new AutoCompleteTextView(context);
+            autoText.addTextChangedListener(new TextWatcher() {
 
-				@Override
-				public void onTextChanged(CharSequence s, int start, int before, int count) {
-					// TODO Auto-generated methodIndex stub
+                @Override
+                public void onTextChanged(CharSequence s, int start, int before, int count) {
+                    // TODO Auto-generated methodIndex stub
 
-				}
+                }
 
-				@Override
-				public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-					// TODO Auto-generated methodIndex stub
+                @Override
+                public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                    // TODO Auto-generated methodIndex stub
 
-				}
+                }
 
-				@Override
-				public void afterTextChanged(Editable s) {
-					// TODO Auto-generated methodIndex stub
-					String name = s.toString();
-					// if((name.length() == 1 && name.equals(" ")) || (name.length() == 1 && name.equals(",")) || (name.length() == 2 && name.equals(", ")) || (name.length() == 2 && name.equals(" ,")))
-					if((name.length() == 1 && name.equals(" ")) || (name.length() == 1 && name.equals(",")))
-					{
-						autoText.setText("");
-					}
-				}
-			});
+                @Override
+                public void afterTextChanged(Editable s) {
+                    // TODO Auto-generated methodIndex stub
+                    String name = s.toString();
+                    // if((name.length() == 1 && name.equals(" ")) || (name.length() == 1 && name.equals(",")) || (name.length() == 2 && name.equals(", ")) || (name.length() == 2 && name.equals(" ,")))
+                    if ((name.length() == 1 && name.equals(" ")) || (name.length() == 1 && name.equals(","))) {
+                        autoText.setText("");
+                    }
+                }
+            });
 
-			autoText.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
-			autoText.setPadding(paddingLeftRightBottom, topPadding, paddingLeftRightBottom, paddingLeftRightBottom);
-			autoText.setGravity(Gravity.TOP);
-			autoText.setThreshold(1);
-			// autoText.setKeyListener(DigitsKeyListener.getInstance("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ. "));
-			autoText.setFilters(new InputFilter[] { new InputFilter.LengthFilter(Constants.CITIES_LENGTH_LIMIT) });
-			autoText.setAdapter(adapter);
-			autoText.setHint("Mecca, Saudi Arabia");
-			builder.setView(autoText);
+            autoText.setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
+            autoText.setPadding(paddingLeftRightBottom, topPadding, paddingLeftRightBottom, paddingLeftRightBottom);
+            autoText.setGravity(Gravity.TOP);
+            autoText.setThreshold(1);
+            // autoText.setKeyListener(DigitsKeyListener.getInstance("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ. "));
+            autoText.setFilters(new InputFilter[]{new InputFilter.LengthFilter(Constants.CITIES_LENGTH_LIMIT)});
+            autoText.setAdapter(adapter);
+            autoText.setHint("Mecca, Saudi Arabia");
+            builder.setView(autoText);
 
-			// builder.setPositiveButton(context.getResources().getString(R.string.okay), new DialogInterface.OnClickListener() {
-			// public void onClick(DialogInterface dialog, int whichButton) {
-			// String city = autoText.getText().toString().trim();
-			// if(city.trim().length() == 0)
-			// {
-			// showDialog();
-			// showToast(context.getResources().getString(R.string.toast_enter_city_name));
-			// }
-			// else
-			// {
-			// updateCityName(city);
-			// InputMethodManager imm = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
-			// imm.hideSoftInputFromWindow(autoText.getWindowToken(), 0);
-			// }
-			// }
-			// });
+            // builder.setPositiveButton(context.getResources().getString(R.string.okay), new DialogInterface.OnClickListener() {
+            // public void onClick(DialogInterface dialog, int whichButton) {
+            // String city = autoText.getText().toString().trim();
+            // if(city.trim().length() == 0)
+            // {
+            // showDialog();
+            // showToast(context.getResources().getString(R.string.toast_enter_city_name));
+            // }
+            // else
+            // {
+            // updateCityName(city);
+            // InputMethodManager imm = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
+            // imm.hideSoftInputFromWindow(autoText.getWindowToken(), 0);
+            // }
+            // }
+            // });
 
-			builder.setCancelable(false);
-			builder.setNegativeButton(context.getResources().getString(R.string.cancel), new DialogInterface.OnClickListener() {
-				public void onClick(DialogInterface dialog, int whichButton) {
-					// Canceled.
-					InputMethodManager imm = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
-					imm.hideSoftInputFromWindow(autoText.getWindowToken(), 0);
+            builder.setCancelable(false);
+            builder.setNegativeButton(context.getResources().getString(R.string.cancel), new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int whichButton) {
+                    // Canceled.
+                    InputMethodManager imm = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
+                    imm.hideSoftInputFromWindow(autoText.getWindowToken(), 0);
 
-					useLastSavedLocation();
-				}
-			});
+                    useLastSavedLocation();
+                }
+            });
 
-			builder.setPositiveButton(context.getString(R.string.okay), null);
+            builder.setPositiveButton(context.getString(R.string.okay), null);
 
-			builder.setOnCancelListener(new OnCancelListener() {
+            builder.setOnCancelListener(new OnCancelListener() {
 
-				@Override
-				public void onCancel(DialogInterface dialog) {
-					InputMethodManager imm = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
-					imm.hideSoftInputFromWindow(autoText.getWindowToken(), 0);
+                @Override
+                public void onCancel(DialogInterface dialog) {
+                    InputMethodManager imm = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
+                    imm.hideSoftInputFromWindow(autoText.getWindowToken(), 0);
 
-					useLastSavedLocation();
-				}
-			});
+                    useLastSavedLocation();
+                }
+            });
 
-			builder.setOnKeyListener(new Dialog.OnKeyListener() {
-				@Override
-				public boolean onKey(DialogInterface arg0, int keyCode, KeyEvent event) {
-					if(keyCode == KeyEvent.KEYCODE_BACK)
-					{
+            builder.setOnKeyListener(new Dialog.OnKeyListener() {
+                @Override
+                public boolean onKey(DialogInterface arg0, int keyCode, KeyEvent event) {
+                    if (keyCode == KeyEvent.KEYCODE_BACK) {
 
-						return true;
-					}
-					return false;
-				}
-			});
+                        return true;
+                    }
+                    return false;
+                }
+            });
 
-			locationProvider = builder.create();
-			locationProvider.setOnShowListener(new DialogInterface.OnShowListener() {
+            locationProvider = builder.create();
+            locationProvider.setOnShowListener(new DialogInterface.OnShowListener() {
 
-				@Override
-				public void onShow(DialogInterface dialog) {
+                @Override
+                public void onShow(DialogInterface dialog) {
 
-					Button b = locationProvider.getButton(AlertDialog.BUTTON_POSITIVE);
-					b.setOnClickListener(new View.OnClickListener() {
+                    Button b = locationProvider.getButton(AlertDialog.BUTTON_POSITIVE);
+                    b.setOnClickListener(new View.OnClickListener() {
 
-						@Override
-						public void onClick(View view) {
-							String city = autoText.getText().toString().trim();
-							if(city.trim().length() == 0)
-							{
-								showToast(context.getResources().getString(R.string.toast_enter_city_name));
-							}
-							else
-							{
-								if(updateCityName(city))
-								{
-									InputMethodManager imm = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
-									imm.hideSoftInputFromWindow(autoText.getWindowToken(), 0);
-									locationProvider.dismiss();
-								}
-								else
-								{
-									autoText.setText("");
-								}
-							}
-						}
-					});
-				}
-			});
+                        @Override
+                        public void onClick(View view) {
+                            String city = autoText.getText().toString().trim();
+                            if (city.trim().length() == 0) {
+                                showToast(context.getResources().getString(R.string.toast_enter_city_name));
+                            } else {
+                                if (updateCityName(city)) {
+                                    InputMethodManager imm = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
+                                    imm.hideSoftInputFromWindow(autoText.getWindowToken(), 0);
+                                    locationProvider.dismiss();
+                                } else {
+                                    autoText.setText("");
+                                }
+                            }
+                        }
+                    });
+                }
+            });
 
-			locationProvider.show();
+            locationProvider.show();
 
-			autoText.requestFocus();
-			InputMethodManager imm = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
-			imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
-			imm.showSoftInputFromInputMethod(autoText.getWindowToken(), 0);
-		}
-	}
+            autoText.requestFocus();
+            InputMethodManager imm = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
+            imm.showSoftInputFromInputMethod(autoText.getWindowToken(), 0);
+        }
+    }
 
-	private void getdata() {
-		DBManager dbObj = new DBManager(context);
-		dbObj.open();
+    private void getdata() {
+        DBManager dbObj = new DBManager(context);
+        dbObj.open();
 
-		Cursor c = dbObj.getAllCities();
+        Cursor c = dbObj.getAllCities();
 
-		if(c.moveToFirst())
-		{
-			int i = 0;
-			String[] citiesData = new String[c.getCount()];
+        if (c.moveToFirst()) {
+            int i = 0;
+            String[] citiesData = new String[c.getCount()];
 
-			while (c.moveToNext())
-			{
-				String city = c.getString(c.getColumnIndex(DBManager.FLD_CITY));
-				String country = c.getString(c.getColumnIndex(DBManager.FLD_COUNTRY));
-				citiesData[i] = city + ", " + country;
-				i++;
-			}
+            while (c.moveToNext()) {
+                String city = c.getString(c.getColumnIndex(DBManager.FLD_CITY));
+                String country = c.getString(c.getColumnIndex(DBManager.FLD_COUNTRY));
+                citiesData[i] = city + ", " + country;
+                i++;
+            }
 
-			String[] citiesData1 = new String[citiesData.length - 1];
+            String[] citiesData1 = new String[citiesData.length - 1];
 
-			for (int j = 0; j < citiesData.length - 1; j++)
-			{
-				citiesData1[j] = citiesData[j];
-			}
+            for (int j = 0; j < citiesData.length - 1; j++) {
+                citiesData1[j] = citiesData[j];
+            }
 
-			citiesData = null;
+            citiesData = null;
 
-			cityNamesAdapter = new ArrayAdapter<String>(context, android.R.layout.simple_dropdown_item_1line, citiesData1);
-		}
+            cityNamesAdapter = new ArrayAdapter<String>(context, android.R.layout.simple_dropdown_item_1line, citiesData1);
+        }
 
-		c.close();
-		dbObj.close();
+        c.close();
+        dbObj.close();
 
-		// return cityNamesAdapter;
-	}
+        // return cityNamesAdapter;
+    }
 
-	public boolean updateCityName(String name) {
-		String cityName = "", countryName = "";
+    public boolean updateCityName(String name) {
+        String cityName = "", countryName = "";
 
-		String[] nameArray = new String[3];
+        String[] nameArray = new String[3];
 
-		nameArray = name.split(",");
+        nameArray = name.split(",");
 
-		int length = nameArray.length;
+        int length = nameArray.length;
 
-		if(length == 3)
-		{
-			cityName = nameArray[0].trim() + ", " + nameArray[1].trim();
-			countryName = nameArray[2].trim();
-		}
-		else if(length == 2)
-		{
-			cityName = nameArray[0].trim();
-			countryName = nameArray[1].trim();
-		}
-		else if(length == 1)
-		{
-			cityName = nameArray[0].trim();
-			countryName = "";
-		}
+        if (length == 3) {
+            cityName = nameArray[0].trim() + ", " + nameArray[1].trim();
+            countryName = nameArray[2].trim();
+        } else if (length == 2) {
+            cityName = nameArray[0].trim();
+            countryName = nameArray[1].trim();
+        } else if (length == 1) {
+            cityName = nameArray[0].trim();
+            countryName = "";
+        }
 
-		return checkInfo(cityName, countryName);
-	}
+        return checkInfo(cityName, countryName);
+    }
 
-	private boolean checkInfo(String cityName, String countryName) {
-		String city, country, latd, longt, timeZone;
+    private boolean checkInfo(String cityName, String countryName) {
+        String city, country, latd, longt, timeZone;
 
-		LocationPref locPref = new LocationPref(context);
-		DBManager dbObj = new DBManager(context);
-		dbObj.open();
+        LocationPref locPref = new LocationPref(context);
+        DBManager dbObj = new DBManager(context);
+        dbObj.open();
 
-		countryName = countryName.replace("'", "").trim();
-		cityName = cityName.replace("'", "").trim();
+        countryName = countryName.replace("'", "").trim();
+        cityName = cityName.replace("'", "").trim();
 
-		if(cityName.length() > 0 && countryName.length() > 0)
-		{
-			Cursor c = dbObj.getCityInfo(countryName, cityName);
-			if(c.moveToFirst())
-			{
-				city = c.getString(c.getColumnIndex(DBManager.FLD_CITY));
-				country = c.getString(c.getColumnIndex(DBManager.FLD_COUNTRY));
-				latd = c.getString(c.getColumnIndex(DBManager.FLD_LATITUDE));
-				longt = c.getString(c.getColumnIndex(DBManager.FLD_LONGITUDE));
-				timeZone = c.getString(c.getColumnIndex(DBManager.FLD_TIME_ZONE));
+        if (cityName.length() > 0 && countryName.length() > 0) {
+
+
+            //**************** Get country code from the table of list
+            Cursor cCode = dbObj.getCountryCodes(countryName);
+            if (cCode.moveToFirst()) {
+                String countryCode = cCode.getString(cCode.getColumnIndex(DBManager.FLD_CODE));
+                locPref.setCountryCode(countryCode);
+                cCode.close();
+            } else {
+                cCode.close();
+            }
+            // **********************************************************
+
+
+            Cursor c = dbObj.getCityInfo(countryName, cityName);
+
+            if (c.moveToFirst()) {
+                city = c.getString(c.getColumnIndex(DBManager.FLD_CITY));
+                country = c.getString(c.getColumnIndex(DBManager.FLD_COUNTRY));
+                latd = c.getString(c.getColumnIndex(DBManager.FLD_LATITUDE));
+                longt = c.getString(c.getColumnIndex(DBManager.FLD_LONGITUDE));
+                timeZone = c.getString(c.getColumnIndex(DBManager.FLD_TIME_ZONE));
 
 				/*
-				 * int lastIndx = timeZone.indexOf(")"); String zone = timeZone.substring(1, lastIndx); Log.e("Time Zone", timeZone); double zoneValue = 0; if(zone.contains("+")) { String[] arrZone = zone.split("\\+")[1].split(":"); zoneValue = Double.parseDouble(arrZone[0] + "." + arrZone[1]); }
+                 * int lastIndx = timeZone.indexOf(")"); String zone = timeZone.substring(1, lastIndx); Log.e("Time Zone", timeZone); double zoneValue = 0; if(zone.contains("+")) { String[] arrZone = zone.split("\\+")[1].split(":"); zoneValue = Double.parseDouble(arrZone[0] + "." + arrZone[1]); }
 				 * else if(zone.contains("-")) { String[] arrZone = zone.split("-")[1].split(":"); zoneValue = Double.parseDouble("-" + arrZone[0] + "." + arrZone[1]); } else { zoneValue = 0.0; } locPref.setLocation(city, country, latd, longt, String.valueOf(zoneValue));
 				 */
 
-				locPref.setLocation(city, latd, longt);
 
-				c.close();
-				dbObj.close();
+                locPref.setLocation(city, latd, longt);
 
-				mOnLocationSetListner.onLocationSet(city, Double.parseDouble(latd), Double.parseDouble(longt));
-				return true;
-			}
-			else
-			{
-				showToast(context.getResources().getString(R.string.toast_correct_city_name));
+                c.close();
+                dbObj.close();
 
-				c.close();
-				dbObj.close();
-				return false;
-			}
-		}
-		else
-		{
-			showToast(context.getResources().getString(R.string.toast_correct_city_name));
-			return false;
-		}
 
-	}
+                mOnLocationSetListner.onLocationSet(city, Double.parseDouble(latd), Double.parseDouble(longt));
+                return true;
+            } else {
+                showToast(context.getResources().getString(R.string.toast_correct_city_name));
 
-	private void showToast(String msg) {
-		Toast toast = Toast.makeText(context, msg, Toast.LENGTH_SHORT);
-		toast.setGravity(Gravity.CENTER, 0, 0);
-		toast.show();
-	}
+                c.close();
+                dbObj.close();
+                return false;
+            }
+        } else {
+            showToast(context.getResources().getString(R.string.toast_correct_city_name));
+            return false;
+        }
 
-	private void useLastSavedLocation() {
+    }
 
-		LocationPref locPref = new LocationPref(context);
-		HashMap<String, String> alarm = locPref.getLocation();
+    private void showToast(String msg) {
+        Toast toast = Toast.makeText(context, msg, Toast.LENGTH_SHORT);
+        toast.setGravity(Gravity.CENTER, 0, 0);
+        toast.show();
+    }
 
-		String Address = alarm.get(LocationPref.CITY_NAME);
-		locPref.setFirstLaunch();
-		if(!Address.equals(""))
-		{
-			double latitude = Double.parseDouble(alarm.get(LocationPref.LATITUDE));
-			double longitude = Double.parseDouble(alarm.get(LocationPref.LONGITUDE));
-			mOnLocationSetListner.onLocationSet(Address, latitude, longitude);
-		}
-		else
-		{
-			showToast(context.getString(R.string.toast_connect_to_internet_or_set_location_manually));
-			mOnLocationSetListner.onLocationSet("", 0, 0);
-		}
-	}
+    private void useLastSavedLocation() {
+
+        LocationPref locPref = new LocationPref(context);
+        HashMap<String, String> alarm = locPref.getLocation();
+
+        String Address = alarm.get(LocationPref.CITY_NAME);
+        locPref.setFirstLaunch();
+        if (!Address.equals("")) {
+            double latitude = Double.parseDouble(alarm.get(LocationPref.LATITUDE));
+            double longitude = Double.parseDouble(alarm.get(LocationPref.LONGITUDE));
+            mOnLocationSetListner.onLocationSet(Address, latitude, longitude);
+        } else {
+            showToast(context.getString(R.string.toast_connect_to_internet_or_set_location_manually));
+            mOnLocationSetListner.onLocationSet("", 0, 0);
+        }
+    }
 }

@@ -1,0 +1,183 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_background">
+
+    <RelativeLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        android:background="?attr/colorPrimary"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <LinearLayout
+                android:id="@+id/toolbar_btnBack"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:background="@drawable/bg_drawer_menu"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/img_desrcptn"
+                    android:padding="@dimen/_17sdp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/back" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txt_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_toRightOf="@+id/toolbar_btnBack"
+                android:text="@string/grid_tasbeeh"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_18sdp" />
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/_5sdp"
+        android:id="@+id/linear_tasbeeh"
+        android:layout_below="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+
+        android:paddingLeft="@dimen/size_five"
+        android:paddingRight="@dimen/size_five" >
+
+        <RelativeLayout
+            android:id="@+id/index_row"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            android:background="@drawable/bg_row_corners" >
+
+            <RelativeLayout
+                android:id="@+id/layout_no"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" >
+
+                <ImageView
+                    android:layout_marginLeft="@dimen/_3sdp"
+                    android:id="@+id/tv_surah_no"
+                    android:layout_width="@dimen/size_fourty"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:padding="@dimen/_5sdp"
+
+                android:src="@drawable/tasbih" />
+
+               <!-- <View
+                    android:id="@+id/view_navigation"
+                    android:layout_width="@dimen/size_one"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/tv_surah_no"
+                    android:background="@color/light_gray" />-->
+            </RelativeLayout>
+            <LinearLayout
+                android:id="@+id/layout_index_details"
+                android:layout_width="@dimen/_180sdp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/layout_no"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/size_fifteen"
+                android:paddingRight="@dimen/size_five" >
+
+                <TextView
+                    android:id="@+id/tvEnglishName"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Surah Fatiha"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_16sdp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_three"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/verses"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="V"
+                        android:textColor="@color/gray_darkest"
+                        android:textSize="@dimen/_10sdp" />
+
+                    <TextView
+
+                        android:id="@+id/maki_madni"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text=""
+                        android:textColor="@color/gray_darkest"
+                        android:textSize="@dimen/_10sdp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/arabic_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical"
+                android:paddingRight="@dimen/size_twelve"
+                android:text="الفاتحة"
+                android:textColor="#2a2a2a"
+                android:textSize="@dimen/_16sdp" />
+        </RelativeLayout>
+
+        <View style="@style/view_transparent_line" />
+
+    </LinearLayout>
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/linear_tasbeeh"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/_2sdp">
+
+            <LinearLayout
+                android:id="@+id/linearAd"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:orientation="vertical"></LinearLayout>
+
+            <FrameLayout
+                android:layout_above="@+id/linearAd"
+                android:id="@+id/container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -17,7 +17,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -30,9 +29,7 @@ import android.widget.TimePicker;
 
 import com.quranreading.alarms.AlarmHelper;
 import com.quranreading.alarms.AlarmReceiverAyah;
-import com.quranreading.helper.TimeFormateConverter;
 import com.quranreading.qibladirection.GlobalClass;
-import com.quranreading.qibladirection.MainActivityNew;
 import com.quranreading.qibladirection.R;
 
 import java.util.Locale;
@@ -41,9 +38,7 @@ import noman.Ads.AdIntegration;
 import noman.CommunityGlobalClass;
 import noman.quran.adapter.ParentContainerList;
 import noman.quran.fragment.QuranListFragment;
-import quran.helper.DBManagerQuran;
-import quran.model.SurahModel;
-import quran.sharedpreference.SurahsSharedPref;
+import noman.sharedpreference.SurahsSharedPref;
 
 
 public class QuranModuleActivity extends AdIntegration implements View.OnClickListener {

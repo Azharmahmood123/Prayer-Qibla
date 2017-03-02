@@ -61,17 +61,15 @@ public class MenuFragment extends Fragment {
         menuItems.clear();
         menuItems.add(mContext.getString(R.string.grid_salat));
         menuItems.add(mContext.getString(R.string.grid_direction));
-
         menuItems.add(mContext.getString(R.string.grid_quran));
         menuItems.add(mContext.getString(R.string.grid_community));
-        menuItems.add(mContext.getString(R.string.grid_names));
+        menuItems.add(mContext.getString(R.string.grid_search));
+
         menuItems.add(mContext.getString(R.string.grid_hijri));
         menuItems.add(mContext.getString(R.string.grid_mosque));
-      /*  menuItems.add(mContext.getString(R.string.grid_premium));*/
-
         menuItems.add(mContext.getString(R.string.grid_halal));
-
         menuItems.add(mContext.getString(R.string.grid_duas));
+        menuItems.add(mContext.getString(R.string.grid_names));
         menuItems.add(mContext.getString(R.string.grid_settings));
 
         ArrayList<String> items = new ArrayList<>();

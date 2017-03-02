@@ -18,7 +18,7 @@ public class SavePreference {
     static final String prefName = "username";
     static final String prefPassword = "password";
     static final String remember_login_user = "isLogin";
-    static final String remember_hijri_value = "hijri_value";
+    static final String remember_prayer_counter = "prayer_counter_value";
     static final String remember_menu_hijri_correction = "isHijriCorrection";
     static final String remember_menu_notificaiton = "isHijriCorrection";
 
@@ -27,17 +27,7 @@ public class SavePreference {
         return PreferenceManager.getDefaultSharedPreferences(ctx);
     }
 
-    public static void setRememberLogin(Context ctx, Boolean remember) {
-        SharedPreferences.Editor editor = getSharedPreferences(ctx).edit();
-        editor.putBoolean(remember_login_user, remember);
-        editor.commit();
 
-    }
-
-    public static Boolean getRememberLogin(Context ctx) {
-        return getSharedPreferences(ctx).getBoolean(remember_login_user, false);
-
-    }
 
     public static void setMenuOption(Context ctx, int remember) {
         SharedPreferences.Editor editor = getSharedPreferences(ctx).edit();
@@ -51,26 +41,7 @@ public class SavePreference {
 
     }
 
-    public static void setPrefUsername(Context ctx, String Name) {
-        SharedPreferences.Editor editor = getSharedPreferences(ctx).edit();
-        editor.putString(prefName, Name);
-        editor.commit();
 
-    }
-
-    public static String getPrefUsername(Context ctx) {
-        return getSharedPreferences(ctx).getString(prefName, null);
-    }
-
-    public static void setPrefPassword(Context ctx, String pswd) {
-        SharedPreferences.Editor editor = getSharedPreferences(ctx).edit();
-        editor.putString(prefPassword, pswd);
-        editor.commit();
-    }
-
-    public static String getPrefPassword(Context ctx) {
-        return getSharedPreferences(ctx).getString(prefPassword, null);
-    }
 
     public SignInRequest getDataFromSharedPreferences() {
         String PREFS_TAG = "SharedPrefs";
@@ -119,15 +90,15 @@ public class SavePreference {
 
     }
 
-    public static void setHijriValue(Context ctx, int remember) {
+    public static void setPrayerCounter(Context ctx, int remember) {
         SharedPreferences.Editor editor = getSharedPreferences(ctx).edit();
-        editor.putInt(remember_hijri_value, remember);
+        editor.putInt(remember_prayer_counter, remember);
         editor.commit();
 
     }
 
-    public static int getHijriValue(Context ctx) {
-        return getSharedPreferences(ctx).getInt(remember_hijri_value, 0);
+    public static int getPrayerCounter(Context ctx) {
+        return getSharedPreferences(ctx).getInt(remember_prayer_counter, 0);
 
     }
 }

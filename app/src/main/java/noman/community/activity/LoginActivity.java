@@ -2,10 +2,12 @@ package noman.community.activity;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.v7.app.AlertDialog;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -23,6 +25,8 @@ import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
+import com.quranreading.qibladirection.LanguageSelectionActivity;
+import com.quranreading.qibladirection.MainActivityNew;
 import com.quranreading.qibladirection.R;
 import com.squareup.okhttp.Callback;
 import com.squareup.okhttp.OkHttpClient;
@@ -101,7 +105,41 @@ public class LoginActivity extends FacebookActivity implements GoogleApiClient.O
             }
         });
 
+        TextView privacyText = (TextView) findViewById(R.id.text_policy);
+        privacyText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                privacyPolicy();
+            }
+        });
 
+        TextView termsText = (TextView) findViewById(R.id.text_terms);
+        termsText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                termsCondition();
+            }
+        });
+    }
+
+    public void termsCondition() {
+        new AlertDialog.Builder(LoginActivity.this, R.style.MyAlertDialogStyle)
+                .setTitle(getResources().getString(R.string.title_terms_dialog))
+                .setCancelable(false)
+                .setMessage(getResources().getString(R.string.text_terms_dialog))
+                .setPositiveButton("Close", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+
+                    }
+
+                }).show();
+
+    }
+
+    public void privacyPolicy() {
+startActivity(new Intent(this,PrivacyPolicyActivity.class));
     }
 
 

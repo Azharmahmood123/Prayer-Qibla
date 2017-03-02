@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="true">
+
+    <item
+        android:drawable="@drawable/tasbeeh_1"
+        android:duration="25" />
+
+    <item
+        android:drawable="@drawable/tasbeeh_2"
+        android:duration="25" />
+
+    <item
+        android:drawable="@drawable/tasbeeh_3"
+        android:duration="25" />
+
+    <item
+        android:drawable="@drawable/tasbeeh_4"
+        android:duration="25" />
+
+    <item
+        android:drawable="@drawable/tasbeeh_5"
+        android:duration="25" />
+
+    <item
+        android:drawable="@drawable/tasbeeh_6"
+        android:duration="25" />
+
+    <item
+        android:drawable="@drawable/tasbeeh_7"
+        android:duration="25" />
+
+</animation-list>

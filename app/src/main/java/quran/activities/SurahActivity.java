@@ -74,7 +74,7 @@ import quran.arabicutils.ArabicUtilities;
 import quran.helper.DBManagerQuran;
 import quran.helper.FileUtils;
 import quran.model.SurahModel;
-import quran.sharedpreference.SurahsSharedPref;
+import noman.sharedpreference.SurahsSharedPref;
 
 public class SurahActivity extends AppCompatActivity implements OnCompletionListener, OnSurahDownloadComplete {
 

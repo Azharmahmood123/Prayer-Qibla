@@ -5,7 +5,7 @@
     <string name="activity_post">New Request</string>
     <string name="activity_login">SignUp or Login</string>
     <string name="activity_event">Events</string>
-
+    <string name="activity_privacy_policy">Disclaimer and Privacy Policy</string>
 
     <string name="tab_calander">Calendar</string>
     <string name="tab_event">Event</string>
@@ -83,8 +83,17 @@
     <string name="text_signup_page2">Login to</string>
     <string name="text_signup_page4">your Prayer request.</string>
 
-    <string name="text_policy">By signing up, I agree to Qibla Connect\u00AE Terms Use &amp; Privacy Policy.</string>
+    <string name="text_policy">By signing up, I agree to Qibla Connect\u00AE  </string>
+    <string name="text_terms_condition"> Terms of Use</string>
+    <string name="text_and_sign">&amp;</string>
+    <string name="text_privacy_policy">Privacy Policy.</string>
+
+
     <string name="text_hint">Enter your request in English so that other Muslims can understand easily and join you in your prayer.</string>
+
+
+    <string name="title_terms_dialog">Terms and Conditions</string>
+    <string name="text_terms_dialog">Qibla connect\u00AE reserves the right to remove any prayer posted by any user, containing objectionable content. In general we don\'t allow any content that depicts, describes abusive or promotional content or encourages bestiality and intended to be haram or sexually gratifying.</string>
 
 
     <string-array name="keys_fcm">
@@ -163,39 +172,39 @@
         <item>Juz 29</item>
         <item>Juz 30</item>
     </string-array>
-<!--
-    <string-array name="eng_chapters">
-        <item>Alif Laam Meem</item>
-        <item>Sayaqulu</item>
-        <item>Tilkal Rasoolo</item>
-        <item>Lan Tanalu</item>
-        <item>Wal Mohsinatu</item>
-        <item>La Yuhibbullahu</item>
-        <item>Waiza Samioo</item>
-        <item>Walau</item>
-        <item>Qalal Malaoo</item>
-        <item>Wa alamu Annamah</item>
-        <item>Ya Tazeroona</item>
-        <item>Wama Min Da\'abbatin</item>
-        <item>Wama Obarriyo</item>
-        <item>Rubama</item>
-        <item>Subhanal Lazi</item>
-        <item>Khala alam</item>
-        <item>Iqtaraba Linnaasi</item>
-        <item>Qadh Aflaha</item>
-        <item>Wa Khalal Lazina</item>
-        <item>Amman Khalakha</item>
-        <item>Otlo Ma Ohia</item>
-        <item>Wamai Yaqnut</item>
-        <item>Wamali</item>
-        <item>Faman Azlamu</item>
-        <item>Ilaihi Uraddu</item>
-        <item>Haam Meem</item>
-        <item>Khala Fama Khadbukum</item>
-        <item>Khad Samiallah</item>
-        <item>Tabarakallazi</item>
-        <item>Amma</item>
-    </string-array>-->
+    <!--
+        <string-array name="eng_chapters">
+            <item>Alif Laam Meem</item>
+            <item>Sayaqulu</item>
+            <item>Tilkal Rasoolo</item>
+            <item>Lan Tanalu</item>
+            <item>Wal Mohsinatu</item>
+            <item>La Yuhibbullahu</item>
+            <item>Waiza Samioo</item>
+            <item>Walau</item>
+            <item>Qalal Malaoo</item>
+            <item>Wa alamu Annamah</item>
+            <item>Ya Tazeroona</item>
+            <item>Wama Min Da\'abbatin</item>
+            <item>Wama Obarriyo</item>
+            <item>Rubama</item>
+            <item>Subhanal Lazi</item>
+            <item>Khala alam</item>
+            <item>Iqtaraba Linnaasi</item>
+            <item>Qadh Aflaha</item>
+            <item>Wa Khalal Lazina</item>
+            <item>Amman Khalakha</item>
+            <item>Otlo Ma Ohia</item>
+            <item>Wamai Yaqnut</item>
+            <item>Wamali</item>
+            <item>Faman Azlamu</item>
+            <item>Ilaihi Uraddu</item>
+            <item>Haam Meem</item>
+            <item>Khala Fama Khadbukum</item>
+            <item>Khad Samiallah</item>
+            <item>Tabarakallazi</item>
+            <item>Amma</item>
+        </string-array>-->
 
     <string-array name="urdu_chapters">
         <item> المٓ</item>
@@ -367,4 +376,17 @@
         <item> 2:40.266</item>
         <item>3:29.653</item>
     </string-array>
+        <string name="text_disclaimer">
+        This app is a human effort and it was developed with the best intensions. Any mistake in the content is un deliberate and due to sheer humanness. However, if you notice any mistake or errors please notify us and we will resolve it at the earliest.\n\n\n
+        The text of this app is obtained from Tanzil.net while the audio recitations come from Versebyversequran.com. We do not claim the content or recitation and all the rights to them belong to the original owners.\n\n\n
+        <b>Advertisement banners</b> are provided and filtered by <b>Google Admob</b>, the leading mobile advertisement platform. We apologize for any ad banner which may have offended you or which you believe is not appropriate with content and purpose of this application.\n\n\n
+        <b>Data of \"Find Mosques\" and \"Halal Finder\"</b> is retrieved through Google Maps API. Users of this application are agreeing to be bound by<a href="https://www.google.com/intl/en/policies/terms/"> Google\'s Terms of Services</a> and <a href="https://www.google.com/policies/privacy/">Google Privacy Policy</a>.\n\n\n
+        The<b> text copy of the Quran and its translations </b>are taken from <b>Tanzil.net</b>. All the content is carefully produced, highly verified and continuously monitored by a group of specialists in the Tanzil Project.\nMore info at <a href="http://tanzil.net/trans/">http://tanzil.net/trans/</a>\n\n\n
+        The <b>audio recitation of the Quran recorded by Al-Afasy</b> is considered to be the most soothing and soulful with best of our knowledge, in the public domain.\n\n\n
+        The <b>Adhan</b> audio recordings available in this application are, to the best of our knowledge, in the public domain.\n\n\n
+        The <b>audio recording of the names of Allah (swt)</b> is retrieved from eAlim <b>Technology Limited available on YouTube</b>. More info at <a href="https://www.youtube.com/watch?v=ta_tTZrarE0">https://www.youtube.com/watch?v=ta_tTZrarE0</a>\n\n\n
+        The compilation of supplications (duas) featured in this application are authenticated from sunnah.com. <a href="https://sunnah.com">https://sunnah.com</a>\n\n
+
+        </string>
+
 </resources>

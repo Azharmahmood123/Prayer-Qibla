@@ -1,6 +1,7 @@
 package noman.community.activity;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -18,8 +19,10 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.orhanobut.logger.BuildConfig;
+import com.quranreading.helper.DBManager;
 import com.quranreading.qibladirection.GlobalClass;
 import com.quranreading.qibladirection.R;
+import com.quranreading.sharedPreference.LocationPref;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
 import noman.Ads.AdIntegration;
@@ -27,6 +30,7 @@ import noman.CommunityGlobalClass;
 import noman.community.adapter.PrayerAdapter;
 import noman.community.model.PostPrayerRequest;
 import noman.community.model.PostResponse;
+import noman.community.prefrences.SavePreference;
 import noman.community.utility.DebugInfo;
 import retrofit.Call;
 import retrofit.Response;
@@ -45,10 +49,22 @@ public class PostActivity extends AdIntegration {
     CheckBox checkBoxLocation;
     SweetAlertDialog taskCompDialog;
     boolean showLocation = true;
-
+    String country;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        country =  getCountryName(this);
+
+        if(country.isEmpty() || country==null ||country.length()==0)
+        {
+            boolean isInternetAvaliable = CommunityGlobalClass.getInstance().isInternetOn();
+            //Get Country Name while app start
+            if (isInternetAvaliable) {
+                country  =  CommunityGlobalClass.getInstance().getCountryName();
+            }
+        }
+
         setContentView(R.layout.activity_post);
         if (!((GlobalClass) getApplication()).isPurchase) {
             super.showBannerAd(this, (LinearLayout) findViewById(R.id.linearAd));
@@ -77,10 +93,11 @@ public class PostActivity extends AdIntegration {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 showLocation = isChecked;
                 if (showLocation) { //Add user Info
-                    txtUserInfo.setText(CommunityGlobalClass.mSignInRequests.getName() + " , " + CommunityGlobalClass.mSignInRequests.getLocation());
+                    txtUserInfo.setText(CommunityGlobalClass.mSignInRequests.getName() + " , " + country);
                 } else {
                     txtUserInfo.setText(CommunityGlobalClass.mSignInRequests.getName());
                 }
+
             }
         });
         btnPost.setOnClickListener(new View.OnClickListener() {
@@ -112,7 +129,7 @@ public class PostActivity extends AdIntegration {
 
         //Add user Info
 
-        txtUserInfo.setText(CommunityGlobalClass.mSignInRequests.getName() + " , " + CommunityGlobalClass.mSignInRequests.getLocation());
+        txtUserInfo.setText(CommunityGlobalClass.mSignInRequests.getName() + " , " + country);
 
         setupUI(findViewById(R.id.parent));
 
@@ -140,6 +157,31 @@ public class PostActivity extends AdIntegration {
     };
 
 
+
+        public String getCountryName(Context mContext)
+        {
+            String countryCode2="";
+
+            LocationPref locationPref = new LocationPref(mContext);
+            DBManager dbObj = new DBManager(mContext);
+            dbObj.open();
+            //Split string to get the only point before value lat and long
+            Cursor c = dbObj.getCountry(locationPref.getLatitude().split("\\.")[0] + ".", locationPref.getLongitude().split("\\.")[0] + ".");
+            if (c != null) {
+                if (c.moveToFirst()) {
+                  countryCode2 = c.getString(c.getColumnIndex(DBManager.FLD_COUNTRY));
+                }
+                c.close();
+                dbObj.close();
+
+
+            } else {
+                c.close();
+                dbObj.close();
+            }
+
+            return countryCode2;
+        }
     //Call web
     public void callToLoadPrayer(final PostPrayerRequest mPostPrayerRequest) {
         CommunityGlobalClass.getInstance().showLoading(PostActivity.this);
@@ -157,7 +199,9 @@ public class PostActivity extends AdIntegration {
                     CommunityGlobalClass.mMineFragment.onLoadMineList();
                     PostActivity.this.finish();
 
-                    PrayerAdapter.clickingCounter = 0;
+
+                    CommunityGlobalClass.prayerCounter=0;
+
                 } else {
                     showPostDialog("Some issue in server", true);
                 }

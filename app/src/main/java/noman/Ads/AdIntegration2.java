@@ -46,7 +46,7 @@ public class AdIntegration2 extends AppCompatActivity {
         final Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             public void run() {
-                Log.e("Refresh", "ads");
+              //  Log.e("Refresh", "ads");
                 AdRequest adRequest = new AdRequest.Builder().addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
                         .build();
                 mAdView.loadAd(adRequest);

@@ -13,27 +13,23 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        >
+        android:orientation="vertical">
 
         <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:paddingBottom="@dimen/size_five"
             android:paddingLeft="@dimen/_1sdp"
             android:paddingRight="@dimen/_1sdp"
-            android:paddingTop="@dimen/size_five"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:paddingTop="@dimen/size_five">
 
 
             <TextView
                 android:id="@+id/tv_notification_time_header"
-                android:layout_alignParentLeft="true"
-                android:text="@string/set_time"
                 style="@style/setting_row_header"
-                />
+                android:layout_alignParentLeft="true"
+                android:text="@string/set_time" />
         </RelativeLayout>
-
-
 
 
         <TextView
@@ -49,20 +45,19 @@
             android:textSize="@dimen/text_size_thirty_four" />
 
         <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:paddingBottom="@dimen/size_five"
             android:paddingLeft="@dimen/_1sdp"
             android:paddingRight="@dimen/_1sdp"
-            android:paddingTop="@dimen/size_five"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:paddingTop="@dimen/size_five">
 
 
             <TextView
                 android:id="@+id/tv_tone_settings_header"
-                android:layout_alignParentLeft="true"
-                android:text="@string/set_tone"
                 style="@style/setting_row_header"
-                />
+                android:layout_alignParentLeft="true"
+                android:text="@string/set_tone" />
         </RelativeLayout>
 
 
@@ -78,7 +73,7 @@
 
                 <RelativeLayout
                     style="@style/setting_row_adhan_sound"
-                    
+
                     android:tag="0">
 
                     <TextView
@@ -104,6 +99,7 @@
                 </RelativeLayout>
 
                 <View style="@style/view_line_light_gray" />
+
                 <RelativeLayout
                     android:id="@+id/row_silent"
                     style="@style/setting_row_adhan_sound"
@@ -132,6 +128,7 @@
                 </RelativeLayout>
 
                 <View style="@style/view_line_light_gray" />
+
                 <RelativeLayout
                     android:id="@+id/row_adhan_1"
                     style="@style/setting_row_adhan_sound"
@@ -175,6 +172,7 @@
                 </RelativeLayout>
 
                 <View style="@style/view_line_light_gray" />
+
                 <RelativeLayout
                     android:id="@+id/row_adhan_2"
                     style="@style/setting_row_adhan_sound"
@@ -187,7 +185,7 @@
                         android:layout_alignParentLeft="true"
 
                         android:gravity="center|left"
-                        android:text="@string/adhan2_new"
+                        android:text="@string/adhan3_new"
                         android:textColor="@color/black"
                         android:textSize="@dimen/_14sdp" />
 
@@ -217,7 +215,9 @@
                         android:scaleType="fitCenter" />
                 </RelativeLayout>
 
+
                 <View style="@style/view_line_light_gray" />
+
                 <RelativeLayout
                     android:id="@+id/row_adhan_3"
                     style="@style/setting_row_adhan_sound"
@@ -230,7 +230,7 @@
                         android:layout_alignParentLeft="true"
 
                         android:gravity="center|left"
-                        android:text="@string/adhan3_new"
+                        android:text="@string/adhan2_new"
                         android:textColor="@color/black"
                         android:textSize="@dimen/_14sdp" />
 
@@ -306,6 +306,7 @@
 
 
                 <View style="@style/view_line_light_gray" />
+
                 <RelativeLayout
                     android:id="@+id/row_adhan_5"
                     style="@style/setting_row_adhan_sound"
@@ -394,6 +395,7 @@
 
 
                 <View style="@style/view_line_light_gray" />
+
                 <RelativeLayout
                     android:id="@+id/row_adhan_7"
                     style="@style/setting_row_adhan_sound"

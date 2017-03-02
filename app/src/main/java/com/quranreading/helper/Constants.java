@@ -10,7 +10,7 @@ public class Constants {
 
 	public static final String BroadcastActionComplete = "download_complete";
 
-	public static final String VERSION_NUMBER = " 4.0";
+	public static final String VERSION_NUMBER = " 4.2";
 	public static final String WEB_URL = "www.QuranReading.com";
 	public static final int DRAWER_LIST_LENGTH = 12;
 	public static final String extMp3 = ".mp3";

@@ -1,0 +1,235 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_background">
+
+    <RelativeLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        android:background="?attr/colorPrimary"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <LinearLayout
+                android:id="@+id/toolbar_btnBack"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:background="@drawable/bg_drawer_menu"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/img_desrcptn"
+                    android:padding="@dimen/_17sdp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/back" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txt_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_toRightOf="@+id/toolbar_btnBack"
+                android:text="@string/grid_search"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_18sdp" />
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rel_search_quran"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_70sdp"
+        android:layout_below="@+id/toolbar">
+
+        <LinearLayout
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:id="@+id/ll_quran_search"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_44sdp"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:background="@drawable/bg_row_corners"
+            android:orientation="horizontal"
+            android:splitMotionEvents="false"
+            android:visibility="visible">
+
+            <EditText
+
+                android:id="@+id/edit_search_quran"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:background="@android:color/transparent"
+                android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-&apos;"
+                android:hint="@string/text_search_quran"
+                android:imeOptions="actionDone"
+                android:maxLength="15"
+                android:paddingLeft="@dimen/size_ten"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textColorHint="@color/progress_primary_color"
+                android:textSize="@dimen/text_size_eighteen"></EditText>
+
+            <Button
+                android:id="@+id/btn_search_quran"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_margin="@dimen/_3sdp"
+                android:layout_weight="1"
+                android:background="@color/color_search_button"
+                android:padding="@dimen/size_five"
+                android:text="@string/text_search"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+        <View
+            style="@style/view_line_light_gray"
+            android:layout_below="@+id/ll_quran_search"
+            android:layout_marginTop="@dimen/_10sdp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_marginTop="@dimen/_5sdp"
+        android:id="@+id/search_topic_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_below="@+id/rel_search_quran"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1.7"
+                android:padding="@dimen/_7sdp"
+                android:text="@string/text_common_topic"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14sdp" />
+
+            <LinearLayout
+                android:id="@+id/toolbar_btnSearch"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.3"
+                android:background="@drawable/btn_hower"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:padding="@dimen/_6sdp"
+                    android:id="@+id/imageView2"
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:src="@drawable/search_topic"
+                    android:visibility="visible" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <!--Container Search bar-->
+        <LinearLayout
+            android:id="@+id/layout_surah_search"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/bg_row_corners"
+            android:orientation="horizontal"
+            android:splitMotionEvents="false"
+            android:visibility="gone">
+
+            <ImageView
+
+                android:id="@+id/btn_search_back"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_weight="1"
+                android:background="@drawable/btn_hower"
+                android:padding="@dimen/size_five"
+                android:src="@drawable/ic_search_back" />
+
+            <EditText
+                android:id="@+id/edit_search"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:background="@android:color/transparent"
+                android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-&apos;"
+                android:hint="@string/text_search_hint_topic"
+                android:imeOptions="actionDone"
+                android:maxLength="15"
+                android:paddingLeft="@dimen/size_ten"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:textColorHint="@color/progress_primary_color"
+                android:textSize="@dimen/text_size_eighteen"></EditText>
+
+            <ImageView
+                android:id="@+id/btn_search_cross"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_weight="1"
+                android:padding="@dimen/size_five"
+                android:src="@drawable/ic_search_cross" />
+        </LinearLayout>
+        <!--End-->
+    </RelativeLayout>
+
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/search_topic_bar"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/_2sdp">
+
+            <LinearLayout
+                android:id="@+id/linearAd"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:orientation="vertical"></LinearLayout>
+
+            <FrameLayout
+
+                android:id="@+id/container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

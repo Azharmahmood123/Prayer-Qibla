@@ -82,12 +82,13 @@
     </RelativeLayout>
 
     <ScrollView
-        android:layout_above="@+id/ads_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/topLayout"
+        android:layout_above="@+id/ads_layout"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/topLayout">
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -100,6 +101,47 @@
             android:splitMotionEvents="false">
 
             <TextView
+                android:id="@+id/heading_loc_settings"
+                style="@style/setting_row_header"
+                android:text="@string/location_settings" />
+
+            <LinearLayout
+                android:id="@+id/row_location_detection_menthod"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/size_five"
+                android:layout_marginRight="@dimen/size_five"
+                android:background="@drawable/bg_row_default_transperant"
+                android:onClick="onRowClick"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/_6sdp"
+                android:paddingLeft="@dimen/size_five"
+                android:paddingRight="@dimen/size_five"
+                android:paddingTop="@dimen/_6sdp"
+                android:tag="18">
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center|left"
+                    android:text="@string/location_method"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14sdp" />
+
+                <TextView
+                    android:id="@+id/tv_loc_method"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center|left"
+                    android:text="@string/mwl"
+                    android:textColor="@color/gray_darkest"
+                    android:textSize="@dimen/_12sdp" />
+            </LinearLayout>
+
+            <TextView
                 android:id="@+id/heading_salat_settings"
                 style="@style/setting_row_header"
                 android:text="@string/salat_timings" />
@@ -110,16 +152,37 @@
                 style="@style/setting_row_bg_s"
                 android:tag="0">
 
-                <TextView
-                    android:id="@+id/tv_auto_settings"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_centerVertical="true"
-                    android:gravity="center|left"
-                    android:text="@string/auto_settings"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_14sdp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_toLeftOf="@+id/img_auto_settings"
+                    android:layout_weight="2"
+                    android:orientation="vertical">
+
+                    <TextView
+
+                        android:id="@+id/tv_auto_settings"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="center|left"
+                        android:text="@string/auto_settings"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_14sdp" />
+
+
+                    <TextView
+                        android:id="@+id/tv_auto_setting_off"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center|left"
+                        android:text="@string/txt_auto_setting_off"
+                        android:textColor="@color/color_red"
+                        android:textSize="@dimen/_8sdp"
+                        android:visibility="gone" />
+
+                </LinearLayout>
 
                 <android.support.v7.widget.AppCompatCheckBox
                     android:id="@+id/img_auto_settings"
@@ -310,7 +373,6 @@
                     android:textSize="@dimen/_14sdp" />
 
                 <TextView
-                    android:visibility="gone"
                     android:id="@+id/tv_tone_opt"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
@@ -318,13 +380,14 @@
                     android:gravity="center|left"
                     android:text="@string/default_tone"
                     android:textColor="@color/gray_darkest"
-                    android:textSize="@dimen/_12sdp" />
+                    android:textSize="@dimen/_12sdp"
+                    android:visibility="gone" />
             </LinearLayout>
 
 
             <View
                 style="@style/view_line_light_gray"
-                android:visibility="gone" />
+                android:visibility="visible" />
 
             <LinearLayout
                 android:id="@+id/row_auto_selection"
@@ -383,44 +446,44 @@
                 android:text="@string/quran" />
 
 
-        <!--    <RelativeLayout
-                android:id="@+id/row_surah_translation"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-    <item name="android:onClick">onRowClick</item>
-                android:tag="7">-->
-
-                <LinearLayout
-                    android:tag="7"
-                    style="@style/setting_row_bg_l"
-                    android:layout_width="fill_parent"
+            <!--    <RelativeLayout
+                    android:id="@+id/row_surah_translation"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/_3sdp"
-                    android:layout_marginTop="@dimen/_5sdp"
-                    android:orientation="vertical">
+        <item name="android:onClick">onRowClick</item>
+                    android:tag="7">-->
 
-                    <TextView
-                        android:id="@+id/tv_translation_settings"
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"
-                        android:gravity="center|left"
-                        android:text="@string/text_translation_setting"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/_14sdp" />
+            <LinearLayout
+                style="@style/setting_row_bg_l"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_3sdp"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:orientation="vertical"
+                android:tag="7">
 
-                    <TextView
-                        android:id="@+id/tv_translation"
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"
-                        android:gravity="center|left"
-                        android:text="None"
-                        android:textColor="@color/gray_darkest"
-                        android:textSize="@dimen/_12sdp" />
-                </LinearLayout>
+                <TextView
+                    android:id="@+id/tv_translation_settings"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center|left"
+                    android:text="@string/text_translation_setting"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_14sdp" />
 
-      <!--      </RelativeLayout>-->
+                <TextView
+                    android:id="@+id/tv_translation"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center|left"
+                    android:text="None"
+                    android:textColor="@color/gray_darkest"
+                    android:textSize="@dimen/_12sdp" />
+            </LinearLayout>
+
+            <!--      </RelativeLayout>-->
 
             <View style="@style/view_line_light_gray" />
 

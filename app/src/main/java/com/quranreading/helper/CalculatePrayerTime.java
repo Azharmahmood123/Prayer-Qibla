@@ -1,8 +1,10 @@
 package com.quranreading.helper;
 
 import android.content.Context;
+import android.database.Cursor;
 
 import com.quranreading.model.PrayerTimeModel;
+import com.quranreading.sharedPreference.LocationPref;
 import com.quranreading.sharedPreference.PrayerTimeSettingsPref;
 
 import java.util.ArrayList;
@@ -10,6 +12,8 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.TimeZone;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class CalculatePrayerTime {
 
@@ -28,7 +32,13 @@ public class CalculatePrayerTime {
 
         ArrayList<String> prayerTimes;
 
-        TimeZone tz = TimeZone.getDefault();
+        // TimeZone tz = TimeZone.getDefault();
+        TimeZone tz;
+        tz = TimeZone.getTimeZone(getTimeZone());
+        if (getTimeZone().isEmpty() || getTimeZone() == null) {
+            tz = TimeZone.getDefault();
+        }
+
         long timeNow = new Date().getTime();
         timezone = (double) ((tz.getOffset(timeNow) / 1000) / 60) / 60;
         HashMap<String, Integer> settingsData = mPrayerTimeSettingsPref.getSettings();
@@ -41,14 +51,17 @@ public class CalculatePrayerTime {
             AutoSettingsJsonParser autoSettingsJsonParser = new AutoSettingsJsonParser();
             PrayerTimeModel data = autoSettingsJsonParser.getAutoSettings(contxt);
 
+
             juristic = data.getJuristicIndex();
             method = data.getConventionNumber();
 
             prayers.setAsrJuristic(juristic);
             prayers.setCalcMethod(method);
-            prayers.setAdjustHighLats(prayers.AngleBased);
 
-            if (method == prayers.Custom) {
+
+            prayers.setAdjustHighLats(prayers.AngleBased);
+            mPrayerTimeSettingsPref.setCalculationMethod(method);
+           /* if (method == prayers.Custom) {
                 double fajrAngle = data.getAngleFajr();
                 double ishaAngle = data.getAngleIsha();
 
@@ -56,7 +69,7 @@ public class CalculatePrayerTime {
                 double[] Cvalues = {fajrAngle, 1, 0, 0, ishaAngle};
 
                 prayers.setCustomParams(Cvalues);
-            }
+            }*/
 
             int daylightSaving = prayers.detectDaylightSaving();
 
@@ -79,7 +92,6 @@ public class CalculatePrayerTime {
             asar = mPrayerTimeSettingsPref.getCorrectionsAsar();
             maghrib = mPrayerTimeSettingsPref.getCorrectionsMaghrib();
             isha = mPrayerTimeSettingsPref.getCorrectionsIsha();
-
 
             prayers.setAsrJuristic(juristic);
             prayers.setCalcMethod(method);
@@ -165,4 +177,34 @@ public class CalculatePrayerTime {
 
         return prayerTimes;
     }
+
+
+    public String getTimeZone() {
+        DBManager dbObj = new DBManager(contxt);
+        dbObj.open();
+        String timeZone = "";
+        LocationPref locationPref = new LocationPref(contxt);
+        HashMap<String, String> alarm = locationPref.getLocation();
+
+
+     Cursor c = dbObj.getTimeZone(alarm.get(LocationPref.CITY_NAME), locationPref.getLatitude().split("\\.")[0] + ".", locationPref.getLongitude().split("\\.")[0] + ".");
+
+        if (c.moveToFirst()) {
+            timeZone = c.getString(c.getColumnIndex(DBManager.FLD_TIME_ZONE));
+            c.close();
+            dbObj.close();
+        }
+
+
+        //Extract only paranthesis data
+        Matcher m = Pattern.compile("\\(([^)]+)\\)").matcher(timeZone);
+        while (m.find()) {
+            timeZone = m.group(1);
+            break;
+        }
+
+        return timeZone;
+    }
+
+
 }
