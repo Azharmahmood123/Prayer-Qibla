@@ -192,9 +192,10 @@ public class ManualLocationDialog {
             locationProvider.show();
 
             autoText.requestFocus();
-            InputMethodManager imm = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
+
+          /*  InputMethodManager imm = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
             imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
-            imm.showSoftInputFromInputMethod(autoText.getWindowToken(), 0);
+            imm.showSoftInputFromInputMethod(autoText.getWindowToken(), 0);*/
         }
     }
 

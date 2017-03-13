@@ -1,75 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    android:scrollbars="none"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:scrollbars="none">
 
-
-    <LinearLayout
-        android:orientation="vertical"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <TextView
-            android:textColor="@color/black"
-            android:id="@+id/tv_arabic_tasbeeh"
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="@dimen/_18sdp"
-            android:layout_marginTop="@dimen/_15sdp"
-            android:gravity="right"
-            android:lineSpacingExtra="@dimen/size_ten"
-            android:text="Arabimc here"
-            android:textSize="@dimen/_18sdp" />
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_arabic_tasbeeh"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="@dimen/_18sdp"
+                android:layout_marginRight="@dimen/_18sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:gravity="right"
+                android:lineSpacingExtra="@dimen/size_ten"
+                android:text="Arabimc here"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_18sdp" />
 
 
-        <TextView
-            android:id="@+id/tv_eng_tasbeeh"
+            <TextView
+                android:id="@+id/tv_eng_tasbeeh"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_2sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:gravity="left"
+                android:lineSpacingExtra="@dimen/size_two"
+                android:paddingLeft="@dimen/_15sdp"
+                android:paddingRight="@dimen/_5sdp"
+                android:text="Tranisilatie"
+                android:textColor="@color/transliration_color"
+                android:textSize="@dimen/_12sdp"
+                android:textStyle="italic"
+                android:typeface="serif" />
+
+            <TextView
+                android:id="@+id/tv_translation_tasbeeh"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:gravity="left"
+                android:lineSpacingExtra="@dimen/size_two"
+                android:paddingLeft="@dimen/_15sdp"
+                android:paddingRight="@dimen/_5sdp"
+                android:paddingTop="@dimen/_2sdp"
+                android:text="Transaltion"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14sdp" />
+
+
+            <TextView
+                android:id="@+id/tv_ref_tasbeeh"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:gravity="left"
+                android:lineSpacingExtra="@dimen/size_two"
+                android:paddingLeft="@dimen/_15sdp"
+                android:paddingRight="@dimen/_5sdp"
+                android:paddingTop="@dimen/_2sdp"
+                android:text="Reference"
+                android:textColor="@color/gray_dark"
+                android:textSize="@dimen/_10sdp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/linear_swipe"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="@dimen/_10sdp"
-            android:gravity="left"
-            android:lineSpacingExtra="@dimen/size_two"
-            android:paddingLeft="@dimen/_15sdp"
-            android:paddingRight="@dimen/_5sdp"
-            android:text="Tranisilatie"
-            android:textSize="@dimen/_12sdp"
-            android:textColor="@color/transliration_color"
-            android:layout_marginBottom="@dimen/_2sdp"
-            android:textStyle="italic"
-            android:typeface="serif" />
-        <TextView
-            android:textColor="@color/black"
-            android:id="@+id/tv_translation_tasbeeh"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="@dimen/_10sdp"
-            android:gravity="left"
-            android:lineSpacingExtra="@dimen/size_two"
-            android:paddingLeft="@dimen/_15sdp"
-            android:paddingRight="@dimen/_5sdp"
-            android:paddingTop="@dimen/_2sdp"
-            android:text="Transaltion"
-            android:textSize="@dimen/_14sdp"
-            />
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:gravity="center_horizontal"
+                android:text="@string/text_swipe"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14sdp" />
 
-        <TextView
-            android:textColor="@color/gray_dark"
-            android:id="@+id/tv_ref_tasbeeh"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="@dimen/_10sdp"
-            android:gravity="left"
-            android:lineSpacingExtra="@dimen/size_two"
-            android:paddingLeft="@dimen/_15sdp"
-            android:paddingRight="@dimen/_5sdp"
-            android:paddingTop="@dimen/_2sdp"
-            android:text="Reference"
-            android:textSize="@dimen/_10sdp"
-            />
-    </LinearLayout>
-
-
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:gravity="center"
+                android:padding="@dimen/_10sdp"
+                android:src="@drawable/swipe" />
+        </LinearLayout>
+    </RelativeLayout>
 </ScrollView>

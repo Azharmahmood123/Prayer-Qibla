@@ -24,6 +24,13 @@
     <string name="grid_names">Allah Noms</string>
     <string name="grid_settings">Paramètres</string>
 
+
+    <string name="grid_tasbeeh">Tasbeeh</string>
+    <string name="grid_search">Rechercher dans le Coran</string>
+
+
+
+
     <string name="notificaion_time">Temps de notification</string>
     <string name="notification_sound">notification Sonner</string>
     <string name="notificaion">notification</string>
@@ -129,4 +136,31 @@
     <string name = "txt_duas_title"> Sélectionnez Traduction </string>
     <string name = "txt_urdu"> Urdu </string>
     <string name = "txt_eng"> English </string>
+
+
+    <string name = "no_topic_found"> ​​Aucun sujet trouvé </string>
+       
+        <string name = "text_search_hint_topic"> Sujets de recherche </string>
+        <string name = "text_search_quran"> Rechercher dans le Coran </string>
+        <string name = "text_common_topic"> Sujets courants </string>
+        <string name = "text_search"> Rechercher </string>
+        <string name = "no_text_search"> Aucun mot trouvé </string>
+        <string name = "no_result_quran"> Aucun mot trouvé dans le Coran </string>
+        <string name = "text_swipe"> Balayer pour afficher Dhiker </string>
+        <string name = "text_reset_title"> Confirmer l\'action </string>
+        <string name = "text_rest_msg"> Voulez-vous réinitialiser le compteur actuel / total? Cela ne peut pas être annulé. </string>
+
+
+    <string name = "txt_auto_setting_off"> Recommandé pour activer les réglages automatiques \'ON \' pour des réglages précis de Salat. </string>
+    <string name  = "location_settings"> Emplacement </string>
+      <string name  = "location_method"> Méthode de détection d\'emplacement </string>
+    <string name  = "dont_show_msg_loc"> Ne plus afficher de message </string>
+
+        <string-array name = "array_location_method">
+
+            <item> Mettre à jour l\'emplacement automatiquement chaque fois que le nouvel emplacement est détecté </item>
+            <item> Ne pas mettre à jour l\'emplacement automatiquement chaque fois que le nouvel emplacement est détecté </item>
+            <item> Toujours demander ma préférence chaque fois qu\'un nouvel emplacement est détecté </item>
+        </string-array>
+    
 </resources>

@@ -167,8 +167,9 @@ public class MainActivityNew extends AppCompatActivity implements AdapterView.On
     public static final int menuFeedBackC = 9;
     public static final int menuAboutUsC = 10;
     public static final int menuDisclaimerC = 11;
-    public static final int menuLogout = 12;
-    public static final int menuFaceBookC = 13;
+    public static final int menuLogout = 13;
+    public static final int menuFaceBookC = 14;
+    public static final int menuPrivayC = 12;
     private long lastClick = 0;
 
     @Override
@@ -318,6 +319,9 @@ public class MainActivityNew extends AppCompatActivity implements AdapterView.On
         drawerListData.add(dataObj);
 
         dataObj = new MenuDrawerModel(false, true, false, getResources().getString(R.string.disclaimer), menuDisclaimerC);
+        drawerListData.add(dataObj);
+
+        dataObj = new MenuDrawerModel(false, true, false, getResources().getString(R.string.privacy_text), menuPrivayC);
         drawerListData.add(dataObj);
 
         //if User login then add
@@ -623,7 +627,14 @@ public class MainActivityNew extends AppCompatActivity implements AdapterView.On
                     showLogoutAlert();
                 }
                 break;
+                case menuPrivayC: {
+                    inProcess = true;
+                    sendAnalyticEvent("Privacy Policy");
+                    Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.policy_link)));
+                    startActivity(browserIntent);
 
+                }
+                break;
 
                 case menuFaceBookC:
                     sendAnalyticEvent("Facebook");

@@ -14,7 +14,8 @@ import com.quranreading.qibladirection.R;
 
 import java.util.List;
 
-import noman.quran.model.TopicList;
+import noman.searchquran.model.TopicList;
+
 
 /**
  * Created by Administrator on 2/22/2017.

@@ -16,8 +16,8 @@ import com.quranreading.qibladirection.GlobalClass;
 import com.quranreading.qibladirection.R;
 
 import noman.CommunityGlobalClass;
-import noman.quran.JuzConstant;
 import noman.quran.adapter.LanguageListAdapter;
+import noman.quran.model.JuzConstant;
 import quran.arabicutils.ArabicUtilities;
 import noman.sharedpreference.SurahsSharedPref;
 

@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import noman.CommunityGlobalClass;
-import noman.quran.QuranModuleActivity;
+import noman.quran.activity.QuranModuleActivity;
 import noman.quran.fragment.QuranListFragment;
 import noman.quran.holder.ParentContainerHolder;
 import quran.helper.DBManagerQuran;

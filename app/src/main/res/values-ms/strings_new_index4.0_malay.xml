@@ -26,6 +26,8 @@
     <string name="grid_settings">Settings</string>
 
 
+    <string name="grid_tasbeeh">Tasbeeh</string>
+    <string name="grid_search">Cari Quran</string>
 
     <string name="notificaion_time"> Pemberitahuan Masa </string>
     <string name="notification_sound"> ​​Bunyi Pemberitahuan </string>
@@ -132,4 +134,29 @@
     <string name="txt_duas_title">Pilih Terjemahan</string>
     <string name="txt_urdu">Urdu</string>
     <string name="txt_eng">English</string>
+
+     <string name="no_topic_found"> ​​No Topic Terdapat </string>
+
+         <string name="text_search_hint_topic"> Cari Topik </string>
+         <string name="text_search_quran"> Cari dari Quran </string>
+         <string name="text_common_topic"> Topik Common </string>
+         <string name="text_search"> Cari </string>
+         <string name="no_text_search"> Tiada perkataan mendapati </string>
+         <string name="no_result_quran"> Tiada perkataan dijumpai di dalam al-Quran </string>
+         <string name="text_swipe"> Swipe Untuk Lihat Dhiker </string>
+         <string name="text_reset_title"> Sahkan Tindakan </string>
+         <string name="text_rest_msg"> Adakah anda pasti untuk menetapkan semula jumlah kaunter / semasa? Ini tidak boleh dibuat asal. </string>
+
+        <string name= "txt_auto_setting_off"> Disyorkan untuk menghidupkan Tetapan Auto \'ON \' untuk pengaturan masa Salat tepat. </string>
+        <string name= "location_settings"> Lokasi </string>
+        <string name = "location_method"> Lokasi Pengesanan Kaedah </string>
+           <string name = "dont_show_msg_loc"> Don \'mesej t show lagi </string>
+
+        <string-array name = "array_location_method">
+
+            <item> Update lokasi secara automatik setiap kali apabila lokasi baru yang dikesan </item>
+            <item> Don \'t kemas kini lokasi secara automatik setiap kali apabila lokasi baru yang dikesan </item>
+            <item> Sentiasa meminta pilihan saya setiap kali lokasi baru yang dikesan </item>
+        </string-array>
+
 </resources>

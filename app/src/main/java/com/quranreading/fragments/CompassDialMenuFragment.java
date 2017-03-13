@@ -239,10 +239,10 @@ public class CompassDialMenuFragment extends Fragment implements RotationUpdateD
             requestLocaion();
         }
 
-        if (manualDialog != null) {
+      /*  if (manualDialog != null) {
             manualDialog.onResumeLocationDialog();
         }
-
+*/
         Log.e("onResume", "CompassDialMenuFragment");
         isActivityOpened = false;
 

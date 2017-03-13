@@ -13,8 +13,9 @@ import com.quranreading.qibladirection.R;
 
 import java.util.List;
 
-import noman.quran.JuzConstant;
-import noman.quran.model.TopicModel;
+import noman.quran.model.JuzConstant;
+import noman.searchquran.model.TopicModel;
+
 
 /**
  * Created by Administrator on 2/22/2017.

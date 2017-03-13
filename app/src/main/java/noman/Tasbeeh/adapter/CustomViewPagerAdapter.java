@@ -2,9 +2,11 @@ package noman.Tasbeeh.adapter;
 
 import android.content.Context;
 import android.support.v4.view.PagerAdapter;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.quranreading.qibladirection.GlobalClass;
@@ -25,7 +27,14 @@ public class CustomViewPagerAdapter extends PagerAdapter {
     Context mContext;
     LayoutInflater mLayoutInflater;
     List<TasbeehModel> tasbeehModelList;
-
+    String lastDarood="" +
+        "اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ\n" +
+        "كَمَا صَلَّيْتَ عَلَى إِبْرَاهِيمَ وَعَلَى آلِ إِبْرَاهِيمَ\n" +
+        "إِنَّكَ حَمِيدٌ مَجِيدٌ\n" +
+        "اللَّهُمَّ بَارِكْ عَلَى مُحَمَّدٍ، وَعَلَى آلِ مُحَمَّدٍ\n" +
+        "كَمَا بَارَكْتَ عَلَى إِبْرَاهِيمَ وَعَلَى آلِ إِبْرَاهِيمَ\n" +
+        "إِنَّكَ حَمِيدٌ مَجِيدٌ\n" +
+        "";
     public CustomViewPagerAdapter(Context context, List<TasbeehModel> tasbeehModelList) {
         mContext = context;
         mLayoutInflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -53,17 +62,32 @@ public class CustomViewPagerAdapter extends PagerAdapter {
         TextView tvArabicTasbeeh = (TextView) itemView.findViewById(R.id.tv_arabic_tasbeeh);
         TextView tvRefTasbeeh = (TextView) itemView.findViewById(R.id.tv_ref_tasbeeh);
         TextView tvTranslitraitonTasbeeh = (TextView) itemView.findViewById(R.id.tv_eng_tasbeeh);
+        LinearLayout linearSwipe = (LinearLayout) itemView.findViewById(R.id.linear_swipe);
+
 
         tvTranslitraitonTasbeeh.setTypeface(((GlobalClass) mContext.getApplicationContext()).faceRobotoL);
         tvRefTasbeeh.setTypeface(((GlobalClass) mContext.getApplicationContext()).faceRobotoL);
         tvEngTasbeeh.setTypeface(((GlobalClass) mContext.getApplicationContext()).faceRobotoL);
         tvArabicTasbeeh.setTypeface(((GlobalClass) mContext.getApplicationContext()).faceArabic);
 
-
-        tvArabicTasbeeh.setText(ArabicUtilities.reshapeSentence(tasbeehModelList.get(position).getTasbeehArabic()));
-        tvTranslitraitonTasbeeh.setText(tasbeehModelList.get(position).getTasbeehEng());
+        if(position==59)
+        {
+            Log.e("last","darod");
+            tvArabicTasbeeh.setText(ArabicUtilities.reshapeSentence(lastDarood));
+        }
+        else {
+            tvArabicTasbeeh.setText(ArabicUtilities.reshapeSentence(tasbeehModelList.get(position).getTasbeehArabic()));
+        }
+            tvTranslitraitonTasbeeh.setText(tasbeehModelList.get(position).getTasbeehEng());
         tvEngTasbeeh.setText(tasbeehModelList.get(position).getTranslation());
         tvRefTasbeeh.setText(tasbeehModelList.get(position).getReference());
+
+
+        if (position == 0) {
+            linearSwipe.setVisibility(View.VISIBLE);
+        } else {
+            linearSwipe.setVisibility(View.GONE);
+        }
 
         container.addView(itemView);
 

@@ -37,10 +37,12 @@ import com.quranreading.sharedPreference.LocationPref;
 
 import duas.activities.DuasGridActivity;
 import names.activities.NamesListPlayingActivity;
+import noman.Tasbeeh.activity.TasbeehListActivity;
 import noman.community.activity.ComunityActivity;
 import noman.hijri.acitivity.CalenderActivity;
-import noman.quran.QuranModuleActivity;
-import noman.quran.TopicActivity;
+import noman.quran.activity.QuranModuleActivity;
+
+import noman.searchquran.activity.TopicActivity;
 import places.activities.PlacesListActivity;
 import noman.sharedpreference.SurahsSharedPref;
 
@@ -59,8 +61,9 @@ public class MenuGridItemFragment extends Fragment {
     public static final int MENU_MOSQUES = 6;
     public static final int MENU_HALAL = 7;
     public static final int MENU_DUAS = 8;
-    public static final int MENU_NAMES = 9;
-    public static final int MENU_SETTINGS = 10;
+    public static final int MENU_TASBEEH = 9;
+    public static final int MENU_NAMES = 10;
+    public static final int MENU_SETTINGS = 11;
 
 
     public static final String GRID_ITEMS = "grid_items";
@@ -264,11 +267,11 @@ public class MenuGridItemFragment extends Fragment {
                     startActivity(intent);
                     break;
 
-//            case MENU_ABOUT_US:
-//                intent = new Intent(mContext, AboutInstructionActivity.class);
-//                intent.putExtra(MainActivityNew.ACTIVITY_SELECTION, MainActivityNew.ACTIVITY_ABOUT);
-//                startActivity(intent);
-//                break;
+                case MENU_TASBEEH:
+
+                    intent = new Intent(mContext, TasbeehListActivity.class);
+                    startActivity(intent);
+                    break;
 
                 default:
                     break;
@@ -282,7 +285,7 @@ public class MenuGridItemFragment extends Fragment {
         int images[] = {
                 R.drawable.grid_bg_timings, R.drawable.grid_bg_direction, R.drawable.grid_bg_quran,
                 R.drawable.grid_bg_old_community,R.drawable.grid_bg_search, R.drawable.grid_bg_calendar,
-                R.drawable.grid_bg_mosque, R.drawable.grid_bg_halal, R.drawable.grid_bg_duas,
+                R.drawable.grid_bg_mosque, R.drawable.grid_bg_halal, R.drawable.grid_bg_duas, R.drawable.grid_tasbeeh,
                 R.drawable.grid_bg_names, R.drawable.grid_bg_settings, };
 
 

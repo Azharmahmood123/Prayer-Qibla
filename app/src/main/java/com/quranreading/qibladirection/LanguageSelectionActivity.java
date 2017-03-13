@@ -1,6 +1,5 @@
 package com.quranreading.qibladirection;
 
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -24,12 +23,8 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.quranreading.adapter.LanguagesListAdapter;
 import com.quranreading.ads.AnalyticSingaltonClass;
-import com.quranreading.helper.DailogsClass;
 import com.quranreading.listeners.OnDailogButtonSelectionListner;
 import com.quranreading.sharedPreference.LanguagePref;
-
-import noman.CommunityGlobalClass;
-import noman.quran.JuzConstant;
 
 public class LanguageSelectionActivity extends AppCompatActivity implements OnItemClickListener, OnDailogButtonSelectionListner {
 

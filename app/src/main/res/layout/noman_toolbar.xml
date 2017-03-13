@@ -37,7 +37,7 @@
                 android:layout_height="match_parent"
                 android:background="@drawable/btn_hower"
                 android:padding="@dimen/_10sdp"
-                android:src="@drawable/new_menu" />
+                android:src="@drawable/ic_menu_hamburg" />
         </LinearLayout>
 
         <LinearLayout

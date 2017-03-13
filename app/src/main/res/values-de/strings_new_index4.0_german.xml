@@ -25,6 +25,10 @@
     <string name="grid_duas">Duas</string>
 
 
+    <string name="grid_tasbeeh">Tasbeeh</string>
+    <string name="grid_search">Suche Quran</string>
+
+
     <string name="notificaion_time"> Benachrichtigung Zeit </string>
     <string name="notification_sound"> ​​Notification Sound </string>
     <string name="notificaion"> Mitteilung </string>
@@ -126,7 +130,33 @@
     <string name="adhan6_new"> Mishary Rashid Al-Afsay </string>
     <string name="adhan7_new"> Adhan aus Ägypten </string>
 
-    <string name = "txt_duas_title"> Wählen Sie Übersetzung </string>
-    <string name = "txt_urdu"> Urdu </string>
-    <string name = "txt_eng"> English </string>
+  <string name =   "txt_duas_title"> Wählen Sie Übersetzung </string>
+  <string name =   "txt_urdu"> Urdu </string>
+  <string name =   "txt_eng"> English </string>
+
+  <string name =   "no_topic_found"> ​​Kein Thema gefunden </string>
+
+        <string name = "text_search_hint_topic"> Suchthemen </string>
+        <string name = "text_search_quran"> Suche aus Quran </string>
+        <string name = "text_common_topic"> Allgemeine Themen </string>
+        <string name = "text_search"> Suchen </string>
+        <string name = "no_text_search"> Kein Wort gefunden </string>
+        <string name = "no_result_quran"> Kein Wort im Quran gefunden </string>
+        <string name = "text_swipe"> Dhiker </string> anzeigen
+        <string name = "text_reset_title"> Aktion bestätigen </string>
+        <string name = "text_rest_msg"> Sind Sie sicher, den aktuellen / totalen Zähler zurückzusetzen? Dies kann nicht rückgängig gemacht werden. </string>
+
+    <string name = "txt_auto_setting_off"> Empfohlen, um die Auto-Einstellungen \'ON\' für genaue Salat-Timings zu aktivieren. </string>
+        <string name = "location_settings"> location </string>
+        <string name = "location_method"> Standorterkennungsmethode </string>
+        <string name = "dont_show_msg_loc"> Ich melde die Nachricht nie wieder </string>
+
+        <string-array name = "array_location_method">
+
+            <item> Aktualisierungsstandort automatisch jedes Mal, wenn der neue Standort erkannt wurde </item>
+            <item> Don\'t aktualisiere den Standort automatisch jedes Mal, wenn der neue Standort erkannt wurde </item>
+            <item> Immer nach meiner Präferenz fragen, wann immer neuer Standort erkannt wird </item>
+        </string-array>
+
+
 </resources>

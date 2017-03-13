@@ -2,6 +2,7 @@ package com.quranreading.helper;
 
 import android.content.Context;
 import android.database.Cursor;
+import android.telephony.TelephonyManager;
 
 import com.quranreading.model.PrayerTimeModel;
 import com.quranreading.sharedPreference.LocationPref;
@@ -37,6 +38,7 @@ public class CalculatePrayerTime {
         tz = TimeZone.getTimeZone(getTimeZone());
         if (getTimeZone().isEmpty() || getTimeZone() == null) {
             tz = TimeZone.getDefault();
+
         }
 
         long timeNow = new Date().getTime();
@@ -47,6 +49,7 @@ public class CalculatePrayerTime {
 
         boolean isAutoSettings = mPrayerTimeSettingsPref.isAutoSettings();
 
+
         if (isAutoSettings) {
             AutoSettingsJsonParser autoSettingsJsonParser = new AutoSettingsJsonParser();
             PrayerTimeModel data = autoSettingsJsonParser.getAutoSettings(contxt);
@@ -55,10 +58,10 @@ public class CalculatePrayerTime {
             juristic = data.getJuristicIndex();
             method = data.getConventionNumber();
 
-            prayers.setAsrJuristic(juristic);
+
+            // prayers.setAsrJuristic(juristic);
+             prayers.setAsrJuristic(juristic-1);  //because asar timing is incorrect show it show jursitic asar timings
             prayers.setCalcMethod(method);
-
-
             prayers.setAdjustHighLats(prayers.AngleBased);
             mPrayerTimeSettingsPref.setCalculationMethod(method);
            /* if (method == prayers.Custom) {
@@ -73,11 +76,14 @@ public class CalculatePrayerTime {
 
             int daylightSaving = prayers.detectDaylightSaving();
 
+            int asar = data.getCorrections()[3]; //+ timeAssarDiff;
+
+
             if (mPrayerTimeSettingsPref.isDaylightSaving()) {
-                int[] offsets = {daylightSaving + data.getCorrections()[0], daylightSaving + data.getCorrections()[1], daylightSaving + data.getCorrections()[2], daylightSaving + data.getCorrections()[3], daylightSaving + data.getCorrections()[4], daylightSaving + data.getCorrections()[4], daylightSaving + data.getCorrections()[5]}; // {Fajr,Sunrise,Dhuhr,Asr,Sunset,Maghrib,Isha}
+                int[] offsets = {daylightSaving + data.getCorrections()[0], daylightSaving + data.getCorrections()[1], daylightSaving + data.getCorrections()[2], daylightSaving + asar, daylightSaving + data.getCorrections()[4], daylightSaving + data.getCorrections()[4], daylightSaving + data.getCorrections()[5]}; // {Fajr,Sunrise,Dhuhr,Asr,Sunset,Maghrib,Isha}
                 prayers.tune(offsets);
             } else {
-                int[] offsets = {data.getCorrections()[0], data.getCorrections()[1], data.getCorrections()[2], data.getCorrections()[3], data.getCorrections()[4], data.getCorrections()[4], data.getCorrections()[5]}; // {Fajr,Sunrise,Dhuhr,Asr,Sunset,Maghrib,Isha}
+                int[] offsets = {data.getCorrections()[0], data.getCorrections()[1], data.getCorrections()[2],asar, data.getCorrections()[4], data.getCorrections()[4], data.getCorrections()[5]}; // {Fajr,Sunrise,Dhuhr,Asr,Sunset,Maghrib,Isha}
                 prayers.tune(offsets);
             }
         } else {
@@ -93,9 +99,18 @@ public class CalculatePrayerTime {
             maghrib = mPrayerTimeSettingsPref.getCorrectionsMaghrib();
             isha = mPrayerTimeSettingsPref.getCorrectionsIsha();
 
-            prayers.setAsrJuristic(juristic);
+
+
+            // prayers.setAsrJuristic(juristic);  //becayse
+            prayers.setAsrJuristic(juristic-1);  //because asar timing is incorrect show it show jursitic asar timings
+
             prayers.setCalcMethod(method);
             prayers.setAdjustHighLats(prayers.AngleBased);
+
+
+            //Gettin time differnce acording to database
+         //  asar = asar+timeAssarDiff;
+
 
             if (mPrayerTimeSettingsPref.isDaylightSaving()) {
                 int[] offsets = {60 + fajr, 60 + sunrize, 60 + zuhar, 60 + asar, 60 + maghrib, 60 + maghrib, 60 + isha}; // {Fajr,Sunrise,Dhuhr,Asr,Sunset,Maghrib,Isha}
@@ -207,4 +222,52 @@ public class CalculatePrayerTime {
     }
 
 
+
+   /* public int getAsarTimeDiffManual() {
+        DBManager dbObj = new DBManager(contxt);
+        dbObj.open();
+        int timeZone = 0;
+        LocationPref locationPref = new LocationPref(contxt);
+        HashMap<String, String> alarm = locationPref.getLocation();
+
+
+        Cursor c = dbObj.getTimeZone(alarm.get(LocationPref.CITY_NAME), locationPref.getLatitude().split("\\.")[0] + ".", locationPref.getLongitude().split("\\.")[0] + ".");
+
+        if (c.moveToFirst()) {
+           String country = c.getString(c.getColumnIndex(DBManager.FLD_COUNTRY));
+            Cursor cc = dbObj.getCountryCodes(country);
+            if (cc.moveToFirst()) {
+                timeZone = cc.getInt(cc.getColumnIndex(DBManager.FLD_TIME_DIFF));
+                cc.close();
+            }
+            c.close();
+
+        }
+        dbObj.close();
+
+
+        return timeZone;
+    }
+
+
+    //If lat long and city not found in Database then use country code to get the difference
+    public int getAsarTimeDiffAuto(Context mContext) {
+        TelephonyManager tm = (TelephonyManager) mContext.getSystemService(Context.TELEPHONY_SERVICE);
+         String  countryCode = tm.getSimCountryIso();
+
+        if (countryCode.equals("")) {
+            countryCode = tm.getNetworkCountryIso();
+        }
+        countryCode = countryCode.trim().toLowerCase();
+        DBManager dbObj = new DBManager(contxt);
+        dbObj.open();
+        int timeZone = 0;
+        Cursor c = dbObj.getCountrybyCodes(countryCode);
+        if (c.moveToFirst()) {
+            timeZone = c.getInt(c.getColumnIndex(DBManager.FLD_TIME_DIFF));
+            c.close();
+        }
+        dbObj.close();
+        return timeZone;
+    }*/
 }

@@ -15,7 +15,7 @@ import com.quranreading.qibladirection.R;
 import java.util.List;
 
 import noman.Tasbeeh.model.TasbeehModel;
-import noman.quran.model.TopicList;
+
 
 /**
  * Created by Administrator on 2/22/2017.
@@ -70,7 +70,7 @@ public class TasbeehListAdapter extends BaseAdapter {
         LayoutInflater mInflater = (LayoutInflater) mContext.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
 
         if (convertView == null) {
-            convertView = mInflater.inflate(R.layout.row_surah_list, null);
+            convertView = mInflater.inflate(R.layout.row_tasbeeh, null);
 
             holder = new TasbeehListAdapter.ViewHolder();
             holder.tvSurahNo = (TextView) convertView.findViewById(R.id.tv_surah_no);

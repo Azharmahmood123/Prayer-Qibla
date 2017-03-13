@@ -2,8 +2,8 @@
   "BD": {
     "hijri": 0,
     "dst": 0,
-    "juristic": "Hanafi",
-    "juristic_index": 2,
+    "juristic": "Standard",
+    "juristic_index": 1,
     "convention": "Karachi",
     "convention_position": 4,
     "convention_index": 1,
@@ -156,19 +156,20 @@
   },
   "RU": {
     "hijri": 1,
-    "dst": 0,
+    "dst": 1,
     "convention": "Custom",
     "convention_index": 13,
     "juristic": "Standard",
     "juristic_index": 1,
     "angle-fajr": 16,
     "corrections": [
-      0,
+      13,
       4,
       2,
       0,
       -3,
-      7
+      -7
+
     ],
     "angle-isha": 15
   },
@@ -226,8 +227,8 @@
   "PK": {
     "hijri": 0,
     "dst": 0,
-    "juristic": "Hanafi",
-    "juristic_index": 2,
+    "juristic": "Standard",
+    "juristic_index": 1,
     "convention": "Karachi",
     "convention_position": 4,
     "convention_index": 1,
@@ -277,8 +278,8 @@
   "AF": {
     "hijri": 1,
     "dst": 0,
-    "juristic": "Hanafi",
-    "juristic_index": 2,
+    "juristic": "Standard",
+    "juristic_index": 1,
     "convention": "Karachi",
     "convention_position": 4,
     "convention_index": 1,
@@ -345,8 +346,8 @@
   "IR": {
     "hijri": 1,
     "dst": 0,
-    "juristic": "Hanafi",
-    "juristic_index": 2,
+   "juristic": "Standard",
+    "juristic_index": 1,
     "convention": "Karachi",
     "convention_position": 4,
     "convention_index": 1,
@@ -396,8 +397,8 @@
   "IN": {
     "hijri": 0,
     "dst": 0,
-    "juristic": "Hanafi",
-    "juristic_index": 2,
+    "juristic": "Standard",
+    "juristic_index": 1,
     "convention": "Karachi",
     "convention_position": 4,
     "convention_index": 1,

@@ -82,7 +82,7 @@ public class AutoSettingsJsonParser {
         LocationPref locationPref = new LocationPref(mContext);
         DBManager dbObj = new DBManager(mContext);
         dbObj.open();
-//Split string to get the only point before value lat and long
+            //Split string to get the only point before value lat and long
       //  Cursor c = dbObj.getCountry(locationPref.getLatitude().split("\\.")[0] + ".", locationPref.getLongitude().split("\\.")[0] + ".");
         Cursor c = dbObj.getCountry(locationPref.getLatitude().split("\\.")[0] + ".", locationPref.getLongitude().split("\\.")[0] + ".");
 
@@ -117,11 +117,9 @@ public class AutoSettingsJsonParser {
     public PrayerTimeModel getAutoSettings(Context mContext) {
 
         String countryCode = "";
-        LocationPref locationPref = new LocationPref(mContext);
 
         //So work on db method
         countryCode = operateFromDataBase(mContext);
-
 
         //  code = locationPref.getCountryCode();
         //This will only when internet works

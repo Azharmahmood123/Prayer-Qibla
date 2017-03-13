@@ -6,6 +6,11 @@
     <string name="text_search_quran">Search from Quran</string>
     <string name="text_common_topic">Common Topics</string>
     <string name="text_search">Search</string>
-    <string name="no_text_search">Please enter word to search</string>
+    <string name="no_text_search">No word found</string>
     <string name="no_result_quran">No word found in Quran</string>
+    <string name="text_swipe">Swipe To View Dhiker</string>
+    <string name="text_reset_title">Confirm Action</string>
+    <string name="text_rest_msg">Are you sure to reset the current/total counter? This cannot be undone.</string>
+    <string name="privacy_text">Privacy Policy</string>
+    <string name="policy_link">http://www.quranreading.com/apps/Qibla-Connect-privacy-policy.html</string>
 </resources>

@@ -11,6 +11,7 @@ import android.os.Vibrator;
 import android.support.v4.view.GestureDetectorCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AlertDialog;
+import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
@@ -27,6 +28,7 @@ import com.quranreading.qibladirection.R;
 import java.util.List;
 
 import noman.Ads.AdIntegration;
+import noman.CommunityGlobalClass;
 import noman.Tasbeeh.SharedPref;
 import noman.Tasbeeh.adapter.CustomViewPagerAdapter;
 import noman.Tasbeeh.model.TasbeehModel;
@@ -37,6 +39,9 @@ import noman.Tasbeeh.model.TasbeehModel;
  */
 
 public class TasbeehActivity extends AdIntegration implements View.OnClickListener {
+
+    int thirtyThreeCounter = 0;
+    int nintyNineCounter = 0;
 
     public TextView txtToolbarTitle;
     LinearLayout imgBackBtn;
@@ -55,9 +60,7 @@ public class TasbeehActivity extends AdIntegration implements View.OnClickListen
 
     private SharedPref sharedPref;
 
-    private boolean convertCheck = false;
-    private boolean firstHalf = false;
-    private boolean secondHalf = false;
+
     private boolean soundMode = true;
     private boolean vibrateMode = false;
 
@@ -66,20 +69,17 @@ public class TasbeehActivity extends AdIntegration implements View.OnClickListen
 
     private Vibrator vibrator;
 
-    private int zeroCheck;
+
     private int totalTasbeehCountValue = 0;
     private int counter = 0;
-    private int currentCounterValue = 0;
+
 
 
     boolean isTasbeehContianer = false;
     ViewPager viewPager;
     int tasbeehId = 0;
-    /**
-     * ATTENTION: This was auto-generated to implement the App Indexing API.
-     * See https://g.co/AppIndexing/AndroidStudio for more information.
-     */
-    private GoogleApiClient client;
+
+
     CustomViewPagerAdapter customViewPagerAdapter;
     List<TasbeehModel> mTasbeehList;
 
@@ -93,10 +93,13 @@ public class TasbeehActivity extends AdIntegration implements View.OnClickListen
             super.showBannerAd(this, (LinearLayout) findViewById(R.id.ads_layout));
         }
         initateToolBarItems();
+
+        showAnalytics(true, "");
+
         sharedPref = new SharedPref(this);
 
 
-        isTasbeehContianer = getIntent().getExtras().getBoolean("isTasbeeh", false);
+        isTasbeehContianer = getIntent().getExtras().getBoolean("isTasbeeh", false); //its used before when database not given
         vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
 
 
@@ -126,8 +129,8 @@ public class TasbeehActivity extends AdIntegration implements View.OnClickListen
         resetButton = (RelativeLayout) findViewById(R.id.reset_btn);
         counterModeButton = (RelativeLayout) findViewById(R.id.countdown_mode_btn);
 
-        mediaPlayer = MediaPlayer.create(TasbeehActivity.this, R.raw.tasbeeh_test);
-        mediaPlayerForBackward = MediaPlayer.create(TasbeehActivity.this, R.raw.tasbeeh_backward);
+        mediaPlayer = MediaPlayer.create(TasbeehActivity.this, R.raw.tasbih_inc);
+        mediaPlayerForBackward = MediaPlayer.create(TasbeehActivity.this, R.raw.tasbih_dec);
 
         mainLayout.setOnClickListener(this);
         soundButton.setOnClickListener(this);
@@ -146,7 +149,6 @@ public class TasbeehActivity extends AdIntegration implements View.OnClickListen
         initializeIndexList();
         customViewPagerAdapter = new CustomViewPagerAdapter(this, mTasbeehList);
         viewPager.setAdapter(customViewPagerAdapter);
-
         //Set Prefernce when its
         if (isTasbeehContianer) {
             getTasbeehPref();
@@ -154,9 +156,11 @@ public class TasbeehActivity extends AdIntegration implements View.OnClickListen
 
             tasbeehId = getIntent().getExtras().getInt("id");
             getTashbeehDataFromDatabase(tasbeehId);
-            viewPager.setCurrentItem(tasbeehId - 1);
+
         }
 
+
+        viewPager.setCurrentItem(tasbeehId);
 
         mDetector = new GestureDetectorCompat(this, new GestureDetector.OnGestureListener() {
             @Override
@@ -171,6 +175,8 @@ public class TasbeehActivity extends AdIntegration implements View.OnClickListen
 
             @Override
             public boolean onSingleTapUp(MotionEvent motionEvent) {
+
+
                 tasbeeh.setBackground(getResources().getDrawable(R.drawable.tasbeeh_increment_animation));
                 frameAnimation = (AnimationDrawable) tasbeeh.getBackground();
                 frameAnimation.start();
@@ -181,34 +187,7 @@ public class TasbeehActivity extends AdIntegration implements View.OnClickListen
                 } else if (!soundMode && !vibrateMode) {
 
                 }
-                totalTasbeehCountValue = totalTasbeehCountValue + 1;
-                totalCount.setText(Integer.toString(totalTasbeehCountValue));
-                currentCounterValue = Integer.parseInt(countValue.getText().toString());
-                if (totalUptoCount.getText().toString().equals("33")) {
-                    if (currentCounterValue == 33) {
-                        countValue.setText("0");
-                        counter = 0;
-                        counter = counter + 1;
-                        currentCounterValue = currentCounterValue + 1;
-                        countValue.setText(Integer.toString(counter));
-                    } else {
-                        counter = counter + 1;
-                        currentCounterValue = currentCounterValue + 1;
-                        countValue.setText(Integer.toString(counter));
-                    }
-                } else if (totalUptoCount.getText().toString().equals("99")) {
-                    if (currentCounterValue == 99) {
-                        countValue.setText("0");
-                        counter = 0;
-                        counter = counter + 1;
-                        currentCounterValue = currentCounterValue + 1;
-                        countValue.setText(Integer.toString(counter));
-                    } else {
-                        counter = counter + 1;
-                        currentCounterValue = currentCounterValue + 1;
-                        countValue.setText(Integer.toString(counter));
-                    }
-                }
+                incrementTasbeeh();
                 return true;
             }
 
@@ -226,6 +205,7 @@ public class TasbeehActivity extends AdIntegration implements View.OnClickListen
             public boolean onFling(MotionEvent motionEvent, MotionEvent motionEvent1, float v, float v1) {
                 float deltaX = motionEvent1.getX() - motionEvent.getX();
                 if (deltaX > 0) {
+
                     tasbeeh.setBackground(getResources().getDrawable(R.drawable.tasbeeh_increment_animation));
                     frameAnimation = (AnimationDrawable) tasbeeh.getBackground();
                     frameAnimation.start();
@@ -233,24 +213,13 @@ public class TasbeehActivity extends AdIntegration implements View.OnClickListen
                         mediaPlayer.start();
                     } else if (!soundMode && vibrateMode) {
                         vibrator.vibrate(100);
-                    } else if (!soundMode && !vibrateMode) {
+                    }
+                    incrementTasbeeh();
 
-                    }
-                    currentCounterValue = Integer.parseInt(countValue.getText().toString());
-                    totalTasbeehCountValue = totalTasbeehCountValue + 1;
-                    totalCount.setText(Integer.toString(totalTasbeehCountValue));
-                    if (currentCounterValue == 33) {
-                        countValue.setText("0");
-                        counter = 0;
-                        counter = counter + 1;
-                        currentCounterValue = currentCounterValue + 1;
-                        countValue.setText(Integer.toString(counter));
-                    } else {
-                        counter = counter + 1;
-                        currentCounterValue = currentCounterValue + 1;
-                        countValue.setText(Integer.toString(counter));
-                    }
+
                 } else if (deltaX < 0) {
+
+                    totalCount.setText(Integer.toString(totalTasbeehCountValue));
                     tasbeeh.setBackground(getResources().getDrawable(R.drawable.tasbeeh_decrement_animation));
                     frameAnimation = (AnimationDrawable) tasbeeh.getBackground();
                     frameAnimation.start();
@@ -258,32 +227,76 @@ public class TasbeehActivity extends AdIntegration implements View.OnClickListen
                         mediaPlayerForBackward.start();
                     } else if (!soundMode && vibrateMode) {
                         vibrator.vibrate(100);
-                    } else if (!soundMode && !vibrateMode) {
+                    }
 
+                    if (totalTasbeehCountValue > 0)
+                    {
+                        decrementTasbeeh();
                     }
-                    zeroCheck = Integer.parseInt(countValue.getText().toString());
-                    if (zeroCheck == 0) {
-                        if (totalTasbeehCountValue > 0) {
-                            if (Integer.valueOf(totalUptoCount.getText().toString()) == 33) {
-                                counter = 34;
-                            } else {
-                                counter = 100;
-                            }
-                            counter = counter - 1;
-                            currentCounterValue = currentCounterValue - 1;
-                            countValue.setText(Integer.toString(counter));
-                        }
-                    } else {
-                        counter = counter - 1;
-                        countValue.setText(Integer.toString(counter));
-                        totalTasbeehCountValue = totalTasbeehCountValue - 1;
-                        totalCount.setText(Integer.toString(totalTasbeehCountValue));
-                    }
+
                 }
                 return true;
             }
         });
 
+    }
+
+
+    public void decrementTasbeeh() {
+        totalTasbeehCountValue = totalTasbeehCountValue - 1;
+        totalCount.setText(Integer.toString(totalTasbeehCountValue));
+            if (thirtyThreeCounter > 1) {
+                thirtyThreeCounter = thirtyThreeCounter - 1;
+            } else if (thirtyThreeCounter == 1) {
+                if (totalTasbeehCountValue > 33) {
+                    thirtyThreeCounter = 33;//set default value
+                } else {
+                    thirtyThreeCounter = totalTasbeehCountValue;
+                }
+            }
+
+            //***********************************/////////////////
+
+            if (nintyNineCounter > 1) {
+                nintyNineCounter = nintyNineCounter - 1;
+            }
+            else if (nintyNineCounter == 1) {
+                if (totalTasbeehCountValue > 99) {
+                    nintyNineCounter = 99;//set default value
+                } else {
+                    nintyNineCounter = totalTasbeehCountValue;
+                }
+            }
+        //***********************************/////////////////
+        //Now set value to counter
+        int upToValue = Integer.parseInt(totalUptoCount.getText().toString());
+        if (upToValue == 33)
+            countValue.setText("" + thirtyThreeCounter);
+        else
+            countValue.setText("" + nintyNineCounter);
+
+        }
+    public void incrementTasbeeh() {
+
+        totalTasbeehCountValue = totalTasbeehCountValue + 1;
+        totalCount.setText(Integer.toString(totalTasbeehCountValue));
+        if (thirtyThreeCounter < 33) {
+            thirtyThreeCounter = thirtyThreeCounter + 1;
+        } else if (thirtyThreeCounter == 33) {
+            thirtyThreeCounter = 1;
+        }
+
+        if (nintyNineCounter < 99) {
+            nintyNineCounter = nintyNineCounter + 1;
+        } else if (nintyNineCounter == 99) {
+            nintyNineCounter = 1;
+        }
+
+        if (totalUptoCount.getText().toString().equals("33")) {
+            countValue.setText("" + thirtyThreeCounter);
+        } else {
+            countValue.setText("" + nintyNineCounter);
+        }
     }
 
     public void initateToolBarItems() {
@@ -339,72 +352,58 @@ public class TasbeehActivity extends AdIntegration implements View.OnClickListen
                 }
                 break;
             case R.id.reset_btn:
-                AlertDialog.Builder confirmActionDialog = new AlertDialog.Builder(this);
-                confirmActionDialog.setTitle("Confirm Action");
-                confirmActionDialog.setMessage("Are you sure to reset the current/total counter? This cannot be undone.");
-                confirmActionDialog.setPositiveButton("Clear", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        counter = 0;
-                        countValue.setText("0");
-                        totalTasbeehCountValue = 0;
-                        totalCount.setText("0");
-                    }
-                });
+                if(totalTasbeehCountValue > 0) {
+                    AlertDialog.Builder confirmActionDialog = new AlertDialog.Builder(this);
+                    confirmActionDialog.setTitle(getString(R.string.text_reset_title));
+                    confirmActionDialog.setMessage(getString(R.string.text_rest_msg));
+                    confirmActionDialog.setPositiveButton(getString(R.string.okay), new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            counter = 0;
+                            countValue.setText("0");
+                            totalTasbeehCountValue = 0;
+                            nintyNineCounter = 0;
+                            thirtyThreeCounter = 0;
+                            totalCount.setText("0");
+                        }
+                    });
 
-                confirmActionDialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-                    }
-                });
+                    confirmActionDialog.setNegativeButton(getString(R.string.cancel), new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    });
 
-                AlertDialog alertDialog = confirmActionDialog.create();
-                alertDialog.show();
+                    AlertDialog alertDialog = confirmActionDialog.create();
+                    alertDialog.show();
+                }
                 break;
+
             case R.id.countdown_mode_btn:
                 if (numberTasbeehMenu.getText().toString().equals("33")) {
                     numberTasbeehMenu.setText("99");
-                    //sharedPref.setCountMode(99);
                     totalUptoCount.setText("99");
-                    if (convertCheck) {
-                        if (firstHalf) {
-                            counter = counter + 33;
-                            currentCounterValue = currentCounterValue + 33;
-                            countValue.setText(Integer.toString(counter));
-                        } else if (secondHalf) {
-                            counter = counter + 66;
-                            currentCounterValue = currentCounterValue + 66;
-                            countValue.setText(Integer.toString(counter));
-                        }
-                    }
+                    countValue.setText("" + nintyNineCounter);
                 } else if (numberTasbeehMenu.getText().toString().equals("99")) {
                     numberTasbeehMenu.setText("33");
-                    //  sharedPref.setCountMode(33);
                     totalUptoCount.setText("33");
-                    currentCounterValue = Integer.valueOf(countValue.getText().toString());
-                    if (currentCounterValue <= 33) {
-
-                    } else if (currentCounterValue > 33 && currentCounterValue <= 66) {
-                        convertCheck = true;
-                        firstHalf = true;
-                        secondHalf = false;
-                        counter = counter % 33;
-                        currentCounterValue = currentCounterValue % 33;
-                        countValue.setText(Integer.toString(counter));
-                    } else if (currentCounterValue > 66) {
-                        convertCheck = true;
-                        firstHalf = false;
-                        secondHalf = true;
-                        counter = counter % 33;
-                        currentCounterValue = currentCounterValue % 33;
-                        countValue.setText(Integer.toString(counter));
-                    }
+                    countValue.setText("" + thirtyThreeCounter);
                 }
+
+
                 break;
         }
     }
 
+    private int mod(int x, int y) {
+
+        int result = x % y;
+        if (result < 0) {
+            result += y;
+        }
+        return result;
+    }
 
     @Override
     public void onBackPressed() {
@@ -434,7 +433,7 @@ public class TasbeehActivity extends AdIntegration implements View.OnClickListen
     }
 
     public void saveTasbeehPref() {
-        sharedPref.saveTasbeehCountValue(counter);
+        sharedPref.saveTasbeehCountValue(Integer.valueOf(countValue.getText().toString()));
         sharedPref.setCountMode(Integer.valueOf(numberTasbeehMenu.getText().toString()));
         sharedPref.setSavedTotalTasbeehCount(Integer.valueOf(totalCount.getText().toString()));
     }
@@ -454,6 +453,16 @@ public class TasbeehActivity extends AdIntegration implements View.OnClickListen
         }
         countValue.setText(Integer.toString(counter));
 
+        //Save initial value
+        if(counter > 33) {
+            thirtyThreeCounter = counter;
+            thirtyThreeCounter= mod(thirtyThreeCounter,33);
+        }
+        else
+        {
+            thirtyThreeCounter = counter;
+        }
+            nintyNineCounter=counter;
     }
 
     public void getTashbeehDataFromDatabase(int tasbeehId) {
@@ -470,18 +479,30 @@ public class TasbeehActivity extends AdIntegration implements View.OnClickListen
             countValue.setText(Integer.toString(counter));
 
         }
+
+        //Save initial value
+        if(counter > 33) {
+            thirtyThreeCounter = counter;
+            thirtyThreeCounter = mod(thirtyThreeCounter,33);
+        }
+        else
+        {
+            thirtyThreeCounter = counter;
+        }
+        nintyNineCounter=counter;
     }
 
     public void saveTasbeehDBValue(int tasbeehId) {
         DBManager db = new DBManager(this);
+
         db.open();
         TasbeehModel tasbeehModel = db.getTasbeehUsingId(tasbeehId);
         if (tasbeehModel != null) {
             tasbeehModel.setTotalCounterUpto(Integer.parseInt(numberTasbeehMenu.getText().toString().trim()));
             tasbeehModel.setTotal(Integer.valueOf(totalCount.getText().toString()));
-            tasbeehModel.setCount(counter);
+            tasbeehModel.setCount(Integer.valueOf(countValue.getText().toString()));
         }
-        db.updateTasbeehUsingId(tasbeehModel, tasbeehId);
+        db.updateTasbeehUsingId(tasbeehModel);
         db.close();
     }
 
@@ -490,7 +511,10 @@ public class TasbeehActivity extends AdIntegration implements View.OnClickListen
 
         DBManager dbObj = new DBManager(this);
         dbObj.open();
-        mTasbeehList = dbObj.getTasbeehList();
+
+        //   mTasbeehList = dbObj.getTasbeehList();
+        mTasbeehList = dbObj.getTasbeehList1st();
+
         dbObj.close();
 
         viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
@@ -502,9 +526,19 @@ public class TasbeehActivity extends AdIntegration implements View.OnClickListen
             @Override
             public void onPageSelected(int position) {
 
-                saveTasbeehDBValue(tasbeehId);//first save current value
-                getTashbeehDataFromDatabase(position + 1);//them nove to next or previous page
-                tasbeehId = position + 1; //Change tasbeeh id
+                if (isTasbeehContianer) {
+                    isTasbeehContianer = false;
+                    saveTasbeehPref();
+                } else {
+                    saveTasbeehDBValue(tasbeehId);//first save current value
+                }
+                if (position == 0) {
+                    isTasbeehContianer = true;
+                    getTasbeehPref();
+                } else {
+                    getTashbeehDataFromDatabase(position);//them nove to next or previous page
+                    tasbeehId = position; //Change tasbeeh id)
+                }
             }
 
             @Override
@@ -514,5 +548,12 @@ public class TasbeehActivity extends AdIntegration implements View.OnClickListen
         });
     }
 
-
+    public void showAnalytics(boolean isScreen, String eventNAme) {
+        String screenName = "Dhikar detail";
+        if (!isScreen) {
+            CommunityGlobalClass.getInstance().sendAnalyticEvent(screenName, eventNAme);
+        } else {
+            CommunityGlobalClass.getInstance().sendAnalyticsScreen(screenName);
+        }
+    }
 }

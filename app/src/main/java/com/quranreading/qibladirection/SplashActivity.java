@@ -65,8 +65,8 @@ public class SplashActivity extends AppCompatActivity {
     private int SPLASH_TIME;
     /*private final int SPLASH_TIME_LONG = 5000;
     private final int SPLASH_TIME_SHORT = 500;*/
-    private final int SPLASH_TIME_LONG = 5000;
-    private final int SPLASH_TIME_SHORT = 1500;
+    private final int SPLASH_TIME_LONG = 8000;
+    private final int SPLASH_TIME_SHORT = 2000;
     QiblaDirectionPref mQiblaDirectionPref;
 
     private Handler myHandler = new Handler();
@@ -294,7 +294,7 @@ public class SplashActivity extends AppCompatActivity {
         isShowInterstitial = false;
         myHandler.removeCallbacks(mRunnable);
 
-        Intent intent = new Intent(context, TasbeehListActivity.class);
+        Intent intent = new Intent(context, MainActivityNew.class);
         startActivity(intent);
         finish();
     }

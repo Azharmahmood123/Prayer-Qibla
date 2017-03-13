@@ -26,8 +26,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import noman.Tasbeeh.model.TasbeehModel;
-import noman.quran.model.TopicList;
-import noman.quran.model.TopicModel;
+import noman.searchquran.model.TopicList;
+import noman.searchquran.model.TopicModel;
+
 
 public class DBManager {
 
@@ -55,7 +56,7 @@ public class DBManager {
     ///////////////////////////// COUNTRY CODE COLOUMNS //////////////////////////////
     public static final String FLD_CODE = "id";
     public static final String FLD_COUNTRY_NAME = "value";
-
+    public static final String FLD_TIME_DIFF = "time_diff";
 
     ///////////////////////Search Topics Columns//////////////////////////
 
@@ -82,7 +83,10 @@ public class DBManager {
     public static final String TBL_TOPICS_DETAIL = "tbl_topics_detail";
     ///////////////////////////// Table Create Queries ///////////////////////////
 
-    public static final int DATABASE_VERSION = 16;//for 4.3 version name
+
+    //public static final int DATABASE_VERSION = 16;//for 4.3 version name
+      public static final int DATABASE_VERSION = 17;
+
 
 	/*
      * private static final String CREATE_TBLLOCATION =
@@ -132,9 +136,11 @@ public class DBManager {
     ///////////////////// Get Cities Location Info /////////////////////////
 
     public Cursor getCountryCodes(String country) throws SQLException {
-        return db.query(true, TBL_COUNTRY_CODES, new String[]{FLD_CODE, FLD_COUNTRY_NAME}, FLD_COUNTRY_NAME + "='" + country + "' COLLATE NOCASE", null, null, null, null, null);
+        return db.query(true, TBL_COUNTRY_CODES, new String[]{FLD_CODE, FLD_COUNTRY_NAME,FLD_TIME_DIFF}, FLD_COUNTRY_NAME + "='" + country + "' COLLATE NOCASE", null, null, null, null, null);
     }
-
+    public Cursor getCountrybyCodes(String code) throws SQLException {
+        return db.query(true, TBL_COUNTRY_CODES, new String[]{FLD_CODE, FLD_COUNTRY_NAME,FLD_TIME_DIFF}, FLD_CODE + "='" + code + "' COLLATE NOCASE", null, null, null, null, null);
+    }
 
     ///////////////////// Get Cities Location Info /////////////////////////
     public Cursor getCountry(String lat, String lon) throws SQLException {
@@ -153,6 +159,7 @@ public class DBManager {
     public Cursor getAllCities() {
         return db.query(true, TBL_CITIESINFO, new String[]{FLD_CITY, FLD_COUNTRY}, null, null, null, null, null, null);
     }
+
 
     public Cursor getMatchingStates(String constraint, String from) {
         if (constraint != null) {
@@ -300,7 +307,7 @@ public class DBManager {
     }
 
     private String setDatabase() {
-        String name = context.getString(R.string.admob_id_testing);
+        String name = "";//context.getString(R.string.admob_id_testing);
         String path = null;
         String filePath = context.getFilesDir().toString() + "/myfiles/cities_info_db";
         try {
@@ -488,6 +495,41 @@ public class DBManager {
         return topicModelList;
     }
 
+//Tasbeeh view pager add swipe item
+    public List<TasbeehModel> getTasbeehList1st() {
+        List<TasbeehModel> topicModelList = new ArrayList<>();
+        Cursor c = db.rawQuery("select * from zikar", null);
+
+       //Add dummy row here
+        TasbeehModel model2 = new TasbeehModel();
+        model2.setId(-1);
+        topicModelList.add(model2);
+        //*******************************
+
+
+        if (c != null) {
+            if (c.moveToFirst()) {
+                do {
+
+                    TasbeehModel model = new TasbeehModel();
+
+                    model.setId(c.getInt(c.getColumnIndex("id")));
+                    model.setTotal(c.getInt(c.getColumnIndex("total")));
+                    model.setCount(c.getInt(c.getColumnIndex("counter")));
+                    model.setTotalCounterUpto(c.getInt(c.getColumnIndex("no_total_count")));
+                    model.setTasbeehArabic(c.getString(c.getColumnIndex("arabic")));
+                    model.setTasbeehEng(c.getString(c.getColumnIndex("transliteration")));
+                    model.setTranslation(c.getString(c.getColumnIndex("english_translation")));
+                    model.setReference(c.getString(c.getColumnIndex("reference")));
+                    topicModelList.add(model);
+
+                } while (c.moveToNext());
+            }
+        }
+        return topicModelList;
+    }
+
+
 
     public TasbeehModel getTasbeehUsingId(int id) {
         TasbeehModel topicModelList = null;
@@ -516,7 +558,7 @@ public class DBManager {
     }
 
 
-    public boolean updateTasbeehUsingId(TasbeehModel model, int id) {
+    public boolean updateTasbeehUsingId(TasbeehModel model) {
 
 
         ContentValues cv = new ContentValues();
@@ -524,7 +566,7 @@ public class DBManager {
         cv.put("counter", model.getCount());
         cv.put("no_total_count", model.getTotalCounterUpto());
 
-        int va = db.update("zikar", cv, "id =" + id, null);
+        int va = db.update("zikar", cv, "id =" + model.getId(), null);
         if (va < -1)
             return false;
         else

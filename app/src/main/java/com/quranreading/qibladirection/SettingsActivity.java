@@ -49,7 +49,7 @@ import com.quranreading.sharedPreference.PrayerTimeSettingsPref;
 import java.util.HashMap;
 
 import duas.sharedprefs.DuasSharedPref;
-import noman.quran.JuzConstant;
+import noman.quran.model.JuzConstant;
 import noman.quran.activity.TextSettingScreen;
 import noman.sharedpreference.SurahsSharedPref;
 

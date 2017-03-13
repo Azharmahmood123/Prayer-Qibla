@@ -129,7 +129,7 @@ public class ManualDialogCustom extends Dialog implements OnCurrentLocationFound
     protected void onStart() {
         super.onStart();
         manualSelected();
-        showSoftKeyboard();
+      //  showSoftKeyboard();
     }
 
     public void showSoftKeyboard() {

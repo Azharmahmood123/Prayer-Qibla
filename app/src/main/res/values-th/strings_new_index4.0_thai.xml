@@ -24,6 +24,10 @@
     <string name="grid_duas"> Duas </string>
     <string name="grid_settings"> การตั้งค่า </string>
 
+    <string name="grid_tasbeeh">Tasbeeh</string>
+    <string name="grid_search">ค้นหาคัมภีร์กุรอาน</string>
+
+
     <string name="notificaion_time"> เวลาในการแจ้ง </string>
     <string name="notification_sound"> ​​เสียงแจ้งเตือน </string>
     <string name="notificaion"> ประกาศ </string>
@@ -127,4 +131,31 @@
     <string name = "txt_duas_title"> เลือกแปล </string>
     <string name = "txt_urdu"> ภาษาอูรดู </string>
     <string name = "txt_eng"> ภาษาอังกฤษ </string>
+    
+    <string name = "no_topic_found"> ​​ไม่พบหัวข้อ  </string>
+
+    <string name = "text_search_hint_topic"> หัวข้อการค้นหา  </string>
+    <string name = "text_search_quran"> ค้นหาจากอัลกุรอาน  </string>
+    <string name = "text_common_topic"> หัวข้อทั่วไป  </string>
+    <string name = "text_search"> ค้นหา  </string>
+    <string name = "no_text_search"> ไม่พบคำใด ๆ  </string>
+    <string name = "no_result_quran"> ไม่มีคำที่พบในคัมภีร์กุรอาน  </string>
+    <string name = "text_swipe"> กวาดเพื่อดู Dhiker  </string>
+    <string name = "text_reset_title"> ยืนยันการกระทำ  </string>
+    <string name = "text_rest_msg"> คุณแน่ใจหรือไม่ว่าจะรีเซ็ตตัวนับปัจจุบัน  ทั้งหมด? ไม่สามารถยกเลิกได้  </string>
+
+
+    <string name = "txt_auto_setting_off"> แนะนำให้เปิดการตั้งค่าอัตโนมัติ \'ON \' เพื่อให้สามารถจับเวลา Salat ได้อย่างถูกต้อง </string>
+        <string name = "location_settings"> ตำแหน่ง </string>
+        <string name = "location_method"> วิธีตรวจจับตำแหน่ง </string>
+        <string name = "dont_show_msg_loc"> ไม่ต้องแสดงข้อความอีก </string>
+
+        <string-array name = "array_location_method">
+
+            <item> อัปเดตตำแหน่งโดยอัตโนมัติทุกครั้งที่ตรวจพบตำแหน่งใหม่ </item>
+            <item> ไม่ต้องอัปเดตตำแหน่งโดยอัตโนมัติทุกครั้งที่ตรวจพบตำแหน่งใหม่ </item>
+            <item> ถามตัวเลือกทุกครั้งที่พบตำแหน่งใหม่ </item>
+        </string-array>
+
+
 </resources>

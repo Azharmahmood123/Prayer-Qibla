@@ -23,6 +23,11 @@
     <string name="grid_duas">молитвы</string>
     <string name="grid_settings">настройки</string>
 
+
+    <string name="grid_tasbeeh">Тасбих</string>
+    <string name="grid_search">Поиск в Коране</string>
+
+
     <string name="notificaion_time">время уведомления</string>
     <string name="notification_sound">Звук уведомления</string>
     <string name="notificaion">уведомление</string>
@@ -130,4 +135,29 @@
     <string name = "txt_duas_title"> Выбор перевода </string>
     <string name = "txt_urdu"> урду </string>
     <string name = "txt_eng"> Английский </string>
+
+
+    <string name = "no_topic_found"> ​​Не найдено темы </string>
+
+        <string name = "text_search_hint_topic"> Искать темы </string>
+        <string name = "text_search_quran"> Поиск по Корану </string>
+        <string name = "text_common_topic"> Общие темы </string>
+        <string name = "text_search"> Поиск </string>
+        <string name = "no_text_search"> Слово не найдено </string>
+        <string name = "no_result_quran"> В Коране не найдено ни одного слова </string>
+        <string name = "text_swipe"> Размах для просмотра Dhiker </string>
+        <string name = "text_reset_title"> Подтвердить действие </string>
+        <string name = "text_rest_msg"> Вы уверены, что сбросили текущий / итоговый счетчик? Это невозможно отменить. </string>
+
+    <string name = "txt_auto_setting_off"> Рекомендуется для включения автоматических настроек \'ON \' для точного определения времени Salat. </string>
+        <string name = "location_settings"> Местоположение </string>
+        <string name = "location_method"> Метод определения местоположения </string>
+        <string name = "dont_show_msg_loc"> Не показывать сообщение снова </string>
+
+        <string-array name = "array_location_method">
+
+            <item> Автоматическое обновление местоположения при каждом обнаружении нового местоположения </item>
+            <item> Не обновлять местоположение автоматически при каждом обнаружении нового местоположения </item>
+            <item> Всегда запрашивать мои предпочтения при обнаружении нового местоположения </item>
+        </string-array>
 </resources>

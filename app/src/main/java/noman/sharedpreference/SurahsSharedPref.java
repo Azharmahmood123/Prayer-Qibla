@@ -6,7 +6,7 @@ import android.content.SharedPreferences.Editor;
 
 import com.quranreading.alarms.AlarmReceiverAyah;
 
-import noman.quran.JuzConstant;
+import noman.quran.model.JuzConstant;
 
 public class SurahsSharedPref {
 

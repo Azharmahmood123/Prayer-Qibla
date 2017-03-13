@@ -32,7 +32,7 @@ import java.util.Iterator;
 import java.util.List;
 
 import noman.CommunityGlobalClass;
-import noman.quran.JuzConstant;
+import noman.quran.model.JuzConstant;
 import noman.quran.activity.QuranReadActivity;
 import noman.quran.dbmanager.JuzDataManager;
 import noman.quran.model.JuzModel;

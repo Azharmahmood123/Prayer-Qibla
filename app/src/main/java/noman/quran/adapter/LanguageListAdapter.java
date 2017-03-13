@@ -13,7 +13,7 @@ import com.quranreading.qibladirection.R;
 import java.util.ArrayList;
 import java.util.List;
 
-import noman.quran.JuzConstant;
+import noman.quran.model.JuzConstant;
 import noman.quran.holder.LanguageHolder;
 import noman.sharedpreference.SurahsSharedPref;
 

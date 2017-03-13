@@ -15,6 +15,7 @@ import com.quranreading.qibladirection.GlobalClass;
 import com.quranreading.qibladirection.R;
 
 import noman.Ads.AdIntegration;
+import noman.CommunityGlobalClass;
 import noman.Tasbeeh.SharedPref;
 import noman.Tasbeeh.fragment.TasbeehListFragment;
 
@@ -53,6 +54,7 @@ public class TasbeehListActivity extends AdIntegration {
         //  initFragement(mTopicListFragment);
 
         initializeTasbeehManual();
+        showAnalytics(true,"");
     }
 
     public void initializeTasbeehManual() {
@@ -142,5 +144,14 @@ public class TasbeehListActivity extends AdIntegration {
 
 
     }
-
+    public void showAnalytics(boolean isScreen,String eventNAme) {
+        String screenName="Tasbeeh";
+        if(!isScreen) {
+            CommunityGlobalClass.getInstance().sendAnalyticEvent(screenName,eventNAme);
+        }
+        else
+        {
+            CommunityGlobalClass.getInstance().sendAnalyticsScreen(screenName);
+        }
+    }
 }

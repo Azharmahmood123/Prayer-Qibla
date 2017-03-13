@@ -34,8 +34,8 @@ import java.util.Arrays;
 import java.util.Locale;
 
 import noman.CommunityGlobalClass;
-import noman.quran.JuzConstant;
-import noman.quran.QuranModuleActivity;
+import noman.quran.model.JuzConstant;
+import noman.quran.activity.QuranModuleActivity;
 import noman.quran.activity.QuranReadActivity;
 import noman.quran.adapter.QuranListAdapter;
 import noman.quran.dbmanager.JuzDataManager;

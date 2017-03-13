@@ -25,6 +25,11 @@
     <string name  = "grid_halal">Halal Ricerca</string>
     <string name  = "grid_settings"> Impostazioni </string>
 
+
+    <string name="grid_tasbeeh">Tasbeeh</string>
+    <string name="grid_search">Ricerca Quran</string>
+
+
     <string name  = "notificaion_time"> Notifica Tempo </string>
     <string name  = "notification_sound"> ​​Suoni di notifica </string>
     <string name  = "notificaion"> Notifica </string>
@@ -131,4 +136,27 @@
     <string name="txt_duas_title">Seleziona Traduzione</string>
     <string name="txt_urdu">Urdu</string>
     <string name="txt_eng">English</string>
+
+    <string name= "no_topic_found"> ​​Nessun Topic Fondi </string>
+
+        <string name= "text_search_hint_topic">  ricerca Temi </string>
+        <string name= "text_search_quran"> Ricerca da Quran </string>
+        <string name= "text_common_topic"> Argomenti comuni </string>
+        <string name= "text_search"> ricerca </string>
+        <string name= "no_text_search"> Nessuna parola trovati </string>
+        <string name= "no_result_quran"> Nessuna parola trovata nel Corano </string>
+        <string name= "text_swipe"> Scorri per visualizzare Dhiker </string>
+        <string name= "text_reset_title"> Conferma azione </string>
+        <string name= "text_rest_msg"> Sei sicuro di voler azzerare il contatore corrente / totale? Questo non può essere annullata. </string>
+
+    <string name = "txt_auto_setting_off"> consigliato di trasformare Impostazioni Auto \'ON \' per tempi Salat precisi. </string>
+        <string name = "location_settings"> posizione </string>
+        <string name = "location_method"> Location Metodo di rilevazione </string>
+        <string name = "dont_show_msg_loc"> Don \'t spettacolo messaggio di nuovo </string>
+        <string-array  name ="array_location_method">
+            <item> Aggiorna posizione automaticamente ogni volta nuova posizione rilevata </item>
+            <item> Don \'t aggiornamento della posizione automaticamente ogni volta nuova posizione rilevata </item>
+            <item> Chiedi sempre per la mia preferenza ogni volta nuova posizione rilevata </item>
+        </string-array>
+
 </resources>

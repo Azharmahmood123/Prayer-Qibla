@@ -137,7 +137,7 @@ public class TimingsFragment extends Fragment implements OnLocationSetListner, O
             @Override
             public void run() {
                 inProcess = false;
-                //mUserLocation.setOnLocationSetListner(TimingsFragment.this);
+               // mUserLocation.setOnLocationSetListner(TimingsFragment.this);
                 //mUserLocation.checkLocation(false);
             }
         };

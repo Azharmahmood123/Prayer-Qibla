@@ -69,8 +69,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import noman.CommunityGlobalClass;
-import noman.quran.JuzConstant;
 import noman.quran.adapter.QuranReadListAdapter;
+import noman.quran.model.JuzConstant;
 import quran.activities.DownloadDialogQuran;
 import quran.adapter.AudioTimeXMLParser;
 import quran.adapter.XMLParser;
@@ -79,7 +79,7 @@ import quran.helper.FileUtils;
 import quran.model.SurahModel;
 import noman.sharedpreference.SurahsSharedPref;
 
-import static noman.quran.JuzConstant.juzzIndex;
+import static noman.quran.model.JuzConstant.juzzIndex;
 
 public class QuranReadActivity extends AppCompatActivity implements OnCompletionListener, OnSurahDownloadComplete {
 
