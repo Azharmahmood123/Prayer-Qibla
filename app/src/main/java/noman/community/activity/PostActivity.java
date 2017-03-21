@@ -54,7 +54,7 @@ public class PostActivity extends AdIntegration {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        country =  getCountryName(this);
+      /*  country =  getCountryName(this);
 
         if(country.isEmpty() || country==null ||country.length()==0)
         {
@@ -64,6 +64,25 @@ public class PostActivity extends AdIntegration {
                 country  =  CommunityGlobalClass.getInstance().getCountryName();
             }
         }
+
+*/
+        LocationPref locationPref = new LocationPref(this);
+        country = locationPref.getCountryCode();
+
+
+        // ********************************** Get Country name use pref *******************8
+        DBManager dbObj = new DBManager(this);
+        dbObj.open();
+        Cursor cCode = dbObj.getCountrybyCodes(country);
+        if (cCode.moveToFirst()) {
+            country = cCode.getString(cCode.getColumnIndex(DBManager.FLD_COUNTRY_NAME));
+            cCode.close();
+            dbObj.close();
+        } else {
+            cCode.close();
+            dbObj.close();
+        }
+       // *****************************************
 
         setContentView(R.layout.activity_post);
         if (!((GlobalClass) getApplication()).isPurchase) {

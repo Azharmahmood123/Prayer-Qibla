@@ -97,7 +97,12 @@ public class ComunityActivity extends AdIntegration2 {
                     if (CommunityGlobalClass.mPrayerModel.size() > 1) {
                         if ( CommunityGlobalClass.prayerCounter >= 3) {
                             if (CommunityGlobalClass.mSignInRequests == null) {
-                                startActivity(new Intent(ComunityActivity.this, LoginActivity.class));
+                                // startActivity(new Intent(ComunityActivity.this, LoginActivity.class));
+                                Intent intent = new Intent(ComunityActivity.this, LoginActivity.class);
+                                intent.putExtra("isCommunity",true);
+                                startActivity(intent);
+
+
                             } else {
                                 moveToMineTab();
                                 startActivity(new Intent(ComunityActivity.this, PostActivity.class));

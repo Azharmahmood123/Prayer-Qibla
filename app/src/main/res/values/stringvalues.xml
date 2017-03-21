@@ -8,16 +8,16 @@
     <string name="facebook_id">499376796887867</string>
     <string name="maps_key">AIzaSyACMnpsQA5xwXpAMBJI3z6Y_GqUuHAbp_I</string>
 
-        <string name="admob_id">ca-app-pub-6471360733987211/9595526845</string>
+        <!--<string name="admob_id">ca-app-pub-6471360733987211/9595526845</string>
         <string name="admob_interstitial">ca-app-pub-6471360733987211/6408640043</string>
         <string name="admob_id_inline">ca-app-pub-6471360733987211/2211860846</string>
-        <string name="admob_id_quran_banner">ca-app-pub-6471360733987211/3230714845</string>
+        <string name="admob_id_quran_banner">ca-app-pub-6471360733987211/3230714845</string>-->
 
 
-   <!-- <string name="admob_interstitial">ca-app-pub-3940256099942544/1033173712</string>
+    <string name="admob_interstitial">ca-app-pub-3940256099942544/1033173712</string>
     <string name="admob_id">ca-app-pub-3940256099942544/6300978111</string>
     <string name="admob_id_inline">ca-app-pub-3940256099942544/6300978111</string>
-    <string name="admob_id_quran_banner">ca-app-pub-3940256099942544/6300978111</string>-->
+    <string name="admob_id_quran_banner">ca-app-pub-3940256099942544/6300978111</string>
     
     <string name="web_url">www.QiblaConnect.com</string>
     <string name="device">small</string>

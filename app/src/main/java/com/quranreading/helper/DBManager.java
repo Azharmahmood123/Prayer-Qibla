@@ -7,10 +7,8 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
-import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
-import com.quranreading.qibladirection.R;
 import com.quranreading.sharedPreference.QiblaDirectionPref;
 
 import net.lingala.zip4j.core.ZipFile;
@@ -96,30 +94,17 @@ public class DBManager {
 
     ///////////////////////// HELPER CLASS TO CREATE DATABASE //////////////////////
 
-    private DatabaseHelper DBHelper;
+    private DataBaseHelper DBHelper;
     private SQLiteDatabase db;
     QiblaDirectionPref qiblaPref;
 
     public DBManager(Context ctx) {
         this.context = ctx;
         qiblaPref = new QiblaDirectionPref(context);
-        DBHelper = new DatabaseHelper(context);
+        DBHelper = new DataBaseHelper(context);
     }
 
-    private class DatabaseHelper extends SQLiteOpenHelper {
-        DatabaseHelper(Context context) {
-            super(context, DATABASE_NAME, null, DATABASE_VERSION);
-        }
 
-        @Override
-        public void onCreate(SQLiteDatabase db) {
-
-        }
-
-        @Override
-        public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        }
-    }
 
     ///////////////////////////// Opens Database ////////////////////////////
 

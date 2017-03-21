@@ -71,7 +71,10 @@ public class MenuFragment extends Fragment {
         menuItems.add(mContext.getString(R.string.grid_duas));
         menuItems.add(mContext.getString(R.string.grid_tasbeeh));
         menuItems.add(mContext.getString(R.string.grid_names));
+        menuItems.add(mContext.getString(R.string.grid_academy));
         menuItems.add(mContext.getString(R.string.grid_settings));
+        menuItems.add(mContext.getString(R.string.grid_salat_tracker));
+        menuItems.add(mContext.getString(R.string.grid_quran_tracker));
 
         ArrayList<String> items = new ArrayList<>();
 

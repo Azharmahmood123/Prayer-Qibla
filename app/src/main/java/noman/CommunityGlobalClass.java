@@ -13,9 +13,11 @@ import android.os.Build;
 import android.os.Handler;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.AppCompatCheckBox;
+import android.text.TextUtils;
 import android.text.format.DateFormat;
 import android.util.Base64;
 import android.util.Log;
+import android.util.Patterns;
 import android.widget.CompoundButton;
 import android.widget.Toast;
 
@@ -41,6 +43,8 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
 import noman.Ads.PreLoadIntersitial;
@@ -384,6 +388,71 @@ public class CommunityGlobalClass extends GlobalClass {
                 }
             };
         }
+    }
+    /**
+     * validate your email address format. Ex-akhi@mani.com
+     */
+    public boolean emailValidator(String email)
+    {
+        Pattern pattern;
+        Matcher matcher;
+        final String EMAIL_PATTERN = "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
+        pattern = Pattern.compile(EMAIL_PATTERN);
+        matcher = pattern.matcher(email);
+        return matcher.matches();
+    }
+    public boolean isValidPhoneNumber(String phoneNumber) {
+
+        if(phoneNumber.length() < 5 || phoneNumber.length() >15)
+        {
+            return  false;
+        }
+        if (!TextUtils.isEmpty(phoneNumber)) {
+            return Patterns.PHONE.matcher(phoneNumber).matches();
+        }
+        return false;
+    }
+
+    public static String getMonthName(int month){
+        switch(month){
+            case 1:
+                return "Jan";
+
+            case 2:
+                return "Feb";
+
+            case 3:
+                return "Mar";
+
+            case 4:
+                return "Apr";
+
+            case 5:
+                return "May";
+
+            case 6:
+                return "Jun";
+
+            case 7:
+                return "Jul";
+
+            case 8:
+                return "Aug";
+
+            case 9:
+                return "Sep";
+
+            case 10:
+                return "Oct";
+
+            case 11:
+                return "Nov";
+
+            case 12:
+                return "Dec";
+        }
+
+        return "";
     }
 
 }

@@ -47,19 +47,30 @@ public class SurahsSharedPref {
     private static final String READ_MODE_STATE = "read_mode_state";
     private static final String IS_FIRSTTIME_QURAN_READ = "is_first_time_quran_read";
     private static final String IS_FIRSTTIME_NAME_CLICK = "is_first_time_name_click";
-    private static final String IS_FIRSTTIME_HIJRI_CLICK = "is_first_time_hijri_click";
+    private static final String IS_FIRSTTIME_SALAT_TRACKER_CLICK = "is_first_time_salat_tracker_click";
     private static final String IS_FIRSTTIME_COMMUNITY_CLICK = "is_first_time_community_click";
     private static final String IS_FIRSTTIME_MENU_CLICK = "is_first_time_menu_click";
-    private static final String IS_FIRSTTIME_SEARCH_CLICK = "is_first_time_search_click";
+    private static final String IS_FIRSTTIME_ACADEMY_CLICK = "is_first_time_academy_click";
     private static final String IS_FIRSTTIME_QURAN_CLICK = "is_first_time_quran_click";
     private static final String IS_SECONDTIME_QURAN_CLICK = "is_second_time_quran_click";
+
+    private static final String IS_SALAT_TRACKER = "is_salat_tracking";
+
+
 
     public SurahsSharedPref(Context context) {
         this._context = context;
         pref = _context.getSharedPreferences(PREF_NAME, PRIVATE_MODE);
         editor = pref.edit();
     }
+    public boolean getIsSalatTracking() {
+        return pref.getBoolean(IS_SALAT_TRACKER, false);
+    }
 
+    public void setSalatTracking(boolean size) {
+        editor.putBoolean(IS_SALAT_TRACKER, size);
+        editor.commit();
+    }
 
     public boolean getIsFirstTimeQuranReadOpen() {
         return pref.getBoolean(IS_FIRSTTIME_QURAN_READ, true);
@@ -77,23 +88,23 @@ public class SurahsSharedPref {
         editor.putBoolean(IS_FIRSTTIME_NAME_CLICK, size);
         editor.commit();
     }
-    public boolean getIsFirstTimeHijriOpen() {
-        return pref.getBoolean(IS_FIRSTTIME_HIJRI_CLICK, true);
+    public boolean getIsFirstTimeSalatTrackerOpen() {
+        return pref.getBoolean(IS_FIRSTTIME_SALAT_TRACKER_CLICK, true);
     }
 
-    public void setIsFirstTimeHijriOpen(boolean size) {
-        editor.putBoolean(IS_FIRSTTIME_HIJRI_CLICK, size);
+    public void setIsFirstTimeSalatOpen(boolean size) {
+        editor.putBoolean(IS_FIRSTTIME_SALAT_TRACKER_CLICK, size);
         editor.commit();
     }
 
 
 
-    public boolean getIsFirstTimeSearchOpen() {
-        return pref.getBoolean(IS_FIRSTTIME_SEARCH_CLICK, true);
+    public boolean getIsFirstTimeAcademyOpen() {
+        return pref.getBoolean(IS_FIRSTTIME_ACADEMY_CLICK, true);
     }
 
-    public void setIsFirstTimeSearchOpen(boolean size) {
-        editor.putBoolean(IS_FIRSTTIME_SEARCH_CLICK, size);
+    public void setIsFirstTimeAcademyOpen(boolean size) {
+        editor.putBoolean(IS_FIRSTTIME_ACADEMY_CLICK, size);
         editor.commit();
     }
 

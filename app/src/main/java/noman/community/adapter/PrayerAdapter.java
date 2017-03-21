@@ -105,7 +105,7 @@ public class PrayerAdapter extends RecyclerView.Adapter<PrayerHolder> {
                 } else {
                     clickingCounter = clickingCounter + 1;
                     //Save counter in Preferences
-                    CommunityGlobalClass.prayerCounter=clickingCounter;
+                    CommunityGlobalClass.prayerCounter = clickingCounter;
 
 
                     inappropirateCounter = Integer.parseInt(mPrayer.getInappropriate_counter());

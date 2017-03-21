@@ -52,8 +52,7 @@ dependencies {
     /*Calander And Community*/
     //For calender dont forget to initiate in Applicaton class other wise give wrong dates
     compile 'net.danlew:android.joda:2.9.5'
-    //For material date time
-    /*  compile 'com.github.citux:datetimepicker:0.2.0'*/
+
     //Retrofit api's
     compile 'com.squareup.retrofit2:retrofit:2.0.0'
     compile 'com.squareup.okhttp3:okhttp:3.2.0'
@@ -71,4 +70,10 @@ dependencies {
     compile 'com.melnykov:floatingactionbutton:1.3.0'
 
 
+
+
+
+
+
+    compile project(path: ':HoloGraphLibrary')
 }

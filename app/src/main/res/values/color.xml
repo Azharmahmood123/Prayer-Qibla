@@ -121,5 +121,8 @@
 
     <!--My Implementation-->
 
-
+    <color name="missed_color">#d84a38</color>
+    <color name="late_color">#fbbc05</color>
+    <color name="prayed_color">#34a853</color>
+    <color name="no_action_color">#67686c</color>
 </resources>

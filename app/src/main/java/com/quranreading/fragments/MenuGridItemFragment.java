@@ -38,10 +38,12 @@ import com.quranreading.sharedPreference.LocationPref;
 import duas.activities.DuasGridActivity;
 import names.activities.NamesListPlayingActivity;
 import noman.Tasbeeh.activity.TasbeehListActivity;
+import noman.academy.activity.QuranAcademy;
 import noman.community.activity.ComunityActivity;
 import noman.hijri.acitivity.CalenderActivity;
 import noman.quran.activity.QuranModuleActivity;
 
+import noman.salattrack.activity.SalatTracking;
 import noman.searchquran.activity.TopicActivity;
 import places.activities.PlacesListActivity;
 import noman.sharedpreference.SurahsSharedPref;
@@ -63,8 +65,10 @@ public class MenuGridItemFragment extends Fragment {
     public static final int MENU_DUAS = 8;
     public static final int MENU_TASBEEH = 9;
     public static final int MENU_NAMES = 10;
-    public static final int MENU_SETTINGS = 11;
-
+    public static final int MENU_ACADEMY = 11;
+    public static final int MENU_SETTINGS = 12;
+    public static final int MENU_SALAT_TRACKER = 13;
+    public static final int MENU_QURAN_TRACKER = 14;
 
     public static final String GRID_ITEMS = "grid_items";
     private GridView mGridView;
@@ -191,12 +195,7 @@ public class MenuGridItemFragment extends Fragment {
                 case MENU_HIJRI:
                     //////////////
 
-                    mGridAdapter.notifyDataSetChanged();
 
-
-                    if (mSurahsSharedPref.getIsFirstTimeHijriOpen()) {
-                        mSurahsSharedPref.setIsFirstTimeHijriOpen(false);
-                    }
                     intent = new Intent(mContext, CalenderActivity.class);
                     startActivity(intent);
                     ////////////
@@ -259,9 +258,7 @@ public class MenuGridItemFragment extends Fragment {
 
                 case MENU_SEARCH_QURAN:
 
-                    if (mSurahsSharedPref.getIsFirstTimeSearchOpen()) {
-                        mSurahsSharedPref.setIsFirstTimeSearchOpen(false);
-                    }
+
                     intent = new Intent(mContext, TopicActivity.class);
                   //  intent = new Intent(mContext, SearchQuranResultActivity.class);
                     startActivity(intent);
@@ -272,6 +269,35 @@ public class MenuGridItemFragment extends Fragment {
                     intent = new Intent(mContext, TasbeehListActivity.class);
                     startActivity(intent);
                     break;
+                case MENU_ACADEMY:
+
+                    if (mSurahsSharedPref.getIsFirstTimeAcademyOpen()) {
+                        mSurahsSharedPref.setIsFirstTimeAcademyOpen(false);
+                    }
+                    mGridAdapter.notifyDataSetChanged();
+
+                    intent = new Intent(mContext, QuranAcademy.class);
+                    startActivity(intent);
+                    break;
+
+                case MENU_SALAT_TRACKER:
+                  /*  if (CommunityGlobalClass.mSignInRequests == null) {
+                        intent = new Intent(mContext, LoginActivity.class);
+                        intent.putExtra("isCommunity",false);
+                        startActivity(intent);
+                    }
+                */
+
+                    if (mSurahsSharedPref.getIsFirstTimeSalatTrackerOpen()) {
+                        mSurahsSharedPref.setIsFirstTimeSalatOpen(false);
+                    }
+                    mGridAdapter.notifyDataSetChanged();
+                    intent = new Intent(mContext, SalatTracking.class);
+                    startActivity(intent);
+
+
+                    break;
+
 
                 default:
                     break;
@@ -286,7 +312,7 @@ public class MenuGridItemFragment extends Fragment {
                 R.drawable.grid_bg_timings, R.drawable.grid_bg_direction, R.drawable.grid_bg_quran,
                 R.drawable.grid_bg_old_community,R.drawable.grid_bg_search, R.drawable.grid_bg_calendar,
                 R.drawable.grid_bg_mosque, R.drawable.grid_bg_halal, R.drawable.grid_bg_duas, R.drawable.grid_tasbeeh,
-                R.drawable.grid_bg_names, R.drawable.grid_bg_settings, };
+                R.drawable.grid_bg_names, R.drawable.grid_acadamey, R.drawable.grid_bg_settings,R.drawable.grid_bg_salat_tracker,R.drawable.grid_bg_settings};
 
 
         public class ViewHolder {
@@ -395,21 +421,21 @@ public class MenuGridItemFragment extends Fragment {
                 }
 
             }
-            if (pos == MENU_HIJRI) {//Hijri
-                if (mSurahsSharedPref.getIsFirstTimeHijriOpen()) {
-                    viewHolder.imageView.setImageResource(R.drawable.grid_hijri_new);
+
+
+            */
+            if (pos == MENU_SALAT_TRACKER) {//Salat tracker
+                if (mSurahsSharedPref.getIsFirstTimeSalatTrackerOpen()) {
+                    viewHolder.imageView.setImageResource(R.drawable.grid_salat_tracker_new);
                 }
 
             }
 
-            if (pos == MENU_SEARCH_QURAN) {//Search Quran
-                if (mSurahsSharedPref.getIsFirstTimeSearchOpen()) {
-                    viewHolder.imageView.setImageResource(R.drawable.grid_ic_search_new);
+            if (pos == MENU_ACADEMY) {
+                if (mSurahsSharedPref.getIsFirstTimeAcademyOpen()) {
+                    viewHolder.imageView.setImageResource(R.drawable.grid_academy_new);
                 }
-            }*/
-
-
-
+            }
             //    viewHolder.imageView.setImageResource(images[pos]);
             viewHolder.textTitle.setText(catTitle);
         }

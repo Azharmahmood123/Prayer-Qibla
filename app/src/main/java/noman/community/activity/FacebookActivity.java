@@ -71,14 +71,14 @@ public class FacebookActivity extends AppCompatActivity {
   Register a callback function with LoginButton to respond to the login result.
  */
 
-    public void getLoginDetails(LoginButton login_button) {
+    public void getLoginDetails(LoginButton login_button,final boolean isCommunitySection) {
 
         // Callback registration
         login_button.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult login_result) {
                 Log.e("facebook", "Succes full login");
-                getUserInformation();
+                getUserInformation(isCommunitySection);
             }
 
             @Override
@@ -117,7 +117,7 @@ public class FacebookActivity extends AppCompatActivity {
     }
 
 
-    public void getUserInformation() {
+    public void getUserInformation(final boolean isCommunitySection) {
 
         AccessTokenTracker accessTokenTracker = new AccessTokenTracker() {
             @Override
@@ -152,7 +152,7 @@ public class FacebookActivity extends AppCompatActivity {
                 mSignInRequest.setLocation(CommunityGlobalClass.CountryName);
                 mSignInRequest.setMode("0"); //For facebook
                 mSignInRequest.setName(data.getFirstName());
-                callToLoadPrayer(mSignInRequest);
+                callToLoadPrayer(mSignInRequest,isCommunitySection);
 
             }
         });
@@ -163,7 +163,7 @@ public class FacebookActivity extends AppCompatActivity {
 
     }
 
-    public void callToLoadPrayer(final SignInRequest mSignUpRequest) {
+    public void callToLoadPrayer(final SignInRequest mSignUpRequest,final boolean isCommunitySection) {
         CommunityGlobalClass.getInstance().showLoading(mFacebookActivity);
         Call<SignUpResponse> call = CommunityGlobalClass.getRestApi().signInUser(mSignUpRequest);
         call.enqueue(new retrofit.Callback<SignUpResponse>() {
@@ -184,10 +184,13 @@ public class FacebookActivity extends AppCompatActivity {
                 CommunityGlobalClass.mainActivityNew.initDrawer();
 
                 FacebookActivity.super.onBackPressed();
-                startActivity(new Intent(FacebookActivity.this, PostActivity.class));
-                //Refresh the Mine Tab
-                CommunityGlobalClass.mCommunityActivity.moveToMineTab();
-                CommunityGlobalClass.mMineFragment.onLoadMineList();
+
+               if(isCommunitySection) {
+                   startActivity(new Intent(FacebookActivity.this, PostActivity.class));
+                   //Refresh the Mine Tab
+                   CommunityGlobalClass.mCommunityActivity.moveToMineTab();
+                   CommunityGlobalClass.mMineFragment.onLoadMineList();
+               }
             }
 
             @Override

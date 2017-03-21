@@ -2,12 +2,14 @@ package com.quranreading.qibladirection;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
+import android.support.v7.app.AlertDialog;
 import android.text.format.Time;
 import android.util.Log;
 import android.view.Gravity;
@@ -51,6 +53,7 @@ import java.util.regex.Pattern;
 import noman.Ads.AdIntegration;
 import noman.CommunityGlobalClass;
 import noman.community.model.Prayer;
+import noman.sharedpreference.SurahsSharedPref;
 
 public class TimingsActivity extends AdIntegration implements OnLocationSetListner, OnClickListener, OnDailogButtonSelectionListner {
 
@@ -297,6 +300,18 @@ public class TimingsActivity extends AdIntegration implements OnLocationSetListn
         });
 
         // setEditedTimeCheck();
+
+
+
+        //Notify User to Tracking your salat here
+        SurahsSharedPref mSurahsSharedPref=new SurahsSharedPref(this);
+        if (mSurahsSharedPref.getIsFirstTimeSalatTrackerOpen()) {
+            mSurahsSharedPref.setIsFirstTimeSalatOpen(true);
+            showSalatTrackerDialog();
+        }
+
+
+
     }
 
     private void showPrevSavedTime() {
@@ -1096,5 +1111,32 @@ public class TimingsActivity extends AdIntegration implements OnLocationSetListn
 	 * 
 	 * return ""; }
 	 */
+
+
+
+    public void showSalatTrackerDialog() {
+
+        final AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.MyAlertDialogStyle);
+        builder.setTitle(getString(R.string.dilog_salat));
+        builder.setMessage(getString(R.string.msg_salat));
+        builder.setPositiveButton(getString(R.string.yes), new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+                SurahsSharedPref surahsSharedPref = new SurahsSharedPref(TimingsActivity.this);
+                surahsSharedPref.setSalatTracking(true);
+
+            }
+        });
+        builder.setNegativeButton(getString(R.string.cancel), new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        builder.show();
+
+
+    }
 
 }

@@ -16,6 +16,10 @@ import com.quranreading.qibladirection.MainActivityNew;
 import com.quranreading.qibladirection.R;
 import com.quranreading.sharedPreference.AlarmSharedPref;
 
+import noman.salattrack.activity.SalatTrackerService;
+import noman.salattrack.activity.TrackerConstant;
+import noman.sharedpreference.SurahsSharedPref;
+
 public class AlarmReceiverPrayers extends BroadcastReceiver {
 
     public static final String STOP_SOUND = "stop_sound";
@@ -106,6 +110,19 @@ public class AlarmReceiverPrayers extends BroadcastReceiver {
 
         mBuilder.setContentIntent(resultPendingIntent);
 
+
+        //Adding Salat Tracking Service Buttons
+
+        if (entryId != 6) {
+            SurahsSharedPref surahsSharedPref = new SurahsSharedPref(context);
+            if (surahsSharedPref.getIsSalatTracking()) {
+                showTrackerButton(mBuilder);
+            }
+        }
+
+        //*********************8888
+
+
         Uri uri = null;
 
         if (indexSoundOption == 0) {//Settings Default Device Notification Sound
@@ -119,7 +136,7 @@ public class AlarmReceiverPrayers extends BroadcastReceiver {
 //                uriAudio = "azan_" + (indexSoundOption - 1);
 //            }
 
-            String[] adhanSounds = {"adhan_fajr_madina","adhan_madina", "most_popular_adhan" , "azan_by_nasir_a_qatami", "azan_mansoural_zahrani", "mishary_rashid_al_afasy","adhan_from_egypt"};
+            String[] adhanSounds = {"adhan_fajr_madina", "adhan_madina", "most_popular_adhan", "azan_by_nasir_a_qatami", "azan_mansoural_zahrani", "mishary_rashid_al_afasy", "adhan_from_egypt"};
 
             uriAudio = adhanSounds[indexSoundOption - 2];
 
@@ -139,5 +156,22 @@ public class AlarmReceiverPrayers extends BroadcastReceiver {
 
         Intent intentBroadCast = new Intent(STOP_SOUND);
         context.sendBroadcast(intentBroadCast);
+    }
+
+    public void showTrackerButton(NotificationCompat.Builder mBuilder) {
+        SalatTrackerService.prayerId=entryId;
+        Intent prayIntent = new Intent(context, SalatTrackerService.class);
+        prayIntent.setAction(TrackerConstant.ACTION.PRAY_ACTION);
+        PendingIntent prayPIntent = PendingIntent.getService(context, 0, prayIntent, 0);
+
+
+        Intent lateIntent = new Intent(context, SalatTrackerService.class);
+        lateIntent.setAction(TrackerConstant.ACTION.LATE_ACTION);
+       //  lateIntent.putExtra(TrackerConstant.ACTION.PRAY_ACTION, entryId);//Passing which pray time
+        PendingIntent latePIntent = PendingIntent.getService(context, 0, lateIntent, 0);
+
+        mBuilder.addAction(R.drawable.pray_ic_noti, context.getString(R.string.txt_prayer), prayPIntent);
+        mBuilder.addAction(R.drawable.late_ic_noti, context.getString(R.string.txt_late), latePIntent);
+        mBuilder.setAutoCancel(true);
     }
 }

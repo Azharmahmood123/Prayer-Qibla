@@ -152,7 +152,7 @@ public class CalenderFragment extends Fragment {
         tvGeorgianDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //mActivity.showDatePicker();
+             // mActivity.showDatePicker();
             }
         });
 

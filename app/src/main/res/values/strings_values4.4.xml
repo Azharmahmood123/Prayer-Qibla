@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="grid_salat_tracker">Salat Tracker</string>
+    <string name="grid_quran_tracker">Quran Tracker</string>
+
+    <string name="grid_academy">Quran Academy</string>
+    <string name="txt_free_trial">Get Free Trial</string>
+    <string name="txt_now">Now</string>
+    <string name="txt_quran_courses">Quran Courses</string>
+    <string name="txt_quran_reading_courses">Quran Reading</string>
+    <string name="txt_quran_reading_recitation">Quran Recitation</string>
+    <string name="txt_quran_translation">Quran Translation</string>
+    <string name="txt_quran_memorization">Quran Memorization</string>
+
+    <string name="txt_contact_us">Contact Us</string>
+    <string name="txt_contact_detail">We are always ready to assist you</string>
+    <string name="txt_contact_detail2">Contact Us and Get Ready Your Kids on Quran Learning Track!</string>
+
+    <string name="txt_testimonials">Testimonials</string>
+    <string name="txt_testimonials_detail">What Parents and Students Say</string>
+    <string name="txt_testimonials_detail2">\"Living in the middle of Arkansas and having no tutor of Qur\'an,
+        a desperate condition for me. My friend told me about QuranReading.com,
+        where there is no age limit for students. I have started taking Quran classes three days a week.
+        Now, my two sons are also students of their tutors.
+        I will highly recommend you all to try their Quran Learning program for once.\"
+\n\n
+Sister Aqsa \n
+Arkansas, USA</string>
+    <string name="txt_all_testimonial">View all testimonials</string>
+
+
+    <string name="txt_download">Downloads</string>
+    <string name="txt_download_detail">Software</string>
+    <string name="txt_download_detail2">To achieve the great benefits of learning and teaching through QuranReading.com,
+        we use Skype and GoToMeeting tools to make our online Quran teaching easier for both of our students and teachers.
+        Both of the software\'s have valuable place in modern communication.</string>
+    <string name="txt_click_download">click to download</string>
+
+    <string name="txt_quick_link">Quick Links</string>
+
+    <string name="txt_link_1">www.quranreading.com</string>
+    <string name="txt_link_2">www.quranreading.com/app-store</string>
+    <string name="txt_link_3">www.quranreading.com/learn-quran</string>
+
+
+    <string name="txt_contact_screen">For all general inquiries about the courses,\nplease use the form below:</string>
+    <string name="txt_time_contact">Good Time to Contact</string>
+    <string name="txt_address">Postal Address\nAshburn, Virginia, USA</string>
+    <string name="txt_contact_number"> Phone Numbers\nUSA : 1-718-208-4590\nCanada : 905-487-8501\nUK : 0203-002-0934\nSaturday till 1400 hrs GMT Sunday from 0200 hrs GMT till 1400 hrs GMT.</string>
+    <string name="mail_address">info@quranreading.com</string>
+
+
+    <string name="txt_registration">Registration</string>
+    <string name="txt_free_trial_classes">Try 3 Days Free Classes</string>
+
+    <string name="txt_quran_memorization_detail">This course intends to help the students memorize Holy Quran. Students who wish to memorize a part or all the Quran, the experienced and professional Huffaz help devise a plan to make it easier for students to achieve their Quran memorization objective.</string>
+    <string name="txt_quran_recitation_detail">The primary objective of this course is to help students recite Quran in the way it is to be recited. The experienced teachers teach the students regarding the rules that need to be followed in order to recite the words and verses properly. After completion of this course successfully, a student is able to recite Quran like an expert.</string>
+    <string name="txt_quran_read_detail">This course is intended to teach and improve the Quran reading capabilities of the students. With this course the students are able to recognize Arabic alphabets and then know how they are joined to give a proper sound. After the completion of this course, the students develop the skill of reading Quran on their own with minimal supervision.</string>
+    <string name="txt_quran_translation_detail">This course is especially designed for students who want to learn to translate Quran so that they are able to understand the meaning of verses of Quran. This course intends to lay the basic foundation of understanding Arabic and its meanings. Once the student has developed an understanding of Arabic, then the meanings are interpreted in light of the context in which the verses were revealed.</string>
+
+
+    <string name="txt_add_salat">Add Prayer</string>
+
+    <string name="txt_dash_chart">----</string>
+
+    <string name="txt_missed">Missed</string>
+    <string name="txt_prayer">Prayed</string>
+    <string name="txt_late">Late</string>
+    <string name="txt_average_rate">Average Prayer Rate</string>
+
+
+    <string name="tab_weekly">Weekly</string>
+    <string name="tab_monthly">Monthly</string>
+    <string name="tab_yearly">Yearly</string>
+
+    <string name="dilog_title_salat">Save Progress</string>
+    <string name="dilog_msg_salat">Are you sure to save your current prayers progress?</string>
+    <string name="txt_prayer_chart">Weekly Tracker Chart</string>
+    <string name="txt_prayer_chart2">Monthly Tracker Chart</string>
+    <string name="txt_prayer_chart3">Yearly Tracker Chart</string>
+
+
+    <string name="dilog_salat">Salat Tracker</string>
+    <string name="msg_salat">Do you want to track your Salat?</string>
+</resources>
