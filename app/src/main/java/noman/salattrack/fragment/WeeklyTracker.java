@@ -147,7 +147,7 @@ public class WeeklyTracker extends Fragment {
         calDate = now.get(Calendar.DATE);
         calMonth = now.get(Calendar.MONTH) + 1;
         calYear = now.get(Calendar.YEAR);
-        userId = 0;
+        userId = CommunityGlobalClass.mSignInRequests.getUser_id();
 
         //Get record from database
         SalatModel mSalatModel = getSingleRecord(calDate, calMonth, calYear, userId);

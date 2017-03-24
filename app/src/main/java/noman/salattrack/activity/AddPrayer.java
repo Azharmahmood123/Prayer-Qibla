@@ -65,7 +65,7 @@ public class AddPrayer extends AdIntegration {
         mSalatModel = new SalatModel();
         salatTrackerDatabase = new SalatTrackerDatabase(this);
 
-
+        userID =CommunityGlobalClass.mSignInRequests.getUser_id();
         dateContainer();
         refreshData();
     }
@@ -283,7 +283,7 @@ public class AddPrayer extends AdIntegration {
         mSalatModel.setDate(dateDB);
         mSalatModel.setMonth(monthDB);
         mSalatModel.setYear(yearDB);
-        mSalatModel.setUser_id(0);//Not connected to database
+        mSalatModel.setUser_id(CommunityGlobalClass.mSignInRequests.getUser_id());//Not connected to database
 
 
         final AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.MyAlertDialogStyle);

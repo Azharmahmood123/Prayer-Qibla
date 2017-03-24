@@ -15,7 +15,7 @@ public class PostPrayerRequest {
 
     @SerializedName("user_id")
     @Expose
-    private String user_id;
+    private int user_id;
     @SerializedName("post_content")
     @Expose
     private String prayer;
@@ -29,11 +29,11 @@ public class PostPrayerRequest {
     @Expose
     private String device_date_time;
 
-    public String getUser_id() {
+    public int getUser_id() {
         return user_id;
     }
 
-    public void setUser_id(String user_id) {
+    public void setUser_id(int user_id) {
         this.user_id = user_id;
     }
 

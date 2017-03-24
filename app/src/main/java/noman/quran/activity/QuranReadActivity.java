@@ -1776,7 +1776,7 @@ public class QuranReadActivity extends AppCompatActivity implements OnCompletion
 
 
     public void handleTextSizeSetting(boolean isAnotherButton) {
-        JuzConstant.doSome();
+        JuzConstant.doSome(QuranReadActivity.this);
         contianerTextSizeSetting.setVisibility(View.VISIBLE);
         final SurahsSharedPref mSurahsSharedPref = new SurahsSharedPref(QuranReadActivity.this);
 

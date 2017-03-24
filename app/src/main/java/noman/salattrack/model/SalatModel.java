@@ -1,5 +1,8 @@
 package noman.salattrack.model;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 /**
  * Created by Administrator on 3/17/2017.
  */
@@ -11,15 +14,39 @@ public class SalatModel {
     // 1: late
     // 2: Prayed
 
+
+    @SerializedName("action")
+    @Expose
+    private String action="addUserSalat";
+
+
     private int id;
+    @SerializedName("day")
+    @Expose
     private int date;
+    @SerializedName("month")
+    @Expose
     private int month;
+    @SerializedName("year")
+    @Expose
     private int year;
+    @SerializedName("user_id")
+    @Expose
     private int user_id;
+    @SerializedName("fajar")
+    @Expose
     private int fajar = 0;
+    @SerializedName("zuhar")
+    @Expose
     private int zuhar = 0;
+    @SerializedName("asar")
+    @Expose
     private int asar = 0;
+    @SerializedName("magrib")
+    @Expose
     private int magrib = 0;
+    @SerializedName("isha")
+    @Expose
     private int isha = 0;
 
 

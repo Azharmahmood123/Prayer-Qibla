@@ -12,6 +12,8 @@ import noman.community.model.PrayingRequest;
 import noman.community.model.PrayingResponse;
 import noman.community.model.SignInRequest;
 import noman.community.model.SignUpResponse;
+import noman.salattrack.model.SalatModel;
+import noman.salattrack.model.SalatResponse;
 import retrofit.Call;
 import retrofit.http.Body;
 import retrofit.http.GET;
@@ -66,6 +68,11 @@ public interface RestApi {
     @POST("/")
     Call<PrayingResponse> moveToTop(
             @Body MoveToTopRequest mDeletePrayerRequest);
+
+
+    @POST("/")
+    Call<SalatResponse> saveSalatData(
+            @Body SalatModel signInRequest);
 
 }
 

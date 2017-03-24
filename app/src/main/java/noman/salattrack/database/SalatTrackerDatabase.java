@@ -4,13 +4,24 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
+import com.orhanobut.logger.BuildConfig;
 import com.quranreading.helper.DataBaseHelper;
+
+import noman.CommunityGlobalClass;
+import noman.community.model.SignUpResponse;
+import noman.community.utility.DebugInfo;
+import noman.salattrack.activity.SalatTracking;
 import noman.salattrack.model.SalatModel;
+import noman.salattrack.model.SalatResponse;
+import retrofit.Call;
+import retrofit.Response;
+import retrofit.Retrofit;
 
 /**
  * Created by Administrator on 3/17/2017.
@@ -76,6 +87,9 @@ public class SalatTrackerDatabase {
 
     public boolean insertSalatData(SalatModel model) {
 
+        uploadToServer(model);
+
+
         if (getSalatModel(model.getDate(), model.getMonth(), model.getYear(), model.getUser_id()) != null) {
             return updateSalatTracker(model);
         } else {
@@ -94,25 +108,36 @@ public class SalatTrackerDatabase {
                 return false;
             }
         }
+
+
+
     }
 
-    public List<SalatModel> getSalatModelMonthlyList(int month,int year,int userID) {
-        List<SalatModel> salatModelList = new ArrayList<>();
-        SQLiteDatabase db = this.databaseHelper.getReadableDatabase();
-        if (db == null)
-            return null;
-        Cursor c = db.rawQuery("SELECT * FROM " + TBL_SALAT_TRACKER + " where year = " + year +" and month = "+month +" and user_id ="+userID , null);
-        if (c != null) {
-            if (c.moveToFirst()) {
-                do {
-                    salatModelList.add(getCursorModel(c));
-                } while (c.moveToNext());
-            }
-        }
-        c.close();
-        db.close();
-        return salatModelList;
-    }
+     void uploadToServer(SalatModel model) {
+         //  CommunityGlobalClass.getInstance().showLoading(this);
+         Call<SalatResponse> call = CommunityGlobalClass.getRestApi().saveSalatData(model);
+         call.enqueue(new retrofit.Callback<SalatResponse>() {
+
+             @Override
+             public void onResponse(Response<SalatResponse> response, Retrofit retrofit) {
+                 if(response.body().getState() == true)
+                 {
+                     Log.e("Post","Data to server");
+                 }
+             }
+
+             @Override
+             public void onFailure(Throwable t) {
+                 CommunityGlobalClass.getInstance().cancelDialog();
+                 if (BuildConfig.DEBUG) DebugInfo.loggerException("salat insert -Failure" + t.getMessage());
+                 CommunityGlobalClass.getInstance().showServerFailureDialog(mContext);
+             }
+         });
+
+
+
+     }
+
 
     public SalatModel getSalatModel(int date, int month, int year, int userID) {
         SalatModel salatModelList = new SalatModel();

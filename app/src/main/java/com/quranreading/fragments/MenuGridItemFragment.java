@@ -37,9 +37,12 @@ import com.quranreading.sharedPreference.LocationPref;
 
 import duas.activities.DuasGridActivity;
 import names.activities.NamesListPlayingActivity;
+import noman.CommunityGlobalClass;
 import noman.Tasbeeh.activity.TasbeehListActivity;
 import noman.academy.activity.QuranAcademy;
 import noman.community.activity.ComunityActivity;
+import noman.community.activity.LoginActivity;
+import noman.community.activity.PostActivity;
 import noman.hijri.acitivity.CalenderActivity;
 import noman.quran.activity.QuranModuleActivity;
 
@@ -205,7 +208,7 @@ public class MenuGridItemFragment extends Fragment {
 
                 case MENU_COMMUNITY:
                     //////////////
-
+                    CommunityGlobalClass.moduleId = 1;
                     if (isNetworkConnected()) {
 
                         if (mSurahsSharedPref.getIsFirstTimeCommunityOpen()) {
@@ -287,15 +290,20 @@ public class MenuGridItemFragment extends Fragment {
                         startActivity(intent);
                     }
                 */
-
+                    CommunityGlobalClass.moduleId = 2;
                     if (mSurahsSharedPref.getIsFirstTimeSalatTrackerOpen()) {
                         mSurahsSharedPref.setIsFirstTimeSalatOpen(false);
                     }
                     mGridAdapter.notifyDataSetChanged();
-                    intent = new Intent(mContext, SalatTracking.class);
-                    startActivity(intent);
 
+                    if (CommunityGlobalClass.mSignInRequests == null) {
 
+                        startActivity(new Intent(mContext, LoginActivity.class));
+
+                    } else {
+                        intent = new Intent(mContext, SalatTracking.class);
+                        startActivity(intent);
+                    }
                     break;
 
 

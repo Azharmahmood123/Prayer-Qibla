@@ -50,16 +50,7 @@ public class ComunityActivity extends AdIntegration2 {
             super.showBannerAd(this, (LinearLayout) findViewById(R.id.linearAd));
         }
         CommunityGlobalClass.mCommunityActivity = this;
-        //get PreFerence in the list
-        SavePreference savePreference = new SavePreference();
-        CommunityGlobalClass.mSignInRequests = savePreference.getDataFromSharedPreferences();
-        if (CommunityGlobalClass.mSignInRequests != null) {
-            if (CommunityGlobalClass.mSignInRequests.getName() == null) {
-                CommunityGlobalClass.mSignInRequests = null;
-            }
-        } else {
-            CommunityGlobalClass.mSignInRequests = null;
-        }
+
         CommunityGlobalClass.getInstance().getHashKey(getPackageName());
 
         RelativeLayout img_back = (RelativeLayout) findViewById(R.id.layout_drawer_menu_ic);
@@ -97,11 +88,8 @@ public class ComunityActivity extends AdIntegration2 {
                     if (CommunityGlobalClass.mPrayerModel.size() > 1) {
                         if ( CommunityGlobalClass.prayerCounter >= 3) {
                             if (CommunityGlobalClass.mSignInRequests == null) {
-                                // startActivity(new Intent(ComunityActivity.this, LoginActivity.class));
-                                Intent intent = new Intent(ComunityActivity.this, LoginActivity.class);
-                                intent.putExtra("isCommunity",true);
-                                startActivity(intent);
-
+                                CommunityGlobalClass.moduleId=1;
+                                startActivity(new Intent(ComunityActivity.this, LoginActivity.class));
 
                             } else {
                                 moveToMineTab();
@@ -112,6 +100,7 @@ public class ComunityActivity extends AdIntegration2 {
                         }
                     } else {
                         if (CommunityGlobalClass.mSignInRequests == null) {
+                            CommunityGlobalClass.moduleId=1;
                             startActivity(new Intent(ComunityActivity.this, LoginActivity.class));
                         } else {
                             moveToMineTab();

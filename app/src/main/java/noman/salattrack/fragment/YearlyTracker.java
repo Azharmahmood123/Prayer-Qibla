@@ -143,6 +143,7 @@ public class YearlyTracker extends Fragment {
         pray = 0;
         late = 0;
         missed = curCalendar.getActualMaximum(Calendar.DAY_OF_YEAR);
+        curUserId = CommunityGlobalClass.mSignInRequests.getUser_id();
 
         getSingleRecord(curYear, curUserId);
     }
@@ -191,7 +192,7 @@ public class YearlyTracker extends Fragment {
     public void getSingleRecord(int yearDB, int userID) {
 
         SalatTrackerDatabase salatTrackerDatabase = new SalatTrackerDatabase(mSalatTracking);
-        SalatModel  mSalatModel = salatTrackerDatabase.getPrayedCountYearly(yearDB, userID, 1);//Late
+        SalatModel mSalatModel = salatTrackerDatabase.getPrayedCountYearly(yearDB, userID, 1);//Late
         if (mSalatModel != null) {
             late = late + mSalatModel.getFajar();
             late = late + mSalatModel.getZuhar();

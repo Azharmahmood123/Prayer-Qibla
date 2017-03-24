@@ -54,7 +54,6 @@ public class LoginActivity extends FacebookActivity implements GoogleApiClient.O
     Activity mActivity;
     boolean isInternetAvaliable;
 
-    boolean isCommunitySection=true;
 
     @Override
     public void onCreate(final Bundle savedInstanceState) {
@@ -81,14 +80,9 @@ public class LoginActivity extends FacebookActivity implements GoogleApiClient.O
         titleheader.setText(getResources().getString(R.string.activity_login));
 
 
-        Bundle b=getIntent().getExtras();
 
-        if(b != null)
-        {
-            isCommunitySection = b.getBoolean("isCommunity");
-        }
 
-        FacebookActivity.initiateSDK().getLoginDetails(btnFacebook,isCommunitySection);
+        FacebookActivity.initiateSDK().getLoginDetails(btnFacebook);
         isInternetAvaliable = CommunityGlobalClass.getInstance().isInternetOn();
         //Get Country Name while app start
         if (isInternetAvaliable) {
@@ -229,9 +223,9 @@ startActivity(new Intent(this,PrivacyPolicyActivity.class));
             mSignInRequest.setLocation(CommunityGlobalClass.CountryName);
             mSignInRequest.setMode("1"); //For Gmail
             mSignInRequest.setName(mGraphApiResponse.getFirstName());
-
+            mSignInRequest.setModule_id(CommunityGlobalClass.moduleId);
             //Call webservice
-            callToLoadPrayer(mSignInRequest,isCommunitySection);
+            callToLoadPrayer(mSignInRequest);
 
         }
     }

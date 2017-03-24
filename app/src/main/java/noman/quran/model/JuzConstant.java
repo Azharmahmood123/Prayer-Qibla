@@ -1,6 +1,8 @@
 package noman.quran.model;
 
 
+import android.app.Activity;
+import android.content.Context;
 import android.util.DisplayMetrics;
 
 import com.quranreading.qibladirection.R;
@@ -23,11 +25,11 @@ public class JuzConstant {
     public static int fontSize_E[];
     public static int fontSize_A[];
 
-    public static void doSome() {
+    public static void doSome(Activity context) {
         String device = CommunityGlobalClass.getInstance().getResources().getString(R.string.device);
 
         DisplayMetrics dm = new DisplayMetrics();
-        CommunityGlobalClass.mainActivityNew.getWindowManager().getDefaultDisplay().getMetrics(dm);
+        context.getWindowManager().getDefaultDisplay().getMetrics(dm);
         int height = dm.heightPixels;
         int width = dm.widthPixels;
 

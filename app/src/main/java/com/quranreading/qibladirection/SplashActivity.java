@@ -41,6 +41,8 @@ import javax.crypto.spec.SecretKeySpec;
 import noman.Ads.PreLoadIntersitial;
 import noman.CommunityGlobalClass;
 import noman.Tasbeeh.activity.TasbeehListActivity;
+import noman.community.prefrences.SavePreference;
+import noman.quran.activity.QuranModuleActivity;
 import noman.quran.dbconnection.DataBaseHelper;
 import quran.activities.ServiceClass;
 import quran.helper.DBManagerQuran;
@@ -82,6 +84,18 @@ public class SplashActivity extends AppCompatActivity {
         }
 
         isAppPurchase();
+
+
+        //get PreFerence in the list
+        SavePreference savePreference = new SavePreference();
+        CommunityGlobalClass.mSignInRequests = savePreference.getDataFromSharedPreferences();
+        if (CommunityGlobalClass.mSignInRequests != null) {
+            if (CommunityGlobalClass.mSignInRequests.getName() == null) {
+                CommunityGlobalClass.mSignInRequests = null;
+            }
+        } else {
+            CommunityGlobalClass.mSignInRequests = null;
+        }
 
         //Load Default Ad here
         CommunityGlobalClass.getInstance().mInterstitialAd = new PreLoadIntersitial(this);
@@ -294,7 +308,7 @@ public class SplashActivity extends AppCompatActivity {
         isShowInterstitial = false;
         myHandler.removeCallbacks(mRunnable);
 
-        Intent intent = new Intent(context, MainActivityNew.class);
+        Intent intent = new Intent(context, QuranModuleActivity.class);
         startActivity(intent);
         finish();
     }

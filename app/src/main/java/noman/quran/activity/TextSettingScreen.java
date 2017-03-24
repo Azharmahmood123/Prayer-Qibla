@@ -66,7 +66,7 @@ public class TextSettingScreen extends Activity {
 
     public void handleSeekBar() {
 
-        JuzConstant.doSome();
+        JuzConstant.doSome(TextSettingScreen.this);
 
         final TextView text = (TextView) findViewById(R.id.txt_example);
         text.setTypeface(((GlobalClass) getApplicationContext()).faceArabic);

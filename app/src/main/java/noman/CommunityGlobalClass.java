@@ -96,7 +96,7 @@ public class CommunityGlobalClass extends GlobalClass {
 
     public static int prayerCounter=0;
 
-
+    public static int moduleId = 1;
 
 
 

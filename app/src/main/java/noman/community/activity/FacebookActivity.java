@@ -22,12 +22,16 @@ import com.orhanobut.logger.BuildConfig;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.List;
+
 import noman.CommunityGlobalClass;
 import noman.community.prefrences.SavePreference;
 import noman.community.utility.DebugInfo;
 import noman.community.model.GraphApiResponse;
 import noman.community.model.SignInRequest;
 import noman.community.model.SignUpResponse;
+import noman.salattrack.database.SalatTrackerDatabase;
+import noman.salattrack.model.SalatModel;
 import retrofit.Call;
 import retrofit.Response;
 import retrofit.Retrofit;
@@ -71,14 +75,14 @@ public class FacebookActivity extends AppCompatActivity {
   Register a callback function with LoginButton to respond to the login result.
  */
 
-    public void getLoginDetails(LoginButton login_button,final boolean isCommunitySection) {
+    public void getLoginDetails(LoginButton login_button) {
 
         // Callback registration
         login_button.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult login_result) {
                 Log.e("facebook", "Succes full login");
-                getUserInformation(isCommunitySection);
+                getUserInformation();
             }
 
             @Override
@@ -117,7 +121,7 @@ public class FacebookActivity extends AppCompatActivity {
     }
 
 
-    public void getUserInformation(final boolean isCommunitySection) {
+    public void getUserInformation() {
 
         AccessTokenTracker accessTokenTracker = new AccessTokenTracker() {
             @Override
@@ -152,7 +156,8 @@ public class FacebookActivity extends AppCompatActivity {
                 mSignInRequest.setLocation(CommunityGlobalClass.CountryName);
                 mSignInRequest.setMode("0"); //For facebook
                 mSignInRequest.setName(data.getFirstName());
-                callToLoadPrayer(mSignInRequest,isCommunitySection);
+                mSignInRequest.setModule_id(CommunityGlobalClass.moduleId);
+                callToLoadPrayer(mSignInRequest);
 
             }
         });
@@ -163,15 +168,15 @@ public class FacebookActivity extends AppCompatActivity {
 
     }
 
-    public void callToLoadPrayer(final SignInRequest mSignUpRequest,final boolean isCommunitySection) {
+    public void callToLoadPrayer(final SignInRequest mSignUpRequest) {
         CommunityGlobalClass.getInstance().showLoading(mFacebookActivity);
         Call<SignUpResponse> call = CommunityGlobalClass.getRestApi().signInUser(mSignUpRequest);
         call.enqueue(new retrofit.Callback<SignUpResponse>() {
 
             @Override
             public void onResponse(Response<SignUpResponse> response, Retrofit retrofit) {
-                CommunityGlobalClass.getInstance().cancelDialog();
 
+                CommunityGlobalClass.getInstance().cancelDialog();
                 CommunityGlobalClass.mPrayerModel = response.body().getPrayers();
                 mSignUpRequest.setUser_id(response.body().getResponse().getUser_id());
                 //Save PreFerence in the list
@@ -185,12 +190,18 @@ public class FacebookActivity extends AppCompatActivity {
 
                 FacebookActivity.super.onBackPressed();
 
-               if(isCommunitySection) {
+               if(CommunityGlobalClass.moduleId == 1)
+               {
+
+
                    startActivity(new Intent(FacebookActivity.this, PostActivity.class));
                    //Refresh the Mine Tab
                    CommunityGlobalClass.mCommunityActivity.moveToMineTab();
                    CommunityGlobalClass.mMineFragment.onLoadMineList();
                }
+
+
+
             }
 
             @Override
@@ -203,6 +214,8 @@ public class FacebookActivity extends AppCompatActivity {
 
 
     }
+
+
 
 
 }

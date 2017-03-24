@@ -9,11 +9,13 @@ import com.google.gson.annotations.SerializedName;
 
 public class SignInRequest {
 
-    private String user_id;
+    private int user_id;
     @SerializedName("action")
     @Expose
     private String action="userLogIn";
-
+    @SerializedName("module_id")
+    @Expose
+    private int module_id; // 1: community 2:Salat ; 3:Quran track
 
     @SerializedName("email")
     @Expose
@@ -74,11 +76,20 @@ public class SignInRequest {
         this.name = name;
     }
 
-    public String getUser_id() {
+    public int getUser_id() {
         return user_id;
     }
 
-    public void setUser_id(String user_id) {
+    public void setUser_id(int user_id) {
         this.user_id = user_id;
+    }
+
+
+    public int getModule_id() {
+        return module_id;
+    }
+
+    public void setModule_id(int module_id) {
+        this.module_id = module_id;
     }
 }

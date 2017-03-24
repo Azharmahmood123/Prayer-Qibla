@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import com.orhanobut.logger.BuildConfig;
 import com.quranreading.helper.SlidingTabLayout;
 import com.quranreading.qibladirection.GlobalClass;
 import com.quranreading.qibladirection.R;
@@ -19,10 +20,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 import noman.Ads.AdIntegration;
+import noman.CommunityGlobalClass;
+import noman.community.activity.FacebookActivity;
+import noman.community.activity.PostActivity;
+import noman.community.model.SignInRequest;
+import noman.community.model.SignUpResponse;
+import noman.community.prefrences.SavePreference;
+import noman.community.utility.DebugInfo;
+import noman.salattrack.database.SalatTrackerDatabase;
 import noman.salattrack.fragment.MonthlyTracker;
 import noman.salattrack.fragment.WeeklyTracker;
 import noman.salattrack.fragment.YearlyTracker;
+import noman.salattrack.model.SalatModel;
 import noman.sharedpreference.SurahsSharedPref;
+import retrofit.Call;
+import retrofit.Response;
+import retrofit.Retrofit;
 
 /**
  * Created by Administrator on 3/16/2017.
@@ -76,6 +89,11 @@ public class SalatTracking extends AdIntegration {
             }
         });
         trackerToogle();
+
+
+        //call service to get user salat data
+        callToSalatData(CommunityGlobalClass.mSignInRequests);
+
     }
 
     public void trackerToogle() {
@@ -140,5 +158,56 @@ public class SalatTracking extends AdIntegration {
         }
     }
 
+   //Call webservice
+    public void callToSalatData(final SignInRequest mSignUpRequest) {
+      //  CommunityGlobalClass.getInstance().showLoading(this);
+        Call<SignUpResponse> call = CommunityGlobalClass.getRestApi().signInUser(mSignUpRequest);
+        call.enqueue(new retrofit.Callback<SignUpResponse>() {
 
+            @Override
+            public void onResponse(Response<SignUpResponse> response, Retrofit retrofit) {
+
+
+                if(CommunityGlobalClass.moduleId == 2)
+                {
+                    if(response.body().getSalats() != null && response.body().getSalats().size() > 0) {
+                        moveSalatToDatabase(response.body().getSalats());
+                    }
+                    else
+                    {
+                //        CommunityGlobalClass.getInstance().cancelDialog();
+                    }
+                }
+
+
+
+            }
+
+            @Override
+            public void onFailure(Throwable t) {
+                CommunityGlobalClass.getInstance().cancelDialog();
+                if (BuildConfig.DEBUG) DebugInfo.loggerException("SignUp-Failure" + t.getMessage());
+                CommunityGlobalClass.getInstance().showServerFailureDialog(SalatTracking.this);
+            }
+        });
+
+
+    }
+
+    private void moveSalatToDatabase(List<SalatModel> mSalatModelList) {
+
+        SalatTrackerDatabase dbTracker=new SalatTrackerDatabase(this);
+
+        for(int i=0;i<mSalatModelList.size();i++) {
+            dbTracker.insertSalatData(mSalatModelList.get(i));
+
+            if(i == mSalatModelList.size()-1)
+            {
+        //        CommunityGlobalClass.getInstance().cancelDialog();
+                setupViewPager(viewPager);
+            }
+        }
+
+
+    }
 }

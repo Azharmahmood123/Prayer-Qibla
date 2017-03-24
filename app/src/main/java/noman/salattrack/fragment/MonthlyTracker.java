@@ -1,31 +1,22 @@
 package noman.salattrack.fragment;
 
-import android.animation.Animator;
-import android.annotation.TargetApi;
 import android.app.DatePickerDialog;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.DatePicker;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.echo.holographlibrary.PieGraph;
 import com.echo.holographlibrary.PieSlice;
-
-
 import com.quranreading.qibladirection.R;
 
 import java.lang.reflect.Field;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.List;
 
 import noman.CommunityGlobalClass;
 import noman.salattrack.activity.SalatTracking;
@@ -45,7 +36,8 @@ public class MonthlyTracker extends Fragment {
 
     int late, missed, pray;
 
-int totalDays=30*5;
+    int totalDays = 30 * 5;
+
     public static MonthlyTracker newInstance(SalatTracking mSalatTracking) {
         MonthlyTracker myFragment = new MonthlyTracker();
         myFragment.mSalatTracking = mSalatTracking;
@@ -85,7 +77,7 @@ int totalDays=30*5;
 
     private DatePickerDialog customDatePicker() {
         DatePickerDialog dpd = new DatePickerDialog(mSalatTracking, calenderDialog,
-                curYear, curMonth-1, curDate);
+                curYear, curMonth - 1, curDate);
         try {
 
             Field[] datePickerDialogFields = dpd.getClass().getDeclaredFields();
@@ -143,11 +135,12 @@ int totalDays=30*5;
         tvMonth.setText("" + CommunityGlobalClass.getMonthName(curMonth));
         tvYear.setText("" + curYear);
 
-        pray = 0; late = 0; missed = totalDays;//Default 30 days * 5 times prayer
-
-        getSingleRecord(curMonth,curYear,curUserId);
+        pray = 0;
+        late = 0;
+        missed = totalDays;//Default 30 days * 5 times prayer
+        curUserId = CommunityGlobalClass.mSignInRequests.getUser_id();
+        getSingleRecord(curMonth, curYear, curUserId);
     }
-
 
 
     private void drawPieGraph() {
@@ -159,7 +152,7 @@ int totalDays=30*5;
         float thickness = 20.0f * density;
         pg.setThickness((int) thickness);
 
-        PieSlice slice =  new PieSlice();//Missed
+        PieSlice slice = new PieSlice();//Missed
         slice.setColor(mSalatTracking.getResources().getColor(R.color.missed_color));
         slice.setValue(missed);
         pg.addSlice(slice);
@@ -169,12 +162,10 @@ int totalDays=30*5;
         slice.setValue(late);
         pg.addSlice(slice);
 
-        slice =  new PieSlice();//Pray
+        slice = new PieSlice();//Pray
         slice.setColor(mSalatTracking.getResources().getColor(R.color.prayed_color));
         slice.setValue(pray);
         pg.addSlice(slice);
-
-
 
 
         TextView tvPray = (TextView) rootView.findViewById(R.id.txt_prayer);
@@ -187,7 +178,7 @@ int totalDays=30*5;
 
     }
 
-    public void getSingleRecord(int monthDB,int yearDB, int userID) {
+    public void getSingleRecord(int monthDB, int yearDB, int userID) {
 
         SalatTrackerDatabase salatTrackerDatabase = new SalatTrackerDatabase(mSalatTracking);
         SalatModel /*mSalatModel = salatTrackerDatabase.getPrayedCountYearly(yearDB,userID,0);//missed
@@ -200,7 +191,7 @@ int totalDays=30*5;
 
         }*/
 
-                mSalatModel = salatTrackerDatabase.getPrayedCountMonthly(monthDB,yearDB, userID, 1);//Late
+                mSalatModel = salatTrackerDatabase.getPrayedCountMonthly(monthDB, yearDB, userID, 1);//Late
         if (mSalatModel != null) {
             late = late + mSalatModel.getFajar();
             late = late + mSalatModel.getZuhar();
@@ -210,7 +201,7 @@ int totalDays=30*5;
 
         }
 
-        mSalatModel = salatTrackerDatabase.getPrayedCountMonthly(monthDB,yearDB, userID, 2);//prayed
+        mSalatModel = salatTrackerDatabase.getPrayedCountMonthly(monthDB, yearDB, userID, 2);//prayed
         if (mSalatModel != null) {
             pray = pray + mSalatModel.getFajar();
             pray = pray + mSalatModel.getZuhar();
@@ -223,9 +214,6 @@ int totalDays=30*5;
         drawPieGraph();
         calcualteAverage();
     }
-
-
-
 
 
     void calcualteAverage() {
@@ -249,7 +237,6 @@ int totalDays=30*5;
             refreshData();
         }
     }
-
 
 
 }

@@ -76,7 +76,7 @@ public class CalculatePrayerTime {
 
             int daylightSaving = prayers.detectDaylightSaving();
 
-            int asar = data.getCorrections()[3]; //+ timeAssarDiff;
+            int asar = data.getCorrections()[3];
 
 
             if (mPrayerTimeSettingsPref.isDaylightSaving()) {
@@ -108,8 +108,7 @@ public class CalculatePrayerTime {
             prayers.setAdjustHighLats(prayers.AngleBased);
 
 
-            //Gettin time differnce acording to database
-         //  asar = asar+timeAssarDiff;
+
 
 
             if (mPrayerTimeSettingsPref.isDaylightSaving()) {

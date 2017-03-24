@@ -121,7 +121,7 @@ public class DBManager {
     ///////////////////// Get Cities Location Info /////////////////////////
 
     public Cursor getCountryCodes(String country) throws SQLException {
-        return db.query(true, TBL_COUNTRY_CODES, new String[]{FLD_CODE, FLD_COUNTRY_NAME,FLD_TIME_DIFF}, FLD_COUNTRY_NAME + "='" + country + "' COLLATE NOCASE", null, null, null, null, null);
+        return db.query(true, TBL_COUNTRY_CODES, new String[]{FLD_CODE, FLD_COUNTRY_NAME}, FLD_COUNTRY_NAME + "='" + country + "' COLLATE NOCASE", null, null, null, null, null);
     }
     public Cursor getCountrybyCodes(String code) throws SQLException {
         return db.query(true, TBL_COUNTRY_CODES, new String[]{FLD_CODE, FLD_COUNTRY_NAME,FLD_TIME_DIFF}, FLD_CODE + "='" + code + "' COLLATE NOCASE", null, null, null, null, null);

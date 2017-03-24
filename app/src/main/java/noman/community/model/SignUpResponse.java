@@ -7,6 +7,8 @@ import com.google.gson.annotations.SerializedName;
 import java.util.ArrayList;
 import java.util.List;
 
+import noman.salattrack.model.SalatModel;
+
 
 public class SignUpResponse {
 
@@ -19,6 +21,12 @@ public class SignUpResponse {
     @SerializedName("Prayers")
     @Expose
     private List<Prayer> prayers = new ArrayList<Prayer>();
+
+
+    @SerializedName("Salats")
+    @Expose
+    private List<SalatModel> Salats = new ArrayList<SalatModel>();
+
 
     /**
      * 
@@ -74,4 +82,11 @@ public class SignUpResponse {
         this.prayers = prayers;
     }
 
+    public List<SalatModel> getSalats() {
+        return Salats;
+    }
+
+    public void setSalats(List<SalatModel> salats) {
+        Salats = salats;
+    }
 }
