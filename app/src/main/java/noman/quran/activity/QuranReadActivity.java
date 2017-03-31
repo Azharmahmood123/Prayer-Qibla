@@ -411,23 +411,26 @@ public class QuranReadActivity extends AppCompatActivity implements OnCompletion
                         // Incoming call: Pause Audio
                         handler.removeCallbacks(sendUpdatesToUI);
                         if (play == 1) {
-                            callCheck = true;
-                            mp.pause();
+                       //     callCheck = true;
+                         //   mp.pause();
+                            onPlayClick(null);
                         }
                     } else if (state == TelephonyManager.CALL_STATE_IDLE) {
                         // Not in call: Play Audio
                         if (callCheck && mp != null) {
                             callCheck = false;
-                            handler.removeCallbacks(sendUpdatesToUI);
-                            handler.postDelayed(sendUpdatesToUI, 0);
-                            mp.start();
+                          //  handler.removeCallbacks(sendUpdatesToUI);
+                          //  handler.postDelayed(sendUpdatesToUI, 0);
+                          //  mp.start();
+                            onPlayClick(null);
                         }
                     } else if (state == TelephonyManager.CALL_STATE_OFFHOOK) {
                         // A call is dialing, active or on hold: Pause Audio
                         handler.removeCallbacks(sendUpdatesToUI);
                         if (play == 1) {
-                            callCheck = true;
-                            mp.pause();
+                          //  callCheck = true;
+                           // mp.pause();
+                            onPlayClick(null);
                         }
                     }
                 }
@@ -1746,7 +1749,6 @@ public class QuranReadActivity extends AppCompatActivity implements OnCompletion
         for (int i = 0; i < 30; i++) {
             array[i] = "Juz: " + (i + 1);
         }
-        // new AlertDialog.Builder(this, R.style.MyAlertDialogStyle)
         new AlertDialog.Builder(QuranReadActivity.activity)
                 .setTitle("Select Juz")
                 .setSingleChoiceItems(array, (Integer.parseInt(tvJuzNumber.getText().toString().replaceAll("[\\D]", "")) - 1), null)

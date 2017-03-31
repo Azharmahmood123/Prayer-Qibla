@@ -4,13 +4,14 @@ android {
     useLibrary 'org.apache.http.legacy'
     compileSdkVersion 23
     buildToolsVersion "23.0.2"
-    defaultConfig {
 
+    defaultConfig {
+        multiDexEnabled  true
         applicationId "com.quranreading.qibladirection"
         minSdkVersion 11
         targetSdkVersion 22
-        versionCode 34
-        versionName "4.3"
+        versionCode 35
+        versionName "4.4"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -34,10 +35,8 @@ repositories {
 
 dependencies {
 
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
+    compile 'com.android.support:multidex:1.0.1'
+
     compile files('libs/zip4j_1.3.2.jar')
     compile 'com.android.support:appcompat-v7:24.2.1'
     compile 'com.android.support:design:24.2.1'
@@ -73,7 +72,7 @@ dependencies {
 
 
 
-
+    compile group: 'org.achartengine', name: 'achartengine', version: '1.2.0'
 
     compile project(path: ':HoloGraphLibrary')
 }

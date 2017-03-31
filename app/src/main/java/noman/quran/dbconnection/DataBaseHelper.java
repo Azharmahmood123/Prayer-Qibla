@@ -32,7 +32,7 @@ public class DataBaseHelper extends SQLiteOpenHelper
 	 */
 	public DataBaseHelper(Context context) {
 
-		super(context,DATABSE_NAME, null, 1);
+		super(context,DATABSE_NAME, null, 2);//Update my database
 		this.myContext = context;
 		this.packageName = myContext.getPackageName();
 		DATABASE_PATH = Environment.getDataDirectory() + "/data/" + packageName + "/databases/";

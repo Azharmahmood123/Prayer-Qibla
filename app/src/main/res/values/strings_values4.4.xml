@@ -82,4 +82,34 @@ Arkansas, USA</string>
 
     <string name="dilog_salat">Salat Tracker</string>
     <string name="msg_salat">Do you want to track your Salat?</string>
+
+    <string name="txt_start_date">Start Date</string>
+    <string name="txt_end_date">End Date</string>
+
+    <string name="txt_no_aya_day">Ayahs per day</string>
+    <string name="txt_set_new_target">Set New Target</string>
+    <string name="txt_add_progress">Add Progress</string>
+    <string name="txt_default_date">---------</string>
+
+
+    <string name="txt_last_surah_save">Last Saved :</string>
+    <string name="txt_last_ayah_save">Ayah Read :</string>
+
+
+    <string name="txt_surah_read">Surah Read</string>
+    <string name="txt_ayah_read">Ayah Read</string>
+
+    <string name="txt_add_target">Set Target</string>
+    <string name="txt_extra_read">Extra Reading</string>
+
+    <string name="txt_select_surrah">Select Surrah</string>
+    <string name="txt_no_ayah_left">No of Ayahs Left :</string>
+    <string name="txt_no_days_left">No of Days Left :</string>
+
+    <string name="txt_date">Date</string>
+    <string name="txt_surrah_name">Surrah</string>
+    <string name="txt_ayah">Ayah</string>
+
+
+    <string name="txt_error_no_fill">Please provide data</string>
 </resources>

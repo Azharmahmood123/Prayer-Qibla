@@ -46,6 +46,10 @@ import noman.community.activity.PostActivity;
 import noman.hijri.acitivity.CalenderActivity;
 import noman.quran.activity.QuranModuleActivity;
 
+import noman.qurantrack.activity.AddProgress;
+import noman.qurantrack.activity.AddTarget;
+import noman.qurantrack.activity.QuranTracker;
+import noman.salattrack.activity.AddPrayer;
 import noman.salattrack.activity.SalatTracking;
 import noman.searchquran.activity.TopicActivity;
 import places.activities.PlacesListActivity;
@@ -68,11 +72,12 @@ public class MenuGridItemFragment extends Fragment {
     public static final int MENU_DUAS = 8;
     public static final int MENU_TASBEEH = 9;
     public static final int MENU_NAMES = 10;
+
+
     public static final int MENU_ACADEMY = 11;
     public static final int MENU_SETTINGS = 12;
     public static final int MENU_SALAT_TRACKER = 13;
     public static final int MENU_QURAN_TRACKER = 14;
-
     public static final String GRID_ITEMS = "grid_items";
     private GridView mGridView;
     private GridAdapter mGridAdapter;
@@ -284,12 +289,7 @@ public class MenuGridItemFragment extends Fragment {
                     break;
 
                 case MENU_SALAT_TRACKER:
-                  /*  if (CommunityGlobalClass.mSignInRequests == null) {
-                        intent = new Intent(mContext, LoginActivity.class);
-                        intent.putExtra("isCommunity",false);
-                        startActivity(intent);
-                    }
-                */
+
                     CommunityGlobalClass.moduleId = 2;
                     if (mSurahsSharedPref.getIsFirstTimeSalatTrackerOpen()) {
                         mSurahsSharedPref.setIsFirstTimeSalatOpen(false);
@@ -297,16 +297,17 @@ public class MenuGridItemFragment extends Fragment {
                     mGridAdapter.notifyDataSetChanged();
 
                     if (CommunityGlobalClass.mSignInRequests == null) {
-
                         startActivity(new Intent(mContext, LoginActivity.class));
-
                     } else {
                         intent = new Intent(mContext, SalatTracking.class);
                         startActivity(intent);
                     }
                     break;
-
-
+                case MENU_QURAN_TRACKER:
+                    intent = new Intent(mContext, QuranTracker.class);
+                    //  intent = new Intent(mContext, SearchQuranResultActivity.class);
+                    startActivity(intent);
+                    break;
                 default:
                     break;
             }

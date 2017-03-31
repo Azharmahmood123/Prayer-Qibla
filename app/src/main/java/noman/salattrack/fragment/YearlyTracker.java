@@ -150,8 +150,9 @@ public class YearlyTracker extends Fragment {
 
     private void drawPieGraph() {
         BarGraph pg = (BarGraph) rootView.findViewById(R.id.bar_yearly);
-
+        pg.setQuranTracker(false);
         ArrayList<Bar> points = new ArrayList<Bar>();
+
         //assert points != null;
         Bar d = new Bar();
         d.setColor(getResources().getColor(R.color.prayed_color));

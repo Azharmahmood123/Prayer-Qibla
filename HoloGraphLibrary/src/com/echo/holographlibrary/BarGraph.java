@@ -24,13 +24,20 @@
 package com.echo.holographlibrary;
 
 import android.content.Context;
-import android.graphics.*;
+import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.Point;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.Region;
 import android.graphics.drawable.NinePatchDrawable;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -50,6 +57,17 @@ public class BarGraph extends View {
     private Boolean append = false;
     private Rect r2 = new Rect();
     private Rect r3 = new Rect();
+
+    private boolean isQuranTracker = false;
+
+
+    public boolean isQuranTracker() {
+        return isQuranTracker;
+    }
+
+    public void setQuranTracker(boolean quranTracker) {
+        isQuranTracker = quranTracker;
+    }
 
     public BarGraph(Context context) {
         super(context);
@@ -102,7 +120,12 @@ public class BarGraph extends View {
             canvas.drawColor(Color.TRANSPARENT);
             NinePatchDrawable popup = (NinePatchDrawable) this.getResources().getDrawable(R.drawable.popup_black);
 
-            float maxValue = 0;
+            float maxValue = 0;//SEt Mine MAx Value here
+            if(isQuranTracker())
+            {
+                maxValue=6236;//total aya of quanr
+            }
+
             float padding = 7;
             int selectPadding = 4;
             float bottomPadding = 40;
@@ -126,8 +149,10 @@ public class BarGraph extends View {
 
             float barWidth = (getWidth() - (padding * 2) * points.size()) / points.size();
 
-            for (Bar p : points) {
-                maxValue += p.getValue();
+            if (!isQuranTracker()) {
+                for (Bar p : points) {
+                    maxValue += p.getValue();
+                }
             }
 
             r = new Rect();
@@ -137,7 +162,7 @@ public class BarGraph extends View {
             int count = 0;
             for (Bar p : points) {
 
-                if(p.getStackedBar()){
+                if (p.getStackedBar()) {
                     // deep copy of StackedValues
                     ArrayList<BarStackSegment> values = new ArrayList<BarStackSegment>();
                     try {
@@ -150,13 +175,13 @@ public class BarGraph extends View {
                     }
 
                     float prevValue = 0;
-                    for(BarStackSegment value : values) {
+                    for (BarStackSegment value : values) {
                         value.Value += prevValue;
                         prevValue += value.Value;
                     }
                     Collections.reverse(values);
 
-                    for(BarStackSegment value : values) {
+                    for (BarStackSegment value : values) {
                         r.set((int) ((padding * 2) * count + padding + barWidth * count), (int) ((getHeight() - bottomPadding - (usableHeight * (value.Value / maxValue)))), (int) ((padding * 2) * count + padding + barWidth * (count + 1)), (int) ((getHeight() - bottomPadding)));
                         path.addRect(new RectF(r.left - selectPadding, r.top - selectPadding, r.right + selectPadding, r.bottom + selectPadding), Path.Direction.CW);
                         p.setPath(path);
@@ -165,7 +190,7 @@ public class BarGraph extends View {
                         this.p.setAlpha(255);
                         canvas.drawRect(r, this.p);
                     }
-                }else {
+                } else {
                     r.set((int) ((padding * 2) * count + padding + barWidth * count), (int) (getHeight() - bottomPadding - (usableHeight * (p.getValue() / maxValue))), (int) ((padding * 2) * count + padding + barWidth * (count + 1)), (int) (getHeight() - bottomPadding));
                     path.addRect(new RectF(r.left - selectPadding, r.top - selectPadding, r.right + selectPadding, r.bottom + selectPadding), Path.Direction.CW);
                     p.setPath(path);
@@ -206,7 +231,7 @@ public class BarGraph extends View {
     }
 
     @Override
-    public boolean onTouchEvent(@NotNull MotionEvent event) {
+    public boolean onTouchEvent(MotionEvent event) {
 
         Point point = new Point();
         point.x = (int) event.getX();

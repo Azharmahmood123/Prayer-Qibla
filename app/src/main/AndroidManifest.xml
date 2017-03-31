@@ -363,8 +363,26 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeNew" />
 
-        <service android:name="noman.salattrack.activity.SalatTrackerService" />
+        <service android:name="noman.salattrack.utils.SalatTrackerService" />
 
+
+        <activity
+            android:name="noman.qurantrack.activity.QuranTracker"
+            android:label="@string/settings"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeNew" />
+
+
+        <activity
+            android:name="noman.qurantrack.activity.AddTarget"
+            android:label="@string/settings"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeNew" />
+        <activity
+            android:name="noman.qurantrack.activity.AddProgress"
+            android:label="@string/settings"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeNew" />
 
         <!--FacebookActivity Added-->
         <!-- <meta-data

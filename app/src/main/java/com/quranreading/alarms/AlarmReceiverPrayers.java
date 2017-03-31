@@ -16,8 +16,8 @@ import com.quranreading.qibladirection.MainActivityNew;
 import com.quranreading.qibladirection.R;
 import com.quranreading.sharedPreference.AlarmSharedPref;
 
-import noman.salattrack.activity.SalatTrackerService;
-import noman.salattrack.activity.TrackerConstant;
+import noman.salattrack.utils.SalatTrackerService;
+import noman.salattrack.utils.TrackerConstant;
 import noman.sharedpreference.SurahsSharedPref;
 
 public class AlarmReceiverPrayers extends BroadcastReceiver {

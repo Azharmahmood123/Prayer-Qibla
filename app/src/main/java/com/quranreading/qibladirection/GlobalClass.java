@@ -12,10 +12,12 @@ import android.content.Context;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.Typeface;
+import android.support.multidex.MultiDex;
+import android.support.multidex.MultiDexApplication;
 import android.util.DisplayMetrics;
 import quran.activities.ServiceClass;
 
-public class GlobalClass extends Application {
+public class GlobalClass extends MultiDexApplication {
 
 	public boolean deviceS3 = false;
 	public boolean showAdRemoveDialog = true;
@@ -29,7 +31,11 @@ public class GlobalClass extends Application {
 	public boolean isSettingsAlertShown = false;
 
 	public Typeface faceRobotoL, faceRobotoB, faceRobotoR;
-
+	@Override
+	protected void attachBaseContext(Context base) {
+		super.attachBaseContext(base);
+		MultiDex.install(this);
+	}
 	@Override
 	public void onCreate() {
 		// TODO Auto-generated methodIndex stub

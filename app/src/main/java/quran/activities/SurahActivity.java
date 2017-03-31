@@ -244,27 +244,32 @@ public class SurahActivity extends AppCompatActivity implements OnCompletionList
                         // Incoming call: Pause Audio
                         handler.removeCallbacks(sendUpdatesToUI);
                         if (play == 1) {
-                            callCheck = true;
-                            handler.removeCallbacks(sendUpdatesToUI);
-                            mp.pause();
+
+                            onPlayClick(null);
+                            // callCheck = true;
+                           // handler.removeCallbacks(sendUpdatesToUI);
+                           // mp.pause();
                         }
                     } else if (state == TelephonyManager.CALL_STATE_IDLE) {
                         // Not in call: Play Audio
                         if (callCheck && mp != null) {
                             callCheck = false;
                             if (play == 1) {
-                                handler.removeCallbacks(sendUpdatesToUI);
-                                handler.postDelayed(sendUpdatesToUI, 0);
-                                mp.start();
+                                onPlayClick(null);
+                            //    handler.removeCallbacks(sendUpdatesToUI);
+                            //    handler.postDelayed(sendUpdatesToUI, 0);
+                            //    mp.start();
                             }
                         }
                     } else if (state == TelephonyManager.CALL_STATE_OFFHOOK) {
                         // A call is dialing, active or on hold: Pause Audio
                         handler.removeCallbacks(sendUpdatesToUI);
                         if (play == 1) {
-                            callCheck = true;
-                            handler.removeCallbacks(sendUpdatesToUI);
-                            mp.pause();
+
+                            onPlayClick(null);
+                           // callCheck = true;
+                           // handler.removeCallbacks(sendUpdatesToUI);
+                            //mp.pause();
                         }
                     }
                 }

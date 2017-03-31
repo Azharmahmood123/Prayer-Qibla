@@ -308,7 +308,7 @@ public class SplashActivity extends AppCompatActivity {
         isShowInterstitial = false;
         myHandler.removeCallbacks(mRunnable);
 
-        Intent intent = new Intent(context, QuranModuleActivity.class);
+        Intent intent = new Intent(context, MainActivityNew.class);
         startActivity(intent);
         finish();
     }

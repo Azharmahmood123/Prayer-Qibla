@@ -11,7 +11,14 @@ buildscript {
         // in the individual module build.gradle files
     }
 }
-
+allprojects {
+    repositories {
+        jcenter()
+        maven {
+            url "https://repository-achartengine.forge.cloudbees.com/snapshot/"
+        }
+    }
+}
 allprojects {
     repositories {
         jcenter()

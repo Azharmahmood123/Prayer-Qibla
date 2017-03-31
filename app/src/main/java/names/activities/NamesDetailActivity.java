@@ -305,20 +305,23 @@ public class NamesDetailActivity extends AppCompatActivity implements MediaPlaye
                     if (state == TelephonyManager.CALL_STATE_RINGING) {
                         // Incoming call: Pause Audio
                         if (play == 1) {
-                            callCheck = true;
-                            mp.pause();
+                            onPlayClick();
+                         //   callCheck = true;
+                          //  mp.pause();
                         }
                     } else if (state == TelephonyManager.CALL_STATE_IDLE) {
                         // Not in call: Play Audio
                         if (callCheck && mp != null) {
-                            callCheck = false;
-                            mp.start();
+                            onPlayClick();
+                         //   callCheck = false;
+                         //   mp.start();
                         }
                     } else if (state == TelephonyManager.CALL_STATE_OFFHOOK) {
                         // A call is dialing, active or on hold: Pause Audio
                         if (play == 1) {
-                            callCheck = true;
-                            mp.pause();
+                            onPlayClick();
+                           // callCheck = true;
+                          //  mp.pause();
                         }
                     }
                 }

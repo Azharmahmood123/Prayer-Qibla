@@ -352,24 +352,28 @@ public class NamesListPlayingActivity extends AppCompatActivity implements Adapt
                     if (state == TelephonyManager.CALL_STATE_RINGING) {
                         // Incoming call: Pause Audio
                         if (play == 1) {
-                            callCheck = true;
-                            mp.pause();
-                            handler.removeCallbacks(runnableTimeUpdate);
+
+                            onPlayClick(null);
+                            //  callCheck = true;
+                           // mp.pause();
+                           // handler.removeCallbacks(runnableTimeUpdate);
                         }
                     } else if (state == TelephonyManager.CALL_STATE_IDLE) {
                         // Not in call: Play Audio
                         if (callCheck && mp != null) {
-                            callCheck = false;
-                            mp.start();
-                            handler.removeCallbacks(runnableTimeUpdate);
-                            handler.post(runnableTimeUpdate);
+                            //callCheck = false;
+                            onPlayClick(null);
+                          //  mp.start();
+                          //  handler.removeCallbacks(runnableTimeUpdate);
+                          //  handler.post(runnableTimeUpdate);
                         }
                     } else if (state == TelephonyManager.CALL_STATE_OFFHOOK) {
                         // A call is dialing, active or on hold: Pause Audio
                         if (play == 1) {
-                            callCheck = true;
-                            mp.pause();
-                            handler.removeCallbacks(runnableTimeUpdate);
+                            onPlayClick(null);
+                            // callCheck = true;
+                           // mp.pause();
+                          //  handler.removeCallbacks(runnableTimeUpdate);
                         }
                     }
                 }

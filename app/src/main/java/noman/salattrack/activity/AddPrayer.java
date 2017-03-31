@@ -65,7 +65,7 @@ public class AddPrayer extends AdIntegration {
         mSalatModel = new SalatModel();
         salatTrackerDatabase = new SalatTrackerDatabase(this);
 
-        userID =CommunityGlobalClass.mSignInRequests.getUser_id();
+        userID = CommunityGlobalClass.mSignInRequests.getUser_id();
         dateContainer();
         refreshData();
     }

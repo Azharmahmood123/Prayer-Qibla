@@ -141,13 +141,21 @@ public class SettingsTimeAlarmActivity extends AppCompatActivity implements Medi
 
         TimeEditPref timeEditPref = new TimeEditPref(this);
         tvNotificationTime.setText(timeEditPref.getAlarmNotifyTime(TimeEditPref.ALARMS_TIME_PRAYERS[posPrayer]));
+
         time = timeEditPref.getAlarmNotifyTime(TimeEditPref.ALARMS_TIME_PRAYERS[posPrayer]).split("\\s|:");
         if (tvNotificationTime.getText().toString().trim().isEmpty()) {
             AlarmSharedPref mAlarmSharedPref = new AlarmSharedPref(this);
             HashMap<String, String> alarmTime = mAlarmSharedPref.getPrayerTimes();
             String timePrayer = alarmTime.get(AlarmSharedPref.TIME_PRAYERS[posPrayer]);
-            tvNotificationTime.setText(timePrayer);
 
+
+            if(timePrayer.isEmpty() || timePrayer.equals(""))
+            {
+                tvNotificationTime.setText("06:00 am");
+            }
+            else {
+                tvNotificationTime.setText(timePrayer);
+            }
             time = timePrayer.split("\\s|:");
         }
 
@@ -456,9 +464,15 @@ public class SettingsTimeAlarmActivity extends AppCompatActivity implements Medi
             // Use the current time as the default values for the picker
             // final Calendar c = Calendar.getInstance();
             isClickListnerCalled = false;
+            int minute = 0;
+            int hour = 6;
             mContext = getContext();
-            int hour = Integer.parseInt(time[0]);
-            int minute = Integer.parseInt(time[1]);
+
+            if(!time[0].equals("")) {
+                hour= Integer.parseInt(time[0]);
+                minute= Integer.parseInt(time[1]);
+            }
+
 
             // Create a new instance of TimePickerDialog and return it
 

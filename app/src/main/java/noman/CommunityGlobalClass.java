@@ -454,5 +454,26 @@ public class CommunityGlobalClass extends GlobalClass {
 
         return "";
     }
+    public int findDaysDiff(int[] sDate,int[] eDate) {
+        Calendar calendar1 = Calendar.getInstance();
+        calendar1.set(Calendar.YEAR, sDate[2]);
+        calendar1.set(Calendar.MONTH, sDate[1] - 1);
+        calendar1.set(Calendar.DAY_OF_MONTH, sDate[0]);
+        calendar1.set(Calendar.HOUR_OF_DAY, 0);
+        calendar1.set(Calendar.MINUTE, 0);
+        calendar1.set(Calendar.SECOND, 0);
+        calendar1.set(Calendar.MILLISECOND, 0);
 
+        Calendar calendar2 = Calendar.getInstance();
+        calendar2.set(Calendar.YEAR, eDate[2]);
+        calendar2.set(Calendar.MONTH, eDate[1] - 1);
+        calendar2.set(Calendar.DAY_OF_MONTH, eDate[0]);
+        calendar2.set(Calendar.HOUR_OF_DAY, 0);
+        calendar2.set(Calendar.MINUTE, 0);
+        calendar2.set(Calendar.SECOND, 0);
+        calendar2.set(Calendar.MILLISECOND, 0);
+
+        return (int) ((calendar2.getTimeInMillis() - calendar1.getTimeInMillis()) / (24 * 60 * 60 * 1000));
+
+    }
 }
