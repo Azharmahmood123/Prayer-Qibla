@@ -42,18 +42,13 @@ import noman.Tasbeeh.activity.TasbeehListActivity;
 import noman.academy.activity.QuranAcademy;
 import noman.community.activity.ComunityActivity;
 import noman.community.activity.LoginActivity;
-import noman.community.activity.PostActivity;
 import noman.hijri.acitivity.CalenderActivity;
 import noman.quran.activity.QuranModuleActivity;
-
-import noman.qurantrack.activity.AddProgress;
-import noman.qurantrack.activity.AddTarget;
 import noman.qurantrack.activity.QuranTracker;
-import noman.salattrack.activity.AddPrayer;
 import noman.salattrack.activity.SalatTracking;
 import noman.searchquran.activity.TopicActivity;
-import places.activities.PlacesListActivity;
 import noman.sharedpreference.SurahsSharedPref;
+import places.activities.PlacesListActivity;
 
 /**
  * Created by cyber on 11/30/2016.
@@ -268,7 +263,7 @@ public class MenuGridItemFragment extends Fragment {
 
 
                     intent = new Intent(mContext, TopicActivity.class);
-                  //  intent = new Intent(mContext, SearchQuranResultActivity.class);
+                    //  intent = new Intent(mContext, SearchQuranResultActivity.class);
                     startActivity(intent);
                     break;
 
@@ -304,9 +299,15 @@ public class MenuGridItemFragment extends Fragment {
                     }
                     break;
                 case MENU_QURAN_TRACKER:
-                    intent = new Intent(mContext, QuranTracker.class);
-                    //  intent = new Intent(mContext, SearchQuranResultActivity.class);
-                    startActivity(intent);
+
+                    //////////////
+                    CommunityGlobalClass.moduleId = 3;
+                    if (CommunityGlobalClass.mSignInRequests == null) {
+                        startActivity(new Intent(mContext, LoginActivity.class));
+                    } else {
+                        intent = new Intent(mContext, QuranTracker.class);
+                        startActivity(intent);
+                    }
                     break;
                 default:
                     break;
@@ -319,9 +320,9 @@ public class MenuGridItemFragment extends Fragment {
         Context context;
         int images[] = {
                 R.drawable.grid_bg_timings, R.drawable.grid_bg_direction, R.drawable.grid_bg_quran,
-                R.drawable.grid_bg_old_community,R.drawable.grid_bg_search, R.drawable.grid_bg_calendar,
+                R.drawable.grid_bg_old_community, R.drawable.grid_bg_search, R.drawable.grid_bg_calendar,
                 R.drawable.grid_bg_mosque, R.drawable.grid_bg_halal, R.drawable.grid_bg_duas, R.drawable.grid_tasbeeh,
-                R.drawable.grid_bg_names, R.drawable.grid_acadamey, R.drawable.grid_bg_settings,R.drawable.grid_bg_salat_tracker,R.drawable.grid_bg_settings};
+                R.drawable.grid_bg_names, R.drawable.grid_acadamey, R.drawable.grid_bg_settings, R.drawable.grid_bg_salat_tracker, R.drawable.grid_bg_settings};
 
 
         public class ViewHolder {

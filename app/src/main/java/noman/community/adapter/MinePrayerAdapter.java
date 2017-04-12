@@ -39,6 +39,8 @@ import retrofit.Call;
 import retrofit.Response;
 import retrofit.Retrofit;
 
+import static com.quranreading.qibladirection.R.string.set;
+
 /**
  * Created by Administrator on 11/18/2016.
  */
@@ -77,6 +79,7 @@ public class MinePrayerAdapter extends RecyclerView.Adapter<PrayerHolder> {
         String time = mPrayer.getDatePosted().replace("UTC", "");
         //Create issue while converted thats why split it
         String am_pm = " " + time.replaceAll("[^A-Za-z]+", "");
+
         if (mPrayer.getLocation_status().equals("1")) {
             holder.txt_userInfo.setText(mPrayer.getName() + "\n" + CommunityGlobalClass.getInstance().convertDates(mActivity, time) + am_pm);
         } else {

@@ -86,11 +86,6 @@ public class DBManager {
       public static final int DATABASE_VERSION = 17;
 
 
-	/*
-     * private static final String CREATE_TBLLOCATION =
-	 * 
-	 * "create table " + TBL_LOCATION + "(" + FLD_ID + " integer not null, " + FLD_NAME + " text not null, " + FLD_ALARM + " integer not null);";
-	 */
 
     ///////////////////////// HELPER CLASS TO CREATE DATABASE //////////////////////
 

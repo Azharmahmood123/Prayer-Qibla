@@ -85,10 +85,11 @@ public class SalatTrackerDatabase {
 
 //*********************************************************************888  Close Database
 
-    public boolean insertSalatData(SalatModel model) {
+    public boolean insertSalatData(boolean isServer,SalatModel model) {
 
-        uploadToServer(model);
-
+        if(isServer) {
+            uploadToServer(model);
+        }
 
         if (getSalatModel(model.getDate(), model.getMonth(), model.getYear(), model.getUser_id()) != null) {
             return updateSalatTracker(model);

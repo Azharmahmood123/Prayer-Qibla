@@ -64,7 +64,7 @@ public class Monthly extends Fragment {
         myFragment.quranTrackerDatabase = new QuranTrackerDatabase(mQuranTracker);
         myFragment.mQuranTrackerModelList = new ArrayList<>();
         myFragment.ayahReads = new ArrayList<>();
-        myFragment.curUserId = 0;
+        myFragment.curUserId = CommunityGlobalClass.mSignInRequests.getUser_id();
         return myFragment;
 
     }

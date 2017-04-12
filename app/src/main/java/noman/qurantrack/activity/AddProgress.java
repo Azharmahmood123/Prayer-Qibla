@@ -22,6 +22,8 @@ import noman.quran.model.JuzConstant;
 import noman.qurantrack.database.MarkUpManager;
 import noman.qurantrack.database.QuranTrackerDatabase;
 import noman.qurantrack.model.QuranTrackerModel;
+import noman.qurantrack.model.TargetModel;
+import noman.qurantrack.sharedpreference.QuranTrackerPref;
 
 
 public class AddProgress extends AdIntegration implements View.OnClickListener {
@@ -59,7 +61,7 @@ public class AddProgress extends AdIntegration implements View.OnClickListener {
 
         calendar = Calendar.getInstance();
 
-        userID = 0;// CommunityGlobalClass.mSignInRequests.getUser_id();
+        userID = CommunityGlobalClass.mSignInRequests.getUser_id();
 
 
         curYear = calendar.get(Calendar.YEAR);
@@ -93,8 +95,8 @@ public class AddProgress extends AdIntegration implements View.OnClickListener {
         btnDatePicker.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                new DatePickerDialog(AddProgress.this, calenderDialog, curYear, curMonth - 1,
-                        curDate).show();
+             /*   new DatePickerDialog(AddProgress.this, calenderDialog, curYear, curMonth - 1,
+                        curDate).show();*/
             }
         });
 
@@ -109,7 +111,13 @@ public class AddProgress extends AdIntegration implements View.OnClickListener {
         cardViewLastSave.setVisibility(View.GONE);
         TextView txtLastSura = (TextView) findViewById(R.id.txt_last_read_surrah);
         TextView txtLastAya = (TextView) findViewById(R.id.txt_last_read_aya);
-        int lastSaveSurahNo = quranTrackerDatabase.getMaxSurrah();
+
+
+        QuranTrackerPref mPref = new QuranTrackerPref(this);
+        TargetModel modelSaveStartDates = mPref.getLastSaveStartDatePref();
+        int lastSaveSurahNo = quranTrackerDatabase.getMaxSurrah(modelSaveStartDates.getDate(),modelSaveStartDates.getMonth(),modelSaveStartDates.getYear()); //also have to check ayah of max surrah number which already read--contiune this work hmmm
+        // int lastSaveSurahNo = quranTrackerDatabase.getMaxSurrah();
+
         int lastSaveAyah = quranTrackerDatabase.getLastAyah(lastSaveSurahNo);
 
         if (lastSaveSurahNo > 0) {
@@ -170,7 +178,7 @@ public class AddProgress extends AdIntegration implements View.OnClickListener {
 
 
         //Testing to save dates
-        tvDate.setText(CommunityGlobalClass.getMonthName(curMonth) + " - " + curDate + " - " + curYear);
+        //tvDate.setText(CommunityGlobalClass.getMonthName(curMonth) + " - " + curDate + " - " + curYear);
 
     }
 
@@ -279,13 +287,17 @@ public class AddProgress extends AdIntegration implements View.OnClickListener {
         model.setUser_id(userID);
         model.setAyahNo(ayahId);
         model.setSurahNo(surah);
-        int lastSaveSurahNo = quranTrackerDatabase.getMaxSurrah(); //also have to check ayah of max surrah number which already read--contiune this work hmmm
-        if (surah >= lastSaveSurahNo && quranTrackerDatabase.getLastAyah(lastSaveSurahNo) < ayahId) {
-            quranTrackerDatabase.insertSalatData(model);
+
+
+        QuranTrackerPref mPref = new QuranTrackerPref(this);
+        TargetModel modelSaveStartDates = mPref.getLastSaveStartDatePref();
+        int lastSaveSurahNo = quranTrackerDatabase.getMaxSurrah(modelSaveStartDates.getDate(),modelSaveStartDates.getMonth(),modelSaveStartDates.getYear()); //also have to check ayah of max surrah number which already read--contiune this work hmmm
+     if (surah >= lastSaveSurahNo && quranTrackerDatabase.getLastAyah(lastSaveSurahNo) < ayahId) {
+            quranTrackerDatabase.insertQuranTrackerData(true,model);
             this.finish();
-        } else {
-            CommunityGlobalClass.getInstance().showShortToast("Already surrah saved", 800, Gravity.CENTER);
-        }
+       } else {
+       CommunityGlobalClass.getInstance().showShortToast("Already surrah saved", 500, Gravity.CENTER);
+      }
 
 
     }

@@ -19,7 +19,6 @@ public class SalatModel {
     @Expose
     private String action="addUserSalat";
 
-
     private int id;
     @SerializedName("day")
     @Expose

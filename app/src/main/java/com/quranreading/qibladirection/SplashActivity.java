@@ -23,6 +23,7 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
 
 import com.quranreading.helper.DBManager;
+import com.quranreading.helper.DataBaseHelper;
 import com.quranreading.helper.MyService;
 import com.quranreading.qibladirection.util.IabHelper;
 import com.quranreading.qibladirection.util.IabResult;
@@ -40,10 +41,9 @@ import javax.crypto.spec.SecretKeySpec;
 
 import noman.Ads.PreLoadIntersitial;
 import noman.CommunityGlobalClass;
-import noman.Tasbeeh.activity.TasbeehListActivity;
+
 import noman.community.prefrences.SavePreference;
-import noman.quran.activity.QuranModuleActivity;
-import noman.quran.dbconnection.DataBaseHelper;
+
 import quran.activities.ServiceClass;
 import quran.helper.DBManagerQuran;
 import quran.helper.FileUtils;
@@ -102,8 +102,6 @@ public class SplashActivity extends AppCompatActivity {
         CommunityGlobalClass.mMainActivityNew = this;
 
 
-        //Copy JuzzData from Database
-        new copyJuzDatabase().execute();
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);
 
@@ -329,42 +327,7 @@ public class SplashActivity extends AppCompatActivity {
 
     }
 
-    /**
-     * Async Task to make http call
-     */
-    private class copyJuzDatabase extends AsyncTask<Void, Void, Void> {
 
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-
-        }
-
-        @Override
-        protected Void doInBackground(Void... arg0) {
-
-            copyDataBaseFromAssets();
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(Void result) {
-            super.onPostExecute(result);
-        }
-
-    }
-
-    private void copyDataBaseFromAssets() {
-        //Copying DB
-        DataBaseHelper helper = new DataBaseHelper(this);
-        try {
-            helper.createDataBase();
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-
-    }
 
     public void isAppPurchase()
     {

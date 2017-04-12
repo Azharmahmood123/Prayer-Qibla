@@ -7,6 +7,7 @@ import com.google.gson.annotations.SerializedName;
 import java.util.ArrayList;
 import java.util.List;
 
+import noman.qurantrack.model.QuranTrackerModel;
 import noman.salattrack.model.SalatModel;
 
 
@@ -21,13 +22,13 @@ public class SignUpResponse {
     @SerializedName("Prayers")
     @Expose
     private List<Prayer> prayers = new ArrayList<Prayer>();
-
-
     @SerializedName("Salats")
     @Expose
     private List<SalatModel> Salats = new ArrayList<SalatModel>();
 
-
+    @SerializedName("Quran")
+    @Expose
+    private List<QuranTrackerModel> QuranTrackerList = new ArrayList<QuranTrackerModel>();
     /**
      * 
      * @return
@@ -88,5 +89,13 @@ public class SignUpResponse {
 
     public void setSalats(List<SalatModel> salats) {
         Salats = salats;
+    }
+
+    public List<QuranTrackerModel> getQuranTrackerList() {
+        return QuranTrackerList;
+    }
+
+    public void setQuranTrackerList(List<QuranTrackerModel> quranTrackerList) {
+        QuranTrackerList = quranTrackerList;
     }
 }

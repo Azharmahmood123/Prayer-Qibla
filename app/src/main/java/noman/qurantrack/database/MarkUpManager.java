@@ -1,13 +1,10 @@
-package noman.qurantrack.database;/*
-   Created by Noman and  Email = nomanarif.cdz@gmail.com on 6/7/2016.
-*/
-
+package noman.qurantrack.database;
 
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import com.quranreading.helper.DataBaseHelper;
 
-import noman.quran.dbconnection.DataBaseHelper;
 import noman.quran.model.JuzModel;
 
 public class MarkUpManager {

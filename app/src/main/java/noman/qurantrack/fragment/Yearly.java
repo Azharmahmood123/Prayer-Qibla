@@ -43,6 +43,7 @@ String[] months =new String[]{"jan","feb","mar","apr","may","jun","jul","aug","s
     public static Yearly newInstance(QuranTracker mQuranTracker) {
         Yearly myFragment = new Yearly();
         myFragment.mQuranTracker = mQuranTracker;
+        myFragment.curUserId=CommunityGlobalClass.mSignInRequests.getUser_id();
         return myFragment;
 
     }

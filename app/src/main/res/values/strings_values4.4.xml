@@ -112,4 +112,9 @@ Arkansas, USA</string>
 
 
     <string name="txt_error_no_fill">Please provide data</string>
+
+
+
+    <string name="txt_savestart_date">Last Save Start Date</string>
+    <string name="txt_saveend_date">Last Save End Date</string>
 </resources>

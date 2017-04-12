@@ -12,6 +12,8 @@ import noman.community.model.PrayingRequest;
 import noman.community.model.PrayingResponse;
 import noman.community.model.SignInRequest;
 import noman.community.model.SignUpResponse;
+import noman.qurantrack.model.QuranTrackerModel;
+import noman.qurantrack.model.QuranTrackerResponse;
 import noman.salattrack.model.SalatModel;
 import noman.salattrack.model.SalatResponse;
 import retrofit.Call;
@@ -73,6 +75,11 @@ public interface RestApi {
     @POST("/")
     Call<SalatResponse> saveSalatData(
             @Body SalatModel signInRequest);
+
+
+    @POST("/")
+    Call<QuranTrackerResponse> saveQuranTrackerData(
+            @Body QuranTrackerModel signInRequest);
 
 }
 

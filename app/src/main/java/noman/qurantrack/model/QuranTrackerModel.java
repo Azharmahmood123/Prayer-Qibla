@@ -8,17 +8,9 @@ import com.google.gson.annotations.SerializedName;
  */
 
 public class QuranTrackerModel {
-
-    //Note following value used for
-    // 0: Missed
-    // 1: late
-    // 2: Prayed
-
-
-   /* @SerializedName("action")
+    @SerializedName("action")
     @Expose
-    private String action="addUserSalat";*/
-
+    private String action="addUserQuran";
 
     private int id;
     @SerializedName("day")
@@ -34,9 +26,14 @@ public class QuranTrackerModel {
     @Expose
     private int user_id;
 
-
+    @SerializedName("surah_no")
+    @Expose
     private int surahNo;
+    @SerializedName("ayah_no")
+    @Expose
     private int ayahNo;
+    @SerializedName("count")
+    @Expose
     private int verses;
 
     public int getId() {

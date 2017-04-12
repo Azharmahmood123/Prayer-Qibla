@@ -78,6 +78,7 @@
                 android:weightSum="2">
 
                 <android.support.v7.widget.CardView
+                    android:id="@+id/ln_progress_container"
                     android:layout_width="0dp"
                     android:layout_height="@dimen/_40sdp"
                     android:layout_marginLeft="@dimen/_5sdp"

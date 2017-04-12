@@ -32,6 +32,9 @@ public class AddTarget extends AdIntegration implements View.OnClickListener {
     int userID = 0, status_date_picker, totalVerse = 6236;
     CardView lnContainerAyah;
 
+
+    LinearLayout lastSavedContainer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +43,9 @@ public class AddTarget extends AdIntegration implements View.OnClickListener {
         if (!((GlobalClass) getApplication()).isPurchase) {
             super.showBannerAd(this, (LinearLayout) findViewById(R.id.linear_ad));
         }
+
+        lastSavedContainer = (LinearLayout) findViewById(R.id.save_dates);
+        lastSavedContainer.setVisibility(View.GONE);
 
         LinearLayout btnCross = (LinearLayout) findViewById(R.id.btn_cross);
         btnCross.setOnClickListener(new View.OnClickListener() {
@@ -53,7 +59,18 @@ public class AddTarget extends AdIntegration implements View.OnClickListener {
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                saveTarget();
+
+                int[] sDates = {sDate, sMonth, sYear};
+                int[] eDates = {eDate, eMonth, eYear};
+
+                int daysBetween = CommunityGlobalClass.getInstance().findDaysDiff(sDates, eDates);
+                if(daysBetween >= 0) {
+                    saveTarget();
+                }
+                else {
+                    tvEndDate.setText(getString(R.string.txt_default_date));
+                    CommunityGlobalClass.getInstance().showShortToast("Enter valid date",500, Gravity.CENTER);
+                }
             }
         });
 
@@ -93,9 +110,32 @@ public class AddTarget extends AdIntegration implements View.OnClickListener {
         LinearLayout btnResult = (LinearLayout) findViewById(R.id.btn_result);
         btnResult.setOnClickListener(this);
 
+        getSavedDatesFromPref();
+
 
     }
 
+    void getSavedDatesFromPref() {
+        QuranTrackerPref pref = new QuranTrackerPref(this);
+        TargetModel modelEndDates = null;
+        modelEndDates = pref.getLastSaveEndDatePref();
+        TargetModel modelStartDates = null;
+        modelStartDates = pref.getLastSaveStartDatePref();
+
+
+        if(modelEndDates !=null && modelStartDates !=null)
+        {
+            lastSavedContainer.setVisibility(View.VISIBLE);
+            TextView tvStartSave=(TextView)findViewById(R.id.txt_save_start_date);
+            tvStartSave.setText(modelStartDates.getDate() + " - " + CommunityGlobalClass.getMonthName(modelStartDates.getMonth()) + " - " + modelStartDates.getYear());
+
+            TextView tvEndSave=(TextView)findViewById(R.id.txt_save_end_date);
+            tvEndSave.setText(modelEndDates.getDate() + " - " + CommunityGlobalClass.getMonthName(modelEndDates.getMonth()) + " - " + modelEndDates.getYear());
+
+
+        }
+
+    }
 
     //Show default date picker android
     DatePickerDialog.OnDateSetListener calenderDialog = new DatePickerDialog.OnDateSetListener() {
@@ -143,35 +183,45 @@ public class AddTarget extends AdIntegration implements View.OnClickListener {
 
     private void checkNumberOfAyah() {
         lnContainerAyah.setVisibility(View.VISIBLE);
-        int[] sDates={sDate,sMonth,sYear};
-        int[] eDates={eDate,eMonth,eYear};
+        int[] sDates = {sDate, sMonth, sYear};
+        int[] eDates = {eDate, eMonth, eYear};
 
-        int daysBetween = CommunityGlobalClass.getInstance().findDaysDiff(sDates,eDates);
+        int daysBetween = CommunityGlobalClass.getInstance().findDaysDiff(sDates, eDates);
 
 
         if (daysBetween < 0) {
             tvEndDate.setText(getString(R.string.txt_default_date));
-            CommunityGlobalClass.getInstance().showShortToast("Enter valid date", 800, Gravity.CENTER);
+            CommunityGlobalClass.getInstance().showShortToast("Enter valid date", 500, Gravity.CENTER);
             lnContainerAyah.setVisibility(View.GONE);
         } else {
-            tvAyah.setText("" + (totalVerse / daysBetween));
+            if(daysBetween <=0)
+            {
+                tvAyah.setText("" + 0);
+            }
+            else {
+                tvAyah.setText("" + (totalVerse / daysBetween));
+            }
         }
     }
 
 
-
     public void saveTarget() {
-
         //Save End Dates here
-
         QuranTrackerPref pref = new QuranTrackerPref(this);
         TargetModel model = new TargetModel();
         model.setDate(eDate);
         model.setMonth(eMonth);
         model.setYear(eYear);
+        pref.setLastSaveEndDatePref(model);
 
 
-        pref.setDataFromSharedPreferences(model);
+        model = new TargetModel();
+        model.setDate(sDate);
+        model.setMonth(sMonth);
+        model.setYear(sYear);
+        pref.setLastSaveStartDatePref(model);
+
+
         this.finish();
 
     }

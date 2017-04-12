@@ -199,7 +199,7 @@ public class SalatTracking extends AdIntegration {
         SalatTrackerDatabase dbTracker=new SalatTrackerDatabase(this);
 
         for(int i=0;i<mSalatModelList.size();i++) {
-            dbTracker.insertSalatData(mSalatModelList.get(i));
+            dbTracker.insertSalatData(false,mSalatModelList.get(i));
 
             if(i == mSalatModelList.size()-1)
             {

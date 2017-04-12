@@ -7,10 +7,11 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.quranreading.helper.DataBaseHelper;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import noman.quran.dbconnection.DataBaseHelper;
 import noman.quran.model.JuzModel;
 
 public class JuzDataManager {

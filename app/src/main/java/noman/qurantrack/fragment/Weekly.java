@@ -204,7 +204,7 @@ public class Weekly extends Fragment {
         calDate = now.get(Calendar.DATE);
         calMonth = now.get(Calendar.MONTH) + 1;
         calYear = now.get(Calendar.YEAR);
-        userId = 0;//CommunityGlobalClass.mSignInRequests.getUser_id();
+        userId =CommunityGlobalClass.mSignInRequests.getUser_id();
 
         //Get record from database
         QuranTrackerModel mQuranTrackerModel = quranTrackerDatabase.getQuranTrackModel(calDate, calMonth, calYear, userId);
@@ -289,7 +289,7 @@ public class Weekly extends Fragment {
         //  multiRenderer.setXAxisMin(x[0]);//get Start date of the week
 
         multiRenderer.setYAxisMin(0);
-        multiRenderer.setYAxisMax(6236);//Total ayah of quran
+        multiRenderer.setYAxisMax(2000);//Total ayah of quran
         multiRenderer.setYLabelsAngle(270);
 
         for (int i = 0; i < x.length; i++) {

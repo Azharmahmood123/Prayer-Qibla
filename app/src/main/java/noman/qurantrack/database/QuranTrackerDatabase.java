@@ -13,6 +13,7 @@ import noman.CommunityGlobalClass;
 import noman.community.utility.DebugInfo;
 import noman.quran.model.JuzModel;
 import noman.qurantrack.model.QuranTrackerModel;
+import noman.qurantrack.model.QuranTrackerResponse;
 import noman.salattrack.model.SalatModel;
 import noman.salattrack.model.SalatResponse;
 import retrofit.Call;
@@ -68,7 +69,11 @@ public class QuranTrackerDatabase {
 
 //*********************************************************************888  Close Database
 
-    public boolean insertSalatData(QuranTrackerModel model) {
+    public boolean insertQuranTrackerData(boolean isServer,QuranTrackerModel model) {
+
+        if(isServer) {
+            uploadToServer(model);
+        }
         if (getQuranTrackModel(model.getDate(), model.getMonth(), model.getYear(), model.getUser_id()) != null) {
             model.setId(getQuranTrackModel(model.getDate(), model.getMonth(), model.getYear(), model.getUser_id()).getId());
             return updateSalatTracker(model);
@@ -118,10 +123,10 @@ public class QuranTrackerDatabase {
         else
             return true;
     }
-    public int getMaxSurrah() {
+    public int getMaxSurrah(int currentDate,int currentMonth,int currentYear) {
         int countr = 0;
 
-        String sqlStatement = "select MAX(surah_no) as surah from quran_tracker";
+        String sqlStatement = "select MAX(surah_no) as surah from quran_tracker where date >= "+currentDate +" and month >="+currentMonth +" and year >="+currentYear;
         SQLiteDatabase db = this.databaseHelper.getReadableDatabase();
         if (db == null)
             return 0;
@@ -159,10 +164,10 @@ public class QuranTrackerDatabase {
         return countr;
     }
 
-    public int getSumVerse() {
+    public int getSumVerse(int currentDate,int currentMonth,int currentYear) {
         int countr = 0;
 
-        String sqlStatement = "select SUM(count) as count from quran_tracker";
+        String sqlStatement = "select SUM(count) as count from quran_tracker where date >= "+currentDate +" and month >="+currentMonth +" and year >="+currentYear;
         SQLiteDatabase db = this.databaseHelper.getReadableDatabase();
         if (db == null)
             return 0;
@@ -223,6 +228,35 @@ public class QuranTrackerDatabase {
         }
         db.close();
         return countr;
+    }
+
+
+
+
+
+    void uploadToServer(QuranTrackerModel model) {
+        //  CommunityGlobalClass.getInstance().showLoading(this);
+        Call<QuranTrackerResponse> call = CommunityGlobalClass.getRestApi().saveQuranTrackerData(model);
+        call.enqueue(new retrofit.Callback<QuranTrackerResponse>() {
+
+            @Override
+            public void onResponse(Response<QuranTrackerResponse> response, Retrofit retrofit) {
+                if(response.body().getState() == true)
+                {
+                    Log.e("Post","Data to server");
+                }
+            }
+
+            @Override
+            public void onFailure(Throwable t) {
+                CommunityGlobalClass.getInstance().cancelDialog();
+                if (BuildConfig.DEBUG) DebugInfo.loggerException("salat insert -Failure" + t.getMessage());
+                CommunityGlobalClass.getInstance().showServerFailureDialog(mContext);
+            }
+        });
+
+
+
     }
 }
 

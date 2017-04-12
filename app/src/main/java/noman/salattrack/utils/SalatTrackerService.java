@@ -69,7 +69,7 @@ public class SalatTrackerService extends Service {
 
         checkStatusPrayer();
 
-        salatTrackerDatabase.insertSalatData(mSalatModel); //in local database
+        salatTrackerDatabase.insertSalatData(true,mSalatModel); //in local database
 
     }
 
