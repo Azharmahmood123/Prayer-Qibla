@@ -232,7 +232,27 @@ public class QuranTrackerDatabase {
 
 
 
+    public int geDailyData(int start,int month,int year) {
+        int countr = 0;
 
+        String sqlStatement = "select * from quran_tracker where year = " + year +" and month = "+month +" and date = "+start ;
+
+        SQLiteDatabase db = this.databaseHelper.getReadableDatabase();
+        if (db == null)
+            return 0;
+
+        Cursor c = db.rawQuery(sqlStatement, null);
+
+        if (c.moveToFirst()) {
+            do {
+                countr = 1 ;//c.getInt(c.getColumnIndex("count"));
+
+            } while (c.moveToNext());
+            c.close();
+        }
+        db.close();
+        return countr;
+    }
 
     void uploadToServer(QuranTrackerModel model) {
         //  CommunityGlobalClass.getInstance().showLoading(this);

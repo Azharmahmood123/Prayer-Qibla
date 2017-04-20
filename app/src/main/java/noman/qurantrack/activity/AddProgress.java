@@ -115,7 +115,7 @@ public class AddProgress extends AdIntegration implements View.OnClickListener {
 
         QuranTrackerPref mPref = new QuranTrackerPref(this);
         TargetModel modelSaveStartDates = mPref.getLastSaveStartDatePref();
-        int lastSaveSurahNo = quranTrackerDatabase.getMaxSurrah(modelSaveStartDates.getDate(),modelSaveStartDates.getMonth(),modelSaveStartDates.getYear()); //also have to check ayah of max surrah number which already read--contiune this work hmmm
+        int lastSaveSurahNo = quranTrackerDatabase.getMaxSurrah(modelSaveStartDates.getDate(), modelSaveStartDates.getMonth(), modelSaveStartDates.getYear()); //also have to check ayah of max surrah number which already read--contiune this work hmmm
         // int lastSaveSurahNo = quranTrackerDatabase.getMaxSurrah();
 
         int lastSaveAyah = quranTrackerDatabase.getLastAyah(lastSaveSurahNo);
@@ -270,10 +270,31 @@ public class AddProgress extends AdIntegration implements View.OnClickListener {
 
         int curSaveMarker = markUpManager.getQuery1(surah, ayahId);
         int lastSaveMarker = markUpManager.getQuery2();
-
         int todayCounter = curSaveMarker - lastSaveMarker;
-        //Log.e("Today Reading", "" + (todayCounter));
 
+        //Log.e("Today Reading", "" + (todayCounter));
+        QuranTrackerPref mPref = new QuranTrackerPref(this);
+        TargetModel modelSaveStartDates = mPref.getLastSaveStartDatePref();
+        int lastSaveSurahNo = quranTrackerDatabase.getMaxSurrah(modelSaveStartDates.getDate(), modelSaveStartDates.getMonth(), modelSaveStartDates.getYear()); //also have to check ayah of max surrah number which already read-
+
+        if (surah > lastSaveSurahNo) {
+            saveInDatabase(surah, curSaveMarker);
+        } else if (surah == lastSaveSurahNo) {
+            if (ayahId > quranTrackerDatabase.getLastAyah(lastSaveSurahNo)) {
+                saveInDatabase(surah, curSaveMarker);
+            } else {
+                CommunityGlobalClass.getInstance().showShortToast("Already surah saved", 500, Gravity.CENTER);
+            }
+        } else {
+            CommunityGlobalClass.getInstance().showShortToast("Already surah saved", 500, Gravity.CENTER);
+        }
+
+
+    }
+
+    void saveInDatabase(int surah, int todayCounter)
+
+    {
         //Now 0 marker position
         markUpManager.getQuery3();
         //Now save marker position
@@ -287,18 +308,9 @@ public class AddProgress extends AdIntegration implements View.OnClickListener {
         model.setUser_id(userID);
         model.setAyahNo(ayahId);
         model.setSurahNo(surah);
+        quranTrackerDatabase.insertQuranTrackerData(true, model);
 
-
-        QuranTrackerPref mPref = new QuranTrackerPref(this);
-        TargetModel modelSaveStartDates = mPref.getLastSaveStartDatePref();
-        int lastSaveSurahNo = quranTrackerDatabase.getMaxSurrah(modelSaveStartDates.getDate(),modelSaveStartDates.getMonth(),modelSaveStartDates.getYear()); //also have to check ayah of max surrah number which already read--contiune this work hmmm
-     if (surah >= lastSaveSurahNo && quranTrackerDatabase.getLastAyah(lastSaveSurahNo) < ayahId) {
-            quranTrackerDatabase.insertQuranTrackerData(true,model);
-            this.finish();
-       } else {
-       CommunityGlobalClass.getInstance().showShortToast("Already surrah saved", 500, Gravity.CENTER);
-      }
-
-
+        this.finish();
     }
+
 }

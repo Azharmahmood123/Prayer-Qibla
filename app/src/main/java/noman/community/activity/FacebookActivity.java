@@ -30,6 +30,8 @@ import noman.community.utility.DebugInfo;
 import noman.community.model.GraphApiResponse;
 import noman.community.model.SignInRequest;
 import noman.community.model.SignUpResponse;
+import noman.qurantrack.activity.QuranTracker;
+import noman.salattrack.activity.SalatTracking;
 import noman.salattrack.database.SalatTrackerDatabase;
 import noman.salattrack.model.SalatModel;
 import retrofit.Call;
@@ -198,6 +200,14 @@ public class FacebookActivity extends AppCompatActivity {
                    //Refresh the Mine Tab
                    CommunityGlobalClass.mCommunityActivity.moveToMineTab();
                    CommunityGlobalClass.mMineFragment.onLoadMineList();
+               }
+                else  if(CommunityGlobalClass.moduleId == 2)
+               {
+                   startActivity(new Intent(FacebookActivity.this, SalatTracking.class));
+               }
+                else  if(CommunityGlobalClass.moduleId == 3)
+               {
+                   startActivity(new Intent(FacebookActivity.this, QuranTracker.class));
                }
 
 

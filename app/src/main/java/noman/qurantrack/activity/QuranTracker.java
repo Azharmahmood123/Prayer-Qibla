@@ -30,7 +30,9 @@ import noman.qurantrack.fragment.Weekly;
 import noman.qurantrack.fragment.Yearly;
 import noman.qurantrack.model.QuranTrackerModel;
 import noman.qurantrack.model.TargetModel;
+import noman.qurantrack.notification.DailyAlarmHelper;
 import noman.qurantrack.sharedpreference.QuranTrackerPref;
+import noman.salattrack.notification.FiveDayAlarmHelper;
 import retrofit.Call;
 import retrofit.Response;
 import retrofit.Retrofit;
@@ -49,6 +51,13 @@ public class QuranTracker extends AdIntegration {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.quran_tracker_main);
+
+        //Daily Alarm notification
+        DailyAlarmHelper mAlarm = new DailyAlarmHelper(this);
+        Calendar updateTime= mAlarm.setAlarmTime(8,00,"pm");
+        mAlarm.setAlarmDailyDay(updateTime);
+
+
         if (!((GlobalClass) getApplication()).isPurchase) {
             super.showBannerAd(this, (LinearLayout) findViewById(R.id.linearAd));
         }
@@ -246,4 +255,6 @@ public class QuranTracker extends AdIntegration {
 
 
     }
+
+
 }

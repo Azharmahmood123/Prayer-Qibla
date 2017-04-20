@@ -9,14 +9,12 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.quranreading.qibladirection.R;
 
-import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
@@ -38,6 +36,8 @@ public class WeeklyTracker extends Fragment {
 
 
     int late, missed, pray;
+    boolean isFirtTime = true;
+
 
     public static WeeklyTracker newInstance(SalatTracking mSalatTracking) {
         WeeklyTracker myFragment = new WeeklyTracker();
@@ -258,13 +258,20 @@ public class WeeklyTracker extends Fragment {
     void calcualteAverage() {
         TextView tvAverage = (TextView) rootView.findViewById(R.id.txt_average);
 
-        tvAverage.setText(getPercentage((float)late+pray) + " %");
+        tvAverage.setText(getPercentage((float) late + pray) + " %");
+
+        if (isFirtTime) {
+            if ((late + pray) < 30) {
+                //now check avarerage prayer rate is less than weekly
+            }
+            isFirtTime = false;
+        }
     }
-    String getPercentage(float total1)
-    {
+
+    String getPercentage(float total1) {
         float total = total1;
         float per = total / 35;
-        double    per1 = per * 100;
+        double per1 = per * 100;
         String no = String.format("%.2f", per1);
         return no;
     }

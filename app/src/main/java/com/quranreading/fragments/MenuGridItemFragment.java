@@ -56,23 +56,24 @@ import places.activities.PlacesListActivity;
 
 public class MenuGridItemFragment extends Fragment {
 
+
     public static final int MENU_TIMINGS = 0;
-    public static final int MENU_QIBLA_MAP_DIRECION = 1;
-    public static final int MENU_QURAN = 2;
-    public static final int MENU_COMMUNITY = 3;
-    public static final int MENU_SEARCH_QURAN = 4;
-    public static final int MENU_HIJRI = 5;
-    public static final int MENU_MOSQUES = 6;
-    public static final int MENU_HALAL = 7;
-    public static final int MENU_DUAS = 8;
-    public static final int MENU_TASBEEH = 9;
-    public static final int MENU_NAMES = 10;
+    public static final int MENU_QURAN = 1;
+    public static final int MENU_SEARCH_QURAN = 2;
+    public static final int MENU_SALAT_TRACKER = 3;
+    public static final int MENU_QURAN_TRACKER = 4;
+    public static final int MENU_COMMUNITY = 5;
+    public static final int MENU_QIBLA_MAP_DIRECION = 6;
+    public static final int MENU_MOSQUES = 7;
+    public static final int MENU_ACADEMY = 8;
+    public static final int MENU_DUAS = 9;
+    public static final int MENU_TASBEEH = 10;
+    public static final int MENU_HALAL = 11;
+    public static final int MENU_NAMES = 12;
+    public static final int MENU_HIJRI = 13;
+    public static final int MENU_SETTINGS = 14;
 
 
-    public static final int MENU_ACADEMY = 11;
-    public static final int MENU_SETTINGS = 12;
-    public static final int MENU_SALAT_TRACKER = 13;
-    public static final int MENU_QURAN_TRACKER = 14;
     public static final String GRID_ITEMS = "grid_items";
     private GridView mGridView;
     private GridAdapter mGridAdapter;
@@ -230,9 +231,7 @@ public class MenuGridItemFragment extends Fragment {
 
                 case MENU_NAMES:
                     mGridAdapter.notifyDataSetChanged();
-                    if (mSurahsSharedPref.getIsFirstTimeNamesOpen()) {
-                        mSurahsSharedPref.setIsFirstTimeNamesOpen(false);
-                    }
+
 
 
                     intent = new Intent(mContext, NamesListPlayingActivity.class);
@@ -299,7 +298,10 @@ public class MenuGridItemFragment extends Fragment {
                     }
                     break;
                 case MENU_QURAN_TRACKER:
-
+                    mGridAdapter.notifyDataSetChanged();
+                    if (mSurahsSharedPref.getIsFirstTimeQuranTrackerOpen()) {
+                        mSurahsSharedPref.setIsFirstTimeQuranTrackerOpen(false);
+                    }
                     //////////////
                     CommunityGlobalClass.moduleId = 3;
                     if (CommunityGlobalClass.mSignInRequests == null) {
@@ -319,10 +321,21 @@ public class MenuGridItemFragment extends Fragment {
 
         Context context;
         int images[] = {
-                R.drawable.grid_bg_timings, R.drawable.grid_bg_direction, R.drawable.grid_bg_quran,
-                R.drawable.grid_bg_old_community, R.drawable.grid_bg_search, R.drawable.grid_bg_calendar,
-                R.drawable.grid_bg_mosque, R.drawable.grid_bg_halal, R.drawable.grid_bg_duas, R.drawable.grid_tasbeeh,
-                R.drawable.grid_bg_names, R.drawable.grid_acadamey, R.drawable.grid_bg_settings, R.drawable.grid_bg_salat_tracker, R.drawable.grid_bg_settings};
+                R.drawable.grid_bg_timings,
+                R.drawable.grid_bg_quran,
+                R.drawable.grid_bg_search,
+                R.drawable.grid_bg_salat_tracker,
+                R.drawable.grid_quran_tracker,
+                R.drawable.grid_bg_old_community,
+                R.drawable.grid_bg_direction,
+                R.drawable.grid_bg_mosque,
+                R.drawable.grid_acadamey,
+                R.drawable.grid_bg_duas,
+                R.drawable.grid_tasbeeh,
+                R.drawable.grid_bg_halal,
+                R.drawable.grid_bg_names,
+                R.drawable.grid_bg_calendar,
+                R.drawable.grid_bg_settings};
 
 
         public class ViewHolder {
@@ -425,15 +438,18 @@ public class MenuGridItemFragment extends Fragment {
                     viewHolder.imageView.setImageResource(R.drawable.grid_bg_community);
                 }
             }
-            if (pos == MENU_NAMES) {//Names
-                if (mSurahsSharedPref.getIsFirstTimeNamesOpen()) {
-                    viewHolder.imageView.setImageResource(R.drawable.grid_names_new);
-                }
 
-            }
 
 
             */
+
+
+            if (pos == MENU_QURAN_TRACKER) {//Names
+                if (mSurahsSharedPref.getIsFirstTimeQuranTrackerOpen()) {
+                    viewHolder.imageView.setImageResource(R.drawable.grid_quran_tracker_new);
+                }
+
+            }
             if (pos == MENU_SALAT_TRACKER) {//Salat tracker
                 if (mSurahsSharedPref.getIsFirstTimeSalatTrackerOpen()) {
                     viewHolder.imageView.setImageResource(R.drawable.grid_salat_tracker_new);

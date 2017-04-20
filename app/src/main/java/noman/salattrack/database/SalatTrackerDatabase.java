@@ -131,7 +131,7 @@ public class SalatTrackerDatabase {
              public void onFailure(Throwable t) {
                  CommunityGlobalClass.getInstance().cancelDialog();
                  if (BuildConfig.DEBUG) DebugInfo.loggerException("salat insert -Failure" + t.getMessage());
-                 CommunityGlobalClass.getInstance().showServerFailureDialog(mContext);
+                // CommunityGlobalClass.getInstance().showServerFailureDialog(mContext);
              }
          });
 
@@ -207,6 +207,32 @@ public class SalatTrackerDatabase {
 
         Cursor c=db.rawQuery("select count(case when fajar = "+status+"  then 1 end) as fajar, count(case when zuhar ="+status+" then 1 end) as zuhar,count(case when asar ="+status+" then 1 end) as asar" +
                 ",count(case when magrib ="+status+" then 1 end) as magrib,count(case when isha ="+status+" then 1 end) as isha from "+TBL_SALAT_TRACKER+" where year = "+year +" and user_id = "+userID +" and month="+month,null);
+
+        if (c != null) {
+            if (c.moveToFirst()) {
+                do {
+                    salatModelList = getYearCursorModel(c);
+                } while (c.moveToNext());
+            } else {
+                return null;
+            }
+        }
+        c.close();
+        db.close();
+        return salatModelList;
+    }
+
+
+
+
+    public SalatModel getPrayedCountByDate(int start,int end,int month ,int year,int status) {
+        SalatModel salatModelList = new SalatModel();
+        SQLiteDatabase db = this.databaseHelper.getReadableDatabase();
+        if (db == null)
+            return null;
+
+        Cursor c=db.rawQuery("select count(case when fajar = "+status+"  then 1 end) as fajar, count(case when zuhar ="+status+" then 1 end) as zuhar,count(case when asar ="+status+" then 1 end) as asar" +
+                ",count(case when magrib ="+status+" then 1 end) as magrib,count(case when isha ="+status+" then 1 end) as isha from "+TBL_SALAT_TRACKER+" where year = " + year +" and month = "+month +" and date BETWEEN "+start +" and "+end,null);
 
         if (c != null) {
             if (c.moveToFirst()) {

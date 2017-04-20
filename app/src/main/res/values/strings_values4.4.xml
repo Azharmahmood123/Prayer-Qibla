@@ -107,7 +107,7 @@ Arkansas, USA</string>
     <string name="txt_no_days_left">No of Days Left :</string>
 
     <string name="txt_date">Date</string>
-    <string name="txt_surrah_name">Surrah</string>
+    <string name="txt_surrah_name">Surah</string>
     <string name="txt_ayah">Ayah</string>
 
 
@@ -117,4 +117,13 @@ Arkansas, USA</string>
 
     <string name="txt_savestart_date">Last Save Start Date</string>
     <string name="txt_saveend_date">Last Save End Date</string>
+
+
+    <string name="title_notificaiton_exceed_prayer">Salat Tracker</string>
+    <string name="msg_notificaiton_exceed_prayer">We have noted that you have been missing prayers. Let\'s start fresh with us and fulfill your Deen</string>
+
+    <string name="title_notificaiton_quran_tracker">Quran Tracker</string>
+    <string name="msg_notificaiton_quran_tracker">Please Enter your Quran reading progress for today</string>
+
+
 </resources>

@@ -257,7 +257,7 @@ public class Weekly extends Fragment {
         dataset.addSeries(incomeSeries);
         // Ceating XYSeriesRenderer to customize incomeSeries
         XYSeriesRenderer incomeRenderer = new XYSeriesRenderer();
-        incomeRenderer.setColor(getResources().getColor(R.color.black));
+        incomeRenderer.setColor(getResources().getColor(R.color.colorPrimary));
         incomeRenderer.setPointStyle(PointStyle.CIRCLE);
         incomeRenderer.setFillPoints(true);
         incomeRenderer.setLineWidth(2);
@@ -289,7 +289,7 @@ public class Weekly extends Fragment {
         //  multiRenderer.setXAxisMin(x[0]);//get Start date of the week
 
         multiRenderer.setYAxisMin(0);
-        multiRenderer.setYAxisMax(2000);//Total ayah of quran
+        multiRenderer.setYAxisMax(1000);//Total ayah of quran
         multiRenderer.setYLabelsAngle(270);
 
         for (int i = 0; i < x.length; i++) {

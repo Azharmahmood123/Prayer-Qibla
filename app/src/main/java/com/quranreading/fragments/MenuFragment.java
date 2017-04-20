@@ -60,21 +60,22 @@ public class MenuFragment extends Fragment {
         ArrayList<String> menuItems = new ArrayList<>();
         menuItems.clear();
         menuItems.add(mContext.getString(R.string.grid_salat));
-        menuItems.add(mContext.getString(R.string.grid_direction));
         menuItems.add(mContext.getString(R.string.grid_quran));
-        menuItems.add(mContext.getString(R.string.grid_community));
         menuItems.add(mContext.getString(R.string.grid_search));
-
-        menuItems.add(mContext.getString(R.string.grid_hijri));
+        menuItems.add(mContext.getString(R.string.grid_salat_tracker));
+        menuItems.add(mContext.getString(R.string.grid_quran_tracker));
+        menuItems.add(mContext.getString(R.string.grid_community));
+        menuItems.add(mContext.getString(R.string.grid_direction));
         menuItems.add(mContext.getString(R.string.grid_mosque));
-        menuItems.add(mContext.getString(R.string.grid_halal));
+        menuItems.add(mContext.getString(R.string.grid_academy));
         menuItems.add(mContext.getString(R.string.grid_duas));
         menuItems.add(mContext.getString(R.string.grid_tasbeeh));
+        menuItems.add(mContext.getString(R.string.grid_halal));
         menuItems.add(mContext.getString(R.string.grid_names));
-        menuItems.add(mContext.getString(R.string.grid_academy));
-        menuItems.add(mContext.getString(R.string.grid_settings));
-       menuItems.add(mContext.getString(R.string.grid_salat_tracker));
-        menuItems.add(mContext.getString(R.string.grid_quran_tracker));
+        menuItems.add(mContext.getString(R.string.grid_hijri));//8
+        menuItems.add(mContext.getString(R.string.grid_settings));//15
+
+
 
         ArrayList<String> items = new ArrayList<>();
 

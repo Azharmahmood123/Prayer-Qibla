@@ -60,16 +60,12 @@ public class AddTarget extends AdIntegration implements View.OnClickListener {
             @Override
             public void onClick(View view) {
 
-                int[] sDates = {sDate, sMonth, sYear};
-                int[] eDates = {eDate, eMonth, eYear};
-
-                int daysBetween = CommunityGlobalClass.getInstance().findDaysDiff(sDates, eDates);
-                if(daysBetween >= 0) {
-                    saveTarget();
-                }
-                else {
-                    tvEndDate.setText(getString(R.string.txt_default_date));
-                    CommunityGlobalClass.getInstance().showShortToast("Enter valid date",500, Gravity.CENTER);
+                if (tvStartDate.getText().toString().equals(getString(R.string.txt_default_date)) || tvEndDate.getText().toString().equals(getString(R.string.txt_default_date))) {
+                    CommunityGlobalClass.getInstance().showShortToast("Please fill date", 500, Gravity.CENTER);
+                } else {
+                    if (checkNumberOfAyah()) {
+                        saveTarget();
+                    }
                 }
             }
         });
@@ -181,7 +177,8 @@ public class AddTarget extends AdIntegration implements View.OnClickListener {
         lnContainerAyah.setVisibility(View.GONE);
     }
 
-    private void checkNumberOfAyah() {
+    private boolean checkNumberOfAyah(){
+
         lnContainerAyah.setVisibility(View.VISIBLE);
         int[] sDates = {sDate, sMonth, sYear};
         int[] eDates = {eDate, eMonth, eYear};
@@ -189,18 +186,21 @@ public class AddTarget extends AdIntegration implements View.OnClickListener {
         int daysBetween = CommunityGlobalClass.getInstance().findDaysDiff(sDates, eDates);
 
 
-        if (daysBetween < 0) {
+        if (daysBetween < 3) {
             tvEndDate.setText(getString(R.string.txt_default_date));
-            CommunityGlobalClass.getInstance().showShortToast("Enter valid date", 500, Gravity.CENTER);
+            CommunityGlobalClass.getInstance().showShortToast("End date should be greater than 3 days", 800, Gravity.CENTER);
             lnContainerAyah.setVisibility(View.GONE);
+            return false;
+
         } else {
             if(daysBetween <=0)
             {
-                tvAyah.setText("" + 0);
+                tvAyah.setText("" + totalVerse);
             }
             else {
                 tvAyah.setText("" + (totalVerse / daysBetween));
             }
+            return true;
         }
     }
 

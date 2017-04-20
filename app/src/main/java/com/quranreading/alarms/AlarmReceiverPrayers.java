@@ -1,5 +1,6 @@
 package com.quranreading.alarms;
 
+import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
@@ -20,6 +21,8 @@ import noman.salattrack.utils.SalatTrackerService;
 import noman.salattrack.utils.TrackerConstant;
 import noman.sharedpreference.SurahsSharedPref;
 
+import static android.content.Context.NOTIFICATION_SERVICE;
+
 public class AlarmReceiverPrayers extends BroadcastReceiver {
 
     public static final String STOP_SOUND = "stop_sound";
@@ -31,7 +34,7 @@ public class AlarmReceiverPrayers extends BroadcastReceiver {
     Context context;
     AlarmSharedPref alarmObj;
     private int indexSoundOption = 0;
-
+    public static NotificationManager mNotificationManager;
     @Override
     public void onReceive(Context context, Intent intent) {
         this.context = context;
@@ -75,7 +78,7 @@ public class AlarmReceiverPrayers extends BroadcastReceiver {
         // resultIntent.putExtra("notificationID", notificationID);
 
 
-        NotificationManager mNotificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+      mNotificationManager = (NotificationManager) context.getSystemService(NOTIFICATION_SERVICE);
 
 		/*
          * PendingIntent contentIntent = PendingIntent.getActivity(context, 0, new Intent(context, GcmResigterActivity.class), 0);
@@ -88,7 +91,14 @@ public class AlarmReceiverPrayers extends BroadcastReceiver {
         Bitmap bm = BitmapFactory.decodeResource(context.getResources(), R.drawable.ic_launcher);
 
         String[] arrPrayers = {context.getString(R.string.txt_fajr), context.getString(R.string.txt_zuhr), context.getString(R.string.txt_asar), context.getString(R.string.txt_maghrib), context.getString(R.string.txt_isha), context.getString(R.string.txt_sunrise)};
-        String message = arrPrayers[entryId - 1] + " " + context.getString(R.string.salat_timings) + " " + context.getString(R.string.time);
+        String message;
+        if (entryId != 6) {
+            message  = arrPrayers[entryId - 1] + " " + context.getString(R.string.salat_timings) + " " + context.getString(R.string.time);
+        }
+        else
+        {
+            message  = arrPrayers[entryId - 1] + " " + context.getString(R.string.time);
+        }
 
         NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(context).setSmallIcon(R.drawable.notification_small).setLargeIcon(bm).setAutoCancel(true).setContentTitle(context.getResources().getString(R.string.app_name)).setContentText(message);
 
@@ -149,6 +159,7 @@ public class AlarmReceiverPrayers extends BroadcastReceiver {
             mBuilder.setSound(uri);
 
         }
+
         mNotificationManager.notify(notificationID, mBuilder.build());
     }
 
@@ -159,7 +170,7 @@ public class AlarmReceiverPrayers extends BroadcastReceiver {
     }
 
     public void showTrackerButton(NotificationCompat.Builder mBuilder) {
-        SalatTrackerService.prayerId=entryId;
+        SalatTrackerService.prayerId = entryId;
         Intent prayIntent = new Intent(context, SalatTrackerService.class);
         prayIntent.setAction(TrackerConstant.ACTION.PRAY_ACTION);
         PendingIntent prayPIntent = PendingIntent.getService(context, 0, prayIntent, 0);
@@ -168,10 +179,16 @@ public class AlarmReceiverPrayers extends BroadcastReceiver {
         Intent lateIntent = new Intent(context, SalatTrackerService.class);
         lateIntent.setAction(TrackerConstant.ACTION.LATE_ACTION);
        //  lateIntent.putExtra(TrackerConstant.ACTION.PRAY_ACTION, entryId);//Passing which pray time
-        PendingIntent latePIntent = PendingIntent.getService(context, 0, lateIntent, 0);
+        PendingIntent latePIntent = PendingIntent.getService(context, 0, lateIntent, PendingIntent.FLAG_CANCEL_CURRENT);
 
         mBuilder.addAction(R.drawable.pray_ic_noti, context.getString(R.string.txt_prayer), prayPIntent);
         mBuilder.addAction(R.drawable.late_ic_noti, context.getString(R.string.txt_late), latePIntent);
-        mBuilder.setAutoCancel(true);
+
+    }
+
+    public static void cancelNotification() {
+        if (mNotificationManager != null) {
+            mNotificationManager.cancelAll();
+        }
     }
 }

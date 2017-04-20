@@ -72,9 +72,10 @@ import noman.community.prefrences.SavePreference;
 import noman.hijri.acitivity.CalenderActivity;
 import noman.hijri.acitivity.ConverterDialog;
 import noman.quran.activity.QuranReadActivity;
+import noman.qurantrack.activity.QuranTracker;
+import noman.sharedpreference.SurahsSharedPref;
 import places.activities.PlacesListActivity;
 import quran.helper.DBManagerQuran;
-import noman.sharedpreference.SurahsSharedPref;
 
 import static com.quranreading.qibladirection.R.id.toolbar_btnMenu;
 
@@ -180,7 +181,6 @@ public class MainActivityNew extends AppCompatActivity implements AdapterView.On
         setContentView(R.layout.activity_main_new);
         CommunityGlobalClass.mainActivityNew = this;
 
-
         //Community  Global Class
         registerHandlerService();
 
@@ -232,7 +232,9 @@ public class MainActivityNew extends AppCompatActivity implements AdapterView.On
 
             startActivity(intent);
         }
-
+        else if (getIntent().getBooleanExtra("quranTracker",false) ) {
+            startActivity(new Intent(this, QuranTracker.class));
+        }
 
         layoutImageShare = (RelativeLayout) findViewById(R.id.layout_image_share);
         layoutImageShare.setOnClickListener(new View.OnClickListener() {

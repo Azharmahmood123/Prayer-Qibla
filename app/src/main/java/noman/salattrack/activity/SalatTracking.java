@@ -17,21 +17,20 @@ import com.quranreading.qibladirection.GlobalClass;
 import com.quranreading.qibladirection.R;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import noman.Ads.AdIntegration;
 import noman.CommunityGlobalClass;
-import noman.community.activity.FacebookActivity;
-import noman.community.activity.PostActivity;
 import noman.community.model.SignInRequest;
 import noman.community.model.SignUpResponse;
-import noman.community.prefrences.SavePreference;
 import noman.community.utility.DebugInfo;
 import noman.salattrack.database.SalatTrackerDatabase;
 import noman.salattrack.fragment.MonthlyTracker;
 import noman.salattrack.fragment.WeeklyTracker;
 import noman.salattrack.fragment.YearlyTracker;
 import noman.salattrack.model.SalatModel;
+import noman.salattrack.notification.FiveDayAlarmHelper;
 import noman.sharedpreference.SurahsSharedPref;
 import retrofit.Call;
 import retrofit.Response;
@@ -49,6 +48,11 @@ public class SalatTracking extends AdIntegration {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tracker_main);
+
+
+        setAlertAveragePrayerRate();
+
+
         if (!((GlobalClass) getApplication()).isPurchase) {
             super.showBannerAd(this, (LinearLayout) findViewById(R.id.linearAd));
         }
@@ -187,7 +191,7 @@ public class SalatTracking extends AdIntegration {
             public void onFailure(Throwable t) {
                 CommunityGlobalClass.getInstance().cancelDialog();
                 if (BuildConfig.DEBUG) DebugInfo.loggerException("SignUp-Failure" + t.getMessage());
-                CommunityGlobalClass.getInstance().showServerFailureDialog(SalatTracking.this);
+               // CommunityGlobalClass.getInstance().showServerFailureDialog(SalatTracking.this);
             }
         });
 
@@ -207,7 +211,15 @@ public class SalatTracking extends AdIntegration {
                 setupViewPager(viewPager);
             }
         }
+    }
 
 
+    //Notifiy user every 3rd day at 10 Am if average rate of pryaer is less than 15
+
+    public void setAlertAveragePrayerRate()
+    {
+        FiveDayAlarmHelper mAlarm = new FiveDayAlarmHelper(this);
+        Calendar updateTime= mAlarm.setAlarmTime(10,00,"am");
+        mAlarm.setAlarmFiveDay(updateTime);
     }
 }

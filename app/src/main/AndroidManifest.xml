@@ -432,6 +432,29 @@
         </receiver>
 
 
+        <!--Salat Tracker Recevier-->
+
+        <receiver android:name="noman.salattrack.notification.ReceiveAlert"/>
+        <receiver android:name="noman.salattrack.notification.DeviceBootReceiver"
+            android:enabled="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+
+        <!--End-->
+        <!--Quran Tracker Recevier-->
+
+        <receiver android:name="noman.qurantrack.notification.ReceiveAlert"/>
+        <receiver android:name="noman.qurantrack.notification.DeviceBootReceiver"
+            android:enabled="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+
+        <!--End-->
+
     </application>
 
 </manifest>

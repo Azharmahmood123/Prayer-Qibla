@@ -46,7 +46,7 @@ public class SurahsSharedPref {
     private static final String LAST_TRANSALATION_POS = "last_translation_pos";
     private static final String READ_MODE_STATE = "read_mode_state";
     private static final String IS_FIRSTTIME_QURAN_READ = "is_first_time_quran_read";
-    private static final String IS_FIRSTTIME_NAME_CLICK = "is_first_time_name_click";
+    private static final String IS_FIRSTTIME_QURAN_TRACKER_CLICK = "is_first_time_quran_tracker_click";
     private static final String IS_FIRSTTIME_SALAT_TRACKER_CLICK = "is_first_time_salat_tracker_click";
     private static final String IS_FIRSTTIME_COMMUNITY_CLICK = "is_first_time_community_click";
     private static final String IS_FIRSTTIME_MENU_CLICK = "is_first_time_menu_click";
@@ -80,12 +80,12 @@ public class SurahsSharedPref {
         editor.putBoolean(IS_FIRSTTIME_QURAN_READ, size);
         editor.commit();
     }
-    public boolean getIsFirstTimeNamesOpen() {
-        return pref.getBoolean(IS_FIRSTTIME_NAME_CLICK, true);
+    public boolean getIsFirstTimeQuranTrackerOpen() {
+        return pref.getBoolean(IS_FIRSTTIME_QURAN_TRACKER_CLICK, true);
     }
 
-    public void setIsFirstTimeNamesOpen(boolean size) {
-        editor.putBoolean(IS_FIRSTTIME_NAME_CLICK, size);
+    public void setIsFirstTimeQuranTrackerOpen(boolean size) {
+        editor.putBoolean(IS_FIRSTTIME_QURAN_TRACKER_CLICK, size);
         editor.commit();
     }
     public boolean getIsFirstTimeSalatTrackerOpen() {

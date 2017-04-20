@@ -4,8 +4,11 @@ import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
 
+import com.quranreading.alarms.AlarmReceiverPrayers;
+
 import java.util.Calendar;
 
+import noman.CommunityGlobalClass;
 import noman.salattrack.database.SalatTrackerDatabase;
 import noman.salattrack.model.SalatModel;
 
@@ -52,9 +55,7 @@ public class SalatTrackerService extends Service {
         int monthDB = calendar.get(Calendar.MONTH) + 1;
         int dateDB = calendar.get(Calendar.DAY_OF_MONTH);
 
-      //  String userId = CommunityGlobalClass.mSignInRequests.getUser_id();
-        int useId = 0;//Integer.parseInt(userId);
-
+       int useId = CommunityGlobalClass.mSignInRequests.getUser_id();
         mSalatModel = salatTrackerDatabase.getSalatModel(dateDB, monthDB, yearDB, useId);
 
         if (mSalatModel != null) {
@@ -71,6 +72,8 @@ public class SalatTrackerService extends Service {
 
         salatTrackerDatabase.insertSalatData(true,mSalatModel); //in local database
 
+
+        AlarmReceiverPrayers.cancelNotification();
     }
 
     public void checkStatusPrayer() {
