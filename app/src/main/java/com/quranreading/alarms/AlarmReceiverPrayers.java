@@ -17,6 +17,9 @@ import com.quranreading.qibladirection.MainActivityNew;
 import com.quranreading.qibladirection.R;
 import com.quranreading.sharedPreference.AlarmSharedPref;
 
+import java.util.Calendar;
+
+import noman.CommunityGlobalClass;
 import noman.salattrack.utils.SalatTrackerService;
 import noman.salattrack.utils.TrackerConstant;
 import noman.sharedpreference.SurahsSharedPref;
@@ -91,13 +94,16 @@ public class AlarmReceiverPrayers extends BroadcastReceiver {
         Bitmap bm = BitmapFactory.decodeResource(context.getResources(), R.drawable.ic_launcher);
 
         String[] arrPrayers = {context.getString(R.string.txt_fajr), context.getString(R.string.txt_zuhr), context.getString(R.string.txt_asar), context.getString(R.string.txt_maghrib), context.getString(R.string.txt_isha), context.getString(R.string.txt_sunrise)};
-        String message;
+
+
+
+        String message="";
         if (entryId != 6) {
             message  = arrPrayers[entryId - 1] + " " + context.getString(R.string.salat_timings) + " " + context.getString(R.string.time);
         }
         else
         {
-            message  = arrPrayers[entryId - 1] + " " + context.getString(R.string.time);
+             message  = arrPrayers[entryId - 1] + " " + context.getString(R.string.time);
         }
 
         NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(context).setSmallIcon(R.drawable.notification_small).setLargeIcon(bm).setAutoCancel(true).setContentTitle(context.getResources().getString(R.string.app_name)).setContentText(message);
@@ -125,8 +131,8 @@ public class AlarmReceiverPrayers extends BroadcastReceiver {
 
         if (entryId != 6) {
             SurahsSharedPref surahsSharedPref = new SurahsSharedPref(context);
-            if (surahsSharedPref.getIsSalatTracking()) {
-                showTrackerButton(mBuilder);
+            if (surahsSharedPref.getIsSalatTracking() && CommunityGlobalClass.mSignInRequests != null) {
+                showTrackerButton(mBuilder,notificationID);
             }
         }
 
@@ -169,26 +175,33 @@ public class AlarmReceiverPrayers extends BroadcastReceiver {
         context.sendBroadcast(intentBroadCast);
     }
 
-    public void showTrackerButton(NotificationCompat.Builder mBuilder) {
-        SalatTrackerService.prayerId = entryId;
-        Intent prayIntent = new Intent(context, SalatTrackerService.class);
-        prayIntent.setAction(TrackerConstant.ACTION.PRAY_ACTION);
-        PendingIntent prayPIntent = PendingIntent.getService(context, 0, prayIntent, 0);
+    public void showTrackerButton(NotificationCompat.Builder mBuilder,int notificationID) {
 
+        Calendar calendar = Calendar.getInstance();
+        int yearDB = calendar.get(Calendar.YEAR);
+        int monthDB = calendar.get(Calendar.MONTH) + 1;
+        int dateDB = calendar.get(Calendar.DAY_OF_MONTH);
+
+
+        Intent prayIntent = new Intent(context, SalatTrackerService.class);
+        prayIntent.setData(Uri.parse(""+ notificationID +"/"+dateDB+"/"+monthDB+"/"+yearDB));
+        prayIntent.setAction(TrackerConstant.ACTION.PRAY_ACTION);
+        PendingIntent prayPIntent = PendingIntent.getService(context, 0, prayIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
         Intent lateIntent = new Intent(context, SalatTrackerService.class);
         lateIntent.setAction(TrackerConstant.ACTION.LATE_ACTION);
-       //  lateIntent.putExtra(TrackerConstant.ACTION.PRAY_ACTION, entryId);//Passing which pray time
-        PendingIntent latePIntent = PendingIntent.getService(context, 0, lateIntent, PendingIntent.FLAG_CANCEL_CURRENT);
+        lateIntent.setData(Uri.parse(""+ notificationID +"/"+dateDB+"/"+monthDB+"/"+yearDB));
+        PendingIntent latePIntent = PendingIntent.getService(context, 0, lateIntent,PendingIntent.FLAG_UPDATE_CURRENT);
 
         mBuilder.addAction(R.drawable.pray_ic_noti, context.getString(R.string.txt_prayer), prayPIntent);
         mBuilder.addAction(R.drawable.late_ic_noti, context.getString(R.string.txt_late), latePIntent);
 
     }
 
-    public static void cancelNotification() {
+    public static void cancelNotification(int notifyId) {
         if (mNotificationManager != null) {
-            mNotificationManager.cancelAll();
+            mNotificationManager.cancel(notifyId);
         }
     }
+
 }

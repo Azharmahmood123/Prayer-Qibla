@@ -22,18 +22,14 @@ import com.orhanobut.logger.BuildConfig;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.List;
-
 import noman.CommunityGlobalClass;
-import noman.community.prefrences.SavePreference;
-import noman.community.utility.DebugInfo;
 import noman.community.model.GraphApiResponse;
 import noman.community.model.SignInRequest;
 import noman.community.model.SignUpResponse;
+import noman.community.prefrences.SavePreference;
+import noman.community.utility.DebugInfo;
 import noman.qurantrack.activity.QuranTracker;
 import noman.salattrack.activity.SalatTracking;
-import noman.salattrack.database.SalatTrackerDatabase;
-import noman.salattrack.model.SalatModel;
 import retrofit.Call;
 import retrofit.Response;
 import retrofit.Retrofit;
@@ -189,27 +185,23 @@ public class FacebookActivity extends AppCompatActivity {
                 //Reactivitvate Drowaer layoyt
                 CommunityGlobalClass.mainActivityNew.initializeMenuList();
                 CommunityGlobalClass.mainActivityNew.initDrawer();
+                try {
+                    FacebookActivity.super.onBackPressed();
+                } catch (IllegalStateException e) {
+                }
 
-                FacebookActivity.super.onBackPressed();
 
-               if(CommunityGlobalClass.moduleId == 1)
-               {
+                if (CommunityGlobalClass.moduleId == 1) {
 
-
-                   startActivity(new Intent(FacebookActivity.this, PostActivity.class));
-                   //Refresh the Mine Tab
-                   CommunityGlobalClass.mCommunityActivity.moveToMineTab();
-                   CommunityGlobalClass.mMineFragment.onLoadMineList();
-               }
-                else  if(CommunityGlobalClass.moduleId == 2)
-               {
-                   startActivity(new Intent(FacebookActivity.this, SalatTracking.class));
-               }
-                else  if(CommunityGlobalClass.moduleId == 3)
-               {
-                   startActivity(new Intent(FacebookActivity.this, QuranTracker.class));
-               }
-
+                    startActivity(new Intent(FacebookActivity.this, PostActivity.class));
+                    //Refresh the Mine Tab
+                    CommunityGlobalClass.mCommunityActivity.moveToMineTab();
+                    CommunityGlobalClass.mMineFragment.onLoadMineList();
+                } else if (CommunityGlobalClass.moduleId == 2) {
+                    startActivity(new Intent(FacebookActivity.this, SalatTracking.class));
+                } else if (CommunityGlobalClass.moduleId == 3) {
+                    startActivity(new Intent(FacebookActivity.this, QuranTracker.class));
+                }
 
 
             }
@@ -224,8 +216,6 @@ public class FacebookActivity extends AppCompatActivity {
 
 
     }
-
-
 
 
 }

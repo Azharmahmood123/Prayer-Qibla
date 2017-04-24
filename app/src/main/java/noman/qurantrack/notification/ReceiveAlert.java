@@ -14,6 +14,7 @@ import com.quranreading.qibladirection.R;
 
 import java.util.Calendar;
 
+import noman.CommunityGlobalClass;
 import noman.qurantrack.database.QuranTrackerDatabase;
 import noman.salattrack.database.SalatTrackerDatabase;
 import noman.salattrack.model.SalatModel;
@@ -42,7 +43,7 @@ public class ReceiveAlert extends BroadcastReceiver {
         int count=quranTrackerDatabase.geDailyData(curDate,curMonth,curYear);
 
         //Getting missed prayed
-        if(count == 0) {
+        if(count == 0 && CommunityGlobalClass.mSignInRequests !=null) {
             showNotification(context.getResources().getString(R.string.title_notificaiton_quran_tracker),
                     context.getResources().getString(R.string.msg_notificaiton_quran_tracker));
         }

@@ -61,7 +61,7 @@ public class ReceiveAlert extends BroadcastReceiver {
         }
 
         //Getting missed prayed
-        if(late+pray < 15) {
+        if(late+pray < 15 && CommunityGlobalClass.mSignInRequests !=null) {
             showNotification(context.getResources().getString(R.string.title_notificaiton_exceed_prayer),
                     context.getResources().getString(R.string.msg_notificaiton_exceed_prayer));
         }

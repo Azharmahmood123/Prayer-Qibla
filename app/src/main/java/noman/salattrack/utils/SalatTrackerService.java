@@ -3,10 +3,9 @@ package noman.salattrack.utils;
 import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
+import android.util.Log;
 
 import com.quranreading.alarms.AlarmReceiverPrayers;
-
-import java.util.Calendar;
 
 import noman.CommunityGlobalClass;
 import noman.salattrack.database.SalatTrackerDatabase;
@@ -19,8 +18,9 @@ import noman.salattrack.model.SalatModel;
 public class SalatTrackerService extends Service {
 
     int status = 0;
-    public static int prayerId = 0; //because i didnot get intent in service
+
     SalatModel mSalatModel;
+    int notifyId = 0;
 
     @Override
     public void onDestroy() {
@@ -40,22 +40,31 @@ public class SalatTrackerService extends Service {
             status = 1;
         }
 
-       // prayerId = intent.getIntExtra(TrackerConstant.ACTION.TIME_PRAYER,0);
 
+        //notifyId = Integer.parseInt(intent.getData().toString());
+        String data = intent.getData().toString();
+        String[] parts = data.split("/");
+
+        notifyId  = Integer.parseInt(parts[0]);
+        int date  = Integer.parseInt(parts[1]);
+        int month = Integer.parseInt(parts[2]);
+        int year  = Integer.parseInt(parts[3]);
+
+        //Log.e("here is 0", "" + date + "/" + month + "/" + year);
         stopForeground(true);
         stopSelf();
-        saveDataLocaly();
+        saveDataLocaly(date, month, year);
         return START_STICKY;
     }
 
-    public void saveDataLocaly() {
+    public void saveDataLocaly(int dateDB, int monthDB, int yearDB) {
         SalatTrackerDatabase salatTrackerDatabase = new SalatTrackerDatabase(this);
-        Calendar calendar = Calendar.getInstance();
+        /*Calendar calendar = Calendar.getInstance();
         int yearDB = calendar.get(Calendar.YEAR);
         int monthDB = calendar.get(Calendar.MONTH) + 1;
         int dateDB = calendar.get(Calendar.DAY_OF_MONTH);
-
-       int useId = CommunityGlobalClass.mSignInRequests.getUser_id();
+*/
+        int useId = CommunityGlobalClass.mSignInRequests.getUser_id();
         mSalatModel = salatTrackerDatabase.getSalatModel(dateDB, monthDB, yearDB, useId);
 
         if (mSalatModel != null) {
@@ -70,14 +79,15 @@ public class SalatTrackerService extends Service {
 
         checkStatusPrayer();
 
-        salatTrackerDatabase.insertSalatData(true,mSalatModel); //in local database
+        salatTrackerDatabase.insertSalatData(true, mSalatModel); //in local database
 
 
-        AlarmReceiverPrayers.cancelNotification();
+        AlarmReceiverPrayers.cancelNotification(notifyId);
+
     }
 
     public void checkStatusPrayer() {
-        switch (prayerId) {
+        switch (notifyId) {
             case 1:
                 mSalatModel.setFajar(status);
                 break;

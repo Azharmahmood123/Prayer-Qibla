@@ -14,15 +14,22 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.orhanobut.logger.BuildConfig;
 import com.quranreading.qibladirection.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import noman.community.adapter.MinePrayerAdapter;
-import noman.community.activity.ComunityActivity;
 import noman.CommunityGlobalClass;
+import noman.community.activity.ComunityActivity;
+import noman.community.adapter.MinePrayerAdapter;
 import noman.community.model.Prayer;
+import noman.community.model.SignInRequest;
+import noman.community.model.SignUpResponse;
+import noman.community.utility.DebugInfo;
+import retrofit.Call;
+import retrofit.Response;
+import retrofit.Retrofit;
 
 /**
  * Created by Administrator on 11/18/2016.
@@ -38,6 +45,8 @@ public class MineFragment extends Fragment {
     FloatingActionButton fabMine;
     ComunityActivity mComunityActivity;
     TextView noData;
+
+    List<Prayer> mineList=new ArrayList<>();
 
     public static MineFragment newInstance(ComunityActivity mComunityActivity) {
         MineFragment myFragment = new MineFragment();
@@ -75,7 +84,10 @@ public class MineFragment extends Fragment {
         //Atach fab with recycler view
 
 
-      //  CommunityGlobalClass.getInstance().sendAnalyticsScreen("Community Mine");
+        //  CommunityGlobalClass.getInstance().sendAnalyticsScreen("Community Mine");
+        CommunityGlobalClass.mSignInRequests.setModule_id(1);
+        minePrayer(CommunityGlobalClass.mSignInRequests);
+
 
         return rootView;
     }
@@ -91,7 +103,7 @@ public class MineFragment extends Fragment {
     @Override
     public void onPrepareOptionsMenu(Menu menu) {
         super.onPrepareOptionsMenu(menu);
-      //  menu.findItem(R.id.action_filter).setVisible(false);
+        //  menu.findItem(R.id.action_filter).setVisible(false);
 
     }
 
@@ -101,23 +113,14 @@ public class MineFragment extends Fragment {
 
         mComunityActivity.menu_filter.setVisibility(View.GONE);
         if (isVisibleToUser) {
-            if (getMineListAfterPosting() == null || getMineListAfterPosting().size() == 0) {
-                if (getMineListAfterPosting().size() == 0) {
-                    onItemsLoadComplete();
+           // if (getMineListAfterPosting() == null || getMineListAfterPosting().size() == 0) {
+                if (mineList.size() != 0) {
+                  //  onItemsLoadComplete();
                     noData.setVisibility(View.GONE);
-                } else {
-                    noData.setVisibility(View.VISIBLE);
-                }
-            } else {
-                if (getMineListAfterPosting().size() > 0) {
-                    onLoadMineList();
-                    noData.setVisibility(View.GONE);
-
                 } else {
                     noData.setVisibility(View.VISIBLE);
                 }
             }
-        }
 
     }
 
@@ -130,31 +133,16 @@ public class MineFragment extends Fragment {
 
     }
 
-    public void onItemsLoadComplete() {
-
-        mPrayerAdapter = new MinePrayerAdapter(getPrayerList(), getActivity());
-
-        mRecyclerView.setAdapter(mPrayerAdapter);
-        if (mSwipeRefreshLayout.isRefreshing()) {
-            if (mSwipeRefreshLayout != null) {
-                mSwipeRefreshLayout.setRefreshing(false);
-                mSwipeRefreshLayout.destroyDrawingCache();
-                mSwipeRefreshLayout.clearAnimation();
-            }
-
-        }
-    }
-
     public void onLoadMineList() {
         // Update the adapter and notify data set changed
         // Update the adapter and notify data set changed
 
-        if (getMineListAfterPosting().size() > 0) {
+        if (  CommunityGlobalClass.minePrayerModel.size() > 0) {
             noData.setVisibility(View.GONE);
         } else {
             noData.setVisibility(View.VISIBLE);
         }
-        mPrayerAdapter = new MinePrayerAdapter(getMineListAfterPosting(), getActivity());
+        mPrayerAdapter = new MinePrayerAdapter(  CommunityGlobalClass.minePrayerModel, getActivity());
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         mRecyclerView.setLayoutManager(layoutManager);
@@ -173,31 +161,37 @@ public class MineFragment extends Fragment {
     }
 
 
-    public List<Prayer> getPrayerList() {
-        List<Prayer> addMinePRayer = new ArrayList<>();
-        if (CommunityGlobalClass.mPrayerModel != null && CommunityGlobalClass.mSignInRequests != null) {
+    public List<Prayer> minePrayer(final SignInRequest mSignUpRequest) {
 
-            for (int i = 0; i < CommunityGlobalClass.mPrayerModel.size(); i++) {
-                if (CommunityGlobalClass.mPrayerModel.get(i).getUserId().equals(CommunityGlobalClass.mSignInRequests.getUser_id())) {
-                    Prayer p = CommunityGlobalClass.mPrayerModel.get(i);
-                    addMinePRayer.add(p);
+     //   CommunityGlobalClass.getInstance().showLoading(getActivity());
+        Call<SignUpResponse> call = CommunityGlobalClass.getRestApi().signInUser(mSignUpRequest);
+        call.enqueue(new retrofit.Callback<SignUpResponse>() {
+
+            @Override
+            public void onResponse(Response<SignUpResponse> response, Retrofit retrofit) {
+
+             //   CommunityGlobalClass.getInstance().cancelDialog();
+                mineList= response.body().getPrayers();
+                mPrayerAdapter = new MinePrayerAdapter(mineList, getActivity());
+                mRecyclerView.setAdapter(mPrayerAdapter);
+                if (mSwipeRefreshLayout.isRefreshing()) {
+                    if (mSwipeRefreshLayout != null) {
+                        mSwipeRefreshLayout.setRefreshing(false);
+                        mSwipeRefreshLayout.destroyDrawingCache();
+                        mSwipeRefreshLayout.clearAnimation();
+                    }
+
                 }
-
             }
 
-        }
-        return addMinePRayer;
-    }
-
-    public List<Prayer> getMineListAfterPosting() {
-        List<Prayer> addMinePRayer = new ArrayList<>();
-        if (CommunityGlobalClass.mPrayerModel != null) {
-            for (int i = 0; i < CommunityGlobalClass.minePrayerModel.size(); i++) {
-                Prayer p = CommunityGlobalClass.minePrayerModel.get(i);
-                addMinePRayer.add(p);
+            @Override
+            public void onFailure(Throwable t) {
+              //  CommunityGlobalClass.getInstance().cancelDialog();
+                if (BuildConfig.DEBUG) DebugInfo.loggerException("SignUp-Failure" + t.getMessage());
+                CommunityGlobalClass.getInstance().showServerFailureDialog(getActivity());
             }
-        }
-        return addMinePRayer;
-    }
+        });
 
+        return mineList;
+    }
 }

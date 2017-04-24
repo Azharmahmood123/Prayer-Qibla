@@ -27,7 +27,6 @@ import com.quranreading.qibladirection.GlobalClass;
 import com.quranreading.qibladirection.MainActivityNew;
 import com.quranreading.qibladirection.R;
 import com.quranreading.qibladirection.SplashActivity;
-import com.quranreading.sharedPreference.LocationPref;
 import com.squareup.okhttp.OkHttpClient;
 
 import net.danlew.android.joda.JodaTimeAndroid;
@@ -94,10 +93,9 @@ public class CommunityGlobalClass extends GlobalClass {
     public static PreLoadIntersitial mInterstitialAd;
     public static MainActivityNew mainActivityNew;
 
-    public static int prayerCounter=0;
+    public static int prayerCounter = 0;
 
     public static int moduleId = 1;
-
 
 
     public static CommunityGlobalClass getInstance() {
@@ -110,6 +108,7 @@ public class CommunityGlobalClass extends GlobalClass {
     public static long timeDelay = 0;
     public static boolean isAdAlreadyShow = false;
     public static boolean isQuranModuleOpen = false;
+
     @Override
 
     public void onCreate() {
@@ -181,11 +180,14 @@ public class CommunityGlobalClass extends GlobalClass {
     }
 
     public void cancelDialog() {
-        if (pd != null) {
-            pd.dismiss();
-            pd.cancel();
-            pd = null;
+        try {
+            if (pd != null) {
+                pd.dismiss();
+                pd.cancel();
+                pd = null;
 
+            }
+        } catch (Exception e) {
         }
     }
 
@@ -377,11 +379,11 @@ public class CommunityGlobalClass extends GlobalClass {
             runnable = new Runnable() {
                 @Override
                 public void run() {
-                    if (CommunityGlobalClass.isQuranModuleOpen == false ) {
+                    if (CommunityGlobalClass.isQuranModuleOpen == false) {
                         if (!((GlobalClass) mainActivityNew.getApplicationContext()).isPurchase) {
                             mainActivityNew.sendBroadcast(new Intent(MainActivityNew.ACTION_INTERSTITIAL_ADS_SHOW));
-                            CommunityGlobalClass.isAdAlreadyShow=true;
-                            Log.e("Ads","Display Intersitial");
+                            CommunityGlobalClass.isAdAlreadyShow = true;
+                            Log.e("Ads", "Display Intersitial");
                         }
                     }
                     handler.removeCallbacks(runnable);
@@ -389,11 +391,11 @@ public class CommunityGlobalClass extends GlobalClass {
             };
         }
     }
+
     /**
      * validate your email address format. Ex-akhi@mani.com
      */
-    public boolean emailValidator(String email)
-    {
+    public boolean emailValidator(String email) {
         Pattern pattern;
         Matcher matcher;
         final String EMAIL_PATTERN = "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
@@ -401,11 +403,11 @@ public class CommunityGlobalClass extends GlobalClass {
         matcher = pattern.matcher(email);
         return matcher.matches();
     }
+
     public boolean isValidPhoneNumber(String phoneNumber) {
 
-        if(phoneNumber.length() < 5 || phoneNumber.length() >15)
-        {
-            return  false;
+        if (phoneNumber.length() < 5 || phoneNumber.length() > 15) {
+            return false;
         }
         if (!TextUtils.isEmpty(phoneNumber)) {
             return Patterns.PHONE.matcher(phoneNumber).matches();
@@ -413,8 +415,8 @@ public class CommunityGlobalClass extends GlobalClass {
         return false;
     }
 
-    public static String getMonthName(int month){
-        switch(month){
+    public static String getMonthName(int month) {
+        switch (month) {
             case 1:
                 return "Jan";
 
@@ -454,7 +456,8 @@ public class CommunityGlobalClass extends GlobalClass {
 
         return "";
     }
-    public int findDaysDiff(int[] sDate,int[] eDate) {
+
+    public int findDaysDiff(int[] sDate, int[] eDate) {
         Calendar calendar1 = Calendar.getInstance();
         calendar1.set(Calendar.YEAR, sDate[2]);
         calendar1.set(Calendar.MONTH, sDate[1] - 1);

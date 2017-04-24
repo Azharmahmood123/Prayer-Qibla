@@ -29,7 +29,8 @@ public class AddTarget extends AdIntegration implements View.OnClickListener {
     int curYear, curMonth, curDate;
     int sYear, sMonth, sDate;//start
     int eYear, eMonth, eDate;//end
-    int userID = 0, status_date_picker, totalVerse = 6236;
+    int userID = 0, status_date_picker;
+        float    totalVerse = 6236;
     CardView lnContainerAyah;
 
 
@@ -119,13 +120,12 @@ public class AddTarget extends AdIntegration implements View.OnClickListener {
         modelStartDates = pref.getLastSaveStartDatePref();
 
 
-        if(modelEndDates !=null && modelStartDates !=null)
-        {
+        if (modelEndDates != null && modelStartDates != null) {
             lastSavedContainer.setVisibility(View.VISIBLE);
-            TextView tvStartSave=(TextView)findViewById(R.id.txt_save_start_date);
+            TextView tvStartSave = (TextView) findViewById(R.id.txt_save_start_date);
             tvStartSave.setText(modelStartDates.getDate() + " - " + CommunityGlobalClass.getMonthName(modelStartDates.getMonth()) + " - " + modelStartDates.getYear());
 
-            TextView tvEndSave=(TextView)findViewById(R.id.txt_save_end_date);
+            TextView tvEndSave = (TextView) findViewById(R.id.txt_save_end_date);
             tvEndSave.setText(modelEndDates.getDate() + " - " + CommunityGlobalClass.getMonthName(modelEndDates.getMonth()) + " - " + modelEndDates.getYear());
 
 
@@ -177,7 +177,7 @@ public class AddTarget extends AdIntegration implements View.OnClickListener {
         lnContainerAyah.setVisibility(View.GONE);
     }
 
-    private boolean checkNumberOfAyah(){
+    private boolean checkNumberOfAyah() {
 
         lnContainerAyah.setVisibility(View.VISIBLE);
         int[] sDates = {sDate, sMonth, sYear};
@@ -193,18 +193,22 @@ public class AddTarget extends AdIntegration implements View.OnClickListener {
             return false;
 
         } else {
-            if(daysBetween <=0)
-            {
+            if (daysBetween <= 0) {
                 tvAyah.setText("" + totalVerse);
-            }
-            else {
-                tvAyah.setText("" + (totalVerse / daysBetween));
+            } else {
+                float val = totalVerse / (daysBetween + 1);
+               // String s = String.format("%.2f", val);
+                tvAyah.setText("" +  math(val));
             }
             return true;
         }
     }
 
-
+    public  int math(float f) {
+        int c = (int) ((f) + 0.5f);
+        float n = f + 0.5f;
+        return (n - c) % 2 == 0 ? (int) f : c;
+    }
     public void saveTarget() {
         //Save End Dates here
         QuranTrackerPref pref = new QuranTrackerPref(this);

@@ -282,7 +282,7 @@ public class Monthly extends Fragment {
     private void openChart() {
         ArrayList<Integer> x = getMonthlyDates();
         ArrayList<Integer> income = ayahReads;
-        XYSeries incomeSeries = new XYSeries("");
+        XYSeries incomeSeries = new XYSeries("Days");
         for (int i = 0; i < x.size(); i++) {
             incomeSeries.add(i, income.get(i));
         }
@@ -290,7 +290,7 @@ public class Monthly extends Fragment {
         dataset.addSeries(incomeSeries);
         // Ceating XYSeriesRenderer to customize incomeSeries
         XYSeriesRenderer incomeRenderer = new XYSeriesRenderer();
-        incomeRenderer.setColor(getResources().getColor(R.color.black));
+        incomeRenderer.setColor(getResources().getColor(R.color.colorPrimary));
         incomeRenderer.setPointStyle(PointStyle.CIRCLE);
         incomeRenderer.setFillPoints(true);
         incomeRenderer.setLineWidth(2);

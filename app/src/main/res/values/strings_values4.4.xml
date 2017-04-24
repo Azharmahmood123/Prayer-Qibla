@@ -69,9 +69,9 @@ Arkansas, USA</string>
     <string name="txt_average_rate">Average Prayer Rate</string>
 
 
-    <string name="tab_weekly">Weekly</string>
-    <string name="tab_monthly">Monthly</string>
-    <string name="tab_yearly">Yearly</string>
+    <string name="tab_weekly">Week</string>
+    <string name="tab_monthly">Month</string>
+    <string name="tab_yearly">Year</string>
 
     <string name="dilog_title_salat">Save Progress</string>
     <string name="dilog_msg_salat">Are you sure to save your current prayers progress?</string>

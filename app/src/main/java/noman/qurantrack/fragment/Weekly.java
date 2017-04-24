@@ -249,7 +249,7 @@ public class Weekly extends Fragment {
     private void openChart() {
         int[] x = getDates();
         ArrayList<Integer> income = ayahReads;
-        XYSeries incomeSeries = new XYSeries("");
+        XYSeries incomeSeries = new XYSeries("Days");
         for (int i = 0; i < x.length; i++) {
             incomeSeries.add(i, income.get(i));
         }
@@ -289,7 +289,7 @@ public class Weekly extends Fragment {
         //  multiRenderer.setXAxisMin(x[0]);//get Start date of the week
 
         multiRenderer.setYAxisMin(0);
-        multiRenderer.setYAxisMax(1000);//Total ayah of quran
+        multiRenderer.setYAxisMax(2000);//Total ayah of quran
         multiRenderer.setYLabelsAngle(270);
 
         for (int i = 0; i < x.length; i++) {
